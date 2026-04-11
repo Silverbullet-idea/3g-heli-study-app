@@ -8,3 +8,5 @@ raw-pdfs/agustawestland/*.pdf
 raw-pdfs/md_helicopters/*.pdf
 extracted-data/raw-text/*.txt
 .env
+
+question-bank/qbank_*.json
