@@ -96,6 +96,161 @@ AIRCRAFT_LIBRARY: list[dict[str, Any]] = [
             },
         ],
     },
+    {
+        "aircraft": "Robinson Maintenance Manuals",
+        "manufacturer": "Robinson",
+        "priority": "tier_1",
+        "documents": [
+            {
+                "type": "maintenance_manual_revision_file",
+                "filename": "R22_MM_Revision_NOV2024.pdf",
+                "url": "https://robinsonstrapistorprod.blob.core.windows.net/uploads/assets/R22_MM_Revison_File_NOV_2024_ac53652313.pdf",
+                "dest": "raw-pdfs/robinson/maintenance-manuals/R22_MM_Revision_NOV2024.pdf",
+                "source": "robinsonheli.com (official blob storage)",
+                "notes": "R22 MM revision file NOV 2024 — public. Full MM is a paid Robinson publication. Use this for current revision tracking and supplemental content.",
+            },
+            {
+                "type": "maintenance_manual_full",
+                "filename": "R22_Maintenance_Manual_full.pdf",
+                "url": "https://robinsonstrapistorprod.blob.core.windows.net/uploads/assets/r22_mm_full_book_2024.pdf",
+                "dest": "raw-pdfs/robinson/maintenance-manuals/R22_Maintenance_Manual_full.pdf",
+                "source": "robinsonheli.com (official blob storage)",
+                "notes": "Attempt download — URL pattern inferred from POH naming convention. May 404 if Robinson does not publish full MM publicly. Log result.",
+                "url_uncertain": True,
+            },
+            {
+                "type": "maintenance_manual_full",
+                "filename": "R44_Maintenance_Manual_full.pdf",
+                "url": "https://robinsonstrapistorprod.blob.core.windows.net/uploads/assets/r44_mm_full_book_2024.pdf",
+                "dest": "raw-pdfs/robinson/maintenance-manuals/R44_Maintenance_Manual_full.pdf",
+                "source": "robinsonheli.com (official blob storage)",
+                "notes": "Attempt download — URL pattern inferred. May 404. Log result.",
+                "url_uncertain": True,
+            },
+        ],
+    },
+    {
+        "aircraft": "Lycoming Engine Operator's Manuals",
+        "manufacturer": "Lycoming",
+        "priority": "tier_1",
+        "documents": [
+            {
+                "type": "engine_operators_manual",
+                "filename": "Lycoming_O-320_Operators_Manual_60297-30.pdf",
+                "url": "https://yankee-aviation.com/docs/Lycoming%20O-320%20Operators%20Manual.pdf",
+                "dest": "raw-pdfs/engines/Lycoming_O-320_Operators_Manual_60297-30.pdf",
+                "source": "yankee-aviation.com (public host of Lycoming PN 60297-30)",
+                "notes": "Covers O-320-A/B/D/E series — R22 Standard, HP, Alpha engine. Part No. 60297-30.",
+            },
+            {
+                "type": "engine_operators_manual",
+                "filename": "Lycoming_O-360_Operators_Manual_60297-12.pdf",
+                "url": "https://www.lycoming.com/sites/default/files/attachments/60297-12.pdf",
+                "dest": "raw-pdfs/engines/Lycoming_O-360_Operators_Manual_60297-12.pdf",
+                "source": "lycoming.com (official)",
+                "notes": "Covers O-360-J2A (R22 Beta II engine) and full O/HO/IO/AIO/HIO/TIO-360 series. Part No. 60297-12. If 404, locate current PDF on lycoming.com for document 60297-12.",
+                "url_uncertain": True,
+            },
+            {
+                "type": "engine_operators_manual",
+                "filename": "Lycoming_O-540_Operators_Manual.pdf",
+                "url": "https://www.lycoming.com/sites/default/files/attachments/60297-14.pdf",
+                "dest": "raw-pdfs/engines/Lycoming_O-540_Operators_Manual.pdf",
+                "source": "lycoming.com (official)",
+                "notes": "Covers O-540 series — R44 Raven I engine. Part No. 60297-14. If 404, locate current PDF on lycoming.com for document 60297-14.",
+                "url_uncertain": True,
+            },
+            {
+                "type": "engine_operators_manual",
+                "filename": "Lycoming_IO-540_Operators_Manual.pdf",
+                "url": "https://www.lycoming.com/sites/default/files/attachments/60297-15.pdf",
+                "dest": "raw-pdfs/engines/Lycoming_IO-540_Operators_Manual.pdf",
+                "source": "lycoming.com (official)",
+                "notes": "Covers IO-540 series — R44 Raven II engine. Part No. 60297-15. If 404, locate current PDF on lycoming.com for document 60297-15.",
+                "url_uncertain": True,
+            },
+            {
+                "type": "engine_overhaul_manual",
+                "filename": "Lycoming_Direct_Drive_Overhaul_Manual.pdf",
+                "url": "https://www.expaircraft.com/PDF/Lycoming-OH-Manual.pdf",
+                "dest": "raw-pdfs/engines/Lycoming_Direct_Drive_Overhaul_Manual.pdf",
+                "source": "expaircraft.com (public host)",
+                "notes": "General overhaul procedures for all Lycoming direct-drive engines. Deep technical reference for CFI and commercial systems questions.",
+            },
+        ],
+    },
+    {
+        "aircraft": "FAA Pilot Handbooks",
+        "manufacturer": "FAA",
+        "priority": "tier_1",
+        "documents": [
+            {
+                "type": "faa_handbook",
+                "filename": "FAA-H-8083-25C_Pilots_Handbook_Aeronautical_Knowledge.pdf",
+                "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf",
+                "dest": "raw-pdfs/faa/FAA-H-8083-25C_Pilots_Handbook_Aeronautical_Knowledge.pdf",
+                "source": "faa.gov (official)",
+                "notes": "PHAK FAA-H-8083-25C 2023 edition. Source document for weather, airspace, navigation, aeromedical, ADM study sheet content. Covers all knowledge areas tested at private through ATP.",
+            },
+            {
+                "type": "faa_handbook",
+                "filename": "FAA-H-8083-15B_Instrument_Flying_Handbook.pdf",
+                "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/FAA-H-8083-15B.pdf",
+                "dest": "raw-pdfs/faa/FAA-H-8083-15B_Instrument_Flying_Handbook.pdf",
+                "source": "faa.gov (official)",
+                "notes": "Already in repo — skip if file exists. Include for completeness in library index.",
+            },
+            {
+                "type": "faa_handbook",
+                "filename": "FAA-H-8083-16B_Instrument_Procedures_Handbook.pdf",
+                "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/instrument_procedures_handbook/FAA-H-8083-16B.pdf",
+                "dest": "raw-pdfs/faa/FAA-H-8083-16B_Instrument_Procedures_Handbook.pdf",
+                "source": "faa.gov (official)",
+                "notes": "Instrument Procedures Handbook. Required reading for instrument rating study sheets — approaches, holds, IFR departure/arrival procedures.",
+            },
+            {
+                "type": "faa_handbook",
+                "filename": "FAA_Aeronautical_Information_Manual_AIM_2024.pdf",
+                "url": "https://www.faa.gov/air_traffic/publications/media/AIM_Basic_w_Chg_1_and_2_dtd_1-22-26.pdf",
+                "dest": "raw-pdfs/faa/FAA_AIM_2024.pdf",
+                "source": "faa.gov (official)",
+                "notes": "AIM — current combined basic PDF from Air Traffic Publications (effective dates in filename). Re-download when FAA publishes updates.",
+            },
+        ],
+    },
+    {
+        "aircraft": "FAA Advisory Circulars",
+        "manufacturer": "FAA",
+        "priority": "tier_2",
+        "documents": [
+            {
+                "type": "advisory_circular",
+                "filename": "AC_61-67D_Stall_Spin_Awareness.pdf",
+                "url": "https://rgl.faa.gov/Regulatory_and_Guidance_Library/rgAdvisoryCircular.nsf/0/c3cf5bf0e21b5b3386257cfc005c3e2e/$FILE/AC%2061-67D.pdf",
+                "dest": "raw-pdfs/faa/advisory-circulars/AC_61-67D_Stall_Spin_Awareness.pdf",
+                "source": "faa.gov (official)",
+                "notes": "Stall/spin awareness — directly tested at private oral. Examiner favorite. RGL host — if download fails, open the same link in a browser or use FAA AC search.",
+                "url_uncertain": True,
+            },
+            {
+                "type": "advisory_circular",
+                "filename": "AC_00-6B_Aviation_Weather.pdf",
+                "url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_00-6B.pdf",
+                "dest": "raw-pdfs/faa/advisory-circulars/AC_00-6B_Aviation_Weather.pdf",
+                "source": "faa.gov (official)",
+                "notes": "Aviation Weather AC 00-6B. Supplements FAA-H-8083-21B weather chapters. Deep meteorology reference for instrument and commercial study sheets.",
+            },
+            {
+                "type": "advisory_circular",
+                "filename": "AC_91-13D_Carburetor_Icing.pdf",
+                "url": "https://rgl.faa.gov/Regulatory_and_Guidance_Library/rgAdvisoryCircular.nsf/0/a9b6d8e45f1e26ae862569ac006b6e96/$FILE/AC91-13D.pdf",
+                "dest": "raw-pdfs/faa/advisory-circulars/AC_91-13D_Carburetor_Icing.pdf",
+                "source": "faa.gov (official)",
+                "notes": "Carburetor icing AC. Directly relevant to R22/R44 operations — examiner will ask about this. RGL host — if download fails, open the same link in a browser or use FAA AC search.",
+                "url_uncertain": True,
+            },
+        ],
+    },
 ]
 
 DEFAULT_UA = (
@@ -156,9 +311,11 @@ def main() -> int:
         )
         return 1
 
-    downloaded: list[str] = []
+    downloaded: list[tuple[str, int]] = []
+    skipped_existing: list[tuple[str, int]] = []
     skipped_copyright: list[str] = []
     failed: list[tuple[str, str]] = []
+    failed_uncertain: list[tuple[str, str]] = []
     total_bytes = 0
 
     for entry in entries:
@@ -168,6 +325,7 @@ def main() -> int:
             url = doc.get("url", "")
             dest_rel = doc.get("dest", "")
             dest = REPO_ROOT / dest_rel
+            uncertain = bool(doc.get("url_uncertain"))
 
             print(f"[{aircraft}] {filename}", flush=True)
 
@@ -176,54 +334,114 @@ def main() -> int:
                 skipped_copyright.append(filename)
                 continue
 
+            if dest.exists() and dest.stat().st_size > 0:
+                sz = dest.stat().st_size
+                skipped_existing.append((dest_rel, sz))
+                print(
+                    f"  SKIP (already exists): {dest_rel} ({sz:,} bytes)",
+                    flush=True,
+                )
+                continue
+
+            if uncertain:
+                print(
+                    f"NOTE: {filename} URL is inferred/uncertain — attempting download.\n"
+                    "If this fails, manual URL lookup required. Logging result.",
+                    flush=True,
+                )
+
             try:
                 n = download_one(url, dest)
                 total_bytes += n
-                downloaded.append(dest_rel)
+                downloaded.append((dest_rel, n))
                 print(f"  OK -> {dest_rel} ({n:,} bytes)", flush=True)
             except urllib.error.HTTPError as e:
-                failed.append((filename, f"HTTP {e.code}"))
-                print(
-                    f"  FAILED: HTTP {e.code} ({filename})",
-                    file=sys.stderr,
-                    flush=True,
-                )
+                reason = f"HTTP {e.code}"
+                if uncertain:
+                    failed_uncertain.append((filename, reason))
+                    print(
+                        f"FAILED (uncertain URL): {filename} — find correct URL manually",
+                        file=sys.stderr,
+                        flush=True,
+                    )
+                else:
+                    failed.append((filename, reason))
+                    print(
+                        f"  FAILED: HTTP {e.code} ({filename})",
+                        file=sys.stderr,
+                        flush=True,
+                    )
             except urllib.error.URLError as e:
-                failed.append((filename, f"URL error: {e.reason}"))
-                print(
-                    f"  FAILED: {e.reason} ({filename})",
-                    file=sys.stderr,
-                    flush=True,
-                )
+                reason = f"URL error: {e.reason}"
+                if uncertain:
+                    failed_uncertain.append((filename, reason))
+                    print(
+                        f"FAILED (uncertain URL): {filename} — find correct URL manually",
+                        file=sys.stderr,
+                        flush=True,
+                    )
+                else:
+                    failed.append((filename, reason))
+                    print(
+                        f"  FAILED: {e.reason} ({filename})",
+                        file=sys.stderr,
+                        flush=True,
+                    )
             except TimeoutError as e:
-                failed.append((filename, str(e)))
-                print(
-                    f"  FAILED: timeout ({filename})",
-                    file=sys.stderr,
-                    flush=True,
-                )
+                reason = str(e)
+                if uncertain:
+                    failed_uncertain.append((filename, reason))
+                    print(
+                        f"FAILED (uncertain URL): {filename} — find correct URL manually",
+                        file=sys.stderr,
+                        flush=True,
+                    )
+                else:
+                    failed.append((filename, reason))
+                    print(
+                        f"  FAILED: timeout ({filename})",
+                        file=sys.stderr,
+                        flush=True,
+                    )
             except OSError as e:
-                failed.append((filename, str(e)))
-                print(
-                    f"  FAILED: {e} ({filename})",
-                    file=sys.stderr,
-                    flush=True,
-                )
+                reason = str(e)
+                if uncertain:
+                    failed_uncertain.append((filename, reason))
+                    print(
+                        f"FAILED (uncertain URL): {filename} — find correct URL manually",
+                        file=sys.stderr,
+                        flush=True,
+                    )
+                else:
+                    failed.append((filename, reason))
+                    print(
+                        f"  FAILED: {e} ({filename})",
+                        file=sys.stderr,
+                        flush=True,
+                    )
 
             time.sleep(0.5)
 
     print()
     print("=== Summary ===")
     print(f"Successfully downloaded ({len(downloaded)}):")
-    for p in downloaded:
-        print(f"  - {p}")
-    print(f"Total size of downloaded PDFs: {total_bytes:,} bytes")
+    for path, n in downloaded:
+        print(f"  - {path} ({n:,} bytes)")
+    print(f"Total size of newly downloaded PDFs: {total_bytes:,} bytes")
+    print()
+    print(f"Skipped (already exist) ({len(skipped_existing)}):")
+    for path, sz in skipped_existing:
+        print(f"  - {path} ({sz:,} bytes)")
     print()
     print(f"Skipped due to copyright_flag ({len(skipped_copyright)}):")
     for p in skipped_copyright:
         print(f"  - {p}")
     print()
-    print(f"Failed ({len(failed)}):")
+    print(f"Failed (uncertain URL — expected possible) ({len(failed_uncertain)}):")
+    for name, reason in failed_uncertain:
+        print(f"  - {name}: {reason}")
+    print()
+    print(f"Failed (unexpected) ({len(failed)}):")
     for name, reason in failed:
         print(f"  - {name}: {reason}")
 

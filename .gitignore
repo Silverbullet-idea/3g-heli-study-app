@@ -1,4 +1,7 @@
 raw-pdfs/robinson/*.pdf
+raw-pdfs/engines/*.pdf
+raw-pdfs/faa/advisory-circulars/*.pdf
+raw-pdfs/robinson/maintenance-manuals/*.pdf
 raw-pdfs/bell/*.pdf
 raw-pdfs/airbus/*.pdf
 raw-pdfs/agustawestland/*.pdf
