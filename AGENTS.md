@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-04-11
+Last updated: 2026-04-11 (AGENTS.md baseline + session close-out)
 
 ---
 
@@ -82,6 +82,11 @@ FAA:
   - AC_00-6B Aviation Weather (downloaded)
   - AC_61-67D, AC_91-13D — DNS failure on rgl.faa.gov (retry later)
 
+### Project documentation (2026-04-11)
+
+- **AGENTS.md** — Added at repo root, committed, and pushed. Single source for phase,
+  pipeline inventory, PDF library notes, next steps, open items, and agent rules.
+
 ---
 
 ## Next Steps (in order)
@@ -129,7 +134,7 @@ FAA:
 2. Check Next Steps — do not re-open completed items
 3. Check Open Items — flag if a task depends on a blocked item
 4. After completing any task, update the relevant section of this file
-5. After completing any task, update LIBRARY_INDEX.md if PDFs were
+5. After completing any task, update `docs/LIBRARY_INDEX.md` if PDFs were
    added or moved
 6. Never commit PDF files — they are gitignored by design
 7. Never hard-delete extracted JSON — these are verified source data
