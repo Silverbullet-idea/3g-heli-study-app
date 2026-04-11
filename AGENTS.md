@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-04-11 (AGENTS.md baseline + session close-out)
+Last updated: 2026-04-11 (FAA/R44 `extract_poh_json` sections + AGENTS inventory)
 
 ---
 
@@ -21,14 +21,41 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 - scripts/extract_text.py — pdfplumber raw text extraction
 - scripts/extract_poh_json.py — Anthropic API structured JSON extraction
 - scripts/run_r22_full_extract.ps1 — runs all three R22 sections
-- scripts/run_faa_r44_extract.ps1 — FAA handbooks + R44 (IN PROGRESS)
+- scripts/run_faa_r44_extract.ps1 — FAA handbooks + ACS + R44 (batch runner; in repo)
 - scripts/run_expanded_library.ps1 — engine manuals, PHAK, AIM, ACs
 
-### Extracted JSON (verified, committed)
+### extract_poh_json.py — section routing (2026-04-11)
 
-- extracted-data/aircraft/r22_limitations.json (1 verify flag — VNE chart)
+Eight `--section` values: `limitations`, `emergency_procedures`, `systems` (R22 →
+`extracted-data/aircraft/r22_*.json`); `r44_limitations`, `r44_emergency_procedures`,
+`r44_systems` (R44 → `extracted-data/aircraft/r44_*.json`); `faa_handbook`, `faa_acs`
+(FAA → `extracted-data/faa/<pdf_stem>.json`). FAA PDFs use chunked streaming extraction
+when the source is large; POH sections use streaming for long-output requests.
+
+### Extracted JSON — R22 (verified, committed)
+
+- extracted-data/aircraft/r22_limitations.json (9 top-level groups after merge, 1 verify)
 - extracted-data/aircraft/r22_emergency_procedures.json (17 procedures, 0 verify)
 - extracted-data/aircraft/r22_systems.json (28 systems, 0 verify)
+
+### Extracted JSON — FAA + R44 (on disk; Ryan review before git add)
+
+Present locally under `extracted-data/faa/` and `extracted-data/aircraft/`:
+
+| File | Records (approx.) | Verify flags |
+|------|-------------------|--------------|
+| aircraft/r44_limitations.json | 8 | 0 |
+| aircraft/r44_emergency_procedures.json | 17 | 0 |
+| faa/FAA-H-8083-21B_Helicopter_Flying_Handbook.json | 7 topics | 0 |
+| faa/FAA-H-8083-4_Helicopter_Instructors_Handbook.json | 21 | 0 |
+| faa/FAA-H-8083-15B_Instrument_Flying_Handbook.json | 84 | 1 |
+| faa/FAA-H-8083-1B_Weight_Balance_Handbook.json | 5 | 0 |
+| faa/FAA-S-ACS-15_Private_Helicopter_ACS.json | 14 areas | 0 |
+| faa/FAA-S-ACS-16_Commercial_Helicopter_ACS.json | 14 areas | 0 |
+| faa/FAA-S-ACS-14_Instrument_Helicopter_ACS.json | 8 areas | 0 |
+
+Pending re-run after API credits: `r44_systems.json`, `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
+(batch stopped mid-run on 2026-04-11).
 
 ### PDF Library (local only — gitignored)
 
@@ -91,10 +118,10 @@ FAA:
 
 ## Next Steps (in order)
 
-1. Confirm FAA handbook + R44 JSON extraction completed
-   (scripts/run_faa_r44_extract.ps1 was running at session end)
-2. Review verify flag counts across all extracted JSON
-3. Commit all extracted JSON files
+1. Replenish Anthropic API credits; re-run `scripts/run_faa_r44_extract.ps1` to fill
+   `r44_systems.json` and `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
+2. Review verify flag counts across all extracted JSON (summary in table above)
+3. Commit extracted JSON files after review
 4. Build PDF renderer — reads JSON, outputs branded 8.5x11 study sheets
 5. Produce first complete study sheet set: Private Pilot R22
 
@@ -102,6 +129,8 @@ FAA:
 
 ## Open Items / Blocked
 
+- Anthropic API — credit balance hit zero mid-batch (2026-04-11); complete missing
+  extractions when billing allows
 - Lycoming O-360 (60297-12), O-540 (60297-14), IO-540 (60297-15)
   → Find current URLs at lycoming.com/publications
 - AC 61-67D, AC 91-13D
