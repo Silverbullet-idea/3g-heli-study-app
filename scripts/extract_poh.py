@@ -129,6 +129,22 @@ def repo_root() -> Path:
     return Path(__file__).resolve().parent.parent
 
 
+def load_dotenv_files() -> None:
+    """Load ANTHROPIC_API_KEY from .env in repo root, then workspace parent.
+
+    Uses override=True so values in .env win over a stale ANTHROPIC_API_KEY in the
+    machine/user environment (common cause of 401 when the key in .env is correct).
+    """
+    try:
+        from dotenv import load_dotenv
+    except ImportError:
+        return
+    root = repo_root()
+    for env_path in (root / ".env", root.parent / ".env"):
+        if env_path.is_file():
+            load_dotenv(env_path, override=True)
+
+
 def extract_pdf_text(pdf_path: Path) -> tuple[str, int]:
     parts: list[str] = []
     with pdfplumber.open(pdf_path) as pdf:
@@ -191,21 +207,30 @@ def merge_metadata(
 
 
 def call_anthropic(system_prompt: str, user_content: str, max_tokens: int) -> str:
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
     if not api_key:
         print("ANTHROPIC_API_KEY is not set.", file=sys.stderr)
         raise SystemExit(1)
 
     client = anthropic.Anthropic(api_key=api_key)
     texts: list[str] = []
-    with client.messages.stream(
-        model=MODEL,
-        max_tokens=max_tokens,
-        system=system_prompt,
-        messages=[{"role": "user", "content": user_content}],
-    ) as stream:
-        for chunk in stream.text_stream:
-            texts.append(chunk)
+    try:
+        with client.messages.stream(
+            model=MODEL,
+            max_tokens=max_tokens,
+            system=system_prompt,
+            messages=[{"role": "user", "content": user_content}],
+        ) as stream:
+            for chunk in stream.text_stream:
+                texts.append(chunk)
+    except anthropic.AuthenticationError as e:
+        print(
+            "Anthropic API rejected the key (401). "
+            "Confirm ANTHROPIC_API_KEY in .env (repo or parent folder), "
+            "or remove a stale key from Windows user environment variables.",
+            file=sys.stderr,
+        )
+        raise e
     if not texts:
         raise RuntimeError("No text content in API response")
     return "".join(texts)
@@ -225,6 +250,8 @@ def main() -> None:
         help="POH section type",
     )
     args = parser.parse_args()
+
+    load_dotenv_files()
 
     root = repo_root()
     pdf_rel = Path(args.pdf)

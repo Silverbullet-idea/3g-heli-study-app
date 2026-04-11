@@ -1,9 +1,5 @@
-# Requires ANTHROPIC_API_KEY (set in this shell or your user environment).
+# API key: optional here if ANTHROPIC_API_KEY is in .env (repo\.env or parent folder .env).
 # Example: $env:ANTHROPIC_API_KEY = "<your-key>"
-if (-not $env:ANTHROPIC_API_KEY) {
-    Write-Error "ANTHROPIC_API_KEY is not set. Set it before running this script."
-    exit 1
-}
 
 # PDF paths match files in raw-pdfs/robinson/ (AGENTS.md naming).
 .\.venv\Scripts\python.exe scripts\extract_poh.py `
