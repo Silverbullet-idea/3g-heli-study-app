@@ -153,19 +153,199 @@ Return ONLY valid JSON — no explanation, no markdown, no preamble.
 }
 """
 
+SYSTEM_PROMPT_R44_LIMITATIONS = """You are extracting helicopter performance and limitation data
+from a Robinson R44 Pilot's Operating Handbook, Section 2
+(Limitations).
+
+Return ONLY valid JSON — no explanation, no markdown, no preamble.
+
+For every numeric value include:
+  "value": <number>,
+  "unit": "<string>",
+  "notes": "<any conditions or qualifiers from the POH>",
+  "confidence": "<extracted|inferred|verify>"
+
+Use "extracted" when clearly stated in plain text.
+Use "inferred" when found in a table caption or figure.
+Use "verify" when you cannot read the value confidently.
+
+{
+  "airspeed_limits": {
+    "vne_powered": {"value":null,"unit":"KIAS","notes":"","confidence":""},
+    "vne_autorotation": {"value":null,"unit":"KIAS","notes":"","confidence":""},
+    "max_sideward": {"value":null,"unit":"KIAS","notes":"","confidence":""},
+    "max_rearward": {"value":null,"unit":"KIAS","notes":"","confidence":""}
+  },
+  "rotor_speed_limits": {
+    "power_on_max": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""},
+    "power_on_min": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""},
+    "power_off_max": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""},
+    "power_off_min": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""}
+  },
+  "weight_limits": {
+    "max_gross": {"value":null,"unit":"lbs","kg":null,"notes":"","confidence":""},
+    "min_gross": {"value":null,"unit":"lbs","kg":null,"notes":"","confidence":""},
+    "max_per_seat": {"value":null,"unit":"lbs","kg":null,"notes":"","confidence":""},
+    "max_baggage": {"value":null,"unit":"lbs","kg":null,"notes":"","confidence":""}
+  },
+  "altitude_limits": {
+    "max_operating_density_altitude": {"value":null,"unit":"ft DA","notes":"","confidence":""}
+  },
+  "engine": {
+    "approved_models": [],
+    "speed_max_continuous": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""},
+    "speed_max_transient": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""},
+    "cht_max": {"value":null,"unit":"°F","celsius":null,"notes":"","confidence":""},
+    "oil_temp_max": {"value":null,"unit":"°F","celsius":null,"notes":"","confidence":""},
+    "oil_pressure_min_idle": {"value":null,"unit":"PSI","notes":"","confidence":""},
+    "oil_pressure_min_flight": {"value":null,"unit":"PSI","notes":"","confidence":""},
+    "oil_pressure_max_flight": {"value":null,"unit":"PSI","notes":"","confidence":""},
+    "oil_quantity_min_takeoff": {"value":null,"unit":"qt","liters":null,"notes":"","confidence":""}
+  },
+  "fuel": {
+    "approved_grades": [],
+    "capacity": {
+      "total": {"value":null,"unit":"gal US","liters":null},
+      "usable": {"value":null,"unit":"gal US","liters":null},
+      "confidence": ""
+    }
+  },
+  "required_equipment_for_dispatch": [],
+  "flight_restrictions": [
+    {"item":"","status":"PROHIBITED|REQUIRED|PERMITTED","notes":"","confidence":""}
+  ]
+}
+"""
+
+SYSTEM_PROMPT_R44_EMERGENCY = """You are extracting emergency procedure checklists from a Robinson
+R44 Pilot's Operating Handbook, Section 3 (Emergency Procedures).
+
+Return ONLY valid JSON — no explanation, no markdown, no preamble.
+
+Preserve EXACT step sequence from the POH. Verbatim accuracy is
+critical for flight training use.
+
+For confidence:
+  "extracted" = complete procedure clearly readable
+  "inferred" = found but some steps unclear from formatting
+  "verify" = incomplete or unreadable — needs human review
+
+{
+  "procedures": [
+    {
+      "id": "<snake_case>",
+      "title": "<exact POH title>",
+      "conditions": "<entry conditions or empty string>",
+      "steps": ["<step 1 verbatim>", "<step 2 verbatim>"],
+      "warnings": ["<WARNING or CAUTION notes>"],
+      "confidence": "<extracted|inferred|verify>"
+    }
+  ]
+}
+"""
+
+SYSTEM_PROMPT_R44_SYSTEMS = """You are extracting aircraft systems descriptions from a Robinson
+R44 Pilot's Operating Handbook, Section 7 (Aircraft and Systems
+Description).
+
+Return ONLY valid JSON — no explanation, no markdown, no preamble.
+
+{
+  "systems": {
+    "<system_name_snake_case>": {
+      "title": "<exact POH section title>",
+      "description": "<concise summary>",
+      "key_points": ["<fact 1>", "<fact 2>"],
+      "components": ["<component 1>", "<component 2>"],
+      "specifications": [
+        {"item":"","value":null,"unit":"","notes":""}
+      ],
+      "confidence": "<extracted|inferred|verify>"
+    }
+  }
+}
+"""
+
+SYSTEM_PROMPT_FAA_HANDBOOK = """You are extracting structured knowledge from an FAA helicopter
+training handbook. This content will be used to create study
+sheets for student helicopter pilots preparing for FAA knowledge
+exams and checkrides.
+
+Return ONLY valid JSON — no explanation, no markdown, no preamble.
+
+Extract content organized by chapter or major topic section.
+For each topic include a concise summary, key terms, important
+values with units, mnemonics, and key points.
+
+For confidence flags:
+  "extracted" = clearly stated in plain text
+  "inferred" = implied or requires interpretation
+  "verify" = unclear or incomplete
+
+{
+  "handbook_title": "",
+  "topics": [
+    {
+      "id": "<snake_case>",
+      "title": "<chapter or section title>",
+      "summary": "<2-3 sentence overview>",
+      "key_terms": [
+        {"term": "", "definition": ""}
+      ],
+      "key_values": [
+        {"item":"","value":null,"unit":"","notes":"","confidence":""}
+      ],
+      "mnemonics": [
+        {"mnemonic":"","meaning":"","notes":""}
+      ],
+      "key_points": ["",""],
+      "confidence": "<extracted|inferred|verify>"
+    }
+  ]
+}
+"""
+
+SYSTEM_PROMPT_FAA_ACS = """You are extracting structured data from an FAA Airman
+Certification Standards (ACS) document for helicopter pilots.
+This content will be used to create checkride preparation
+study sheets.
+
+Return ONLY valid JSON — no explanation, no markdown, no preamble.
+
+Extract every Task in every Area of Operation. Capture knowledge,
+risk management, and skills standards verbatim — these are the
+exact standards an examiner will use on a checkride.
+
+{
+  "certificate_level": "",
+  "areas_of_operation": [
+    {
+      "id": "<snake_case>",
+      "title": "<exact ACS title>",
+      "tasks": [
+        {
+          "id": "<snake_case>",
+          "title": "<exact task title>",
+          "knowledge": ["<item 1>", "<item 2>"],
+          "risk_management": ["<item 1>", "<item 2>"],
+          "skills": ["<item 1>", "<item 2>"],
+          "confidence": "<extracted|inferred|verify>"
+        }
+      ]
+    }
+  ]
+}
+"""
+
 SECTION_CONFIG: dict[str, dict[str, str]] = {
-    "limitations": {
-        "system_prompt": SYSTEM_PROMPT_LIMITATIONS,
-        "out_suffix": "limitations",
-    },
-    "emergency_procedures": {
-        "system_prompt": SYSTEM_PROMPT_EMERGENCY,
-        "out_suffix": "emergency_procedures",
-    },
-    "systems": {
-        "system_prompt": SYSTEM_PROMPT_SYSTEMS,
-        "out_suffix": "systems",
-    },
+    "limitations": {"system_prompt": SYSTEM_PROMPT_LIMITATIONS},
+    "emergency_procedures": {"system_prompt": SYSTEM_PROMPT_EMERGENCY},
+    "systems": {"system_prompt": SYSTEM_PROMPT_SYSTEMS},
+    "r44_limitations": {"system_prompt": SYSTEM_PROMPT_R44_LIMITATIONS},
+    "r44_emergency_procedures": {"system_prompt": SYSTEM_PROMPT_R44_EMERGENCY},
+    "r44_systems": {"system_prompt": SYSTEM_PROMPT_R44_SYSTEMS},
+    "faa_handbook": {"system_prompt": SYSTEM_PROMPT_FAA_HANDBOOK},
+    "faa_acs": {"system_prompt": SYSTEM_PROMPT_FAA_ACS},
 }
 
 
@@ -201,10 +381,20 @@ def main() -> None:
     parser.add_argument(
         "--section",
         required=True,
-        choices=["limitations", "emergency_procedures", "systems"],
+        choices=[
+            "limitations",
+            "emergency_procedures",
+            "systems",
+            "r44_limitations",
+            "r44_emergency_procedures",
+            "r44_systems",
+            "faa_handbook",
+            "faa_acs",
+        ],
         help="POH section to extract",
     )
     args = parser.parse_args()
+    section = args.section
 
     api_key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
     if not api_key:
@@ -216,7 +406,7 @@ def main() -> None:
         print(f"Error: PDF not found: {pdf_path}", file=sys.stderr)
         raise SystemExit(1)
 
-    cfg = SECTION_CONFIG[args.section]
+    cfg = SECTION_CONFIG[section]
     system_prompt = cfg["system_prompt"]
 
     parts: list[str] = []
@@ -254,20 +444,43 @@ def main() -> None:
         raise SystemExit(1) from e
 
     source_filename = pdf_path.name
-    today = date.today().isoformat()
 
-    metadata = {
-        "aircraft": "R22",
-        "poh_source": args.section,
-        "source_file": source_filename,
-        "extracted_date": today,
-        "extraction_script_version": EXTRACTION_SCRIPT_VERSION,
-    }
+    metadata: dict[str, Any] = {}
+    if section in ("limitations", "emergency_procedures", "systems"):
+        metadata["aircraft"] = "R22"
+    elif section in (
+        "r44_limitations",
+        "r44_emergency_procedures",
+        "r44_systems",
+    ):
+        metadata["aircraft"] = "R44"
+    else:
+        metadata["aircraft"] = None
+
+    metadata["poh_source"] = section
+    metadata["source_file"] = Path(args.pdf).name
+    metadata["extracted_date"] = date.today().isoformat()
+    metadata["extraction_script_version"] = EXTRACTION_SCRIPT_VERSION
     merged: dict[str, Any] = {**metadata, **parsed}
 
-    out_dir = REPO_ROOT / "extracted-data" / "aircraft"
+    if section in ("limitations", "emergency_procedures", "systems"):
+        out_dir = REPO_ROOT / "extracted-data" / "aircraft"
+        out_filename = f"r22_{section}.json"
+    elif section in (
+        "r44_limitations",
+        "r44_emergency_procedures",
+        "r44_systems",
+    ):
+        out_dir = REPO_ROOT / "extracted-data" / "aircraft"
+        section_short = section.replace("r44_", "")
+        out_filename = f"r44_{section_short}.json"
+    elif section in ("faa_handbook", "faa_acs"):
+        out_dir = REPO_ROOT / "extracted-data" / "faa"
+        pdf_stem = Path(args.pdf).stem
+        out_filename = f"{pdf_stem}.json"
+
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / f"r22_{cfg['out_suffix']}.json"
+    out_path = out_dir / out_filename
 
     out_path.write_text(
         json.dumps(merged, indent=2, ensure_ascii=False) + "\n",
