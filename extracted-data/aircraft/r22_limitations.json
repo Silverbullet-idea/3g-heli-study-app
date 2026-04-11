@@ -1,0 +1,331 @@
+{
+  "aircraft": "R22",
+  "poh_source": "limitations",
+  "source_file": "r22_poh_2_a730a7b2f8.pdf",
+  "extracted_date": "2026-04-11",
+  "extraction_script_version": "1.0.0",
+  "airspeed_limits": {
+    "vne_powered_to_3000ft": {
+      "value": 102,
+      "unit": "KIAS",
+      "notes": "Up to 3000 feet density altitude",
+      "confidence": "extracted"
+    },
+    "vne_above_3000ft": {
+      "value": null,
+      "unit": "KIAS",
+      "notes": "See placards on page 2-11",
+      "confidence": "verify"
+    },
+    "airspeed_indicator_green_arc_min": {
+      "value": 50,
+      "unit": "KIAS",
+      "notes": "Green arc 50 to 102 KIAS",
+      "confidence": "extracted"
+    },
+    "airspeed_indicator_red_line": {
+      "value": 102,
+      "unit": "KIAS",
+      "notes": "",
+      "confidence": "extracted"
+    }
+  },
+  "rotor_speed_limits": {
+    "power_on_max": {
+      "value": 104,
+      "unit": "%",
+      "rpm": 530,
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "power_on_min": {
+      "value": 101,
+      "unit": "%",
+      "rpm": 515,
+      "notes": "Transient operation at lower RPM permitted for emergency procedures training",
+      "confidence": "extracted"
+    },
+    "power_on_min_o320_variant": {
+      "value": 97,
+      "unit": "%",
+      "rpm": 495,
+      "notes": "97% (495 RPM) permitted on R22s with O-320 engine and tachometer with 97% to 104% green arc installed",
+      "confidence": "extracted"
+    },
+    "power_off_max": {
+      "value": 110,
+      "unit": "%",
+      "rpm": 561,
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "power_off_min": {
+      "value": 90,
+      "unit": "%",
+      "rpm": 459,
+      "notes": "",
+      "confidence": "extracted"
+    }
+  },
+  "weight_limits": {
+    "max_gross_standard_hp": {
+      "value": 1300,
+      "unit": "lbs",
+      "kg": 590,
+      "notes": "Standard & HP",
+      "confidence": "extracted"
+    },
+    "max_gross_alpha_beta_beta_ii": {
+      "value": 1370,
+      "unit": "lbs",
+      "kg": 622,
+      "notes": "Alpha, Beta, and Beta II",
+      "confidence": "extracted"
+    },
+    "min_gross": {
+      "value": 920,
+      "unit": "lbs",
+      "kg": 417,
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "max_per_seat_including_baggage": {
+      "value": 240,
+      "unit": "lbs",
+      "kg": 109,
+      "notes": "Including baggage compartment",
+      "confidence": "extracted"
+    },
+    "max_per_baggage_compartment": {
+      "value": 50,
+      "unit": "lbs",
+      "kg": 23,
+      "notes": "Either baggage compartment",
+      "confidence": "extracted"
+    },
+    "min_solo_pilot_weight": {
+      "value": 130,
+      "unit": "lbs",
+      "notes": "135 LB WITH FULL AUX FUEL",
+      "confidence": "extracted"
+    }
+  },
+  "altitude_limits": {
+    "max_operating_density_altitude": {
+      "value": 14000,
+      "unit": "ft DA",
+      "notes": "",
+      "confidence": "extracted"
+    }
+  },
+  "engine": {
+    "approved_models": [
+      "O-320-A2B",
+      "O-320-A2C",
+      "O-320-B2C",
+      "O-360-J2A"
+    ],
+    "speed_max_continuous": {
+      "value": 104,
+      "unit": "%",
+      "rpm": 2652,
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "speed_max_transient": {
+      "value": 106,
+      "unit": "%",
+      "rpm": 2700,
+      "notes": "Intentional operation above maximum continuous speed prohibited",
+      "confidence": "extracted"
+    },
+    "cht_max": {
+      "value": 500,
+      "unit": "°F",
+      "celsius": 260,
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "oil_temp_max": {
+      "value": 245,
+      "unit": "°F",
+      "celsius": 118,
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "oil_pressure_min_idle": {
+      "value": 25,
+      "unit": "PSI",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "oil_pressure_min_flight": {
+      "value": 55,
+      "unit": "PSI",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "oil_pressure_max_flight": {
+      "value": 95,
+      "unit": "PSI",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "oil_pressure_max_start_warmup": {
+      "value": 115,
+      "unit": "PSI",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "oil_quantity_min_takeoff": {
+      "value": 4,
+      "unit": "qt",
+      "liters": 3.8,
+      "notes": "",
+      "confidence": "extracted"
+    },
+    "carb_air_temp_caution_range_min": {
+      "value": -15,
+      "unit": "°C",
+      "notes": "Yellow arc -15 to 5°C",
+      "confidence": "extracted"
+    },
+    "carb_air_temp_caution_range_max": {
+      "value": 5,
+      "unit": "°C",
+      "notes": "Yellow arc -15 to 5°C",
+      "confidence": "extracted"
+    }
+  },
+  "fuel": {
+    "approved_grades": [
+      "100",
+      "100LL",
+      "100VLL",
+      "UL 91",
+      "UL 94",
+      "HJELMCO 91/96 UL",
+      "TU 38.5901481-96 91",
+      "B91/115",
+      "B95/130"
+    ],
+    "capacity_bladder_tanks": {
+      "main_total": {
+        "value": 18.3,
+        "unit": "gal US",
+        "liters": 69
+      },
+      "main_usable": {
+        "value": 16.9,
+        "unit": "gal US",
+        "liters": 64
+      },
+      "aux_total": {
+        "value": 9.7,
+        "unit": "gal US",
+        "liters": 37
+      },
+      "aux_usable": {
+        "value": 9.4,
+        "unit": "gal US",
+        "liters": 36
+      },
+      "combined_total": {
+        "value": 28.0,
+        "unit": "gal US",
+        "liters": 106
+      },
+      "combined_usable": {
+        "value": 26.3,
+        "unit": "gal US",
+        "liters": 100
+      },
+      "confidence": "extracted"
+    }
+  },
+  "required_equipment_for_dispatch": [
+    "Alternator",
+    "RPM governor",
+    "Low rotor RPM warning system",
+    "OAT gage"
+  ],
+  "flight_restrictions": [
+    {
+      "item": "Aerobatic flight",
+      "status": "PROHIBITED",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Low-G cyclic pushovers",
+      "status": "PROHIBITED",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Flight in known icing conditions",
+      "status": "PROHIBITED",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Flight with governor selected off",
+      "status": "PROHIBITED",
+      "notes": "With exceptions for in-flight system malfunction or emergency procedures training",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Minimum crew",
+      "status": "REQUIRED",
+      "notes": "One pilot in the right seat",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Solo flight",
+      "status": "REQUIRED",
+      "notes": "From right seat only",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Left seat belt",
+      "status": "REQUIRED",
+      "notes": "Must be buckled",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Operation with doors removed",
+      "status": "PERMITTED",
+      "notes": "Either or both cabin doors. Loose items in cabin must be properly secured",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Functioning headset",
+      "status": "REQUIRED",
+      "notes": "Must be worn by each pilot",
+      "confidence": "extracted"
+    }
+  ],
+  "faa_ad_95_26_04": {
+    "note": "The following limitations (1-3) are to be observed unless the pilot manipulating the controls has logged 200 or more flight hours in helicopters, at least 50 of which must be in the RHC Model R22 helicopter, and has completed the awareness training specified in Special Federal Aviation Regulation (SFAR) No. 73",
+    "limitations": [
+      {
+        "item": "Flight when surface winds exceed 25 knots, including gusts",
+        "status": "PROHIBITED",
+        "notes": "",
+        "confidence": "extracted"
+      },
+      {
+        "item": "Flight when surface wind gust spreads exceed 15 knots",
+        "status": "PROHIBITED",
+        "notes": "",
+        "confidence": "extracted"
+      },
+      {
+        "item": "Continued flight in moderate, severe, or extreme turbulence",
+        "status": "PROHIBITED",
+        "notes": "Adjust forward airspeed to between 60 knots indicated airspeed (KIAS) and 0.7 Vne but no lower than 57 KIAS, upon inadvertently encountering moderate, severe, or extreme turbulence",
+        "confidence": "extracted"
+      }
+    ]
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "aircraft": "R22",
+  "poh_source": "emergency_procedures",
+  "source_file": "r22_poh_3_4bcbbbfc58.pdf",
+  "extracted_date": "2026-04-11",
+  "extraction_script_version": "1.0.0",
+  "procedures": [
+    {
+      "id": "power_failure_above_500_feet_agl",
+      "title": "POWER FAILURE ABOVE 500 FEET AGL",
+      "conditions": "",
+      "steps": [
+        "Lower collective immediately to maintain rotor RPM.",
+        "Establish a steady glide at approximately 65 KIAS. (For maximum glide distance, see page 3-3.)",
+        "Adjust collective to keep RPM between 97 and 110% or apply full down collective if light weight prevents attaining above 97%.",
+        "Select landing spot and, if altitude permits, maneuver so landing will be into wind.",
+        "A restart may be attempted at pilot's discretion if sufficient time is available (See \"Air Restart Procedure\", page 3-3).",
+        "If unable to restart, turn unnecessary switches and fuel valve off.",
+        "At about 40 feet AGL, begin cyclic flare to reduce rate of descent and forward speed.",
+        "At about 8 feet AGL, apply forward cyclic to level ship and raise collective just before touchdown to cushion landing. Touch down in level attitude with nose straight ahead."
+      ],
+      "warnings": [
+        "Aft cyclic is required when collective is lowered at high airspeed.",
+        "Do not apply aft cyclic during touchdown or ground slide to prevent possible blade strike to tailcone."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "power_failure_between_8_feet_and_500_feet_agl",
+      "title": "POWER FAILURE BETWEEN 8 FEET AND 500 FEET AGL",
+      "conditions": "",
+      "steps": [
+        "Lower collective immediately to maintain rotor RPM.",
+        "Adjust collective to keep RPM between 97 and 110% or apply full down collective if light weight prevents attaining above 97%.",
+        "Maintain airspeed until ground is approached, then begin cyclic flare to reduce rate of descent and forward speed.",
+        "At about 8 feet AGL, apply forward cyclic to level ship and raise collective just before touchdown to cushion landing. Touch down in level attitude and nose straight ahead."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "power_failure_below_8_feet_agl",
+      "title": "POWER FAILURE BELOW 8 FEET AGL",
+      "conditions": "",
+      "steps": [
+        "Apply right pedal as required to prevent yawing.",
+        "Allow aircraft to settle.",
+        "Raise collective just before touchdown to cushion landing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "air_restart_procedure",
+      "title": "AIR RESTART PROCEDURE",
+      "conditions": "",
+      "steps": [
+        "Mixture - full rich.",
+        "Primer (if installed) - down and locked.",
+        "Throttle - closed, then cracked slightly.",
+        "Actuate starter with left hand."
+      ],
+      "warnings": [
+        "Do not attempt restart if engine malfunction is suspected or before safe autorotation is established."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "emergency_water_landing_power_off",
+      "title": "EMERGENCY WATER LANDING – POWER OFF",
+      "conditions": "",
+      "steps": [
+        "Follow same procedures as for power failure over land until contacting water. If time permits, unlatch doors prior to water contact.",
+        "Apply lateral cyclic when aircraft contacts water to stop rotors.",
+        "Release seat belt and quickly clear aircraft when rotors stop."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "emergency_water_landing_power_on",
+      "title": "EMERGENCY WATER LANDING – POWER ON",
+      "conditions": "",
+      "steps": [
+        "Descend to hover above water.",
+        "Unlatch doors.",
+        "Passenger exit aircraft.",
+        "Fly to safe distance from passenger to avoid possible injury by rotors.",
+        "Switch battery and alternator OFF.",
+        "Roll throttle off into overtravel spring.",
+        "Keep aircraft level and apply full collective as aircraft contacts water.",
+        "Apply lateral cyclic to stop rotors.",
+        "Release seat belt and quickly clear aircraft when rotors stop."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "loss_of_tail_rotor_thrust_in_forward_flight",
+      "title": "LOSS OF TAIL ROTOR THRUST IN FORWARD FLIGHT",
+      "conditions": "Failure is usually indicated by nose right yaw which cannot be corrected by applying left pedal.",
+      "steps": [
+        "Immediately enter autorotation.",
+        "Maintain at least 70 KIAS if practical.",
+        "Select landing site, roll throttle off into overtravel spring, and perform autorotation landing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "loss_of_tail_rotor_thrust_in_hover",
+      "title": "LOSS OF TAIL ROTOR THRUST IN HOVER",
+      "conditions": "Failure is usually indicated by nose right yaw which cannot be stopped by applying left pedal.",
+      "steps": [
+        "Immediately roll throttle off into overtravel spring and allow aircraft to settle.",
+        "Raise collective just before touchdown to cushion landing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "headset_audio_failure",
+      "title": "HEADSET AUDIO FAILURE",
+      "conditions": "If headset audio fails, land as soon as practical.",
+      "steps": [],
+      "warnings": [
+        "For aircraft which provide low RPM horn through the audio system, pilot will not hear horn with a failed headset."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fire_during_start_on_ground",
+      "title": "ENGINE FIRE DURING START ON GROUND",
+      "conditions": "",
+      "steps": [
+        "Cranking – Continue and attempt to start which would suck flames and excess fuel into engine.",
+        "If engine starts, run at 50-60% RPM for a short time.",
+        "Fuel mixture – OFF.",
+        "Fuel valve – OFF.",
+        "Battery switch – OFF.",
+        "If time permits, apply rotor brake to stop rotors.",
+        "Exit helicopter."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fire_in_flight",
+      "title": "ENGINE FIRE IN FLIGHT",
+      "conditions": "",
+      "steps": [
+        "Enter autorotation.",
+        "Cabin heat – OFF (if installed and time permits).",
+        "Cabin vent – ON (if time permits).",
+        "If engine is running, perform normal landing, then fuel mixture OFF and fuel valve OFF. If engine stops running, fuel valve OFF and complete autorotation landing.",
+        "Battery switch – OFF.",
+        "If time permits, apply rotor brake to stop rotors.",
+        "Exit helicopter."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "electrical_fire_in_flight",
+      "title": "ELECTRICAL FIRE IN FLIGHT",
+      "conditions": "",
+      "steps": [
+        "Battery and alternator switches – OFF.",
+        "Open cabin vents.",
+        "Land immediately.",
+        "Fuel mixture OFF and fuel valve OFF.",
+        "If time permits, apply rotor brake to stop rotors.",
+        "Exit helicopter."
+      ],
+      "warnings": [
+        "Low RPM warning system and governor are inoperative with battery and alternator switches both off."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "tachometer_failure",
+      "title": "TACHOMETER FAILURE",
+      "conditions": "If rotor or engine tach malfunctions in flight, use remaining tach to monitor RPM. If it is not clear which tach is malfunctioning or if both tachs malfunction, allow governor to control RPM and land as soon as practical.",
+      "steps": [],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "governor_failure",
+      "title": "GOVERNOR FAILURE",
+      "conditions": "If engine RPM governor malfunctions, grip throttle firmly to override the governor, then switch governor off. Complete flight using manual throttle control.",
+      "steps": [],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "right_roll_in_low_g_condition",
+      "title": "RIGHT ROLL IN LOW \"G\" CONDITION",
+      "conditions": "",
+      "steps": [
+        "Gradually apply aft cyclic to restore positive \"G\" forces and main rotor thrust. Do not apply lateral cyclic until positive \"G\" forces have been established."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "uncommanded_pitch_roll_or_yaw",
+      "title": "UNCOMMANDED PITCH, ROLL. OR YAW RESULTING FROM FLIGHT IN TURBULENCE.",
+      "conditions": "",
+      "steps": [
+        "Gradually apply controls to maintain rotor RPM, positive \"G\" forces, and to eliminate sideslip. Minimize cyclic control inputs in turbulence; do not overcontrol."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "inadvertent_encounter_with_turbulence",
+      "title": "INADVERTENT ENCOUNTER WITH MODERATE, SEVERE, OR EXTREME TURBULENCE.",
+      "conditions": "",
+      "steps": [
+        "If the area of turbulence is isolated, depart the area; otherwise, land the helicopter as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    }
+  ]
+}

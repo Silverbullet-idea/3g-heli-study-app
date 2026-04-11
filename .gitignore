@@ -1,0 +1,3 @@
+raw-pdfs/robinson/*.pdf
+extracted-data/raw-text/*.txt
+.env

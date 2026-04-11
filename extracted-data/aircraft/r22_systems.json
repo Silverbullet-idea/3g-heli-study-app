@@ -1,0 +1,480 @@
+{
+  "metadata": {
+    "aircraft": "R22",
+    "poh_source": "systems",
+    "source_file": "r22_poh_section7_systems.pdf",
+    "extracted_date": "2026-04-11",
+    "extraction_script_version": "1.0.0"
+  },
+  "systems": {
+    "Rotor Systems": {
+      "description": "Main rotor has two all-metal blades with coning and teeter hinges using self-lubricated bearings. Tail rotor has two all-metal blades with teetering hub and fixed coning angle.",
+      "key_points": [
+        "Main rotor pitch change bearings are oil-filled and sealed with elastomeric boots",
+        "Droop stops provide teeter hinge friction restraint during start/stop",
+        "Blades have stainless steel spars resistant to corrosion and erosion",
+        "Bond line damage possible if exposed at skin-to-spar junction"
+      ],
+      "components": [
+        "Main rotor blades",
+        "Main rotor hub",
+        "Coning hinges",
+        "Teeter hinges",
+        "Pitch change bearings",
+        "Droop stops",
+        "Tail rotor blades",
+        "Tail rotor hub"
+      ],
+      "confidence": "extracted"
+    },
+    "Drive System": {
+      "description": "Vee-belts transmit power from engine to upper sheave containing overrunning clutch, which drives main and tail rotors through flexible couplings and gearboxes.",
+      "key_points": [
+        "Main gearbox contains single-stage spiral-bevel gear set with splash lubrication",
+        "Tail rotor drive shaft has no support bearings but includes damper bearing",
+        "Overrunning clutch allows rotor to freewheel during autorotation"
+      ],
+      "components": [
+        "Vee-belt sheave",
+        "Vee-belts",
+        "Upper sheave",
+        "Overrunning clutch",
+        "Flexible couplings",
+        "Main gearbox",
+        "Tail rotor drive shaft",
+        "Tail gearbox"
+      ],
+      "confidence": "extracted"
+    },
+    "Powerplant": {
+      "description": "Lycoming four-cylinder, horizontally-opposed, air-cooled carbureted engine with direct-drive cooling fan and standard accessories.",
+      "key_points": [
+        "Engine includes wet sump oil system",
+        "Equipped with two magnetos and shielded ignition",
+        "Squirrel-cage fan provides cylinder and oil cooler cooling",
+        "Induction air can be selected from cool or heated sources"
+      ],
+      "components": [
+        "Engine",
+        "Starter",
+        "Alternator",
+        "Magnetos",
+        "Muffler",
+        "Oil cooler",
+        "Induction air filter",
+        "Squirrel-cage fan",
+        "Carburetor air box"
+      ],
+      "confidence": "extracted"
+    },
+    "Flight Controls": {
+      "description": "Dual controls using push-pull tubes and bellcranks, with center-mounted cyclic, conventional collective with correlated throttle, and direct pedal linkage to tail rotor.",
+      "key_points": [
+        "Collective raises throttle when raised, closes when lowered",
+        "Throttle correlation and governor less effective above 4000 feet",
+        "Cyclic grip angle adjustable for pilot comfort",
+        "All bearings are sealed ball bearings or self-lubricated"
+      ],
+      "components": [
+        "Cyclic stick",
+        "Collective stick",
+        "Tail rotor pedals",
+        "Push-pull tubes",
+        "Bellcranks",
+        "Twist grip throttle"
+      ],
+      "confidence": "extracted"
+    },
+    "Removable Flight Controls": {
+      "description": "Left seat pilot controls can be removed for passenger operations, including cyclic grip, collective stick, and tail rotor pedals.",
+      "key_points": [
+        "Quick-release pin secures removable cyclic grip",
+        "Collective uses locking pins that must be fully engaged",
+        "Pedals remove by depressing pin and twisting counterclockwise",
+        "Plastic cap must cover exposed cyclic tube when grip removed"
+      ],
+      "components": [
+        "Quick-release pin",
+        "Knurled ring",
+        "Locking pins",
+        "Plastic cap"
+      ],
+      "confidence": "extracted"
+    },
+    "RPM Governor": {
+      "description": "Electronic governor maintains engine RPM by sensing changes and applying corrective throttle inputs through overridable friction clutch.",
+      "key_points": [
+        "Active only above 80% engine RPM",
+        "Toggle switch on right collective controls on/off",
+        "May not prevent over/under-speed from aggressive maneuvers",
+        "Response rate may be too slow at high density altitudes"
+      ],
+      "components": [
+        "Governor unit",
+        "Friction clutch",
+        "Toggle switch"
+      ],
+      "confidence": "extracted"
+    },
+    "Control Trim and Friction": {
+      "description": "Balancing trim springs in cyclic and collective controls reduce pilot workload, with adjustable friction devices for both controls.",
+      "key_points": [
+        "Collective-up spring balances rotor loads",
+        "Fixed longitudinal bungee cancels cruise stick forces",
+        "Lateral trim spring actuated by push-pull knob",
+        "Excessive friction can make helicopter difficult to control"
+      ],
+      "components": [
+        "Trim springs",
+        "Bungee spring",
+        "Friction lever",
+        "Friction knob",
+        "Lateral trim knob"
+      ],
+      "confidence": "extracted"
+    },
+    "Engine Controls": {
+      "description": "Twist-grip throttles on each collective are interconnected and correlated with collective movement, with overtravel spring for autorotation landings.",
+      "key_points": [
+        "Collective raises throttle when raised via correlation linkage",
+        "Governor makes minor throttle adjustments automatically",
+        "Overtravel spring allows throttle roll-off beyond idle stop",
+        "Manual throttle needed for start, shutdown, and emergencies"
+      ],
+      "components": [
+        "Twist-grip throttle",
+        "Throttle linkage",
+        "Overtravel spring",
+        "Mixture control",
+        "Carburetor heat control"
+      ],
+      "confidence": "extracted"
+    },
+    "Clutch Actuator": {
+      "description": "Electric actuator tensions vee-belts by raising upper drive sheave when clutch switch engaged, with automatic tension sensing and caution light indication.",
+      "key_points": [
+        "Blades should begin turning within 5 seconds of engagement",
+        "Clutch light on when actuator energized or belts not properly tensioned",
+        "Fuse prevents motor overload from tripping circuit breaker",
+        "Never take off with clutch caution light on"
+      ],
+      "components": [
+        "Electric actuator",
+        "Clutch switch",
+        "Clutch caution light",
+        "Actuator fuse"
+      ],
+      "confidence": "extracted"
+    },
+    "Fuel System": {
+      "description": "Gravity-flow system with main tank, optional auxiliary tank, shutoff valve, and gascolator, with flexible bladders in aluminum enclosures on later aircraft.",
+      "key_points": [
+        "No fuel pumps - completely gravity fed",
+        "Auxiliary tank empties first due to higher position",
+        "Low fuel light actuated by separate sender in main tank",
+        "Fuel should be sampled from all drains before first flight"
+      ],
+      "components": [
+        "Main tank",
+        "Auxiliary tank",
+        "Shutoff valve",
+        "Gascolator",
+        "Drain valves",
+        "Fuel gauges",
+        "Low fuel sender"
+      ],
+      "confidence": "extracted"
+    },
+    "Electrical System": {
+      "description": "14-volt DC system with alternator, sealed lead-acid battery, circuit breakers, and battery relay for system protection.",
+      "key_points": [
+        "Battery located in engine compartment or under console",
+        "Tachometers and clock receive power with battery switch off",
+        "ALT light indicates low voltage/alternator failure",
+        "Do not operate alternator with battery off"
+      ],
+      "components": [
+        "Alternator",
+        "Battery",
+        "Circuit breakers",
+        "Battery relay",
+        "Alternator control unit",
+        "Ammeter",
+        "Avionics master switch"
+      ],
+      "confidence": "extracted"
+    },
+    "Lighting System": {
+      "description": "Anti-collision, position, instrument, map, and dual landing lights provide visibility and collision avoidance.",
+      "key_points": [
+        "Red anti-collision light on tailcone controlled by strobe switch",
+        "Landing lights only operate with clutch engaged",
+        "Two landing lights at different angles increase coverage",
+        "Continuous operation recommended for collision avoidance"
+      ],
+      "components": [
+        "Anti-collision light",
+        "Position lights",
+        "Landing lights",
+        "Map light",
+        "Instrument lights"
+      ],
+      "confidence": "extracted"
+    },
+    "Audio System": {
+      "description": "Voice-activated intercom/audio system with VOX squelch control, music input capability, and separate radio/intercom volume controls.",
+      "key_points": [
+        "VOX squelch sets activation threshold",
+        "Music input muted during intercom/radio activity",
+        "Trigger switches have two detents - intercom then transmit",
+        "Earlier systems have PTT/hot mic toggle switch"
+      ],
+      "components": [
+        "Intercom control panel",
+        "Headset jacks",
+        "Transmit buttons",
+        "Trigger switches",
+        "Music input jack"
+      ],
+      "confidence": "extracted"
+    },
+    "Pitot-Static System": {
+      "description": "Provides air pressure for airspeed indicator, altimeter, and vertical speed indicator with pitot tube on mast fairing and static source in aft cowling.",
+      "key_points": [
+        "Water can be drained via plugs under cabin",
+        "Sources should be inspected for bugs/obstructions",
+        "Draining only required if instruments appear erratic"
+      ],
+      "components": [
+        "Pitot tube",
+        "Static source",
+        "Drain plugs"
+      ],
+      "confidence": "extracted"
+    },
+    "Dual Tachometer": {
+      "description": "Electronic engine and rotor tachometer with separate circuits, receiving signals from magneto points and magnetic senders.",
+      "key_points": [
+        "Each tachometer has own circuit breaker",
+        "Tachometers powered with battery/alternator off if clutch engaged",
+        "Do not stow with clutch engaged to prevent battery discharge"
+      ],
+      "components": [
+        "Engine tachometer",
+        "Rotor tachometer",
+        "Magnetic senders",
+        "Circuit breakers"
+      ],
+      "confidence": "extracted"
+    },
+    "Warning and Caution Lights": {
+      "description": "Multiple warning/caution lights monitor critical systems including clutch, gearboxes, engine, fuel, and environmental conditions.",
+      "key_points": [
+        "Low RPM light/horn activate at 97% rotor RPM or below",
+        "Chip lights detect metallic particles indicating potential failure",
+        "Main gearbox temp light warns of overheating",
+        "Full throttle light indicates engine near maximum power"
+      ],
+      "components": [
+        "Clutch light",
+        "Chip detector lights",
+        "Low RPM light",
+        "ALT light",
+        "Low oil pressure light",
+        "Low fuel light",
+        "Carbon monoxide light",
+        "Full throttle light"
+      ],
+      "confidence": "extracted"
+    },
+    "Audio Alerts": {
+      "description": "Low-RPM horn and high-RPM warble tone provide audio warnings through speaker or headsets.",
+      "key_points": [
+        "Low-RPM horn sounds below 97% rotor RPM",
+        "Horn muted when collective fully down",
+        "High-RPM warble tone warns approaching 110% rotor RPM",
+        "Test button allows pre-flight testing of alerts"
+      ],
+      "components": [
+        "Low-RPM horn",
+        "Speaker",
+        "Tone generator",
+        "Test button"
+      ],
+      "confidence": "extracted"
+    },
+    "Engine Monitoring Unit": {
+      "description": "Digital recording device continuously monitors engine/rotor parameters and records exceedances for maintenance purposes.",
+      "key_points": [
+        "Monitors RPM, temperatures, pressures continuously",
+        "Amber light indicates status - steady is normal",
+        "Fast flashing indicates detected exceedance",
+        "Data downloadable but pilot must still report exceedances"
+      ],
+      "components": [
+        "EMU control box",
+        "Status light",
+        "Temperature senders",
+        "Pressure senders"
+      ],
+      "confidence": "extracted"
+    },
+    "Cabin Heating and Ventilation": {
+      "description": "Fresh air vents in doors and nose provide ventilation, with optional heater using muffler heat shroud.",
+      "key_points": [
+        "Door vents should be wide open in hover, 1 inch in cruise",
+        "Nose inlet air directed along windshield for defogging",
+        "Heater control must be pushed off in engine fire",
+        "Later aircraft use engine cooling air instead of electric blower"
+      ],
+      "components": [
+        "Door vents",
+        "Nose inlet",
+        "Heater shroud",
+        "Control valve",
+        "Heater outlet grille"
+      ],
+      "confidence": "extracted"
+    },
+    "Seats, Belts, and Baggage": {
+      "description": "Non-adjustable seats with removable back cushion, combined lap belt/shoulder harness, and under-seat baggage compartments.",
+      "key_points": [
+        "Back cushion positions shorter pilots forward",
+        "Inertia reel locks during sudden movement",
+        "Baggage compartments accessed by hinging seat cushions forward"
+      ],
+      "components": [
+        "Seats",
+        "Back cushion",
+        "Lap belt",
+        "Shoulder harness",
+        "Inertia reel",
+        "Baggage compartments"
+      ],
+      "confidence": "extracted"
+    },
+    "Landing Gear": {
+      "description": "Skid-type landing gear with energy-absorbing crosstube that yields in hard landings to protect occupants.",
+      "key_points": [
+        "Struts hinge up and outward as crosstube yields",
+        "Tail skid clearance indicates crosstube condition",
+        "Wear shoes must be replaced when less than 0.05 inches thick"
+      ],
+      "components": [
+        "Skids",
+        "Struts",
+        "Crosstube",
+        "Wear shoes",
+        "Tail skid"
+      ],
+      "confidence": "extracted"
+    },
+    "Rotor Brake": {
+      "description": "Cable-actuated brake mounted on main gearbox stops rotor after shutdown and serves as parking brake.",
+      "key_points": [
+        "Wait 30 seconds after mixture off before applying",
+        "Use moderate force (10 lb) to avoid damaging shoes",
+        "Starter disabled when brake engaged",
+        "Can be used as parking brake with bead chain"
+      ],
+      "components": [
+        "Brake assembly",
+        "Pull handle",
+        "Actuating cable",
+        "Bead chain"
+      ],
+      "confidence": "extracted"
+    },
+    "Engine Primer System": {
+      "description": "Manual primer pump improves cold engine starting by injecting fuel directly into intake system.",
+      "key_points": [
+        "Located near hourmeter in front of right seat",
+        "Normally requires 2-3 strokes for priming",
+        "Pull handle slowly to allow fuel to fill pump",
+        "Must be locked after priming"
+      ],
+      "components": [
+        "Primer pump",
+        "Pump handle"
+      ],
+      "confidence": "extracted"
+    },
+    "Carbon Monoxide Detector": {
+      "description": "Sensor above pilot's heater outlet detects elevated CO levels with caution light warning.",
+      "key_points": [
+        "System check performed at power-on",
+        "Continuing flash indicates sensor malfunction",
+        "If light illuminates, shut off heater and ventilate",
+        "Many chemicals can damage sensor"
+      ],
+      "components": [
+        "CO sensor",
+        "Caution light"
+      ],
+      "confidence": "extracted"
+    },
+    "ADS-B Equipment": {
+      "description": "Transponder transmits GPS position to ATC, with optional receive capability for traffic and weather information.",
+      "key_points": [
+        "ADS-B Out required in certain airspace",
+        "Factory equipment operates on 1090 MHz",
+        "ADS-B In requires suitable display like GPS or MFD",
+        "Should not be turned off unless directed by ATC"
+      ],
+      "components": [
+        "ADS-B transponder",
+        "GPS receiver",
+        "Display unit"
+      ],
+      "confidence": "extracted"
+    },
+    "Emergency Locator Transmitter": {
+      "description": "Automatic activation transmitter with remote cockpit switch transmits emergency signal when subjected to high G-load.",
+      "key_points": [
+        "Transmitter switch secured in AUTO/ARM position",
+        "Remote switch should be AUTO for flight",
+        "ON position for imminent emergency landing",
+        "RESET position stops inadvertent activation"
+      ],
+      "components": [
+        "ELT transmitter",
+        "Battery pack",
+        "External antenna",
+        "Remote switch/annunciator"
+      ],
+      "confidence": "extracted"
+    },
+    "Accessory Mounts": {
+      "description": "Mounting bars with clamp assemblies provide attachment points for portable devices with power outlets.",
+      "key_points": [
+        "10 lb weight limit per bar",
+        "USB and cigarette-lighter power outlets provided",
+        "Items must not interfere with controls or view",
+        "Pilot responsible for any attached items"
+      ],
+      "components": [
+        "Mounting bars",
+        "Clamp assemblies",
+        "Power outlets",
+        "Wire clamps"
+      ],
+      "confidence": "extracted"
+    },
+    "Cockpit Camera": {
+      "description": "Ceiling-mounted 4K video camera records video, audio, and GPS position to internal memory and removable flash drive.",
+      "key_points": [
+        "Recording starts automatically with battery on",
+        "Blue flashing light indicates recording to flash drive",
+        "128 GB drive records approximately 10 hours",
+        "Do not remove drive while recording"
+      ],
+      "components": [
+        "Video camera",
+        "Flash drive",
+        "Record switch",
+        "Audio switch"
+      ],
+      "confidence": "extracted"
+    }
+  }
+}
