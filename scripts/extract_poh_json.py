@@ -15,7 +15,7 @@ from typing import Any
 
 import anthropic
 import pdfplumber
-from anthropic import RateLimitError
+from anthropic import APIStatusError, RateLimitError
 from dotenv import load_dotenv
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -26,6 +26,16 @@ if not (os.environ.get("ANTHROPIC_API_KEY") or "").strip():
     load_dotenv(REPO_ROOT.parent / ".env", override=True)
 
 EXTRACTION_SCRIPT_VERSION = "1.0.0"
+
+MODEL_ID = "claude-opus-4-20250514"
+# ~200k input token ceiling; chunk larger handbooks.
+FAA_HANDBOOK_INPUT_CHAR_BUDGET = 280_000
+# ACS PDFs need many small chunks so each JSON response stays under max output tokens.
+FAA_ACS_INPUT_CHAR_BUDGET = 35_000
+# Opus allows at most 32_000 output tokens per request.
+FAA_MAX_OUTPUT_TOKENS = 32_000
+FAA_STREAM_MAX_RETRIES = 10
+FAA_STREAM_RETRY_BASE_S = 55.0
 
 SYSTEM_PROMPT_LIMITATIONS = """You are extracting helicopter performance and limitation data from a 
 Robinson R22 Pilot's Operating Handbook, Section 2 (Limitations).
@@ -360,12 +370,126 @@ def strip_markdown_json_fences(text: str) -> str:
     return t.strip()
 
 
-def max_tokens_for_section(section: str) -> int:
-    """Large FAA / R44 sections need higher output budget to avoid truncated JSON."""
-    if section in ("faa_handbook", "faa_acs", "r44_emergency_procedures", "r44_systems"):
-        return 16384
-    if section in ("r44_limitations",):
+def first_balanced_json_object(text: str) -> str:
+    """First top-level JSON object; respects quoted strings."""
+    start = text.find("{")
+    if start < 0:
+        return text.strip()
+    depth = 0
+    in_string = False
+    escape = False
+    quote = ""
+    i = start
+    while i < len(text):
+        c = text[i]
+        if in_string:
+            if escape:
+                escape = False
+            elif c == "\\":
+                escape = True
+            elif c == quote:
+                in_string = False
+            i += 1
+            continue
+        if c in "\"'":
+            in_string = True
+            quote = c
+            i += 1
+            continue
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start : i + 1]
+        i += 1
+    return text[start:].strip()
+
+
+def extract_json_blob(text: str) -> str:
+    """Strip markdown fences, preamble, or prose around a JSON object."""
+    t = text.strip()
+    fence = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", t, re.IGNORECASE)
+    if fence:
+        t = fence.group(1).strip()
+    t = strip_markdown_json_fences(t)
+    if not t.lstrip().startswith("{"):
+        j = t.find("{")
+        if j > 0:
+            t = t[j:]
+    return first_balanced_json_object(t)
+
+
+def pages_to_raw_text(page_rows: list[tuple[int, str]]) -> str:
+    parts: list[str] = []
+    for pnum, txt in page_rows:
+        parts.append(f"\n--- PAGE {pnum} ---\n")
+        parts.append(txt)
+    return "".join(parts)
+
+
+def chunk_pages_by_char_budget(
+    page_rows: list[tuple[int, str]],
+    max_chars: int,
+) -> list[list[tuple[int, str]]]:
+    chunks: list[list[tuple[int, str]]] = []
+    current: list[tuple[int, str]] = []
+    size = 0
+    for pnum, txt in page_rows:
+        block_len = len(f"\n--- PAGE {pnum} ---\n") + len(txt)
+        if current and size + block_len > max_chars:
+            chunks.append(current)
+            current = []
+            size = 0
+        current.append((pnum, txt))
+        size += block_len
+    if current:
+        chunks.append(current)
+    return chunks
+
+
+def call_anthropic_faa_stream(
+    client: anthropic.Anthropic,
+    *,
+    model_id: str,
+    max_tokens: int,
+    system_prompt: str,
+    user_text: str,
+) -> str:
+    delay = FAA_STREAM_RETRY_BASE_S
+    last_err: Exception | None = None
+    for attempt in range(FAA_STREAM_MAX_RETRIES):
+        try:
+            if attempt:
+                print(f"Waiting {delay:.0f}s before retry {attempt + 1}/{FAA_STREAM_MAX_RETRIES}...", file=sys.stderr)
+                time.sleep(delay)
+                delay = min(delay * 1.35, 300.0)
+            with client.messages.stream(
+                model=model_id,
+                max_tokens=max_tokens,
+                system=system_prompt,
+                messages=[{"role": "user", "content": user_text}],
+            ) as stream:
+                return stream.get_final_text()
+        except RateLimitError as e:
+            last_err = e
+            print(f"Rate limited: {e}", file=sys.stderr)
+        except APIStatusError as e:
+            last_err = e
+            if getattr(e, "status_code", None) == 429:
+                print(f"HTTP 429: {e}", file=sys.stderr)
+            else:
+                raise
+    if last_err:
+        raise last_err
+    raise RuntimeError("Anthropic streaming failed without specific error")
+
+
+def max_tokens_for_poh_section(section: str) -> int:
+    if section == "r44_limitations":
         return 8192
+    if section in ("r44_emergency_procedures", "r44_systems"):
+        return 16384
     return 4096
 
 
@@ -420,75 +544,99 @@ def main() -> None:
     cfg = SECTION_CONFIG[section]
     system_prompt = cfg["system_prompt"]
 
-    parts: list[str] = []
-    num_pages = 0
+    page_rows: list[tuple[int, str]] = []
     with pdfplumber.open(pdf_path) as pdf:
         num_pages = len(pdf.pages)
         for i, page in enumerate(pdf.pages, start=1):
-            text = page.extract_text() or ""
-            parts.append(f"\n--- PAGE {i} ---\n")
-            parts.append(text)
+            page_rows.append((i, page.extract_text() or ""))
 
-    raw_text = "".join(parts)
-
+    raw_full = pages_to_raw_text(page_rows)
     client = anthropic.Anthropic(api_key=api_key)
-    max_out = max_tokens_for_section(section)
-    max_attempts = 8
-    base_sleep = 50.0
-    message = None
-    for attempt in range(max_attempts):
-        try:
-            message = client.messages.create(
-                model="claude-sonnet-4-6",
-                max_tokens=max_out,
-                system=system_prompt,
-                messages=[{"role": "user", "content": raw_text}],
-            )
-            break
-        except RateLimitError:
-            if attempt >= max_attempts - 1:
-                raise
-            wait_s = min(base_sleep * (2**attempt), 300.0)
+
+    if section in ("faa_handbook", "faa_acs"):
+        if section == "faa_handbook":
+            char_budget = FAA_HANDBOOK_INPUT_CHAR_BUDGET
+            subchunks = chunk_pages_by_char_budget(page_rows, char_budget)
+            use_chunks = len(subchunks) > 1
+        else:
+            char_budget = FAA_ACS_INPUT_CHAR_BUDGET
+            subchunks = chunk_pages_by_char_budget(page_rows, char_budget)
+            use_chunks = len(subchunks) > 1
+
+        if use_chunks:
             print(
-                f"Rate limited; waiting {wait_s:.0f}s before retry ({attempt + 1}/{max_attempts})...",
+                f"Splitting PDF ({len(raw_full)} chars) into {len(subchunks)} API chunk(s).",
                 file=sys.stderr,
             )
-            time.sleep(wait_s)
-
-    if message is None:
-        raise SystemExit("API request failed after retries.")
-
-    if getattr(message, "stop_reason", None) == "max_tokens":
-        print(
-            "Warning: model hit max_tokens — JSON may be truncated; consider raising max_tokens_for_section.",
-            file=sys.stderr,
+            if section == "faa_handbook":
+                parsed: dict[str, Any] = {"handbook_title": "", "topics": []}
+            else:
+                parsed = {"certificate_level": "", "areas_of_operation": []}
+            for ci, ch in enumerate(subchunks):
+                p_lo = ch[0][0]
+                p_hi = ch[-1][0]
+                prefix = (
+                    f"MULTI-PART EXTRACTION: part {ci + 1} of {len(subchunks)} "
+                    f"(PDF pages {p_lo} to {p_hi} of {num_pages}). "
+                    "Extract ONLY from the excerpt below. Use the same JSON schema. "
+                    "Do not invent content from pages not shown.\n\n"
+                )
+                chunk_text = prefix + pages_to_raw_text(ch)
+                response_text = call_anthropic_faa_stream(
+                    client,
+                    model_id=MODEL_ID,
+                    max_tokens=FAA_MAX_OUTPUT_TOKENS,
+                    system_prompt=system_prompt,
+                    user_text=chunk_text,
+                )
+                try:
+                    part = json.loads(extract_json_blob(response_text))
+                except json.JSONDecodeError as e:
+                    print(f"Error: invalid JSON (chunk {ci + 1}): {e}", file=sys.stderr)
+                    print(response_text[:2000], file=sys.stderr)
+                    raise SystemExit(1) from e
+                if section == "faa_handbook":
+                    parsed["handbook_title"] = parsed["handbook_title"] or part.get("handbook_title") or ""
+                    parsed["topics"].extend(part.get("topics") or [])
+                else:
+                    parsed["certificate_level"] = parsed["certificate_level"] or part.get("certificate_level") or ""
+                    parsed["areas_of_operation"].extend(part.get("areas_of_operation") or [])
+        else:
+            response_text = call_anthropic_faa_stream(
+                client,
+                model_id=MODEL_ID,
+                max_tokens=FAA_MAX_OUTPUT_TOKENS,
+                system_prompt=system_prompt,
+                user_text=raw_full,
+            )
+            try:
+                parsed = json.loads(extract_json_blob(response_text))
+            except json.JSONDecodeError as e:
+                print(f"Error: model response is not valid JSON: {e}", file=sys.stderr)
+                print(response_text[:2000], file=sys.stderr)
+                raise SystemExit(1) from e
+    else:
+        max_out = max_tokens_for_poh_section(section)
+        # SDK requires streaming when a request may exceed the non-streaming timeout
+        # (large max_tokens on long PDF text — e.g. R44 emergency/systems).
+        response_text = call_anthropic_faa_stream(
+            client,
+            model_id=MODEL_ID,
+            max_tokens=max_out,
+            system_prompt=system_prompt,
+            user_text=raw_full,
         )
-
-    block = message.content[0]
-    if block.type != "text":
-        print(f"Error: unexpected content block type: {block.type}", file=sys.stderr)
-        raise SystemExit(1)
-
-    response_text = strip_markdown_json_fences(block.text)
-
-    try:
-        parsed: dict[str, Any] = json.loads(response_text)
-    except json.JSONDecodeError as e:
-        print(f"Error: model response is not valid JSON: {e}", file=sys.stderr)
-        print("--- Response (first 2000 chars) ---", file=sys.stderr)
-        print(response_text[:2000], file=sys.stderr)
-        raise SystemExit(1) from e
-
-    source_filename = pdf_path.name
+        try:
+            parsed = json.loads(extract_json_blob(response_text))
+        except json.JSONDecodeError as e:
+            print(f"Error: model response is not valid JSON: {e}", file=sys.stderr)
+            print(response_text[:2000], file=sys.stderr)
+            raise SystemExit(1) from e
 
     metadata: dict[str, Any] = {}
     if section in ("limitations", "emergency_procedures", "systems"):
         metadata["aircraft"] = "R22"
-    elif section in (
-        "r44_limitations",
-        "r44_emergency_procedures",
-        "r44_systems",
-    ):
+    elif section in ("r44_limitations", "r44_emergency_procedures", "r44_systems"):
         metadata["aircraft"] = "R44"
     else:
         metadata["aircraft"] = None
@@ -502,18 +650,13 @@ def main() -> None:
     if section in ("limitations", "emergency_procedures", "systems"):
         out_dir = REPO_ROOT / "extracted-data" / "aircraft"
         out_filename = f"r22_{section}.json"
-    elif section in (
-        "r44_limitations",
-        "r44_emergency_procedures",
-        "r44_systems",
-    ):
+    elif section in ("r44_limitations", "r44_emergency_procedures", "r44_systems"):
         out_dir = REPO_ROOT / "extracted-data" / "aircraft"
         section_short = section.replace("r44_", "")
         out_filename = f"r44_{section_short}.json"
     elif section in ("faa_handbook", "faa_acs"):
         out_dir = REPO_ROOT / "extracted-data" / "faa"
-        pdf_stem = Path(args.pdf).stem
-        out_filename = f"{pdf_stem}.json"
+        out_filename = f"{Path(args.pdf).stem}.json"
 
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / out_filename
