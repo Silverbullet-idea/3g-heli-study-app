@@ -8,12 +8,14 @@ import json
 import os
 import re
 import sys
+import time
 from datetime import date
 from pathlib import Path
 from typing import Any
 
 import anthropic
 import pdfplumber
+from anthropic import RateLimitError
 from dotenv import load_dotenv
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -358,6 +360,15 @@ def strip_markdown_json_fences(text: str) -> str:
     return t.strip()
 
 
+def max_tokens_for_section(section: str) -> int:
+    """Large FAA / R44 sections need higher output budget to avoid truncated JSON."""
+    if section in ("faa_handbook", "faa_acs", "r44_emergency_procedures", "r44_systems"):
+        return 16384
+    if section in ("r44_limitations",):
+        return 8192
+    return 4096
+
+
 def count_verify_values(obj: Any) -> int:
     n = 0
     if isinstance(obj, dict):
@@ -421,12 +432,37 @@ def main() -> None:
     raw_text = "".join(parts)
 
     client = anthropic.Anthropic(api_key=api_key)
-    message = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=4096,
-        system=system_prompt,
-        messages=[{"role": "user", "content": raw_text}],
-    )
+    max_out = max_tokens_for_section(section)
+    max_attempts = 8
+    base_sleep = 50.0
+    message = None
+    for attempt in range(max_attempts):
+        try:
+            message = client.messages.create(
+                model="claude-sonnet-4-6",
+                max_tokens=max_out,
+                system=system_prompt,
+                messages=[{"role": "user", "content": raw_text}],
+            )
+            break
+        except RateLimitError:
+            if attempt >= max_attempts - 1:
+                raise
+            wait_s = min(base_sleep * (2**attempt), 300.0)
+            print(
+                f"Rate limited; waiting {wait_s:.0f}s before retry ({attempt + 1}/{max_attempts})...",
+                file=sys.stderr,
+            )
+            time.sleep(wait_s)
+
+    if message is None:
+        raise SystemExit("API request failed after retries.")
+
+    if getattr(message, "stop_reason", None) == "max_tokens":
+        print(
+            "Warning: model hit max_tokens — JSON may be truncated; consider raising max_tokens_for_section.",
+            file=sys.stderr,
+        )
 
     block = message.content[0]
     if block.type != "text":
