@@ -21,10 +21,25 @@
 | MD500D.pdf | MD Helicopters MD500D | MD Helicopters | Flight Manual | Local archive | Ready for extraction |
 | TD_AS365_N3.pdf | Aerospatiale AS365 N3 Dauphin | Airbus | Flight Manual | Local archive | Ready for extraction |
 
-Skipped (fixed wing or military):
+## Skipped Documents
 
-- SUPER_KING_AIR_200_200C_POH_AFM — fixed wing
-- SUPER_KING_AIR_B200_B200C_POH_AFM — fixed wing
-- G1000_CessnaMustang_PilotsGuide — fixed wing
-- G1000_Mustang_LMM_RevF — fixed wing
-- SH-60B Seahawk — military rotorcraft (NATOPS restricted)
+| File | Reason |
+|------|--------|
+| SUPER_KING_AIR_200_200C_POH_AFM | Fixed wing — out of scope |
+| SUPER_KING_AIR_B200_B200C_POH_AFM | Fixed wing — out of scope |
+| G1000_CessnaMustang_PilotsGuide | Fixed wing — out of scope |
+| G1000_Mustang_LMM_RevF | Fixed wing — out of scope |
+| SH-60B Seahawk | Military rotorcraft — NATOPS restricted |
+
+## Bell Downloads (populate_pdf_library.py)
+
+| File | Aircraft | Source | Status |
+|------|----------|--------|--------|
+| bell_206b3_fm_1.pdf | Bell 206B-3 | mvheli.com | Downloaded |
+| bell_206ab_maintenance_manual.pdf | Bell 206A/B | rotorair.ch | Downloaded |
+| bell_505_product_specifications_feb2026.pdf | Bell 505 | bellflight.com (official) | Downloaded |
+| bell_505_easa_tcds_issue4_apr2021.pdf | Bell 505 | easa.europa.eu (official) | Downloaded |
+| bell_505_normal_checklist_iss1_rev1.pdf | Bell 505 | heli-academy.ch | Downloaded |
+| bell_505_emergency_procedures_iss1_rev0.pdf | Bell 505 | heli-academy.ch | Downloaded |
+| bell_505_tc_mmel_feb2017.pdf | Bell 505 | Transport Canada (official) | Downloaded |
+| bell_505_rfm_bht505fm1_rev3.pdf | Bell 505 | pdfcoffee.com | SKIPPED — copyright flag |
