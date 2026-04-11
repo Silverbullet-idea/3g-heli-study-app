@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-04-11 (FAA/R44 `extract_poh_json` sections + AGENTS inventory)
+Last updated: 2026-04-11 (question bank generation pipeline + AGENTS inventory)
 
 ---
 
@@ -114,16 +114,34 @@ FAA:
 - **AGENTS.md** — Added at repo root, committed, and pushed. Single source for phase,
   pipeline inventory, PDF library notes, next steps, open items, and agent rules.
 
+### Question bank generation pipeline (2026-04-11)
+
+- `scripts/generate_question_bank.py` — Loads ACS JSON + FAA handbook JSON, matches
+  handbook topics by keyword to each ACS task, calls Anthropic (`claude-sonnet-4-6`)
+  with a fixed system prompt, and writes `question-bank/qbank_{rating}_helicopter.json`
+  (8 questions per task: 3 basic / 3 intermediate / 2 advanced). Merge-safe: existing
+  non-empty task question lists are preserved so runs can resume after interruption.
+- `scripts/run_generate_private.ps1` — Convenience runner for `--rating private`.
+- `question-bank/` — Holds generated banks; `qbank_*.json` is gitignored until Ryan
+  verifies and commits a release copy manually. `.gitkeep` keeps the folder in git.
+
+**Area I test run (Private):** Pipeline executed (`--rating private --area I`); all
+tasks failed with Anthropic “credit balance too low” (0 questions written). After
+billing is replenished, re-run the same command to fill Area I, then run without
+`--area` for the full bank. Full generation pending Ryan review.
+
 ---
 
 ## Next Steps (in order)
 
 1. Replenish Anthropic API credits; re-run `scripts/run_faa_r44_extract.ps1` to fill
    `r44_systems.json` and `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
-2. Review verify flag counts across all extracted JSON (summary in table above)
-3. Commit extracted JSON files after review
-4. Build PDF renderer — reads JSON, outputs branded 8.5x11 study sheets
-5. Produce first complete study sheet set: Private Pilot R22
+2. Replenish credits and run `scripts/generate_question_bank.py --rating private --area I`
+   to validate question output; then full private bank without `--area` after review
+3. Review verify flag counts across all extracted JSON (summary in table above)
+4. Commit extracted JSON files after review
+5. Build PDF renderer — reads JSON, outputs branded 8.5x11 study sheets
+6. Produce first complete study sheet set: Private Pilot R22
 
 ---
 
@@ -150,6 +168,8 @@ FAA:
 |--------|---------|
 | extract_text.py | PDF → raw text |
 | extract_poh_json.py | raw text → structured JSON via API |
+| generate_question_bank.py | ACS + handbook JSON → oral exam question bank (Anthropic) |
+| run_generate_private.ps1 | Runs `generate_question_bank.py --rating private` |
 | run_r22_full_extract.ps1 | R22 Sec 2, 3, 7 extraction |
 | run_faa_r44_extract.ps1 | FAA handbooks + ACS + R44 extraction |
 | run_expanded_library.ps1 | Engine manuals, PHAK, AIM, ACs download |
