@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-04-11 (question bank generation pipeline + AGENTS inventory)
+Last updated: 2026-04-11 (ATP Helicopter ACS pipeline + library index)
 
 ---
 
@@ -105,6 +105,8 @@ FAA:
   - FAA-H-8083-16B Instrument Procedures Handbook (downloaded)
   - FAA_AIM_2024.pdf (downloaded)
   - ACS: Private, Commercial, CFI, Instrument Helicopter (existing)
+  - **ATP Helicopter ACS** — `FAA-S-ACS-ATP_Helicopter_ACS.pdf` in `raw-pdfs/faa/`
+    (local, pre-release copy from Ryan's archive; not in public FAA set yet)
 - raw-pdfs/faa/advisory-circulars/
   - AC_00-6B Aviation Weather (downloaded)
   - AC_61-67D, AC_91-13D — DNS failure on rgl.faa.gov (retry later)
@@ -135,7 +137,9 @@ billing is replenished, re-run the same command to fill Area I, then run without
 ## Next Steps (in order)
 
 1. Replenish Anthropic API credits; re-run `scripts/run_faa_r44_extract.ps1` to fill
-   `r44_systems.json` and `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
+   `r44_systems.json`, `FAA-S-ACS-29_CFI_Helicopter_ACS.json`, and ATP ACS output
+   `extracted-data/faa/FAA-S-ACS-ATP_Helicopter_ACS.json` (pending extraction after
+   the batch runner completes)
 2. Replenish credits and run `scripts/generate_question_bank.py --rating private --area I`
    to validate question output; then full private bank without `--area` after review
 3. Review verify flag counts across all extracted JSON (summary in table above)
