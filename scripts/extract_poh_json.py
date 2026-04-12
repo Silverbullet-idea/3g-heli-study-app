@@ -165,8 +165,9 @@ Return ONLY valid JSON — no explanation, no markdown, no preamble.
 }
 """
 
-SYSTEM_PROMPT_R44_LIMITATIONS = """You are extracting helicopter performance and limitation data from a
-Robinson R44 Pilot's Operating Handbook, Section 2 (Limitations).
+SYSTEM_PROMPT_R44_LIMITATIONS = """You are extracting helicopter performance and limitation data
+from a Robinson R44 Pilot's Operating Handbook, Section 2
+(Limitations).
 
 Return ONLY valid JSON — no explanation, no markdown, no preamble.
 
@@ -177,65 +178,69 @@ For every numeric value include:
   "confidence": "<extracted|inferred|verify>"
 
 Use "extracted" when clearly stated in plain text.
-Use "inferred" when found in a table caption or requires interpretation.
+Use "inferred" when found in a table caption or figure.
 Use "verify" when you cannot read the value confidently.
 
 {
   "airspeed_limits": {
-    "vne_powered": {"value": null, "unit": "KIAS", "notes": "", "confidence": ""},
-    "vne_autorotation": {"value": null, "unit": "KIAS", "notes": "", "confidence": ""},
-    "max_sideward": {"value": null, "unit": "KIAS", "notes": "", "confidence": ""},
-    "max_rearward": {"value": null, "unit": "KIAS", "notes": "", "confidence": ""}
+    "vne_powered": {"value":null,"unit":"KIAS","notes":"","confidence":""},
+    "vne_autorotation": {"value":null,"unit":"KIAS","notes":"","confidence":""},
+    "max_sideward": {"value":null,"unit":"KIAS","notes":"","confidence":""},
+    "max_rearward": {"value":null,"unit":"KIAS","notes":"","confidence":""}
   },
   "rotor_speed_limits": {
-    "power_on_max": {"value": null, "unit": "%", "rpm": null, "notes": "", "confidence": ""},
-    "power_on_min": {"value": null, "unit": "%", "rpm": null, "notes": "", "confidence": ""},
-    "power_off_max": {"value": null, "unit": "%", "rpm": null, "notes": "", "confidence": ""},
-    "power_off_min": {"value": null, "unit": "%", "rpm": null, "notes": "", "confidence": ""}
+    "power_on_max": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""},
+    "power_on_min": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""},
+    "power_off_max": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""},
+    "power_off_min": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""}
   },
   "weight_limits": {
-    "max_gross": {"value": null, "unit": "lbs", "kg": null, "notes": "", "confidence": ""},
-    "min_gross": {"value": null, "unit": "lbs", "kg": null, "notes": "", "confidence": ""},
-    "max_per_seat": {"value": null, "unit": "lbs", "kg": null, "notes": "", "confidence": ""},
-    "max_baggage": {"value": null, "unit": "lbs", "kg": null, "notes": "", "confidence": ""}
+    "max_gross": {"value":null,"unit":"lbs","kg":null,"notes":"","confidence":""},
+    "min_gross": {"value":null,"unit":"lbs","kg":null,"notes":"","confidence":""},
+    "max_per_seat": {"value":null,"unit":"lbs","kg":null,"notes":"","confidence":""},
+    "max_baggage": {"value":null,"unit":"lbs","kg":null,"notes":"","confidence":""}
   },
   "altitude_limits": {
-    "max_operating_density_altitude": {"value": null, "unit": "ft DA", "notes": "", "confidence": ""}
+    "max_operating_density_altitude": {"value":null,"unit":"ft DA","notes":"","confidence":""}
   },
   "engine": {
     "approved_models": [],
-    "speed_max_continuous": {"value": null, "unit": "%", "rpm": null, "notes": "", "confidence": ""},
-    "speed_max_transient": {"value": null, "unit": "%", "rpm": null, "notes": "", "confidence": ""},
-    "cht_max": {"value": null, "unit": "°F", "celsius": null, "notes": "", "confidence": ""},
-    "oil_temp_max": {"value": null, "unit": "°F", "celsius": null, "notes": "", "confidence": ""},
-    "oil_pressure_min_idle": {"value": null, "unit": "PSI", "notes": "", "confidence": ""},
-    "oil_pressure_min_flight": {"value": null, "unit": "PSI", "notes": "", "confidence": ""},
-    "oil_pressure_max_flight": {"value": null, "unit": "PSI", "notes": "", "confidence": ""},
-    "oil_quantity_min_takeoff": {"value": null, "unit": "qt", "liters": null, "notes": "", "confidence": ""}
+    "speed_max_continuous": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""},
+    "speed_max_transient": {"value":null,"unit":"%","rpm":null,"notes":"","confidence":""},
+    "cht_max": {"value":null,"unit":"°F","celsius":null,"notes":"","confidence":""},
+    "oil_temp_max": {"value":null,"unit":"°F","celsius":null,"notes":"","confidence":""},
+    "oil_pressure_min_idle": {"value":null,"unit":"PSI","notes":"","confidence":""},
+    "oil_pressure_min_flight": {"value":null,"unit":"PSI","notes":"","confidence":""},
+    "oil_pressure_max_flight": {"value":null,"unit":"PSI","notes":"","confidence":""},
+    "oil_quantity_min_takeoff": {"value":null,"unit":"qt","liters":null,"notes":"","confidence":""}
   },
   "fuel": {
     "approved_grades": [],
     "capacity": {
-      "total": {"value": null, "unit": "gal US", "liters": null},
-      "usable": {"value": null, "unit": "gal US", "liters": null},
+      "total": {"value":null,"unit":"gal US","liters":null},
+      "usable": {"value":null,"unit":"gal US","liters":null},
       "confidence": ""
     }
   },
   "required_equipment_for_dispatch": [],
   "flight_restrictions": [
-    {"item": "", "status": "PROHIBITED|REQUIRED|PERMITTED",
-     "notes": "", "confidence": ""}
+    {"item":"","status":"PROHIBITED|REQUIRED|PERMITTED","notes":"","confidence":""}
   ]
 }
 """
 
-SYSTEM_PROMPT_R44_EMERGENCY = """You are extracting emergency procedure checklists from a Robinson R44
-Pilot's Operating Handbook, Section 3 (Emergency Procedures).
+SYSTEM_PROMPT_R44_EMERGENCY = """You are extracting emergency procedure checklists from a Robinson
+R44 Pilot's Operating Handbook, Section 3 (Emergency Procedures).
 
 Return ONLY valid JSON — no explanation, no markdown, no preamble.
 
-Preserve EXACT step sequence from the POH. Do not summarize or
-paraphrase — verbatim accuracy is critical for flight training use.
+Preserve EXACT step sequence from the POH. Verbatim accuracy is
+critical for flight training use.
+
+For confidence:
+  "extracted" = complete procedure clearly readable
+  "inferred" = found but some steps unclear from formatting
+  "verify" = incomplete or unreadable — needs human review
 
 {
   "procedures": [
@@ -251,8 +256,8 @@ paraphrase — verbatim accuracy is critical for flight training use.
 }
 """
 
-SYSTEM_PROMPT_R44_SYSTEMS = """You are extracting aircraft systems descriptions from a Robinson R44
-Pilot's Operating Handbook, Section 7 (Aircraft and Systems
+SYSTEM_PROMPT_R44_SYSTEMS = """You are extracting aircraft systems descriptions from a Robinson
+R44 Pilot's Operating Handbook, Section 7 (Aircraft and Systems
 Description).
 
 Return ONLY valid JSON — no explanation, no markdown, no preamble.
@@ -265,7 +270,7 @@ Return ONLY valid JSON — no explanation, no markdown, no preamble.
       "key_points": ["<fact 1>", "<fact 2>"],
       "components": ["<component 1>", "<component 2>"],
       "specifications": [
-        {"item": "", "value": null, "unit": "", "notes": ""}
+        {"item":"","value":null,"unit":"","notes":""}
       ],
       "confidence": "<extracted|inferred|verify>"
     }
@@ -273,22 +278,21 @@ Return ONLY valid JSON — no explanation, no markdown, no preamble.
 }
 """
 
-SYSTEM_PROMPT_FAA_HANDBOOK = """You are extracting structured knowledge from an FAA helicopter training
-handbook. This content will be used to create study sheets for student
-helicopter pilots preparing for FAA knowledge exams and checkrides.
+SYSTEM_PROMPT_FAA_HANDBOOK = """You are extracting structured knowledge from an FAA helicopter
+training handbook. This content will be used to create study
+sheets for student helicopter pilots preparing for FAA knowledge
+exams and checkrides.
 
 Return ONLY valid JSON — no explanation, no markdown, no preamble.
 
-Extract the content organized by chapter/topic. For each topic include:
-- A concise summary suitable for a study sheet
-- Key terms and their definitions
-- Important rules, limits, or values with units
-- Memory aids or mnemonics if present in the text
+Extract content organized by chapter or major topic section.
+For each topic include a concise summary, key terms, important
+values with units, mnemonics, and key points.
 
 For confidence flags:
   "extracted" = clearly stated in plain text
   "inferred" = implied or requires interpretation
-  "verify" = unclear or incomplete — needs human review
+  "verify" = unclear or incomplete
 
 {
   "handbook_title": "",
@@ -301,27 +305,28 @@ For confidence flags:
         {"term": "", "definition": ""}
       ],
       "key_values": [
-        {"item": "", "value": null, "unit": "", "notes": "", "confidence": ""}
+        {"item":"","value":null,"unit":"","notes":"","confidence":""}
       ],
       "mnemonics": [
-        {"mnemonic": "", "meaning": "", "notes": ""}
+        {"mnemonic":"","meaning":"","notes":""}
       ],
-      "key_points": ["", ""],
+      "key_points": ["",""],
       "confidence": "<extracted|inferred|verify>"
     }
   ]
 }
 """
 
-SYSTEM_PROMPT_FAA_ACS = """You are extracting structured data from an FAA Airman Certification
-Standards (ACS) document for helicopter pilots. This content will be
-used to create checkride preparation study sheets.
+SYSTEM_PROMPT_FAA_ACS = """You are extracting structured data from an FAA Airman
+Certification Standards (ACS) document for helicopter pilots.
+This content will be used to create checkride preparation
+study sheets.
 
 Return ONLY valid JSON — no explanation, no markdown, no preamble.
 
-Extract every Task in every Area of Operation. For each task capture
-the knowledge, risk management, and skills standards verbatim — these
-are the exact standards an examiner will use on a checkride.
+Extract every Task in every Area of Operation. Capture knowledge,
+risk management, and skills standards verbatim — these are the
+exact standards an examiner will use on a checkride.
 
 {
   "certificate_level": "",
@@ -568,8 +573,6 @@ def main() -> None:
             else:
                 parsed = {"certificate_level": "", "areas_of_operation": []}
             for ci, ch in enumerate(subchunks):
-                if ci:
-                    time.sleep(45)
                 p_lo = ch[0][0]
                 p_hi = ch[-1][0]
                 prefix = (
@@ -614,41 +617,20 @@ def main() -> None:
                 raise SystemExit(1) from e
     else:
         max_out = max_tokens_for_poh_section(section)
-        max_attempts = 8
-        base_sleep = 50.0
-        message = None
-        for attempt in range(max_attempts):
-            try:
-                message = client.messages.create(
-                    model=MODEL_ID,
-                    max_tokens=max_out,
-                    system=system_prompt,
-                    messages=[{"role": "user", "content": raw_full}],
-                )
-                break
-            except RateLimitError:
-                if attempt >= max_attempts - 1:
-                    raise
-                wait_s = min(base_sleep * (2**attempt), 300.0)
-                print(
-                    f"Rate limited; waiting {wait_s:.0f}s before retry ({attempt + 1}/{max_attempts})...",
-                    file=sys.stderr,
-                )
-                time.sleep(wait_s)
-
-        if message is None:
-            raise SystemExit("API request failed after retries.")
-
-        block = message.content[0]
-        if block.type != "text":
-            print(f"Error: unexpected content block type: {block.type}", file=sys.stderr)
-            raise SystemExit(1)
-
+        # SDK requires streaming when a request may exceed the non-streaming timeout
+        # (large max_tokens on long PDF text — e.g. R44 emergency/systems).
+        response_text = call_anthropic_faa_stream(
+            client,
+            model_id=MODEL_ID,
+            max_tokens=max_out,
+            system_prompt=system_prompt,
+            user_text=raw_full,
+        )
         try:
-            parsed = json.loads(extract_json_blob(block.text))
+            parsed = json.loads(extract_json_blob(response_text))
         except json.JSONDecodeError as e:
             print(f"Error: model response is not valid JSON: {e}", file=sys.stderr)
-            print(block.text[:2000], file=sys.stderr)
+            print(response_text[:2000], file=sys.stderr)
             raise SystemExit(1) from e
 
     metadata: dict[str, Any] = {}
