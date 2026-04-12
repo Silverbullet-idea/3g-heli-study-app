@@ -360,6 +360,10 @@ SECTION_CONFIG: dict[str, dict[str, str]] = {
     "faa_acs": {"system_prompt": SYSTEM_PROMPT_FAA_ACS},
 }
 
+ACS_FILE: dict[str, str] = {
+    "atp": "raw-pdfs/faa/FAA-S-ACS-ATP_Helicopter_ACS.pdf",
+}
+
 
 def strip_markdown_json_fences(text: str) -> str:
     t = text.strip()

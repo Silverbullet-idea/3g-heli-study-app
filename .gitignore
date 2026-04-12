@@ -6,6 +6,7 @@ raw-pdfs/bell/*.pdf
 raw-pdfs/airbus/*.pdf
 raw-pdfs/agustawestland/*.pdf
 raw-pdfs/md_helicopters/*.pdf
+raw-pdfs/faa/*.pdf
 extracted-data/raw-text/*.txt
 .env
 

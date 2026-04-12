@@ -44,6 +44,14 @@
 | bell_505_tc_mmel_feb2017.pdf | Bell 505 | Transport Canada (official) | Downloaded |
 | bell_505_rfm_bht505fm1_rev3.pdf | Bell 505 | pdfcoffee.com | SKIPPED — copyright flag |
 
+## FAA ACS Documents
+
+| File | Title | Issuer | Type | Source | Status |
+|------|-------|--------|------|--------|--------|
+| FAA-S-ACS-ATP_Helicopter_ACS.pdf | ATP Helicopter ACS | FAA | ACS Document | Local archive (pre-release) | Ready for extraction |
+
+Note: ATP ACS sourced from Ryan's local archive (FAA-2022-1463-0012). Pre-release copy — not yet publicly available. Treat as authoritative for extraction purposes.
+
 ## Engine Manuals and FAA References
 
 Documents below are configured in `scripts/populate_pdf_library.py`. Entries marked **url uncertain** may 404 or fail on some networks; update URLs in the script after manual verification.

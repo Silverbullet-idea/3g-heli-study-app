@@ -31,6 +31,10 @@ Write-Host "--- CFI Helicopter ACS ---"
 Write-Host "--- Instrument Helicopter ACS ---"
 & $py $script --pdf "raw-pdfs\faa\FAA-S-ACS-14_Instrument_Helicopter_ACS.pdf" --section faa_acs
 
+Write-Host "--- ATP Helicopter ACS ---"
+& $py $script --pdf "raw-pdfs\faa\FAA-S-ACS-ATP_Helicopter_ACS.pdf" `
+  --section faa_acs
+
 Write-Host "=== R44 POH ==="
 
 $baseUrl = "https://robinsonstrapistorprod.blob.core.windows.net/uploads/assets"
