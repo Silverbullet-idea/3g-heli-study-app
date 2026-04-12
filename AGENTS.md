@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-04-11 (ATP Helicopter ACS pipeline + library index)
+Last updated: 2026-04-11 (question bank UTF-8 encoding, BasicMed prompt correction)
 
 ---
 
@@ -123,6 +123,13 @@ FAA:
   with a fixed system prompt, and writes `question-bank/qbank_{rating}_helicopter.json`
   (8 questions per task: 3 basic / 3 intermediate / 2 advanced). Merge-safe: existing
   non-empty task question lists are preserved so runs can resume after interruption.
+- **Output encoding:** `json.dump(..., ensure_ascii=False)` writes real UTF-8 characters
+  (apostrophes, quotes, em dashes) instead of `\\u0027`-style escapes; file open uses
+  `encoding="utf-8"` so Windows does not mangle extended characters.
+- **BasicMed accuracy:** System prompt includes explicit 14 CFR Part 68 / 61.113(i)
+  limits (e.g. 12,500 lb certificated takeoff weight — not legacy 6,000 lb training-data
+  values). **Area I** in `qbank_private_helicopter.json` was cleared for regeneration
+  with these fixes applied (other areas unchanged).
 - `scripts/run_generate_private.ps1` — Convenience runner for `--rating private`.
 - `question-bank/` — Holds generated banks; `qbank_*.json` is gitignored until Ryan
   verifies and commits a release copy manually. `.gitkeep` keeps the folder in git.
