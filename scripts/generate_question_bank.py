@@ -47,6 +47,26 @@ Rules:
 - Focus on helicopter-specific application, not generic aviation
 - Never invent regulations or aircraft specifications
 
+CRITICAL REGULATORY UPDATES — use these exact values,
+they supersede any conflicting information:
+
+BasicMed (14 CFR Part 68 / 14 CFR 61.113(i)):
+- Maximum certificated takeoff weight: 12,500 lbs
+  (NOT 6,000 lbs — that was the original limit,
+  since updated by the FAA)
+- Maximum occupants: 6 (pilot + 5 passengers)
+- Maximum altitude: 18,000 ft MSL
+- Maximum airspeed: 250 KIAS
+- Must remain within United States
+- No distance limitation
+- No restriction on turbine-powered aircraft
+- Prohibited for compensation or hire operations
+- Pilot must have held a valid medical at some point
+  after July 14, 2006
+- Medical education course required every 24 months
+- Physical exam from state-licensed physician every
+  48 months
+
 Return ONLY valid JSON — no explanation, no markdown, no preamble.
 
 Schema for each question:
