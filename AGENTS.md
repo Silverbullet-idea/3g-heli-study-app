@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-04-11 (question bank UTF-8 encoding, BasicMed prompt correction)
+Last updated: 2026-04-14 (full Private question bank run: 6,744 questions, PASS vs 4,800 floor)
 
 ---
 
@@ -15,6 +15,10 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### Full Private question bank (2026-04-14)
+
+- `scripts/run_generate_private.ps1` — full `--rating private` run (~13.7 h). Output: 16 areas, 57 tasks, 760 ACS API calls; `verify_private_question_count.py` total **6,744** questions — **PASS** (≥ 4,800). JSON remains gitignored.
 
 ### Data Extraction Pipeline
 
