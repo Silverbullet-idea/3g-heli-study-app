@@ -1,0 +1,35 @@
+{
+  "rotor_speed_bands": {
+    "title": "MEMORY AID — ROTOR SPEED RANGES",
+    "type": "visual_bracket",
+    "hook": "Power ON: tight band — engine controls RPM. Power OFF: wider band — you control it with collective.",
+    "applies_to": "all"
+  },
+  "carb_ice": {
+    "title": "MEMORY AID — CARB ICE CAUTION ZONE",
+    "type": "range_bar",
+    "applies_to": "piston",
+    "range_min_c": -20,
+    "zero_c_pct": 0.375,
+    "caution_low_c": 11,
+    "caution_low_pct": 0.375,
+    "caution_high_c": 21,
+    "caution_high_pct": 0.625,
+    "range_max_c": 40,
+    "hook": "\"Teens plus a couple\" — the danger zone lives in the comfortable teens (11–21°C). Nice weather outside, ice forming inside the carb. Apply carb heat immediately if icing suspected."
+  },
+  "prohibited_ops": {
+    "title": "MEMORY AID — PROHIBITED OPERATIONS: “ALITICS”",
+    "type": "acronym",
+    "applies_to": "all",
+    "letters": [
+      {"letter": "A", "word": "Aerobatics", "detail": "No aerobatic maneuvers of any kind"},
+      {"letter": "L", "word": "Low-G", "detail": "No pushovers — catastrophic loss of control"},
+      {"letter": "I", "word": "Icing", "detail": "No known icing conditions"},
+      {"letter": "T", "word": "Throttle", "detail": "No closure above 10,000 ft DA"},
+      {"letter": "I", "word": "IFR", "detail": "VFR only — day and night"},
+      {"letter": "C", "word": "Cabin heat", "detail": "No throttle closure with cabin heat ON"},
+      {"letter": "S", "word": "Solo seat", "detail": "Right seat only for solo flight"}
+    ]
+  }
+}
