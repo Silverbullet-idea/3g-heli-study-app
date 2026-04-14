@@ -256,7 +256,7 @@ def main() -> None:
         try:
             msg = client.messages.create(
                 model=MODEL_ID,
-                max_tokens=8192,
+                max_tokens=2048,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": user_msg}],
             )
