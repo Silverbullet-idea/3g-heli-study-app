@@ -45,13 +45,6 @@
       "notes": "Minimum NR power on. Continuous operation 99 to 100%.",
       "confidence": "extracted"
     },
-    "power_on_min_o320_variant": {
-      "value": null,
-      "unit": "%",
-      "rpm": null,
-      "notes": "No O-320 variant referenced in this document; not applicable.",
-      "confidence": "verify"
-    },
     "power_off_max": {
       "value": 107,
       "unit": "%",
@@ -75,11 +68,11 @@
       "notes": "Maximum approved internal GW for takeoff and landing (basic helicopter, standard configuration).",
       "confidence": "extracted"
     },
-    "max_gross_alpha_beta_beta_ii": {
+    "max_gross_increased_kit": {
       "value": 5250,
       "unit": "lbs",
       "kg": 2381,
-      "notes": "Maximum approved internal GW with kit 407-706-020 (Increased Internal Gross Weight) installed. Loads above 5250 lbs shall be carried on cargo hook.",
+      "notes": "Maximum internal GW with kit 407-706-020 (Increased Internal Gross Weight) installed.",
       "confidence": "extracted"
     },
     "min_gross": {
@@ -136,11 +129,10 @@
       "notes": "Maximum transient NG, 10 seconds.",
       "confidence": "extracted"
     },
-    "cht_max": {
+    "mgt_max": {
       "value": null,
-      "unit": "°F",
-      "celsius": null,
-      "notes": "CHT (cylinder head temperature) not applicable to this turbine engine. MGT limits apply instead.",
+      "unit": "°C",
+      "notes": "MGT limits not fully captured in extracted text. Refer to BHT-407-FM-1 Section 1 for complete MGT placard values.",
       "confidence": "verify"
     },
     "oil_temp_max": {
@@ -179,18 +171,6 @@
       "unit": "qt",
       "liters": null,
       "notes": "Minimum engine oil quantity for takeoff not explicitly stated in the extracted text. Refer to BHT-407-MD-1.",
-      "confidence": "verify"
-    },
-    "carb_air_temp_caution_range_min": {
-      "value": null,
-      "unit": "°C",
-      "notes": "Not applicable — this is a turbine engine (Rolls-Royce 250-C47B); no carburetor air temperature gauge.",
-      "confidence": "verify"
-    },
-    "carb_air_temp_caution_range_max": {
-      "value": null,
-      "unit": "°C",
-      "notes": "Not applicable — turbine engine, no carburetor.",
       "confidence": "verify"
     }
   },

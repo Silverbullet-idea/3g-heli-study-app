@@ -45,13 +45,6 @@
       "notes": "Minimum continuous power on rotor speed",
       "confidence": "extracted"
     },
-    "power_on_min_o320_variant": {
-      "value": null,
-      "unit": "%",
-      "rpm": null,
-      "notes": "Not applicable — R66 uses Rolls-Royce 250-C300/A1 turbine engine, no O-320 variant referenced",
-      "confidence": "verify"
-    },
     "power_off_max": {
       "value": 106,
       "unit": "%",
@@ -74,13 +67,6 @@
       "kg": 1225,
       "notes": "Maximum gross weight for R66",
       "confidence": "extracted"
-    },
-    "max_gross_alpha_beta_beta_ii": {
-      "value": null,
-      "unit": "lbs",
-      "kg": null,
-      "notes": "Alpha/Beta/Beta II designations not applicable to R66; single max gross weight of 2700 lb applies",
-      "confidence": "verify"
     },
     "min_gross": {
       "value": 1400,
@@ -136,12 +122,11 @@
       "notes": "Output shaft speed (N2) maximum transient overspeed. Avoid large, rapid power changes. Intentional operation outside continuous RPM limits is prohibited.",
       "confidence": "extracted"
     },
-    "cht_max": {
-      "value": null,
-      "unit": "°F",
-      "celsius": null,
-      "notes": "R66 is turbine-powered; no cylinder head temperature (CHT) limit listed. MGT (Measured Gas Temperature) continuous limit is 706°C, 5-minute limit 782°C, transient 843°C (6 sec), start limit 927°C (10 sec).",
-      "confidence": "verify"
+    "mgt_max": {
+      "value": 706,
+      "unit": "°C",
+      "notes": "MGT maximum continuous. 5-minute limit 782°C, transient 843°C (6 sec), start limit 927°C (10 sec).",
+      "confidence": "extracted"
     },
     "oil_temp_max": {
       "value": 225,
@@ -180,18 +165,6 @@
       "liters": 3.8,
       "notes": "Minimum oil quantity for takeoff",
       "confidence": "extracted"
-    },
-    "carb_air_temp_caution_range_min": {
-      "value": null,
-      "unit": "°C",
-      "notes": "R66 is turbine-powered with no carburetor; no carb air temperature limits apply",
-      "confidence": "verify"
-    },
-    "carb_air_temp_caution_range_max": {
-      "value": null,
-      "unit": "°C",
-      "notes": "R66 is turbine-powered with no carburetor; no carb air temperature limits apply",
-      "confidence": "verify"
     }
   },
   "fuel": {

@@ -45,13 +45,6 @@
       "notes": "NR power on minimum 97%. Transient droop to 96% permitted but should not exceed 5 seconds.",
       "confidence": "extracted"
     },
-    "power_on_min_o320_variant": {
-      "value": null,
-      "unit": "%",
-      "rpm": null,
-      "notes": "No O-320 variant applicable; this is a turbine helicopter with Allison 250-C20B/C20J engine.",
-      "confidence": "extracted"
-    },
     "power_off_max": {
       "value": 107,
       "unit": "%",
@@ -75,11 +68,11 @@
       "notes": "Maximum internal gross weight for takeoff and landing. Loads above 3,200 lbs shall be carried on cargo hook only.",
       "confidence": "extracted"
     },
-    "max_gross_alpha_beta_beta_ii": {
+    "max_gross_external_cargo": {
       "value": 3350,
       "unit": "lbs",
       "kg": 1519.5,
-      "notes": "Maximum external gross weight (cargo hook) 3,350 lbs (1,519.5 kg). Also applies when any combination of door(s) off (limited to 3,350 lbs gross with external cargo and door(s) off).",
+      "notes": "Maximum external gross weight via cargo hook. Internal GW limited to 3,200 lbs.",
       "confidence": "extracted"
     },
     "min_gross": {
@@ -137,11 +130,10 @@
       "notes": "N1 transient maximum 106% (maximum 15 seconds). N2 transient overspeed limits per figure 1-3; intentional use prohibited.",
       "confidence": "extracted"
     },
-    "cht_max": {
-      "value": null,
-      "unit": "°F",
-      "celsius": null,
-      "notes": "Not applicable; turbine engine. TOT limits apply: takeoff 610°C (5 min), max continuous 738°C, transient during power 810-843°C (6 sec max), during start/shutdown 610-927°C (10 sec max).",
+    "tot_max": {
+      "value": 738,
+      "unit": "°C",
+      "notes": "TOT maximum continuous. Takeoff limit 610°C (5 min). Transient during power 843°C (6 sec max). During start/shutdown 927°C (10 sec max).",
       "confidence": "extracted"
     },
     "oil_temp_max": {
@@ -181,18 +173,6 @@
       "liters": null,
       "notes": "Not explicitly stated in available text. Refer to Allison 250-C20 Operation and Maintenance Manual.",
       "confidence": "verify"
-    },
-    "carb_air_temp_caution_range_min": {
-      "value": null,
-      "unit": "°C",
-      "notes": "Not applicable; fuel-injected turbine engine. No carburetor air temperature gauge.",
-      "confidence": "extracted"
-    },
-    "carb_air_temp_caution_range_max": {
-      "value": null,
-      "unit": "°C",
-      "notes": "Not applicable; fuel-injected turbine engine.",
-      "confidence": "extracted"
     }
   },
   "fuel": {
