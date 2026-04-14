@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-04-14 (full Private question bank run: 6,744 questions, PASS vs 4,800 floor)
+Last updated: 2026-04-14 (R66 / Bell 206B3 / Bell 407 POH JSON extraction pipeline run; raw text under `repo/raw-text/`, nine aircraft JSON files committed)
 
 ---
 
@@ -20,10 +20,21 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 
 - `scripts/run_generate_private.ps1` — full `--rating private` run (~13.7 h). Output: 16 areas, 57 tasks, 760 ACS API calls; `verify_private_question_count.py` total **6,744** questions — **PASS** (≥ 4,800). JSON remains gitignored.
 
+### Question bank verifier (batched API) — built, not yet run
+
+- `scripts/verify_question_bank.py` — processes `question-bank/qbank_private_helicopter.json` in batches of 10 via `claude-sonnet-4-6`; writes `verification` on each question (PASS/FLAG) or removes FAIL rows and appends to `question-bank/verification_fails.log`; overwrites `question-bank/verification_summary.txt` each run.
+- `scripts/run_verify_private.ps1` — wrapper: `.\.venv\Scripts\python.exe scripts\verify_question_bank.py --input question-bank/qbank_private_helicopter.json`
+- Ryan to review before first run (large API usage; updates JSON in place).
+
+### FLAG question review (local Flask) — built, not yet run
+
+- `scripts/review_server.py` — serves `http://localhost:5000`; queues questions with `verification.status == "FLAG"` (lowest confidence first); Approve / Save Edit / Reject writes UTF-8 JSON in place; rejects append `RYAN_REJECT\t…` lines to `question-bank/verification_fails.log`.
+- `scripts/run_review_server.ps1` — wrapper from repo root. Requires Flask in `.venv` (`pip install flask`).
+
 ### Data Extraction Pipeline
 
-- scripts/extract_text.py — pdfplumber raw text extraction
-- scripts/extract_poh_json.py — Anthropic API structured JSON extraction
+- scripts/extract_text.py — pdfplumber raw text extraction; optional `--output` (repo-relative path); default `extracted-data/raw-text/<pdf_stem>.txt`
+- scripts/extract_poh_json.py — Anthropic API structured JSON extraction; use `--pdf` **or** `--input` (pre-extracted UTF-8 text), plus `--output` and `--aircraft` for non-R22/R44 targets (prompt replaces “Robinson R22/R44” with the given label)
 - scripts/run_r22_full_extract.ps1 — runs all three R22 sections
 - scripts/run_faa_r44_extract.ps1 — FAA handbooks + ACS + R44 (batch runner; in repo)
 - scripts/run_expanded_library.ps1 — engine manuals, PHAK, AIM, ACs
@@ -60,6 +71,24 @@ Present locally under `extracted-data/faa/` and `extracted-data/aircraft/`:
 
 Pending re-run after API credits: `r44_systems.json`, `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
 (batch stopped mid-run on 2026-04-11).
+
+### Extracted JSON — R66, Bell 206B3, Bell 407 (2026-04-14, committed)
+
+Sources: R66 section PDFs (`r66_poh_section2_limitations.pdf`, `r66_poh_section3_emergency_procedures.pdf`, `r66_poh_section7_systems.pdf`); Bell `bell_206b3_fm_1.pdf`; Bell `BHT-407-FM-1.pdf`. Intermediate text (optional, local): `raw-text/r66_section2|3|7.txt`, `raw-text/b206_full.txt`, `raw-text/b407_full.txt`.
+
+| File | Procedures | Systems sections | Limitation top-level groups | Verify flags | Notes |
+|------|------------|------------------|-----------------------------|--------------|--------|
+| aircraft/r66_limitations.json | — | — | 9 | 7 | 2× `confidence: inferred` in nested fields |
+| aircraft/r66_emergency_procedures.json | 21 | — | — | 0 | — |
+| aircraft/r66_systems.json | — | 32 | — | 0 | — |
+| aircraft/b206_limitations.json | — | — | 9 | 8 | 1× inferred |
+| aircraft/b206_emergency_procedures.json | 47 | — | — | 0 | Full FM single-pass |
+| aircraft/b206_systems.json | — | 24 | — | 0 | — |
+| aircraft/b407_limitations.json | — | — | 9 | 8 | 1× inferred |
+| aircraft/b407_emergency_procedures.json | 27 | — | — | 0 | Full FM single-pass |
+| aircraft/b407_systems.json | — | 22 | — | 0 | — |
+
+No `confidence: low` strings in any of the nine files. **H125** extraction not started — confirm these outputs before expanding.
 
 ### PDF Library (local only — gitignored)
 

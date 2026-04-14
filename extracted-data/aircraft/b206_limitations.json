@@ -1,0 +1,350 @@
+{
+  "aircraft": "Bell 206B3",
+  "poh_source": "limitations",
+  "source_file": "b206_full.txt",
+  "extracted_date": "2026-04-14",
+  "extraction_script_version": "1.0.0",
+  "airspeed_limits": {
+    "vne_powered_to_3000ft": {
+      "value": 130,
+      "unit": "KIAS",
+      "notes": "At sea level to 3,000 feet density altitude, gross weight 3,000 lbs and below. Decrease 3.5 KIAS per 1,000 feet above 3,000 feet DA. Maximum pressure altitude 20,000 feet.",
+      "confidence": "extracted"
+    },
+    "vne_above_3000ft": {
+      "value": 122,
+      "unit": "KIAS",
+      "notes": "At sea level to 3,000 feet density altitude, gross weight above 3,000 lbs. Decrease 7.0 KIAS per 1,000 feet above 3,000 feet DA. Maximum density altitude 13,500 feet.",
+      "confidence": "extracted"
+    },
+    "airspeed_indicator_green_arc_min": {
+      "value": null,
+      "unit": "KIAS",
+      "notes": "Not explicitly stated in available text; instrument markings figures (1-4) not readable.",
+      "confidence": "verify"
+    },
+    "airspeed_indicator_red_line": {
+      "value": 130,
+      "unit": "KIAS",
+      "notes": "Vne at sea level to 3,000 ft DA for gross weight at or below 3,000 lbs; red line corresponds to Vne per placard and instrument marking. Verify against figure 1-4.",
+      "confidence": "inferred"
+    }
+  },
+  "rotor_speed_limits": {
+    "power_on_max": {
+      "value": 100,
+      "unit": "%",
+      "rpm": null,
+      "notes": "NR power on maximum 100%.",
+      "confidence": "extracted"
+    },
+    "power_on_min": {
+      "value": 97,
+      "unit": "%",
+      "rpm": null,
+      "notes": "NR power on minimum 97%. Transient droop to 96% permitted but should not exceed 5 seconds.",
+      "confidence": "extracted"
+    },
+    "power_on_min_o320_variant": {
+      "value": null,
+      "unit": "%",
+      "rpm": null,
+      "notes": "No O-320 variant applicable; this is a turbine helicopter with Allison 250-C20B/C20J engine.",
+      "confidence": "extracted"
+    },
+    "power_off_max": {
+      "value": 107,
+      "unit": "%",
+      "rpm": null,
+      "notes": "NR power off maximum 107%.",
+      "confidence": "extracted"
+    },
+    "power_off_min": {
+      "value": 90,
+      "unit": "%",
+      "rpm": null,
+      "notes": "NR power off minimum 90%. 50% to 60% range: accelerate through as rapidly as practical with cyclic in neutral.",
+      "confidence": "extracted"
+    }
+  },
+  "weight_limits": {
+    "max_gross_standard_hp": {
+      "value": 3200,
+      "unit": "lbs",
+      "kg": 1451.5,
+      "notes": "Maximum internal gross weight for takeoff and landing. Loads above 3,200 lbs shall be carried on cargo hook only.",
+      "confidence": "extracted"
+    },
+    "max_gross_alpha_beta_beta_ii": {
+      "value": 3350,
+      "unit": "lbs",
+      "kg": 1519.5,
+      "notes": "Maximum external gross weight (cargo hook) 3,350 lbs (1,519.5 kg). Also applies when any combination of door(s) off (limited to 3,350 lbs gross with external cargo and door(s) off).",
+      "confidence": "extracted"
+    },
+    "min_gross": {
+      "value": null,
+      "unit": "lbs",
+      "kg": null,
+      "notes": "No minimum gross weight stated in available text.",
+      "confidence": "verify"
+    },
+    "max_per_seat_including_baggage": {
+      "value": null,
+      "unit": "lbs",
+      "kg": null,
+      "notes": "Not explicitly stated in available text for individual seats other than pilot minimum and baggage compartment maximum.",
+      "confidence": "verify"
+    },
+    "max_per_baggage_compartment": {
+      "value": 250,
+      "unit": "lbs",
+      "kg": null,
+      "notes": "Max allowable weight 250 lbs per placard on baggage compartment door. Max allowable weight per sq. ft. 86 lbs.",
+      "confidence": "extracted"
+    },
+    "min_solo_pilot_weight": {
+      "value": 170,
+      "unit": "lbs",
+      "notes": "Minimum pilot weight 170 lbs per placard (inside baggage compartment door) and front seat weight limitation.",
+      "confidence": "extracted"
+    }
+  },
+  "altitude_limits": {
+    "max_operating_density_altitude": {
+      "value": 13500,
+      "unit": "ft DA",
+      "notes": "For gross weight above 3,000 lbs (1,360.8 kg). At 3,000 lbs and below, maximum pressure altitude is 20,000 feet.",
+      "confidence": "extracted"
+    }
+  },
+  "engine": {
+    "approved_models": [
+      "Allison 250-C20B",
+      "Allison 250-C20J"
+    ],
+    "speed_max_continuous": {
+      "value": 100,
+      "unit": "%",
+      "rpm": null,
+      "notes": "N2 (power turbine) maximum continuous 100%. N1 (gas producer) maximum continuous not separately stated; maximum N1 is 105%.",
+      "confidence": "extracted"
+    },
+    "speed_max_transient": {
+      "value": 106,
+      "unit": "%",
+      "rpm": null,
+      "notes": "N1 transient maximum 106% (maximum 15 seconds). N2 transient overspeed limits per figure 1-3; intentional use prohibited.",
+      "confidence": "extracted"
+    },
+    "cht_max": {
+      "value": null,
+      "unit": "°F",
+      "celsius": null,
+      "notes": "Not applicable; turbine engine. TOT limits apply: takeoff 610°C (5 min), max continuous 738°C, transient during power 810-843°C (6 sec max), during start/shutdown 610-927°C (10 sec max).",
+      "confidence": "extracted"
+    },
+    "oil_temp_max": {
+      "value": 107,
+      "unit": "°F",
+      "celsius": 107,
+      "notes": "Engine oil temperature maximum 107°C. Continuous operation 0°C to 107°C. NOTE: value is in °C not °F; unit corrected to °C.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_min_idle": {
+      "value": 50,
+      "unit": "PSI",
+      "notes": "Below 76.5% gas producer RPM minimum 50 PSI.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_min_flight": {
+      "value": 115,
+      "unit": "PSI",
+      "notes": "Above 94.2% gas producer RPM minimum 115 PSI. Between 76.5% and 94.2% N1: 90 PSI minimum.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_max_flight": {
+      "value": 130,
+      "unit": "PSI",
+      "notes": "Engine oil pressure maximum 130 PSI.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_max_start_warmup": {
+      "value": null,
+      "unit": "PSI",
+      "notes": "Not separately stated for start/warmup; maximum is 130 PSI at all times.",
+      "confidence": "verify"
+    },
+    "oil_quantity_min_takeoff": {
+      "value": null,
+      "unit": "qt",
+      "liters": null,
+      "notes": "Not explicitly stated in available text. Refer to Allison 250-C20 Operation and Maintenance Manual.",
+      "confidence": "verify"
+    },
+    "carb_air_temp_caution_range_min": {
+      "value": null,
+      "unit": "°C",
+      "notes": "Not applicable; fuel-injected turbine engine. No carburetor air temperature gauge.",
+      "confidence": "extracted"
+    },
+    "carb_air_temp_caution_range_max": {
+      "value": null,
+      "unit": "°C",
+      "notes": "Not applicable; fuel-injected turbine engine.",
+      "confidence": "extracted"
+    }
+  },
+  "fuel": {
+    "approved_grades": [
+      "ASTM-D 1655 Type B",
+      "MIL-T-5624 Grade JP-4",
+      "ASTM-D 1655 Type A",
+      "ASTM-D 1655 Type A-1",
+      "MIL-T-5624 Grade JP-5",
+      "MIL-T-83133 Grade JP-8"
+    ],
+    "capacity_bladder_tanks": {
+      "main_total": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "main_usable": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "aux_total": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "aux_usable": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "combined_total": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "combined_usable": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "confidence": "verify"
+    }
+  },
+  "required_equipment_for_dispatch": [
+    "Fuel boost pumps shall be ON during normal engine operations (both AFT and FWD)",
+    "Anti-collision light ON (except turn off in or near visible moisture)",
+    "Particle Separator Engine Air Induction System (BHT-206B3-FMS-12), Deflector Kit (BHT-206B3-FMS-10), and Engine Automatic Re-ignition Kit (BHT-206B3-FMS-18) required for flight in falling and/or blowing snow",
+    "Engine anti-icing ON for flight in visible moisture below 4.4°C (40°F)"
+  ],
+  "flight_restrictions": [
+    {
+      "item": "Intentional use of transient limits",
+      "status": "PROHIBITED",
+      "notes": "Intentional use of transient limits is prohibited.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Protracted rearward and sideward flight",
+      "status": "PROHIBITED",
+      "notes": "Protracted rearward and sideward flight prohibited.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Flight in icing conditions",
+      "status": "PROHIBITED",
+      "notes": "Certified for day or night VFR nonicing conditions only.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Use of throttle to control RPM",
+      "status": "PROHIBITED",
+      "notes": "Use of throttle to control RPM is not authorized (except as noted in Section 3 emergency procedures).",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Engine air start above 12,000 feet",
+      "status": "PROHIBITED",
+      "notes": "Do not attempt air start above 12,000 feet (TOT rises too fast to control).",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Engine anti-ice use above 4.4°C (40°F) ambient",
+      "status": "PROHIBITED",
+      "notes": "Engine anti-ice shall not be used in ambient temperatures above 4.4°C (40°F).",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Flight with forward door(s) off with litters installed",
+      "status": "PROHIBITED",
+      "notes": "Flight with forward door(s) OFF is prohibited with litters.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "External cargo loading above 3,200 lbs gross weight with door(s) off",
+      "status": "PROHIBITED",
+      "notes": "External cargo loading limited to 3,350 lbs gross weight with any combination of door(s) off.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Night flight",
+      "status": "PERMITTED",
+      "notes": "Night flight limited to visual contact flight conditions. Orientation maintained through visual reference to ground objects.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Flight with door(s) off",
+      "status": "PERMITTED",
+      "notes": "Permitted with airspeed and CG restrictions. Aft door(s) off: Vne 87 KIAS. Forward door(s) off: Vne 69 KIAS. CG limited to 106.0-110.0 station with forward door(s) off.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Single pilot operation from right crew seat",
+      "status": "REQUIRED",
+      "notes": "Minimum flight crew is one pilot who shall operate from the right crew seat.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Fuel boost pumps ON during normal engine operations",
+      "status": "REQUIRED",
+      "notes": "Both fuel boost pumps shall be ON for all normal operations.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Airspeed above Vne for door(s) off configuration",
+      "status": "PROHIBITED",
+      "notes": "Airspeeds in excess of door(s) off limitations will cause cyclic fore and aft stick reversal and fuselage buffeting.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Gross weight above 3,200 lbs on landing gear",
+      "status": "PROHIBITED",
+      "notes": "Loads resulting in gross weights above 3,200 lbs shall be carried on cargo hook and shall not be imposed on landing gear.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "85 to 100% torque takeoff power range airspeed",
+      "status": "REQUIRED",
+      "notes": "Vne 80 KIAS when operating in 85 to 100% torque takeoff power range.",
+      "confidence": "extracted"
+    }
+  ],
+  "faa_ad_95_26_04": {
+    "note": "FAA AD 95-26-04 is not referenced in the available text of this Flight Manual. The manual was approved by FAA on 14 September 1995 (Revision 6). No specific AD 95-26-04 limitations section was found in the extracted pages.",
+    "limitations": [
+      {
+        "item": "FAA AD 95-26-04",
+        "status": "verify",
+        "notes": "Not found in the available text. May be incorporated by reference or listed in a section not captured in this extraction.",
+        "confidence": "verify"
+      }
+    ]
+  }
+}

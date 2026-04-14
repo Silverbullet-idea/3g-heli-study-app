@@ -1,0 +1,1284 @@
+{
+  "aircraft": "Bell 206B3",
+  "poh_source": "systems",
+  "source_file": "b206_full.txt",
+  "extracted_date": "2026-04-14",
+  "extraction_script_version": "1.0.0",
+  "systems": {
+    "powerplant": {
+      "title": "POWER PLANT LIMITATIONS",
+      "description": "The Bell 206B3 is powered by an Allison Model 250-C20B or 250-C20J turboshaft engine. Limitations for the C20B are equally applicable to the C20J. The engine drives the main and tail rotors through a transmission system.",
+      "key_points": [
+        "Allison 250-C20B and 250-C20J engines are interchangeable for limitation purposes",
+        "Takeoff power is limited to 5 minutes at 100% torque",
+        "Maximum continuous torque is 65%",
+        "Transient torque of 110% allowed for 5 seconds maximum; intentional use prohibited",
+        "TOT takeoff limit is 610°C for 5 minutes; maximum continuous is 738°C",
+        "TOT transient during power change is 810–843°C for 6 seconds maximum; intentional use prohibited",
+        "TOT during starting/shutdown is 610–927°C for 10 seconds maximum",
+        "N1 maximum is 105%; transient 106% for 15 seconds maximum",
+        "N2 minimum power-on is 97%; maximum is 100%",
+        "Use of throttle to control RPM is not authorized except in emergency"
+      ],
+      "components": [
+        "Allison 250-C20B engine",
+        "Allison 250-C20J engine",
+        "Fuel control",
+        "Governor",
+        "TOT warning light",
+        "Engine oil tank"
+      ],
+      "specifications": [
+        {
+          "item": "Takeoff torque limit",
+          "value": 100,
+          "unit": "%",
+          "notes": "5 minute limit"
+        },
+        {
+          "item": "Transient torque limit",
+          "value": 110,
+          "unit": "%",
+          "notes": "5 second limit; intentional use prohibited"
+        },
+        {
+          "item": "Maximum continuous torque",
+          "value": 65,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "N1 maximum RPM",
+          "value": 105,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "N1 transient RPM",
+          "value": 106,
+          "unit": "%",
+          "notes": "15 seconds maximum"
+        },
+        {
+          "item": "N2 minimum (power on)",
+          "value": 97,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "N2 maximum (power on)",
+          "value": 100,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "TOT takeoff limit",
+          "value": 610,
+          "unit": "°C",
+          "notes": "5 minute limit"
+        },
+        {
+          "item": "TOT maximum continuous",
+          "value": 738,
+          "unit": "°C",
+          "notes": ""
+        },
+        {
+          "item": "TOT transient (power change)",
+          "value": null,
+          "unit": "°C",
+          "notes": "810–843°C, 6 seconds max; intentional use prohibited"
+        },
+        {
+          "item": "TOT starting/shutdown transient",
+          "value": null,
+          "unit": "°C",
+          "notes": "610–927°C, 10 seconds max"
+        },
+        {
+          "item": "Engine oil pressure minimum",
+          "value": 50,
+          "unit": "PSI",
+          "notes": "Below 76.5% N1"
+        },
+        {
+          "item": "Engine oil pressure minimum",
+          "value": 90,
+          "unit": "PSI",
+          "notes": "Between 76.5% and 94.2% N1"
+        },
+        {
+          "item": "Engine oil pressure minimum",
+          "value": 115,
+          "unit": "PSI",
+          "notes": "Above 94.2% N1"
+        },
+        {
+          "item": "Engine oil pressure maximum",
+          "value": 130,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Engine oil temperature continuous",
+          "value": null,
+          "unit": "°C",
+          "notes": "0°C to 107°C"
+        },
+        {
+          "item": "Engine oil temperature maximum",
+          "value": 107,
+          "unit": "°C",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "fuel_system": {
+      "title": "FUEL LIMITATIONS",
+      "description": "The helicopter uses turbine fuel. Multiple fuel types are approved with temperature restrictions. Fuel boost pumps are required to be ON for normal operations. Unusable fuel quantity depends on boost pump status.",
+      "key_points": [
+        "ASTM-D 1655 Type B or MIL-T-5624 Grade JP-4 approved at all ambient temperatures",
+        "Type A, A-1, JP-5, JP-8 limited to -18°C (0°F) and above unless aircraft has fuel pressure gage with red triangle at 6 PSI",
+        "Helicopters with fuel pressure gage red triangle at 6 PSI may use Type A/A-1/JP-5/JP-8 down to -32°C provided fuel pressure is 6 PSI or above",
+        "Helicopters with airframe-mounted fuel filter do not require anti-icing additive at any temperature",
+        "Both fuel boost pumps shall be ON for all normal operations",
+        "Operation with both fuel boost pumps inoperative is not authorized",
+        "Unusable fuel is 10 gallons with one or both boost pumps inoperative in unusual attitudes",
+        "Fuel pressure minimum 4.0 PSI; maximum 30.0 PSI",
+        "FUEL LOW warning illuminates at approximately 20 gallons (S/N 4110 and prior) or 17 gallons (S/N 4111 and subsequent)"
+      ],
+      "components": [
+        "Forward fuel boost pump",
+        "Aft fuel boost pump",
+        "Fuel valve (FUEL VALVE switch)",
+        "Airframe fuel filter",
+        "Engine fuel pump filter",
+        "Fuel sump drain",
+        "Fuel pressure gage"
+      ],
+      "specifications": [
+        {
+          "item": "Fuel pressure minimum",
+          "value": 4.0,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Fuel pressure maximum",
+          "value": 30.0,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "FUEL LOW warning threshold (S/N 4110 and prior)",
+          "value": 20,
+          "unit": "US gallons",
+          "notes": ""
+        },
+        {
+          "item": "FUEL LOW warning threshold (S/N 4111 and subsequent)",
+          "value": 17,
+          "unit": "US gallons",
+          "notes": ""
+        },
+        {
+          "item": "Unusable fuel (boost pump inoperative)",
+          "value": 10,
+          "unit": "US gallons",
+          "notes": "With one or both boost pumps inoperative in unusual attitudes or out-of-trim conditions"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "transmission_system": {
+      "title": "TRANSMISSION OIL LIMITATIONS",
+      "description": "The main transmission and tail rotor gearbox use approved oils with defined pressure and temperature limits. Oil type is MIL-L-7808, MIL-L-23699, or DOD-L-65734.",
+      "key_points": [
+        "Transmission oil pressure minimum 30 PSI; continuous 30–50 PSI; maximum 70 PSI",
+        "Transmission oil temperature continuous 15–110°C; maximum 110°C",
+        "Oil types MIL-L-7808, MIL-L-23699, and DOD-L-65734 (AS) approved",
+        "MIL-L-23699 and DOD-L-65734 limited to ambient temperatures above -40°C",
+        "Main driveshaft forward coupling has four Temp-Plates; black dot indicates overtemperature"
+      ],
+      "components": [
+        "Main transmission",
+        "Tail rotor gearbox",
+        "Main driveshaft forward coupling",
+        "Temp-Plates (4 places on driveshaft coupling)",
+        "Oil cooler",
+        "Oil cooler blower"
+      ],
+      "specifications": [
+        {
+          "item": "Transmission oil pressure minimum",
+          "value": 30,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Transmission oil pressure continuous",
+          "value": null,
+          "unit": "PSI",
+          "notes": "30 to 50 PSI"
+        },
+        {
+          "item": "Transmission oil pressure maximum",
+          "value": 70,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Transmission oil temperature continuous",
+          "value": null,
+          "unit": "°C",
+          "notes": "15 to 110°C"
+        },
+        {
+          "item": "Transmission oil temperature maximum",
+          "value": 110,
+          "unit": "°C",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "rotor_system": {
+      "title": "ROTOR (NR) LIMITATIONS",
+      "description": "The main rotor (NR) has defined RPM limits for powered and autorotative flight. Rotor RPM is monitored via a dual tachometer. A ROTOR LOW RPM warning light and audio alert activate below 90% with collective off the down stop.",
+      "key_points": [
+        "Power on NR minimum 97%; maximum 100%",
+        "Transient rotor RPM droop to 96% permitted but should not exceed 5 seconds",
+        "Power off NR minimum 90%; maximum 107%",
+        "50% to 60% NR range: accelerate through as rapidly as practical with cyclic neutral",
+        "ROTOR LOW RPM warning activates below 90% NR when collective is off the down stop",
+        "Standard tail rotor diameter is 66 inches (P/N 206-016-201); 62-inch optional (P/N 206-010-750)"
+      ],
+      "components": [
+        "Main rotor hub and yoke",
+        "Main rotor blades",
+        "Pitch links",
+        "Swashplate assembly",
+        "Dual tachometer",
+        "ROTOR LOW RPM warning light",
+        "Tail rotor (66-inch diameter standard)"
+      ],
+      "specifications": [
+        {
+          "item": "NR minimum (power on)",
+          "value": 97,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "NR maximum (power on)",
+          "value": 100,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "NR transient droop (power on)",
+          "value": 96,
+          "unit": "%",
+          "notes": "Should not exceed 5 seconds"
+        },
+        {
+          "item": "NR minimum (power off/autorotation)",
+          "value": 90,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "NR maximum (power off/autorotation)",
+          "value": 107,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "Standard tail rotor diameter",
+          "value": 66,
+          "unit": "inches",
+          "notes": "P/N 206-016-201"
+        },
+        {
+          "item": "Optional tail rotor diameter",
+          "value": 62,
+          "unit": "inches",
+          "notes": "P/N 206-010-750; refer to BHT-206B3-FMS-22"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "hydraulic_system": {
+      "title": "HYDRAULIC SYSTEM FAILURE",
+      "description": "The hydraulic system provides power-assisted flight controls (cyclic, collective, and optionally pedals). In the event of failure, controls remain functional but require significantly increased force. An HYD BOOST (or CONTROL BOOST/HYDRAULIC SYSTEM) switch allows the system to be cycled as a reset.",
+      "key_points": [
+        "Hydraulic boost failure first indicated by increased control forces",
+        "Feedback forces and rate limiting occur with hydraulics off",
+        "HYD BOOST circuit breaker should be cycled first if failure suspected",
+        "CONTROL BOOST or HYDRAULIC SYSTEM switch to be cycled as corrective action",
+        "Run-on landing at 12–17 MPH (10–15 knots) recommended after hydraulic failure",
+        "Maintain airspeed above translational lift speed for best control at touchdown"
+      ],
+      "components": [
+        "Hydraulic reservoir",
+        "Hydraulic system filter (bypass indicator)",
+        "Hydraulic actuators (cyclic, collective, yaw)",
+        "HYD BOOST/CONTROL BOOST/HYDRAULIC SYSTEM switch",
+        "HYD BOOST circuit breaker"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "electrical_system": {
+      "title": "ELECTRICAL POWER FAILURE",
+      "description": "Electrical power is provided by the engine-mounted starter/generator after engine start. There is no standby generator. Battery provides limited backup power. A loadmeter monitors generator output. Maximum loadmeter is 70%.",
+      "key_points": [
+        "Starter used as generator after start is accomplished",
+        "No standby generator provision",
+        "Battery provides short-term backup in case of generator failure",
+        "GEN FAIL light indicates generator failure; GEN switch RESET then ON as first action",
+        "If generator failure persists, switch GEN OFF and reduce electrical load",
+        "Reduce altitude below 6000 feet pressure altitude if possible due to risk of fuel boost pump loss",
+        "Loadmeter maximum limit is 70%; normal load is 10–20%"
+      ],
+      "components": [
+        "Starter/generator",
+        "Battery",
+        "GEN switch",
+        "Loadmeter",
+        "GEN FAIL caution light",
+        "BATTERY TEMP warning/caution light",
+        "BATTERY HOT warning light"
+      ],
+      "specifications": [
+        {
+          "item": "Loadmeter maximum",
+          "value": 70,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "Normal loadmeter range",
+          "value": null,
+          "unit": "%",
+          "notes": "10–20%"
+        },
+        {
+          "item": "BATTERY HOT warning threshold",
+          "value": 140,
+          "unit": "°F",
+          "notes": "60.0°C; turn BAT switch OFF and land as soon as possible"
+        },
+        {
+          "item": "BATTERY TEMP caution threshold",
+          "value": 130,
+          "unit": "°F",
+          "notes": "54.5°C; turn BAT switch OFF until light extinguishes"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "engine_anti_ice_system": {
+      "title": "ENGINE ANTI-ICE LIMITATIONS",
+      "description": "The engine anti-icing system uses bleed air or an electrically actuated valve to prevent ice formation in the engine air inlet. It must be ON in visible moisture below 4.4°C and must not be used above 4.4°C ambient. TOT rises when anti-ice is activated.",
+      "key_points": [
+        "Engine anti-ice shall NOT be used above 4.4°C (40°F) ambient",
+        "Engine anti-icing shall be ON for flight in visible moisture below 4.4°C (40°F)",
+        "TOT will increase when ENGINE ANTI-ICING is switched ON",
+        "Switch placarded ENGINE DE-ICING on older helicopters; ENGINE ANTI-ICING on S/N 3567 and subsequent",
+        "PITOT HEAT switch to be ON in visible moisture below 4.4°C if installed",
+        "For operations in falling/blowing snow: Particle Separator (FMS-12), Deflector Kit (FMS-10), and Auto Re-Ignition (FMS-18) shall all be installed"
+      ],
+      "components": [
+        "ENGINE DE-ICING / ENGINE ANTI-ICING switch",
+        "Engine anti-ice valve and linkage",
+        "PITOT HEAT switch"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum OAT for anti-ice use",
+          "value": 4.4,
+          "unit": "°C",
+          "notes": "Anti-ice shall not be used above this temperature"
+        },
+        {
+          "item": "Minimum OAT requiring anti-ice in visible moisture",
+          "value": 4.4,
+          "unit": "°C",
+          "notes": "Anti-ice must be ON below this temperature in visible moisture"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "engine_starting_system": {
+      "title": "ENGINE STARTER LIMITATIONS",
+      "description": "The engine is started using an electric starter motor. Starter duty cycles differ between external power and battery starts to prevent overheating. Starting is not recommended below 12% N1.",
+      "key_points": [
+        "External power: 25 sec ON / 30 sec OFF cycles, three cycles then 30 min OFF",
+        "Battery power: 40 sec ON / 60 sec OFF cycles, three cycles then 30 min OFF",
+        "Throttle to flight idle at 15% N1 with TOT at or below 150°C",
+        "Start should not be attempted below 12% N1",
+        "Starter released at 56% N1",
+        "Minimum N1 start speed varies with OAT: 15% above 7°C, 13% at -16 to +7°C, 12% below -16°C",
+        "If main rotor not rotating by 25% N1, abort the start",
+        "Monitor TOT closely during start to avoid hot start (limit 927°C)"
+      ],
+      "components": [
+        "Starter motor",
+        "IDLE REL button",
+        "Throttle (twist grip)",
+        "IGN ENG circuit breaker"
+      ],
+      "specifications": [
+        {
+          "item": "Starter ON time (external power)",
+          "value": 25,
+          "unit": "seconds",
+          "notes": "Per cycle; 3 cycles then 30 min OFF"
+        },
+        {
+          "item": "Starter OFF time (external power)",
+          "value": 30,
+          "unit": "seconds",
+          "notes": "Between cycles"
+        },
+        {
+          "item": "Starter ON time (battery)",
+          "value": 40,
+          "unit": "seconds",
+          "notes": "Per cycle; 3 cycles then 30 min OFF"
+        },
+        {
+          "item": "Starter OFF time (battery)",
+          "value": 60,
+          "unit": "seconds",
+          "notes": "Between cycles"
+        },
+        {
+          "item": "Starter release N1",
+          "value": 56,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "Throttle open N1",
+          "value": 15,
+          "unit": "%",
+          "notes": "With TOT at or below 150°C"
+        },
+        {
+          "item": "Minimum N1 for start attempt (above 7°C)",
+          "value": 15,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "Minimum N1 for start attempt (-16 to +7°C)",
+          "value": 13,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "Minimum N1 for start attempt (below -16°C)",
+          "value": 12,
+          "unit": "%",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "weight_and_balance": {
+      "title": "WEIGHT LIMITATIONS / LONGITUDINAL CENTER OF GRAVITY LIMITS / LATERAL CENTER OF GRAVITY LIMITS",
+      "description": "The helicopter has defined gross weight limits for internal and external loading, with CG envelope varying with gross weight. Station 0 datum is 55.16 inches forward of the forward jack point centerline.",
+      "key_points": [
+        "Maximum internal gross weight for takeoff and landing is 3200 lb (1451.5 kg)",
+        "Maximum external cargo gross weight is 3350 lb (1519.5 kg)",
+        "Loads resulting in gross weights above 3200 lb shall be on cargo hook only, not imposed on landing gear",
+        "Longitudinal CG range: station 106.0 to 114.2 inches (variable aft limit with gross weight)",
+        "With forward door(s) off: CG limited to station 106.0 to 110.0 inches",
+        "Lateral CG: 3.0 inches left to 4.0 inches right of centerline (varies with longitudinal CG)",
+        "Minimum front seat weight (pilot) is 170 lb (77.1 kg)",
+        "Station datum is 55.16 inches (1401.1 mm) forward of forward jack point centerline"
+      ],
+      "components": [
+        "Baggage compartment (max 250 lb / 86 lb per sq ft)",
+        "Forward crew seats",
+        "Aft passenger seats",
+        "Cargo hook attachment point (station 108.5 in)"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum internal gross weight",
+          "value": 3200,
+          "unit": "lb",
+          "notes": "1451.5 kg"
+        },
+        {
+          "item": "Maximum external cargo gross weight",
+          "value": 3350,
+          "unit": "lb",
+          "notes": "1519.5 kg"
+        },
+        {
+          "item": "Longitudinal CG forward limit",
+          "value": 106.0,
+          "unit": "inches",
+          "notes": "Station 2692.4 mm"
+        },
+        {
+          "item": "Longitudinal CG aft limit (normal)",
+          "value": 114.2,
+          "unit": "inches",
+          "notes": "Station 2900.7 mm; variable with gross weight"
+        },
+        {
+          "item": "Longitudinal CG aft limit (forward door(s) off)",
+          "value": 110.0,
+          "unit": "inches",
+          "notes": "Station 2794.0 mm"
+        },
+        {
+          "item": "Lateral CG limit left",
+          "value": 3.0,
+          "unit": "inches",
+          "notes": "Left of centerline; varies with longitudinal CG"
+        },
+        {
+          "item": "Lateral CG limit right",
+          "value": 4.0,
+          "unit": "inches",
+          "notes": "Right of centerline; varies with longitudinal CG"
+        },
+        {
+          "item": "Minimum front seat weight",
+          "value": 170,
+          "unit": "lb",
+          "notes": "77.1 kg"
+        },
+        {
+          "item": "Maximum baggage compartment weight",
+          "value": 250,
+          "unit": "lb",
+          "notes": ""
+        },
+        {
+          "item": "Maximum baggage floor loading",
+          "value": 86,
+          "unit": "lb/sq ft",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "airspeed_limitations": {
+      "title": "AIRSPEED LIMITATIONS",
+      "description": "Vne varies with gross weight, density altitude, and door configuration. Exceeding Vne with doors off causes cyclic fore and aft stick reversal and fuselage buffeting.",
+      "key_points": [
+        "At 3000 lb and below: Vne 150 MPH IAS (130 KIAS) sea level to 3000 ft DA; decrease 4.0 MPH (3.5 KIAS) per 1000 ft above 3000 ft; max pressure altitude 20,000 ft",
+        "Above 3000 lb: Vne 140 MPH IAS (122 KIAS) sea level to 3000 ft DA; decrease 8.0 MPH (7.0 KIAS) per 1000 ft above 3000 ft; max density altitude 13,500 ft",
+        "85–100% torque takeoff power range: Vne 92 MPH IAS (80 KIAS)",
+        "Aft door(s) off: Vne 100 MPH IAS (87 KIAS) power on or off",
+        "Forward door(s) off: Vne 80 MPH IAS (69 KIAS) power on or off",
+        "Exceeding door-off airspeed limits causes cyclic reversal and fuselage buffeting",
+        "Maximum autorotation airspeed is 115 MPH (100 knots) IAS",
+        "Minimum descent airspeed in autorotation is 60 MPH (52 knots) IAS; maximum glide distance at 80 MPH (69 knots) IAS"
+      ],
+      "components": [
+        "Airspeed indicator",
+        "Airspeed placard"
+      ],
+      "specifications": [
+        {
+          "item": "Vne (≤3000 lb, sea level to 3000 ft DA)",
+          "value": 150,
+          "unit": "MPH IAS",
+          "notes": "130 KIAS"
+        },
+        {
+          "item": "Vne decrease rate (≤3000 lb, above 3000 ft DA)",
+          "value": 4.0,
+          "unit": "MPH IAS per 1000 ft",
+          "notes": "3.5 KIAS per 1000 ft"
+        },
+        {
+          "item": "Vne (>3000 lb, sea level to 3000 ft DA)",
+          "value": 140,
+          "unit": "MPH IAS",
+          "notes": "122 KIAS"
+        },
+        {
+          "item": "Vne decrease rate (>3000 lb, above 3000 ft DA)",
+          "value": 8.0,
+          "unit": "MPH IAS per 1000 ft",
+          "notes": "7.0 KIAS per 1000 ft"
+        },
+        {
+          "item": "Vne (85–100% torque range)",
+          "value": 92,
+          "unit": "MPH IAS",
+          "notes": "80 KIAS"
+        },
+        {
+          "item": "Vne aft door(s) off",
+          "value": 100,
+          "unit": "MPH IAS",
+          "notes": "87 KIAS"
+        },
+        {
+          "item": "Vne forward door(s) off",
+          "value": 80,
+          "unit": "MPH IAS",
+          "notes": "69 KIAS"
+        },
+        {
+          "item": "Maximum steady autorotation airspeed",
+          "value": 115,
+          "unit": "MPH IAS",
+          "notes": "100 KIAS"
+        },
+        {
+          "item": "Autorotation minimum rate of descent airspeed",
+          "value": 60,
+          "unit": "MPH IAS",
+          "notes": "52 KIAS"
+        },
+        {
+          "item": "Autorotation maximum glide distance airspeed",
+          "value": 80,
+          "unit": "MPH IAS",
+          "notes": "69 KIAS"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "altitude_limitations": {
+      "title": "ALTITUDE LIMITATIONS",
+      "description": "Maximum operating altitude varies with gross weight. Below 3000 lb the limit is 20,000 ft pressure altitude; above 3000 lb the limit is 13,500 ft density altitude.",
+      "key_points": [
+        "At 3000 lb gross weight and below: maximum operating 20,000 ft pressure altitude",
+        "Above 3000 lb gross weight: maximum operating 13,500 ft density altitude",
+        "Recommended to use approved oxygen equipment above 10,000 ft",
+        "Air starts prohibited above 12,000 ft"
+      ],
+      "components": [
+        "Altimeter"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum pressure altitude (≤3000 lb)",
+          "value": 20000,
+          "unit": "feet",
+          "notes": "Pressure altitude"
+        },
+        {
+          "item": "Maximum density altitude (>3000 lb)",
+          "value": 13500,
+          "unit": "feet",
+          "notes": "Density altitude"
+        },
+        {
+          "item": "Altitude for oxygen recommendation",
+          "value": 10000,
+          "unit": "feet",
+          "notes": "Recommended, not mandatory"
+        },
+        {
+          "item": "Maximum altitude for engine air start",
+          "value": 12000,
+          "unit": "feet",
+          "notes": "Pressure altitude"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "stability_control_augmentation_system": {
+      "title": "STABILITY CONTROL AUGMENTATION SYSTEM (SCAS)",
+      "description": "The optional SCAS Kit (206-706-305) provides stability augmentation in cyclic and yaw axes via sensor-amplifier, servo cylinders, and transducer. It can be manually overridden or disengaged at any time during flight.",
+      "key_points": [
+        "System consists of sensor-amplifier unit, servo cylinders, transducer assembly, control head and panel",
+        "SAS PWR switch must be pushed in to activate; amber light illuminates, red light extinguishes after warm-up",
+        "SAS CYCLIC and YAW switches each have individual green lights",
+        "SAS REL switch on cyclic stick disengages system in flight",
+        "Erratic pitch, roll, or yaw oscillations: press SAS REL; land as soon as practical if condition persists",
+        "Hydraulic actuator failure (lost motion): press SAS REL; land as soon as practical with slow forward speed",
+        "All SAS switches to OFF prior to engine shutdown"
+      ],
+      "components": [
+        "Sensor-amplifier unit",
+        "Servo cylinders",
+        "Transducer assembly",
+        "Control head and panel",
+        "SAS PWR switch",
+        "SAS CYCLIC switch",
+        "SAS YAW switch",
+        "SAS REL switch (on cyclic stick)",
+        "SAS INV circuit breaker",
+        "SAS CONT circuit breaker"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "particle_separator_system": {
+      "title": "PARTICLE SEPARATOR ENGINE AIR INDUCTION SYSTEM",
+      "description": "The optional Particle Separator Kit (206-706-200 or 206-706-201) protects the engine from ingesting particles in blowing/falling snow conditions. It uses engine bleed air to purge the separator. Performance is slightly reduced compared to standard inlet due to increased pressure drop and bleed air usage.",
+      "key_points": [
+        "Must be installed with Deflector Kit (FMS-10) and Auto Re-Ignition (FMS-18) for snow operations",
+        "Takeoff prohibited with any snow or ice in inlet or plenum areas",
+        "Ground operations and hover limited to 20 minutes total per occurrence",
+        "Ground idle limited to 5 minutes; if exceeded, shut down and inspect",
+        "Flight prohibited when visibility in falling/blowing snow is less than 0.5 statute mile",
+        "Particle separator more efficient at 100% RPM and hover power than at idle",
+        "Use basic helicopter performance data when separator is removed and screen reinstalled",
+        "Deflector baffles must be removed if particle separator is removed"
+      ],
+      "components": [
+        "Particle separator",
+        "Bleed air tubing and hose",
+        "Plexiglass inspection windows on inlet cowling",
+        "Deflector baffles (from Deflector Kit FMS-10)",
+        "Flow vanes"
+      ],
+      "specifications": [
+        {
+          "item": "Ground/hover time limit per occurrence (snow ops)",
+          "value": 20,
+          "unit": "minutes",
+          "notes": "Total duration"
+        },
+        {
+          "item": "Ground idle time limit (snow ops)",
+          "value": 5,
+          "unit": "minutes",
+          "notes": "At idle power (twist grip at idle)"
+        },
+        {
+          "item": "Minimum visibility for flight in snow",
+          "value": 0.5,
+          "unit": "statute miles",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "cargo_hook_system": {
+      "title": "CARGO HOOK 1500 POUND (681 KILOGRAMS) CAPACITY",
+      "description": "The optional cargo hook kit (206-706-335 or 206-706-101) provides external load carrying capability. It includes electrical and manual emergency release systems. Hooks are located near the helicopter CG at station 108.5 inches.",
+      "key_points": [
+        "Maximum external cargo load (206-706-335): 1500 lb (681 kg)",
+        "Maximum external cargo load (206-706-101 and -104): 1200 lb (544.3 kg)",
+        "Maximum gross weight with external load: 3350 lb (1519.5 kg)",
+        "Vne above 3000 lb with external cargo: 91 MPH (78 KIAS)",
+        "Cargo hook location: station 108.5 in (2755.9 mm)",
+        "Simultaneous use of hoist and external cargo hook is prohibited",
+        "Discharge static electricity before attaching cargo sling",
+        "Cyclic CARGO RELEASE switch provides electrical release; EMER CARGO RELEASE PULL provides mechanical backup",
+        "Avoid critical relative winds during cargo operations",
+        "Bungee shock cord provides automatic stowing when hook not in use",
+        "A swivel link between suspension cable and hook is recommended (not supplied)"
+      ],
+      "components": [
+        "Frame and hook assembly (or A-frame mounts and crossbeam)",
+        "Load beam",
+        "Primary and secondary load rings",
+        "Electrical release (CARGO RELEASE switch on cyclic)",
+        "Manual emergency release (EMER CARGO RELEASE PULL handle)",
+        "Bungee shock cord",
+        "CARGO HOOK circuit breaker"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum external load (kit 206-706-335)",
+          "value": 1500,
+          "unit": "lb",
+          "notes": "681 kg"
+        },
+        {
+          "item": "Maximum external load (kits 206-706-101 and -104)",
+          "value": 1200,
+          "unit": "lb",
+          "notes": "544.3 kg"
+        },
+        {
+          "item": "Maximum gross weight with external load",
+          "value": 3350,
+          "unit": "lb",
+          "notes": "1519.5 kg"
+        },
+        {
+          "item": "Vne above 3000 lb (external cargo)",
+          "value": 91,
+          "unit": "MPH IAS",
+          "notes": "78 KIAS"
+        },
+        {
+          "item": "Hook station location",
+          "value": 108.5,
+          "unit": "inches",
+          "notes": "2755.9 mm"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "emergency_flotation_system": {
+      "title": "HIGH-SKID GEAR WITH EMERGENCY FLOTATION / LIGHTWEIGHT EMERGENCY FLOTATION LANDING GEAR",
+      "description": "Optional emergency flotation kits attach inflatable floats to the main skid panels. The floats are inflated by nitrogen bottle and can be armed manually or automatically (upon ENG OUT). Inflation time is approximately 5–6 seconds.",
+      "key_points": [
+        "Float inflation time approximately 5–6 seconds",
+        "Maximum inflation airspeed: 70 MPH (61 KIAS) for standard kit; 60 MPH (52 KIAS) for lightweight kit",
+        "Vne with floats inflated (standard): 100 MPH (87 KIAS) all doors on; 60 MPH (52 KIAS) with aft door(s) off",
+        "Vne with floats inflated (lightweight): 80 MPH (69 KIAS)",
+        "Maximum autorotation airspeed with floats inflated (lightweight): 70 MPH (60 KIAS)",
+        "Maximum rate of climb with floats inflated: 1000 ft/min",
+        "Do not inflate floats more than 5000 ft (standard) or 2000 ft (lightweight) above anticipated landing surface",
+        "Undesirable pitching occurs during inflation above limit airspeed",
+        "Automatic arming: FLOAT POWER switch ON arms system when ENG OUT light illuminates",
+        "After emergency water landing: ferry airspeed restricted to 100 MPH (standard) or 80 MPH (lightweight) for repacking flight",
+        "Floats and covers must be installed for all flight operations"
+      ],
+      "components": [
+        "Inflatable floats (attached to skid panels)",
+        "Nitrogen inflation bottle (2600–2900 PSI)",
+        "FLOAT POWER / FLOAT MANUAL ARM switch",
+        "FLOAT INFLATION switch / trigger",
+        "FLOAT ARM caution light",
+        "Manual arming system",
+        "Float covers",
+        "Navigation/position lights (relocated)"
+      ],
+      "specifications": [
+        {
+          "item": "Float inflation time",
+          "value": null,
+          "unit": "seconds",
+          "notes": "Approximately 5–6 seconds"
+        },
+        {
+          "item": "Nitrogen bottle pressure",
+          "value": null,
+          "unit": "PSI",
+          "notes": "2600 to 2900 PSI"
+        },
+        {
+          "item": "Maximum inflation airspeed (standard kit)",
+          "value": 70,
+          "unit": "MPH IAS",
+          "notes": "61 KIAS"
+        },
+        {
+          "item": "Maximum inflation airspeed (lightweight kit)",
+          "value": 60,
+          "unit": "MPH IAS",
+          "notes": "52 KIAS"
+        },
+        {
+          "item": "Vne floats inflated (standard, doors on)",
+          "value": 100,
+          "unit": "MPH IAS",
+          "notes": "87 KIAS"
+        },
+        {
+          "item": "Vne floats inflated (lightweight)",
+          "value": 80,
+          "unit": "MPH IAS",
+          "notes": "69 KIAS"
+        },
+        {
+          "item": "Max autorotation airspeed floats inflated (lightweight)",
+          "value": 70,
+          "unit": "MPH IAS",
+          "notes": "60 KIAS"
+        },
+        {
+          "item": "Maximum rate of climb with floats inflated",
+          "value": 1000,
+          "unit": "ft/min",
+          "notes": ""
+        },
+        {
+          "item": "Maximum gross weight (standard flotation)",
+          "value": 3200,
+          "unit": "lb",
+          "notes": "1451.5 kg"
+        },
+        {
+          "item": "Max altitude above landing surface for inflation (standard)",
+          "value": 5000,
+          "unit": "feet",
+          "notes": ""
+        },
+        {
+          "item": "Max altitude above landing surface for inflation (lightweight)",
+          "value": 2000,
+          "unit": "feet",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "hoist_system": {
+      "title": "HOIST - EXTERNAL",
+      "description": "The optional external hoist kit (206-706-124 or 206-706-126) provides rescue/cargo hoisting capability. The winch is motor-driven at 50 ft/min cable travel rate with 100 or 110 ft of usable cable. Maximum hoist load is 300 lb.",
+      "key_points": [
+        "206-706-124: 100 ft (30.5 m) of usable cable; includes OVERHEAT WARNING light",
+        "206-706-126: 110 ft (33.5 m) of usable cable",
+        "Cable travel rate: 50 ft (15.2 m) per minute",
+        "Maximum hoist load: 300 lb (136 kg); refer to Hoist Loading Nomograph",
+        "Only 3 consecutive full cycles permitted; then 40 minutes cooling",
+        "Allow 30-second rest between each half cycle (full up or full down)",
+        "Object being hoisted must be completely in cabin before forward flight",
+        "Simultaneous use of hoist and external cargo hook is prohibited",
+        "Hoist operations are prohibited with standard fixed float gear (206-706-008)",
+        "Cable Guard Kit (206-706-214) required when hoist used with lightweight emergency floats",
+        "CABLE CUT switch available for emergency load release",
+        "Passenger operations with hoist installed are approved if hoist is not used and system is deactivated"
+      ],
+      "components": [
+        "Hoist motor and winch assembly",
+        "Mounting frame",
+        "Master control panel",
+        "Crew members pendant control",
+        "HOIST POWER switch",
+        "CABLE CUT switch",
+        "OVERHEAT WARNING light (206-706-124 only)",
+        "HOIST POWER circuit breaker",
+        "CABLE CUT circuit breaker"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum hoist load",
+          "value": 300,
+          "unit": "lb",
+          "notes": "136 kg; refer to Hoist Loading Nomograph"
+        },
+        {
+          "item": "Cable length (206-706-124)",
+          "value": 100,
+          "unit": "feet",
+          "notes": "30.5 meters usable"
+        },
+        {
+          "item": "Cable length (206-706-126)",
+          "value": 110,
+          "unit": "feet",
+          "notes": "33.5 meters usable"
+        },
+        {
+          "item": "Cable travel rate",
+          "value": 50,
+          "unit": "ft/min",
+          "notes": "15.2 m/min"
+        },
+        {
+          "item": "Maximum consecutive cycles",
+          "value": 3,
+          "unit": "cycles",
+          "notes": "Full up and full down; then 40-minute cooling period"
+        },
+        {
+          "item": "Rest period between half cycles",
+          "value": 30,
+          "unit": "seconds",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "engine_auto_relight_system": {
+      "title": "ENGINE (AUTOMATIC) RE-IGNITION",
+      "description": "The optional Engine Relight Kit (206-706-038) provides automatic re-ignition if the engine flames out. Re-ignition is triggered by decay of engine bleed air pressure upon flameout when the system is armed. Required for snow operations in conjunction with Particle Separator and Deflector Kit.",
+      "key_points": [
+        "Actuated by bleed air decay upon engine flameout",
+        "System must be ARMED (switch to center ARM position) before takeoff",
+        "ENGINE RELIGHT indicator light illuminates when re-ignition occurs; system remains armed for subsequent re-ignition",
+        "Do not activate above 12,000 ft pressure altitude",
+        "Must be installed with Particle Separator (FMS-12) and Deflector Kit (FMS-10) for snow operations",
+        "Switch has three positions: TEST (momentary up), ARM (center), OFF/RESET (down)",
+        "To extinguish re-ignition indicator: move switch to OFF/RESET then back to ARM",
+        "System shall be ARMED for all snow operations below 12,000 ft"
+      ],
+      "components": [
+        "ENGINE RELIGHT switch (3-position)",
+        "ENGINE RELIGHT indicator light"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum altitude for system activation",
+          "value": 12000,
+          "unit": "feet",
+          "notes": "Pressure altitude; do not activate above this"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "bleed_air_heater": {
+      "title": "BLEED AIR HEATER",
+      "description": "The optional Bleed Air Heater (206-706-149 or 206-706-700) uses engine bleed air passed through a mixing valve to provide heated ventilation air to the cabin. A performance decrement applies when the heater is operating.",
+      "key_points": [
+        "Engine bleed air flows from engine through bleed lines to mixing valve into cabin",
+        "HEAT/VENT switch is two-position (HEAT and OFF); VENT not operable",
+        "TOT increases with Bleed Air Heater operating; observe TOT limits",
+        "Must be switched OFF if engine failure (air start to be attempted), governor failure, or insufficient power",
+        "206-706-700 installed on S/N 3567 and subsequent; primary differences are ducting and air outlets",
+        "Hover performance is reduced when heater is operating; see performance charts for decrements",
+        "DEFOG levers available (206-706-149 only) for windshield defogging"
+      ],
+      "components": [
+        "Bleed air lines",
+        "Mixing valve",
+        "HEAT/VENT switch",
+        "TEMP CONT knob",
+        "DEFOG levers (206-706-149)"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "environmental_control_system": {
+      "title": "ENVIRONMENTAL CONTROL SYSTEM (CABIN TEMP CONTROL)",
+      "description": "The optional ECS Kit (206-706-344 or 206-706-402) is powered by engine bleed air and provides cabin temperature control (heating and cooling). Operation is prohibited during takeoff, hover, and landing.",
+      "key_points": [
+        "Powered by engine bleed air; manually temperature controlled",
+        "Flight with ECS operating is prohibited during takeoff, hover, and landing",
+        "External cargo loading limited to 3200 lb (1451.5 kg) with ECS operating",
+        "ECS switch OFF before takeoff and landing; can be ON after translational lift attained",
+        "MAX HEAT position turns off unit cooling fan; do not use at ambient temperatures at or above -12°C",
+        "206-706-402 installed on S/N 3567 and subsequent",
+        "Allowable weight reduced by 75 lb when ECS is installed (placard on baggage door)"
+      ],
+      "components": [
+        "ECS unit",
+        "ECS switch",
+        "TEMPERATURE CONTROL knob",
+        "ECS circuit breaker"
+      ],
+      "specifications": [
+        {
+          "item": "Max gross weight for external cargo with ECS operating",
+          "value": 3200,
+          "unit": "lb",
+          "notes": "1451.5 kg"
+        },
+        {
+          "item": "Weight reduction when ECS installed",
+          "value": 75,
+          "unit": "lb",
+          "notes": "Reduce allowable weight by this amount"
+        },
+        {
+          "item": "Maximum OAT for MAX HEAT position",
+          "value": -12,
+          "unit": "°C",
+          "notes": "Do not use MAX HEAT at or above -12°C to prevent damage"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "rotor_brake_system": {
+      "title": "DUAL ROTOR BRAKE SYSTEM",
+      "description": "The optional Dual Rotor Brake System (206-706-034) allows rapid deceleration of the rotor after engine shutdown. It consists of a hydraulic brake disc and dual brake assembly operated by a master cylinder handle.",
+      "key_points": [
+        "Apply rotor brake between 38% and 30% rotor RPM",
+        "Avoid rapid engagement on ice or other slippery or loose surfaces to prevent helicopter rotation",
+        "Rotor brake handle must be in UP and LATCHED position before engine start",
+        "Rapid engagement can cause helicopter rotation on slippery surfaces"
+      ],
+      "components": [
+        "Brake disc",
+        "Dual brake assembly",
+        "Master cylinder",
+        "Hose assemblies",
+        "Tube assemblies",
+        "Operating handle"
+      ],
+      "specifications": [
+        {
+          "item": "Brake engagement RPM range",
+          "value": null,
+          "unit": "%",
+          "notes": "Between 38% and 30% rotor RPM"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "float_landing_gear_standard": {
+      "title": "FLOAT LANDING GEAR STANDARD TYPE (FIXED FLOATS)",
+      "description": "The standard fixed float kit (206-706-008) provides two streamlined multicell inflatable floats for water operations. Intentional power-off landings on land are prohibited. Maximum gross weight is 3000 lb.",
+      "key_points": [
+        "Certified for water operations under day or night VFR nonicing conditions",
+        "Intentional power-off landings on land are prohibited",
+        "Maximum gross weight 3000 lb (1360.6 kg)",
+        "Vne 120 MPH (104 KIAS) sea level to 3000 ft; decrease 6.0 MPH (4.4 KIAS) per 1000 ft above 3000 ft",
+        "Vne 90 MPH (76 KIAS) with standard floats and only left forward door removed",
+        "Maximum operating altitude 16,000 ft pressure altitude",
+        "Hoist operations are prohibited and system shall be deactivated",
+        "Do not exceed 8000 ft altitude change from departure point without resetting float pressure",
+        "Maximum float inflation pressure 4.5 psig; minimum per Float Inflation Chart",
+        "Rate of climb reduced by 400 ft/min with standard float gear",
+        "Taxi at slow speed to prevent float bows nosing under"
+      ],
+      "components": [
+        "Streamlined multicell inflatable floats (2)",
+        "Float mounting tubes",
+        "Mount crosstubes",
+        "Triangular tail skid plate",
+        "Position lights (relocated to float forward crosstube)"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum gross weight",
+          "value": 3000,
+          "unit": "lb",
+          "notes": "1360.6 kg"
+        },
+        {
+          "item": "Vne sea level to 3000 ft",
+          "value": 120,
+          "unit": "MPH IAS",
+          "notes": "104 KIAS"
+        },
+        {
+          "item": "Vne decrease rate above 3000 ft",
+          "value": 6.0,
+          "unit": "MPH IAS per 1000 ft",
+          "notes": "4.4 KIAS per 1000 ft"
+        },
+        {
+          "item": "Maximum operating altitude",
+          "value": 16000,
+          "unit": "feet",
+          "notes": "Pressure altitude"
+        },
+        {
+          "item": "Rate of climb reduction",
+          "value": 400,
+          "unit": "ft/min",
+          "notes": "Compared to basic helicopter"
+        },
+        {
+          "item": "Maximum float inflation pressure",
+          "value": 4.5,
+          "unit": "psig",
+          "notes": ""
+        },
+        {
+          "item": "Maximum altitude change from departure without resetting pressure",
+          "value": 8000,
+          "unit": "feet",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "flight_controls": {
+      "title": "FLIGHT WITH DOOR(S) OFF",
+      "description": "The helicopter may be flown with various door configurations with specific restrictions. Protracted rearward and sideward flight is prohibited. Doors-off flight affects CG limits and Vne.",
+      "key_points": [
+        "All unsecured items must be removed from cabin before flying with doors off",
+        "Protracted rearward and sideward flight prohibited",
+        "External cargo limited to 3350 lb gross weight with any combination of doors off",
+        "Flight with forward door(s) off is prohibited with litters installed",
+        "With only aft cabin door(s) off: no change to CG limits",
+        "With forward door(s) off or any combination including forward: CG limited to station 106.0–110.0",
+        "Minimum flight crew is one pilot operating from right crew seat",
+        "Dual controls required to use left crew seat as second pilot position"
+      ],
+      "components": [
+        "Forward cabin doors",
+        "Aft cabin doors",
+        "Door frame posts"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "n2_overspeed_protection": {
+      "title": "N2 TRANSIENT OVERSPEED LIMITS",
+      "description": "Power turbine (N2) transient overspeed limits are defined graphically in figure 1-3. Intentional use of transient limits is prohibited. The limits correlate N2 overspeed percentage with maximum allowable duration.",
+      "key_points": [
+        "Intentional use of N2 transient overspeed limits is prohibited",
+        "N2 transient overspeed limits defined in figure 1-3 correlating RPM to allowable duration",
+        "Maximum N2 transient overspeed duration is 15 seconds",
+        "During low power descents, RPM can be controlled by small collective increase and/or beeping down N2 governor",
+        "GOV RPM switch should be beeping to INCR as collective is applied"
+      ],
+      "components": [
+        "N2 governor",
+        "GOV RPM switch (INCR/DECR beeper)",
+        "Dual tachometer"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum N2 transient overspeed duration",
+          "value": 15,
+          "unit": "seconds",
+          "notes": "Refer to figure 1-3 for RPM vs duration envelope"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "caution_warning_systems": {
+      "title": "CAUTION LIGHT (AMBER) SEGMENTS / WARNING LIGHT (RED) SEGMENTS",
+      "description": "The helicopter has a caution/warning light panel with red warning segments for critical conditions and amber caution segments for system malfunctions. Audio warnings accompany certain conditions.",
+      "key_points": [
+        "ENG OUT: red warning with audio (intermittent) at N1 less than 55%",
+        "ROTOR LOW RPM: red/amber warning with steady audio when NR below 90% with collective off down stop",
+        "BATTERY HOT: red warning at 140°F (60°C); turn BAT OFF, land ASAP",
+        "BATTERY TEMP: amber caution at 130°F (54.5°C); turn BAT OFF until extinguishes",
+        "TRANS OIL PRESS: amber caution; land as soon as possible",
+        "TRANS OIL TEMP: amber caution; reduce power, check pressure, land ASAP",
+        "ENGINE CHIP, TRANS CHIP, T/R CHIP: land as soon as possible",
+        "GEN FAIL: reset GEN switch; if persists, GEN OFF and land as soon as practical",
+        "FUEL PUMP: one or both boost pumps inoperative; descend below 6000 ft if possible",
+        "FUEL FILTER / AF FUEL FILTER: land as soon as practical; clean before next flight",
+        "BAGGAGE DOOR: land as soon as practical",
+        "FUEL LOW: ~20 gal remaining (S/N 4110 and prior) or ~17 gal (S/N 4111 and subsequent)",
+        "WRN HORN MUTE button (if installed) can mute audio warnings"
+      ],
+      "components": [
+        "Caution/warning light panel",
+        "CAUTION LT TEST button",
+        "TOT LT TEST button",
+        "WRN HORN MUTE button",
+        "Audio warning system"
+      ],
+      "specifications": [
+        {
+          "item": "ENG OUT audio activation N1 threshold",
+          "value": 55,
+          "unit": "%",
+          "notes": "Below this N1 triggers ENG OUT audio"
+        },
+        {
+          "item": "ROTOR LOW RPM activation threshold",
+          "value": 90,
+          "unit": "%",
+          "notes": "NR below 90% with collective off down stop"
+        },
+        {
+          "item": "BATTERY HOT warning threshold",
+          "value": 140,
+          "unit": "°F",
+          "notes": "60.0°C"
+        },
+        {
+          "item": "BATTERY TEMP caution threshold",
+          "value": 130,
+          "unit": "°F",
+          "notes": "54.5°C"
+        },
+        {
+          "item": "FUEL LOW warning (S/N 4110 and prior)",
+          "value": 20,
+          "unit": "US gallons",
+          "notes": "Approximately"
+        },
+        {
+          "item": "FUEL LOW warning (S/N 4111 and subsequent)",
+          "value": 17,
+          "unit": "US gallons",
+          "notes": "Approximately"
+        }
+      ],
+      "confidence": "extracted"
+    }
+  }
+}

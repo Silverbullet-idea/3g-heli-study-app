@@ -1,0 +1,366 @@
+{
+  "aircraft": "Robinson R66",
+  "poh_source": "limitations",
+  "source_file": "r66_section2.txt",
+  "extracted_date": "2026-04-14",
+  "extraction_script_version": "1.0.0",
+  "airspeed_limits": {
+    "vne_powered_to_3000ft": {
+      "value": 130,
+      "unit": "KIAS",
+      "notes": "At 2200 lb (998 kg) TOGW or above. For reductions with altitude and temperature see Vne placard. Below 2200 lb TOGW add 10 KIAS.",
+      "confidence": "extracted"
+    },
+    "vne_above_3000ft": {
+      "value": null,
+      "unit": "KIAS",
+      "notes": "Vne varies with altitude, temperature, and weight per placard table. No single fixed value above 3000 ft; see placard on page 2-10.",
+      "confidence": "verify"
+    },
+    "airspeed_indicator_green_arc_min": {
+      "value": 0,
+      "unit": "KIAS",
+      "notes": "Green arc 0 to 110 KIAS on airspeed indicator",
+      "confidence": "extracted"
+    },
+    "airspeed_indicator_red_line": {
+      "value": 140,
+      "unit": "KIAS",
+      "notes": "Red line on airspeed indicator; also maximum below 2200 lb TOGW Vne",
+      "confidence": "extracted"
+    }
+  },
+  "rotor_speed_limits": {
+    "power_on_max": {
+      "value": 101,
+      "unit": "%",
+      "rpm": 412,
+      "notes": "Maximum continuous power on rotor speed",
+      "confidence": "extracted"
+    },
+    "power_on_min": {
+      "value": 99,
+      "unit": "%",
+      "rpm": 404,
+      "notes": "Minimum continuous power on rotor speed",
+      "confidence": "extracted"
+    },
+    "power_on_min_o320_variant": {
+      "value": null,
+      "unit": "%",
+      "rpm": null,
+      "notes": "Not applicable — R66 uses Rolls-Royce 250-C300/A1 turbine engine, no O-320 variant referenced",
+      "confidence": "verify"
+    },
+    "power_off_max": {
+      "value": 106,
+      "unit": "%",
+      "rpm": 432,
+      "notes": "Maximum power off (autorotation) rotor speed",
+      "confidence": "extracted"
+    },
+    "power_off_min": {
+      "value": 88,
+      "unit": "%",
+      "rpm": 359,
+      "notes": "Minimum power off (autorotation) rotor speed",
+      "confidence": "extracted"
+    }
+  },
+  "weight_limits": {
+    "max_gross_standard_hp": {
+      "value": 2700,
+      "unit": "lbs",
+      "kg": 1225,
+      "notes": "Maximum gross weight for R66",
+      "confidence": "extracted"
+    },
+    "max_gross_alpha_beta_beta_ii": {
+      "value": null,
+      "unit": "lbs",
+      "kg": null,
+      "notes": "Alpha/Beta/Beta II designations not applicable to R66; single max gross weight of 2700 lb applies",
+      "confidence": "verify"
+    },
+    "min_gross": {
+      "value": 1400,
+      "unit": "lbs",
+      "kg": 635,
+      "notes": "Minimum gross weight",
+      "confidence": "extracted"
+    },
+    "max_per_seat_including_baggage": {
+      "value": 300,
+      "unit": "lbs",
+      "kg": 136,
+      "notes": "Maximum per seat including under-seat compartment",
+      "confidence": "extracted"
+    },
+    "max_per_baggage_compartment": {
+      "value": 300,
+      "unit": "lbs",
+      "kg": 136,
+      "notes": "Maximum total load in main baggage compartment; maximum distributed floor load 50 lb/ft² (244 kg/m²). Under-seat compartment maximum is 50 lb (23 kg) each.",
+      "confidence": "extracted"
+    },
+    "min_solo_pilot_weight": {
+      "value": 160,
+      "unit": "lbs",
+      "notes": "With all doors installed and no load in baggage compartment, solo pilot weight of 160 lb (73 kg) or greater ensures CG within limits. Below 160 lb, compute weight and balance; removable ballast may be required.",
+      "confidence": "extracted"
+    }
+  },
+  "altitude_limits": {
+    "max_operating_density_altitude": {
+      "value": 14000,
+      "unit": "ft DA",
+      "notes": "Maximum operating density altitude 14,000 feet. Also: maximum operating altitude 9000 feet AGL to allow landing within 5 minutes in case of fire. Closing throttle in flight prohibited above 10,000 feet density altitude.",
+      "confidence": "extracted"
+    }
+  },
+  "engine": {
+    "approved_models": [
+      "Rolls-Royce Model 250-C300/A1"
+    ],
+    "speed_max_continuous": {
+      "value": 101,
+      "unit": "%",
+      "rpm": 6076,
+      "notes": "Output shaft speed (N2) maximum continuous",
+      "confidence": "extracted"
+    },
+    "speed_max_transient": {
+      "value": 106,
+      "unit": "%",
+      "rpm": 6377,
+      "notes": "Output shaft speed (N2) maximum transient overspeed. Avoid large, rapid power changes. Intentional operation outside continuous RPM limits is prohibited.",
+      "confidence": "extracted"
+    },
+    "cht_max": {
+      "value": null,
+      "unit": "°F",
+      "celsius": null,
+      "notes": "R66 is turbine-powered; no cylinder head temperature (CHT) limit listed. MGT (Measured Gas Temperature) continuous limit is 706°C, 5-minute limit 782°C, transient 843°C (6 sec), start limit 927°C (10 sec).",
+      "confidence": "verify"
+    },
+    "oil_temp_max": {
+      "value": 225,
+      "unit": "°F",
+      "celsius": 107,
+      "notes": "Oil temperature maximum 107°C. Converted: 107°C = 224.6°F ≈ 225°F.",
+      "confidence": "inferred"
+    },
+    "oil_pressure_min_idle": {
+      "value": 50,
+      "unit": "PSI",
+      "notes": "Minimum oil pressure below 78% N1",
+      "confidence": "extracted"
+    },
+    "oil_pressure_min_flight": {
+      "value": 115,
+      "unit": "PSI",
+      "notes": "Minimum oil pressure above 94% N1. From 78% to 94% N1 minimum is 90 psi.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_max_flight": {
+      "value": 130,
+      "unit": "PSI",
+      "notes": "Maximum operating oil pressure",
+      "confidence": "extracted"
+    },
+    "oil_pressure_max_start_warmup": {
+      "value": 150,
+      "unit": "PSI",
+      "notes": "Maximum oil pressure during start and warm up",
+      "confidence": "extracted"
+    },
+    "oil_quantity_min_takeoff": {
+      "value": 4,
+      "unit": "qt",
+      "liters": 3.8,
+      "notes": "Minimum oil quantity for takeoff",
+      "confidence": "extracted"
+    },
+    "carb_air_temp_caution_range_min": {
+      "value": null,
+      "unit": "°C",
+      "notes": "R66 is turbine-powered with no carburetor; no carb air temperature limits apply",
+      "confidence": "verify"
+    },
+    "carb_air_temp_caution_range_max": {
+      "value": null,
+      "unit": "°C",
+      "notes": "R66 is turbine-powered with no carburetor; no carb air temperature limits apply",
+      "confidence": "verify"
+    }
+  },
+  "fuel": {
+    "approved_grades": [
+      "Jet A (ASTM D1655) — not approved below -32°C (-25°F); anti-icing additive may be required below 4°C",
+      "Jet A-1 (ASTM D1655) — not approved below -32°C (-25°F); anti-icing additive may be required below 4°C",
+      "Jet B (ASTM D6615) — not approved above 32°C (90°F) at altitudes above 5000 ft; anti-icing additive may be required below 4°C",
+      "JP-4 (MIL-DTL-5624) — not approved above 32°C (90°F) at altitudes above 5000 ft",
+      "JP-5 (MIL-DTL-5624) — not approved below -32°C (-25°F)",
+      "JP-8 (MIL-DTL-83133) — not approved below -32°C (-25°F)",
+      "No. 3 Jet Fuel (P.R. China GB 6537-2006) — not approved below -32°C (-25°F); anti-icing additive may be required below 4°C",
+      "TC-1 or PT (Russian Standard GOST 10227) — no temperature restrictions; aviation fuel additives grades И (Fluid I) and ИМ (Fluid IM) at 0.1–0.3% by volume approved for anti-icing"
+    ],
+    "capacity_bladder_tanks": {
+      "main_total": {
+        "value": 74.6,
+        "unit": "gal US",
+        "liters": 282
+      },
+      "main_usable": {
+        "value": 73.6,
+        "unit": "gal US",
+        "liters": 279
+      },
+      "aux_total": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "aux_usable": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "combined_total": {
+        "value": 74.6,
+        "unit": "gal US",
+        "liters": 282
+      },
+      "combined_usable": {
+        "value": 73.6,
+        "unit": "gal US",
+        "liters": 279
+      },
+      "confidence": "extracted"
+    }
+  },
+  "required_equipment_for_dispatch": [
+    "Landing lights operational for VFR night operations",
+    "Navigation lights operational for VFR night operations",
+    "Instrument lights operational for VFR night operations",
+    "Anti-collision lights operational for VFR night operations",
+    "A functioning headset must be worn by each pilot",
+    "Forward left seat belt must be buckled",
+    "Engine anti-ice must be on for operation in visible moisture at or below 4°C (40°F)"
+  ],
+  "flight_restrictions": [
+    {
+      "item": "Aerobatic flight",
+      "status": "PROHIBITED",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Low-G cyclic pushovers",
+      "status": "PROHIBITED",
+      "notes": "A pushover from level flight or following a pull-up causes low-G condition which can result in catastrophic loss of lateral control",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Flight in known icing conditions",
+      "status": "PROHIBITED",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Closing throttle (twist grip) in flight above 10,000 feet density altitude",
+      "status": "PROHIBITED",
+      "notes": "To avoid possible engine flameout",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Closing throttle (twist grip) in flight with cabin heat ON",
+      "status": "PROHIBITED",
+      "notes": "To avoid possible engine flameout",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Solo flight from right seat only",
+      "status": "REQUIRED",
+      "notes": "Minimum crew is one pilot in the right front seat. A flight instructor may act as PIC from left front seat.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Forward left seat belt buckled",
+      "status": "REQUIRED",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Functioning headset worn by each pilot",
+      "status": "REQUIRED",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Engine anti-ice on in visible moisture at or below 4°C (40°F)",
+      "status": "REQUIRED",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Operation with cabin doors removed",
+      "status": "PERMITTED",
+      "notes": "Up to 100 KIAS approved with any combination of cabin doors removed. All seat belts must be buckled and loose items properly secured.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "65 KIAS maximum above 83% torque",
+      "status": "REQUIRED",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    {
+      "item": "100 KIAS maximum with any combination of cabin doors removed",
+      "status": "REQUIRED",
+      "notes": "",
+      "confidence": "extracted"
+    },
+    {
+      "item": "VFR day and night operations",
+      "status": "PERMITTED",
+      "notes": "Night VFR only when landing, navigation, instrument, and anti-collision lights are operational and visual reference to ground maintained",
+      "confidence": "extracted"
+    },
+    {
+      "item": "IFR operations",
+      "status": "PROHIBITED",
+      "notes": "Only VFR day and night operations are approved",
+      "confidence": "inferred"
+    },
+    {
+      "item": "Maximum operating altitude 9000 feet AGL",
+      "status": "REQUIRED",
+      "notes": "To allow landing within 5 minutes in case of fire",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Rear cabin door locking in flight",
+      "status": "PROHIBITED",
+      "notes": "Placard: DO NOT LOCK IN FLIGHT",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Anti-icing additive in Jet A, Jet A-1, Jet B, or No. 3 Jet Fuel when ambient temperature below 4°C (40°F)",
+      "status": "REQUIRED",
+      "notes": "Conforming to MIL-DTL-85470; check with fuel supplier to determine if supply includes additive",
+      "confidence": "extracted"
+    }
+  ],
+  "faa_ad_95_26_04": {
+    "note": "FAA AD 95-26-04 is specific to Robinson R22/R44 piston helicopters and is not referenced in the R66 POH Section 2. No applicable limitations found.",
+    "limitations": [
+      {
+        "item": "FAA AD 95-26-04",
+        "status": "NOT APPLICABLE",
+        "notes": "This AD applies to R22/R44 piston helicopters. The R66 is a turbine helicopter and this AD is not referenced in the R66 POH Section 2.",
+        "confidence": "verify"
+      }
+    ]
+  }
+}

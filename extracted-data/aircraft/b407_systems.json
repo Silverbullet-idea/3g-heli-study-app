@@ -1,0 +1,1362 @@
+{
+  "aircraft": "Bell 407",
+  "poh_source": "systems",
+  "source_file": "b407_full.txt",
+  "extracted_date": "2026-04-14",
+  "extraction_script_version": "1.0.0",
+  "systems": {
+    "powerplant": {
+      "title": "POWER PLANT",
+      "description": "The Bell 407 is powered by a Rolls-Royce model 250-C47B turboshaft engine controlled by a Full Authority Digital Engine Control (FADEC) system with direct reversion to manual mode. The engine drives the main and tail rotors through a transmission. Engine parameters including NG, NP, MGT, and torque are monitored via LCD instruments with trend arcs.",
+      "key_points": [
+        "Engine model: Rolls-Royce 250-C47B",
+        "FADEC software version 5.202 required",
+        "Takeoff power (5 minutes): 93.5 to 100% torque",
+        "Maximum continuous torque: 93.5%",
+        "MGT maximum continuous: 727°C (either gauge P/N)",
+        "MGT takeoff (5 min): 727 to 779°C",
+        "Maximum starting MGT: 927°C (do not exceed 10 seconds above 843°C or 1 second at 927°C)",
+        "NG continuous operation: 63 to 105%",
+        "NG maximum transient (10 seconds): 105.1 to 106%",
+        "NP continuous: 99 to 100%; avoid 68.4 to 87.1%",
+        "NP maximum transient (15 seconds): 102.1 to 107%",
+        "ENGINE OVSPD light illuminates when NP vs TORQUE exceeds 102.4% NP at 100% TRQ to 108.6% NP at 0% TRQ",
+        "Intentional use of transient limits is prohibited"
+      ],
+      "components": [
+        "Rolls-Royce 250-C47B engine",
+        "FADEC ECU (Full Authority Digital Engine Control)",
+        "Hydromechanical unit (HMU)",
+        "Engine fuel pump",
+        "Permanent Magnetic Alternator (PMA)",
+        "Auto relight ignition system",
+        "Engine oil cooler blower",
+        "Oil cooler blower inlet ducts (mod 407-799-057)",
+        "Bearing airflow shields (mod 407-799-055)",
+        "Throttle (OFF, Idle, FLY, MAX positions)",
+        "MGT gauge (P/N 407-375-001-101/-103 or 407-375-001-105)"
+      ],
+      "specifications": [
+        {
+          "item": "Engine model",
+          "value": null,
+          "unit": "",
+          "notes": "Rolls-Royce 250-C47B"
+        },
+        {
+          "item": "NG continuous operation",
+          "value": null,
+          "unit": "%",
+          "notes": "63 to 105%"
+        },
+        {
+          "item": "NG maximum continuous",
+          "value": 105,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "NG transient (10 seconds)",
+          "value": null,
+          "unit": "%",
+          "notes": "105.1 to 106%"
+        },
+        {
+          "item": "NP minimum",
+          "value": 99,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "NP continuous",
+          "value": null,
+          "unit": "%",
+          "notes": "99 to 100%"
+        },
+        {
+          "item": "NP maximum transient (15 seconds)",
+          "value": null,
+          "unit": "%",
+          "notes": "102.1 to 107%"
+        },
+        {
+          "item": "Torque continuous",
+          "value": null,
+          "unit": "%",
+          "notes": "0 to 93.5%"
+        },
+        {
+          "item": "Torque takeoff (5 minutes)",
+          "value": null,
+          "unit": "%",
+          "notes": "93.5 to 100%"
+        },
+        {
+          "item": "Torque transient (5 seconds)",
+          "value": 105,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "MGT continuous (gauge -101/-103)",
+          "value": null,
+          "unit": "°C",
+          "notes": "100 to 727°C"
+        },
+        {
+          "item": "MGT takeoff 5 min (gauge -101/-103)",
+          "value": null,
+          "unit": "°C",
+          "notes": "727 to 779°C"
+        },
+        {
+          "item": "MGT transient 12 sec (gauge -101/-103)",
+          "value": null,
+          "unit": "°C",
+          "notes": "780 to 826°C"
+        },
+        {
+          "item": "MGT max starting (gauge -101/-103)",
+          "value": 927,
+          "unit": "°C",
+          "notes": "Do not exceed 10 sec above 826°C or 1 sec at 927°C"
+        },
+        {
+          "item": "MGT continuous (gauge -105)",
+          "value": null,
+          "unit": "°C",
+          "notes": "100 to 727°C"
+        },
+        {
+          "item": "MGT takeoff 5 min (gauge -105)",
+          "value": null,
+          "unit": "°C",
+          "notes": "727 to 779°C"
+        },
+        {
+          "item": "MGT transient 12 sec (gauge -105)",
+          "value": null,
+          "unit": "°C",
+          "notes": "780 to 905°C"
+        },
+        {
+          "item": "MGT max starting (gauge -105)",
+          "value": 927,
+          "unit": "°C",
+          "notes": "Do not exceed 10 sec above 843°C or 1 sec at 927°C"
+        },
+        {
+          "item": "Fuel pressure minimum",
+          "value": 8,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Fuel pressure continuous",
+          "value": null,
+          "unit": "PSI",
+          "notes": "8 to 25 PSI"
+        },
+        {
+          "item": "Fuel pressure maximum",
+          "value": 25,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Engine oil pressure minimum below 79% NG",
+          "value": 50,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Engine oil pressure minimum 79-94% NG",
+          "value": 90,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Engine oil pressure minimum above 94% NG",
+          "value": 115,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Engine oil pressure maximum",
+          "value": 130,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Engine oil pressure maximum cold starts",
+          "value": 200,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Engine oil temperature continuous",
+          "value": null,
+          "unit": "°C",
+          "notes": "0 to 107°C"
+        },
+        {
+          "item": "Engine oil temperature maximum",
+          "value": 107,
+          "unit": "°C",
+          "notes": ""
+        },
+        {
+          "item": "Idle NG",
+          "value": null,
+          "unit": "%",
+          "notes": "63 ± 1%"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "fadec_system": {
+      "title": "FADEC FAILURE",
+      "description": "The Full Authority Digital Engine Control (FADEC) system automatically governs engine power and NP. It operates in AUTO or MANUAL mode. In AUTO mode, the FADEC provides automatic governing; in MANUAL mode, the pilot controls NP via throttle and collective. A direct reversion to MANUAL capability is installed per ASB 407-99-31. FADEC failure may cause an overspeed 2-7 seconds after the FADEC FAIL warning. The PMA goes offline at idle stop during shutdown and may cause engine flameout.",
+      "key_points": [
+        "FADEC software version 5.202 required",
+        "AUTO to MANUAL transitions with NR/NP at 100% flat pitch can result in rapid NR/NP acceleration in approximately 7 seconds",
+        "FADEC FAIL warning may precede overspeed by 2-7 seconds",
+        "FADEC MANUAL mode: no automatic governing; maintain NR with coordinated throttle and collective",
+        "FADEC DEGRADED: remain in AUTO mode, fly smoothly and non-aggressively",
+        "FADEC FAULT: PMA and/or MGT, NP or NG automatic limiting circuits not functional",
+        "RESTART FAULT light: engine cannot be restarted in AUTO mode",
+        "PMA goes offline at idle stop; engine may flameout",
+        "Manual mode check performed at idle (63% NG) to avoid overspeed",
+        "In MANUAL mode NR should be maintained between 95% and 100%",
+        "Engine overspeed trip activates at 118.5% NP"
+      ],
+      "components": [
+        "FADEC ECU",
+        "FADEC MODE switch (AUTO/MAN)",
+        "Permanent Magnetic Alternator (PMA)",
+        "FADEC FAIL warning light (red)",
+        "FADEC DEGRADED caution light (amber)",
+        "FADEC FAULT caution light (amber)",
+        "FADEC MANUAL caution light (amber)",
+        "AUTO RELIGHT advisory light (white)",
+        "RESTART FAULT advisory light (white)"
+      ],
+      "specifications": [
+        {
+          "item": "FADEC software version",
+          "value": 5.202,
+          "unit": "",
+          "notes": "Required"
+        },
+        {
+          "item": "NP overspeed trip",
+          "value": 118.5,
+          "unit": "%",
+          "notes": "Causes fuel flow to go to minimum"
+        },
+        {
+          "item": "Overspeed warning post-FADEC FAIL",
+          "value": null,
+          "unit": "seconds",
+          "notes": "2 to 7 seconds after FADEC FAIL warning"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "transmission": {
+      "title": "TRANSMISSION",
+      "description": "The transmission transfers power from the engine to the main and tail rotors. It is lubricated by an oil system monitored for pressure and temperature. A transmission chip detector monitors for ferrous particles. The transmission oil is cooled by an oil cooler system.",
+      "key_points": [
+        "Transmission oil pressure minimum: 30 PSI",
+        "Transmission oil pressure continuous: 40 to 70 PSI",
+        "Transmission oil pressure maximum: 70 PSI",
+        "Transmission oil temperature continuous: 15 to 110°C",
+        "Transmission oil temperature maximum: 110°C",
+        "XMSN OIL PRESS warning: reduce power, land as soon as possible",
+        "XMSN CHIP caution: land as soon as possible",
+        "Recommended oil: DOD-L-85734 to maximum extent allowed by temperature",
+        "MIL-L-7808 oil limited to ambient temperatures below -18°C",
+        "DOD-L-85734 limited to ambient temperatures above -40°C"
+      ],
+      "components": [
+        "Transmission",
+        "Transmission oil cooler",
+        "Transmission oil cooler lines",
+        "Transmission oil filter",
+        "Transmission chip detector",
+        "Transmission mounts (elastomeric)",
+        "Oil pressure transducers",
+        "Main driveshaft",
+        "Main driveshaft aft flexure"
+      ],
+      "specifications": [
+        {
+          "item": "Transmission oil pressure minimum",
+          "value": 30,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Transmission oil pressure continuous",
+          "value": null,
+          "unit": "PSI",
+          "notes": "40 to 70 PSI"
+        },
+        {
+          "item": "Transmission oil pressure maximum",
+          "value": 70,
+          "unit": "PSI",
+          "notes": ""
+        },
+        {
+          "item": "Transmission oil temperature continuous",
+          "value": null,
+          "unit": "°C",
+          "notes": "15 to 110°C"
+        },
+        {
+          "item": "Transmission oil temperature maximum",
+          "value": 110,
+          "unit": "°C",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "rotor_system": {
+      "title": "ROTOR",
+      "description": "The Bell 407 uses a four-blade semi-rigid main rotor system with a bearingless hub design. The tail rotor is a two-blade teetering type. Rotor RPM is monitored via dual tachometer (NR/NP needles). Rotor RPM limits differ for power-on and power-off conditions. A rotor brake is optionally installed for ground operations.",
+      "key_points": [
+        "Power-on NR continuous: 99 to 100%",
+        "Power-off NR minimum: 85%; continuous 85 to 107%; maximum 107%",
+        "For autorotative training maintain steady state NR above 90%",
+        "RPM warning light (with audio) activates when NR drops below 95% power-on",
+        "RPM warning light (without audio) when NR above 107%",
+        "Rotor brake limited to ground operation after engine shutdown and NR at or below 40%",
+        "Engine starts with rotor brake engaged are prohibited",
+        "Rotor tiedowns must be removed before engine start",
+        "Tail rotor blades: check tip block security and seal integrity, internal blade root clear of snow and ice"
+      ],
+      "components": [
+        "Main rotor hub",
+        "Main rotor yoke",
+        "Main rotor blades (4-blade)",
+        "Main rotor dampers",
+        "Swashplate assembly",
+        "Pitch links",
+        "Pitch horn bearings",
+        "Frahm damper",
+        "Tail rotor",
+        "Tail rotor gearbox",
+        "Tail rotor yoke",
+        "Tail rotor blades",
+        "Tail rotor driveshaft",
+        "Rotor brake (optional)",
+        "Dual tachometer (NR/NP)"
+      ],
+      "specifications": [
+        {
+          "item": "NR power-on continuous",
+          "value": null,
+          "unit": "%",
+          "notes": "99 to 100%"
+        },
+        {
+          "item": "NR power-on maximum continuous",
+          "value": 100,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "NR power-off minimum",
+          "value": 85,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "NR power-off continuous",
+          "value": null,
+          "unit": "%",
+          "notes": "85 to 107%"
+        },
+        {
+          "item": "NR power-off maximum",
+          "value": 107,
+          "unit": "%",
+          "notes": ""
+        },
+        {
+          "item": "RPM warning (low, with audio) activation",
+          "value": 95,
+          "unit": "%",
+          "notes": "Power-on"
+        },
+        {
+          "item": "Rotor brake application limit",
+          "value": 40,
+          "unit": "% NR",
+          "notes": "Normal operation; any time after shutdown for emergency"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "hydraulic_system": {
+      "title": "HYDRAULIC SYSTEM",
+      "description": "The hydraulic system provides power-assisted flight control actuation for cyclic, collective, and directional control. The system uses MIL-H-5606 fluid and is controlled by the HYD SYS switch. Loss of hydraulic pressure results in increased control forces. A hydraulic systems check is performed before each flight to verify actuator operation. Without hydraulic boost, flight is possible but control forces increase significantly.",
+      "key_points": [
+        "Hydraulic fluid: MIL-H-5606, approved at all ambient temperatures",
+        "HYDRAULIC SYSTEM caution light illuminates when pressure is below limit",
+        "Loss of hydraulic pressure: reduce airspeed to 70-100 KIAS immediately",
+        "Extended flight without hydraulics: up to 120 KIAS to minimize control forces",
+        "Run-on landing at ~15 knots recommended after hydraulic failure",
+        "Actuator hardover can occur in any flight control axis",
+        "Cyclic cam jam only occurs in fore-and-aft axis",
+        "HYD SYS switch controls system on/off",
+        "Hydraulic check performed before every flight"
+      ],
+      "components": [
+        "Hydraulic pump",
+        "Hydraulic reservoir",
+        "HYD SYS switch",
+        "Hydraulic actuators (cyclic, collective, directional)",
+        "Hydraulic system filters",
+        "Cyclic centering spring capsule",
+        "HYD SYSTEM circuit breaker",
+        "Control tube hydraulic-off balance springs"
+      ],
+      "specifications": [
+        {
+          "item": "Hydraulic fluid type",
+          "value": null,
+          "unit": "",
+          "notes": "MIL-H-5606, approved at all ambient temperatures"
+        },
+        {
+          "item": "Recommended airspeed after hydraulic failure",
+          "value": null,
+          "unit": "KIAS",
+          "notes": "70 to 100 KIAS initially; up to 120 KIAS for extended flight"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "electrical_system": {
+      "title": "ELECTRICAL",
+      "description": "The Bell 407 has a 28 VDC electrical system with a main generator, battery, and optional GPU capability. The generator is rated for continuous operation up to 180 amps below 10,000 feet Hp and 170 amps above. Transient loads up to 400 amps for 5 seconds are permitted. The battery provides approximately 21 minutes of backup power for basic helicopter and one VHF radio (35 minutes with optional 28 amp-hour battery). The PMA (Permanent Magnetic Alternator) provides power for the FADEC.",
+      "key_points": [
+        "System voltage: 28.5 ± 0.5 VDC nominal (generator on)",
+        "Generator continuous below 10,000 ft Hp: 0 to 180 amps",
+        "Generator continuous above 10,000 ft Hp: 0 to 170 amps",
+        "Generator transient 2 minutes: 180 to 300 amps",
+        "Generator transient 5 seconds: 300 to 400 amps",
+        "GPU for starting limited to 500 amps (28 VDC)",
+        "Battery provides ~21 min power (basic + 1 VHF); 35 min with 28 Ah optional battery",
+        "Battery starts demonstrated to -29°C (-20°F) with standard 17 Ah battery, -35°C (-31°F) with optional 28 Ah battery",
+        "BATTERY HOT warning: turn BATT switch OFF and land as soon as practical",
+        "Left fuel boost/transfer pumps operate directly from battery and continue after BATT switch OFF",
+        "GEN FAIL: attempt RESET then ON; if not restored, turn GEN OFF"
+      ],
+      "components": [
+        "Generator",
+        "Battery (standard 17 amp-hour, optional 28 amp-hour)",
+        "BATT switch",
+        "GEN switch",
+        "Permanent Magnetic Alternator (PMA)",
+        "External power receptacle (GPU)",
+        "Starter",
+        "START relay",
+        "GENERATOR FIELD circuit breaker",
+        "GENERATOR RESET circuit breaker",
+        "Ammeter (AMPS gauge)",
+        "Voltmeter",
+        "Battery relay",
+        "Overhead circuit breaker switches"
+      ],
+      "specifications": [
+        {
+          "item": "System voltage",
+          "value": 28.5,
+          "unit": "VDC",
+          "notes": "±0.5 VDC nominal"
+        },
+        {
+          "item": "Generator continuous below 10,000 ft Hp",
+          "value": null,
+          "unit": "Amps",
+          "notes": "0 to 180 amps"
+        },
+        {
+          "item": "Generator maximum continuous below 10,000 ft Hp",
+          "value": 180,
+          "unit": "Amps",
+          "notes": ""
+        },
+        {
+          "item": "Generator continuous above 10,000 ft Hp",
+          "value": null,
+          "unit": "Amps",
+          "notes": "0 to 170 amps"
+        },
+        {
+          "item": "Generator maximum continuous above 10,000 ft Hp",
+          "value": 170,
+          "unit": "Amps",
+          "notes": ""
+        },
+        {
+          "item": "Generator transient (2 minutes)",
+          "value": null,
+          "unit": "Amps",
+          "notes": "180 to 300 amps"
+        },
+        {
+          "item": "Generator transient (5 seconds)",
+          "value": null,
+          "unit": "Amps",
+          "notes": "300 to 400 amps"
+        },
+        {
+          "item": "GPU starting limit",
+          "value": 500,
+          "unit": "Amps",
+          "notes": "28 VDC GPU"
+        },
+        {
+          "item": "Starter ON (external power)",
+          "value": 40,
+          "unit": "seconds",
+          "notes": "Then 30 sec OFF, repeat twice, then 30 min OFF"
+        },
+        {
+          "item": "Starter ON (battery start)",
+          "value": 60,
+          "unit": "seconds",
+          "notes": "Then 60 sec OFF, repeat twice, then 30 min OFF"
+        },
+        {
+          "item": "Battery backup duration (basic + 1 VHF)",
+          "value": 21,
+          "unit": "minutes",
+          "notes": "Standard 17 Ah battery, fully charged"
+        },
+        {
+          "item": "Battery backup duration (optional 28 Ah)",
+          "value": 35,
+          "unit": "minutes",
+          "notes": "Optional 28 Ah battery"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "fuel_system": {
+      "title": "FUEL AND OIL",
+      "description": "The Bell 407 has a fuel system with forward and aft fuel cells. Fuel is transferred from the forward cell to the aft cell by left and right fuel transfer pumps. Fuel boost pumps pressurize fuel to the engine. Basic fuel capacity is 127 US gallons (483 liters); optional auxiliary kit (407-706-011) increases capacity to 147 US gallons (559 liters). A fuel valve controls fuel flow to the engine. Forward and aft fuel sump drains allow preflight contamination checks.",
+      "key_points": [
+        "Basic usable fuel capacity: 127 US gallons (483 liters)",
+        "Auxiliary fuel kit capacity: 147 US gallons (559 liters)",
+        "Forward cell fuel transfers to aft cell via L and R fuel transfer pumps",
+        "Fuel transfer stops at approximately 340 pounds total indicated fuel",
+        "Full forward tank (~256 lb) indicated at ~770 lb or greater total fuel",
+        "Transfer complete at approximately 185 pounds total fuel",
+        "Last 135 pounds in forward cell may not be usable if transfer pumps fail",
+        "FUEL LOW caution: 100 ±10 pounds remain in aft tank",
+        "Approved fuels at all temperatures: ASTM-D-1655 Type B, MIL-T-5624 JP-4 (NATO F-40)",
+        "Approved fuels at -32°C and above: ASTM-D-1655 Type A/A-1, JP-5, JP-8",
+        "Left fuel boost/XFR pumps operate on battery even with BATT switch OFF",
+        "Airframe fuel filter: drain and check before first flight of day",
+        "Critical fuel for most forward CG: 74.8 gallons (283.0 liters)",
+        "Critical fuel for most aft CG: 28.4 gallons (107.5 liters)"
+      ],
+      "components": [
+        "Forward fuel cell",
+        "Aft fuel cell",
+        "Left fuel boost pump",
+        "Right fuel boost pump",
+        "Left fuel transfer pump",
+        "Right fuel transfer pump",
+        "Fuel valve (FUEL VALVE switch)",
+        "Airframe fuel filter",
+        "Forward fuel sump drain",
+        "Aft fuel sump drain",
+        "Fuel filler cap",
+        "Fuel quantity indicator (FUEL QTY)",
+        "FUEL BOOST/XFR circuit breaker switches (LEFT and RIGHT)",
+        "Auxiliary fuel kit (407-706-011, optional)"
+      ],
+      "specifications": [
+        {
+          "item": "Basic usable fuel capacity",
+          "value": 127,
+          "unit": "US gallons",
+          "notes": "483 liters"
+        },
+        {
+          "item": "Auxiliary fuel kit capacity",
+          "value": 147,
+          "unit": "US gallons",
+          "notes": "559 liters; kit 407-706-011"
+        },
+        {
+          "item": "FUEL LOW caution activation",
+          "value": null,
+          "unit": "pounds",
+          "notes": "100 ±10 lb remaining in aft tank"
+        },
+        {
+          "item": "Maximum unusable fuel (both transfer pumps failed)",
+          "value": 135,
+          "unit": "pounds",
+          "notes": "Forward cell"
+        },
+        {
+          "item": "Fuel transfer stops",
+          "value": 340,
+          "unit": "pounds total",
+          "notes": "Approximate"
+        },
+        {
+          "item": "Transfer complete",
+          "value": 185,
+          "unit": "pounds total",
+          "notes": "Approximate"
+        },
+        {
+          "item": "Full forward tank indication threshold",
+          "value": 770,
+          "unit": "pounds total",
+          "notes": "Approximately 256 lb in forward tank"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "flight_controls": {
+      "title": "CYCLIC JAM",
+      "description": "The Bell 407 uses a conventional helicopter flight control system with cyclic, collective, and tail rotor (anti-torque) pedals. Controls are hydraulically boosted under normal operations. The cyclic includes a centering spring capsule (cam) in the fore-and-aft axis. A pedal stop system restricts left pedal travel at high airspeeds; the PEDAL STOP PTT switch on the cyclic controls this function, engaging above 55 ±5 KIAS and disengaging below 50 ±5 KIAS. A cyclic centering light indicates when the cyclic is not centered.",
+      "key_points": [
+        "Cyclic cam jam: only in fore-and-aft axis; requires ~15 lbs force to override spring capsule",
+        "Actuator hardover: can occur in any flight control axis",
+        "PEDAL STOP engages above 55 ±5 KIAS, disengages below 50 ±5 KIAS",
+        "PEDAL STOP caution light: VNE reduced to 60 KIAS; pull PEDAL STOP emergency release",
+        "Do NOT press PEDAL STOP PTT switch in flight",
+        "Pilot must keep feet on tail rotor pedals at all times",
+        "CYCLIC CENTERING light: cyclic not centered",
+        "Disregard CYCLIC CENTERING light during run-on or slope landings",
+        "Pedal stop disengages with loss of electrical power",
+        "Control tube hydraulics-off balance springs maintain feel without hydraulics"
+      ],
+      "components": [
+        "Cyclic stick",
+        "Collective",
+        "Tail rotor pedals",
+        "Pedal stop system (Pedal Restrictor Control Unit)",
+        "PEDAL STOP PTT switch",
+        "PEDAL STOP emergency release",
+        "Cyclic centering light",
+        "ENGAGED annunciator",
+        "Hydraulic actuators (cyclic fore-aft, cyclic lateral, collective, directional)",
+        "Cyclic spring capsule (cam)",
+        "Control tube hydraulics-off balance springs",
+        "Cyclic friction",
+        "Collective friction"
+      ],
+      "specifications": [
+        {
+          "item": "Pedal stop engagement speed",
+          "value": null,
+          "unit": "KIAS",
+          "notes": "Engages above 55 ±5 KIAS"
+        },
+        {
+          "item": "Pedal stop disengagement speed",
+          "value": null,
+          "unit": "KIAS",
+          "notes": "Disengages below 50 ±5 KIAS"
+        },
+        {
+          "item": "Cyclic cam jam fore-aft force",
+          "value": 15,
+          "unit": "pounds",
+          "notes": "Approximate force required to override spring"
+        },
+        {
+          "item": "VNE with PEDAL STOP caution",
+          "value": 60,
+          "unit": "KIAS",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "airspeed_limitations": {
+      "title": "AIRSPEED",
+      "description": "The Bell 407 has a basic VNE of 140 KIAS at sea level to 3,000 feet HD, decreasing with altitude and temperature per the Airspeed Limitations placard. Several conditions reduce VNE to 100 KIAS: takeoff power (93.5-100% torque), lateral CG in shaded area of Figure 1-2, doors removed, steady state autorotation. Maximum sideward/rearward flight or crosswind hover is 35 KTAS. Best rate of climb airspeed is 60 KIAS. Minimum rate of descent in autorotation is 55 KIAS; maximum glide distance airspeed is 80 KIAS.",
+      "key_points": [
+        "Basic VNE: 140 KIAS (sea level to 3,000 ft HD)",
+        "VNE decreases with altitude and temperature per placard",
+        "VNE reduced to 100 KIAS (not to exceed placarded VNE) at 93.5-100% torque",
+        "VNE 100 KIAS with any door(s) removed",
+        "VNE 100 KIAS for steady state autorotation",
+        "VNE 100 KIAS when lateral CG in shaded area of Figure 1-2",
+        "Maximum sideward/rearward flight or crosswind hover: 35 KTAS",
+        "Maximum rate of climb: 2,000 feet per minute",
+        "Best rate of climb airspeed: 60 KIAS",
+        "Autorotation minimum rate of descent: 55 KIAS",
+        "Autorotation maximum glide distance: 80 KIAS",
+        "Maximum autorotation VNE: 100 KIAS"
+      ],
+      "components": [
+        "Airspeed indicator",
+        "Pitot tube",
+        "Static ports (left and right)",
+        "Pitot heater",
+        "Airspeed limitations placard"
+      ],
+      "specifications": [
+        {
+          "item": "Basic VNE (sea level to 3,000 ft HD)",
+          "value": 140,
+          "unit": "KIAS",
+          "notes": ""
+        },
+        {
+          "item": "VNE at takeoff power or doors removed or autorotation",
+          "value": 100,
+          "unit": "KIAS",
+          "notes": "Not to exceed placarded VNE"
+        },
+        {
+          "item": "Maximum sideward/rearward/crosswind hover",
+          "value": 35,
+          "unit": "KTAS",
+          "notes": ""
+        },
+        {
+          "item": "Maximum rate of climb",
+          "value": 2000,
+          "unit": "ft/min",
+          "notes": ""
+        },
+        {
+          "item": "Best rate of climb airspeed",
+          "value": 60,
+          "unit": "KIAS",
+          "notes": ""
+        },
+        {
+          "item": "Autorotation minimum rate of descent airspeed",
+          "value": 55,
+          "unit": "KIAS",
+          "notes": ""
+        },
+        {
+          "item": "Autorotation maximum glide distance airspeed",
+          "value": 80,
+          "unit": "KIAS",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "weight_and_balance": {
+      "title": "WEIGHT AND CENTER OF GRAVITY",
+      "description": "The Bell 407 has a maximum internal gross weight of 5,000 pounds (2,268 kg) for takeoff and landing. With a jettisonable external load, maximum GW is 6,000 pounds (2,722 kg). Minimum GW for flight is 2,650 pounds (1,202 kg). Minimum weight at fuselage station 65.0 is 170 pounds (77.1 kg). Longitudinal CG limits span FS 119.0 to 129.0 inches depending on GW. Lateral CG limits are ±4.0 inches (±102 mm) maximum. The pilot is responsible for computing weight and balance before each flight.",
+      "key_points": [
+        "Maximum internal GW: 5,000 lb (2,268 kg)",
+        "Maximum GW with external jettisonable load: 6,000 lb (2,722 kg)",
+        "Minimum GW for flight: 2,650 lb (1,202 kg)",
+        "Minimum weight at FS 65.0: 170 lb (77.1 kg)",
+        "Longitudinal CG limits: 119.0 to 129.0 FS inches (varies with GW)",
+        "Lateral CG limits: ±4.0 inches (±102 mm) maximum",
+        "Most forward CG fuel: 74.8 gallons (283.0 liters)",
+        "Most aft CG fuel: 28.4 gallons (107.5 liters)",
+        "Cabin floor load limit: 75 lb/sq ft (3.7 kg/100 cm²)",
+        "Baggage compartment load limit: 86 lb/sq ft (4.2 kg/100 cm²), max 250 lb (113.4 kg)",
+        "Pilot operates from right crew seat; left seat for additional pilot with approved dual controls"
+      ],
+      "components": [
+        "Fuselage stations reference",
+        "Buttock lines reference",
+        "Ballast (nose or tail as required)",
+        "Actual Weight Record",
+        "Gross weight CG charts (Figures 1-1 and 1-2)",
+        "Cabin loading tables",
+        "Baggage compartment",
+        "Fuel loading tables"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum internal GW",
+          "value": 5000,
+          "unit": "lb",
+          "notes": "2,268 kg"
+        },
+        {
+          "item": "Maximum GW with external jettisonable load",
+          "value": 6000,
+          "unit": "lb",
+          "notes": "2,722 kg"
+        },
+        {
+          "item": "Minimum GW for flight",
+          "value": 2650,
+          "unit": "lb",
+          "notes": "1,202 kg"
+        },
+        {
+          "item": "Minimum weight at FS 65.0",
+          "value": 170,
+          "unit": "lb",
+          "notes": "77.1 kg"
+        },
+        {
+          "item": "Cabin floor load limit",
+          "value": 75,
+          "unit": "lb/sq ft",
+          "notes": "3.7 kg/100 cm²"
+        },
+        {
+          "item": "Baggage compartment floor load limit",
+          "value": 86,
+          "unit": "lb/sq ft",
+          "notes": "4.2 kg/100 cm²"
+        },
+        {
+          "item": "Baggage compartment maximum weight",
+          "value": 250,
+          "unit": "lb",
+          "notes": "113.4 kg"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "altitude_and_temperature_limits": {
+      "title": "ALTITUDE",
+      "description": "The Bell 407 has a maximum operating altitude of 20,000 feet HD or 20,000 feet HP, whichever is lower. Maximum sea level ambient temperature is +51.7°C (+125°F) decreasing at standard lapse rate of 2°C per 1,000 feet. Minimum ambient temperature at all altitudes is -40°C (-40°F). Engine anti-ice must be ON in visible moisture when OAT is below 5°C (40°F).",
+      "key_points": [
+        "Maximum operating altitude: 20,000 feet HD or HP, whichever is lower",
+        "Maximum sea level OAT: +51.7°C (+125°F)",
+        "Temperature decreases with HP at standard lapse rate: 2°C (3.6°F) per 1,000 ft",
+        "Minimum OAT at all altitudes: -40°C (-40°F)",
+        "ENG ANTI ICE must be ON in visible moisture when OAT below 5°C (40°F)",
+        "Slope landings limited: 10° side slopes, 10° nose up, 5° nose down",
+        "Aerobatic maneuvers prohibited",
+        "Maximum rate of climb: 2,000 ft/min"
+      ],
+      "components": [
+        "Altimeter",
+        "OAT probe",
+        "ENG ANTI ICE switch",
+        "Engine anti-ice system",
+        "Ambient air temperature limitations chart (Figure 1-4)"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum operating altitude",
+          "value": 20000,
+          "unit": "ft HD or HP",
+          "notes": "Whichever is lower"
+        },
+        {
+          "item": "Maximum sea level OAT",
+          "value": 51.7,
+          "unit": "°C",
+          "notes": "+125°F"
+        },
+        {
+          "item": "Minimum OAT (all altitudes)",
+          "value": -40,
+          "unit": "°C",
+          "notes": "-40°F"
+        },
+        {
+          "item": "Temperature lapse rate",
+          "value": 2,
+          "unit": "°C per 1,000 ft",
+          "notes": "Standard; 3.6°F per 1,000 ft"
+        },
+        {
+          "item": "ENG ANTI ICE required below",
+          "value": 5,
+          "unit": "°C",
+          "notes": "In visible moisture; 40°F"
+        },
+        {
+          "item": "Maximum side slope",
+          "value": 10,
+          "unit": "degrees",
+          "notes": ""
+        },
+        {
+          "item": "Maximum nose up slope",
+          "value": 10,
+          "unit": "degrees",
+          "notes": ""
+        },
+        {
+          "item": "Maximum nose down slope",
+          "value": 5,
+          "unit": "degrees",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "rotor_brake": {
+      "title": "ROTOR BRAKE",
+      "description": "An optional rotor brake is available for ground operation to stop main rotor rotation after engine shutdown. Normal application is after engine shutdown when NR has decreased to 40% or lower. For emergency stops, the rotor brake may be applied any time after engine shutdown. Engine starts with rotor brake engaged are strictly prohibited. Rapid rotor brake engagement on ice or slippery surfaces should be avoided.",
+      "key_points": [
+        "Normal application: after engine shutdown, at or below 40% NR",
+        "Emergency stops: apply any time after engine shutdown",
+        "Engine starts with rotor brake engaged are prohibited",
+        "Avoid rapid engagement on ice or slippery surfaces",
+        "Return rotor brake handle to stowed position just prior to main rotor stopping",
+        "Placard: DO NOT APPLY ROTOR BRAKE ABOVE 40% RPM"
+      ],
+      "components": [
+        "Rotor brake caliper",
+        "Rotor brake disc",
+        "Rotor brake handle"
+      ],
+      "specifications": [
+        {
+          "item": "Normal application NR limit",
+          "value": 40,
+          "unit": "% NR",
+          "notes": "At or below this NR for normal ground stop"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "tail_rotor_system": {
+      "title": "TAIL ROTOR",
+      "description": "The tail rotor provides anti-torque and directional control. It is driven by a driveshaft from the main transmission through hanger bearings. The tail rotor gearbox contains oil monitored by a sight glass and chip detector. Fixed pitch failures (inability to change blade angle) and complete loss of thrust (drive system break) require different emergency procedures. The vertical fin provides some directional stability at cruise speeds even without tail rotor thrust.",
+      "key_points": [
+        "Complete loss of tail rotor thrust: uncontrollable right yaw, nose-down tuck, possible fuselage roll",
+        "In hover with complete loss: close throttle, hovering autorotation",
+        "In flight with complete loss: reduce throttle to idle, autorotate at minimum 55 KIAS",
+        "Fixed pitch failure hovering: do not close throttle unless severe right yaw occurs",
+        "Tail rotor gearbox oil monitored for level and chip particles",
+        "T/R CHIP caution: land as soon as possible",
+        "Pull pedal stop emergency release for fixed pitch failures",
+        "Tail rotor driveshaft hanger bearings: check for grease leakage and overheating",
+        "Tail rotor yoke: check for static stop contact damage (deformed yield indicator)"
+      ],
+      "components": [
+        "Tail rotor blades (2-blade teetering)",
+        "Tail rotor yoke",
+        "Tail rotor gearbox",
+        "Tail rotor driveshaft",
+        "Tail rotor driveshaft cover",
+        "Driveshaft hanger bearings",
+        "Forward tail rotor driveshaft coupling",
+        "Tail rotor chip detector",
+        "Tail rotor guard",
+        "Vertical fin"
+      ],
+      "specifications": [
+        {
+          "item": "Tail rotor gearbox oil",
+          "value": null,
+          "unit": "",
+          "notes": "DOD-L-85734 or MIL-L-7808 per temperature limits"
+        },
+        {
+          "item": "Autorotation minimum airspeed (complete loss)",
+          "value": 55,
+          "unit": "KIAS",
+          "notes": "During descent after complete loss"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "engine_start_system": {
+      "title": "ENGINE START",
+      "description": "Engine start is initiated by pressing the START switch which latches the starter. The FADEC manages the start sequence in AUTO mode. A dry motoring run can be performed to reduce residual MGT before start. During cold weather operations, oil pressure and temperature may initially exceed limits but should normalize within approximately 5 minutes at idle. A hot start (excessive MGT) requires keeping the starter engaged to reduce MGT.",
+      "key_points": [
+        "START switch: momentarily press and hold ~1 second; start and AUTO RELIGHT lights illuminate",
+        "Starter disengages automatically at 50% NG (START light extinguishes)",
+        "AUTO RELIGHT light extinguishes at 60% NG",
+        "If main rotor not rotating by 25% NG: abort start by rolling throttle to cutoff",
+        "Hot start: keep starter motoring to reduce MGT; abort by rolling throttle to cutoff",
+        "Stabilize at idle for 1 minute before increasing throttle if engine shut down >15 minutes",
+        "Dry motoring run: hold START switch 15 seconds with throttle in CUT-OFF to reduce residual MGT",
+        "Recommended MGT before start: below 150°C (below 10,000 ft HP) or below 65°C (above 10,000 ft HP)",
+        "During cold weather: normal limits may be exceeded during start; stabilize at idle",
+        "If throttle in idle >60 seconds, starter latching disabled; reposition to cut off then back to idle",
+        "Idle: 63 ± 1% NG",
+        "Generator should be turned ON after start; battery switch to ON if GPU used"
+      ],
+      "components": [
+        "START switch",
+        "Starter motor",
+        "IDLE REL switch",
+        "Throttle",
+        "FUEL VALVE switch",
+        "BATT switch",
+        "GEN switch",
+        "START light (white)",
+        "AUTO RELIGHT light (white)",
+        "MGT gauge",
+        "NG indicator"
+      ],
+      "specifications": [
+        {
+          "item": "Starter disengagement",
+          "value": 50,
+          "unit": "% NG",
+          "notes": "START light extinguishes"
+        },
+        {
+          "item": "AUTO RELIGHT extinguishes",
+          "value": 60,
+          "unit": "% NG",
+          "notes": ""
+        },
+        {
+          "item": "Idle NG",
+          "value": null,
+          "unit": "%",
+          "notes": "63 ± 1%"
+        },
+        {
+          "item": "Idle stabilization after restart (>15 min shutdown)",
+          "value": 1,
+          "unit": "minute",
+          "notes": "Before increasing throttle"
+        },
+        {
+          "item": "Dry motoring run duration",
+          "value": 15,
+          "unit": "seconds",
+          "notes": "Hold START switch with throttle in CUT-OFF"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "engine_anti_ice": {
+      "title": "ENGINE ANTI ICE",
+      "description": "The engine anti-ice system uses bleed air to prevent ice formation in the engine inlet. It is controlled by the ENG ANTI ICE switch on the overhead panel. When activated, it causes an increase in MGT. An ENGINE ANTI-ICE advisory light (if installed) illuminates when the switch is ON. The system must be ON in visible moisture when OAT is below 5°C (40°F).",
+      "key_points": [
+        "Required ON in visible moisture when OAT is below 5°C (40°F)",
+        "Activation causes MGT increase; monitor MGT at high power settings",
+        "ENGINE ANTI-ICE white advisory light illuminates when ON (if installed)",
+        "If light remains on with switch OFF: avoid maximum power operations",
+        "Snow deflectors may be used in conjunction with particle separator",
+        "Snow deflector kit (BHT-407-FMS-4) required for falling/blowing snow operations"
+      ],
+      "components": [
+        "ENG ANTI ICE switch",
+        "Engine bleed air system",
+        "ENGINE ANTI-ICE advisory light (white, if installed)"
+      ],
+      "specifications": [
+        {
+          "item": "ENG ANTI ICE required below",
+          "value": 5,
+          "unit": "°C",
+          "notes": "In visible moisture (40°F)"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "particle_separator": {
+      "title": "PARTICLE SEPARATOR",
+      "description": "The optional particle separator kit (206-706-212) separates airborne particles from engine inlet air using a plenum chamber visible through plexiglass windows. Engine bleed air is used to purge debris when the PART SEP switch is ON. Performance is reduced with the particle separator installed, with additional reduction when purge is ON. A power assurance check chart specific to particle separator configuration is provided.",
+      "key_points": [
+        "PART SEP switch ON uses engine bleed air to purge debris",
+        "Performance reduced with particle separator installed",
+        "Purge ON: reduces gross weight capability by 55 lbs IGE and 50 lbs OGE",
+        "PART SEP switch OFF for power assurance check",
+        "Check plexiglass windows for snow, slush, or ice accumulation before flight in snow",
+        "Can be used with or without snow deflector kit",
+        "Particle separator can be removed to restore basic helicopter performance"
+      ],
+      "components": [
+        "Particle separator",
+        "PART SEP switch (overhead console)",
+        "Bleed air tubing and hose",
+        "Plenum chamber",
+        "Plexiglass inspection windows",
+        "Inlet screen (when separator removed)"
+      ],
+      "specifications": [
+        {
+          "item": "IGE hover GW reduction (purge ON)",
+          "value": 55,
+          "unit": "lb",
+          "notes": ""
+        },
+        {
+          "item": "OGE hover GW reduction (purge ON)",
+          "value": 50,
+          "unit": "lb",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "snow_deflector": {
+      "title": "SNOW DEFLECTOR",
+      "description": "The snow deflector kit (206-706-208) consists of two deflectors mounted on either side of the transmission fairing, forward of the engine air inlets. The kit is required for operations in falling or blowing snow. Performance is reduced with snow deflectors installed. Snow deflectors should be removed for operations above 30°C (86°F) and are not recommended above 20°C (68°F).",
+      "key_points": [
+        "Required for operations in falling or blowing snow",
+        "Snow deflectors must be removed for operations above 30°C (86°F)",
+        "Not recommended above 20°C (68°F) due to performance reduction",
+        "Hover in falling/blowing snow limited to 15 minutes, then land and inspect",
+        "Flight prohibited when visibility in falling/blowing snow is less than 1/2 statute mile",
+        "Compatible with particle separator kit",
+        "Install protective covers (engine intake, exhaust, pitot) when leaving helicopter",
+        "Power assurance check: level flight only (not hover) with snow deflectors"
+      ],
+      "components": [
+        "Snow deflectors (2, one each side)",
+        "Transmission fairing mounting points"
+      ],
+      "specifications": [
+        {
+          "item": "Hover duration limit in snow",
+          "value": 15,
+          "unit": "minutes",
+          "notes": "Then land and inspect for snow/ice accumulation"
+        },
+        {
+          "item": "Minimum visibility in snow",
+          "value": 0.5,
+          "unit": "statute miles",
+          "notes": ""
+        },
+        {
+          "item": "Remove deflectors above",
+          "value": 30,
+          "unit": "°C",
+          "notes": "86°F (limitation); not recommended above 20°C/68°F"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "fire_detection_system": {
+      "title": "FIRE DETECTION SYSTEM",
+      "description": "The optional fire detection system (kit 407-799-004, 407-706-015, or 407-706-025) illuminates the ENGINE FIRE red warning light on the instrument panel if an excessive temperature or fire develops in the engine compartment. Preflight test: press FIRE DET TEST switch - ENGINE FIRE light should illuminate; release - light should extinguish.",
+      "key_points": [
+        "ENGINE FIRE warning light (red) illuminates on excessive temperature/fire in engine compartment",
+        "Preflight test: press FIRE DET TEST switch, verify ENGINE FIRE light illuminates, release and verify extinguishes",
+        "ENGINE FIRE in flight: immediately enter autorotation, close throttle, fuel valve OFF, execute autorotation landing, BATT switch OFF",
+        "Do not restart engine until cause of fire determined and corrected"
+      ],
+      "components": [
+        "Fire detection sensor/loop (engine compartment)",
+        "ENGINE FIRE warning light (red)",
+        "FIRE DET TEST switch"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "quiet_cruise_mode": {
+      "title": "QUIET CRUISE MODE",
+      "description": "The optional quiet cruise mode kit (407-706-016) permits flight at 92% NR to reduce flyover noise by 3.8 dBA SEL. It is enabled by a two-position switch on the collective (QUIET/NORMAL). A two-segment green annunciator (QUIET and ON) indicates mode is active. The mode is limited to VFR operations above 200 feet AGL and 50 KIAS, with a maximum altitude of 6,000 feet HD and maximum internal GW of 5,000 pounds. FADEC software 5.201 or higher required.",
+      "key_points": [
+        "Reduces flyover noise by 3.8 dBA SEL (from 85.1 to 81.3 dBA SEL)",
+        "NR in Quiet Cruise Mode: 91.5 to 92.5% (continuous)",
+        "Minimum airspeed: 50 KIAS; VNE: 100 KIAS",
+        "Minimum altitude: ~200 feet AGL",
+        "Maximum altitude: 6,000 feet HD",
+        "VFR operations only",
+        "Maximum GW: 5,000 lb (2,268 kg)",
+        "Torque limited to maximum continuous power (93.5%) in Quiet Cruise Mode",
+        "Low rotor audio and RPM light activation reset to 88% NR when QUIET mode selected",
+        "FADEC FAIL: QUIET remains illuminated, ON extinguishes; low rotor audio stays at 88%",
+        "FADEC MAN mode immediately deselects Quiet Cruise Mode; resets low RPM to 95%",
+        "Cargo hook operations in Quiet Cruise Mode not approved",
+        "Lateral CG limits in QCM: ±0.9 to 1.4 inches (tighter than basic)",
+        "Longitudinal CG aft limit in QCM: FS 127.0 inches"
+      ],
+      "components": [
+        "QUIET/NORMAL mode switch (on collective)",
+        "QUIET annunciator (green)",
+        "ON annunciator (green)",
+        "Dual tachometer (additional QCM markings)"
+      ],
+      "specifications": [
+        {
+          "item": "NR in Quiet Cruise Mode",
+          "value": null,
+          "unit": "%",
+          "notes": "91.5 to 92.5% continuous"
+        },
+        {
+          "item": "Minimum airspeed (QCM)",
+          "value": 50,
+          "unit": "KIAS",
+          "notes": ""
+        },
+        {
+          "item": "VNE (QCM)",
+          "value": 100,
+          "unit": "KIAS",
+          "notes": ""
+        },
+        {
+          "item": "Minimum altitude (QCM)",
+          "value": 200,
+          "unit": "ft AGL",
+          "notes": "Approximate"
+        },
+        {
+          "item": "Maximum altitude (QCM)",
+          "value": 6000,
+          "unit": "ft HD",
+          "notes": ""
+        },
+        {
+          "item": "Maximum GW (QCM)",
+          "value": 5000,
+          "unit": "lb",
+          "notes": "2,268 kg"
+        },
+        {
+          "item": "Maximum torque (QCM)",
+          "value": 93.5,
+          "unit": "%",
+          "notes": "Maximum continuous only"
+        },
+        {
+          "item": "Low RPM audio/light activation (QCM)",
+          "value": 88,
+          "unit": "% NR",
+          "notes": "Reset from 95% NR"
+        },
+        {
+          "item": "Flyover noise level (QCM)",
+          "value": 81.3,
+          "unit": "dBA SEL",
+          "notes": "FAR Part 36 and ICAO Annex 16"
+        },
+        {
+          "item": "Noise reduction vs basic",
+          "value": 3.8,
+          "unit": "dBA SEL",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "increased_gross_weight": {
+      "title": "INCREASED INTERNAL GROSS WEIGHT",
+      "description": "The optional increased internal gross weight kit (407-706-020) raises the maximum approved internal gross weight for takeoff and landing to 5,250 pounds (2,381 kg). Maximum HD for takeoff, landing, and IGE maneuvers is limited to 11,000 feet. VNE changes per a new Airspeed Limitations placard. CG limits are expanded accordingly.",
+      "key_points": [
+        "Maximum internal GW increased to 5,250 lb (2,381 kg)",
+        "Maximum HD for takeoff/landing/IGE: 11,000 feet (3,353 meters)",
+        "New VNE placard provided for 5,250 lb operation",
+        "Loads above 5,250 lb must be carried on cargo hook",
+        "FAR Part 36 and ICAO certified at 5,250 lb (2,382 kg)",
+        "Certified flyover noise level at 5,250 lb: 85.5 dBA SEL",
+        "New longitudinal and lateral CG charts provided"
+      ],
+      "components": [
+        "Structural reinforcements (per kit 407-706-020)",
+        "Revised airspeed limitations placard"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum internal GW (with kit)",
+          "value": 5250,
+          "unit": "lb",
+          "notes": "2,381 kg"
+        },
+        {
+          "item": "Maximum HD for takeoff/landing/IGE (with kit)",
+          "value": 11000,
+          "unit": "ft",
+          "notes": "3,353 meters"
+        },
+        {
+          "item": "Flyover noise level at max GW",
+          "value": 85.5,
+          "unit": "dBA SEL",
+          "notes": "FAR Part 36 and ICAO"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "noise_levels": {
+      "title": "NOISE LEVELS",
+      "description": "The Bell 407 is certified as a Stage 2 helicopter under FAR Part 36, Subpart H, and complies with ICAO Annex 16, Volume 1, Chapter 11 noise emission standards. The basic helicopter flyover noise level is 85.1 dBA SEL (FAR Part 36) and 84.6 dBA SEL (ICAO Annex 16). VH for noise calculation purposes is 127 KTAS.",
+      "key_points": [
+        "FAR Part 36 Stage 2 certified at max GW 5,000 lb (2,268 kg)",
+        "Basic certified flyover noise level (FAR Part 36): 85.1 dBA SEL",
+        "Basic flyover noise level (ICAO Annex 16 Chapter 11): 84.6 dBA SEL",
+        "VH for noise calculation: 127 KTAS",
+        "No operating limitations to meet noise requirements",
+        "ICAO approval applicable only after endorsement by Civil Aviation Authority of country of registration"
+      ],
+      "components": [],
+      "specifications": [
+        {
+          "item": "FAR Part 36 flyover noise level",
+          "value": 85.1,
+          "unit": "dBA SEL",
+          "notes": "Basic helicopter"
+        },
+        {
+          "item": "ICAO Annex 16 Ch.11 flyover noise level",
+          "value": 84.6,
+          "unit": "dBA SEL",
+          "notes": "Basic helicopter"
+        },
+        {
+          "item": "VH (for noise)",
+          "value": 127,
+          "unit": "KTAS",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "avionics_and_instruments": {
+      "title": "INSTRUMENT MARKINGS AND PLACARDS",
+      "description": "The Bell 407 uses LCD instruments with digital readouts and trend arcs for engine parameters (TRQ, MGT, NG, NP, NR). During BATT switch ON, a self-test displays 8188.8 on TORQUE/NG digits and 81888 on MGT/FUEL digits, with NR and NP needles moving to 107% and 100% respectively for 8 seconds. Caution lights include warning (red), caution (amber), and advisory (white/green) categories. An INSTR CHK button allows review of exceedances.",
+      "key_points": [
+        "LCD instruments with trend arcs for engine monitoring",
+        "Power-on self-test: 8 seconds with full-scale display",
+        "TORQUE/NG display: 8188.8 during test",
+        "MGT/FUEL display: 81888 during test",
+        "NR to 107%, NP to 100% during test",
+        "CHECK INSTR caution: TRQ, MGT, or NG exceedance detected",
+        "INSTR CHK button: displays magnitude of exceedance",
+        "CAUTION LT TEST button: press to test all caution lights",
+        "LCD TEST button available",
+        "FADEC HORN TEST button available",
+        "CAUT LT switch: DIM dims caution lights to fixed intensity",
+        "OAT/VOLTS display for OAT and electrical monitoring"
+      ],
+      "components": [
+        "LCD instrument displays (TRQ, MGT, NG, NP, NR)",
+        "Caution light panel (warning red, caution amber, advisory white/green)",
+        "INSTR CHK button",
+        "CAUTION LT TEST button",
+        "LCD TEST button",
+        "FADEC HORN TEST button",
+        "CAUT LT switch",
+        "INSTR LT rheostat",
+        "OAT/VOLTS display",
+        "Altimeter",
+        "Vertical speed indicator",
+        "Airspeed indicator",
+        "Directional gyro (DG)",
+        "Attitude indicator (ATT)",
+        "Turn indicator",
+        "HORN MUTE button",
+        "OVSPD TEST button"
+      ],
+      "specifications": [
+        {
+          "item": "Vertical speed indicator maximum",
+          "value": 2000,
+          "unit": "ft/min up",
+          "notes": "Maximum marked"
+        }
+      ],
+      "confidence": "extracted"
+    }
+  }
+}

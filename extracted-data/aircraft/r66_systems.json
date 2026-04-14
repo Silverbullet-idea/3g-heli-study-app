@@ -1,0 +1,1223 @@
+{
+  "aircraft": "Robinson R66",
+  "poh_source": "systems",
+  "source_file": "r66_section7.txt",
+  "extracted_date": "2026-04-14",
+  "extraction_script_version": "1.0.0",
+  "systems": {
+    "general": {
+      "title": "General",
+      "description": "The R66 is a five-place, single main rotor, single engine helicopter with skid-type landing gear. Primary fuselage structure is welded steel tubing and riveted aluminum sheet. The tailcone is a monocoque aluminum structure. The engine is located aft of the main baggage compartment and isolated by firewalls.",
+      "key_points": [
+        "Five-place, single main rotor, single engine helicopter",
+        "Primary fuselage: welded steel tubing and riveted aluminum sheet",
+        "Tailcone: monocoque aluminum skin structure",
+        "Engine compartment isolated by firewalls fore and above",
+        "Four cabin doors are removable",
+        "Fiberglass and thermoplastics used in secondary cabin structure and fairings"
+      ],
+      "components": [
+        "Welded steel tube fuselage",
+        "Riveted aluminum tailcone",
+        "Fiberglass cabin doors",
+        "Cowl doors",
+        "Main baggage compartment door",
+        "Firewalls"
+      ],
+      "specifications": [
+        {
+          "item": "Seating capacity",
+          "value": 5,
+          "unit": "places",
+          "notes": "Five-place helicopter"
+        },
+        {
+          "item": "Rotor configuration",
+          "value": null,
+          "unit": "",
+          "notes": "Single main rotor"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "rotor_systems": {
+      "title": "Rotor Systems",
+      "description": "The main rotor has two all-metal blades mounted to the hub by coning hinges, with the hub attached to the shaft via a teeter hinge. The tail rotor has two all-metal blades with a teetering hub and fixed coning angle. Main rotor blades feature a thick stainless steel spar with bonded aluminum skins.",
+      "key_points": [
+        "Main rotor: two all-metal blades with coning and teeter hinges using self-lubricated bearings",
+        "Droop stops provide teeter hinge friction restraint during start/stop",
+        "Pitch change bearings enclosed in oil-filled housing sealed with elastomeric boot",
+        "Stainless steel leading edge spar resistant to corrosion and erosion",
+        "Aluminum skins bonded to spar approximately one inch aft of leading edge",
+        "Blades must be refinished if paint erodes to bare metal at skin-to-spar bond line",
+        "Tail rotor: two all-metal blades, teetering hub, fixed coning angle",
+        "Tail rotor teeter hinge bearings are elastomeric; pitch change bearings have self-lubricated liners"
+      ],
+      "components": [
+        "Main rotor blades (2)",
+        "Main rotor hub",
+        "Teeter hinge",
+        "Coning hinges",
+        "Droop stops",
+        "Pitch change bearings",
+        "Elastomeric boot",
+        "Stainless steel leading edge spar",
+        "Aluminum honeycomb skins",
+        "Tail rotor blades (2)",
+        "Tail rotor teetering hub"
+      ],
+      "specifications": [
+        {
+          "item": "Main rotor blade count",
+          "value": 2,
+          "unit": "blades",
+          "notes": "All-metal"
+        },
+        {
+          "item": "Tail rotor blade count",
+          "value": 2,
+          "unit": "blades",
+          "notes": "All-metal with aluminum skins"
+        },
+        {
+          "item": "Skin-to-spar bond line offset",
+          "value": 1,
+          "unit": "inch",
+          "notes": "Approximately 1 inch aft of leading edge"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "drive_system": {
+      "title": "Drive System",
+      "description": "The engine is mounted at 37° nose-up. A sprag-type overrunning clutch mates to the engine PTO shaft and connects via flexible couplings to the main gearbox. Two ring-and-pinion spiral bevel gearsets reduce speed to tail rotor driveline RPM and then to main rotor RPM. The tail rotor driveline runs aft through the tailcone with a tail gearbox containing a 90° spiral-bevel gearset. The main gearbox is pressure lubricated and also drives the hydraulic pump.",
+      "key_points": [
+        "Engine mounted at 37° nose-up attitude",
+        "Sprag-type overrunning clutch mates directly to engine PTO shaft",
+        "Two ring-and-pinion spiral bevel gearsets in main gearbox",
+        "Tail rotor driveshaft has support bearing at front and damper bearing approximately one-third aft",
+        "Cooling fan mounted to intermediate shaft",
+        "Tail gearbox: single 90° splash-lubricated spiral-bevel gearset",
+        "Main gearbox is pressure lubricated with airframe-mounted filter and oil cooler",
+        "Main gearbox drives the flight control hydraulic pump"
+      ],
+      "components": [
+        "Sprag-type overrunning clutch",
+        "Engine PTO shaft",
+        "Flexible couplings",
+        "Main gearbox",
+        "Ring and pinion spiral bevel gearsets (2)",
+        "Intermediate shaft",
+        "Tail rotor driveshaft",
+        "Support bearing",
+        "Damper bearing",
+        "Cooling fan",
+        "Tail gearbox",
+        "Airframe-mounted oil filter",
+        "Oil cooler",
+        "Hydraulic pump"
+      ],
+      "specifications": [
+        {
+          "item": "Engine mounting angle",
+          "value": 37,
+          "unit": "degrees nose-up",
+          "notes": ""
+        },
+        {
+          "item": "Damper bearing position on tail driveshaft",
+          "value": null,
+          "unit": "",
+          "notes": "Approximately one-third of the way aft on the shaft"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "powerplant_installation": {
+      "title": "Powerplant Installation",
+      "description": "The R66 is powered by a single Rolls-Royce 250-C300/A1 (RR300) free-turbine turboshaft engine. Induction air enters through upper fuselage cowl openings into a plenum with a radial-flow air filter. If the filter blocks, spring-loaded bypass doors open and the AIR FILTER annunciator illuminates. A temperature switch on the firewall detects engine compartment fire.",
+      "key_points": [
+        "Engine: Rolls-Royce 250-C300/A1 (RR300) free-turbine turboshaft",
+        "Direct-drive squirrel-cage cooling fan on intermediate shaft",
+        "Standard induction air filter: radial-flow foam element",
+        "Optional high-efficiency pleated media filter with sight gauge in upper left cowl door",
+        "High-efficiency filter recommended for dusty conditions",
+        "Spring-loaded bypass doors open if filter blocks; AIR FILTER annunciator illuminates",
+        "Engine compartment fire detected by temperature switch on firewall; ENGINE FIRE annunciator illuminates",
+        "Power assurance checks recommended to detect engine deterioration or filter blockage"
+      ],
+      "components": [
+        "Rolls-Royce 250-C300/A1 (RR300) engine",
+        "Ignition exciter",
+        "Igniter",
+        "Starter-generator",
+        "Tachometer senders (2)",
+        "Squirrel-cage cooling fan",
+        "Induction air plenum",
+        "Radial-flow air filter (foam, standard)",
+        "High-efficiency pleated media filter (optional)",
+        "Filter bypass spring-loaded doors",
+        "AIR FILTER annunciator",
+        "Firewall temperature switch",
+        "ENGINE FIRE annunciator"
+      ],
+      "specifications": [
+        {
+          "item": "Engine model",
+          "value": null,
+          "unit": "",
+          "notes": "Rolls-Royce 250-C300/A1, commercial designation RR300"
+        },
+        {
+          "item": "Engine type",
+          "value": null,
+          "unit": "",
+          "notes": "Free-turbine turboshaft"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "flight_controls": {
+      "title": "Flight Controls",
+      "description": "Dual controls are standard. All primary controls use push-pull tubes and bellcranks with sealed or self-lubricated bearings. The cyclic is center-mounted with adjustable grip angle on later aircraft. The collective has a twist grip throttle. Right-side pedals are adjustable to three positions; left-side pedals are fixed (optional shorter pedals available).",
+      "key_points": [
+        "All primary controls actuated through push-pull tubes and bellcranks",
+        "Bearings are sealed ball bearings or self-lubricated liners",
+        "Center-mounted cyclic with left/right grips on cross tube",
+        "Pilot cyclic grip angle adjustable fore/aft on later aircraft",
+        "Collective twist grip provides engine fuel control input",
+        "Raising/lowering collective provides power turbine governor inputs via interconnecting linkage",
+        "Right-side pedals adjustable to three positions via quick-release pin",
+        "Left-side pedals not adjustable; optional shorter pedals available (F755-9 and -10)",
+        "Pilots must verify full control travel prior to flight"
+      ],
+      "components": [
+        "Push-pull tubes",
+        "Bellcranks",
+        "Center cyclic post",
+        "Cyclic cross tube",
+        "Cyclic grip (adjustable angle on later aircraft)",
+        "Collective stick",
+        "Twist grip throttle",
+        "Power turbine governor linkage",
+        "Right-side adjustable tail rotor pedals",
+        "Quick-release pedal pins",
+        "Optional shorter left-side pedals (F755-9, F755-10)"
+      ],
+      "specifications": [
+        {
+          "item": "Pedal adjustment positions",
+          "value": 3,
+          "unit": "positions",
+          "notes": "Right-side pedals only"
+        },
+        {
+          "item": "Optional left pedal part numbers",
+          "value": null,
+          "unit": "",
+          "notes": "Robinson F755-9 and F755-10 for shorter pilots"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "removable_flight_controls": {
+      "title": "Removable Flight Controls",
+      "description": "The left seat pilot controls (cyclic grip, collective, and tail rotor pedals) can be removed and installed by maintenance personnel or pilots. Specific procedures involving quick-release pins, locking pins, and balance spring management must be followed to avoid damage.",
+      "key_points": [
+        "Left cyclic grip removed via quick-release pin; cross tube must be rotated clockwise one turn to wind balance spring",
+        "Later aircraft have knurled ring near quick-release pin to eliminate freeplay; must be loose to remove pin",
+        "Overrotating cyclic cross tube in either direction will damage balance spring",
+        "Plastic cap should be placed on exposed cyclic cross tube after grip removal",
+        "Collective removed by depressing locking pins and pulling forward; both locking pins must be fully engaged when installed",
+        "Pedals removed by depressing locking pin, twisting counterclockwise, and pulling up; floor cover available when removed"
+      ],
+      "components": [
+        "Left cyclic grip",
+        "Quick-release pin",
+        "Cyclic cross tube",
+        "Balance spring",
+        "Knurled ring (later aircraft)",
+        "Plastic protective cap",
+        "Left collective stick",
+        "Collective locking pins (2)",
+        "Left tail rotor pedals",
+        "Floor cover plate"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "hydraulic_system": {
+      "title": "Hydraulic System",
+      "description": "A hydraulically-boosted flight control system eliminates cyclic and collective feedback forces. The system consists of a pump driven by the main gearbox, three servos connected to the swashplate push-pull tubes, a reservoir with filter and pressure relief valve, and a pilot-controlled solenoid pressure shut-off valve. Normal operating pressure is 450–500 psi.",
+      "key_points": [
+        "Eliminates cyclic and collective feedback forces",
+        "Pump mounted on and driven by main gearbox",
+        "Three servos, one per swashplate push-pull tube",
+        "Reservoir at aft end of main gearbox includes filter, pressure relief valve, and pressure shut-off valve",
+        "Normal operating pressure: 450–500 psi",
+        "Sight glass for preflight fluid level check accessible via left cowl door",
+        "Vented filler cap on top of reservoir",
+        "Pressure shut-off valve solenoid-actuated via HYD switch on pilot's cyclic grip",
+        "Switch should be left ON during shutdown and startup except during hydraulic check",
+        "Electrical power required to switch hydraulics OFF; pulling HYD circuit breaker disables switch but does not turn off hydraulics",
+        "Without hydraulic pressure, large collective input force required and collective inputs cause longitudinal cyclic forces",
+        "Servos have irreversible feature; any cyclic input will cause collective to lower"
+      ],
+      "components": [
+        "Hydraulic pump (main gearbox driven)",
+        "Three servos",
+        "Main rotor swashplate push-pull tubes",
+        "Reservoir",
+        "Filter",
+        "Pressure relief valve",
+        "Solenoid pressure shut-off valve",
+        "Sight glass",
+        "Vented filler cap",
+        "HYD switch (pilot cyclic grip)",
+        "HYD circuit breaker"
+      ],
+      "specifications": [
+        {
+          "item": "Normal operating pressure",
+          "value": null,
+          "unit": "psi",
+          "notes": "450 to 500 psi"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "control_friction_adjustment": {
+      "title": "Control Friction Adjustment",
+      "description": "Cyclic and collective controls have adjustable friction devices. The collective friction lever is near the aft end of the pilot's collective; actuated aft to increase friction. The cyclic friction knob is left of the cyclic stick; clockwise applies friction to both longitudinal and lateral axes. Pedals have no friction device but use an elastomeric trim spring for left pedal force balance.",
+      "key_points": [
+        "Collective friction lever located near aft end of pilot's collective; aft increases friction, forward releases",
+        "Cyclic friction knob located left of cyclic stick; clockwise applies friction to both axes",
+        "Excessive friction may make helicopter difficult to control",
+        "Pedals have no friction device",
+        "Elastomeric trim spring provides left pedal force to balance feedback forces in flight"
+      ],
+      "components": [
+        "Collective friction lever",
+        "Cyclic friction knob",
+        "Elastomeric trim spring (pedals)"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "engine_controls": {
+      "title": "Engine Controls",
+      "description": "Twist grip throttle controls on each collective stick actuate the engine fuel control via push-pull cable. The throttle is set either fully open or fully closed (idle). A hydromechanical governor maintains 100% N2 RPM when throttle is open, with collective-governor linkage to anticipate power changes. A beep switch trims governor RPM at approximately 1% per 2 seconds.",
+      "key_points": [
+        "Twist grip throttle on each collective; interconnected, actuate fuel control via push-pull cable",
+        "Throttle is normally set fully open or fully closed (idle), not used for modulation",
+        "Hydromechanical governor maintains 100% engine output shaft RPM at full throttle",
+        "Collective-to-governor linkage anticipates changing power demands",
+        "Governor may not prevent over/under-speed from aggressive maneuvers or rapid power changes",
+        "Beep switch (momentary toggle on collective) trims governor RPM ~1% per 2 seconds",
+        "Beep switch controls actuator adjusting collective-to-governor linkage",
+        "Other controls: push-pull fuel cutoff on console face, start button on pilot's collective, key-type igniter switch, anti-ice switch"
+      ],
+      "components": [
+        "Twist grip throttle (pilot and copilot collective)",
+        "Push-pull fuel control cable",
+        "Hydromechanical governor",
+        "Collective-governor interconnect linkage",
+        "Beep switch (momentary toggle)",
+        "Governor trim actuator",
+        "Push-pull fuel cutoff control",
+        "Start button (pilot's collective)",
+        "Key-type igniter switch",
+        "Anti-ice switch"
+      ],
+      "specifications": [
+        {
+          "item": "Governor RPM trim rate",
+          "value": 1,
+          "unit": "percent per 2 seconds",
+          "notes": "Holding beep switch up or down"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "engine_anti_ice": {
+      "title": "Engine Anti-Ice",
+      "description": "A solenoid-actuated valve controlled by the anti-ice switch routes hot compressor discharge air to the compressor nose bearing support to prevent ice formation. The green ANTI-ICE annunciator activates via a pressure switch in the anti-ice air line when the system is ON and functioning. The system is fail-safe ON (electrical power required to turn it OFF). Performance degradation occurs with anti-ice ON.",
+      "key_points": [
+        "Solenoid-actuated valve routes hot compressor discharge air to compressor nose bearing support",
+        "Green ANTI-ICE annunciator confirms system is ON and functioning via pressure switch",
+        "System is fail-safe ON; electrical power to solenoid required to switch OFF",
+        "Performance degradation occurs with anti-ice ON (see Section 5)",
+        "Must be ON for operation in certain icing conditions per Section 2"
+      ],
+      "components": [
+        "Anti-ice solenoid-actuated valve",
+        "Anti-ice switch",
+        "Compressor discharge air supply",
+        "Compressor nose bearing support",
+        "Pressure switch (anti-ice air line)",
+        "ANTI-ICE annunciator (green)"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "starter_and_ignition_system": {
+      "title": "Starter and Ignition System",
+      "description": "A single starter-generator serves both starting and electrical generation. A Generator Control Unit (GCU) manages the sequence: during start the starter latches on automatically until N1 reaches 58%, then switches out of start mode. The igniter fires during start and can be reactivated in flight via the start button. The engine can be motored without ignition for compressor wash.",
+      "key_points": [
+        "Single starter-generator for both starting and generation",
+        "GCU latches starter on until N1 reaches 58% RPM; pilot need not hold start button",
+        "Above 58% N1, GCU automatically switches out of start mode",
+        "Generator switch should not be switched ON until idle RPM stabilizes",
+        "With igniter key in enable: normal start sequence with igniter firing",
+        "Above 58% N1, igniter fires while start button is held; GEN annunciator illuminates momentarily",
+        "Start button can be depressed in flight to activate igniter",
+        "With igniter OFF: engine can be motored without starter latching or igniter firing (for compressor wash)",
+        "If igniter switched OFF during start, starter disengages",
+        "Do not engage starter with generator circuit breaker pulled",
+        "Start button active when battery switch is ON, even with igniter OFF",
+        "Rotor brake engaged after shutdown disables start button"
+      ],
+      "components": [
+        "Starter-generator",
+        "Generator Control Unit (GCU)",
+        "Ignition exciter",
+        "Igniter",
+        "Start button (pilot's collective)",
+        "Key-type igniter switch",
+        "Generator circuit breaker"
+      ],
+      "specifications": [
+        {
+          "item": "GCU start-to-generate switchover N1",
+          "value": 58,
+          "unit": "% RPM",
+          "notes": "Automatic switchover above this speed"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "fuel_system": {
+      "title": "Fuel System",
+      "description": "A single bladder-type crash-resistant fuel cell supplies fuel by gravity flow to the engine. The cell has vent fittings with rollover valves, a fuel valve at the firewall, and a finger strainer at the outlet. Float switches activate LOW FUEL (~5 gallons) and <12 GAL FUEL (~12 gallons) annunciators. The engine has a fuel pump with inlet filter; FUEL FILTER annunciator illuminates on contamination.",
+      "key_points": [
+        "Single bladder-type crash-resistant fuel cell, gravity feed",
+        "LOW FUEL annunciator: ~5 gallons usable remaining (float switch, independent of quantity sender)",
+        "<12 GAL FUEL annunciator: ~12 gallons usable remaining (later aircraft); illuminates ~15–20 min before LOW FUEL at moderate/high power",
+        "<12 GAL FUEL accuracy affected by pitch/roll attitude and CG; may vary by up to 4 gallons at CG limits",
+        "Vent fittings interconnected, vented through mast fairing risers; rollover valves prevent leakage",
+        "Fuel valve on forward firewall controlled by push-pull cable at base of pilot's collective",
+        "Engine fuel pump assembly with inlet filter; FUEL FILTER annunciator on excessive pressure drop",
+        "Fuel filler cap under cowl door",
+        "Single sump drain accessible via left cowl door; glass sample tube provided on later aircraft"
+      ],
+      "components": [
+        "Bladder-type crash-resistant fuel cell",
+        "Finger strainer",
+        "Fuel quantity sender",
+        "LOW FUEL float switch",
+        "<12 GAL FUEL float switch (later aircraft)",
+        "Vent fittings with rollover valves",
+        "Mast fairing vent risers",
+        "Fuel valve (firewall)",
+        "Push-pull fuel valve cable",
+        "Engine fuel pump assembly",
+        "Fuel pump inlet filter",
+        "Differential pressure switch",
+        "FUEL FILTER annunciator",
+        "Sump drain",
+        "Filler cap",
+        "Glass fuel sample tube (later aircraft)"
+      ],
+      "specifications": [
+        {
+          "item": "LOW FUEL annunciator threshold",
+          "value": 5,
+          "unit": "gallons usable",
+          "notes": "Approximate"
+        },
+        {
+          "item": "<12 GAL FUEL annunciator threshold",
+          "value": 12,
+          "unit": "gallons usable",
+          "notes": "Approximate; later aircraft only; accuracy affected by CG/attitude, may vary up to 4 gallons"
+        },
+        {
+          "item": "Time from <12 GAL to LOW FUEL annunciation",
+          "value": null,
+          "unit": "minutes",
+          "notes": "Approximately 15–20 minutes at moderate to high power"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "electrical_system": {
+      "title": "Electrical System",
+      "description": "A 28-volt DC system powered by a sealed lead-acid battery and starter-generator controlled by a GCU. The battery switch controls the battery relay. An avionics switch controls power to avionics. An ammeter indicates total generator output and a digital voltmeter reads main bus voltage. Normal bus voltage is 27.3–28.7 V with generator ON.",
+      "key_points": [
+        "28-volt DC electrical system",
+        "Sealed lead-acid battery located in left side of baggage compartment",
+        "Battery switch controls battery relay; bypass wire (fuse-protected) powers tachometers and clock with battery switch OFF",
+        "Avionics switch allows single-switch shutdown of avionics; protects against voltage spikes when generator switched ON",
+        "Ammeter indicates total generator output",
+        "Digital voltmeter reads main bus voltage; incorporated in OAT indicator",
+        "Normal bus voltage: 27.3–28.7 V with generator ON",
+        "GCU in start mode below 58% N1; switches to generate mode above 58% N1 automatically",
+        "Generator switch should normally be OFF for starting",
+        "If GEN annunciator illuminates in flight: turn off non-essential equipment, switch generator to reset then ON; if remains, land as soon as practical",
+        "GEN light may indicate broken generator shaft; re-start not possible after shutdown if shaft is broken",
+        "Inflight reset of circuit breakers not recommended",
+        "Circuit breaker panel on ledge forward of left front seat; breakers marked with function and amperage"
+      ],
+      "components": [
+        "Sealed lead-acid battery",
+        "Starter-generator",
+        "Generator Control Unit (GCU)",
+        "Battery relay",
+        "Battery bypass wire with fuse",
+        "Avionics switch",
+        "Battery switch",
+        "Generator switch",
+        "Ammeter",
+        "Digital voltmeter (OAT indicator integrated)",
+        "Circuit breaker panel",
+        "GEN annunciator"
+      ],
+      "specifications": [
+        {
+          "item": "System voltage",
+          "value": 28,
+          "unit": "VDC",
+          "notes": ""
+        },
+        {
+          "item": "Normal bus voltage (generator ON)",
+          "value": null,
+          "unit": "V",
+          "notes": "27.3 to 28.7 volts"
+        },
+        {
+          "item": "GCU start/generate switchover N1",
+          "value": 58,
+          "unit": "% RPM",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "lighting_system": {
+      "title": "Lighting System",
+      "description": "The R66 has a red anti-collision light on the tailcone, position lights on cabin sides and tail, instrument panel lighting (post lights and top windshield light) active with nav lights switch, a dimmer knob, a swivel map light with high/low settings, and two HID landing lights (wide-angle and narrow-beam) in the nose controlled from the cyclic center post. An optional flashing light may be added to the tailcone.",
+      "key_points": [
+        "Red anti-collision light on tailcone; controlled by strobe switch",
+        "Position lights on each side of cabin and in tail; controlled by nav lights switch",
+        "Instrument panel lit by top windshield light and post lights; active when nav lights ON; dimmed via knob above nav lights switch",
+        "Overhead map light on swivel; high and low settings; not connected to dimmer; can serve as emergency panel lighting",
+        "Additional cabin light aft of map light; not on dimmer circuit",
+        "Two HID landing lights in nose: one wide-angle, one narrow-beam; single switch on cyclic center post",
+        "Continuous operation of landing and position lights recommended for collision avoidance",
+        "Optional additional flashing light on tailcone; controlled by extra strobe switch position (earlier) or separate switch (later)"
+      ],
+      "components": [
+        "Red anti-collision light (tailcone)",
+        "Position lights (cabin sides and tail)",
+        "Instrument panel post lights",
+        "Top windshield instrument light",
+        "Panel lights dimmer knob",
+        "Nav lights switch",
+        "Strobe switch",
+        "Overhead map light (swivel, high/low)",
+        "Cabin light",
+        "HID landing lights (2: wide-angle and narrow-beam)",
+        "Landing light switch (cyclic center post)",
+        "Optional flashing tailcone light"
+      ],
+      "specifications": [
+        {
+          "item": "Landing light type",
+          "value": null,
+          "unit": "",
+          "notes": "High intensity discharge (HID), long-life"
+        },
+        {
+          "item": "Landing light count",
+          "value": 2,
+          "unit": "lights",
+          "notes": "One wide-angle, one narrow-beam"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "external_power_receptacle": {
+      "title": "External Power Receptacle",
+      "description": "A 28-volt SAE AS35061-style external power receptacle is provided. On earlier aircraft it is inside the right engine cowl door; on later aircraft it is in the cabin outboard of the pilot's seat. When the battery switch is ON, both the external power relay and battery relay close to connect external power to the system. Reverse polarity protection is provided. Battery charging provisions exist with battery switch off.",
+      "key_points": [
+        "28-volt SAE AS35061-style receptacle",
+        "Earlier aircraft: inside right engine cowl door",
+        "Later aircraft: in cabin outboard of pilot's seat",
+        "Battery switch ON causes external power relay and battery relay to both close",
+        "External power relay will not close if reverse polarity detected",
+        "Battery can be charged with battery switch OFF per Section 8 procedures"
+      ],
+      "components": [
+        "External power receptacle (SAE AS35061)",
+        "External power relay",
+        "Battery relay",
+        "Reverse polarity protection"
+      ],
+      "specifications": [
+        {
+          "item": "Receptacle voltage",
+          "value": 28,
+          "unit": "V",
+          "notes": "SAE AS35061 style"
+        },
+        {
+          "item": "Receptacle standard",
+          "value": null,
+          "unit": "",
+          "notes": "SAE AS35061"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "instrument_panel": {
+      "title": "Instrument Panel",
+      "description": "The standard instrument panel includes flight and engine instruments, engine monitoring gauges, clock, ammeter, OAT/voltmeter, and hourmeters. Standard primary instruments are airspeed indicator, N2/rotor dual tachometer, altimeter, torquemeter, and magnetic compass. Engine gauges include N1 tachometer, MGT, oil pressure, oil temperature, and fuel quantity. Both hourmeters require main gearbox oil pressure; the outboard hourmeter is collective-activated.",
+      "key_points": [
+        "Standard primary instruments: airspeed, N2/rotor tachometer, altimeter, torquemeter, magnetic compass",
+        "Engine gauges: N1 tachometer, MGT, oil pressure, oil temperature, fuel quantity",
+        "Also standard: clock, ammeter, OAT/voltmeter, hourmeter",
+        "Additional outboard hourmeter (collective-activated) for time in service",
+        "Both hourmeters require main gearbox oil pressure to activate",
+        "Exact panel configuration varies with optional equipment and manufacture date",
+        "Optional avionics supplements (PFD/MFD) described in Section 9"
+      ],
+      "components": [
+        "Airspeed indicator",
+        "N2 and rotor dual tachometer",
+        "Altimeter",
+        "Torquemeter",
+        "Magnetic compass",
+        "N1 tachometer",
+        "MGT (measured gas temperature) gauge",
+        "Engine oil pressure gauge",
+        "Engine oil temperature gauge",
+        "Fuel quantity gauge",
+        "Clock",
+        "Ammeter",
+        "OAT/voltmeter",
+        "Hourmeter (panel)",
+        "Hourmeter (outboard, collective-activated)",
+        "Vertical speed indicator",
+        "Annunciator panel",
+        "Annunciator test button"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "annunciator_panel": {
+      "title": "Annunciator Panel",
+      "description": "The annunciator panel is at the top of the main instrument panel and illuminates segments to indicate caution or warning conditions. Segments cover chip detection in gearboxes, main rotor gearbox temperature/pressure, engine fire, engine oil pressure, anti-ice status, generator status, fuel levels, fuel filter, low RPM, cowl door status, air filter bypass, hydraulic shutoff, and EMU status.",
+      "key_points": [
+        "CHIP segments: illuminated by magnetic chip detectors in each gearbox; engine gearbox has two detectors",
+        "MR TEMP/PRESS: illuminated by temperature or oil pressure switch at main gearbox",
+        "ENGINE FIRE: illuminated by temperature switch in engine compartment",
+        "ENGINE OIL: activated by pressure switch independent of oil pressure sender",
+        "ANTI ICE (green): pressure switch in anti-ice air line confirms system ON and functioning",
+        "GEN: illuminates when generator disconnected from main bus",
+        "LOW FUEL: float switch independent of fuel quantity sender; ~5 gallons",
+        "<12 GAL FUEL: second float switch on later aircraft; ~12 gallons",
+        "FUEL FILTER: pressure switch detects excessive pressure drop across fuel filter",
+        "LOW RPM: sensor at aft end of main gearbox; horn sounds simultaneously when rotor below 95% RPM",
+        "COWL DOOR: fuel filler or baggage door not closed; later aircraft also engine cowl doors",
+        "AIR FILTER: bypass doors open due to blocked filter",
+        "HYD: hydraulic system switched off (later aircraft)",
+        "EMU segment: steady=normal, slow flash (2s)=fault, fast flash (4/s)=exceedance; only illuminates when test button depressed",
+        "Test button illuminates all segments and ROTOR BRAKE light; LOW FUEL/<12 GAL have ~2 second delay",
+        "If LOW FUEL illuminates immediately on test, fault indicated"
+      ],
+      "components": [
+        "CHIP detector segments (main gearbox, tail gearbox, engine gearbox x2)",
+        "MR TEMP/PRESS segment",
+        "ENGINE FIRE segment",
+        "ENGINE OIL segment",
+        "ANTI ICE segment (green)",
+        "GEN segment",
+        "LOW FUEL segment",
+        "<12 GAL FUEL segment (later aircraft)",
+        "FUEL FILTER segment",
+        "LOW RPM segment",
+        "Low RPM horn",
+        "COWL DOOR segment",
+        "AIR FILTER segment",
+        "HYD segment (later aircraft)",
+        "EMU segment",
+        "Annunciator test button"
+      ],
+      "specifications": [
+        {
+          "item": "LOW RPM horn activation threshold",
+          "value": 95,
+          "unit": "% RPM",
+          "notes": "Horn muted when collective fully down"
+        },
+        {
+          "item": "LOW FUEL/<12 GAL test button delay",
+          "value": 2,
+          "unit": "seconds",
+          "notes": "Time delay prevents false indication from sloshing fuel"
+        },
+        {
+          "item": "EMU self-test time after battery ON",
+          "value": 10,
+          "unit": "seconds",
+          "notes": "Before EMU segment will illuminate on test"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "audio_alerts": {
+      "title": "Audio Alerts",
+      "description": "All R66s have a low-RPM horn sounding when rotor RPM is below 95% (muted with collective fully down). Later aircraft add audio alerts in headsets for high rotor RPM (warble tone above 105%) and high engine torque/MGT (beeping tone). Beep rate varies with severity: 4 beeps/sec for torque >100% or MGT >782°C, 12 beeps/sec for torque >108% or any high MGT, and 12 beeps/sec during start if MGT >860°C.",
+      "key_points": [
+        "Low-RPM horn: below 95% rotor RPM; muted when collective fully down",
+        "Earlier aircraft: horn via speakers in instrument console side",
+        "Later aircraft: horn via tone generator through crew headsets",
+        "High RPM alert (later aircraft): warble tone (high/low) above 105% rotor RPM",
+        "High torque/MGT alert (later aircraft): beeping tone",
+        "Torque >100% or MGT >782°C: 4 beeps/second",
+        "Torque >108%: 12 beeps/second",
+        "MGT >782°C: 12 beeps/second",
+        "Hot start indicator: 12 beeps/second during start if MGT >860°C",
+        "Test buttons on instrument panel for high RPM and high torque/MGT tones",
+        "High torque/MGT test: 4 beeps/sec for 2 seconds then 12 beeps/sec",
+        "Additional alerts possible from optional equipment (terrain, traffic, autopilot)"
+      ],
+      "components": [
+        "Low-RPM horn",
+        "Instrument console speakers (earlier aircraft)",
+        "Audio system tone generator (later aircraft)",
+        "High RPM alert (warble tone)",
+        "High torque/MGT beep alert",
+        "High RPM test button",
+        "High torque/MGT test button"
+      ],
+      "specifications": [
+        {
+          "item": "Low RPM horn threshold",
+          "value": 95,
+          "unit": "% RPM",
+          "notes": ""
+        },
+        {
+          "item": "High RPM warble tone threshold",
+          "value": 105,
+          "unit": "% RPM",
+          "notes": "Later aircraft only"
+        },
+        {
+          "item": "High torque/MGT beep threshold (4 beeps/sec)",
+          "value": 100,
+          "unit": "% torque or 782°C MGT",
+          "notes": "5-minute limits"
+        },
+        {
+          "item": "High torque fast beep threshold (12 beeps/sec)",
+          "value": 108,
+          "unit": "% torque",
+          "notes": ""
+        },
+        {
+          "item": "Hot start MGT threshold",
+          "value": 860,
+          "unit": "°C",
+          "notes": "During start; 12 beeps/second"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "audio_system": {
+      "title": "Audio System",
+      "description": "A five-place audio system is standard with an audio control panel for communications radios, intercom, and external audio input. Headset jacks are in the ceiling near each seat. Pilot and copilot intercom/transmit are controlled by two-detent cyclic trigger switches. Additional intercom buttons are at rear seats and left forward floor or seat support. Music input jack is on the circuit breaker panel.",
+      "key_points": [
+        "Five-place audio system standard",
+        "Audio control panel controls comm radios, intercom, and music/external audio",
+        "Multiple audio panel manufacturers offered; consult manufacturer's manual",
+        "Headset jacks in ceiling near each seat",
+        "Cyclic trigger: first detent = intercom, second detent = transmit",
+        "Additional intercom buttons on forward side of rear seats and left forward floor/seat support",
+        "Intercom may be voice-activated",
+        "External audio jack on circuit breaker panel; muted during radio communication in most settings"
+      ],
+      "components": [
+        "Audio control panel",
+        "Headset jacks (5, ceiling mounted)",
+        "Cyclic trigger switches (pilot and copilot, two-detent)",
+        "Rear seat intercom buttons",
+        "Left forward floor/seat support intercom button",
+        "External audio input jack (circuit breaker panel)"
+      ],
+      "specifications": [
+        {
+          "item": "Audio system capacity",
+          "value": 5,
+          "unit": "places",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "optional_avionics": {
+      "title": "Optional Avionics",
+      "description": "A wide range of optional avionics are available. All aircraft are delivered with manufacturers' operating manuals for installed equipment. Complex options such as PFDs/MFDs are described in the Optional Avionics Supplement in Section 9.",
+      "key_points": [
+        "Wide range of optional avionics available",
+        "Manufacturers' operating manuals supplied with each installed piece of equipment",
+        "PFD/MFD options detailed in Optional Avionics Supplement, Section 9"
+      ],
+      "components": [
+        "Primary Flight Displays (PFDs, optional)",
+        "Multi-Function Displays (MFDs, optional)"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "dual_tachometer": {
+      "title": "Dual Tachometer",
+      "description": "An electronic N2 and rotor dual tachometer is standard. N2 signal comes from a transducer on the engine gearbox; rotor signal from magnetic senders at the main gearbox tail rotor driveline yoke. Each tachometer has its own circuit breaker. The tachometer bus is powered from the avionics bus or via a battery relay bypass circuit active whenever the main rotor gearbox has oil pressure (i.e., rotors turning).",
+      "key_points": [
+        "Electronic N2 and rotor dual tachometer standard",
+        "N2 signal: transducer on engine gearbox",
+        "Rotor signal: magnetic senders at main gearbox tail rotor driveline yoke",
+        "Each tachometer on separate circuit with own circuit breaker",
+        "Tachometer bus powered from avionics bus or battery relay bypass circuit",
+        "Bypass circuit active whenever main rotor gearbox has oil pressure (rotors turning), even if avionics bus unpowered",
+        "Bypass circuit disconnected from tachometer bus when annunciator test button depressed",
+        "Pressing test button while running confirms tachometers receiving power from avionics bus"
+      ],
+      "components": [
+        "N2 electronic tachometer",
+        "Rotor tachometer",
+        "Engine gearbox transducer (N2)",
+        "Main gearbox magnetic senders (rotor)",
+        "Tachometer circuit breakers (2)",
+        "Tachometer bus",
+        "Battery relay bypass circuit"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "pitot_static_system": {
+      "title": "Pitot-Static System",
+      "description": "The pitot-static system supplies air pressure to the airspeed indicator, altimeter, and vertical speed indicator. The pitot tube is on the leading edge of the mast fairing. Static sources are on each side of the cabin aft of the rear doors. Water can be drained from lines via plastic drain plugs accessible through the aft underside inspection panel.",
+      "key_points": [
+        "Supplies airspeed indicator, altimeter, and vertical speed indicator",
+        "Pitot tube: leading edge of mast fairing",
+        "Static sources: each side of cabin aft of rear doors (dual)",
+        "Water drain plugs accessible through aft inspection panel on underside of cabin",
+        "Draining required only if airspeed or altimeter appears erratic",
+        "Pitot and static sources should be inspected frequently for bugs or obstructions"
+      ],
+      "components": [
+        "Pitot tube (mast fairing leading edge)",
+        "Static ports (2, cabin sides aft of rear doors)",
+        "Airspeed indicator",
+        "Altimeter",
+        "Vertical speed indicator",
+        "Pitot-static drain plugs",
+        "Aft underside inspection panel"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "engine_monitoring_unit": {
+      "title": "Engine Monitoring Unit",
+      "description": "The EMU is a digital recording device mounted behind the right rear seatback panel. It continuously monitors N1, N2, engine torque, and MGT, and records exceedances of Rolls-Royce engine limits. It also records start cycles when N1 exceeds 30% and MGT is at least 343°C. EMU data can be downloaded to a computer. Status is shown only when the annunciator test button is held.",
+      "key_points": [
+        "Digital recording device behind right rear seatback panel",
+        "Monitors continuously: N1, N2, engine torque, MGT",
+        "Records exceedances of Rolls-Royce engine limits",
+        "Records start cycle when N1 >30% and MGT ≥343°C",
+        "EMU data downloadable to computer with appropriate software",
+        "EMU segment only illuminates while annunciator test button held",
+        "Requires ~10 seconds self-test after battery ON before ready",
+        "Steady illumination = normal; slow flash (once/2 sec) or no illumination = fault; fast flash (4/sec) = exceedance",
+        "Fault or exceedance must be investigated and reset by qualified mechanic before next flight",
+        "EMU is a maintenance aid; pilot responsible for reporting exceedances; operator responsible for start/time records"
+      ],
+      "components": [
+        "EMU digital recording device",
+        "N1 sender",
+        "N2 sender",
+        "Engine torque sender",
+        "MGT sender",
+        "EMU annunciator segment"
+      ],
+      "specifications": [
+        {
+          "item": "Start cycle recording N1 threshold",
+          "value": 30,
+          "unit": "% RPM",
+          "notes": "Also requires MGT ≥343°C"
+        },
+        {
+          "item": "Start cycle recording MGT threshold",
+          "value": 343,
+          "unit": "°C",
+          "notes": "Also requires N1 >30%"
+        },
+        {
+          "item": "EMU self-test duration after battery ON",
+          "value": 10,
+          "unit": "seconds",
+          "notes": ""
+        },
+        {
+          "item": "Slow flash rate (fault)",
+          "value": null,
+          "unit": "",
+          "notes": "Once every 2 seconds"
+        },
+        {
+          "item": "Fast flash rate (exceedance)",
+          "value": 4,
+          "unit": "flashes per second",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "cabin_heating_and_ventilation": {
+      "title": "Cabin Heating and Ventilation",
+      "description": "Fresh air vents are in each door and in the nose. Door vents are controlled by knobs; for maximum ventilation, open wide in hover but only one inch or less in cruise. The nose fresh air inlet (console face pull handle) directs air along the windshield inside for defogging. Cabin heat uses engine compressor bleed air routed to footwell outlets, controlled by a push-pull cable knob left of the cyclic. Performance degradation occurs with heat ON.",
+      "key_points": [
+        "Door vents: open/close by knob; rotating knob seals and locks; max open in hover, ≤1 inch in cruise",
+        "Nose fresh air inlet: pull handle on console face; rotating knob clockwise locks position",
+        "Nose air directed along inside of windshield for defogging and ventilation",
+        "Cabin heat uses engine compressor bleed air",
+        "Heat outlets forward of tail rotor pedals and in rear footwells",
+        "Heater control knob left of cyclic stick; push-pull cable to valve in aft control tunnel",
+        "Performance degradation with cabin heat ON (see Section 5)",
+        "In case of engine fire, cabin heat should be turned OFF"
+      ],
+      "components": [
+        "Door fresh air vents (with locking knobs)",
+        "Nose fresh air inlet",
+        "Console face vent pull handle",
+        "Engine compressor bleed air supply",
+        "Cabin heat outlets (forward footwell and rear footwells)",
+        "Heater control knob",
+        "Push-pull heater cable",
+        "Heater valve (aft control tunnel)"
+      ],
+      "specifications": [
+        {
+          "item": "Door vent max opening in cruise",
+          "value": 1,
+          "unit": "inch or less",
+          "notes": "Maximum in hover: fully open"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "seats_belts_and_baggage": {
+      "title": "Seats, Belts, and Baggage",
+      "description": "Seats are not adjustable but right-side pedals are. A removable back cushion positions shorter pilots forward. Optional heated seat bottoms and backrests for front and outboard rear seats operate only with generator ON. Each seat has a combined lap belt and inertia reel shoulder strap. Optional five-point harnesses available for front seats. The main baggage compartment has a large right-side door with annunciator, interior light, and tie-down anchors. Under-seat compartments with maximum fill lines exist under all seats except the center rear.",
+      "key_points": [
+        "Seats not adjustable; removable back cushion aids shorter pilots",
+        "Optional seat heaters (front and outboard rear) with high/low settings; operate only with generator ON",
+        "Seat heater switches above right-side collective boot",
+        "Each seat: lap belt with inertia reel shoulder strap (locks on sudden movement)",
+        "Optional five-point harnesses for front seats; buckle must not interfere with cyclic at aft position",
+        "Main baggage compartment: right-side door, COWL DOOR annunciator warns if unlatched, interior light on with battery switch ON, tie-down anchors",
+        "Under-seat compartments under all seats except center rear; do not load above max fill lines (crush space required)",
+        "Optional ceiling anchor loops for safety tether during doors-off operation"
+      ],
+      "components": [
+        "Seat cushions (non-adjustable)",
+        "Removable back cushion",
+        "Seat heaters (optional, front and outboard rear)",
+        "Seat heater switches",
+        "Lap belts",
+        "Inertia reel shoulder straps",
+        "Five-point harnesses (optional, front seats)",
+        "Main baggage compartment",
+        "Baggage compartment door (right side)",
+        "Baggage compartment interior light",
+        "Tie-down anchors",
+        "Under-seat compartments",
+        "Optional ceiling anchor loops"
+      ],
+      "specifications": [
+        {
+          "item": "Seat heater heat settings",
+          "value": null,
+          "unit": "",
+          "notes": "Low and high; generator switch must be ON"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "landing_gear": {
+      "title": "Landing Gear",
+      "description": "Skid-type landing gear with elastic energy absorption for most hard landings. In extremely hard landings, struts hinge up and outward as the crosstube yields permanently to absorb impact. Crosstube replacement required if tail skid is within 38 inches (30 inches for extended gear) of ground when sitting empty on level pavement. Aerodynamic fairings are fitted to struts. Abrasion-resistant wear shoes are on the skids and should be replaced when thinnest wear point is less than 0.05 inches.",
+      "key_points": [
+        "Skid-type landing gear",
+        "Most hard landings absorbed elastically",
+        "Extreme hard landing: struts hinge up/outward; crosstube yields to absorb impact",
+        "Slight crosstube yielding acceptable; replacement required if tail skid ≤38 inches from ground (empty, level pavement)",
+        "Extended gear: replacement threshold is ≤30 inches",
+        "Four aerodynamic fairings on struts; helicopter approved to fly with or without fairings",
+        "Abrasion-resistant wear shoes on skid bottoms; replace when thinnest point <0.05 inches (1.3 mm)",
+        "Wear shoes should be inspected periodically, especially after autorotation landings",
+        "Optional mirrors near forward end of one or both skid tubes; friction ball joint adjustable"
+      ],
+      "components": [
+        "Skid tubes (2)",
+        "Landing gear struts (4)",
+        "Crosstube",
+        "Tail skid",
+        "Aerodynamic fairings (4)",
+        "Abrasion-resistant wear shoes",
+        "Optional skid mirrors (friction ball joint)"
+      ],
+      "specifications": [
+        {
+          "item": "Crosstube replacement threshold (standard gear)",
+          "value": 38,
+          "unit": "inches",
+          "notes": "Tail skid height from ground, empty on level pavement"
+        },
+        {
+          "item": "Crosstube replacement threshold (extended gear)",
+          "value": 30,
+          "unit": "inches",
+          "notes": "Tail skid height from ground, empty on level pavement"
+        },
+        {
+          "item": "Wear shoe replacement threshold",
+          "value": 0.05,
+          "unit": "inches (1.3 mm)",
+          "notes": "Thinnest point in wear area"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "rotor_brake": {
+      "title": "Rotor Brake",
+      "description": "The rotor brake is mounted on the aft end of the main gearbox and actuated by a cable connected to a pull handle on the cabin ceiling. It is used to stop the rotor after engine shutdown and can be used as a parking brake. The brake must be released before starting; when engaged, the starter is disabled. At least one minute must elapse after engine shutdown before applying the brake, and force must be moderate (not stopping rotor in less than 10 seconds) to avoid damage.",
+      "key_points": [
+        "Mounted on aft end of main gearbox",
+        "Pull handle on cabin ceiling; cable actuated",
+        "Use procedure: wait at least 1 minute after fuel cutoff, then pull handle with ~10 lb force",
+        "After rotor stops, bead chain hooks in bracket slot to use as parking brake",
+        "Annunciator light near igniter switch illuminates when brake engaged",
+        "Brake must be released before starting engine",
+        "When brake engaged, starter is disabled",
+        "Rotor brake engaged after shutdown disables the start button",
+        "Applying brake too soon or stopping rotor in <10 seconds may damage brake shoes and gearbox oil seal"
+      ],
+      "components": [
+        "Rotor brake assembly (aft main gearbox)",
+        "Pull handle (cabin ceiling)",
+        "Actuating cable",
+        "Bead chain parking brake latch",
+        "Rotor brake annunciator light"
+      ],
+      "specifications": [
+        {
+          "item": "Minimum wait after engine shutdown before applying brake",
+          "value": 1,
+          "unit": "minute",
+          "notes": "After pulling fuel cutoff"
+        },
+        {
+          "item": "Recommended brake handle force",
+          "value": 10,
+          "unit": "lb",
+          "notes": "Approximate, moderate force"
+        },
+        {
+          "item": "Minimum rotor stop time",
+          "value": 10,
+          "unit": "seconds",
+          "notes": "Stopping faster may damage brake shoes and gearbox oil seal"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "ads_b_equipment": {
+      "title": "ADS-B Equipment",
+      "description": "An ADS-B capable transponder is installed on later aircraft, transmitting GPS position to ATC. ADS-B Out meets 14 CFR §91.227 requirements and operates on 1090 MHz. ADS-B In (optional) can receive traffic and weather from other ADS-B aircraft and ground stations on both 978 MHz and 1090 MHz. ADS-B In requires a suitable display such as a moving map GPS or MFD.",
+      "key_points": [
+        "ADS-B Out transponder installed on later aircraft",
+        "Transmits GPS position to supplement radar/transponder information",
+        "ADS-B Out meets 14 CFR §91.227 requirements",
+        "ADS-B Out frequency: 1090 MHz (also accepted in most countries outside USA)",
+        "ADS-B Out operation is mostly automatic; malfunctions annunciated on transponder/GPS",
+        "ADS-B Out can be turned off via transponder controls but should not be unless directed by ATC",
+        "ADS-B In (optional): receives traffic and weather from ADS-B aircraft and ground stations",
+        "ADS-B In receives both US approved frequencies: 978 MHz and 1090 MHz",
+        "ADS-B In requires suitable display (moving map GPS or MFD)"
+      ],
+      "components": [
+        "ADS-B transponder",
+        "GPS (position source for ADS-B Out)",
+        "ADS-B In receiver (optional)",
+        "Moving map GPS or MFD (for ADS-B In display)"
+      ],
+      "specifications": [
+        {
+          "item": "ADS-B Out frequency",
+          "value": 1090,
+          "unit": "MHz",
+          "notes": "Accepted in most countries"
+        },
+        {
+          "item": "ADS-B In frequencies",
+          "value": null,
+          "unit": "MHz",
+          "notes": "978 MHz and 1090 MHz (both US approved frequencies)"
+        },
+        {
+          "item": "Regulatory compliance",
+          "value": null,
+          "unit": "",
+          "notes": "14 CFR §91.227"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "emergency_locator_transmitter": {
+      "title": "Emergency Locator Transmitter (Optional)",
+      "description": "The optional ELT consists of a transmitter with internal battery, external antenna, and a remote switch/annunciator. The transmitter is mounted to the upper steel tube frame and accessed through the right-side cowl spring-loaded air intake door. For flight, the transmitter switch should be in ARM and the remote switch in ARMED. The ELT activates automatically on high-G impact. The remote switch also allows manual ON activation and momentary RESET & TEST.",
+      "key_points": [
+        "Transmitter mounted to upper steel tube frame; accessed through right-side cowl air intake door",
+        "Remote switch/annunciator located left of cyclic stick",
+        "Transmitter switch must be in ARM position for flight",
+        "Remote switch must be in ARMED position for flight",
+        "Activates automatically on high-G load when both switches set to armed",
+        "Red indicator light illuminates when transmitting",
+        "Remote switch ON activates transmitter manually (use if emergency landing imminent and time permits)",
+        "RESET & TEST (momentary) stops accidental transmission and resets unit; red light extinguishes when reset"
+      ],
+      "components": [
+        "ELT transmitter with internal battery",
+        "External antenna",
+        "Remote switch/annunciator",
+        "Red indicator light"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "accessory_mounts": {
+      "title": "Accessory Mounts (Optional)",
+      "description": "Optional mounting bars forward of pilot's and/or copilot's seat with clamp assemblies compatible with commercially available accessory mounts. Each bar has a 10 lb total weight limit. USB and cigarette-lighter-style power outlets are at the inboard end, protected by the Aux Power circuit breaker and in-line fuses. Wire clamps and a wire pocket are provided.",
+      "key_points": [
+        "Mounting bars forward of pilot's seat, copilot's seat, or both",
+        "Clamp assemblies compatible with variety of commercially available mounts",
+        "10 lb total weight limit per mounting bar",
+        "USB and cigarette-lighter-style power outlets at inboard end of bar",
+        "Power outlets protected by Aux Power circuit breaker and in-line fuses; placarded with voltage/current ratings",
+        "Wire clamps and pocket for securing excess wire provided",
+        "Mounting bar, clamp assembly, and power outlets are approved aircraft type design; attached items are pilot's responsibility",
+        "Ensure items are secure and do not interfere with controls or primary field of view"
+      ],
+      "components": [
+        "Mounting bars (pilot and/or copilot side)",
+        "Clamp assemblies",
+        "USB power outlet",
+        "Cigarette-lighter-style power outlet",
+        "Aux Power circuit breaker",
+        "In-line fuses",
+        "Wire clamps",
+        "Wire pocket"
+      ],
+      "specifications": [
+        {
+          "item": "Maximum weight per mounting bar",
+          "value": 10,
+          "unit": "lb",
+          "notes": "Total for all items on bar"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "cockpit_camera": {
+      "title": "Cockpit Camera (Optional)",
+      "description": "An optional ceiling-mounted video camera records 4K video, intercom/comm audio, and GPS position to internal memory and a removable flash drive. Recording starts automatically when battery switches on and stops when off. A 128 GB flash drive records approximately 10 hours; when full, earliest files are overwritten. Video files are sequential 4 GB MP4 files (~25 min each); GPS stored in GPX files.",
+      "key_points": [
+        "Ceiling-mounted video camera",
+        "Records 4K video, intercom/comm audio, and GPS position",
+        "Records to internal memory (recent video only, not user accessible) and removable flash drive",
+        "Recording starts automatically when battery ON, stops when battery OFF",
+        "Record and audio switches on front of camera housing allow stopping recording or muting audio",
+        "Do not remove flash drive during recording; stop recording first and wait for blue light to stop flashing",
+        "Blue flashing light: recording to flash drive; green steady light: powered and normal; amber flashing: internal fault",
+        "Video: sequential 4 GB files, ~25 min each, labeled HELICAM_xxxx.MP4",
+        "GPS: HELICAM_xxxx.GPX files",
+        "128 GB flash drive = ~10 hours of video; earliest file overwritten when full",
+        "Flash drives must meet criteria in Cockpit Camera User Guide"
+      ],
+      "components": [
+        "Ceiling-mounted camera housing",
+        "Internal memory",
+        "Removable flash drive slot",
+        "Record switch",
+        "Audio switch",
+        "Blue status light (recording indicator)",
+        "Green status light (power/normal indicator)",
+        "Amber status light (fault indicator)",
+        "External antenna (GPS)"
+      ],
+      "specifications": [
+        {
+          "item": "Video resolution",
+          "value": null,
+          "unit": "",
+          "notes": "4K video"
+        },
+        {
+          "item": "File size per video segment",
+          "value": 4,
+          "unit": "GB",
+          "notes": "Sequential files"
+        },
+        {
+          "item": "Approximate duration per file",
+          "value": 25,
+          "unit": "minutes",
+          "notes": ""
+        },
+        {
+          "item": "128 GB flash drive capacity",
+          "value": 10,
+          "unit": "hours",
+          "notes": "Approximate video recording time"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "cyclic_guard": {
+      "title": "Cyclic Guard (Optional)",
+      "description": "An optional bar extending from the inboard corner of the left front seat to the instrument console, acting as a barrier to prevent inadvertent cyclic interference and providing a hand grip for the left front seat passenger. It can be temporarily lowered to access the under-seat compartment via a silver spring knob at the forward end. Recommended whenever a non-pilot occupies the left front seat.",
+      "key_points": [
+        "Bar from inboard corner of left front seat to instrument console",
+        "Acts as barrier to prevent inadvertent cyclic interference",
+        "Provides hand grip for passenger's right hand",
+        "To lower: pull silver spring knob at forward end; aft end rotates down",
+        "To re-secure: lift aft end and spring knob locks back in place",
+        "Recommended when non-pilot occupies left front seat",
+        "Pilot flying from left seat may find guard contacts right leg; should be removed if objectionable"
+      ],
+      "components": [
+        "Cyclic guard bar",
+        "Silver spring knob (forward end)",
+        "Seat attachment bracket",
+        "Instrument console attachment"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    }
+  }
+}

@@ -21,6 +21,11 @@ def main() -> None:
         required=True,
         help="Path to the PDF file relative to the repository root",
     )
+    parser.add_argument(
+        "--output",
+        default=None,
+        help="Optional output path relative to repo root (default: extracted-data/raw-text/<pdf_stem>.txt)",
+    )
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parent.parent
@@ -30,11 +35,14 @@ def main() -> None:
         print(f"Error: PDF not found: {pdf_path}", file=sys.stderr)
         raise SystemExit(1)
 
-    out_dir = repo_root / "extracted-data" / "raw-text"
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    stem = pdf_path.stem
-    out_path = out_dir / f"{stem}.txt"
+    if args.output:
+        out_path = (repo_root / args.output).resolve()
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+    else:
+        out_dir = repo_root / "extracted-data" / "raw-text"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        stem = pdf_path.stem
+        out_path = out_dir / f"{stem}.txt"
 
     parts: list[str] = []
     with pdfplumber.open(pdf_path) as pdf:

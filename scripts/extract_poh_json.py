@@ -432,6 +432,20 @@ def pages_to_raw_text(page_rows: list[tuple[int, str]]) -> str:
     return "".join(parts)
 
 
+def parse_extracted_text_pages(content: str) -> list[tuple[int, str]]:
+    """Parse `extract_text.py` output (--- PAGE n --- markers) into page rows."""
+    matches = list(re.finditer(r"(?:\A|\n)--- PAGE (\d+) ---\n", content))
+    if not matches:
+        return [(1, content)]
+    rows: list[tuple[int, str]] = []
+    for i, m in enumerate(matches):
+        pnum = int(m.group(1))
+        start = m.end()
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(content)
+        rows.append((pnum, content[start:end]))
+    return rows
+
+
 def chunk_pages_by_char_budget(
     page_rows: list[tuple[int, str]],
     max_chars: int,
@@ -489,11 +503,16 @@ def call_anthropic_faa_stream(
     raise RuntimeError("Anthropic streaming failed without specific error")
 
 
-def max_tokens_for_poh_section(section: str) -> int:
+def max_tokens_for_poh_section(section: str, input_chars: int = 0) -> int:
     if section == "r44_limitations":
         return 8192
     if section in ("r44_emergency_procedures", "r44_systems"):
         return 16384
+    if section == "limitations":
+        return 8192
+    if section in ("emergency_procedures", "systems"):
+        # Full POH sections and turbine FMs can exceed 4k/8k output; keep headroom.
+        return 32768 if input_chars > 120_000 else 16384
     return 4096
 
 
@@ -512,10 +531,24 @@ def count_verify_values(obj: Any) -> int:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Extract POH PDF to structured JSON via Anthropic.")
-    parser.add_argument(
+    src = parser.add_mutually_exclusive_group(required=True)
+    src.add_argument(
         "--pdf",
-        required=True,
         help="Path to PDF relative to repository root",
+    )
+    src.add_argument(
+        "--input",
+        help="Pre-extracted UTF-8 text file (repo-relative), e.g. extracted-data/raw-text/r66_section2.txt",
+    )
+    parser.add_argument(
+        "--output",
+        default=None,
+        help="Output JSON path relative to repo root (required with --input for non-R22/R44 naming)",
+    )
+    parser.add_argument(
+        "--aircraft",
+        default=None,
+        help="Aircraft label for metadata and prompts (e.g. 'Robinson R66', 'Bell 206B3'). Defaults from section when omitted.",
     )
     parser.add_argument(
         "--section",
@@ -535,24 +568,43 @@ def main() -> None:
     args = parser.parse_args()
     section = args.section
 
+    if args.input and not args.output:
+        print("Error: --output is required when using --input.", file=sys.stderr)
+        raise SystemExit(1)
+
     api_key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
     if not api_key:
         print("Error: ANTHROPIC_API_KEY is missing or empty. Set it in .env or the environment.", file=sys.stderr)
         raise SystemExit(1)
 
-    pdf_path = (REPO_ROOT / args.pdf).resolve()
-    if not pdf_path.is_file():
-        print(f"Error: PDF not found: {pdf_path}", file=sys.stderr)
-        raise SystemExit(1)
+    source_name: str
+    if args.input:
+        text_path = (REPO_ROOT / args.input).resolve()
+        if not text_path.is_file():
+            print(f"Error: text file not found: {text_path}", file=sys.stderr)
+            raise SystemExit(1)
+        raw_file = text_path.read_text(encoding="utf-8", errors="replace")
+        page_rows = parse_extracted_text_pages(raw_file)
+        num_pages = len(page_rows)
+        source_name = text_path.name
+    else:
+        pdf_path = (REPO_ROOT / args.pdf).resolve()
+        if not pdf_path.is_file():
+            print(f"Error: PDF not found: {pdf_path}", file=sys.stderr)
+            raise SystemExit(1)
+        source_name = pdf_path.name
+        page_rows = []
+        with pdfplumber.open(pdf_path) as pdf:
+            num_pages = len(pdf.pages)
+            for i, page in enumerate(pdf.pages, start=1):
+                page_rows.append((i, page.extract_text() or ""))
 
     cfg = SECTION_CONFIG[section]
     system_prompt = cfg["system_prompt"]
-
-    page_rows: list[tuple[int, str]] = []
-    with pdfplumber.open(pdf_path) as pdf:
-        num_pages = len(pdf.pages)
-        for i, page in enumerate(pdf.pages, start=1):
-            page_rows.append((i, page.extract_text() or ""))
+    aircraft_label = args.aircraft
+    if aircraft_label:
+        system_prompt = system_prompt.replace("Robinson R22", aircraft_label)
+        system_prompt = system_prompt.replace("Robinson R44", aircraft_label)
 
     raw_full = pages_to_raw_text(page_rows)
     client = anthropic.Anthropic(api_key=api_key)
@@ -620,7 +672,7 @@ def main() -> None:
                 print(response_text[:2000], file=sys.stderr)
                 raise SystemExit(1) from e
     else:
-        max_out = max_tokens_for_poh_section(section)
+        max_out = max_tokens_for_poh_section(section, len(raw_full))
         # SDK requires streaming when a request may exceed the non-streaming timeout
         # (large max_tokens on long PDF text — e.g. R44 emergency/systems).
         response_text = call_anthropic_faa_stream(
@@ -638,7 +690,9 @@ def main() -> None:
             raise SystemExit(1) from e
 
     metadata: dict[str, Any] = {}
-    if section in ("limitations", "emergency_procedures", "systems"):
+    if args.aircraft:
+        metadata["aircraft"] = args.aircraft
+    elif section in ("limitations", "emergency_procedures", "systems"):
         metadata["aircraft"] = "R22"
     elif section in ("r44_limitations", "r44_emergency_procedures", "r44_systems"):
         metadata["aircraft"] = "R44"
@@ -646,24 +700,33 @@ def main() -> None:
         metadata["aircraft"] = None
 
     metadata["poh_source"] = section
-    metadata["source_file"] = Path(args.pdf).name
+    metadata["source_file"] = source_name
     metadata["extracted_date"] = date.today().isoformat()
     metadata["extraction_script_version"] = EXTRACTION_SCRIPT_VERSION
     merged: dict[str, Any] = {**metadata, **parsed}
 
-    if section in ("limitations", "emergency_procedures", "systems"):
+    if args.output:
+        out_path = (REPO_ROOT / args.output).resolve()
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+    elif section in ("limitations", "emergency_procedures", "systems"):
         out_dir = REPO_ROOT / "extracted-data" / "aircraft"
         out_filename = f"r22_{section}.json"
+        out_path = out_dir / out_filename
     elif section in ("r44_limitations", "r44_emergency_procedures", "r44_systems"):
         out_dir = REPO_ROOT / "extracted-data" / "aircraft"
         section_short = section.replace("r44_", "")
         out_filename = f"r44_{section_short}.json"
+        out_path = out_dir / out_filename
     elif section in ("faa_handbook", "faa_acs"):
         out_dir = REPO_ROOT / "extracted-data" / "faa"
-        out_filename = f"{Path(args.pdf).stem}.json"
+        pdf_stem = Path(args.pdf).stem if args.pdf else Path(source_name).stem
+        out_filename = f"{pdf_stem}.json"
+        out_path = out_dir / out_filename
+    else:
+        print("Error: could not determine output path.", file=sys.stderr)
+        raise SystemExit(1)
 
-    out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / out_filename
+    out_path.parent.mkdir(parents=True, exist_ok=True)
 
     out_path.write_text(
         json.dumps(merged, indent=2, ensure_ascii=False) + "\n",

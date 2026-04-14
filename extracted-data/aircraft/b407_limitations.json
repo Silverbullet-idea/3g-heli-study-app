@@ -1,0 +1,353 @@
+{
+  "aircraft": "Bell 407",
+  "poh_source": "limitations",
+  "source_file": "b407_full.txt",
+  "extracted_date": "2026-04-14",
+  "extraction_script_version": "1.0.0",
+  "airspeed_limits": {
+    "vne_powered_to_3000ft": {
+      "value": 140,
+      "unit": "KIAS",
+      "notes": "Sea level to 3000 feet HD. Decrease VNE for ambient conditions per AIRSPEED LIMITATIONS placard (Figure 1-3). VNE at 93.5 to 100% TORQUE (takeoff power) is 100 KIAS, not to exceed placarded VNE.",
+      "confidence": "extracted"
+    },
+    "vne_above_3000ft": {
+      "value": null,
+      "unit": "KIAS",
+      "notes": "Above 3000 ft HD, VNE decreases per the AIRSPEED LIMITATIONS placard table (Figure 1-3); for example, at OAT 20°C and 4000 ft pressure altitude VNE = 133 KIAS. No single stated value; refer to placard table.",
+      "confidence": "inferred"
+    },
+    "airspeed_indicator_green_arc_min": {
+      "value": null,
+      "unit": "KIAS",
+      "notes": "Not explicitly stated in the text; instrument markings figure (1-5) referenced but values for green arc minimum not extractable from provided text.",
+      "confidence": "verify"
+    },
+    "airspeed_indicator_red_line": {
+      "value": 140,
+      "unit": "KIAS",
+      "notes": "Basic VNE red line is 140 KIAS at sea level to 3000 ft HD; decreases with altitude and temperature per placard.",
+      "confidence": "extracted"
+    }
+  },
+  "rotor_speed_limits": {
+    "power_on_max": {
+      "value": 100,
+      "unit": "%",
+      "rpm": null,
+      "notes": "Maximum continuous NR power on. Continuous operation 99 to 100%.",
+      "confidence": "extracted"
+    },
+    "power_on_min": {
+      "value": 99,
+      "unit": "%",
+      "rpm": null,
+      "notes": "Minimum NR power on. Continuous operation 99 to 100%.",
+      "confidence": "extracted"
+    },
+    "power_on_min_o320_variant": {
+      "value": null,
+      "unit": "%",
+      "rpm": null,
+      "notes": "No O-320 variant referenced in this document; not applicable.",
+      "confidence": "verify"
+    },
+    "power_off_max": {
+      "value": 107,
+      "unit": "%",
+      "rpm": null,
+      "notes": "Maximum NR power off. RPM warning light (without audio) illuminates above 107%.",
+      "confidence": "extracted"
+    },
+    "power_off_min": {
+      "value": 85,
+      "unit": "%",
+      "rpm": null,
+      "notes": "Minimum NR power off. Continuous operation 85 to 107%. Caution: for autorotative training maintain steady state NR above 90%.",
+      "confidence": "extracted"
+    }
+  },
+  "weight_limits": {
+    "max_gross_standard_hp": {
+      "value": 5000,
+      "unit": "lbs",
+      "kg": 2268,
+      "notes": "Maximum approved internal GW for takeoff and landing (basic helicopter, standard configuration).",
+      "confidence": "extracted"
+    },
+    "max_gross_alpha_beta_beta_ii": {
+      "value": 5250,
+      "unit": "lbs",
+      "kg": 2381,
+      "notes": "Maximum approved internal GW with kit 407-706-020 (Increased Internal Gross Weight) installed. Loads above 5250 lbs shall be carried on cargo hook.",
+      "confidence": "extracted"
+    },
+    "min_gross": {
+      "value": 2650,
+      "unit": "lbs",
+      "kg": 1202,
+      "notes": "Minimum GW for flight.",
+      "confidence": "extracted"
+    },
+    "max_per_seat_including_baggage": {
+      "value": null,
+      "unit": "lbs",
+      "kg": null,
+      "notes": "Not explicitly stated per seat including baggage. Standard passenger weight assumed 170 lbs per seat for loading calculations.",
+      "confidence": "verify"
+    },
+    "max_per_baggage_compartment": {
+      "value": 250,
+      "unit": "lbs",
+      "kg": 113.4,
+      "notes": "Maximum allowable weight in baggage compartment. Floor loading limit 86 lbs/sq ft (4.2 kg/100 sq cm).",
+      "confidence": "extracted"
+    },
+    "min_solo_pilot_weight": {
+      "value": 170,
+      "unit": "lbs",
+      "notes": "Minimum weight at fuselage station 65.0 is 170 lbs (77.1 kg). This applies to the pilot/front seat occupant to maintain CG.",
+      "confidence": "extracted"
+    }
+  },
+  "altitude_limits": {
+    "max_operating_density_altitude": {
+      "value": 20000,
+      "unit": "ft DA",
+      "notes": "Maximum operating altitude is 20,000 feet HD or 20,000 feet HP, whichever is lower.",
+      "confidence": "extracted"
+    }
+  },
+  "engine": {
+    "approved_models": [
+      "Rolls-Royce 250-C47B"
+    ],
+    "speed_max_continuous": {
+      "value": 105,
+      "unit": "%",
+      "rpm": null,
+      "notes": "Maximum continuous NG (Gas Producer RPM). Continuous operation 63 to 105%.",
+      "confidence": "extracted"
+    },
+    "speed_max_transient": {
+      "value": 106,
+      "unit": "%",
+      "rpm": null,
+      "notes": "Maximum transient NG, 10 seconds.",
+      "confidence": "extracted"
+    },
+    "cht_max": {
+      "value": null,
+      "unit": "°F",
+      "celsius": null,
+      "notes": "CHT (cylinder head temperature) not applicable to this turbine engine. MGT limits apply instead.",
+      "confidence": "verify"
+    },
+    "oil_temp_max": {
+      "value": 107,
+      "unit": "°C",
+      "celsius": 107,
+      "notes": "Engine oil temperature maximum. Continuous operation 0 to 107°C.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_min_idle": {
+      "value": 50,
+      "unit": "PSI",
+      "notes": "Minimum engine oil pressure below 79% NG RPM (idle range).",
+      "confidence": "extracted"
+    },
+    "oil_pressure_min_flight": {
+      "value": 115,
+      "unit": "PSI",
+      "notes": "Minimum engine oil pressure above 94% NG RPM (flight power range). Between 79-94% NG minimum is 90 PSI.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_max_flight": {
+      "value": 130,
+      "unit": "PSI",
+      "notes": "Maximum engine oil pressure for continuous operation in flight. When 130 PSI is exceeded during start, operate at idle until pressure drops below 130 PSI.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_max_start_warmup": {
+      "value": 200,
+      "unit": "PSI",
+      "notes": "Maximum engine oil pressure for cold starts only.",
+      "confidence": "extracted"
+    },
+    "oil_quantity_min_takeoff": {
+      "value": null,
+      "unit": "qt",
+      "liters": null,
+      "notes": "Minimum engine oil quantity for takeoff not explicitly stated in the extracted text. Refer to BHT-407-MD-1.",
+      "confidence": "verify"
+    },
+    "carb_air_temp_caution_range_min": {
+      "value": null,
+      "unit": "°C",
+      "notes": "Not applicable — this is a turbine engine (Rolls-Royce 250-C47B); no carburetor air temperature gauge.",
+      "confidence": "verify"
+    },
+    "carb_air_temp_caution_range_max": {
+      "value": null,
+      "unit": "°C",
+      "notes": "Not applicable — turbine engine, no carburetor.",
+      "confidence": "verify"
+    }
+  },
+  "fuel": {
+    "approved_grades": [
+      "ASTM-D-1655 Type B (all temperatures)",
+      "MIL-T-5624 Grade JP-4 / NATO F-40 (all temperatures)",
+      "ASTM-D-1655 Type A or A-1 (above -32°C / -25°F)",
+      "MIL-T-5624 Grade JP-5 / NATO F-44 (above -32°C / -25°F)",
+      "MIL-T-83133 Grade JP-8 / NATO F-34 (above -32°C / -25°F)"
+    ],
+    "capacity_bladder_tanks": {
+      "main_total": {
+        "value": 127,
+        "unit": "gal US",
+        "liters": 483
+      },
+      "main_usable": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "aux_total": {
+        "value": 20,
+        "unit": "gal US",
+        "liters": null
+      },
+      "aux_usable": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "combined_total": {
+        "value": 147,
+        "unit": "gal US",
+        "liters": 559
+      },
+      "combined_usable": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "confidence": "extracted"
+    }
+  },
+  "required_equipment_for_dispatch": [
+    "Functional flashlight (required for night flights)",
+    "FADEC system software version 5.202",
+    "Snow deflector kit (BHT-407-FMS-4) when conducting flight operations in falling and/or blowing snow"
+  ],
+  "flight_restrictions": [
+    {
+      "item": "Aerobatic maneuvers",
+      "status": "PROHIBITED",
+      "notes": "Aerobatic maneuvers are prohibited.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Intentional use of transient limits",
+      "status": "PROHIBITED",
+      "notes": "Intentional use of any power transient is prohibited.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "IFR / Icing flight",
+      "status": "PROHIBITED",
+      "notes": "Basic configured helicopter approved for day or night VFR nonicing conditions only.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "ENG ANTI ICE ON in visible moisture below 5°C OAT",
+      "status": "REQUIRED",
+      "notes": "ENG ANTI ICE shall be ON in visible moisture when OAT is below 5°C (40°F).",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Maximum sideward/rearward flight or crosswind hover",
+      "status": "REQUIRED",
+      "notes": "Maximum allowable airspeed for sideward and rearward flight or crosswind hover is 35 KTAS.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Slope landings",
+      "status": "PERMITTED",
+      "notes": "Limited to 10° side slopes, 10° nose up slope, or 5° nose down slope.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Maximum rate of climb",
+      "status": "REQUIRED",
+      "notes": "Maximum rate of climb is 2,000 feet per minute.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Rotor brake application above 40% NR",
+      "status": "PROHIBITED",
+      "notes": "Rotor brake application limited to ground operation after engine shutdown and NR has decreased to 40% or lower. Engine starts with rotor brake engaged are prohibited.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Engine starts with rotor brake engaged",
+      "status": "PROHIBITED",
+      "notes": "Engine starts with rotor brake engaged are prohibited.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Minimum flight crew",
+      "status": "REQUIRED",
+      "notes": "Minimum flight crew consists of one pilot who shall operate helicopter from right crew seat.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "VNE with doors removed",
+      "status": "REQUIRED",
+      "notes": "VNE is 100 KIAS with any door(s) removed, not to exceed placarded VNE. With litter door removed, left passenger door shall be removed.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "VNE in steady state autorotation",
+      "status": "REQUIRED",
+      "notes": "VNE is 100 KIAS or placarded VNE, whichever is less, for steady state autorotation.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Snow deflector kit required in falling/blowing snow",
+      "status": "REQUIRED",
+      "notes": "Snow deflector kit (BHT-407-FMS-4) shall be installed when conducting flight operations in falling and/or blowing snow.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "FADEC software version",
+      "status": "REQUIRED",
+      "notes": "FADEC system software shall be version 5.202.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "NP avoid continuous operations",
+      "status": "PROHIBITED",
+      "notes": "Avoid continuous NP operations between 68.4% and 87.1%.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Maximum takeoff power airspeed",
+      "status": "REQUIRED",
+      "notes": "Use of takeoff power is limited to 100 KIAS, not to exceed placarded VNE.",
+      "confidence": "extracted"
+    }
+  ],
+  "faa_ad_95_26_04": {
+    "note": "FAA AD 95-26-04 is not referenced or discussed in this Flight Manual. No specific limitations attributable to this AD were found in the provided text.",
+    "limitations": [
+      {
+        "item": "FAA AD 95-26-04",
+        "status": "not found",
+        "notes": "No reference to FAA AD 95-26-04 in the provided POH text.",
+        "confidence": "verify"
+      }
+    ]
+  }
+}

@@ -1,0 +1,608 @@
+{
+  "aircraft": "Bell 206B3",
+  "poh_source": "emergency_procedures",
+  "source_file": "b206_full.txt",
+  "extracted_date": "2026-04-14",
+  "extraction_script_version": "1.0.0",
+  "procedures": [
+    {
+      "id": "engine_fire_during_starting_or_shutdown",
+      "title": "ENGINE FIRE DURING STARTING OR SHUTDOWN",
+      "conditions": "An engine fire during start could be caused by an overloading of fuel in the combustion chamber and a delayed ignition of the fuel, resulting in flame emanating from the tailpipe.",
+      "steps": [
+        "Starter - Continue to motor the engine.",
+        "Throttle - Full closed.",
+        "FUEL VALVE switch - OFF.",
+        "IGN ENG circuit breaker - Out.",
+        "Complete shutdown."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fire_during_flight",
+      "title": "ENGINE FIRE DURING FLIGHT",
+      "conditions": "",
+      "steps": [
+        "Throttle - Close.",
+        "Immediately enter autorotation.",
+        "FUEL VALVE switch - OFF.",
+        "BAT switch - OFF.",
+        "Accomplish autorotative descent and landing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "cabin_ventilation",
+      "title": "CABIN VENTILATION",
+      "conditions": "Ventilation of the cabin to protect occupants from the effects of toxic fumes, smoke, etc., shall be immediately performed as follows:",
+      "steps": [
+        "VENT - Open.",
+        "Cabin windows - Open for maximum ventilation."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_failure_and_autorotation",
+      "title": "ENGINE FAILURE AND AUTOROTATION",
+      "conditions": "",
+      "steps": [
+        "Collective pitch - Adjust as required to maintain rotor RPM, 90% to 107%.",
+        "REDUCE FORWARD SPEED TO DESIRED AUTOROTATIVE AIRSPEED FOR EXISTING CONDITIONS. AIRSPEED FOR MINIMUM DESCENT IS 60 MPH (52 KNOTS) IAS. AIRSPEED FOR MAXIMUM GLIDE DISTANCE IS 80 MPH (69 KNOTS) IAS.",
+        "At low altitude, close throttle and flare as required to lose excessive speed.",
+        "Apply collective pitch as flare effect decreases to further reduce forward speed and cushion landing.",
+        "It is recommended that level touchdown be made prior to passing through 70% rotor RPM. Upon ground contact, collective pitch shall be reduced smoothly while maintaining cyclic in neutral or centered position."
+      ],
+      "warnings": [
+        "EXCESSIVE GROUND RUN WITH COLLECTIVE UP, OR ANY TENDENCY TO FLOAT FOR LONG DISTANCE PRIOR TO GROUND CONTACT SHALL BE AVOIDED.",
+        "Rotor RPM maintained at the high end of the operating range will provide maximum rotor energy to accomplish the landing but will cause an increased rate of descent.",
+        "Maximum airspeed for steady autorotation is 115 MPH (100 knots) IAS. Autorotation above this speed results in high rates of descent and low rotor speed."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_air_start",
+      "title": "ENGINE AIR START",
+      "conditions": "When cause of the engine failure is believed to be mechanical, do not attempt a restart.",
+      "steps": [
+        "Collective pitch - Adjust as required to maintain rotor RPM, 90 to 107%.",
+        "Reduce forward speed to desired autorotative airspeed of 60 to 80 mph (52 to 69 knots) IAS for existing conditions.",
+        "GEN switch - OFF.",
+        "Perform normal engine start procedure."
+      ],
+      "warnings": [
+        "DO NOT ATTEMPT AIR START ABOVE 12,000 FEET. (TOT RISES TOO FAST TO CONTROL.)"
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "fuel_control_and_or_governor_failure",
+      "title": "FUEL CONTROL AND/OR GOVERNOR FAILURE",
+      "conditions": "Engine fuel control and/or governor failure is evidenced by a change of power or RPM. There is no manual fuel control on the engine.",
+      "steps": [
+        "Control power with throttle if engine overspeeds.",
+        "Maintain RPM with collective pitch if engine underspeeds.",
+        "Establish autorotative glide if power is very low or if engine must be shut down.",
+        "Prepare for power-off landing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "driveshaft_failure",
+      "title": "DRIVESHAFT FAILURE",
+      "conditions": "Indication of a driveshaft failure is a left yaw, rapid decrease of rotor RPM with a ROTOR LOW light, accompanied by an increase of power turbine RPM. Noise level may increase due to overspeeding engine and driveshaft breakage.",
+      "steps": [
+        "Collective pitch - Adjust to maintain rotor RPM 90 to 107%.",
+        "Cyclic - Maintain heading and attitude control. Adjust to obtain desired autorotation airspeed, 52 to 69 KIAS.",
+        "Throttle - Open (engine is providing power to tail rotor).",
+        "Complete autorotative landing and helicopter shut down."
+      ],
+      "warnings": [
+        "FAILURE OF MAIN DRIVESHAFT TO TRANSMISSION WILL RESULT IN COMPLETE LOSS OF POWER TO MAIN ROTOR. ALTHOUGH COCKPIT INDICATIONS FOR A DRIVESHAFT FAILURE ARE SIMILAR TO AN ENGINE OVERSPEED, IT IS IMPERATIVE THAT AUTOROTATIVE FLIGHT PROCEDURES BE ESTABLISHED IMMEDIATELY. FAILURE TO REACT IMMEDIATELY TO ROTOR LOW RPM LIGHT, AND AUDIO AND DUAL TACHOMETER CAN RESULT IN LOSS OF CONTROL."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "tail_rotor_control_failure_complete_loss_of_thrust",
+      "title": "TAIL ROTOR CONTROL FAILURE - COMPLETE LOSS OF THRUST",
+      "conditions": "In the event of a tail rotor failure the failure can be one of two types.",
+      "steps": [
+        "Reduce throttle to flight idle, immediately enter autorotation and maintain a minimum airspeed of 58 MPH (50 knots) IAS during the descent.",
+        "Reduce airspeed to 70 to 80 MPH (61 to 69 knots) IAS."
+      ],
+      "warnings": [
+        "Airflow around the vertical fin may permit controlled flight at low power levels and sufficient airspeed when a suitable landing site is not available; however, the touchdown shall be accomplished with the throttle in the full closed position."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "tail_rotor_control_failure_fixed_pitch",
+      "title": "TAIL ROTOR CONTROL FAILURE - FIXED PITCH FAILURE",
+      "conditions": "Pitch change slider, control failure, etc. Depending on the pitch position of the tail rotor, at the time of failure, engine power and airspeed shall be varied as follows:",
+      "steps": [
+        "Adjust power and airspeed as required to minimize excessive yawing.",
+        "Airspeed - Adjust to determine best velocity to minimize excessive yawing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "hydraulic_system_failure",
+      "title": "HYDRAULIC SYSTEM FAILURE",
+      "conditions": "The first indication of hydraulic boost failure will be an increase in the force required for control movement; feedback forces will be noticed as well as rate limiting. Control motions will result in normal flight reactions in all respects, except for the increase in force required for control movement.",
+      "steps": [
+        "Reduce airspeed to 70 to 80 MPH (61 to 69 knots) IAS.",
+        "HYD BOOST circuit breaker - Out; if power is not restored - In.",
+        "CONTROL BOOST or HYDRAULIC SYSTEM switch - ON; OFF if power is not restored.",
+        "Land as soon as practical and investigate.",
+        "A run-on landing at 12 to 17 MPH (10 to 15 knots) is recommended.",
+        "Maintain airspeed above translational lift speed for best control at touchdown."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "electrical_power_failure",
+      "title": "ELECTRICAL POWER FAILURE",
+      "conditions": "Evidence of main generator failure will be provided by observing loadmeter load. There is no provision for standby operation in the event of generator failure. Necessary power can be furnished by the battery for short periods of time, in case of generator failure.",
+      "steps": [
+        "GEN FAIL light (if installed) - Illuminated.",
+        "GEN switch - RESET then ON. If power is not restored:",
+        "GEN switch - OFF.",
+        "All electrical equipment - OFF (to conserve battery).",
+        "Required electrical equipment - ON, only as needed.",
+        "Land as soon as practical."
+      ],
+      "warnings": [
+        "REDUCE ALTITUDE TO BELOW 6000 FEET PRESSURE ALTITUDE IF FLIGHT PERMITS BECAUSE OF POSSIBLE LOSS OF FUEL BOOST PUMPS."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_icing",
+      "title": "ENGINE ICING",
+      "conditions": "",
+      "steps": [
+        "ENGINE DEICING or ENGINE ANTI-ICING switch (anti-ice) - ON (if conditions warrant).",
+        "TOT - Within limits."
+      ],
+      "warnings": [
+        "When anti-ice system is ON, TOT will rise for same power setting."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_oil_pressure_low_high_or_fluctuating",
+      "title": "ENGINE OIL PRESSURE LOW, HIGH, OR FLUCTUATING",
+      "conditions": "",
+      "steps": [
+        "If engine oil pressure is below minimum or above maximum, land as soon as possible.",
+        "If engine oil pressure fluctuates but does not exceed a limit, monitor engine oil pressure and temperature, and land as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "high_engine_oil_temperature",
+      "title": "HIGH ENGINE OIL TEMPERATURE",
+      "conditions": "",
+      "steps": [
+        "If engine oil temperature exceeds limits, land as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "warning_light_eng_out",
+      "title": "WARNING LIGHT - ENG OUT",
+      "conditions": "Engine power failure (N1 less than 55%).",
+      "steps": [
+        "Reduce pitch immediately to autorotate.",
+        "If ample altitude remains investigate failure, attempt engine relight."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "warning_light_battery_hot",
+      "title": "WARNING LIGHT - BATTERY HOT",
+      "conditions": "Battery case temperature has reached 140°F (60.0°C) or higher.",
+      "steps": [
+        "Turn BAT switch OFF.",
+        "Land as soon as possible.",
+        "Maintenance action is required."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_rotor_low_rpm",
+      "title": "CAUTION LIGHT - ROTOR LOW RPM",
+      "conditions": "Rotor RPM is below normal (approximately 90%).",
+      "steps": [
+        "Reduce collective pitch and ensure throttle is full open."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_trans_oil_press",
+      "title": "CAUTION LIGHT - TRANS OIL PRESS",
+      "conditions": "Main transmission pressure is below minimum.",
+      "steps": [
+        "Check gage.",
+        "Land as soon as possible."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_trans_oil_temp",
+      "title": "CAUTION LIGHT - TRANS OIL TEMP",
+      "conditions": "Main transmission oil temperature is at or above red line.",
+      "steps": [
+        "Check gage.",
+        "Reducing power will help alleviate the condition.",
+        "Check transmission oil pressure.",
+        "Land as soon as possible."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_battery_temp",
+      "title": "CAUTION LIGHT - BATTERY TEMP",
+      "conditions": "Battery case temperature has reached 130°F (54.5°C) or higher.",
+      "steps": [
+        "Turn BAT switch OFF until battery cools (light extinguishes), then BAT switch ON."
+      ],
+      "warnings": [
+        "Frequent and repetitive indications may be indicative of a marginal battery condition. It is recommended that if this occurs the battery should be removed and inspected in accordance with manufacturer's recommendation at the first convenient opportunity."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_engine_chip",
+      "title": "CAUTION LIGHT - ENGINE CHIP",
+      "conditions": "Metallic particles in engine oil.",
+      "steps": [
+        "Land as soon as possible."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_trans_chip",
+      "title": "CAUTION LIGHT - TRANS CHIP",
+      "conditions": "Metallic particles in transmission oil.",
+      "steps": [
+        "Land as soon as possible."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_t_r_chip",
+      "title": "CAUTION LIGHT - T/R CHIP",
+      "conditions": "Metallic particles in tail rotor gearbox oil.",
+      "steps": [
+        "Land as soon as possible."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_gen_fail",
+      "title": "CAUTION LIGHT - GEN FAIL",
+      "conditions": "Generator has failed.",
+      "steps": [
+        "GEN switch - RESET, then ON.",
+        "If GEN FAIL light remains illuminated, GEN switch - OFF.",
+        "Land as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_baggage_door",
+      "title": "CAUTION LIGHT - BAGGAGE DOOR",
+      "conditions": "Baggage compartment door open.",
+      "steps": [
+        "Land as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_fuel_filter",
+      "title": "CAUTION LIGHT - FUEL FILTER",
+      "conditions": "Engine fuel filter clogged.",
+      "steps": [
+        "Land as soon as practical.",
+        "Clean before next flight."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_af_fuel_filter",
+      "title": "CAUTION LIGHT - AF FUEL FILTER",
+      "conditions": "Airframe fuel filter clogged.",
+      "steps": [
+        "Land as soon as practical.",
+        "Clean before next flight."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_fuel_pump",
+      "title": "CAUTION LIGHT - FUEL PUMP",
+      "conditions": "One or both fuel boost pumps is inoperative.",
+      "steps": [
+        "Descend to below 6000 feet pressure altitude if flight permits.",
+        "Land as soon as practical."
+      ],
+      "warnings": [
+        "OPERATION WITH BOTH FUEL BOOST PUMPS INOPERATIVE IS NOT AUTHORIZED. DUE TO POSSIBLE FUEL SLOSHING IN UNUSUAL ATTITUDES OR OUT OF TRIM CONDITIONS AND ONE OR BOTH FUEL BOOST PUMPS INOPERATIVE, THE UNUSABLE FUEL IS TEN GALLONS.",
+        "The engine is designed to operate without boost pump pressure under 6000 feet pressure altitude and one boost pump will supply sufficient fuel for normal engine operations under all conditions of power and altitude. Both fuel boost pumps shall be ON for all normal operations."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "caution_light_fuel_low",
+      "title": "CAUTION LIGHT - FUEL LOW WARNING",
+      "conditions": "Effective helicopter S/N 4110 and prior, approximately 20 gallons of fuel remaining. Effective helicopter S/N 4111 and subsequent, approximately 17 gallons of fuel remaining.",
+      "steps": [
+        "Plan landing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "scas_erratic_pitch_roll_yaw_oscillations",
+      "title": "ERRATIC, PITCH, ROLL OR YAW OSCILLATIONS",
+      "conditions": "SCAS installed.",
+      "steps": [
+        "SAS REL switch - Press.",
+        "If condition still exists, land as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "scas_hydraulic_actuator_failure",
+      "title": "HYDRAULIC ACTUATOR FAILURE (LOST MOTION IN CONTROL)",
+      "conditions": "SCAS installed.",
+      "steps": [
+        "SAS REL switch - Press.",
+        "Land as soon as practical (touch down with slow forward speed)."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_failure_over_water_fixed_floats",
+      "title": "ENGINE FAILURE - OVER WATER (Fixed Floats)",
+      "conditions": "Fixed float landing gear installed.",
+      "steps": [
+        "Establish an autorotative glide at 60 MPH (52 knots) IAS, for minimum rate of descent.",
+        "At 100 feet execute a moderate cyclic flare to reduce airspeed to approximately 30 MPH (26 knots).",
+        "Adjust collective and cyclic pitch sufficiently to perform a low speed cushioned touchdown at a slight noseup attitude."
+      ],
+      "warnings": [
+        "OVER LAND EMERGENCY POWER-OFF LANDINGS WILL REQUIRE TOUCHDOWN AT ZERO (0) GROUND SPEED.",
+        "Maximum airspeed for steady state autorotation - 100 mph (87 knots).",
+        "Night autorotative touchdown landings to water have been demonstrated at airspeed to 35 MPH (30 knots)."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_failure_over_water_emergency_flotation_auto_arm",
+      "title": "ENGINE FAILURE - OVER WATER (High-Skid Gear with Emergency Flotation, Automatic Arming)",
+      "conditions": "High-Skid Gear with Emergency Flotation with Automatic Arming Feature installed. With FLOAT POWER switch On, float inflation system is automatically armed when ENGINE OUT light is illuminated and Audio is On.",
+      "steps": [
+        "Airspeed - 70 MPH (61 knots) or less.",
+        "FLOAT POWER caution light - Illuminated.",
+        "FLOAT INFLATION switch - Pull On."
+      ],
+      "warnings": [
+        "DO NOT INFLATE FLOATS MORE THAN 5000 FEET ABOVE ANTICIPATED LANDING TERRAIN.",
+        "DO NOT INFLATE FLOATS MORE THAN 6000 FEET ABOVE ANTICIPATED LANDING TERRAIN."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "manual_arming_inflation_system_emergency_flotation",
+      "title": "MANUAL ARMING - INFLATION SYSTEM (High-Skid Gear with Emergency Flotation)",
+      "conditions": "The manual inflation arming system will over-ride or back-up the automatic inflation arming system. This system can be used, when desired or necessary, to perform a water landing for precautionary reasons.",
+      "steps": [
+        "Airspeed - 70 MPH (61 knots) or less.",
+        "FLOAT POWER caution light - Illuminated.",
+        "MANUAL ARM switch - Lift guard and move switch to ON.",
+        "FLOAT ARM light - Illuminated.",
+        "FLOAT INFLATION switch - Pull On."
+      ],
+      "warnings": [
+        "DO NOT INFLATE FLOATS MORE THAN 5000 FEET ABOVE ANTICIPATED LANDING TERRAIN.",
+        "DO NOT INFLATE FLOATS MORE THAN 6000 FEET ABOVE ANTICIPATED LANDING TERRAIN."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_failure_over_water_night_emergency_flotation",
+      "title": "ENGINE FAILURE, OVER WATER - NIGHT (Emergency Flotation)",
+      "conditions": "High-Skid Gear with Emergency Flotation installed.",
+      "steps": [
+        "Establish an autorotative glide at 60 MPH (52 knots), for minimum rate of descent, and turn on landing light.",
+        "At 100 feet execute a moderate cyclic flare to reduce airspeed to approximately 30 MPH (26 knots).",
+        "Adjust collective and cyclic pitch sufficiently to perform a low speed cushioned touch down at a slight nose-up attitude."
+      ],
+      "warnings": [
+        "Night autorotative touch down landings to water have been demonstrated at airspeeds to 35 MPH (30 knots)."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "cargo_fails_to_release_electrically",
+      "title": "CARGO FAILS TO RELEASE ELECTRICALLY",
+      "conditions": "In the event that the cargo hook will not release the sling when the cyclic CARGO RELEASE switch is engaged.",
+      "steps": [
+        "Maintain tension on sling.",
+        "Pull EMER CARGO RELEASE PULL mechanical release handle to drop cargo."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_automatic_re_ignition_occurs",
+      "title": "ENGINE AUTOMATIC RE-IGNITION",
+      "conditions": "If automatic re-ignition occurs the ENGINE RELIGHT indicator light will illuminate. The system is still armed for a new re-ignition when light is illuminated.",
+      "steps": [
+        "To extinguish the light, move switch down to OFF/RESET position, then up to ENGINE RELIGHT Arm position (center)."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fire_detection_fire_warning",
+      "title": "WARNING LIGHT - FIRE (Engine Fire Detection System)",
+      "conditions": "Overtemperature condition in engine compartment. Engine Fire Detection System installed.",
+      "steps": [
+        "Throttle - Close.",
+        "Immediately enter autorotation.",
+        "FUEL VALVE switch - OFF.",
+        "BAT switch - OFF.",
+        "GEN switch - OFF.",
+        "Execute a normal autorotational descent and landing."
+      ],
+      "warnings": [
+        "Do not restart engine until cause of fire has been determined and corrected."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "ecs_operating_emergencies",
+      "title": "ECS OPERATING EMERGENCIES",
+      "conditions": "Environmental Control System installed.",
+      "steps": [
+        "ECS switch - OFF if any of the following emergencies occur: Fuel control and/or governor failure; Engine fuel system failure; Helicopter fuel system failure; Engine air start is to be accomplished."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "bleed_air_heater_operating_emergencies",
+      "title": "BLEED AIR HEATER OPERATING EMERGENCIES",
+      "conditions": "Bleed Air Heater installed.",
+      "steps": [
+        "HEAT switch - OFF if any of the following occurs: Engine failure (if Engine Air Start is to be attempted); Engine Over-temperature; Fuel Control and/or Governor Failure; Insufficient Power."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "float_inflation_procedure_preflight_test_feature",
+      "title": "FLOAT INFLATION PROCEDURE (Emergency Flotation with Preflight Test Feature)",
+      "conditions": "Emergency Flotation on High-Skid Gear with Preflight Test Feature installed. Maximum inflation airspeed - 70 MPH (61 knots).",
+      "steps": [
+        "FLOAT MANUAL ARM switch - POWER (guard open).",
+        "FLOAT ARM light - Illuminated.",
+        "FLOAT INFLATION trigger switch - Pull On."
+      ],
+      "warnings": [
+        "DO NOT INFLATE FLOATS MORE THAN 5000 FEET ABOVE ANTICIPATED LANDING SURFACE."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "emergency_water_landing_lightweight_flotation",
+      "title": "EMERGENCY WATER LANDING (Lightweight Emergency Flotation Landing Gear)",
+      "conditions": "Lightweight Emergency Flotation Landing Gear installed.",
+      "steps": [
+        "Reduce airspeed below Maximum Inflation Airspeed - 60 mph (52 knots) IAS.",
+        "Establish autorotation or low power descent at approximately 500 feet per minute.",
+        "FLOAT MANUAL ARM switch - POWER (guard open).",
+        "FLOAT ARM light - Illuminated.",
+        "FLOAT INFLATION trigger switch - Pull On."
+      ],
+      "warnings": [
+        "DO NOT INFLATE FLOATS MORE THAN 2000 FEET ABOVE ANTICIPATED LANDING SURFACE.",
+        "IF THE CG IS AFT OF STATION 112.7, PRACTICE AUTOROTATIONAL TOUCHDOWNS SHOULD BE AVOIDED DUE TO NOSE DOWN PITCHING.",
+        "During flight with floats inflated, a random bumping of the skid gear crosstube against the landing gear saddles will occur. Reducing airspeed will reduce bumping."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "emergency_water_landing_pop_out_floats_gen_fail",
+      "title": "EMERGENCY WATER LANDING (Pop-Out Floats with Generator Fail Caution Light)",
+      "conditions": "Pop-Out Floats with Generator Fail Caution Light installed.",
+      "steps": [
+        "Airspeed - Reduce below maximum inflation airspeed (60 MPH (52 KNOTS) IAS).",
+        "Autorotation or low power descent - Establish at 500 feet per minute.",
+        "FLOAT ARM switch - On (guard open).",
+        "FLOAT ARM light - Illuminated.",
+        "FLOAT INFLATION switch - Press."
+      ],
+      "warnings": [
+        "DO NOT INFLATE FLOATS MORE THAN 2000 FEET ABOVE ANTICIPATED LANDING SURFACE.",
+        "IF GEN FAIL LIGHT ILLUMINATES, BATTERY POWER MAY NOT BE OF SUFFICIENT STRENGTH TO INFLATE FLOATS.",
+        "During flight with floats inflated, a random bumping of skid gear crosstube against landing gear saddles will occur. Reducing airspeed will reduce bumping."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "aux_battery_warning_aux_battery_hot_or_battery_hot",
+      "title": "WARNING LIGHT - AUX BATTERY HOT or BATTERY HOT (Auxiliary Battery)",
+      "conditions": "Auxiliary Battery installed. Battery case temperature has reached 140°F (60.0°C) or higher.",
+      "steps": [
+        "Isolate malfunctioning battery with Battery select switch.",
+        "Land as soon as practical.",
+        "After landing, do not use affected battery for engine restart, as this will cause additional battery heating.",
+        "Service or replace battery and check battery relay prior to re-use."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "aux_battery_caution_aux_battery_temp_or_battery_temp",
+      "title": "CAUTION LIGHT - AUX BATTERY TEMP or BATTERY TEMP (Auxiliary Battery)",
+      "conditions": "Auxiliary Battery installed. Battery case temperature has reached 130°F (54.4°C) or higher.",
+      "steps": [
+        "Isolate malfunctioning battery with Battery select switch.",
+        "Service or replace battery prior to re-use."
+      ],
+      "warnings": [
+        "Frequent and repetitive indications may be indicative of a marginal battery condition. It is recommended that if this occurs the battery should be removed and inspected in accordance with manufacturer's recommendation at the first convenient opportunity."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "pop_out_floats_gen_fail_caution_light",
+      "title": "CAUTION LIGHT - GEN FAIL (Pop-Out Floats with Generator Fail Caution Light)",
+      "conditions": "Generator has failed. Over water flight is prohibited if generator is inoperative.",
+      "steps": [
+        "Over land: GEN switch - RESET, then GEN. If light remains illuminated, GEN switch - OFF. Land as soon as practical.",
+        "Over water: GEN switch RESET, then GEN. If light remains illuminated, GEN switch - OFF. Turn off all nonessential electrical equipment to conserve battery power. Land as soon as practical."
+      ],
+      "warnings": [
+        "IF GEN FAIL LIGHT ILLUMINATES, BATTERY POWER MAY NOT BE OF SUFFICIENT STRENGTH TO INFLATE FLOATS."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "th67_caution_fuel_low",
+      "title": "CAUTION LIGHT - FUEL LOW (TH-67 Configuration)",
+      "conditions": "TH-67 Configuration Fuel System installed. Approximately 12 gallons of fuel remaining.",
+      "steps": [
+        "Verify fuel quantity.",
+        "Land as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    }
+  ]
+}

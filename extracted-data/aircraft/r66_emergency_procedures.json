@@ -1,0 +1,304 @@
+{
+  "aircraft": "Robinson R66",
+  "poh_source": "emergency_procedures",
+  "source_file": "r66_section3.txt",
+  "extracted_date": "2026-04-14",
+  "extraction_script_version": "1.0.0",
+  "procedures": [
+    {
+      "id": "power_failure_general",
+      "title": "POWER FAILURE – GENERAL",
+      "conditions": "A power failure may be caused by either an engine or drive system failure and will usually be indicated by the low RPM horn. An engine failure may be indicated by a change in noise level, nose left yaw, an engine oil pressure light, or decreasing N1 or N2 RPM. A drive system failure may be indicated by an unusual noise or vibration, nose right or left yaw, or decreasing rotor RPM while N2 RPM is increasing.",
+      "steps": [
+        "Immediately lower collective to enter autorotation and reduce airspeed to power-off Vne or below."
+      ],
+      "warnings": [
+        "CAUTION: Aft cyclic is required when collective is lowered at high airspeed.",
+        "CAUTION: Do not apply aft cyclic during touchdown or ground slide to prevent possible blade strike to tailcone."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "power_failure_above_500_feet_agl",
+      "title": "POWER FAILURE ABOVE 500 FEET AGL",
+      "conditions": "",
+      "steps": [
+        "1. Lower collective immediately to maintain rotor RPM.",
+        "2. Establish a steady glide at approximately 70 KIAS. (For maximum glide distance or minimum rate of descent, see page 3-3.)",
+        "3. Adjust collective to keep RPM between 95 and 106% or apply full down collective if light weight prevents attaining above 95%.",
+        "4. Select landing spot and, if altitude permits, maneuver so landing will be into wind.",
+        "5. A restart may be attempted at pilot's discretion if sufficient time is available (See \"Air Restart Procedure\", page 3-3).",
+        "6. If unable to restart, turn unnecessary switches and fuel valve off.",
+        "7. At about 40 feet AGL, begin cyclic flare to reduce rate of descent and forward speed.",
+        "8. At about 8 feet AGL, apply forward cyclic to level ship and raise collective just before touchdown to cushion landing. Touch down in level attitude with nose straight ahead."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "power_failure_between_8_and_500_feet_agl",
+      "title": "POWER FAILURE BETWEEN 8 FEET AND 500 FEET AGL",
+      "conditions": "",
+      "steps": [
+        "1. Lower collective immediately to maintain rotor RPM.",
+        "2. Adjust collective to keep RPM between 95 and 106% or apply full down collective if light weight prevents attaining above 95%.",
+        "3. Maintain airspeed until ground is approached, then begin cyclic flare to reduce rate of descent and forward speed.",
+        "4. At about 8 feet AGL, apply forward cyclic to level ship and raise collective just before touchdown to cushion landing. Touch down in level attitude and nose straight ahead."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "power_failure_below_8_feet_agl",
+      "title": "POWER FAILURE BELOW 8 FEET AGL",
+      "conditions": "",
+      "steps": [
+        "1. Apply right pedal as required to prevent yawing.",
+        "2. Allow helicopter to settle.",
+        "3. Raise collective just before touchdown to cushion landing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "maximum_glide_distance_configuration",
+      "title": "MAXIMUM GLIDE DISTANCE CONFIGURATION",
+      "conditions": "",
+      "steps": [
+        "1. Airspeed approximately 90 KIAS.",
+        "2. Rotor RPM approximately 90%."
+      ],
+      "warnings": [
+        "CAUTION: Increase rotor RPM to 95% minimum or full down collective when autorotating below 500 feet AGL."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "minimum_rate_of_descent_configuration",
+      "title": "MINIMUM RATE OF DESCENT CONFIGURATION",
+      "conditions": "",
+      "steps": [
+        "1. Airspeed approximately 60 KIAS.",
+        "2. Rotor RPM approximately 90%."
+      ],
+      "warnings": [
+        "CAUTION: Increase rotor RPM to 95% minimum or full down collective when autorotating below 500 feet AGL."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "air_restart_procedure",
+      "title": "AIR RESTART PROCEDURE",
+      "conditions": "An immediate restart may be attempted by pressing the start button if N1 is above 20% (within approximately 10 seconds of power loss). It is not necessary to close throttle or pull fuel cutoff for immediate restart. If N1 has decayed to 20% or below, use the following procedure:",
+      "steps": [
+        "1. Fuel cutoff - Pull OFF.",
+        "2. Throttle - Closed.",
+        "3. Start button - Push and release.",
+        "4. N1 15% or above - push fuel cutoff ON.",
+        "5. After peak MGT- throttle full open."
+      ],
+      "warnings": [
+        "CAUTION: Do not attempt restart if engine malfunction is suspected or before safe autorotation is established."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "emergency_water_landing_power_off",
+      "title": "EMERGENCY WATER LANDING – POWER OFF",
+      "conditions": "",
+      "steps": [
+        "1. Follow same procedures as for power failure over land until contacting water. If time permits, unlatch doors prior to water contact.",
+        "2. Apply lateral cyclic when aircraft contacts water to stop rotors.",
+        "3. Release seat belt and quickly clear aircraft when rotors stop."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "emergency_water_landing_power_on",
+      "title": "EMERGENCY WATER LANDING – POWER ON",
+      "conditions": "",
+      "steps": [
+        "1. Descend to hover above water.",
+        "2. Unlatch doors.",
+        "3. Passengers exit aircraft.",
+        "4. Fly to safe distance from passengers to avoid possible injury by blades.",
+        "5. Switch battery and generator OFF.",
+        "6. Close throttle.",
+        "7. Keep aircraft level and apply full collective as aircraft contacts water.",
+        "8. Apply lateral cyclic to stop rotors.",
+        "9. Release seat belt and quickly clear aircraft when rotors stop."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "loss_of_tail_rotor_thrust_forward_flight",
+      "title": "LOSS OF TAIL ROTOR THRUST IN FORWARD FLIGHT",
+      "conditions": "Failure is usually indicated by nose right yaw which cannot be corrected by applying left pedal.",
+      "steps": [
+        "1. Immediately close throttle and enter autorotation.",
+        "2. Maintain at least 70 KIAS if practical.",
+        "3. Select landing site and perform autorotation landing."
+      ],
+      "warnings": [
+        "NOTE: When a suitable landing site is not available, the vertical stabilizers may permit limited controlled flight at low power settings and airspeeds above 70 KIAS; however, prior to reducing airspeed, enter full autorotation."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "loss_of_tail_rotor_thrust_hover",
+      "title": "LOSS OF TAIL ROTOR THRUST IN HOVER",
+      "conditions": "Failure is usually indicated by right yaw which cannot be stopped by applying left pedal.",
+      "steps": [
+        "1. Immediately close throttle to reduce yaw rate and allow aircraft to settle.",
+        "2. Raise collective just before touchdown to cushion landing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "headset_audio_failure",
+      "title": "HEADSET AUDIO FAILURE",
+      "conditions": "",
+      "steps": [
+        "If headset audio fails, land as soon as practical."
+      ],
+      "warnings": [
+        "CAUTION: For aircraft which provide low RPM horn through the audio system, pilot will not hear horn with a failed headset."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fire_during_start_or_shutdown",
+      "title": "ENGINE FIRE DURING START OR SHUTDOWN",
+      "conditions": "Fire may be indicated by excessive MGT or by engine fire warning light.",
+      "steps": [
+        "1. Fuel cutoff – Pull OFF.",
+        "2. Start button – Push and release.",
+        "3. Fuel valve knob – Pull OFF.",
+        "4. Battery switch – OFF when MGT decreases to 150ºC or if fire worsens.",
+        "5. If time permits, apply rotor brake to stop rotors.",
+        "6. Exit aircraft."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fire_in_flight",
+      "title": "ENGINE FIRE IN FLIGHT",
+      "conditions": "",
+      "steps": [
+        "1. Immediately enter autorotation.",
+        "2. Cabin heat – OFF (if time permits).",
+        "3. If engine is running, land immediately, then pull fuel cutoff OFF and pull fuel valve knob OFF. If engine stops running, pull fuel cutoff OFF, pull fuel valve knob OFF, and complete autorotation landing.",
+        "4. If time permits, apply rotor brake to stop rotors.",
+        "5. Exit aircraft."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "electrical_fire",
+      "title": "ELECTRICAL FIRE",
+      "conditions": "",
+      "steps": [
+        "1. Battery and generator switches – OFF.",
+        "2. Open cabin vents.",
+        "3. Land Immediately.",
+        "4. Pull fuel cutoff OFF and pull fuel valve knob OFF.",
+        "5. If time permits, apply rotor brake to stop rotors.",
+        "6. Exit aircraft."
+      ],
+      "warnings": [
+        "NOTE: Low RPM warning system is inoperative with battery and generator switches both OFF."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "tachometer_failure",
+      "title": "TACHOMETER FAILURE",
+      "conditions": "",
+      "steps": [
+        "If rotor or N2 tachometer malfunctions in flight, use remaining tach to monitor RPM. If it is not clear which tach is malfunctioning or if both tachs malfunction allow power turbine governor to control RPM and land as soon as practical."
+      ],
+      "warnings": [
+        "NOTE: The rotor tach, N2 tach, and low RPM warning horn are each on separate circuits. A special circuit allows the battery to supply power to the tachs with the battery and generator switches both OFF."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "hydraulic_system_failure",
+      "title": "HYDRAULIC SYSTEM FAILURE",
+      "conditions": "Hydraulic system failure is indicated by heavy or stiff cyclic and collective controls. Loss of hydraulic fluid may cause intermittent and/or vibrating feedback in the controls. Control will be normal except for the increase in stick forces.",
+      "steps": [
+        "1. HYD Switch - Verify ON.",
+        "2. If hydraulics not restored, HYD Switch - OFF.",
+        "3. Adjust airspeed and flight condition as desired for comfortable control.",
+        "4. Land as soon as practical. A run-on landing is recommended if a suitable landing surface is available."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "power_turbine_governor_failure",
+      "title": "POWER TURBINE GOVERNOR FAILURE",
+      "conditions": "Governor failure is indicated by a rise or fall of N2 RPM.",
+      "steps": [
+        "If N2 overspeeds, attempt to control RPM with throttle.",
+        "If N2 underspeeds, verify throttle is full open and reduce collective to control RPM. If governor failure is suspected, land as soon as practical.",
+        "If manual RPM control is not possible, lower collective, close throttle, and complete autorotation landing per power failure procedures."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "red_warning_indicators",
+      "title": "Red Warning Indicators",
+      "conditions": "",
+      "steps": [
+        "MR TEMP/PRESS: Indicates excessive temperature or low oil pressure in main gearbox. Land immediately.",
+        "ENGINE FIRE: Indicates possible fire in engine compartment. See procedures on page 3-6.",
+        "ENGINE OIL: Indicates loss of engine oil pressure. If oil pressure gage confirms pressure loss, land immediately. Otherwise, land as soon as practical. N1 below 50% RPM indicates a possible flameout and an air restart may be attempted."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "amber_caution_indicators",
+      "title": "Amber Caution Indicators",
+      "conditions": "",
+      "steps": [
+        "MR CHIP: Indicates metallic particles in main gearbox. If chip light is accompanied by any indication of a problem such as noise, vibration, or temperature rise, land immediately. If there is no other indication of a problem, land as soon as practical.",
+        "TR CHIP: Indicates metallic particles in tail gearbox. If chip light is accompanied by any indication of a problem such as noise, vibration, or temperature rise, land immediately. If there is no other indication of a problem, land as soon as practical.",
+        "ENGINE CHIP: Indicates metallic particles in engine. If chip light is accompanied by any indication of a problem such as noise, vibration, or temperature rise, land immediately. If there is no other indication of a problem, land as soon as practical.",
+        "GEN: Indicates generator failure. Turn off non-essential electrical equipment and switch GEN to RESET and back to ON. If light stays on, land as soon as practical.",
+        "LOW FUEL: Indicates approximately five gallons of usable fuel remaining. The engine will run out of fuel after 10 minutes at cruise power.",
+        "FUEL FILTER: Indicates fuel filter contamination. If no other indication of a problem exists, land as soon as practical. If light is accompanied by erratic engine operation, land immediately.",
+        "LOW RPM: Indicates rotor speed below 95% RPM. To restore RPM, immediately lower collective, verify throttle full open and, in forward flight, apply aft cyclic.",
+        "COWL DOOR: Indicates baggage compartment door, fuel filler cowl door, or an engine cowl door is not closed. Land as soon as practical.",
+        "AIR FILTER: Indicates air filter contamination or blockage. Engine is operating on unfiltered air via filter bypass doors. Land as soon as practical and inspect filter.",
+        "EMU: While annunciator panel test button is depressed, indicates Engine Monitoring Unit status. See description in Section 7.",
+        "ROTOR BRAKE: Indicates rotor brake is engaged. Release immediately in flight or before starting engine.",
+        "HYD: Indicates hydraulic system is switched off. (if installed)"
+      ],
+      "warnings": [
+        "CAUTION: Do not use LOW FUEL as a working indication of fuel quantity.",
+        "NOTE: If chip light is accompanied by any indication of a problem such as noise, vibration, or temperature rise, land immediately. If there is no other indication of a problem, land as soon as practical. Break-in fuzz will occasionally activate chip lights. If no metal chips or slivers are found on detector plug, clean and reinstall (tail gearbox must be refilled with new oil). Hover for at least 30 minutes. If chip light comes on again, have affected gearbox serviced before further flight."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "audio_alerts",
+      "title": "AUDIO ALERTS",
+      "conditions": "",
+      "steps": [
+        "LOW RPM HORN: Horn is provided by speakers in the side of the instrument console on earlier aircraft or through the audio system on later aircraft. The horn activates simultaneously with LOW RPM on the annunciator panel and indicates rotor speed below 95% RPM. To restore RPM, lower collective, verify throttle full open, and, in forward flight, apply aft cyclic. Horn is disabled when collective is full down.",
+        "HIGH RPM WARBLE: On later aircraft, a warble (high/low tone) in the audio system indicates rotor speed is approaching the 106% RPM limit. Raise collective as required to control RPM.",
+        "HIGH TORQUE/MGT BEEP: On later aircraft, a beeping tone in the audio system indicates either engine torque above 100% or MGT above 782°C (above 5-minute limits). Lower collective to reduce power. A beeping tone during start indicates MGT above 860°C. To avoid exceeding 927°C start limit, immediately pull fuel cutoff OFF, wait ten seconds, then turn igniter switch OFF to stop starter."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    }
+  ]
+}

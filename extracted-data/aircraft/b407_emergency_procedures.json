@@ -1,0 +1,437 @@
+{
+  "aircraft": "Bell 407",
+  "poh_source": "emergency_procedures",
+  "source_file": "b407_full.txt",
+  "extracted_date": "2026-04-14",
+  "extraction_script_version": "1.0.0",
+  "procedures": [
+    {
+      "id": "engine_failure_hovering",
+      "title": "ENGINE FAILURE — HOVERING",
+      "conditions": "Indications: 1. Left yaw. 2. ENGINE OUT and RPM warning lights illuminated. 3. Engine instruments indicate power loss. 4. Engine out audio activated when NG drops below 55%. 5. NR decreasing with RPM warning light and audio on when NR drops below 95%.",
+      "steps": [
+        "1. Maintain heading and attitude control.",
+        "2. Collective — Adjust to control NR and rate of descent. Increase prior to ground contact to cushion landing.",
+        "3. Land.",
+        "4. Shut down helicopter."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_failure_inflight",
+      "title": "ENGINE FAILURE — INFLIGHT",
+      "conditions": "Indications: 1. Left yaw. 2. ENGINE OUT and RPM warning lights illuminated. 3. Engine instruments indicate power loss. 4. Engine out audio activated when NG drops below 55%. 5. NR decreasing with RPM warning light and audio on when NR drops below 95%.",
+      "steps": [
+        "1. Maintain heading and attitude control.",
+        "2. Collective — Adjust as required to maintain 85 to 107% NR.",
+        "3. Cyclic — Adjust to obtain desired autorotative AIRSPEED.",
+        "4. Attempt engine restart if ample altitude remains. (Refer to ENGINE RESTART, paragraph 3-3-B).",
+        "5. FUEL VALVE switch — OFF.",
+        "6. At low altitude: a. Throttle — Closed. b. Flare to lose airspeed.",
+        "7. Apply collective as flare effect decreases to further reduce forward speed and cushion landing. Upon ground contact, collective shall be reduced smoothly while maintaining cyclic in neutral or centered position.",
+        "8. Complete helicopter shutdown."
+      ],
+      "warnings": [
+        "Maintaining NR at high end of operating range will provide maximum rotor energy to accomplish landing, but will cause an increased rate of descent.",
+        "Maximum AIRSPEED for steady state autorotation is 100 KIAS. Minimum rate of descent airspeed is 55 KIAS. Maximum glide distance airspeed is 80 KIAS."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_restart_automatic_mode",
+      "title": "RESTART — AUTOMATIC MODE",
+      "conditions": "NO RESTART FAULT OR FADEC MANUAL LIGHTS ILLUMINATED.",
+      "steps": [
+        "1. Collective — Adjust to maintain 85 to 107% NR.",
+        "2. AIRSPEED — Adjust as desired.",
+        "3. FUEL VALVE switch — ON.",
+        "4. Throttle — Cutoff.",
+        "5. START switch — Hold to start position (start will latch after throttle is placed to idle).",
+        "6. NG — Between 12% and 50%.",
+        "7. Throttle — Idle.",
+        "8. MGT — Monitor.",
+        "9. Throttle — Advance smoothly to FLY detent position.",
+        "If restart is unsuccessful, abort start and secure engine as follows:",
+        "10. Throttle — Closed.",
+        "11. FUEL VALVE switch — OFF.",
+        "12. Accomplish autorotative descent and landing."
+      ],
+      "warnings": [
+        "IF CAUSE OF FAILURE IS OBVIOUSLY MECHANICAL, AS EVIDENCED BY ABNORMAL METALLIC OR GRINDING SOUNDS, DO NOT ATTEMPT A RESTART.",
+        "Minimum rate of descent airspeed of 55 KIAS and minimum NR will allow pilot more time for air restart."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_restart_manual_mode",
+      "title": "RESTART — MANUAL MODE",
+      "conditions": "RESTART FAULT OR FADEC MANUAL LIGHTS ILLUMINATED.",
+      "steps": [
+        "1. Collective — Adjust to maintain 85 to 107% NR.",
+        "2. AIRSPEED — Adjust as desired.",
+        "3. Throttle — Closed.",
+        "4. FADEC MODE switch — MAN.",
+        "5. FUEL VALVE switch — ON.",
+        "6. START switch — Hold to start position (starter will not latch).",
+        "7. NG — 12%.",
+        "8. Throttle — Slowly advance out of cutoff and stop advancing throttle at light off.",
+        "9. MGT — Allow to peak.",
+        "10. Throttle — Increase fuel flow by modulating throttle to maintain MGT within limits.",
+        "11. START switch — Release at 50% NG.",
+        "12. Throttle — Advance smoothly and modulate to 100% NP.",
+        "If restart is unsuccessful, abort start and secure engine as follows:",
+        "13. Throttle — Closed.",
+        "14. FUEL VALVE switch — OFF.",
+        "15. Accomplish autorotative descent and landing."
+      ],
+      "warnings": [
+        "Minimum rate of descent airspeed of 55 KIAS and minimum NR will allow pilot more time for air restart."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_underspeed",
+      "title": "ENGINE UNDERSPEED",
+      "conditions": "NO CAUTION/WARNING/ADVISORY LIGHTS ILLUMINATED. Indications: 1. Decrease in NG. 2. Subsequent decrease in NP. 3. Possible decrease in NR. 4. Decrease in TRQ.",
+      "steps": [
+        "1. Collective — Adjust as required to maintain 85 to 107% NR.",
+        "2. Throttle — Confirm in FLY detent position.",
+        "3. Throttle — Position throttle to the approximate bezel position that coincides with the guage indicated NG.",
+        "4. FADEC MODE switch — MAN.",
+        "5. NR — Maintain 95 to 100% with throttle and collective.",
+        "6. Land as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_overspeed",
+      "title": "ENGINE OVERSPEED",
+      "conditions": "NO CAUTION/WARNING/ADVISORY LIGHTS ILLUMINATED. Indications: 1. Increase in NR. 2. Increase in NP. 3. Increase in NG. 4. Increase in TRQ.",
+      "steps": [
+        "1. Throttle — Retard.",
+        "2. NG or NP — Attempt to stabilize with throttle and collective.",
+        "3. FADEC MODE switch — MAN.",
+        "4. NR — Maintain 95 to 100% with throttle and collective."
+      ],
+      "warnings": [
+        "IF UNABLE TO MAINTAIN NR, NP, NG, OR MGT, PREPARE FOR A POWER OFF LANDING BY LOWERING COLLECTIVE AND SHUTTING DOWN ENGINE."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_compressor_stall",
+      "title": "ENGINE COMPRESSOR STALL",
+      "conditions": "Indications: 1. Engine pops. 2. High or erratic MGT. 3. Decreasing or erratic NG or NP. 4. TRQ oscillations.",
+      "steps": [
+        "1. Collective — Reduce power, maintain slow cruise flight.",
+        "2. MGT and NG — Check for normal indications.",
+        "3. ENG ANTI ICE switch — ON.",
+        "4. PART SEP switch (if installed) — ON.",
+        "5. HEATER switch (if installed) — ON.",
+        "If pilot elects to continue flight:",
+        "6. Collective — Increase slowly to achieve desired power level.",
+        "7. MGT and NG — Monitor for normal response.",
+        "8. Land as soon as practical.",
+        "If pilot elects to shut down engine:",
+        "9. Enter autorotation.",
+        "10. Throttle — Closed.",
+        "11. FUEL VALVE switch — OFF.",
+        "12. Collective — Adjust as required to maintain 85 to 107% NR.",
+        "13. Cyclic — Adjust as required to maintain desired AIRSPEED.",
+        "14. Prepare for power-off landing."
+      ],
+      "warnings": [
+        "Severity of compressor stalls will dictate if engine should be shut down and treated as an engine failure. Violent stalls can cause damage to engine and drive system components, and must be handled as an emergency condition. Stalls of a less severe nature (one or two low intensity pops) may permit continued operation of engine at a reduced power level, avoiding condition that resulted in compressor stall."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_hot_start_shutdown",
+      "title": "ENGINE HOT START/SHUTDOWN",
+      "conditions": "Indications: 1. Excessive MGT. 2. Visible smoke or fire.",
+      "steps": [
+        "1. Throttle — Closed.",
+        "2. FUEL VALVE switch — OFF.",
+        "3. STARTER switch — Ensure starter is motoring engine until MGT stabilizes at normal temperature.",
+        "4. Shut down helicopter."
+      ],
+      "warnings": [
+        "Starter will remain engaged until MGT decreases to 150°C and then automatically disengage. Starter may be manually engaged by holding STARTER switch forward."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_oil_pressure_low_or_fluctuating",
+      "title": "ENGINE OIL PRESSURE LOW OR FLUCTUATING",
+      "conditions": "Indications: 1. Engine oil pressure below minimum. 2. Engine oil pressure fluctuating abnormally.",
+      "steps": [
+        "1. Engine oil pressure and temperature — Monitor.",
+        "2. Land as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_oil_temperature_high",
+      "title": "ENGINE OIL TEMPERATURE HIGH",
+      "conditions": "Indications: 1. Engine oil temperature increasing above normal. 2. Engine oil temperature above maximum.",
+      "steps": [
+        "Land as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "driveshaft_failure",
+      "title": "DRIVESHAFT FAILURE",
+      "conditions": "Indications: 1. Left yaw. 2. Rapid decrease in NR. 3. Rapid increase in NP. 4. LOW RPM audio horn. 5. Illumination of RPM light. 6. Possible increase in noise level due to overspeeding engine and driveshaft breakage.",
+      "steps": [
+        "1. Maintain heading and attitude control.",
+        "2. Collective — Adjust as required to maintain 85 to 107% NR.",
+        "3. Cyclic — Adjust to obtain desired autorotative airspeed.",
+        "4. Landing — Complete autorotative landing.",
+        "5. Complete helicopter shutdown."
+      ],
+      "warnings": [
+        "FAILURE OF MAIN DRIVESHAFT TO TRANSMISSION WILL RESULT IN COMPLETE LOSS OF POWER TO MAIN ROTOR. ALTHOUGH COCKPIT INDICATIONS FOR A DRIVESHAFT FAILURE ARE SIMILAR TO AN ENGINE OVERSPEED, IT IS IMPERATIVE THAT AUTOROTATIVE FLIGHT PROCEDURES BE ESTABLISHED IMMEDIATELY. FAILURE TO REACT IMMEDIATELY TO LOW RPM AUDIO, RPM LIGHT AND NP/NR TACHOMETER CAN RESULT IN LOSS OF CONTROL.",
+        "To maintain tail rotor effectiveness do not shutdown engine.",
+        "Minimum rate of descent airspeed is 55 KIAS. Maximum glide distance airspeed is 80 KIAS.",
+        "Engine overspeed trip system will activate at 118.5% NP causing fuel flow to go to minimum. After initial overspeed, FADEC will adjust fuel flow to maintain engine at 100% NP."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "fadec_failure",
+      "title": "FADEC FAILURE",
+      "conditions": "Indications: 1. FADEC fail audio activated. 2. FADEC FAIL warning light illuminated. 3. FADEC MANUAL caution light illuminated. 4. AUTO RELIGHT advisory light illuminated. 5. FADEC MODE switch MAN light illuminated.",
+      "steps": [
+        "1. Throttle — If time permits, match throttle bezel position to NG indication.",
+        "2. NR/NP — Maintain 95 to 100% with collective and throttle.",
+        "3. FADEC MODE switch — Depress one time, muting FADEC fail audio.",
+        "4. Land as soon as practical.",
+        "5. Normal shutdown if possible."
+      ],
+      "warnings": [
+        "WITHIN 2 TO 7 SECONDS AFTER THE FADEC FAUL WARNING NR/NP MAY INCREASE RAPIDLY, REQUIRING POSITIVE MOVEMENTS OF COLLECTIVE AND THROTTLE TO CONTROL NR.",
+        "Depressing FADEC MODE switch one time, will only mute FADEC fail audio. This step should not be accomplished until pilot is firmly established in MAN control."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fire_on_ground",
+      "title": "ENGINE FIRE ON GROUND",
+      "conditions": "Indications: 1. Smoke. 2. Fumes. 3. Fire.",
+      "steps": [
+        "1. Throttle — Closed.",
+        "2. FUEL VALVE switch — OFF.",
+        "3. GEN switch — OFF.",
+        "4. BATT switch — OFF.",
+        "5. Rotor brake (if installed) — Engage.",
+        "6. Exit helicopter."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fire_during_flight",
+      "title": "ENGINE FIRE DURING FLIGHT",
+      "conditions": "Indications: 1. Smoke. 2. Fumes. 3. Fire.",
+      "steps": [
+        "1. Inflight — Immediately enter autorotation.",
+        "2. Throttle — Closed.",
+        "3. FUEL VALVE switch — OFF.",
+        "4. If time permits, FUEL BOOST/XFR circuit breaker switches — OFF.",
+        "5. Execute autorotative descent and landing.",
+        "6. BATT switch — OFF."
+      ],
+      "warnings": [
+        "Do not restart engine until corrective maintenance has been performed."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "cabin_smoke_or_fumes",
+      "title": "CABIN SMOKE OR FUMES",
+      "conditions": "Indications: 1. Smoke. 2. Fumes.",
+      "steps": [
+        "1. Inflight — Start descent.",
+        "2. AIR COND BLO switch (if installed) — OFF.",
+        "3. HEATER switch (if installed) — OFF.",
+        "4. All vents — Open.",
+        "5. Side windows — Open.",
+        "If time and altitude permits:",
+        "6. Source — Attempt to identify and secure.",
+        "7. If source is identified and smoke and/or fumes still persist — Land as soon as possible.",
+        "8. If source is identified and smoke and/or fumes are cleared — Land as soon as practical."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "complete_loss_of_tail_rotor_thrust_hovering",
+      "title": "COMPLETE LOSS OF TAIL ROTOR THRUST — HOVERING",
+      "conditions": "This is a situation involving a break in drive system (e.g., severed driveshaft), wherein tail rotor stops turning and delivers no thrust. Indications: 1. Uncontrollable yawing to right (left side slip). 2. Nose down tucking. 3. Possible roll of fuselage.",
+      "steps": [
+        "Close throttle and perform a hovering autorotation landing. A slight rotation can be expected on touchdown."
+      ],
+      "warnings": [
+        "Severity of initial reaction of helicopter will be affected by AIRSPEED, CG, power being used, and HD."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "complete_loss_of_tail_rotor_thrust_inflight",
+      "title": "COMPLETE LOSS OF TAIL ROTOR THRUST — IN-FLIGHT",
+      "conditions": "This is a situation involving a break in drive system (e.g., severed driveshaft), wherein tail rotor stops turning and delivers no thrust.",
+      "steps": [
+        "Reduce throttle to idle, immediately enter autorotation, and maintain a minimum AIRSPEED of 55 KIAS during descent."
+      ],
+      "warnings": [
+        "When a suitable landing site is not available, vertical fin may permit controlled flight at low power levels and sufficient AIRSPEED. During final stages of approach, a mild flare should be executed, making sure all power to rotor is off. Maintain helicopter in a slight flare and smoothly use collective to execute a soft, slightly nose-high landing. Landing on aft portion of skids will tend to correct side drift. This technique will, in most cases, result in a run-on type landing.",
+        "IN A RUN-ON TYPE LANDING AFTER TOUCHING DOWN, DO NOT USE CYCLIC TO REDUCE FORWARD SPEED."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "fixed_pitch_failure_hovering",
+      "title": "FIXED PITCH FAILURES — HOVERING",
+      "conditions": "This is a situation involving inability to change tail rotor thrust (blade angle) with anti-torque pedals. Indications: 1. Lack of directional response. 2. Locked pedals.",
+      "steps": [
+        "Pull pedal stop emergency release to ensure pedal stop is retracted.",
+        "Do not close throttle unless a severe right yaw occurs. If pedals lock in any position at a hover, landing from a hover can be accomplished with greater safety under power-controlled flight rather than by closing throttle and entering autorotation."
+      ],
+      "warnings": [
+        "If pedals cannot be moved with a moderate amount of force, do not attempt to apply a maximum effort, since a more serious malfunction could result. If helicopter is in a trimmed condition when malfunction occurs, TRQ and AIRSPEED should be noted and helicopter flown to a suitable landing area. Certain combinations of TRQ, NR, and AIRSPEED will correct a yaw attitude, and these combinations should be used to land helicopter."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "fixed_pitch_failure_inflight_left_pedal",
+      "title": "FIXED PITCH FAILURES — IN-FLIGHT — LEFT PEDAL APPLIED",
+      "conditions": "This is a situation involving inability to change tail rotor thrust (blade angle) with anti-torque pedals, with left pedal applied in a high power condition.",
+      "steps": [
+        "Pull pedal stop emergency release to ensure pedal stop is retracted.",
+        "In a high power condition, helicopter will yaw to left when power is reduced. Power and AIRSPEED should be adjusted to a value where a comfortable yaw angle can be maintained. If AIRSPEED is increased, vertical fin will become more effective and an increased left yaw attitude will develop. To accomplish landing, establish a power-on approach with sufficiently low AIRSPEED (zero if necessary) to attain a rate of descent with a comfortable sideslip angle. (A decrease in NP decreases tail rotor thrust.) As collective is increased just before touchdown, left yaw will be reduced."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "fixed_pitch_failure_inflight_right_pedal",
+      "title": "FIXED PITCH FAILURES — IN-FLIGHT — RIGHT PEDAL APPLIED",
+      "conditions": "This is a situation involving inability to change tail rotor thrust (blade angle) with anti-torque pedals, with right pedal applied.",
+      "steps": [
+        "Pull pedal stop emergency release to ensure pedal stop is retracted.",
+        "In cruise flight or reduced power situation, helicopter will yaw to right when power is increased. A low power, run-on type landing will be necessary by gradually reducing throttle to maintain heading while adding collective to cushion landing. If right yaw becomes excessive, close throttle completely."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "loss_of_hydraulic_pressure",
+      "title": "LOSS OF HYDRAULIC PRESSURE",
+      "conditions": "Indications: 1. HYDRAULIC SYSTEM caution light illuminated. 2. Grinding or howling noise from pump. 3. Increase in force required to move flight controls. 4. Feedback forces may be evident during flight control movement.",
+      "steps": [
+        "1. Reduce AIRSPEED to 70 to 100 KIAS.",
+        "2. HYD SYSTEM circuit breaker — Out. If hydraulic power is not restored, push breaker in.",
+        "3. HYD SYS switch — HYD SYS; OFF if hydraulic power is not restored.",
+        "4. For extended flight set comfortable AIRSPEED, up to 120 KIAS, to minimize control forces.",
+        "5. Land as soon as practical.",
+        "6. A run-on landing at effective translational lift speed (approximately 15 knots) is recommended."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "flight_control_actuator_malfunction",
+      "title": "FLIGHT CONTROL ACTUATOR MALFUNCTION",
+      "conditions": "An actuator hardover can occur in any flight control axis, but a cyclic cam jam will only occur in the fore and aft axis. Indications: 1. Uncommanded flight control movements. 2. High flight control forces to oppose movement in one axis. 3. Feedback forces only in affected flight control axis. 4. Flight control forces normal in unaffected axis.",
+      "steps": [
+        "1. Attitude — Maintain.",
+        "2. HYD SYS switch — OFF.",
+        "3. AIRSPEED — Set to 70 to 100 KIAS.",
+        "4. Land as soon as possible using procedure from paragraph 3-6-A."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "generator_failure",
+      "title": "GENERATOR FAILURE",
+      "conditions": "Indications: 1. GEN FAIL caution light illuminated. 2. AMPS indicates 0. 3. Voltmeter — Approximately 24 volts.",
+      "steps": [
+        "1. GENERATOR FIELD and GENERATOR RESET circuit breakers — Check in.",
+        "2. GEN switch — RESET; then GEN.",
+        "3. If power is not restored, place GEN switch to OFF; land as soon as practical."
+      ],
+      "warnings": [
+        "With generator OFF, a fully charged battery will provide approximately 21 minutes of power for basic helicopter and one VHF COMM radio (35 minutes with optional 28 ampere/hour battery)."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "excessive_electrical_load",
+      "title": "EXCESSIVE ELECTRICAL LOAD",
+      "conditions": "Indications: 1. AMPS indicates excessive load. 2. Smoke or fumes.",
+      "steps": [
+        "1. GEN switch — OFF.",
+        "2. BATT switch — OFF.",
+        "3. FUEL BOOST/XFR LEFT circuit breaker switch — LEFT (on).",
+        "4. Airspeed — 60 KIAS or less.",
+        "5. Land as soon as practical."
+      ],
+      "warnings": [
+        "PRIOR TO BATTERY DEPLETION, ALTITUDE MUST BE REDUCED BELOW 8000 FEET HP (JET A) OR 4000 HP (JET B). UNUSABLE FUEL MAY BE AS HIGH AS 135 POUNDS AFTER THE BATTERY IS DEPLETED DUE TO INABILITY TO TRANSFER FUEL FROM FORWARD CELLS.",
+        "With battery and generator OFF, an 80% charged battery will operate left fuel boost pump and left fuel transfer pump for approximately 1.7 hours (2.8 hours with optional 28 ampere/hour battery).",
+        "Pedal stop disengages with loss of electrical power.",
+        "When throttle is repositioned to the idle stop (during engine shutdown) the PMA will go offline and the engine may flameout."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "dual_fuel_transfer_failure",
+      "title": "DUAL FUEL TRANSFER FAILURE",
+      "conditions": "Indications: 1. L/FUEL XFR and R/FUEL XFR caution lights illuminate. 2. Last 135 pounds of fuel in forward cell may not be usable. 3. Fuel will stop transferring from forward to aft fuel cell at approximately 340 pounds total indicated fuel.",
+      "steps": [
+        "1. LEFT and RIGHT FUEL BOOST/XFR circuit breaker switches — Check ON.",
+        "2. Determine FUEL QTY in forward cell.",
+        "3. Subtract quantity of fuel trapped in forward cell from total to determine usable fuel remaining.",
+        "4. Plan landing accordingly."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "cyclic_cam_jam",
+      "title": "CYCLIC CAM JAM",
+      "conditions": "A cyclic cam jam can only occur in the fore and aft axis. Indications: 1. High (approximately 15 pounds) fore and aft cyclic control forces. 2. Normal pedal, collective and lateral cyclic control forces.",
+      "steps": [
+        "1. Helicopter pitch attitude — Maintain normal pitch attitudes with forward or aft cyclic force.",
+        "2. Land as soon as practical."
+      ],
+      "warnings": [
+        "DO NOT TURN HYDRAULIC BOOST OFF."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fire_warning_inflight",
+      "title": "ENGINE FIRE (Warning Light — Inflight)",
+      "conditions": "PANEL WORDING: ENGINE FIRE. FAULT CONDITION: Excessive temperature condition in engine compartment.",
+      "steps": [
+        "Immediately enter autorotation.",
+        "Throttle — Close.",
+        "FUEL VALVE switch — OFF.",
+        "If time permits, FUEL BOOST/XFR circuit breaker switches — OFF.",
+        "Execute a normal autorotation and landing.",
+        "BATT switch — OFF."
+      ],
+      "warnings": [
+        "Do not restart engine until cause of fire has been determined and corrected."
+      ],
+      "confidence": "extracted"
+    }
+  ]
+}
