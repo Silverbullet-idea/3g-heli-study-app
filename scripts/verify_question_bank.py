@@ -7,6 +7,7 @@ import argparse
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -59,6 +60,11 @@ FAIL = factually incorrect answer that could harm a student or create a safety i
 
 FLAG_API_ISSUE = "Verifier API call failed — manual review required"
 FLAG_MISSING_ID = "Verifier returned no result for this question id"
+
+API_MAX_ATTEMPTS = 4  # initial try + up to 3 retries
+RETRY_SLEEP_SEC = 5
+SUCCESS_SLEEP_SEC = 2
+PROGRESS_EVERY_N_BATCHES = 50
 
 
 def strip_json_fence(text: str) -> str:
@@ -213,12 +219,120 @@ def write_summary(path: Path, stats: dict[str, int]) -> None:
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def is_api_failure_placeholder(q: dict[str, Any]) -> bool:
+    """True if this question only needs API retry (exact placeholder FLAG)."""
+    v = q.get("verification")
+    if not isinstance(v, dict) or v.get("status") != "FLAG":
+        return False
+    issues = v.get("issues")
+    return issues == [FLAG_API_ISSUE]
+
+
+def call_verifier_api(
+    client: anthropic.Anthropic, user_msg: str
+) -> tuple[bool, dict[str, tuple[str, float, list[str], str]]]:
+    """
+    Returns (parse_ok, result_by_id). Retries up to API_MAX_ATTEMPTS on
+    exception or malformed response. Sleeps SUCCESS_SLEEP_SEC after a fully
+    successful parse (rate limit spacing).
+    """
+    last_exc: BaseException | None = None
+    for attempt in range(API_MAX_ATTEMPTS):
+        try:
+            msg = client.messages.create(
+                model=MODEL_ID,
+                max_tokens=8192,
+                system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": user_msg}],
+            )
+            block = msg.content[0]
+            raw_text = block.text if hasattr(block, "text") else str(block)
+            parsed = extract_json_object(raw_text)
+            if isinstance(parsed.get("results"), list):
+                result_by_id = build_result_map(parsed)
+                time.sleep(SUCCESS_SLEEP_SEC)
+                return True, result_by_id
+        except BaseException:
+            pass
+        if attempt < API_MAX_ATTEMPTS - 1:
+            time.sleep(RETRY_SLEEP_SEC)
+    return False, {}
+
+
+def apply_batch_results(
+    chunk: list[tuple[dict[str, Any], dict[str, Any]]],
+    parse_ok: bool,
+    result_by_id: dict[str, tuple[str, float, list[str], str]],
+    fails_log: Path,
+    stats: dict[str, int],
+) -> None:
+    """Update questions in chunk from verifier output; mutates stats (pass/flag/fail)."""
+    for q, task in chunk:
+        stats["total_processed"] += 1
+        qid = str(q["id"])
+
+        if not parse_ok:
+            q["verification"] = {
+                "status": "FLAG",
+                "confidence": 0.0,
+                "issues": [FLAG_API_ISSUE],
+                "suggested_correction": "",
+            }
+            stats["flag"] += 1
+            continue
+
+        if qid not in result_by_id:
+            q["verification"] = {
+                "status": "FLAG",
+                "confidence": 0.0,
+                "issues": [FLAG_MISSING_ID],
+                "suggested_correction": "",
+            }
+            stats["flag"] += 1
+            continue
+
+        status, confidence, issues, suggested = result_by_id[qid]
+
+        if status == "PASS":
+            q["verification"] = {
+                "status": "PASS",
+                "confidence": confidence,
+                "issues": [],
+                "suggested_correction": "",
+            }
+            stats["pass"] += 1
+        elif status == "FLAG":
+            q["verification"] = {
+                "status": "FLAG",
+                "confidence": confidence,
+                "issues": issues,
+                "suggested_correction": suggested,
+            }
+            stats["flag"] += 1
+        else:
+            reason_parts = list(issues)
+            if suggested:
+                reason_parts.append(suggested)
+            reason = "; ".join(reason_parts) if reason_parts else "FAIL (no details from verifier)"
+            append_fail_log(fails_log, qid, reason)
+            remove_question_from_task(task, qid)
+            stats["fail"] += 1
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Verify question bank entries in batches via Anthropic API.")
     parser.add_argument(
         "--input",
         default="question-bank/qbank_private_helicopter.json",
         help="Path to question bank JSON (relative to repo root unless absolute)",
+    )
+    parser.add_argument(
+        "--retry-failures",
+        action="store_true",
+        help=(
+            "Only re-verify questions with FLAG and issues exactly matching the API-failure placeholder; "
+            "all other questions are left unchanged."
+        ),
     )
     args = parser.parse_args()
 
@@ -241,85 +355,115 @@ def main() -> None:
     flat = collect_flat_questions(data)
     client = anthropic.Anthropic(api_key=api_key.strip())
 
-    stats = {"total_processed": 0, "pass": 0, "flag": 0, "fail": 0}
     fails_log = REPO_ROOT / "question-bank" / "verification_fails.log"
     summary_path = REPO_ROOT / "question-bank" / "verification_summary.txt"
 
-    for i in range(0, len(flat), BATCH_SIZE):
-        chunk = flat[i : i + BATCH_SIZE]
+    if args.retry_failures:
+        work = [(q, t) for q, t in flat if is_api_failure_placeholder(q)]
+        skipped = len(flat) - len(work)
+        total_reprocess = len(work)
+        chunks = [work[i : i + BATCH_SIZE] for i in range(0, len(work), BATCH_SIZE)]
+        total_batches = len(chunks)
+
+        stats = {"total_processed": 0, "pass": 0, "flag": 0, "fail": 0}
+        running_pass = running_flag = running_fail = 0
+
+        if total_batches == 0:
+            print(f"No API-failure FLAG questions to re-verify. skipped_unchanged={skipped}")
+            data["total_questions"] = recompute_total_questions(data)
+            with in_path.open("w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+                f.write("\n")
+            return
+
+        for batch_num, chunk in enumerate(chunks, start=1):
+            payload = {"questions": [question_payload(q) for q, _ in chunk]}
+            user_msg = json.dumps(payload, ensure_ascii=False)
+
+            prev_p, prev_f, prev_x = stats["pass"], stats["flag"], stats["fail"]
+            parse_ok, result_by_id = call_verifier_api(client, user_msg)
+            apply_batch_results(chunk, parse_ok, result_by_id, fails_log, stats)
+            running_pass += stats["pass"] - prev_p
+            running_flag += stats["flag"] - prev_f
+            running_fail += stats["fail"] - prev_x
+
+            if batch_num % PROGRESS_EVERY_N_BATCHES == 0 or batch_num == total_batches:
+                print(
+                    f"Batch {batch_num}/{total_batches} — "
+                    f"PASS={running_pass} FLAG={running_flag} FAIL={running_fail}",
+                    flush=True,
+                )
+
+        newly_pass = newly_flag_genuine = newly_fail = still_api_failure = 0
+        for q, task in work:
+            qs = task.get("questions") or []
+            if isinstance(qs, list) and q not in qs:
+                newly_fail += 1
+                continue
+            v = q.get("verification") or {}
+            st = v.get("status")
+            issues = v.get("issues")
+            if st == "PASS":
+                newly_pass += 1
+            elif st == "FLAG":
+                if issues == [FLAG_API_ISSUE]:
+                    still_api_failure += 1
+                else:
+                    newly_flag_genuine += 1
+
+        stats_retry = {
+            "total_processed": total_reprocess,
+            "pass": newly_pass,
+            "flag": newly_flag_genuine + still_api_failure,
+            "fail": newly_fail,
+        }
+        data["total_questions"] = recompute_total_questions(data)
+
+        write_summary(summary_path, stats_retry)
+
+        with in_path.open("w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+
+        print(
+            f"\n=== retry-failures complete ===\n"
+            f"questions_reprocessed: {total_reprocess}\n"
+            f"skipped (unchanged): {skipped}\n"
+            f"newly PASS: {newly_pass}\n"
+            f"newly FLAG (genuine): {newly_flag_genuine}\n"
+            f"newly FAIL (removed): {newly_fail}\n"
+            f"still FLAG (API placeholder after retries): {still_api_failure}\n",
+            flush=True,
+        )
+        print(f"Updated: {in_path}", flush=True)
+        print(f"Summary: {summary_path}", flush=True)
+        if newly_fail:
+            print(f"Failures log: {fails_log}", flush=True)
+        return
+
+    # --- full-bank verification ---
+    stats = {"total_processed": 0, "pass": 0, "flag": 0, "fail": 0}
+    chunks = [flat[i : i + BATCH_SIZE] for i in range(0, len(flat), BATCH_SIZE)]
+    total_batches = len(chunks)
+    running_pass = running_flag = running_fail = 0
+
+    for batch_num, chunk in enumerate(chunks, start=1):
         payload = {"questions": [question_payload(q) for q, _ in chunk]}
         user_msg = json.dumps(payload, ensure_ascii=False)
 
-        parse_ok = False
-        result_by_id: dict[str, tuple[str, float, list[str], str]] = {}
+        before = (stats["pass"], stats["flag"], stats["fail"])
+        parse_ok, result_by_id = call_verifier_api(client, user_msg)
+        apply_batch_results(chunk, parse_ok, result_by_id, fails_log, stats)
+        running_pass += stats["pass"] - before[0]
+        running_flag += stats["flag"] - before[1]
+        running_fail += stats["fail"] - before[2]
 
-        try:
-            msg = client.messages.create(
-                model=MODEL_ID,
-                max_tokens=2048,
-                system=SYSTEM_PROMPT,
-                messages=[{"role": "user", "content": user_msg}],
+        if batch_num % PROGRESS_EVERY_N_BATCHES == 0 or batch_num == total_batches:
+            print(
+                f"Batch {batch_num}/{total_batches} — "
+                f"PASS={running_pass} FLAG={running_flag} FAIL={running_fail}",
+                flush=True,
             )
-            block = msg.content[0]
-            raw_text = block.text if hasattr(block, "text") else str(block)
-            parsed = extract_json_object(raw_text)
-            if isinstance(parsed.get("results"), list):
-                result_by_id = build_result_map(parsed)
-                parse_ok = True
-        except Exception:
-            parse_ok = False
-            result_by_id = {}
-
-        for q, task in chunk:
-            stats["total_processed"] += 1
-            qid = str(q["id"])
-
-            if not parse_ok:
-                q["verification"] = {
-                    "status": "FLAG",
-                    "confidence": 0.0,
-                    "issues": [FLAG_API_ISSUE],
-                    "suggested_correction": "",
-                }
-                stats["flag"] += 1
-                continue
-
-            if qid not in result_by_id:
-                q["verification"] = {
-                    "status": "FLAG",
-                    "confidence": 0.0,
-                    "issues": [FLAG_MISSING_ID],
-                    "suggested_correction": "",
-                }
-                stats["flag"] += 1
-                continue
-
-            status, confidence, issues, suggested = result_by_id[qid]
-
-            if status == "PASS":
-                q["verification"] = {
-                    "status": "PASS",
-                    "confidence": confidence,
-                    "issues": [],
-                    "suggested_correction": "",
-                }
-                stats["pass"] += 1
-            elif status == "FLAG":
-                q["verification"] = {
-                    "status": "FLAG",
-                    "confidence": confidence,
-                    "issues": issues,
-                    "suggested_correction": suggested,
-                }
-                stats["flag"] += 1
-            else:
-                reason_parts = list(issues)
-                if suggested:
-                    reason_parts.append(suggested)
-                reason = "; ".join(reason_parts) if reason_parts else "FAIL (no details from verifier)"
-                append_fail_log(fails_log, qid, reason)
-                remove_question_from_task(task, qid)
-                stats["fail"] += 1
 
     data["total_questions"] = recompute_total_questions(data)
 
@@ -331,12 +475,13 @@ def main() -> None:
 
     print(
         f"Done. processed={stats['total_processed']} PASS={stats['pass']} "
-        f"FLAG={stats['flag']} FAIL_removed={stats['fail']}"
+        f"FLAG={stats['flag']} FAIL_removed={stats['fail']}",
+        flush=True,
     )
-    print(f"Updated: {in_path}")
-    print(f"Summary: {summary_path}")
+    print(f"Updated: {in_path}", flush=True)
+    print(f"Summary: {summary_path}", flush=True)
     if stats["fail"]:
-        print(f"Failures log: {fails_log}")
+        print(f"Failures log: {fails_log}", flush=True)
 
 
 if __name__ == "__main__":
