@@ -236,14 +236,25 @@ def call_verifier_api(
     exception or malformed response. Sleeps SUCCESS_SLEEP_SEC after a fully
     successful parse (rate limit spacing).
     """
-    last_exc: BaseException | None = None
     for attempt in range(API_MAX_ATTEMPTS):
         try:
             msg = client.messages.create(
-                model=MODEL_ID,
+                model="claude-haiku-4-5-20251001",
                 max_tokens=8192,
-                system=SYSTEM_PROMPT,
+                system=[
+                    {
+                        "type": "text",
+                        "text": SYSTEM_PROMPT,
+                        "cache_control": {"type": "ephemeral"},
+                    }
+                ],
                 messages=[{"role": "user", "content": user_msg}],
+            )
+            _preview = msg.content[0].text[:500]
+            print(
+                "[VERIFIER RAW RESPONSE] "
+                + _preview.encode("ascii", "backslashreplace").decode("ascii"),
+                flush=True,
             )
             block = msg.content[0]
             raw_text = block.text if hasattr(block, "text") else str(block)
@@ -252,8 +263,9 @@ def call_verifier_api(
                 result_by_id = build_result_map(parsed)
                 time.sleep(SUCCESS_SLEEP_SEC)
                 return True, result_by_id
-        except BaseException:
-            pass
+        except BaseException as e:
+            last_error = repr(e)
+            print(f"[VERIFIER ERROR] attempt {attempt+1}: {last_error}", flush=True)
         if attempt < API_MAX_ATTEMPTS - 1:
             time.sleep(RETRY_SLEEP_SEC)
     return False, {}
@@ -334,9 +346,22 @@ def main() -> None:
             "all other questions are left unchanged."
         ),
     )
+    parser.add_argument(
+        "--batch-limit",
+        type=int,
+        default=None,
+        metavar="N",
+        help="Full verification only: process at most N batches (default: all).",
+    )
     args = parser.parse_args()
 
-    load_dotenv(REPO_ROOT / ".env")
+    # Try repo-level .env first, then parent directory (workspace root).
+    # If both exist, load parent with override=True so a valid key in the parent
+    # can replace a stale/invalid ANTHROPIC_API_KEY in repo/.env.
+    if not load_dotenv(REPO_ROOT / ".env"):
+        load_dotenv(REPO_ROOT.parent / ".env")
+    else:
+        load_dotenv(REPO_ROOT.parent / ".env", override=True)
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key or not str(api_key).strip():
         print("ERROR: ANTHROPIC_API_KEY is not set (check repo .env).", file=sys.stderr)
@@ -444,6 +469,8 @@ def main() -> None:
     # --- full-bank verification ---
     stats = {"total_processed": 0, "pass": 0, "flag": 0, "fail": 0}
     chunks = [flat[i : i + BATCH_SIZE] for i in range(0, len(flat), BATCH_SIZE)]
+    if args.batch_limit is not None:
+        chunks = chunks[: max(0, args.batch_limit)]
     total_batches = len(chunks)
     running_pass = running_flag = running_fail = 0
 
