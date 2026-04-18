@@ -22,7 +22,10 @@ except ImportError as e:
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-SYSTEM_PROMPT = """
+SYSTEM_PROMPT_BLOCKS: list[dict[str, Any]] = [
+    {
+        "type": "text",
+        "text": """
 You are an expert helicopter flight instructor and FAA examiner
 with 20+ years of experience. You are generating original oral
 exam questions for helicopter pilot checkride preparation.
@@ -86,7 +89,10 @@ Schema for each question:
 }
 
 Return a JSON array of exactly 8 question objects.
-""".strip()
+""".strip(),
+        "cache_control": {"type": "ephemeral"},
+    }
+]
 
 ACS_FILES: dict[str, str] = {
     "private": "extracted-data/faa/FAA-S-ACS-15_Private_Helicopter_ACS.json",
@@ -296,33 +302,56 @@ def task_letter(index: int) -> str:
     return f"A{index}"
 
 
-def build_user_prompt(
+def parse_acs_item_line(item_line: str) -> tuple[str, str]:
+    """First whitespace-separated token is the ACS code; remainder is the description."""
+    s = item_line.strip()
+    if not s:
+        return "", ""
+    parts = s.split(None, 1)
+    code = parts[0].strip()
+    desc = parts[1].strip() if len(parts) > 1 else ""
+    return code, desc
+
+
+def iter_acs_items(task: dict[str, Any]) -> list[tuple[str, str]]:
+    """Each task item (K/R/S line) is one generation unit; order: knowledge, risk_management, skills."""
+    out: list[tuple[str, str]] = []
+    for cat in ("knowledge", "risk_management", "skills"):
+        for raw in task.get(cat) or []:
+            out.append((cat, str(raw)))
+    return out
+
+
+def questions_for_acs_code(prior: list[dict[str, Any]], acs_code: str) -> list[dict[str, Any]]:
+    return [q for q in prior if (q.get("acs_code") or "") == acs_code]
+
+
+def build_user_prompt_parts_for_acs_item(
     area_title: str,
     area_roman: str,
     task: dict[str, Any],
     task_letter: str,
     task_acs_code: str,
+    item_category: str,
+    item_line: str,
+    item_acs_code: str,
+    item_description: str,
     handbook_excerpts: str,
-) -> str:
-    k_lines = "\n".join(f"- {x}" for x in (task.get("knowledge") or []))
-    r_lines = "\n".join(f"- {x}" for x in (task.get("risk_management") or []))
-    s_lines = "\n".join(f"- {x}" for x in (task.get("skills") or []))
-    return f"""Area of Operation: {area_title} (Area {area_roman})
+) -> tuple[str, str]:
+    uncached = f"""Area of Operation: {area_title} (Area {area_roman})
 Task title: {task.get("title", "")}
-Task ACS code (use as prefix for question acs_code values): {task_acs_code}
+Task ACS code (parent context): {task_acs_code}
 
-Knowledge:
-{k_lines}
-
-Risk management:
-{r_lines}
-
-Skills:
-{s_lines}
-
-Relevant FAA handbook excerpts (summaries for context):
-{handbook_excerpts}
+Generate exactly 8 questions focused ONLY on this single ACS element (not the whole task):
+- Category for each question object: {item_category}
+- ACS code for each question object: {item_acs_code}
+- Full ACS line from the standards: {item_line}
+- Description (text after the code): {item_description}
 """
+    handbook_context = (
+        "Relevant FAA handbook excerpts (summaries for context):\n\n" + handbook_excerpts
+    )
+    return uncached, handbook_context
 
 
 def load_existing_lookup(path: Path) -> dict[tuple[str, str], list[dict[str, Any]]]:
@@ -362,7 +391,10 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    load_dotenv(REPO_ROOT / ".env")
+    if not load_dotenv(REPO_ROOT / ".env"):
+        load_dotenv(REPO_ROOT.parent / ".env")
+    else:
+        load_dotenv(REPO_ROOT.parent / ".env", override=True)
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key or not api_key.strip():
         print("ERROR: ANTHROPIC_API_KEY is missing or empty. Set it in repo .env", file=sys.stderr)
@@ -408,6 +440,7 @@ def main() -> None:
 
     areas_processed = 0
     tasks_processed = 0
+    acs_items_processed = 0
     questions_generated = 0
     failed_tasks: list[str] = []
     new_lookup = dict(existing_lookup)
@@ -431,54 +464,92 @@ def main() -> None:
             task_acs_code = f"{prefix}.{area_roman}.{tletter}"
             key = (area_roman, tletter)
             prior = new_lookup.get(key, [])
-            if len(prior) > 0:
-                continue
 
             tasks_processed += 1
             blob = task_search_blob(task)
             picks = select_handbook_topics(blob, hb_index)
             excerpts = format_handbook_excerpts(picks)
-            user_msg = build_user_prompt(
-                area_title,
-                area_roman,
-                task,
-                tletter,
-                task_acs_code,
-                excerpts,
-            )
 
-            try:
-                msg = client.messages.create(
-                    model=MODEL_ID,
-                    max_tokens=16384,
-                    system=SYSTEM_PROMPT,
-                    messages=[{"role": "user", "content": user_msg}],
-                )
-            except Exception as e:
-                failed_tasks.append(f"{area_title} / {task.get('title', '')}: API error: {e}")
-                new_lookup[key] = []
-                continue
+            accumulated: list[dict[str, Any]] = []
 
-            block = msg.content[0]
-            raw_text = block.text if hasattr(block, "text") else str(block)
-            try:
-                raw_questions = parse_question_array(raw_text)
-            except (json.JSONDecodeError, ValueError) as e:
-                failed_tasks.append(f"{area_title} / {task.get('title', '')}: invalid JSON: {e}")
-                new_lookup[key] = []
-                continue
+            for item_category, item_line in iter_acs_items(task):
+                item_acs_code, item_description = parse_acs_item_line(item_line)
+                if not item_acs_code:
+                    failed_tasks.append(
+                        f"{area_title} / {task.get('title', '')}: empty ACS item line"
+                    )
+                    continue
 
-            good: list[dict[str, Any]] = []
-            for rq in raw_questions:
-                ok, normalized = validate_and_normalize_question(rq)
-                if ok:
-                    good.append(normalized)
-            if not good:
-                failed_tasks.append(
-                    f"{area_title} / {task.get('title', '')}: no valid questions after validation"
-                )
-            new_lookup[key] = good
-            questions_generated += len(good)
+                existing_for_item = questions_for_acs_code(prior, item_acs_code)
+                if len(existing_for_item) >= 8:
+                    accumulated.extend(existing_for_item)
+                    continue
+
+                acs_items_processed += 1
+
+                try:
+                    uncached_text, handbook_context = build_user_prompt_parts_for_acs_item(
+                        area_title,
+                        area_roman,
+                        task,
+                        tletter,
+                        task_acs_code,
+                        item_category,
+                        item_line,
+                        item_acs_code,
+                        item_description,
+                        excerpts,
+                    )
+                    msg = client.messages.create(
+                        model=MODEL_ID,
+                        max_tokens=16384,
+                        system=SYSTEM_PROMPT_BLOCKS,
+                        messages=[
+                            {
+                                "role": "user",
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": handbook_context,
+                                        "cache_control": {"type": "ephemeral"},
+                                    },
+                                    {"type": "text", "text": uncached_text},
+                                ],
+                            }
+                        ],
+                    )
+                except BaseException as e:
+                    print(f"[GENERATOR ERROR] {repr(e)}", flush=True)
+                    raise
+
+                if getattr(msg, "usage", None) is not None:
+                    print(f"[GENERATOR usage] {msg.usage}", flush=True)
+
+                block = msg.content[0]
+                raw_text = block.text if hasattr(block, "text") else str(block)
+                try:
+                    raw_questions = parse_question_array(raw_text)
+                except (json.JSONDecodeError, ValueError) as e:
+                    failed_tasks.append(
+                        f"{area_title} / {task.get('title', '')} / {item_acs_code}: invalid JSON: {e}"
+                    )
+                    continue
+
+                good: list[dict[str, Any]] = []
+                for rq in raw_questions:
+                    ok, normalized = validate_and_normalize_question(rq)
+                    if ok:
+                        normalized["acs_code"] = item_acs_code
+                        normalized["category"] = item_category
+                        good.append(normalized)
+                if not good:
+                    failed_tasks.append(
+                        f"{area_title} / {task.get('title', '')} / {item_acs_code}: no valid questions after validation"
+                    )
+                accumulated.extend(good)
+                questions_generated += len(good)
+
+            new_lookup[key] = accumulated
 
     # Build output structure from ACS + merged questions
     areas_out: list[dict[str, Any]] = []
@@ -542,6 +613,7 @@ def main() -> None:
         f"Rating: {rating}\n"
         f"Areas processed: {areas_processed}\n"
         f"Tasks processed: {tasks_processed}\n"
+        f"ACS items (API calls): {acs_items_processed}\n"
         f"Questions generated: {questions_generated}\n"
         f"Output: {output_path}"
     )

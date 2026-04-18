@@ -4,9 +4,11 @@
 from __future__ import annotations
 
 import argparse
+import atexit
 import html
 import json
 import sys
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -15,10 +17,135 @@ from flask import Flask, Response, redirect, request
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
+CHANGE_LOG_PATH = REPO_ROOT / "question-bank" / "review_changes.log"
+
 app = Flask(__name__)
 
 _data: dict[str, Any] | None = None
 _json_path: Path | None = None
+
+_change_log_lock = threading.Lock()
+_session_counts = {"approved": 0, "edited": 0, "rejected": 0}
+_change_log_footer_written = False
+
+
+def _local_ts() -> str:
+    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
+def _format_issues_lines(v: dict[str, Any]) -> str:
+    issues = v.get("issues") if isinstance(v.get("issues"), list) else []
+    if not issues:
+        return "(none)"
+    return "\n".join(str(x) for x in issues)
+
+
+def _append_change_log_block(text: str) -> None:
+    with _change_log_lock:
+        CHANGE_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with CHANGE_LOG_PATH.open("a", encoding="utf-8") as f:
+            f.write(text)
+            if not text.endswith("\n"):
+                f.write("\n")
+
+
+def _write_session_header() -> None:
+    ts = _local_ts()
+    block = (
+        "========================================\n"
+        f"Review session started: {ts}\n"
+        "========================================\n"
+    )
+    _append_change_log_block(block)
+
+
+def _write_session_footer() -> None:
+    global _change_log_footer_written
+    with _change_log_lock:
+        if _change_log_footer_written:
+            return
+        _change_log_footer_written = True
+    ts = _local_ts()
+    a = _session_counts["approved"]
+    e = _session_counts["edited"]
+    r = _session_counts["rejected"]
+    block = (
+        f"\nSession ended: {ts}\n"
+        f"This session: {a} approved, {e} edited, {r} rejected\n"
+        "========================================\n"
+    )
+    _append_change_log_block(block)
+
+
+def _log_approval_line(qid: str) -> None:
+    ts = _local_ts()
+    _append_change_log_block(f"APPROVED: {qid} | {ts}\n")
+
+
+def _log_edit(
+    q: dict[str, Any],
+    original_answer: str,
+    revised_answer: str,
+) -> None:
+    v = q.get("verification") if isinstance(q.get("verification"), dict) else {}
+    qid = str(q.get("id") or "")
+    acs = str(q.get("acs_code") or "")
+    diff = str(q.get("difficulty") or "")
+    qtext = str(q.get("question") or "")
+    issues_block = _format_issues_lines(v)
+    reviewed = _local_ts()
+    block = (
+        "--- EDITED ---\n"
+        f"Question ID:   {qid}\n"
+        f"ACS Code:      {acs}\n"
+        f"Difficulty:    {diff}\n"
+        "\n"
+        "Question:\n"
+        f"{qtext}\n"
+        "\n"
+        "Original Answer:\n"
+        f"{original_answer}\n"
+        "\n"
+        "Revised Answer:\n"
+        f"{revised_answer}\n"
+        "\n"
+        "Verifier Notes:\n"
+        f"{issues_block}\n"
+        "\n"
+        f"Reviewed: {reviewed}\n"
+        "----------------------------------------\n"
+    )
+    _append_change_log_block(block)
+
+
+def _log_rejection(q: dict[str, Any]) -> None:
+    v = q.get("verification") if isinstance(q.get("verification"), dict) else {}
+    qid = str(q.get("id") or "")
+    acs = str(q.get("acs_code") or "")
+    diff = str(q.get("difficulty") or "")
+    qtext = str(q.get("question") or "")
+    ans = str(q.get("answer") or "")
+    issues_block = _format_issues_lines(v)
+    reviewed = _local_ts()
+    block = (
+        "--- REJECTED ---\n"
+        f"Question ID:   {qid}\n"
+        f"ACS Code:      {acs}\n"
+        f"Difficulty:    {diff}\n"
+        "\n"
+        "Question:\n"
+        f"{qtext}\n"
+        "\n"
+        "Answer (at time of rejection):\n"
+        f"{ans}\n"
+        "\n"
+        "Reason for rejection (verifier notes):\n"
+        f"{issues_block}\n"
+        "\n"
+        f"Reviewed: {reviewed}\n"
+        "----------------------------------------\n"
+    )
+    _append_change_log_block(block)
 
 
 def load_bank(path: Path) -> dict[str, Any]:
@@ -347,6 +474,8 @@ def approve() -> Response:
         rv = int(_data.get("ryan_verified_count") or 0)
         _data["ryan_verified_count"] = rv + 1
     save_bank(_json_path, _data)
+    _session_counts["approved"] += 1
+    _log_approval_line(qid)
     return redirect("/", code=303)
 
 
@@ -363,8 +492,10 @@ def edit() -> Response:
     q = find_question_by_id(_data, qid)
     if not q:
         return Response("question not found", status=404)
+    original_answer = str(q.get("answer") or "")
     was_rv = bool(q.get("ryan_verified"))
     q["answer"] = str(answer)
+    revised_answer = q["answer"]
     v = q.get("verification") if isinstance(q.get("verification"), dict) else {}
     v["status"] = "REVIEWED_PASS"
     q["verification"] = v
@@ -374,6 +505,8 @@ def edit() -> Response:
         rv = int(_data.get("ryan_verified_count") or 0)
         _data["ryan_verified_count"] = rv + 1
     save_bank(_json_path, _data)
+    _session_counts["edited"] += 1
+    _log_edit(q, original_answer, revised_answer)
     return redirect("/", code=303)
 
 
@@ -387,6 +520,9 @@ def reject() -> Response:
     task = find_task_for_question(_data, qid)
     if not task:
         return Response("question not found", status=404)
+    q = find_question_by_id(_data, qid)
+    if not q:
+        return Response("question not found", status=404)
     qs = task.get("questions")
     if not isinstance(qs, list):
         return Response("invalid task", status=500)
@@ -398,6 +534,8 @@ def reject() -> Response:
     append_ryan_reject_log(log_path, qid)
     _data["total_questions"] = recompute_total_questions(_data)
     save_bank(_json_path, _data)
+    _session_counts["rejected"] += 1
+    _log_rejection(q)
     return redirect("/", code=303)
 
 
@@ -426,7 +564,14 @@ def main() -> None:
     n = len(queue)
     print(f"FLAG queue: {n} questions loaded. Open http://localhost:{args.port} in your browser.", flush=True)
 
-    app.run(host=args.host, port=args.port, debug=False, use_reloader=False)
+    _write_session_header()
+    atexit.register(_write_session_footer)
+    try:
+        app.run(host=args.host, port=args.port, debug=False, use_reloader=False)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        _write_session_footer()
 
 
 if __name__ == "__main__":
