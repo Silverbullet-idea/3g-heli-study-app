@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Batch-verify oral-exam question bank entries via Anthropic API (claude-sonnet-4-6)."""
+"""Batch-verify oral-exam question bank entries via Anthropic API (claude-haiku-4-5-20251001)."""
 
 from __future__ import annotations
 
