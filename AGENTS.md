@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-05-02 (housekeeping: removed stale `MODEL_ID` in `verify_question_bank.py`; prior 2026-04-22 `r44_systems.json` / question bank wrappers / commercial verification + instrument generation runs; prior 2026-04-14 R66 / Bell 206B3 / Bell 407 POH JSON extraction run)
+Last updated: 2026-05-02 (FLAG pre-triage: `triage_flag_questions.py` + `run_triage_*.ps1`; prior housekeeping on `verify_question_bank.py`; prior 2026-04-22 `r44_systems.json` / question bank wrappers / commercial verification + instrument generation runs; prior 2026-04-14 R66 / Bell 206B3 / Bell 407 POH JSON extraction run)
 
 ---
 
@@ -15,6 +15,12 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### FLAG pre-triage (2026-05-02)
+
+- `scripts/triage_flag_questions.py` — Re-examines each `verification.status == "FLAG"` question (skips rows that already have `verification.triage`) using **`claude-haiku-4-5-20251001`** in batches of **3**; sets `APPROVE` → `PASS` + `triage: AUTO_APPROVE`, `EDIT` → corrected text + `PASS` + `triage: AI_EDIT`, or `ESCALATE` → stays `FLAG` + `triage: ESCALATE` + `triage_note`. Appends tab-prefixed lines to `question-bank/review_changes.log`; unparseable API responses go to `question-bank/triage_errors.log`; overwrites `question-bank/triage_summary.txt` each run; saves JSON every **10** batches. CLI: `--input` (required), `--batch-limit N` for testing.
+- `scripts/run_triage_private.ps1` — `triage_flag_questions.py --input question-bank/qbank_private_helicopter.json`
+- `scripts/run_triage_commercial.ps1` — same for `qbank_commercial_helicopter.json`. Run **before** the review server to shrink the manual FLAG queue (expect a large share of FLAGs cleared automatically; **ESCALATE** remains for expert review).
 
 ### Housekeeping (2026-05-02)
 
@@ -238,6 +244,9 @@ billing is replenished, re-run the same command to fill Area I, then run without
 | run_generate_private.ps1 | Runs `generate_question_bank.py --rating private` |
 | run_verify_private.ps1 | Runs `verify_question_bank.py --input question-bank/qbank_private_helicopter.json` |
 | run_verify_commercial.ps1 | Verifies `qbank_commercial_helicopter.json` via `verify_question_bank.py --input …` |
+| triage_flag_questions.py | Pre-triage FLAG rows via Haiku (APPROVE / EDIT / ESCALATE); updates `verification` in place; `--input` required |
+| run_triage_private.ps1 | Runs `triage_flag_questions.py --input question-bank/qbank_private_helicopter.json` |
+| run_triage_commercial.ps1 | Runs `triage_flag_questions.py --input question-bank/qbank_commercial_helicopter.json` |
 | run_generate_instrument.ps1 | Generates `qbank_instrument_helicopter.json` (`--rating instrument`) + count |
 | run_generate_cfi.ps1 | Generates CFI bank — overnight-scale; see script header |
 | run_generate_atp.ps1 | Generates ATP bank — short; see script header |
