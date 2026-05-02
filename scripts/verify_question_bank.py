@@ -24,7 +24,6 @@ except ImportError as e:
     raise SystemExit(1) from e
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-MODEL_ID = "claude-sonnet-4-6"
 BATCH_SIZE = 10
 
 SYSTEM_PROMPT = """
