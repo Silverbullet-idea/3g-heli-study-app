@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-04-14 (R66 / Bell 206B3 / Bell 407 POH JSON extraction pipeline run; raw text under `repo/raw-text/`, nine aircraft JSON files committed)
+Last updated: 2026-05-02 (housekeeping: removed stale `MODEL_ID` in `verify_question_bank.py`; prior 2026-04-22 `r44_systems.json` / question bank wrappers / commercial verification + instrument generation runs; prior 2026-04-14 R66 / Bell 206B3 / Bell 407 POH JSON extraction run)
 
 ---
 
@@ -16,13 +16,34 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 
 ## Completed This Session
 
+### Housekeeping (2026-05-02)
+
+- `scripts/verify_question_bank.py` — removed unused top-level `MODEL_ID = "claude-sonnet-4-6"` (dead code; `call_verifier_api()` already hardcodes `claude-haiku-4-5-20251001`).
+
+### R44 Section 7 systems JSON (2026-04-22)
+
+- `scripts/extract_poh_json.py` — `--pdf raw-pdfs/robinson/r44_poh_7_f5e97cee3e.pdf` `--section r44_systems` → `extracted-data/aircraft/r44_systems.json`
+- **33** top-level entries under `systems` (POH Section 7); **0** `confidence: verify` flags in model output
+- Source PDF: 36 pages; metadata `extracted_date` **2026-04-22**
+
+### Question bank pipeline — PowerShell wrappers (2026-04-22)
+
+Added:
+
+- `scripts/run_verify_commercial.ps1` — `verify_question_bank.py --input question-bank/qbank_commercial_helicopter.json`. (`verify_question_bank.py` has **no** `--rating` flag; use `--input` to select the bank.)
+- `scripts/run_generate_instrument.ps1` — `generate_question_bank.py --rating instrument`, then an inline Python count on `qbank_instrument_helicopter.json` (private’s `verify_private_question_count.py` is private-only).
+- `scripts/run_generate_cfi.ps1` — `--rating cfi`; first-line comment: overnight-scale cost — **do not run casually** (wrapper only in this session).
+- `scripts/run_generate_atp.ps1` — `--rating atp`; first-line comment: short/low-cost — **wrapper only** in this session.
+
+**Runs in progress (started same session):** `run_verify_commercial.ps1` and `run_generate_instrument.ps1` both started cleanly from repo root. Let them finish; review JSON and logs before commit.
+
 ### Full Private question bank (2026-04-14)
 
 - `scripts/run_generate_private.ps1` — full `--rating private` run (~13.7 h). Output: 16 areas, 57 tasks, 760 ACS API calls; `verify_private_question_count.py` total **6,744** questions — **PASS** (≥ 4,800). JSON remains gitignored.
 
 ### Question bank verifier (batched API) — built, not yet run
 
-- `scripts/verify_question_bank.py` — processes `question-bank/qbank_private_helicopter.json` in batches of 10 via `claude-sonnet-4-6`; writes `verification` on each question (PASS/FLAG) or removes FAIL rows and appends to `question-bank/verification_fails.log`; overwrites `question-bank/verification_summary.txt` each run.
+- `scripts/verify_question_bank.py` — processes `question-bank/qbank_private_helicopter.json` in batches of 10 via **`claude-haiku-4-5-20251001`** (`call_verifier_api()`); writes `verification` on each question (PASS/FLAG) or removes FAIL rows and appends to `question-bank/verification_fails.log`; overwrites `question-bank/verification_summary.txt` each run.
 - `scripts/run_verify_private.ps1` — wrapper: `.\.venv\Scripts\python.exe scripts\verify_question_bank.py --input question-bank/qbank_private_helicopter.json`
 - Ryan to review before first run (large API usage; updates JSON in place).
 
@@ -61,6 +82,7 @@ Present locally under `extracted-data/faa/` and `extracted-data/aircraft/`:
 |------|-------------------|--------------|
 | aircraft/r44_limitations.json | 8 | 0 |
 | aircraft/r44_emergency_procedures.json | 17 | 0 |
+| aircraft/r44_systems.json | 33 (`systems` keys) | 0 |
 | faa/FAA-H-8083-21B_Helicopter_Flying_Handbook.json | 7 topics | 0 |
 | faa/FAA-H-8083-4_Helicopter_Instructors_Handbook.json | 21 | 0 |
 | faa/FAA-H-8083-15B_Instrument_Flying_Handbook.json | 84 | 1 |
@@ -69,8 +91,8 @@ Present locally under `extracted-data/faa/` and `extracted-data/aircraft/`:
 | faa/FAA-S-ACS-16_Commercial_Helicopter_ACS.json | 14 areas | 0 |
 | faa/FAA-S-ACS-14_Instrument_Helicopter_ACS.json | 8 areas | 0 |
 
-Pending re-run after API credits: `r44_systems.json`, `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
-(batch stopped mid-run on 2026-04-11).
+Pending re-run after API credits (2026-04-11 batch): `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
+(`r44_systems.json` completed 2026-04-22).
 
 ### Extracted JSON — R66, Bell 206B3, Bell 407 (2026-04-14, committed)
 
@@ -176,10 +198,10 @@ billing is replenished, re-run the same command to fill Area I, then run without
 
 ## Next Steps (in order)
 
-1. Replenish Anthropic API credits; re-run `scripts/run_faa_r44_extract.ps1` to fill
-   `r44_systems.json`, `FAA-S-ACS-29_CFI_Helicopter_ACS.json`, and ATP ACS output
-   `extracted-data/faa/FAA-S-ACS-ATP_Helicopter_ACS.json` (pending extraction after
-   the batch runner completes)
+1. Replenish Anthropic API credits; re-run `scripts/run_faa_r44_extract.ps1` (or the
+   individual `extract_poh_json.py` calls) to fill `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
+   and ATP ACS output `extracted-data/faa/FAA-S-ACS-ATP_Helicopter_ACS.json` if still
+   missing. **`r44_systems.json` is current as of 2026-04-22.**
 2. Replenish credits and run `scripts/generate_question_bank.py --rating private --area I`
    to validate question output; then full private bank without `--area` after review
 3. Review verify flag counts across all extracted JSON (summary in table above)
@@ -214,6 +236,11 @@ billing is replenished, re-run the same command to fill Area I, then run without
 | extract_poh_json.py | raw text → structured JSON via API |
 | generate_question_bank.py | ACS + handbook JSON → oral exam question bank (Anthropic) |
 | run_generate_private.ps1 | Runs `generate_question_bank.py --rating private` |
+| run_verify_private.ps1 | Runs `verify_question_bank.py --input question-bank/qbank_private_helicopter.json` |
+| run_verify_commercial.ps1 | Verifies `qbank_commercial_helicopter.json` via `verify_question_bank.py --input …` |
+| run_generate_instrument.ps1 | Generates `qbank_instrument_helicopter.json` (`--rating instrument`) + count |
+| run_generate_cfi.ps1 | Generates CFI bank — overnight-scale; see script header |
+| run_generate_atp.ps1 | Generates ATP bank — short; see script header |
 | run_r22_full_extract.ps1 | R22 Sec 2, 3, 7 extraction |
 | run_faa_r44_extract.ps1 | FAA handbooks + ACS + R44 extraction |
 | run_expanded_library.ps1 | Engine manuals, PHAK, AIM, ACs download |
