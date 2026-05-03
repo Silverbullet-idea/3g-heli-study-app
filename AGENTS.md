@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-05-02 (FLAG pre-triage: `triage_flag_questions.py` + `run_triage_*.ps1`; prior housekeeping on `verify_question_bank.py`; prior 2026-04-22 `r44_systems.json` / question bank wrappers / commercial verification + instrument generation runs; prior 2026-04-14 R66 / Bell 206B3 / Bell 407 POH JSON extraction run)
+Last updated: 2026-05-03 (ATP Helicopter ACS extracted → `FAA-S-ACS-ATP_Helicopter_ACS.json` (11 areas); ATP question bank generated **2,072** questions to `qbank_atp_helicopter.json`; `run_triage_cfi.ps1` + `run_triage_atp.ps1` added; prior 2026-05-02 FLAG pre-triage; prior 2026-04-22 `r44_systems.json` / wrappers / commercial + instrument runs; prior 2026-04-14 R66 / Bell extractions)
 
 ---
 
@@ -15,6 +15,11 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### ATP ACS + question bank (2026-05-03)
+
+- **ATP Helicopter ACS PDF** — already at `raw-pdfs/faa/FAA-S-ACS-ATP_Helicopter_ACS.pdf`; `extract_poh_json.py --section faa_acs` → **`extracted-data/faa/FAA-S-ACS-ATP_Helicopter_ACS.json`** (11 `areas_of_operation`, 28 tasks, 0 verify flags).
+- **`scripts/run_generate_atp.ps1`** — full run: **259** ACS API calls → **`question-bank/qbank_atp_helicopter.json`** with **2,072** questions (gitignored).
 
 ### FLAG pre-triage (2026-05-02)
 
@@ -96,6 +101,7 @@ Present locally under `extracted-data/faa/` and `extracted-data/aircraft/`:
 | faa/FAA-S-ACS-15_Private_Helicopter_ACS.json | 14 areas | 0 |
 | faa/FAA-S-ACS-16_Commercial_Helicopter_ACS.json | 14 areas | 0 |
 | faa/FAA-S-ACS-14_Instrument_Helicopter_ACS.json | 8 areas | 0 |
+| faa/FAA-S-ACS-ATP_Helicopter_ACS.json | 11 areas | 0 |
 
 Pending re-run after API credits (2026-04-11 batch): `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
 (`r44_systems.json` completed 2026-04-22).
@@ -206,8 +212,9 @@ billing is replenished, re-run the same command to fill Area I, then run without
 
 1. Replenish Anthropic API credits; re-run `scripts/run_faa_r44_extract.ps1` (or the
    individual `extract_poh_json.py` calls) to fill `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
-   and ATP ACS output `extracted-data/faa/FAA-S-ACS-ATP_Helicopter_ACS.json` if still
-   missing. **`r44_systems.json` is current as of 2026-04-22.**
+   if still incomplete vs POH. **ATP ACS extraction is complete** (`FAA-S-ACS-ATP_Helicopter_ACS.json`,
+   2026-05-03); **`qbank_atp_helicopter.json`** generated with **2,072** questions (259 ACS items × 8/q).
+   **`r44_systems.json` is current as of 2026-04-22.**
 2. Replenish credits and run `scripts/generate_question_bank.py --rating private --area I`
    to validate question output; then full private bank without `--area` after review
 3. Review verify flag counts across all extracted JSON (summary in table above)
@@ -247,6 +254,8 @@ billing is replenished, re-run the same command to fill Area I, then run without
 | triage_flag_questions.py | Pre-triage FLAG rows via Haiku (APPROVE / EDIT / ESCALATE); updates `verification` in place; `--input` required |
 | run_triage_private.ps1 | Runs `triage_flag_questions.py --input question-bank/qbank_private_helicopter.json` |
 | run_triage_commercial.ps1 | Runs `triage_flag_questions.py --input question-bank/qbank_commercial_helicopter.json` |
+| run_triage_cfi.ps1 | Runs `triage_flag_questions.py --input question-bank/qbank_cfi_helicopter.json` |
+| run_triage_atp.ps1 | Runs `triage_flag_questions.py --input question-bank/qbank_atp_helicopter.json` |
 | run_generate_instrument.ps1 | Generates `qbank_instrument_helicopter.json` (`--rating instrument`) + count |
 | run_generate_cfi.ps1 | Generates CFI bank — overnight-scale; see script header |
 | run_generate_atp.ps1 | Generates ATP bank — short; see script header |

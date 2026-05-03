@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-May 2, 2026 — Initialized project knowledge files (`CONTEXT.md`, `STATUS.md`); reconciled question-bank counts and `verification_summary.txt` against on-disk JSON
+May 3, 2026 — ATP Helicopter ACS extracted to `extracted-data\faa\`; ATP question bank generated locally (2,072 questions); `run_triage_cfi.ps1` / `run_triage_atp.ps1` added
 
 ---
 
@@ -17,7 +17,10 @@ Complete question bank generation and verification runs; work through Private FL
 
 - **`CONTEXT.md` and `STATUS.md` added** at repo root — project knowledge system initialized (2026-05-02)
 - **`r44_systems.json` regenerated** — 33 systems sections, 0 `confidence: verify` flags per `AGENTS.md` (2026-04-22)
-- **PowerShell wrappers present:** `run_verify_commercial.ps1`, `run_generate_instrument.ps1`, `run_generate_cfi.ps1` (overnight-scale caution in script), `run_generate_atp.ps1` (low-cost caution in script)
+- **PowerShell wrappers present:** `run_verify_commercial.ps1`, `run_generate_instrument.ps1`, `run_generate_cfi.ps1` (overnight-scale caution in script), `run_generate_atp.ps1` (full ACS scale — ~259 API calls / multi-hour run for current ATP JSON)
+- **`run_triage_cfi.ps1` / `run_triage_atp.ps1`** — FLAG pre-triage wrappers (`triage_flag_questions.py`) for CFI and ATP banks (2026-05-03)
+- **ATP Helicopter ACS** — `extract_poh_json.py --section faa_acs` on `FAA-S-ACS-ATP_Helicopter_ACS.pdf` → `extracted-data\faa\FAA-S-ACS-ATP_Helicopter_ACS.json` (11 areas; on disk — stage/commit when ready)
+- **`qbank_atp_helicopter.json`** — **2,072** questions generated (2026-05-03); local only (gitignored)
 - **On-disk question banks (parsed 2026-05-02):**
   - `qbank_private_helicopter.json` — **6,396** questions; **521** with `verification.status == "FLAG"`
   - `qbank_commercial_helicopter.json` — **7,042** questions; **694** FLAG
@@ -42,13 +45,12 @@ Complete question bank generation and verification runs; work through Private FL
 1. Continue Private FLAG review until queue clears (Ryan / review server)
 2. Run or resume **Commercial** verification and **Instrument** generation to completion; then verify Instrument bank
 3. Run **CFI** generation when ready — `.\scripts\run_generate_cfi.ps1` (~858 ACS items — cost per `AGENTS.md` / script notes ?)
-4. Run **ATP** generation — `.\scripts\run_generate_atp.ps1` (~small ACS set per planning)
-5. Verify Commercial, Instrument, CFI, ATP banks after generation complete
+4. ~~Run **ATP** generation~~ — **done** (2026-05-03): `qbank_atp_helicopter.json` has **2,072** questions
+5. Verify Commercial, Instrument, CFI, **ATP** banks after generation complete
 6. **Build Phase 1 PDF output** — `render_study_sheet.py` against R22 extracted JSON → Private R22 study sheet set
-7. **ATP ACS JSON extraction** — no `FAA-S-ACS-*ATP*` JSON under `extracted-data\faa\` on disk (ATP ACS PDF noted in `docs\LIBRARY_INDEX.md` / library)
-8. Confirm **`FAA-S-ACS-29_CFI_Helicopter_ACS.json`** completeness vs any outstanding “pending re-run” notes in `AGENTS.md` (file **exists** with `areas_of_operation` populated — 2026-04-11 extract)
-9. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs (`lycoming.com/publications` 404s per `AGENTS.md`)
-10. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
+7. Confirm **`FAA-S-ACS-29_CFI_Helicopter_ACS.json`** completeness vs any outstanding “pending re-run” notes in `AGENTS.md` (file **exists** with `areas_of_operation` populated — 2026-04-11 extract)
+8. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs (`lycoming.com/publications` 404s per `AGENTS.md`)
+9. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
 
 ---
 
@@ -63,7 +65,6 @@ Complete question bank generation and verification runs; work through Private FL
 
 ### Blockers
 
-- **ATP ACS JSON** — not present under `extracted-data\faa\` (extraction/run pending)
 - **Lycoming engine manual URLs** returning 404 — O-360, O-540, IO-540 not yet in library (`AGENTS.md`)
 - **`rgl.faa.gov` DNS issue** — blocks AC 61-67D and AC 91-13D Advisory Circulars
 
