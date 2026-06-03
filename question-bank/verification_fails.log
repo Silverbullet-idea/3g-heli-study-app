@@ -1,0 +1,376 @@
+2026-04-14T18:37:51Z	PH.I.A.K4.002	The answer contains a factual error regarding the validity period of a Second Class medical certificate for private pilot privileges. Under 14 CFR 61.23(d), a Second Class medical certificate issued to a pilot age 40 or older is valid for 24 calendar months for Second Class privileges, but it is valid for 60 calendar months for Third Class (private pilot) privileges regardless of age. The answer incorrectly states that if the pilot was 40 or older at the time of examination, the certificate is valid for only 24 calendar months for private pilot privileges. The age-based distinction (under 40 = 60 months; 40 or older = 24 months) applies only to the duration of THIRD Class privileges derived from a Third Class medical, not to the Third Class privileges derived from a higher-class medical. For a Second Class medical, Third Class privileges last 60 months regardless of age. This is a significant factual error that could mislead a student.; Correct the answer as follows: Under 14 CFR 61.23(d), a Second Class medical certificate, when used to exercise private pilot (Third Class) privileges, is valid for 60 calendar months from the month of issuance regardless of the pilot's age at the time of examination. The age-based 24-month limitation applies only to Third Class medical certificates issued to pilots who were age 40 or older at the time of examination. Since 14 months is well within the 60-month window, the pilot's private privileges remain valid in either age scenario with a Second Class certificate.
+2026-04-14T18:38:07Z	PH.I.A.K5.005	BasicMed has NO geographic limitation restricting flight to the United States. The statute (49 U.S.C. 44703(f)) and 14 CFR Part 68 do not prohibit international flight under BasicMed. This was a commonly misunderstood point at BasicMed's introduction, but no such restriction exists in the regulation. The answer incorrectly grounds a pilot for an international flight that is not prohibited by BasicMed rules.; This error could directly harm a student by causing them to believe an illegal flight limitation exists when it does not, or by making them unnecessarily ground themselves for a legal flight.; BasicMed does not impose a geographic restriction limiting operations to the United States. There is no prohibition on flying to Canada or other countries under BasicMed, provided all other BasicMed conditions are met (weight, altitude, airspeed, passenger count, no compensation, etc.). The flight as described — five passengers, non-compensated, within other limits — would not violate BasicMed on the basis of destination. Note: the pilot must still comply with all applicable Canadian aviation regulations and may need to notify or satisfy Transport Canada requirements independently of FAA BasicMed rules.
+2026-04-14T18:44:03Z	PH.I.C.K1.006	HIWAS (Hazardous In-flight Weather Advisory Service) was permanently discontinued on December 8, 2020. The answer states HIWAS is 'where available' and describes it as a current resource, which is factually incorrect. Teaching students to rely on a decommissioned service is a safety concern.; Flight Watch on 122.0 MHz was also discontinued in 2015. The answer correctly states FSS is now consolidated and references 122.2 MHz, but the parenthetical mention of 'Flight Watch (now consolidated into FSS)' could cause confusion if students research Flight Watch separately and find conflicting historical information. The phrasing should clearly state Flight Watch no longer exists as a separate service.; Remove all reference to HIWAS as it was permanently discontinued December 8, 2020. Replace with: 'SiriusXM Weather or ADS-B In weather datalink services provide in-cockpit access to METARs, TAFs, AIRMETs, SIGMETs, and NEXRAD.' Also clarify that Flight Watch on 122.0 MHz was discontinued in 2015; pilots should contact FSS directly on 122.2 MHz or 1-800-WX-BRIEF for in-flight weather updates.
+2026-04-14T18:49:01Z	PH.I.D.K3.006	The answer cites 14 CFR 91.151(b) for the daytime VFR reserve requirement, but 14 CFR 91.151(b) governs NIGHT VFR fuel requirements (30-minute reserve). The DAYTIME VFR fuel reserve for helicopters is found in 14 CFR 91.151(b) — actually, daytime is 91.151(a)(2) for helicopters, requiring fuel to fly to the first point of intended landing plus 20 minutes at normal cruising speed. The regulatory citation should distinguish 91.151(a) (daytime) from 91.151(b) (nighttime). Labeling the daytime reserve as '91.151(b)' is incorrect and could mislead students into applying the wrong subsection.; Correct the regulatory reference to 14 CFR 91.151(a) for the daytime VFR helicopter fuel reserve requirement (fuel to first point of intended landing plus 20 minutes at normal cruise). Reserve 14 CFR 91.151(b) for the nighttime requirement (30 minutes). The answer body correctly states '20 minutes' for daytime, but the cited subsection (b) is wrong. Update reference to '14 CFR 91.151(a)' for this daytime scenario.
+2026-04-14T19:24:55Z	PH.II.C.K2.001	The answer states rotor blades should be positioned 'perpendicular to the fuselage (fore-and-aft)' before initiating engine start to prevent engagement against tie-down straps. This is factually incorrect and potentially dangerous guidance.; There is no FAA-standardized requirement to position rotor blades in a specific orientation before start. Standard procedure is to REMOVE all tie-down straps and ground locks before attempting engine start — not to position blades to avoid them. Attempting to start with tie-downs still attached regardless of blade position is dangerous.; The stated reason — preventing engagement 'against restraints' — implies the blades could be in a safe position with tie-downs attached, which is false and could mislead students into a dangerous practice.; FAA-H-8083-21B Chapter 8 does not contain this specific blade-positioning requirement. The correct pre-start action is removal of all restraints.; Replace with: Before engine start, verify that ALL rotor blade tie-downs, ground locks, and restraints have been removed during preflight. There is no FAA-standard requirement to position blades in a specific orientation prior to start. The correct action is to ensure no restraints are attached to the rotor system before engaging the starter. Some RFMs may specify wind considerations for when to engage the rotor, but the primary safety action is removal of all tie-downs during preflight inspection.
+2026-04-14T19:39:56Z	PH.IV.B.003	49 CFR 830.15 requires the written accident report to be filed within 10 days. However, this is correct. The question and answer are accurate on the 10-day rule. Upon closer review, the actual regulatory requirement under 49 CFR 830.15 is indeed 10 days for accidents. No factual error found — re-evaluating to PASS.
+2026-04-14T19:55:55Z	PH.V.A.S_Maintain.008	The answer states the ACS tolerance for a 5-foot hover altitude is '±2.5 feet,' implying a percentage-based tolerance. The ACS for Private Pilot Helicopter specifies a fixed tolerance of ±1 foot for hover altitude, not ±2.5 feet or 50% of the target altitude. This is factually incorrect and could cause a student to believe large altitude deviations are acceptable during a checkride.; Stating '8 feet exceeds the upper limit of 7.5 feet' is based on an incorrect tolerance calculation and would mislead students about checkride standards.; The general examiner evaluation philosophy described (holistic evaluation, considering gust recognition and recovery quality) is sound, but the foundational tolerance figure is wrong.; Correct the ACS tolerance to ±1 foot for hover altitude. At a 5-foot hover, the acceptable range is 4–6 feet AGL. An excursion to 8 feet therefore exceeds the tolerance by 2 feet. The remainder of the evaluative discussion about pilot recognition, smooth correction, and holistic assessment is appropriate and should be retained.
+2026-04-14T20:06:57Z	PH.V.B.008	The regulatory reference cites '14 CFR 91.503' as relevant to chart carriage requirements. 14 CFR 91.503 applies to large and turbine-powered multiengine airplanes and turbine-powered rotorcraft operated under Part 91 Subpart F (large and turbine operations), requiring aeronautical charts and publications on board. It does NOT apply to a Robinson R44, which is a small piston-powered helicopter. Citing 91.503 in the context of an R44 operation is factually incorrect and could mislead a student about what regulations actually apply to them.; The follow-up answer correctly states there is no specific VFR chart carriage requirement but then cites 14 CFR 91.503 as the reference — this is internally contradictory and the wrong regulation for the aircraft type described.; AC 91-78 relates to use of Class 1 or Class 2 EFBs and is superseded/administratively withdrawn; AC 91-78 was cancelled and replaced by updated guidance. Citing it as current may be inaccurate.; Remove 14 CFR 91.503 from the regulatory references for this question as it does not apply to a Robinson R44 (small piston rotorcraft). The correct regulatory framework for VFR chart carriage in a small helicopter is 14 CFR 91.9 (operating limitations) and general airworthiness/ADM standards — there is no specific VFR surface chart carriage mandate. Replace AC 91-78 with current EFB guidance (FAA EFB ARC recommendations or current advisory material). Correct the follow-up answer to remove the 91.503 citation when discussing the R44 scenario.
+2026-04-14T20:33:11Z	PH.V.D.Comply.006	The answer contains a significant factual error regarding sign colors. Per FAA AC 150/5340-18, a sign with a BLACK background and YELLOW text is a location sign (identifies current taxiway/runway). A sign with a YELLOW background and BLACK text is a direction sign or runway designation sign. The question states 'black background and white text,' but the answer incorrectly introduces 'black on yellow or yellow on black' and conflates sign types.; Runway designation signs at intersections have a RED background with WHITE text — not black background. A '27-9' sign with a red background would be a runway designation sign at an intersection. A black background with yellow text showing '27-9' would be a runway location sign indicating you are ON Runway 27-9.; The answer hedges with 'black on yellow or yellow on black depending on the type' without providing a definitive, accurate answer, which could confuse students on a safety-critical topic.; If the sign truly has a black background with white text (as stated in the question), this does not match standard FAA airport sign specifications for any common sign type, making the question itself potentially flawed.; Correct the sign color standards: Runway designation signs = RED background, WHITE text. Location signs = BLACK background, YELLOW text (not white). Direction signs = YELLOW background, BLACK text. The question should either be corrected to describe a red-background sign (runway designation at intersection) or a black/yellow sign (location sign). The answer must unambiguously state the correct color coding per AC 150/5340-18.
+2026-04-17T20:24:11Z	PH.V.C.Aircraft.003	The answer contains contradictory statements. First sentence states landing lights are required 'only for aircraft operated for hire at night.' Second sentence then states '14 CFR 91.205(c)(3) requires a landing light for aircraft operated for hire at night.' The actual regulatory requirement in 14 CFR 91.205(c) is that aircraft operated for hire at night must have a landing light. The answer then incorrectly suggests non-hire operations have no landing light requirement, which is accurate for the regulation, but the initial phrasing is contradictory and confusing.; The answer lacks clarity on the distinction between 'for hire' and 'not for hire' operations. For non-hire night operations, landing lights are indeed not required by 91.205, but the answer should state this clearly rather than burying it.; Revise to: 'Under 14 CFR 91.205(c), helicopters operated FOR HIRE at night must be equipped with a landing light. For non-hire night operations, landing lights are not specifically mandated by regulation, though highly recommended for safety during air taxi. However, when operating for hire at night, landing lights are required equipment.'
+2026-04-17T20:46:06Z	PH.VI.G.Determine.001	The answer contains a critical factual error. A windsock points in the direction the wind is coming FROM, not the direction it is blowing TO. If the sock points northeast, the wind is FROM the northeast, not from the southwest. The answer states the opposite of the correct principle.; A windsock points into the wind — the direction the wind is coming FROM. If the sock points northeast, the wind is from the northeast. You should orient your approach into the wind, flying a northeasterly heading toward the pinnacle to maintain ETL benefit and maximum translational lift.
+2026-04-17T20:55:17Z	PH.VI.B.S11.005	Answer contains a critical factual error. It states: 'Without right pedal input, the helicopter will begin a left yaw.' This is incorrect. For a standard counterclockwise-rotating main rotor (viewed from above), increasing torque from restoring engine power causes the fuselage to yaw LEFT naturally due to Newton's third law. The answer contradicts itself by first correctly identifying that torque causes leftward yaw, but then suggests the nose will yaw left without right pedal correction—which is backwards. Right pedal is applied to PREVENT the left yaw that occurs naturally when power is restored. The correct statement is: without right pedal, the nose will yaw LEFT due to increased torque. This is a serious factual error that could confuse a student about fundamental helicopter physics and control inputs.; As collective is raised and engine power is restored, increasing torque will yaw the nose to the LEFT (for standard counterclockwise-rotating U.S. helicopters). Without right pedal input to counteract this torque, the helicopter will yaw left. The student must be taught to anticipate this torque increase and apply right pedal progressively as collective is raised, just as in any normal power application. This is a fundamental coordination requirement.
+2026-04-17T20:55:34Z	PH.VI.C.K1.001	Answer contains a fundamental aerodynamic error: states 'A headwind increases glide distance into the wind because it increases the helicopter's airspeed relative to the ground' — this is backwards. A headwind DECREASES groundspeed, which DECREASES glide distance over the ground. The answer then contradicts itself by correctly stating 'Conversely, a tailwind decreases groundspeed' — but a tailwind INCREASES groundspeed, not decreases it.; The correct principle: In autorotation, airspeed (relative to the air) and rate of descent (relative to the air) remain approximately constant. A HEADWIND reduces groundspeed and thus REDUCES glide distance over the ground. A TAILWIND increases groundspeed and INCREASES glide distance over the ground. The answer has inverted both effects.; A headwind decreases glide distance over the ground because it reduces groundspeed. Although airspeed and rate of descent relative to the air mass remain constant, the reduced groundspeed means the helicopter covers less distance over the terrain. Conversely, a tailwind increases groundspeed and increases glide distance over the ground. During turns, wind drift must be continuously accounted for as the relative headwind or tailwind component changes throughout the maneuver.
+2026-04-17T20:58:24Z	PH.VI.C.S8.004	Answer contains a critical factual error: the answer states 'raise the collective slightly to increase blade pitch' to control high Nr. This is backwards. Raising collective increases blade pitch AND drag, which slows the rotor and brings Nr DOWN. The answer correctly describes the outcome (Nr back into middle of green arc) but uses the wrong control input direction.; The correct action when Nr is HIGH and trending toward red is to LOWER collective slightly to decrease blade pitch and drag, allowing the rotor to speed up and stabilize. The answer has reversed the collective input direction.; If Nr is trending high toward the red line during the turn, the correct immediate action is to slowly LOWER the collective slightly to decrease blade pitch and reduce rotor drag, which allows Nr to stabilize or come down slightly into the normal range. Raising collective (as stated in the answer) would increase drag and cause Nr to DECREASE further, which is the opposite of what you need when Nr is already high. The answer's explanation of the outcome is contradictory to the control input described.
+2026-04-17T20:59:36Z	PH.VII.A.K4b.002	The answer contains a critical factual error. 14 CFR 91.159 explicitly applies to helicopters as well as airplanes. The regulation states 'Each person operating an aircraft in level cruising flight or holding pattern shall maintain an appropriate altitude or flight level...' This applies to all aircraft including helicopters.; The answer incorrectly states that helicopters are exempt from VFR cruising altitude rules. Helicopters must comply with 91.159 just like fixed-wing aircraft, though 91.159(d) provides a limited exception for helicopters operating below 3,000 feet AGL.; The claim that helicopters have 'greater flexibility in altitude selection' due to an exemption from 91.159 is false and could lead to a pilot violating the regulation.; 14 CFR 91.159 applies to helicopters as well as airplanes. Helicopters operating in level cruising flight above 3,000 feet AGL must observe the same odd/even thousand-plus-500-foot rule based on magnetic heading. However, 91.159(d) exempts helicopters operating below 3,000 feet AGL from these altitude rules. This provides some flexibility for low-altitude helicopter operations, but helicopters are NOT exempt from cruising altitude rules at altitude.
+2026-04-17T21:05:06Z	PH.I.E.S1.001	Answer states 1/2 statute mile visibility and clear of clouds for Class G below 1,200 feet AGL during day. This is incorrect. Per 14 CFR 91.155(b), helicopters may operate with 1/2 SM visibility and clear of clouds only in Class G airspace. However, the correct entry in the table shows: in Class G at or below 1,200 feet AGL during the day, the minimums are 1 SM visibility and clear of clouds for most operations. The 1/2 SM exception applies only under specific helicopter-exclusive provisions for certain types of operations, not broadly. The answer conflates helicopter special provisions with incorrect minimums.; In Class G airspace at or below 1,200 feet AGL during the day, helicopters require 1 statute mile visibility and must remain clear of clouds under standard VFR minimums per 14 CFR 91.155(a). The 14 CFR 91.155(b) table does show 1/2 SM visibility for helicopters in Class G below 1,200 feet AGL only - this is correct for helicopters. However, verify the exact regulatory text: 14 CFR 91.155(b) states for Class G surface to 1,200 feet AGL during day: helicopters 1/2 SM visibility, clear of clouds. The original answer is actually correct per 91.155(b). Recommend review of regulatory text to confirm.
+2026-04-17T21:15:25Z	PH.V.C.Aircraft.003	The answer contradicts itself. The first sentence correctly states that landing lights are required only for aircraft operated for hire at night. The second sentence then repeats this requirement (14 CFR 91.205(c)(3)) but the citation and logic are circular and confusing.; 14 CFR 91.205(c) does NOT specifically require landing lights for helicopters. Landing lights are listed in 14 CFR 91.205(c) but the regulatory requirement for them is limited to aircraft operated FOR HIRE at night. For non-hire operations, landing lights are NOT required even at night.; The answer creates regulatory confusion by citing 91.205(c)(3) as if it is a standalone requirement, when in fact 91.205(c) is the night equipment list for for-hire operations.; Under 14 CFR 91.205(c), helicopters operated for hire at night must have landing lights. For non-hire night operations, landing lights are NOT required by regulation. During daytime air taxi operations (regardless of for-hire status), landing lights are not required by 14 CFR 91.205. However, they are highly recommended for safety and visibility during air taxi. The correct citation is 14 CFR 91.205(c) as the for-hire night equipment list.
+2026-04-17T21:35:22Z	PH.VI.F.S-SELECT.001	Answer states to 'reposition the helicopter to the most downwind area' for takeoff. This is INCORRECT. For a maximum performance takeoff, the helicopter should position at the most UPWIND (into-wind) edge to maximize headwind benefit for translational lift and reduce ground distance required. Positioning downwind would degrade performance significantly.; The answer then contradicts itself by stating 'taking off into the wind,' confirming the error in the initial instruction.; You should reposition the helicopter to the most UPWIND (into-wind) area of the confined area before beginning the takeoff. This maximizes the headwind component, which improves translational lift onset, reduces ground speed at obstacle crossing, and minimizes the takeoff distance required to clear obstacles.
+2026-04-17T21:38:09Z	PH.VI.G.Determine.001	The answer contains a critical factual error about windsock interpretation. The statement 'A windsock points in the direction the wind is blowing TO' is incorrect. A windsock is filled by the wind and points in the direction the wind is blowing FROM (i.e., points downwind). If the sock points northeast, the wind is FROM the northeast (not southwest as stated). This is a fundamental error that would lead to incorrect approach planning and creates a safety hazard.; Correct answer: 'A windsock is blown by the wind and points in the direction the wind is coming FROM. If the sock points northeast, the wind is coming FROM the northeast. You should approach INTO the wind, flying a northeasterly heading toward the pinnacle to maintain ETL benefit and maximum translational lift.'
+2026-04-17T21:49:56Z	PH.VI.C.S8.004	CRITICAL ERROR: Answer states to RAISE collective when Nr is trending HIGH. This is aerodynamically incorrect and contradicts fundamental rotor control principles.; Raising collective INCREASES blade pitch and drag, which INCREASES rotor load and further accelerates Nr upward — the opposite of the intended effect.; Correct action when Nr is HIGH is to LOWER collective slightly to DECREASE blade pitch and drag, allowing Nr to stabilize.; This is a safety-critical error that could teach a student dangerously incorrect technique and lead to rotor overspeed and potential structural damage.; If Nr is trending high toward the red line during the turn, the correct immediate action is to slowly LOWER the collective slightly to DECREASE blade pitch, which reduces rotor drag and allows the rotor to slow to the middle of the green arc. You should also verify airspeed is not excessive, and consider reducing bank angle slightly if geometry allows. Do not raise collective when Nr is high — this adds drag and accelerates the rotor further.
+2026-04-17T21:51:12Z	PH.VII.A.K4b.002	The answer states that 14 CFR 91.159 applies only to airplanes and helicopters are exempt. This is factually incorrect. 14 CFR 91.159 explicitly applies to 'aircraft,' which includes helicopters. The regulation makes no exception for helicopters. Helicopters ARE required to comply with VFR cruising altitude rules under 91.159.; 14 CFR 91.159 applies to ALL aircraft, including helicopters, operating in level cruising flight above 3,000 feet AGL. The odd/even thousand-plus-500-feet rule applies to helicopters just as it does to airplanes. Helicopters do NOT have an exemption from this requirement.
+2026-04-17T21:53:25Z	PH.VII.B.K1.007	The answer contains a self-contradiction. It initially states 'a 5-degree difference...is within the allowable ±4-degree tolerance' then immediately says 'wait, actually this is NOT within tolerance.' This is confusing and unprofessional for an exam answer. The correction is correct (5 degrees exceeds ±4 limit), but the phrasing undermines confidence.; While the regulatory conclusion is correct, the presentation format with the self-correction ('wait, actually...') is inappropriate for an oral exam answer or study material. It reads as if the answer was uncertain.; Rewrite cleanly: 'No, a 5-degree difference between two independent VOR receivers exceeds the ±4-degree tolerance required under the dual VOR check method of 14 CFR 91.171. The check is invalid, and neither receiver is acceptable for IFR use until a proper check is completed and both receivers are found within tolerance. If the crew attempted to use a receiver with excessive error, course tracking would be off and could place the aircraft outside protected airspace or obstacle clearance zones, particularly critical during approaches.'
+2026-04-17T21:56:23Z	PH.VII.C.S4.002	Factually incorrect answer. The altimeter is NOT the primary pitch instrument during straight-and-level flight.; During straight-and-level flight, the ATTITUDE INDICATOR (or ARTIFICIAL HORIZON) is the primary pitch instrument. The altimeter is a supporting cross-check instrument used to verify that pitch control is maintaining the selected altitude.; This is a fundamental instrument flying concept taught in FAA-H-8083-15B and is core to the ACS. Confusing primary and supporting instruments represents a significant knowledge gap that could affect flight safety.; The attitude indicator is the primary pitch instrument during straight-and-level flight because it directly displays the aircraft's pitch attitude. The altimeter is a supporting instrument that confirms the pitch control is maintaining altitude. The student should cross-check the altimeter to ensure ±200-foot tolerance, but it is not the primary reference for pitch control.
+2026-04-17T22:10:48Z	PH.VIII.H.S1.002	CRITICAL ERROR: The critical rollover angle is stated as 8-12 degrees, which is correct. However, this answer contradicts the 35-degree figure provided in PH.VIII.H.R7.005 and PH.VIII.H.R7.007. The 8-12 degree figure is correct per FAA-H-8083-21B.; This question itself is correctly answered, but the answer pool contains a major factual contradiction on this crucial safety parameter.; This answer is correct as written (8-12 degrees). The error lies in PH.VIII.H.R7.005 and PH.VIII.H.R7.007, which must be corrected to align with this accurate standard.
+RYAN_REJECT	2026-04-17T22:39:20Z	PH.I.A.K2.005	Manual rejection during review
+RYAN_REJECT	2026-04-17T22:40:19Z	PH.I.A.K4.001	Manual rejection during review
+RYAN_REJECT	2026-04-17T22:50:09Z	PH.V.B.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T22:51:06Z	PH.V.B.S008	Manual rejection during review
+RYAN_REJECT	2026-04-17T22:54:56Z	PH.X.G.R3.007	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:00:49Z	PH.V.A.Effect.004	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:01:25Z	PH.V.E.Effect.007	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:01:48Z	PH.I.D.S1.006	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:02:28Z	PH.I.D.S3.004	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:03:10Z	PH.I.H.R4.008	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:04:29Z	PH.II.C.R1.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:04:46Z	PH.IV.A.001	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:05:15Z	PH.IV.A.RM.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:06:00Z	PH.IV.B.008	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:07:43Z	PH.V.A.S_Maintain.005	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:08:59Z	PH.V.B.Visual.005	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:10:28Z	PH.V.B.RM.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:10:54Z	PH.V.B.005	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:09Z	PH.V.D.Procedures.c.005	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:13Z	PH.V.E.RM.Conditions.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:14Z	PH.V.E.S.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:17Z	PH.V.E.S008	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:21Z	PH.VI.B.RM.VRS.003	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:24Z	PH.VI.B.RM.LTE.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:30Z	PH.VI.B.S-WIND.003	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:32Z	PH.VI.C.RM.Effects.008	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:34Z	PH.VI.D.A.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:36Z	PH.VI.D.Effects.003	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:12:55Z	PH.VI.D.RM.Collision.001	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:17:28Z	PH.VI.F.Terminate.003	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:18:05Z	PH.V.H.R4.006	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:20:01Z	PH.VI.C.K1.003	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:23:04Z	PH.VI.C.S9.001	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:23:31Z	PH.VII.A.K4b.001	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:23:55Z	PH.VII.A.K4b.005	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:27:09Z	PH.IX.A.K7.005	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:32:07Z	PH.VII.A.S4.005	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:37:32Z	PH.VIII.A.K3.007	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:37:56Z	PH.VIII.A.R3.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:39:08Z	PH.VIII.A.S5.005	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:39:19Z	PH.VIII.A.S5.005	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:39:59Z	PH.VIII.B.K2.008	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:41:29Z	PH.VIII.B.S5.001	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:42:37Z	PH.X.G.R3.006	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:43:13Z	PH.VIII.H.R4.007	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:44:46Z	PH.VIII.H.R7.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:44:52Z	PH.VIII.H.R7.007	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:44:57Z	PH.XII.A.Lighting.004	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:46:21Z	PH.XII.A.002	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:54:02Z	PH.XII.A.S005	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:54:15Z	PH.XV.B.RM.003	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:54:56Z	PH.XV.B.RM.003	Manual rejection during review
+RYAN_REJECT	2026-04-17T23:55:07Z	PH.XVI.D.RM001	Manual rejection during review
+RYAN_REJECT	2026-04-18T16:55:37Z	PH.I.F.R7.001	Manual rejection during review
+RYAN_REJECT	2026-04-18T16:56:54Z	PH.I.G.R1.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:01:11Z	PH.II.B.K3.003	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:05:47Z	PH.II.B.S4.002	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:12:15Z	PH.IV.B.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:13:25Z	PH.V.A.Ascend.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:13:58Z	PH.V.A.S_Maintain.007	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:41:52Z	PH.V.B.004	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:43:00Z	PH.V.D.Comply.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:43:19Z	PH.V.E.DR.007	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:46:56Z	PH.V.E.S007	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:47:44Z	PH.VI.G.RM.Selection.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T17:48:29Z	PH.VI.G.S_checklist.002	Manual rejection during review
+RYAN_REJECT	2026-04-18T18:09:36Z	PH.VIII.A.S4.006	Manual rejection during review
+RYAN_REJECT	2026-04-18T18:18:16Z	PH.I.C.R2.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T18:59:52Z	PH.I.C.S3.003	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:00:10Z	PH.I.D.K2.004	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:00:21Z	PH.I.D.R4.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:02:09Z	PH.I.D.S4.004	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:05:13Z	PH.I.F.R6.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:09:26Z	PH.I.H.R1.007	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:23:33Z	PH.II.A.R5.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:25:28Z	PH.II.B.K2.006	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:42:16Z	PH.II.B.S3.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:43:03Z	PH.II.C.K1.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:53:11Z	PH.III.A.Purpose.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:56:45Z	PH.IV.A.002	Manual rejection during review
+RYAN_REJECT	2026-04-18T19:58:36Z	PH.IV.A.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:00:26Z	PH.IV.B.S-FREQ.007	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:00:33Z	PH.IV.C.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:02:07Z	PH.IV.C.006	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:03:51Z	PH.IV.C.RM.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:05:29Z	PH.IV.C.S006	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:06:25Z	PH.V.A.RM.Powerplant.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:08:09Z	PH.V.B.001	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:10:12Z	PH.V.B.Aircraft.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:12:06Z	PH.V.B.S.004	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:12:17Z	PH.V.B.S1.006	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:12:47Z	PH.V.B.S1.001	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:13:55Z	PH.V.C.003	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:20:14Z	PH.V.C.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:21:34Z	PH.V.C.SK.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:23:22Z	PH.V.C.S1.006	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:25:19Z	PH.V.C.Comply.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:26:08Z	PH.V.D.007	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:38:25Z	PH.V.D.RM.001	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:39:49Z	PH.V.D.RM.003	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:39:58Z	PH.V.D.001	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:40:09Z	PH.V.D.Position.001	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:40:14Z	PH.V.D.Comply.001	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:42:46Z	PH.V.E.Effect.003	Manual rejection during review
+RYAN_REJECT	2026-04-18T20:59:03Z	PH.V.E.RM.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T21:03:46Z	PH.V.E.S006	Manual rejection during review
+RYAN_REJECT	2026-04-18T21:04:21Z	PH.V.E.S005	Manual rejection during review
+RYAN_REJECT	2026-04-18T21:07:09Z	PH.VI.A.RM.Effects.001	Manual rejection during review
+RYAN_REJECT	2026-04-18T21:08:13Z	PH.VI.A.RM.Effects.006	Manual rejection during review
+RYAN_REJECT	2026-04-18T21:08:44Z	PH.VI.A.S_RIA.007	Manual rejection during review
+RYAN_REJECT	2026-04-18T21:10:23Z	PH.VI.B.SKL-RC.005	Manual rejection during review
+RYAN_REJECT	2026-04-18T21:43:19Z	PH.VI.B.Establish.002	Manual rejection during review
+RYAN_REJECT	2026-04-18T21:44:19Z	PH.VI.C.Effects.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T21:46:29Z	PH.VI.D.Effects.006	Manual rejection during review
+RYAN_REJECT	2026-04-18T21:47:22Z	PH.VI.D.RM.Effects.002	Manual rejection during review
+RYAN_REJECT	2026-04-18T22:00:59Z	PH.VI.E.Effects.002	Manual rejection during review
+RYAN_REJECT	2026-04-18T22:01:41Z	PH.VI.E.RM.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T22:03:22Z	PH.VI.F.RM.002	Manual rejection during review
+RYAN_REJECT	2026-04-18T22:03:38Z	PH.VI.F.RM.008	Manual rejection during review
+RYAN_REJECT	2026-04-18T22:04:47Z	PH.VI.F.RM.001	Manual rejection during review
+RYAN_REJECT	2026-04-18T22:17:52Z	PH.VI.F.S-RC.002	Manual rejection during review
+2026-04-22T16:29:06Z	CH.I.A.S1.007	The answer states that BasicMed has a turbine aircraft restriction ('You are operating under BasicMed as a private pilot flying a turbine-powered helicopter'). This is INCORRECT — BasicMed does NOT prohibit turbine-powered aircraft. BasicMed applies to any aircraft with MTOW ≤ 12,500 lbs regardless of powerplant.; The follow-up answer compounds the error by not correcting the turbine misstatement. The turbine aspect is irrelevant to BasicMed eligibility.; The answer correctly identifies the 12,500 lb MTOW limit and correctly denies BasicMed eligibility based on the 12,800 lb certificated max gross weight, but the turbine reference is a significant regulatory error that contradicts the critical update notice.; BasicMed authorization under 14 CFR 61.113(i) and Part 68 applies to aircraft with a maximum certificated takeoff weight of no more than 12,500 lbs. There is NO restriction on turbine-powered aircraft. The 12,800 lb MTOW disqualifies this aircraft from BasicMed operation regardless of powerplant type. The remaining limitations cited (6 occupants, 18,000 ft, 250 KIAS, U.S. only, no compensation, valid physician exam within 48 months, medical education within 24 months) are correct.
+2026-04-22T16:32:33Z	CH.I.D.R6.001	CRITICAL REGULATORY ERROR: The answer states that helicopters operating IFR under 14 CFR Part 91 require 30 minutes of fuel reserve, implying different rules than fixed-wing aircraft. This is incorrect. 14 CFR 91.167(b) specifies that all aircraft (including helicopters) operating IFR must have fuel to reach the first airport of intended landing, fly to the alternate (if required), and then fly for 45 minutes at normal cruising speed. The answer incorrectly claims a helicopter-specific 30-minute reserve exists — it does not. This is a safety-critical error that could lead a pilot to depart with insufficient fuel.; Under 14 CFR 91.167(b), both helicopters and fixed-wing aircraft must carry fuel to reach the first airport of intended landing, proceed from that airport to the alternate airport (if one is required), and then fly for 45 minutes at normal cruising speed. There is no separate 30-minute reserve for helicopters. This applies to all IFR operations under Part 91.
+2026-04-22T16:33:55Z	CH.I.E.R1.008	CRITICAL ERROR: BasicMed maximum gross weight limit is stated as 6,000 lbs — this is INCORRECT. BasicMed allows operations up to 12,500 lbs (not 6,000 lbs per critical regulatory update).; CRITICAL ERROR: BasicMed restrictions do not include a 'distance limitation' — the answer does not mention distance but omits distance restriction clarification; however, the stated 6,000 lb limit is factually wrong and directly contradicts the regulatory update.; No mention of turbine aircraft restriction — while BasicMed does not restrict turbine aircraft, the answer fails to provide complete BasicMed parameter summary.; Correct BasicMed eligibility section: 'Under 14 CFR Part 68 and 61.113(i), BasicMed permits operations up to 12,500 lbs maximum gross weight, up to 6 occupants, within the United States, in aircraft with no distance limitations, not for compensation or hire.' Remove the 6,000 lb reference entirely. The rest of the airspace risk analysis is sound.
+2026-04-22T16:36:28Z	CH.I.H.R1.001	Answer states visual system is most reliable in IMC, which is incorrect. In IMC (Instrument Meteorological Conditions), visual references are unavailable. The correct answer is that instruments are most reliable in IMC, not the visual system. Visual system is most reliable in VMC (Visual Meteorological Conditions).; The answer conflates 'most reliable' with 'most reliable when available' — but in IMC by definition visual cues are absent, making instruments (not visual) the only reliable reference.; The three sensory systems are visual, vestibular (inner ear), and postural (proprioceptive). In IMC, visual references are unavailable; therefore, instruments are the most reliable source for spatial orientation. The vestibular and postural systems are easily deceived by motion and G-forces, making them unreliable without outside visual references or instruments. Instrument pilots must trust their instruments over physical sensations, especially in IMC.
+2026-04-22T16:57:02Z	CH.IV.D.S4.003	Answer states 'hold the cyclic aft — toward the wind' during a direct tailwind. This is incorrect. A direct tailwind means wind from behind; the cyclic should be held FORWARD (into the wind, which means forward since wind is from aft). Holding aft cyclic during a tailwind would aggravate nose-down pitch and instability.; The rationale is backwards: tailwind pushes the aft fuselage down and nose up, not the reverse. Forward cyclic (into the wind) counters this tendency.; With a direct tailwind, hold the cyclic FORWARD (into the wind) to prevent the tail from pitching down and the nose from lifting. A tailwind pushes against the aft fuselage, tending to lift the tail and pitch the nose up. Forward cyclic input counters this and keeps the aircraft stable and firmly planted on the ground.
+2026-04-22T16:57:41Z	CH.IV.D.S10.006	The answer contains a critical error in describing taxiway sign color schemes. The answer states: 'Location signs always have yellow letters on black; direction signs have black letters on yellow.' This is backwards and contradicts AIM Chapter 2-3-8. Correct scheme: Location signs have BLACK letters on YELLOW background; Direction signs have YELLOW letters on BLACK background. The question correctly states 'yellow sign with black lettering' for ALPHA (location) and 'black background with yellow lettering' for B (direction), but the answer's stated rule is inverted.; The yellow sign with black lettering ('ALPHA') is a location sign — it tells you that you are currently on taxiway Alpha. The black background with yellow lettering sign ('B') is a direction sign — it indicates that taxiway Bravo intersects ahead and the direction to turn. Location signs have BLACK letters on YELLOW background; direction signs have YELLOW letters on BLACK background. (Note: The question itself is correct; the answer's generalization about sign conventions is inverted.)
+2026-04-22T17:00:14Z	CH.IV.E.S11.002	The answer contains a direct factual error. It states 'The upslope (high-side) skid leaves the ground last during landing, and correspondingly, the downslope (low-side) skid lifts off first during departure.' This is backwards. During a slope landing, the downslope skid touches down first; during departure, the upslope skid should lift first (or both simultaneously if properly leveled). The sequence is reversed in this answer.; The answer then contradicts itself by stating the correct technique is to level first so both skids leave simultaneously, which is the right procedure, but this directly negates the erroneous skid-liftoff sequence stated earlier.; During a slope landing, the upslope (high-side) skid contacts the ground first. During departure, correspondingly, the downslope (low-side) skid lifts first as the helicopter levels with cyclic input. However, the correct technique is to level the helicopter with cyclic input while still on the slope so that both skids lift simultaneously or nearly so, eliminating the rollover risk of unequal weight distribution during lift-off.
+2026-04-22T17:08:33Z	CH.V.D.S5.002	The answer is factually inverted. In a steep approach, ETL is typically GAINED at a LOWER altitude (closer to the ground) compared to a normal approach, not at a higher altitude. The steeper angle of descent combined with forward speed means the helicopter continues in a descent attitude longer and may not achieve ETL until lower altitudes. The statement 'ETL is lost at a higher altitude' and 'transitions through ETL earlier' is incorrect.; The corrective guidance about increasing collective earlier is backward — if ETL occurs later/lower in a steep approach, the pilot must manage descent through the region below ETL differently, not increase collective earlier.; Revise to: 'In a steep approach, ETL typically occurs at a LOWER altitude above the ground than during a normal approach, because the steeper descent angle and forward speed profile delay the transition to forward flight. The pilot must manage the approach with disciplined collective input as ETL is lost to control sink rate, and be prepared for higher power requirements in the final feet as the helicopter transitions to hover near the ground.'
+2026-04-22T17:13:20Z	CH.V.G.K2.002	CRITICAL: The answer contains a fundamental misconception about tailwind effects on ETL. ETL is achieved based on TRUE AIRSPEED relative to the airmass, NOT groundspeed. A tailwind increases true airspeed while reducing groundspeed, thereby IMPROVING ETL achievement and rotor efficiency during acceleration, not degrading it.; The statement 'a tailwind requires the helicopter to achieve a higher groundspeed before reaching ETL' is backwards and contradicts aerodynamic principles.; The claim that 'a tailwind effectively reduces airspeed margin over obstacles' conflates groundspeed with airspeed; tailwind reduces groundspeed but increases true airspeed.; The final statement 'tailwind increases power required to maintain a given airspeed' is misleading in the context of go-around; at a given TAS, a tailwind actually reduces power required.; A tailwind during a go-around is BENEFICIAL to achieving effective translational lift because ETL depends on true airspeed (TAS), not groundspeed. A tailwind increases the helicopter's TAS while reducing groundspeed, allowing ETL to be achieved at a lower groundspeed and requiring less distance to transition to forward flight. However, a tailwind DOES increase groundspeed over the terrain, which increases distance traveled over the landing zone during the initial go-around phase and reduces the margin to clear obstacles downwind. The primary concern with a tailwind during go-around is obstacle clearance and ground distance required, not ETL achievement. Pilots should avoid go-arounds with significant tailwinds due to reduced obstacle clearance margin and increased ground distance, despite the aerodynamic benefit to ETL.
+2026-04-22T17:20:09Z	CH.VIII.C.Effects.001	The answer contains a critical factual error. A headwind DECREASES glide distance over the ground, not increases it. The answer states the opposite of correct aerodynamic principles.; The explanation is internally contradictory: it correctly notes 'groundspeed is reduced' but then incorrectly concludes this increases glide distance. Reduced groundspeed with the same descent rate means LESS horizontal distance covered.; A headwind increases the time aloft but decreases ground distance; a tailwind decreases ground distance even more dramatically.; A headwind DECREASES glide distance over the ground compared to no wind. While a headwind reduces groundspeed, this means the aircraft covers less horizontal distance for each unit of altitude lost. A tailwind would similarly reduce glide distance over the ground. For maximum glide distance, the pilot would want to autorotate in a headwind to maximize altitude-to-distance conversion, but the absolute ground distance is still less than a no-wind scenario. The key distinction: headwind increases time available and glide ratio, but decreases ground distance.
+2026-04-22T17:24:33Z	CH.IX.A.005	Critical error in deviation application logic: The answer states '+4° deviation means compass reads 4° high (toward north)' and then states 'subtract the +4° deviation to get 266°'. This is internally contradictory and procedurally incorrect.; Correct logic: +4° deviation means the compass reads 4° HIGH (numerically higher/faster) than magnetic heading. If magnetic heading is 270° and compass reads HIGH, the compass shows approximately 274°. To fly 270° magnetic with +4° deviation, you must fly a compass heading of 266° (270° - 4°). While the final answer of 266° is correct, the explanation of what '+4° high' means is confused.; The memory aid 'TV Mad Compass' is correct, but the explanation of how to apply it to this specific problem conflates 'reads high' with 'reads toward north' — these are not always the same direction on all headings.; Clarify: A +4° deviation means the compass reads 4° numerically higher than the magnetic heading on this particular heading of 270°. Since the compass reads high, it is reading approximately 274°. To correct for this and fly 270° magnetic, subtract: 270° - 4° = 266° compass heading. The direction 'high' refers to numerically higher, not necessarily toward north.
+RYAN_REJECT	2026-04-22T17:35:10Z	PH.VI.G.RM.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T17:35:34Z	PH.VI.G.S_radio.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T17:35:55Z	PH.V.H.S4.006	Manual rejection during review
+2026-04-22T17:45:39Z	CH.X.J.001	The answer states that 'applying aft cyclic while the rotor is unloaded is the primary control input that causes mast bumping' and then states 'the correct recovery from low-G is to apply gentle right lateral cyclic... to reload the rotor before any aft cyclic input.' This is contradictory and factually incorrect based on FAA-H-8083-21B. The correct low-G recovery procedure is to apply aft cyclic (not lateral/right cyclic) to reload the rotor. Lateral cyclic during low-G is what causes mast bumping.; The correct recovery from low-G is to apply gentle AFT cyclic (to increase rotor thrust and restore positive G loading), NOT right lateral cyclic. Lateral cyclic during low-G is the dangerous input that can trigger mast bumping. Revise the answer to state: 'The correct recovery from low-G is to apply gentle aft cyclic to reload the rotor and restore positive G. Lateral cyclic inputs during low-G conditions are what create the risk of mast bumping.'
+2026-04-22T17:45:39Z	CH.X.J.002	This answer contains a critical factual error. It states 'Applying aft cyclic while the rotor is unloaded (low-G condition) is the primary control input that causes mast bumping' and then contradicts itself by stating 'The correct recovery from low-G is to apply gentle right lateral cyclic... to reload the rotor before any aft cyclic input.' This is backwards. Per FAA-H-8083-21B Chapter 11, aft cyclic is the correct recovery input for low-G. It is LATERAL cyclic that causes mast bumping during low-G conditions.; The answer has the recovery procedure completely reversed. Correct version: 'LATERAL cyclic input (not aft cyclic) while the rotor is unloaded is the primary control input that causes mast bumping. The correct recovery from low-G is to apply gentle aft cyclic to reload the rotor and restore positive G loading. Lateral cyclic inputs should be avoided during the initial low-G recovery phase.'
+2026-04-22T17:45:39Z	CH.X.J.004	The answer states 'The correct recovery is to first apply smooth, gentle right lateral cyclic... to reload the rotor disk and re-establish positive G loading. Once the rotor is reloaded... you may then use gentle aft cyclic.' This is factually incorrect according to FAA-H-8083-21B Chapter 11. The correct recovery procedure is to apply AFT cyclic first to reload the rotor, not lateral cyclic. Lateral cyclic during low-G is the dangerous input that can cause mast bumping. The sequence in this answer is backwards.; The correct low-G recovery procedure is: Apply gentle AFT cyclic first to increase rotor thrust and restore positive G loading. Once positive G is re-established, then lateral cyclic inputs can be made if needed to correct attitude. Revise to: 'The correct recovery is to first apply smooth, gentle aft cyclic to reload the rotor and restore positive G loading. Once positive G is re-established and you feel normal seat pressure, then you may use gentle lateral cyclic or other inputs to recover the nose-down attitude. Avoid lateral cyclic inputs during the initial low-G phase, as these can cause mast bumping.'
+RYAN_REJECT	2026-04-22T18:20:46Z	PH.V.I.S4.005	Manual rejection during review
+RYAN_REJECT	2026-04-22T18:21:08Z	PH.VI.A.R2.004	Manual rejection during review
+RYAN_REJECT	2026-04-22T18:23:14Z	PH.VI.B.S6.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T18:46:40Z	PH.VI.C.R3.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:00:48Z	PH.VI.C.R9.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:01:14Z	PH.VII.A.K4a.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:01:38Z	PH.VII.A.K5c.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:03:48Z	PH.VII.A.K6.004	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:03:53Z	PH.VII.A.R1.007	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:04:05Z	PH.VII.A.S8.004	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:05:36Z	PH.VII.B.K1.004	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:07:04Z	PH.VII.B.S3.004	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:07:31Z	PH.VII.B.S7.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:12Z	PH.VII.C.K1.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:16Z	PH.VII.C.S1.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:18Z	PH.VII.C.S4.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:20Z	PH.VII.D.K2.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:22Z	PH.IX.D.S3.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:24Z	PH.VIII.A.K1.004	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:26Z	PH.VIII.A.R3.001	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:28Z	PH.VIII.A.S1.004	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:30Z	PH.VIII.A.S5.002	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:33Z	PH.VIII.A.S5.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:37Z	PH.VIII.A.S10.004	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:40Z	PH.VIII.B.K2.004	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:44Z	PH.VIII.B.K6.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:50Z	PH.VIII.B.R5.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:54Z	PH.VIII.B.S1.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:08:58Z	PH.VIII.B.S3.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:09:14Z	PH.VIII.C.K3.003	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:09:21Z	PH.VIII.C.K4.001	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:09:25Z	PH.VIII.D.K2a.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:09:28Z	PH.VIII.D.K2c.004	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:10:06Z	PH.VIII.E.K1.003	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:10:10Z	PH.VIII.E.K3.007	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:17:24Z	PH.VIII.E.K5.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:17:25Z	PH.VIII.E.R5.001	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:17:29Z	PH.VIII.E.R6.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:18:27Z	PH.VIII.E.S5.003	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:18:31Z	PH.VIII.F.K2.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:18:34Z	PH.VIII.F.K4.008	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:22:40Z	PH.VIII.G.K1a.005	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:22:45Z	PH.VIII.G.K2.005	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:22:52Z	PH.X.G.R3.001	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:22:55Z	PH.VIII.H.R1.007	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:22:59Z	PH.VIII.H.R4.001	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:19Z	PH.VIII.H.R7.001	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:22Z	PH.VIII.H.R7.005	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:24Z	PH.XI.A.Factors.003	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:27Z	PH.XI.A.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:30Z	PH.XI.B.Effects.003	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:34Z	PH.XI.B.RM.007	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:37Z	PH.XI.C.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:42Z	PH.XI.C.005	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:45Z	Night.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:48Z	PH.XII.A.006	Manual rejection during review
+RYAN_REJECT	2026-04-22T19:23:51Z	PH.XII.A.006	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:27:33Z	PH.V.B.S.008	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:27:38Z	PH.V.C.Aircraft.007	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:30:37Z	PH.I.H.S1.004	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:30:44Z	PH.II.B.K1.007	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:30:49Z	PH.III.A.Purpose.008	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:32:00Z	PH.V.A.RM.DR.007	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:32:15Z	PH.V.B.007	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:32:57Z	PH.V.C.005	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:34:43Z	PH.V.C.SK.006	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:35:12Z	PH.V.D.006	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:35:22Z	PH.V.D.RM.006	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:35:29Z	PH.V.D.003	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:35:50Z	PH.V.E.RM.005	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:36:11Z	PH.VI.C.008	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:36:16Z	PH.VI.D.RM.007	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:36:20Z	PH.VI.F.RM.007	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:36:23Z	PH.V.H.S8.008	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:36:36Z	PH.VI.B.S3.005	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:36:39Z	PH.VI.C.R2.008	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:38:12Z	PH.VIII.E.S6.007	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:38:50Z	PH.XVI.B.RM.008	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:39:04Z	PH.III.A.Purpose.003	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:39:57Z	PH.IV.C.003	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:40:01Z	PH.V.B.S-Maintain.007	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:40:06Z	PH.V.D.008	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:40:14Z	PH.V.E.RM.001	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:43:19Z	PH.V.I.R3b.006	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:43:46Z	PH.VI.A.R3.007	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:44:04Z	PH.VI.B.S6.005	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:45:17Z	PH.VI.B.S11.005	Manual rejection during review
+RYAN_REJECT	2026-05-02T19:45:25Z	PH.VIII.B.K6.001	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:35:33Z	CH.I.A.K3.008	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:36:10Z	CH.I.B.K3.002	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:41:56Z	CH.I.G.K2.004	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:41:59Z	CH.I.H.R1.007	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:42:03Z	CH.II.B.K1.004	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:42:05Z	CH.III.A.S1.007	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:42:09Z	CH.IV.B.S4.006	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:42:22Z	CH.IV.C.R6.006	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:42:25Z	CH.IV.E.R4.008	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:42:28Z	CH.V.B.K2.007	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:42:30Z	CH.V.E.S6.008	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:43:56Z	CH.VIII.A.Wind.003	Manual rejection during review
+RYAN_REJECT	2026-06-02T19:43:58Z	CH.VIII.B.RM.Power.008	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:00:45Z	CH.IX.C.003	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:00:57Z	CH.X.H.RM005	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:01:09Z	CH.X.L.004	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:01:17Z	CH.XIII.A.002	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:01:21Z	CH.XIII.A.002	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:01:29Z	CH.XIII.A.007	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:03:15Z	CH.XIV.E.003	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:03:33Z	CH.XIV.E.004	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:03:37Z	CH.XIV.E.005	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:03:42Z	CH.XIV.F.006	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:04:09Z	CH.XIV.I.003	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:04:11Z	CH.I.B.K4.007	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:04:32Z	CH.I.B.S2.001	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:58:30Z	CH.I.D.R2.002	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:59:03Z	CH.I.F.R3.008	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:59:05Z	CH.I.I.K8.007	Manual rejection during review
+RYAN_REJECT	2026-06-02T21:59:12Z	CH.I.I.K9.007	Manual rejection during review
+RYAN_REJECT	2026-06-02T22:08:48Z	CH.II.A.R2.008	Manual rejection during review
+RYAN_REJECT	2026-06-02T22:08:56Z	CH.II.A.R4.006	Manual rejection during review
+RYAN_REJECT	2026-06-02T22:16:15Z	CH.II.A.S4.007	Manual rejection during review
+RYAN_REJECT	2026-06-02T23:06:43Z	CH.III.A.R1.004	Manual rejection during review
+RYAN_REJECT	2026-06-03T21:01:17Z	CH.III.B.R3.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T21:01:21Z	CH.III.C.R2.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:36:43Z	CH.III.C.S1.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:36:45Z	CH.IV.A.R1.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:36:58Z	CH.IV.B.K8.006	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:37:25Z	CH.IV.B.S7.006	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:37:28Z	CH.IV.C.K1.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:38:45Z	CH.IV.E.S6.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:38:48Z	CH.IV.E.S11.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:38:53Z	CH.V.A.R3.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:39:05Z	CH.V.B.K4.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:39:34Z	CH.V.B.S10.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T22:39:42Z	CH.V.C.R6.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:22:47Z	CH.V.D.S6.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:22:50Z	CH.V.E.R2.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:23:58Z	CH.VIII.B.Effects.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:24:01Z	Windshear.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:24:39Z	CH.VIII.C.RM.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:24:47Z	CH.VIII.C.SK.Roll.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:24:56Z	Power.003	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:24:58Z	CH.IX.B.RM1.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:00Z	CH.IX.C.003	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:03Z	CH.X.A.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:05Z	CH.X.A.RM.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:07Z	CH.X.A.RM.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:11Z	CH.X.A.Establish.005	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:39Z	CH.X.B.Effect.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:41Z	Helicopter.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:43Z	CH.X.B.SK007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:45Z	CH.X.C.RM.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:47Z	CH.X.D.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:49Z	CH.X.D.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:51Z	Loss.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:53Z	CH.X.F.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:55Z	CH.X.H.Preventive.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:57Z	CH.X.H.RM.Sideward.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:25:59Z	CH.X.J.RM007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:01Z	CH.X.K.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:03Z	CH.X.L.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:05Z	CH.X.L.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:07Z	Spatial.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:09Z	CH.XI.A.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:11Z	CH.XI.A.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:13Z	CH.XI.A.RM.Situations.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:16Z	Control.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:18Z	Loss.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:21Z	CH.XII.A.S_RC.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:39Z	CH.XII.A.S.SRM.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:42Z	CH.XIII.A.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:43Z	CH.XIV.A.004	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:45Z	CH.XIV.A.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:47Z	CH.XIV.B.RM.005	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:48Z	CH.XIV.B.RM.005	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:50Z	CH.XIV.B.Enter.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:51Z	CH.XIV.B.S001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:53Z	Roll.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:55Z	CH.XIV.D.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:57Z	CH.XIV.E.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:26:59Z	CH.XIV.F.RM.006	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:01Z	CH.XIV.F.RM.006	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:02Z	CH.I.E.K4.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:04Z	CH.I.I.K7.003	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:06Z	CH.I.I.K7.005	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:07Z	CH.II.C.R1.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:09Z	CH.II.C.S3.003	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:11Z	CH.III.A.K1.006	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:13Z	CH.III.A.R1.003	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:14Z	CH.IV.B.K3.003	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:16Z	CH.IV.C.K3.006	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:19Z	CH.IV.C.S3.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:20Z	CH.IV.D.K3.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:22Z	CH.V.B.R6.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:24Z	CH.VIII.A.Wind.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:25Z	CH.VIII.B.Effects.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:27Z	CH.VIII.C.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:29Z	CH.X.E.005	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:30Z	CH.X.E.006	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:32Z	CH.X.H.RM.006	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:33Z	CH.X.J.003	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:36Z	Dynamic.RM.008	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:37Z	CH.XII.B.RM.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:39Z	CH.XIII.A.007	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:27:40Z	CH.XIV.B.RM.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:28:05Z	CH.XIV.B.RM.004	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:28:17Z	CH.XIV.C.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:28:18Z	CH.XIV.C.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:28:19Z	CH.XIV.C.001	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:28:20Z	CH.XIV.C.002	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:28:21Z	CH.XIV.C.RM.005	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:28:23Z	CH.XIV.C.RM.006	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:28:27Z	CH.XIV.C.RM.005	Manual rejection during review
+RYAN_REJECT	2026-06-03T23:28:29Z	CH.XIV.H.007	Manual rejection during review
