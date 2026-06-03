@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-05-03 (ATP Helicopter ACS extracted → `FAA-S-ACS-ATP_Helicopter_ACS.json` (11 areas); ATP question bank generated **2,072** questions to `qbank_atp_helicopter.json`; `run_triage_cfi.ps1` + `run_triage_atp.ps1` added; prior 2026-05-02 FLAG pre-triage; prior 2026-04-22 `r44_systems.json` / wrappers / commercial + instrument runs; prior 2026-04-14 R66 / Bell extractions)
+Last updated: 2026-06-02 (Private + Commercial FLAG manual review complete; `verification_fails.log` + `verification_summary.txt` committed; prior 2026-05-03 ATP bank; prior 2026-05-02 FLAG pre-triage; prior 2026-04-22 commercial verify / instrument gen)
 
 ---
 
@@ -15,6 +15,18 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### Question bank logs in git (2026-06-02)
+
+- **`question-bank/verification_fails.log`** — committed (verifier FAIL removals + `RYAN_REJECT` index lines from review server).
+- **`question-bank/verification_summary.txt`** — committed (last verifier run stats snapshot).
+- **`question-bank/review_changes.log`** — **gitignored** (`.gitignore` line 14); local only — full APPROVED / EDITED / REJECTED / triage audit trail; do not force-add.
+- **`scripts/run_review_server_commercial.ps1`** — review server wrapper for commercial bank (private wrapper unchanged).
+
+### Private + Commercial FLAG review (2026-06-02)
+
+- **Private** `qbank_private_helicopter.json` — **0** FLAG remaining; manual review queue cleared.
+- **Commercial** `qbank_commercial_helicopter.json` — **0** FLAG remaining after triage + manual review (~140 escalated items reviewed).
 
 ### ATP ACS + question bank (2026-05-03)
 
@@ -58,10 +70,20 @@ Added:
 - `scripts/run_verify_private.ps1` — wrapper: `.\.venv\Scripts\python.exe scripts\verify_question_bank.py --input question-bank/qbank_private_helicopter.json`
 - Ryan to review before first run (large API usage; updates JSON in place).
 
-### FLAG question review (local Flask) — built, not yet run
+### FLAG question review (local Flask)
 
-- `scripts/review_server.py` — serves `http://localhost:5000`; queues questions with `verification.status == "FLAG"` (lowest confidence first); Approve / Save Edit / Reject writes UTF-8 JSON in place; rejects append `RYAN_REJECT\t…` lines to `question-bank/verification_fails.log`.
-- `scripts/run_review_server.ps1` — wrapper from repo root. Requires Flask in `.venv` (`pip install flask`).
+- `scripts/review_server.py` — serves `http://localhost:5000`; queues questions with `verification.status == "FLAG"` (lowest confidence first); Approve / Save Edit / Reject writes UTF-8 JSON in place; rejects append `RYAN_REJECT\t…` to `verification_fails.log` and full `--- REJECTED ---` blocks to `review_changes.log` (gitignored).
+- `scripts/run_review_server.ps1` — private bank (default). `scripts/run_review_server_commercial.ps1` — commercial bank. Requires Flask in `.venv`.
+
+### Question-bank log files (git)
+
+| File | Tracked in git? | Purpose |
+|------|-----------------|--------|
+| `verification_fails.log` | **Yes** | Verifier FAIL removals (`timestamp\tid\treason`) + manual `RYAN_REJECT` lines |
+| `verification_summary.txt` | **Yes** | Last verifier run totals (overwritten each verify run) |
+| `review_changes.log` | **No** (gitignored) | Session audit: approvals, edits, rejections, triage lines |
+| `triage_summary.txt` | No (untracked) | Last triage run stats (overwritten each triage run) |
+| `qbank_*.json` | No (gitignored) | Generated banks until Ryan releases a copy |
 
 ### Data Extraction Pipeline
 
@@ -200,6 +222,7 @@ FAA:
 - `scripts/run_generate_private.ps1` — Convenience runner for `--rating private`.
 - `question-bank/` — Holds generated banks; `qbank_*.json` is gitignored until Ryan
   verifies and commits a release copy manually. `.gitkeep` keeps the folder in git.
+  Verification/reject logs: see **Question-bank log files (git)** above.
 
 **Area I test run (Private):** Pipeline executed (`--rating private --area I`); all
 tasks failed with Anthropic “credit balance too low” (0 questions written). After
