@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-02 (Private + Commercial FLAG manual review complete; `verification_fails.log` + `verification_summary.txt` committed; prior 2026-05-03 ATP bank; prior 2026-05-02 FLAG pre-triage; prior 2026-04-22 commercial verify / instrument gen)
+Last updated: 2026-06-03 (Rejected-question rewrite pipeline: rewrite → verify → triage wrappers; prior 2026-06-02 Private + Commercial FLAG manual review complete)
 
 ---
 
@@ -15,6 +15,17 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### Rejected-question rewrite pipeline (2026-06-03)
+
+Three-step pipeline for **336** manual rejects logged in local `review_changes.log`:
+
+1. **`scripts/rewrite_rejected_questions.py`** — Parses `--- REJECTED ---` blocks; calls **`claude-sonnet-4-6`** (cached system prompt) to rewrite each answer; writes gitignored **`question-bank/qbank_rewritten_rejects.json`**; checkpoint every 25; errors → `rewrite_errors.log`. CLI: `--dry-run` (parse first 5 blocks, no API).
+2. **`scripts/run_rewrite_rejects.ps1`** — Runs the rewriter.
+3. **`scripts/run_verify_rejects.ps1`** — `verify_question_bank.py --input question-bank/qbank_rewritten_rejects.json`
+4. **`scripts/run_triage_rejects.ps1`** — `triage_flag_questions.py --input question-bank/qbank_rewritten_rejects.json`
+
+**Ready to run** (not executed in this session — large Sonnet API usage). Run in order: rewrite → verify → triage → review server on any remaining FLAGs.
 
 ### Question bank logs in git (2026-06-02)
 
@@ -279,6 +290,10 @@ billing is replenished, re-run the same command to fill Area I, then run without
 | run_triage_commercial.ps1 | Runs `triage_flag_questions.py --input question-bank/qbank_commercial_helicopter.json` |
 | run_triage_cfi.ps1 | Runs `triage_flag_questions.py --input question-bank/qbank_cfi_helicopter.json` |
 | run_triage_atp.ps1 | Runs `triage_flag_questions.py --input question-bank/qbank_atp_helicopter.json` |
+| rewrite_rejected_questions.py | Parses `review_changes.log` rejects; rewrites via Sonnet → `qbank_rewritten_rejects.json`; `--dry-run` |
+| run_rewrite_rejects.ps1 | Runs `rewrite_rejected_questions.py` |
+| run_verify_rejects.ps1 | Verifies `qbank_rewritten_rejects.json` via `verify_question_bank.py --input …` |
+| run_triage_rejects.ps1 | Pre-triages rewritten rejects bank via `triage_flag_questions.py --input …` |
 | run_generate_instrument.ps1 | Generates `qbank_instrument_helicopter.json` (`--rating instrument`) + count |
 | run_generate_cfi.ps1 | Generates CFI bank — overnight-scale; see script header |
 | run_generate_atp.ps1 | Generates ATP bank — short; see script header |

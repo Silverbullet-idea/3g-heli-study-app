@@ -4,17 +4,18 @@
 ---
 
 ### Last Updated
-June 2, 2026 — Private + Commercial FLAG review complete; `verification_fails.log` and `verification_summary.txt` committed to git
+June 3, 2026 — Rejected-question rewrite pipeline ready (rewrite → verify → triage); not yet run
 
 ---
 
 ### Current Sprint Goal
-Verify remaining banks (CFI, Instrument, ATP); render and ship first **Private R22** PDF study sheet set (Phase 1 SKU 1).
+Verify remaining banks (CFI, Instrument, ATP); run **336-question reject rewrite pipeline**; render and ship first **Private R22** PDF study sheet set (Phase 1 SKU 1).
 
 ---
 
 ### Completed (This Sprint)
 
+- **Rejected-question rewrite pipeline** — `rewrite_rejected_questions.py` + `run_rewrite_rejects.ps1`, `run_verify_rejects.ps1`, `run_triage_rejects.ps1` (2026-06-03); dry-run parses **336** blocks; full run pending
 - **Private + Commercial FLAG manual review** — both banks at **0** FLAG (2026-06-02)
 - **`question-bank/verification_fails.log`** and **`verification_summary.txt`** — committed and pushed (2026-06-02)
 - **`run_review_server_commercial.ps1`** — commercial review server wrapper (2026-06-02)
@@ -40,18 +41,19 @@ Verify remaining banks (CFI, Instrument, ATP); render and ship first **Private R
 
 ### In Progress
 
-- None — awaiting next verify/triage/review cycle on CFI, Instrument, or ATP
+- **336 rejected questions** — rewrite pipeline built; awaiting `run_rewrite_rejects.ps1` → verify → triage
 
 ---
 
 ### Up Next (Prioritized)
 
-1. Run **verification** on Instrument, then ATP, then CFI (`verify_question_bank.py --input …`)
-2. **Pre-triage** + manual review any new FLAGs per bank
-3. **Build Phase 1 PDF output** — `render_study_sheet.py` → Private R22 study sheet set
-4. Confirm **`FAA-S-ACS-29_CFI_Helicopter_ACS.json`** completeness if needed
-5. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
-6. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
+1. Run **rewrite → verify → triage** on rejected questions (`run_rewrite_rejects.ps1`, then `run_verify_rejects.ps1`, then `run_triage_rejects.ps1`)
+2. Run **verification** on Instrument, then ATP, then CFI (`verify_question_bank.py --input …`)
+3. **Pre-triage** + manual review any new FLAGs per bank
+4. **Build Phase 1 PDF output** — `render_study_sheet.py` → Private R22 study sheet set
+5. Confirm **`FAA-S-ACS-29_CFI_Helicopter_ACS.json`** completeness if needed
+6. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
+7. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
 
 ---
 
