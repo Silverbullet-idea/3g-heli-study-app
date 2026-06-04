@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-03 (Rejected-question rewrite pipeline: rewrite → verify → triage wrappers; prior 2026-06-02 Private + Commercial FLAG manual review complete)
+Last updated: 2026-06-03 (Rewrite pipeline complete: retry-failed + merge scripts added; prior rejected-question rewrite → verify → triage)
 
 ---
 
@@ -25,7 +25,12 @@ Three-step pipeline for **336** manual rejects logged in local `review_changes.l
 3. **`scripts/run_verify_rejects.ps1`** — `verify_question_bank.py --input question-bank/qbank_rewritten_rejects.json`
 4. **`scripts/run_triage_rejects.ps1`** — `triage_flag_questions.py --input question-bank/qbank_rewritten_rejects.json`
 
-**Ready to run** (not executed in this session — large Sonnet API usage). Run in order: rewrite → verify → triage → review server on any remaining FLAGs.
+**Run order:** rewrite → verify → triage → review server on any remaining FLAGs → merge approved rewrites.
+
+### Retry failed rewrites + merge back to main banks (2026-06-03)
+
+- **`scripts/retry_failed_rewrites.py`** + **`run_retry_failed_rewrites.ps1`** — Re-attempts IDs logged in `rewrite_errors.log` (5 API retries, 3 s sleep); appends successes to `qbank_rewritten_rejects.json`.
+- **`scripts/merge_rewritten_questions.py`** + **`run_merge_rewritten.ps1`** / **`run_merge_rewritten_dryrun.ps1`** — Merges questions with `verification.status` PASS or REVIEWED_PASS (and `ryan_verified: false`) into `qbank_private_helicopter.json` (PH.*) or `qbank_commercial_helicopter.json` (CH.*) by ACS task match; `--dry-run` for preview; live run requires typing YES. Unmatched → `merge_unmatched.log`.
 
 ### Question bank logs in git (2026-06-02)
 
