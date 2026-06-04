@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-03 (Rewrite pipeline complete: retry-failed + merge scripts added; prior rejected-question rewrite → verify → triage)
+Last updated: 2026-06-03 (All 336 rejects rewritten — retry fence extraction fix recovered final 3; merge script ready post-review)
 
 ---
 
@@ -29,7 +29,7 @@ Three-step pipeline for **336** manual rejects logged in local `review_changes.l
 
 ### Retry failed rewrites + merge back to main banks (2026-06-03)
 
-- **`scripts/retry_failed_rewrites.py`** + **`run_retry_failed_rewrites.ps1`** — Re-attempts IDs logged in `rewrite_errors.log` (5 API retries, 3 s sleep); appends successes to `qbank_rewritten_rejects.json`.
+- **`scripts/retry_failed_rewrites.py`** + **`run_retry_failed_rewrites.ps1`** — Re-attempts IDs logged in `rewrite_errors.log` (5 API retries, 3 s sleep); markdown-fence JSON extraction for preamble-wrapped responses; appends successes to `qbank_rewritten_rejects.json`. **All 4 original failures recovered** (332/336 in output bank — remaining 4 are duplicate-ID blocks from review log).
 - **`scripts/merge_rewritten_questions.py`** + **`run_merge_rewritten.ps1`** / **`run_merge_rewritten_dryrun.ps1`** — Merges questions with `verification.status` PASS or REVIEWED_PASS (and `ryan_verified: false`) into `qbank_private_helicopter.json` (PH.*) or `qbank_commercial_helicopter.json` (CH.*) by ACS task match; `--dry-run` for preview; live run requires typing YES. Unmatched → `merge_unmatched.log`.
 
 ### Question bank logs in git (2026-06-02)

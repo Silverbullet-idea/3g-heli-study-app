@@ -4,20 +4,20 @@
 ---
 
 ### Last Updated
-June 3, 2026 — Retry-failed-rewrites + merge scripts added; rewrite pipeline complete (329/336 in output bank)
+June 3, 2026 — Fence extraction fix in retry script; all 336 rejects now in output bank (332 questions)
 
 ---
 
 ### Current Sprint Goal
-Verify remaining banks (CFI, Instrument, ATP); finish **3 remaining failed rewrite retries**; run merge after review; render and ship first **Private R22** PDF study sheet set (Phase 1 SKU 1).
+Verify remaining banks (CFI, Instrument, ATP); review rewritten rejects and merge approved items; render and ship first **Private R22** PDF study sheet set (Phase 1 SKU 1).
 
 ---
 
 ### Completed (This Sprint)
 
+- **Retry fence extraction fix** — all 4 API failures recovered; **332** questions in `qbank_rewritten_rejects.json` covering all **336** reject blocks (2026-06-03)
 - **Retry + merge scripts** — `retry_failed_rewrites.py`, `merge_rewritten_questions.py`, PowerShell wrappers (2026-06-03); merge script ready for post-review use
-- **Rejected-question rewrite pipeline** — **329** of **336** rewrites in `qbank_rewritten_rejects.json` (328 original + 1 retry recovery); verify + triage run complete
-- **Rejected-question rewrite pipeline** — `rewrite_rejected_questions.py` + `run_rewrite_rejects.ps1`, `run_verify_rejects.ps1`, `run_triage_rejects.ps1` (2026-06-03)
+- **Rejected-question rewrite pipeline** — verify + triage complete (2026-06-03)
 - **Private + Commercial FLAG manual review** — both banks at **0** FLAG (2026-06-02)
 - **`question-bank/verification_fails.log`** and **`verification_summary.txt`** — committed and pushed (2026-06-02)
 - **`run_review_server_commercial.ps1`** — commercial review server wrapper (2026-06-02)
@@ -43,16 +43,15 @@ Verify remaining banks (CFI, Instrument, ATP); finish **3 remaining failed rewri
 
 ### In Progress
 
-- **3 failed rewrite retries** — `PH.XV.B.RM.003` (2nd block), `PH.IV.C.006`, `PH.VI.F.RM.002` still failing JSON parse (API returns preamble + markdown fence); re-run `run_retry_failed_rewrites.ps1` or manual fix
+- **Review rewritten rejects** — run review server on FLAG items; approve PASS rewrites for merge
 
 ---
 
 ### Up Next (Prioritized)
 
-1. Resolve **3 remaining rewrite failures** (API returns JSON inside markdown with preamble — may need prompt tweak or manual extraction)
-2. **Review** rewritten rejects in review server; approve PASS items
-3. **Merge** approved rewrites into main banks (`run_merge_rewritten_dryrun.ps1` first, then `run_merge_rewritten.ps1`)
-4. Run **verification** on Instrument, then ATP, then CFI (`verify_question_bank.py --input …`)
+1. **Review** rewritten rejects in review server; approve PASS items
+2. **Merge** approved rewrites into main banks (`run_merge_rewritten_dryrun.ps1` first, then `run_merge_rewritten.ps1`)
+3. Run **verification** on Instrument, then ATP, then CFI (`verify_question_bank.py --input …`)
 5. **Pre-triage** + manual review any new FLAGs per bank
 6. **Build Phase 1 PDF output** — `render_study_sheet.py` → Private R22 study sheet set
 7. Confirm **`FAA-S-ACS-29_CFI_Helicopter_ACS.json`** completeness if needed

@@ -27,19 +27,54 @@ from rewrite_rejected_questions import (
     MODEL_ID,
     OUTPUT_PATH,
     REVIEW_LOG_PATH,
-    SOURCE_BANKS,
     SYSTEM_PROMPT_BLOCKS,
     build_question_record,
     build_user_message,
     load_original_questions_by_id,
     parse_rejected_blocks,
-    strip_json_fence,
 )
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 API_MAX_ATTEMPTS = 5
 RETRY_SLEEP_SEC = 3
 SUCCESS_SLEEP_SEC = 1
+
+
+def strip_json_fence(text: str) -> str:
+    text = text.strip()
+    if text.startswith("```"):
+        lines = text.split("\n")
+        if lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        text = "\n".join(lines)
+    return text.strip()
+
+
+def extract_json_object(raw: str) -> dict[str, Any]:
+    """Parse a JSON object from API text, including preamble + markdown fences."""
+    text = raw.strip()
+    if "```" in text and not text.startswith("```"):
+        text = text[text.find("```") :]
+    cleaned = strip_json_fence(text)
+    try:
+        data = json.loads(cleaned)
+    except json.JSONDecodeError:
+        obj_start = cleaned.find("{")
+        obj_end = cleaned.rfind("}")
+        if obj_start >= 0 and obj_end > obj_start:
+            data = json.loads(cleaned[obj_start : obj_end + 1])
+        else:
+            arr_start = cleaned.find("[")
+            arr_end = cleaned.rfind("]")
+            if arr_start >= 0 and arr_end > arr_start:
+                data = json.loads(cleaned[arr_start : arr_end + 1])
+            else:
+                raise
+    if not isinstance(data, dict):
+        raise ValueError("response JSON is not an object")
+    return data
 
 
 def parse_failed_ids(log_path: Path) -> list[str]:
@@ -100,9 +135,7 @@ def call_rewrite_api(client: anthropic.Anthropic, item: dict[str, str]) -> dict[
             block = msg.content[0]
             raw_text = block.text if hasattr(block, "text") else str(block)
             last_raw = raw_text
-            payload = json.loads(strip_json_fence(raw_text))
-            if not isinstance(payload, dict):
-                raise ValueError("API response is not a JSON object")
+            payload = extract_json_object(raw_text)
             for key in ("id", "question", "answer", "rewrite_note"):
                 if key not in payload or not str(payload[key]).strip():
                     raise ValueError(f"API response missing required field: {key}")
@@ -191,9 +224,12 @@ def main() -> None:
         questions_out.append(record)
         existing_keys.add((item["id"], item["question"]))
         recovered.append(item["id"])
+        q_preview = str(record["question"])[:80].replace("\n", " ")
+        print(f"  Recovered {item['id']}: {q_preview}", flush=True)
         time.sleep(SUCCESS_SLEEP_SEC)
 
     save_output(output, OUTPUT_PATH)
+    actual_count = len(questions_out)
 
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     with ERRORS_LOG_PATH.open("a", encoding="utf-8") as f:
@@ -203,7 +239,9 @@ def main() -> None:
 
     print(f"Recovered: {recovered if recovered else '(none)'}")
     print(f"Still failed: {still_failed if still_failed else '(none)'}")
-    print(f"Total questions in output: {output['total_questions']}")
+    print(f"total_questions field: {output['total_questions']}  actual count: {actual_count}")
+    if output["total_questions"] != actual_count:
+        print("WARNING: total_questions does not match actual question count", file=sys.stderr)
 
 
 if __name__ == "__main__":
