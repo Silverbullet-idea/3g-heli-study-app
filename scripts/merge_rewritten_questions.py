@@ -10,6 +10,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from dotenv import load_dotenv
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 QUESTION_BANK_DIR = REPO_ROOT / "question-bank"
 PRIVATE_BANK_PATH = QUESTION_BANK_DIR / "qbank_private_helicopter.json"
@@ -175,6 +177,9 @@ def apply_merge(matched: list[dict[str, Any]], banks: dict[str, dict[str, Any]])
 
 
 def main() -> None:
+    load_dotenv(REPO_ROOT / ".env")
+    load_dotenv(REPO_ROOT.parent / ".env", override=True)
+
     parser = argparse.ArgumentParser(description="Merge verified rewritten questions into main banks.")
     parser.add_argument("--source", required=True, help="Path to qbank_rewritten_rejects.json")
     parser.add_argument("--dry-run", action="store_true", help="Print merge plan without modifying files")
