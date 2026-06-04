@@ -89,7 +89,7 @@ Added:
 ### FLAG question review (local Flask)
 
 - `scripts/review_server.py` — serves `http://localhost:5000`; queues questions with `verification.status == "FLAG"` (lowest confidence first); Approve / Save Edit / Reject writes UTF-8 JSON in place; rejects append `RYAN_REJECT\t…` to `verification_fails.log` and full `--- REJECTED ---` blocks to `review_changes.log` (gitignored).
-- `scripts/run_review_server.ps1` — private bank (default). `scripts/run_review_server_commercial.ps1` — commercial bank. Requires Flask in `.venv`.
+- `scripts/run_review_server.ps1` — forwards `@args` to `review_server.py` (e.g. `--input question-bank/qbank_rewritten_rejects.json`; default input is private bank). `scripts/run_review_server_commercial.ps1` — commercial bank shortcut. Requires Flask in `.venv`.
 
 ### Question-bank log files (git)
 
