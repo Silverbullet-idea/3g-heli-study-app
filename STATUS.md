@@ -52,11 +52,11 @@ Verify remaining banks (CFI, Instrument, ATP); review rewritten rejects and merg
 1. **Review** rewritten rejects in review server; approve PASS items
 2. **Merge** approved rewrites into main banks (`run_merge_rewritten_dryrun.ps1` first, then `run_merge_rewritten.ps1`)
 3. Run **verification** on Instrument, then ATP, then CFI (`verify_question_bank.py --input …`)
-5. **Pre-triage** + manual review any new FLAGs per bank
-6. **Build Phase 1 PDF output** — `render_study_sheet.py` → Private R22 study sheet set
-7. Confirm **`FAA-S-ACS-29_CFI_Helicopter_ACS.json`** completeness if needed
-8. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
-9. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
+4. **Pre-triage** + manual review any new FLAGs per bank
+5. **Build Phase 1 PDF output** — `render_study_sheet.py` → Private R22 study sheet set
+6. Confirm **`FAA-S-ACS-29_CFI_Helicopter_ACS.json`** completeness if needed
+7. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
+8. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
 
 ---
 
