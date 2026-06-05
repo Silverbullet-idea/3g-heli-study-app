@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-03 (ACS patch + merge complete — 261 rewrites merged; Private 6,526 / Commercial 7,016)
+Last updated: 2026-06-05 (CFI ACS JSON extraction complete — 18 areas, 87 tasks, 1,197 items, 1 verify flag)
 
 ---
 
@@ -141,9 +141,9 @@ Present locally under `extracted-data/faa/` and `extracted-data/aircraft/`:
 | faa/FAA-S-ACS-16_Commercial_Helicopter_ACS.json | 14 areas | 0 |
 | faa/FAA-S-ACS-14_Instrument_Helicopter_ACS.json | 8 areas | 0 |
 | faa/FAA-S-ACS-ATP_Helicopter_ACS.json | 11 areas | 0 |
+| faa/FAA-S-ACS-29_CFI_Helicopter_ACS.json | 18 areas | 1 |
 
-Pending re-run after API credits (2026-04-11 batch): `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
-(`r44_systems.json` completed 2026-04-22).
+(`r44_systems.json` completed 2026-04-22; CFI ACS extracted 2026-06-05 — 6 PDF chunks, 85 pages, 87 tasks, 1,197 ACS items.)
 
 ### Extracted JSON — R66, Bell 206B3, Bell 407 (2026-04-14, committed)
 
@@ -250,9 +250,8 @@ billing is replenished, re-run the same command to fill Area I, then run without
 
 ## Next Steps (in order)
 
-1. Replenish Anthropic API credits; re-run `scripts/run_faa_r44_extract.ps1` (or the
-   individual `extract_poh_json.py` calls) to fill `FAA-S-ACS-29_CFI_Helicopter_ACS.json`
-   if still incomplete vs POH. **ATP ACS extraction is complete** (`FAA-S-ACS-ATP_Helicopter_ACS.json`,
+1. **CFI ACS extraction is complete** (`FAA-S-ACS-29_CFI_Helicopter_ACS.json`, 2026-06-05).
+   **ATP ACS extraction is complete** (`FAA-S-ACS-ATP_Helicopter_ACS.json`,
    2026-05-03); **`qbank_atp_helicopter.json`** generated with **2,072** questions (259 ACS items × 8/q).
    **`r44_systems.json` is current as of 2026-04-22.**
 2. Replenish credits and run `scripts/generate_question_bank.py --rating private --area I`

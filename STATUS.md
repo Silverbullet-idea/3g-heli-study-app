@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 3, 2026 — ACS patch + merge complete: 261 rewrites merged into main banks (Private 6,526 / Commercial 7,016)
+June 5, 2026 — CFI ACS PDF consolidated to `raw-pdfs/faa/`; JSON extraction complete (18 areas, 1,197 items)
 
 ---
 
@@ -15,6 +15,7 @@ Verify remaining banks (CFI, Instrument, ATP); review rewritten rejects and merg
 
 ### Completed (This Sprint)
 
+- **CFI Helicopter ACS extraction** — PDF at `raw-pdfs/faa/FAA-S-ACS-29_CFI_Helicopter_ACS.pdf`; `extract_poh_json.py --section faa_acs` → **`extracted-data/faa/FAA-S-ACS-29_CFI_Helicopter_ACS.json`** (18 areas, 87 tasks, 1,197 ACS items, 1 verify flag; gitignored) (2026-06-05)
 - **ACS patch + merge** — `patch_acs_codes.py` fixed 177 truncated codes; merged **261** rewrites (161 private, 100 commercial); banks **6,526** / **7,016** (2026-06-03)
 - **Retry fence extraction fix** — all 4 API failures recovered; **332** questions in `qbank_rewritten_rejects.json` covering all **336** reject blocks (2026-06-03)
 - **Retry + merge scripts** — `retry_failed_rewrites.py`, `merge_rewritten_questions.py`, `patch_acs_codes.py`, PowerShell wrappers (2026-06-03)
@@ -53,9 +54,8 @@ Verify remaining banks (CFI, Instrument, ATP); review rewritten rejects and merg
 1. Run **verification** on Instrument, then ATP, then CFI (`verify_question_bank.py --input …`)
 2. **Pre-triage** + manual review any new FLAGs per bank
 3. **Build Phase 1 PDF output** — `render_study_sheet.py` → Private R22 study sheet set
-4. Confirm **`FAA-S-ACS-29_CFI_Helicopter_ACS.json`** completeness if needed
-5. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
-6. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
+4. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
+5. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
 
 ---
 
