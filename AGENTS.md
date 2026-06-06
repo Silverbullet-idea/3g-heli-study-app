@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-05 (CFI ACS JSON extraction complete — 18 areas, 87 tasks, 1,197 items, 1 verify flag)
+Last updated: 2026-06-06 (CFI question bank complete — 1,197 ACS items, 9,576 questions, 0 errors)
 
 ---
 
@@ -15,6 +15,12 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### CFI question bank generation complete (2026-06-06)
+
+- **`scripts/patch_cfi_acs_item_codes.py`** — Prepended **FI.** (Area I) / **HI.** (Areas II–XVIII) codes to all **1,197** CFI ACS item lines (2026-06-05).
+- **`scripts/generate_question_bank.py --rating cfi`** — Full run completed (~22 h). **18** areas, **87** tasks, **1,197** ACS API calls, **9,576** questions → `question-bank/qbank_cfi_helicopter.json` (gitignored). **0** ACS items with 0 questions; **0** API/validation errors in log.
+- **`qbank_cfi_helicopter.json`** — not committed (gitignored). Next: `verify_question_bank.py --input question-bank/qbank_cfi_helicopter.json`.
 
 ### Rejected-question rewrite pipeline (2026-06-03)
 
@@ -250,7 +256,7 @@ billing is replenished, re-run the same command to fill Area I, then run without
 
 ## Next Steps (in order)
 
-1. **CFI ACS extraction is complete** (`FAA-S-ACS-29_CFI_Helicopter_ACS.json`, 2026-06-05).
+1. **CFI question bank complete** — **9,576** questions (1,197 ACS items × 8/q); verify next via `verify_question_bank.py --input question-bank/qbank_cfi_helicopter.json`.
    **ATP ACS extraction is complete** (`FAA-S-ACS-ATP_Helicopter_ACS.json`,
    2026-05-03); **`qbank_atp_helicopter.json`** generated with **2,072** questions (259 ACS items × 8/q).
    **`r44_systems.json` is current as of 2026-04-22.**
@@ -287,6 +293,7 @@ billing is replenished, re-run the same command to fill Area I, then run without
 | extract_text.py | PDF → raw text |
 | extract_poh_json.py | raw text → structured JSON via API |
 | generate_question_bank.py | ACS + handbook JSON → oral exam question bank (Anthropic) |
+| patch_cfi_acs_item_codes.py | Prepends FI./HI. codes to CFI ACS JSON item lines (one-time post-extract fix) |
 | run_generate_private.ps1 | Runs `generate_question_bank.py --rating private` |
 | run_verify_private.ps1 | Runs `verify_question_bank.py --input question-bank/qbank_private_helicopter.json` |
 | run_verify_commercial.ps1 | Verifies `qbank_commercial_helicopter.json` via `verify_question_bank.py --input …` |
