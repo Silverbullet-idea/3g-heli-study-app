@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-07 (CFI question bank verified — 9,576 processed, 90.7% PASS, 9.1% FLAG, 19 FAIL removed)
+Last updated: 2026-06-08 (CFI FLAG pre-triage complete — 868 processed, 80.4% auto-resolved, 170 ESCALATE in review)
 
 ---
 
@@ -16,11 +16,17 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 
 ## Completed This Session
 
+### CFI FLAG pre-triage complete (2026-06-08)
+
+- **`run_triage_cfi.ps1`** — `triage_flag_questions.py --input question-bank/qbank_cfi_helicopter.json` complete (~53 min, 290 batches). **868** FLAGs processed → **17 APPROVE**, **681 EDIT**, **170 ESCALATE**. Automated resolution rate: **80.4%** ((17 + 681) / 868). On-disk bank: **9,557** questions, **170** FLAG remaining (all ESCALATE).
+- **Review server** — `run_review_server.ps1 --input question-bank/qbank_cfi_helicopter.json` launched at `http://localhost:5000` for manual review of **170** ESCALATE items. Stop with **Ctrl+C** when queue cleared. ESCALATE review: **in progress** (170 remaining as of triage completion).
+- **`qbank_cfi_helicopter.json`** — not committed (gitignored). Do not start rewrite pipeline until ESCALATE manual review is complete.
+
 ### CFI question bank verification complete (2026-06-07)
 
 - **`scripts/verify_question_bank.py --input question-bank/qbank_cfi_helicopter.json`** — Full run completed (~2 h, 958 batches). **9,576** questions processed → **8,689 PASS** (90.7%), **868 FLAG** (9.1%), **19 FAIL removed** (0.2%). On-disk bank: **9,557** questions after FAIL removals.
 - **API errors:** **1** `[VERIFIER ERROR]` in log (JSON parse on one batch; recovered on retry). **0** API-failure placeholder FLAGs — all **868** FLAGs are genuine Haiku content flags, not rate-limit failures. **`--retry-failures` not needed**; proceed to `triage_flag_questions.py` then review server.
-- **`qbank_cfi_helicopter.json`** — not committed (gitignored). Next: `run_triage_cfi.ps1` → manual review of ESCALATE items.
+- **`qbank_cfi_helicopter.json`** — not committed (gitignored). Triage complete 2026-06-08; manual ESCALATE review in progress (see above).
 
 ### CFI question bank generation complete (2026-06-06)
 

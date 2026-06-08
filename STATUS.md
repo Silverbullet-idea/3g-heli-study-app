@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 7, 2026 — CFI question bank verified (9,576 processed, 90.7% PASS, 868 FLAG, 19 FAIL removed)
+June 8, 2026 — CFI FLAG pre-triage complete (868 → 17 APPROVE / 681 EDIT / 170 ESCALATE; 80.4% auto-resolved; review server running)
 
 ---
 
@@ -15,6 +15,7 @@ Verify remaining banks (CFI, Instrument, ATP); review rewritten rejects and merg
 
 ### Completed (This Sprint)
 
+- **CFI FLAG pre-triage** — `run_triage_cfi.ps1` complete (~53 min). **868** FLAGs → **17 APPROVE**, **681 EDIT**, **170 ESCALATE**; **80.4%** automated resolution. Review server launched for ESCALATE queue (2026-06-08)
 - **CFI question bank verification** — `verify_question_bank.py --input qbank_cfi_helicopter.json` complete (~2 h). **9,576** processed → **8,689 PASS** (90.7%), **868 FLAG** (9.1%), **19 FAIL removed** (0.2%); **9,557** on disk. **0** API-failure placeholder FLAGs (all genuine content flags); **1** API parse error (recovered). Next: triage → review server (2026-06-07)
 - **CFI Helicopter ACS extraction** — PDF at `raw-pdfs/faa/FAA-S-ACS-29_CFI_Helicopter_ACS.pdf`; `extract_poh_json.py --section faa_acs` → **`extracted-data/faa/FAA-S-ACS-29_CFI_Helicopter_ACS.json`** (18 areas, 87 tasks, 1,197 ACS items, 1 verify flag; gitignored) (2026-06-05)
 - **CFI question bank generation** — `generate_question_bank.py --rating cfi` complete (~22 h). **1,197** ACS API calls → **`qbank_cfi_helicopter.json`** with **9,576** questions; **0** items with 0 questions; **0** errors (2026-06-06)
@@ -40,7 +41,7 @@ Verify remaining banks (CFI, Instrument, ATP); review rewritten rejects and merg
 |------|-----------|------|
 | Private | 6,526 | 0 |
 | Commercial | 7,016 | 0 |
-| CFI | 9,557 | 868 |
+| CFI | 9,557 | 170 |
 | Instrument | 2,584 | (not verified) |
 | ATP | 2,072 | (not verified) |
 
@@ -48,13 +49,13 @@ Verify remaining banks (CFI, Instrument, ATP); review rewritten rejects and merg
 
 ### In Progress
 
-- *(none)*
+- **CFI ESCALATE manual review** — review server at `http://localhost:5000` (`run_review_server.ps1 --input question-bank/qbank_cfi_helicopter.json`); **170** items remaining; stop server with **Ctrl+C**
 
 ---
 
 ### Up Next (Prioritized)
 
-1. **Pre-triage CFI FLAGs** — `run_triage_cfi.ps1`, then review server on ESCALATE items
+1. **Complete CFI ESCALATE manual review** — clear remaining **170** FLAGs via review server, then Ctrl+C to stop
 2. Run **verification** on Instrument, then ATP (`verify_question_bank.py --input …`)
 3. **Pre-triage** + manual review any new FLAGs per bank
 4. **Build Phase 1 PDF output** — `render_study_sheet.py` → Private R22 study sheet set
