@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 6, 2026 — CFI question bank generation complete (9,576 questions, 0 errors)
+June 7, 2026 — CFI question bank verified (9,576 processed, 90.7% PASS, 868 FLAG, 19 FAIL removed)
 
 ---
 
@@ -15,6 +15,7 @@ Verify remaining banks (CFI, Instrument, ATP); review rewritten rejects and merg
 
 ### Completed (This Sprint)
 
+- **CFI question bank verification** — `verify_question_bank.py --input qbank_cfi_helicopter.json` complete (~2 h). **9,576** processed → **8,689 PASS** (90.7%), **868 FLAG** (9.1%), **19 FAIL removed** (0.2%); **9,557** on disk. **0** API-failure placeholder FLAGs (all genuine content flags); **1** API parse error (recovered). Next: triage → review server (2026-06-07)
 - **CFI Helicopter ACS extraction** — PDF at `raw-pdfs/faa/FAA-S-ACS-29_CFI_Helicopter_ACS.pdf`; `extract_poh_json.py --section faa_acs` → **`extracted-data/faa/FAA-S-ACS-29_CFI_Helicopter_ACS.json`** (18 areas, 87 tasks, 1,197 ACS items, 1 verify flag; gitignored) (2026-06-05)
 - **CFI question bank generation** — `generate_question_bank.py --rating cfi` complete (~22 h). **1,197** ACS API calls → **`qbank_cfi_helicopter.json`** with **9,576** questions; **0** items with 0 questions; **0** errors (2026-06-06)
 - **CFI ACS item code patch** — `patch_cfi_acs_item_codes.py` prepended **FI.** (Area I) / **HI.** (Areas II+) to all 1,197 item lines (2026-06-05)
@@ -33,13 +34,13 @@ Verify remaining banks (CFI, Instrument, ATP); review rewritten rejects and merg
 - **FLAG pre-triage** (`triage_flag_questions.py`) — private + commercial runs (2026-05-02)
 - **`review_server.py`** — used for private + commercial manual review; activity in local `review_changes.log` (gitignored)
 
-**On-disk banks (2026-06-02):**
+**On-disk banks (2026-06-07):**
 
 | Bank | Questions | FLAG |
 |------|-----------|------|
 | Private | 6,526 | 0 |
 | Commercial | 7,016 | 0 |
-| CFI | 9,576 | (not verified) |
+| CFI | 9,557 | 868 |
 | Instrument | 2,584 | (not verified) |
 | ATP | 2,072 | (not verified) |
 
@@ -53,11 +54,12 @@ Verify remaining banks (CFI, Instrument, ATP); review rewritten rejects and merg
 
 ### Up Next (Prioritized)
 
-1. Run **verification** on CFI, then Instrument, then ATP (`verify_question_bank.py --input …`)
-2. **Pre-triage** + manual review any new FLAGs per bank
-3. **Build Phase 1 PDF output** — `render_study_sheet.py` → Private R22 study sheet set
-4. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
-5. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
+1. **Pre-triage CFI FLAGs** — `run_triage_cfi.ps1`, then review server on ESCALATE items
+2. Run **verification** on Instrument, then ATP (`verify_question_bank.py --input …`)
+3. **Pre-triage** + manual review any new FLAGs per bank
+4. **Build Phase 1 PDF output** — `render_study_sheet.py` → Private R22 study sheet set
+5. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
+6. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
 
 ---
 

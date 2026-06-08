@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-06 (CFI question bank complete — 1,197 ACS items, 9,576 questions, 0 errors)
+Last updated: 2026-06-07 (CFI question bank verified — 9,576 processed, 90.7% PASS, 9.1% FLAG, 19 FAIL removed)
 
 ---
 
@@ -16,11 +16,17 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 
 ## Completed This Session
 
+### CFI question bank verification complete (2026-06-07)
+
+- **`scripts/verify_question_bank.py --input question-bank/qbank_cfi_helicopter.json`** — Full run completed (~2 h, 958 batches). **9,576** questions processed → **8,689 PASS** (90.7%), **868 FLAG** (9.1%), **19 FAIL removed** (0.2%). On-disk bank: **9,557** questions after FAIL removals.
+- **API errors:** **1** `[VERIFIER ERROR]` in log (JSON parse on one batch; recovered on retry). **0** API-failure placeholder FLAGs — all **868** FLAGs are genuine Haiku content flags, not rate-limit failures. **`--retry-failures` not needed**; proceed to `triage_flag_questions.py` then review server.
+- **`qbank_cfi_helicopter.json`** — not committed (gitignored). Next: `run_triage_cfi.ps1` → manual review of ESCALATE items.
+
 ### CFI question bank generation complete (2026-06-06)
 
 - **`scripts/patch_cfi_acs_item_codes.py`** — Prepended **FI.** (Area I) / **HI.** (Areas II–XVIII) codes to all **1,197** CFI ACS item lines (2026-06-05).
 - **`scripts/generate_question_bank.py --rating cfi`** — Full run completed (~22 h). **18** areas, **87** tasks, **1,197** ACS API calls, **9,576** questions → `question-bank/qbank_cfi_helicopter.json` (gitignored). **0** ACS items with 0 questions; **0** API/validation errors in log.
-- **`qbank_cfi_helicopter.json`** — not committed (gitignored). Next: `verify_question_bank.py --input question-bank/qbank_cfi_helicopter.json`.
+- **`qbank_cfi_helicopter.json`** — not committed (gitignored). Verification complete 2026-06-07 (see above).
 
 ### Rejected-question rewrite pipeline (2026-06-03)
 
