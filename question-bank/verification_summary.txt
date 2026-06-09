@@ -1,5 +1,5 @@
-verification_run_utc: 2026-04-22T18:05:40Z
-total_processed: 7071
-pass: 6361
-flag: 696
-fail_removed: 14
+verification_run_utc: 2026-06-09T17:21:16Z
+total_processed: 8
+pass: 0
+flag: 8
+fail_removed: 0

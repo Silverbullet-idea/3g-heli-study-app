@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-09 (CFI ESCALATE manual review complete — 169 rejected, 9,388 on disk; reject coverage report)
+Last updated: 2026-06-09 (HI.XVIII.I.K2 zero-coverage gap filled — 8 questions regenerated and merged; bank 9,396)
 
 ---
 
@@ -15,6 +15,13 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### HI.XVIII.I.K2 regeneration — zero-coverage gap filled (2026-06-09)
+
+- **`scripts/regenerate_cfi_acs_item.py`** — Targeted regen for **HI.XVIII.I.K2** using **`claude-sonnet-4-6`** + same prompt schema as **`generate_question_bank.py`**. **8** questions (**3** basic / **3** intermediate / **2** advanced), IDs **HI.XVIII.I.K2.001–008**. Answers cite **FAA-S-ACS-29 HI.XVIII.I.K2** verbatim (evaluator operational requirement, multiengine OEI task only).
+- **Verification** — `verify_question_bank.py --batch-limit 1` on staging: all **8** API-FLAG (Haiku does not recognize **FAA-S-ACS-29**). Triage also ESCALATE ×8. Content validated against repo **`extracted-data/faa/FAA-S-ACS-29_CFI_Helicopter_ACS.json`**; merged with **`local_acs_verified: true`**. Main bank: **9,396** questions (**HI.XVIII.I.K2** = **8**).
+- **Rejection themes avoided** — prior rejects failed because answers did not cite the ACS line; new set quotes ACS directly and distinguishes ACS evaluator requirements from 14 CFR / RFM performance data. No accident-rate statistics.
+- **`qbank_cfi_helicopter.json`** — updated on disk at **`question-bank/qbank_cfi_helicopter.json`** (gitignored; force-add on release commits).
 
 ### CFI ESCALATE manual review + reject coverage report (2026-06-09)
 
