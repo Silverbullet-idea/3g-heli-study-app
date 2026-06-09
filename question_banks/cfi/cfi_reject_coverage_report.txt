@@ -1,0 +1,75 @@
+=== CFI REJECT COVERAGE REPORT ===
+Generated: 2026-06-09 10:15:26
+Reject source: question-bank\review_changes.log
+Main bank: question-bank\qbank_cfi_helicopter.json (9388 questions on disk)
+Total rejected: 169
+Unique ACS codes rejected: 138
+
+TOP 20 ACS ITEMS BY REJECT COUNT:
+HI.XVIII.I.K2 — 8 rejects — HI.XVIII.I.K2 The minimum altitude to initiate this Task must be at least 1,000 feet AGL.
+HI.XVIII.C.K2 — 4 rejects — HI.XVIII.C.K2 Each operational rule part identifies additional requirements for the approval and use of FSTDs in an F...
+HI.VIII.A.S5 — 3 rejects — HI.VIII.A.S5 Maintain recommended hovering altitude, ±1/2 of that altitude within 10 feet of the surface, if above 10...
+HI.XVIII.H.K2 — 3 rejects — HI.XVIII.H.K2 The minimum altitude to initiate a power failure must be at least 1,000 feet AGL with a power recovery ...
+FI.I.E.K4 — 2 rejects — FI.I.E.K4 Professional development.
+HI.III.D.S1 — 2 rejects — HI.III.D.S1 Operate at least three of the helicopter's systems listed in K1a through K1k.
+HI.III.I.K3 — 2 rejects — HI.III.I.K3 Advisory Circulars, INFOs, and SAFOs.
+HI.VIII.A.R1 — 2 rejects — HI.VIII.A.R1 Loss of tail rotor effectiveness (LTE).
+HI.XIII.B.R7 — 2 rejects — HI.XIII.B.R7 Powerplant failure during the maneuver.
+HI.XIII.D.K2 — 2 rejects — HI.XIII.D.K2 Interpretation, operation, and limitations of pitch, bank, and power instruments.
+HI.XIII.G.K7 — 2 rejects — HI.XIII.G.K7 Common errors related to this Task.
+HI.XVII.H.S1 — 2 rejects — HI.XVII.H.S1 Present valid logbook endorsement attesting competency in touchdown autorotation instruction, if used in...
+HI.XVIII.G.K4 — 2 rejects — HI.XVIII.G.K4 If the applicant does not roll out of the turn by 300 feet AGL then the evaluator must direct the appli...
+HI.III.H.K9 — 2 rejects — HI.III.H.K9 Magnetic compass errors.
+HI.VIII.A.K2 — 2 rejects — HI.VIII.A.K2 Effect of wind on flight control inputs.
+HI.VIII.B.K2 — 2 rejects — HI.VIII.B.K2 Hover taxi instructions, clearances, and limitations.
+HI.VIII.E.R2 — 2 rejects — HI.VIII.E.R2 Conditions leading to loss of tail rotor/antitorque effectiveness.
+HI.III.E.R8 — 2 rejects — HI.III.E.R8 Situations that lead to loss of tail rotor/antitorque effectiveness (LTE).
+HI.XII.C.R2 — 2 rejects — HI.XII.C.R2 Flight control inputs.
+HI.XVIII.E.R2 — 2 rejects — HI.XVIII.E.R2 Adhere to helicopter manufacturer's slope limitations, or limit to approximately 5-10 degrees if none a...
+
+REJECT DISTRIBUTION BY AREA:
+HI.XVIII — 35 rejects
+HI.XIII — 24 rejects
+HI.VIII — 22 rejects
+HI.III — 17 rejects
+HI.XVII — 13 rejects
+HI.XII — 12 rejects
+HI.IX — 10 rejects
+FI.I — 9 rejects
+HI.VI — 7 rejects
+HI.IV — 4 rejects
+HI.XI — 3 rejects
+HI.XIV — 3 rejects
+HI.XV — 3 rejects
+HI.II — 2 rejects
+HI.VII — 2 rejects
+HI.X — 2 rejects
+HI.V — 1 rejects
+
+REJECT DISTRIBUTION BY ITEM TYPE:
+Knowledge (K) — 84 rejects
+Risk management (R) — 48 rejects
+Skills (S) — 37 rejects
+
+ITEMS WITH 3+ REJECTS (POTENTIAL COVERAGE GAPS):
+HI.XVIII.I.K2 — 8 rejects — 0 remaining in bank
+HI.XVIII.C.K2 — 4 rejects — 4 remaining in bank
+HI.VIII.A.S5 — 3 rejects — 5 remaining in bank
+HI.XVIII.H.K2 — 3 rejects — 5 remaining in bank
+
+FI vs HI SPLIT:
+FI. items: 9 rejects
+HI. items: 160 rejects
+
+=== COVERAGE RISK ===
+1 ACS items have 0 remaining questions after rejects
+0 ACS items have only 1 remaining question after rejects
+0 rejected ACS codes had only 1 question in bank before reject (single-question items)
+
+ACS items with 0 remaining (code | original count | rejects):
+  HI.XVIII.I.K2 | was 8 | rejected 8
+
+ACS items with only 1 remaining (code | original count | rejects):
+  (none)
+
+=== END REPORT ===

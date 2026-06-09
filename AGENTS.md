@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-08 (CFI FLAG pre-triage complete — 868 processed, 80.4% auto-resolved, 170 ESCALATE in review)
+Last updated: 2026-06-09 (CFI ESCALATE manual review complete — 169 rejected, 9,388 on disk; reject coverage report)
 
 ---
 
@@ -15,6 +15,13 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### CFI ESCALATE manual review + reject coverage report (2026-06-09)
+
+- **Review server session** — `run_review_server.ps1 --input question-bank/qbank_cfi_helicopter.json` complete. **170** ESCALATE items → **1 EDITED**, **169 REJECTED**. On-disk bank: **9,388** questions, **0** FLAG, **9,387 PASS** + **1 REVIEWED_PASS**.
+- **Reject source** — no dedicated `cfi_rejected.json`; rejects parsed from gitignored `question-bank/review_changes.log` (169 FI/HI `--- REJECTED ---` blocks; matches **169** `RYAN_REJECT` lines in `verification_fails.log`).
+- **`scripts/analyze_cfi_reject_coverage.py`** — read-only diagnostic; writes **`question_banks/cfi/cfi_reject_coverage_report.txt`**. **138** unique ACS codes rejected; top concentration **HI.XVIII.I.K2** (8 rejects). **Coverage risk:** **1** ACS item with **0** remaining (**HI.XVIII.I.K2**); **0** with only 1 remaining.
+- **`qbank_cfi_helicopter.json`** — not committed (gitignored). Next: regenerate or rewrite gap item **HI.XVIII.I.K2** before CFI bank release.
 
 ### CFI FLAG pre-triage complete (2026-06-08)
 
