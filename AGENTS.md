@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-09 (all commits pushed to origin — CFI bank 9,396, HI.XVIII.I.K2 gap filled, reject coverage report)
+Last updated: 2026-06-09 (Instrument bank 2,584 questions generated and committed; CFI bank 9,396 on origin)
 
 ---
 
@@ -15,6 +15,13 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### Instrument Helicopter question bank generation (2026-06-09)
+
+- **`scripts/patch_instrument_acs_item_codes.py`** — Prepended **IH.** codes to all **323** Instrument ACS item lines (ACS JSON had description-only lines, no codes).
+- **`scripts/generate_question_bank.py --rating instrument`** — Full run completed (~6.1 h). **12** areas, **27** tasks, **323** ACS API calls, **2,584** questions → `question-bank/qbank_instrument_helicopter.json`. **0** ACS items with 0 questions; **0** API/validation errors. Prompt caching active (`cache_read_input_tokens` on batch 2+). Model: **claude-sonnet-4-6**.
+- **`qbank_instrument_helicopter.json`** — committed with `git add -f` (gitignored pattern). Verification **not** run this session.
+- Legacy pre-patch bank moved to `question-bank/qbank_instrument_helicopter_20260422_legacy.json` (gitignored).
 
 ### HI.XVIII.I.K2 regeneration — zero-coverage gap filled (2026-06-09)
 
@@ -107,7 +114,7 @@ Added:
 - `scripts/run_generate_cfi.ps1` — `--rating cfi`; first-line comment: overnight-scale cost — **do not run casually** (wrapper only in this session).
 - `scripts/run_generate_atp.ps1` — `--rating atp`; first-line comment: short/low-cost — **wrapper only** in this session.
 
-**Runs in progress (started same session):** `run_verify_commercial.ps1` and `run_generate_instrument.ps1` both started cleanly from repo root. Let them finish; review JSON and logs before commit.
+**Instrument generation complete (2026-06-09):** `run_generate_instrument.ps1` / `--rating instrument` → **2,584** questions; ACS patched with **IH.** codes first. Verification pending.
 
 ### Full Private question bank (2026-04-14)
 
@@ -171,7 +178,7 @@ Present locally under `extracted-data/faa/` and `extracted-data/aircraft/`:
 | faa/FAA-H-8083-1B_Weight_Balance_Handbook.json | 5 | 0 |
 | faa/FAA-S-ACS-15_Private_Helicopter_ACS.json | 14 areas | 0 |
 | faa/FAA-S-ACS-16_Commercial_Helicopter_ACS.json | 14 areas | 0 |
-| faa/FAA-S-ACS-14_Instrument_Helicopter_ACS.json | 8 areas | 0 |
+| faa/FAA-S-ACS-14_Instrument_Helicopter_ACS.json | 12 areas, 323 ACS items (IH. codes patched 2026-06-09) | 0 |
 | faa/FAA-S-ACS-ATP_Helicopter_ACS.json | 11 areas | 0 |
 | faa/FAA-S-ACS-29_CFI_Helicopter_ACS.json | 18 areas | 1 |
 

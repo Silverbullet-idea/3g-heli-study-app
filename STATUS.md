@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 9, 2026 — all commits pushed to origin (CFI bank 9,396, reject report, HI.XVIII.I.K2 regen)
+June 9, 2026 — Instrument Helicopter question bank generated (2,584 questions, 323 ACS items); CFI bank 9,396 on origin
 
 ---
 
@@ -18,6 +18,7 @@ Verify Instrument + ATP banks; render and ship first **Private R22** PDF study s
 
 ### Completed (This Sprint)
 
+- **Instrument Helicopter question bank generation** — `patch_instrument_acs_item_codes.py` + `generate_question_bank.py --rating instrument` complete (~6.1 h). **323** ACS API calls → **`qbank_instrument_helicopter.json`** with **2,584** questions; **0** items with 0 questions; **0** errors. Committed; verification pending (2026-06-09)
 - **HI.XVIII.I.K2 regeneration** — `regenerate_cfi_acs_item.py` → **8** new questions merged; **HI.XVIII.I.K2** coverage restored (**8** in bank). Bank **9,396** questions, **0** FLAG (2026-06-09)
 - **CFI ESCALATE manual review** — review server session complete (2026-06-09). **170** ESCALATE items → **1 EDITED**, **169 REJECTED**; bank was **9,388** before regen. **`scripts/analyze_cfi_reject_coverage.py`** → **`question_banks/cfi/cfi_reject_coverage_report.txt`**
 - **CFI FLAG pre-triage** — `run_triage_cfi.ps1` complete (~53 min). **868** FLAGs → **17 APPROVE**, **681 EDIT**, **170 ESCALATE**; **80.4%** automated resolution. Review server launched for ESCALATE queue (2026-06-08)
@@ -47,7 +48,7 @@ Verify Instrument + ATP banks; render and ship first **Private R22** PDF study s
 | Private | 6,526 | 0 |
 | Commercial | 7,016 | 0 |
 | CFI | 9,396 | 0 |
-| Instrument | 2,584 | (not verified) |
+| Instrument | 2,584 | (not verified — regen 2026-06-09, IH. codes) |
 | ATP | 2,072 | (not verified) |
 
 ---
