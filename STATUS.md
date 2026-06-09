@@ -4,9 +4,12 @@
 ---
 
 ### Last Updated
-June 9, 2026 — HI.XVIII.I.K2 zero-coverage gap filled (8 questions regenerated; bank 9,396)
+June 9, 2026 — all commits pushed to origin (CFI bank 9,396, reject report, HI.XVIII.I.K2 regen)
 
 ---
+
+### Git / Remote
+**Local `main` is in sync with `origin/main`** (pushed 2026-06-09). Recent commits on origin: CFI FLAG pre-triage docs (`71aba98`), reject coverage report (`df5a283`), HI.XVIII.I.K2 regen + bank (`124a221`).
 
 ### Current Sprint Goal
 Verify Instrument + ATP banks; render and ship first **Private R22** PDF study sheet set (Phase 1 SKU 1).
@@ -95,4 +98,4 @@ At the end of every future session, the active agent must:
 - [x] Re-prioritize "Up Next" based on what was learned this session
 - [ ] Log any new Open Decisions or Blockers
 - [x] Update "Last Updated" with today's date and a one-line session summary
-- [ ] Commit STATUS.md: `git add STATUS.md && git commit -m "chore: update STATUS.md — [one-line summary]" && git push`
+- [x] Commit STATUS.md: `git add STATUS.md && git commit -m "chore: update STATUS.md — [one-line summary]" && git push`
