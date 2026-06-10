@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-10 — **Instrument Helicopter bank COMPLETE** (2,530 questions, 0 FLAG, committed and pushed)
+Last updated: 2026-06-10 — **Question bank pipeline COMPLETE** (4 of 5 ratings; ATP deferred). Phase 1 PDF renderer next.
 
 ---
 
@@ -14,7 +14,44 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 
 ---
 
+## Question Bank Pipeline — COMPLETE (except ATP deferred)
+
+| Rating | Questions | Status |
+|--------|-----------|--------|
+| Private | 6,526 | ✅ Complete |
+| Commercial | 7,016 | ✅ Complete |
+| CFI | 9,396 | ✅ Complete |
+| Instrument | 2,530 | ✅ Complete |
+| ATP | — | 🔲 Deferred — no ACS exists |
+
+### ATP deferral note
+
+As of June 2026, the FAA has not published an Airman Certification Standards document for Helicopter ATP. The current standard remains **FAA-S-8081-20A** (Practical Test Standards), which does not use the K/R/S item structure required by the question bank generator. ATP generation is deferred until the FAA publishes a Helicopter ATP ACS. Monitor [faa.gov/training_testing/testing/acs](https://www.faa.gov/training_testing/testing/acs) for release. The PTS source document (FAA-S-8081-20A) is archived at: `uploads/Heli_-_ATP_-_FAA-2022-1463-0012_content.pdf`
+
+### Immediate next priority: Phase 1 PDF renderer
+
+**Target SKU:** Private Pilot Study Sheet — R22
+
+**Data ready:**
+- `extracted-data/aircraft/r22_limitations.json`
+- `extracted-data/aircraft/r22_emergency_procedures.json`
+- `extracted-data/aircraft/r22_systems.json`
+
+**Design:** Blue `#4B5EBF`, Orange `#E8650A`, white background, helicopter watermark, logo top-center, monospace values, mnemonic aids
+
+**Price:** $9.97 per set
+
+**Phase 3 note:** Question banks are ready for UI development when Phase 1 is complete.
+
+---
+
 ## Completed This Session
+
+### Question bank pipeline closed (2026-06-10)
+
+- **4 of 5 ratings final** — Private **6,526**, Commercial **7,016**, CFI **9,396**, Instrument **2,530** (all **0** FLAG).
+- **ATP deferred** — no FAA Helicopter ATP ACS; PTS **FAA-S-8081-20A** lacks K/R/S structure for generator.
+- **Next priority:** Phase 1 PDF renderer — Private R22 study sheet set.
 
 ### Instrument Helicopter question bank — COMPLETE (2026-06-10)
 

@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 10, 2026 — **Instrument Helicopter bank COMPLETE** (2,530 questions, 0 FLAG, pushed to origin)
+June 10, 2026 — Question bank pipeline **COMPLETE** (4 of 5 ratings; ATP deferred). Next: Phase 1 PDF renderer.
 
 ---
 
@@ -12,12 +12,16 @@ June 10, 2026 — **Instrument Helicopter bank COMPLETE** (2,530 questions, 0 FL
 **Local `main` is in sync with `origin/main`**. Instrument bank manual-review commit pushed 2026-06-10.
 
 ### Current Sprint Goal
-Verify ATP bank; render and ship first **Private R22** PDF study sheet set (Phase 1 SKU 1).
+Build Phase 1 PDF renderer — **Private Pilot Study Sheet — R22** (SKU 1 of 8).
+
+### Question Bank Pipeline
+**COMPLETE** — 4 of 5 ratings final (Private, Commercial, CFI, Instrument). **ATP deferred** (no FAA Helicopter ATP ACS). Phase 3 question banks ready for UI development when Phase 1 complete.
 
 ---
 
 ### Completed (This Sprint)
 
+- **Question bank pipeline — COMPLETE** — 4 of 5 ratings final; ATP deferred (no Helicopter ATP ACS). Phase 3 banks ready for UI when Phase 1 ships (2026-06-10)
 - **Instrument Helicopter question bank — COMPLETE** — generate → verify → triage → manual review → reject coverage → commit (2026-06-09–10). Final bank **2,530** questions, **0** FLAG; committed and pushed. **`analyze_instrument_reject_coverage.py`** → **`question-bank/instrument/instrument_reject_coverage_report.txt`**
 - **Instrument Helicopter FLAG pre-triage** — `triage_flag_questions.py --input qbank_instrument_helicopter.json` complete (~17 min). **244** FLAGs → **9 APPROVE**, **186 EDIT**, **49 ESCALATE**; **79.9%** automated resolution. **49** FLAG remaining. Next: review server (2026-06-10)
 - **Instrument Helicopter question bank verification** — `verify_question_bank.py --input qbank_instrument_helicopter.json` complete (~38 min). **2,584** processed → **2,334 PASS** (90.3%), **244 FLAG** (9.4%), **6 FAIL removed** (0.2%); **2,578** on disk. Next: triage → review server (2026-06-10)
@@ -44,15 +48,15 @@ Verify ATP bank; render and ship first **Private R22** PDF study sheet set (Phas
 - **FLAG pre-triage** (`triage_flag_questions.py`) — private + commercial runs (2026-05-02)
 - **`review_server.py`** — used for private + commercial manual review; activity in local `review_changes.log` (gitignored)
 
-**On-disk banks (2026-06-10):**
+**Final question banks (2026-06-10):**
 
-| Bank | Questions | FLAG |
-|------|-----------|------|
-| Private | 6,526 | 0 |
-| Commercial | 7,016 | 0 |
-| CFI | 9,396 | 0 |
-| Instrument | 2,530 | 0 |
-| ATP | 2,072 | (not verified) |
+| Bank | Questions | FLAG | Status |
+|------|-----------|------|--------|
+| Private | 6,526 | 0 | ✅ Complete |
+| Commercial | 7,016 | 0 | ✅ Complete |
+| CFI | 9,396 | 0 | ✅ Complete |
+| Instrument | 2,530 | 0 | ✅ Complete |
+| ATP | — | — | 🔲 Deferred (no ACS) |
 
 ---
 
@@ -64,11 +68,10 @@ _(none)_
 
 ### Up Next (Prioritized)
 
-1. Run **verification** on Instrument, then ATP (`verify_question_bank.py --input …`)
-3. **Pre-triage** + manual review any new FLAGs per bank
-4. **Build Phase 1 PDF output** — `render_study_sheet.py` → Private R22 study sheet set
-5. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
-6. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
+1. **Build Phase 1 PDF renderer** — `render_study_sheet.py` → Private R22 study sheet set ($9.97)
+2. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
+3. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
+4. Monitor FAA ACS page for Helicopter ATP ACS release (ATP bank deferred)
 
 ---
 
