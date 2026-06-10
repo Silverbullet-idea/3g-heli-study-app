@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-10 (Instrument FLAG triage — 9 APPROVE / 186 EDIT / 49 ESCALATE; 79.9% auto-resolved)
+Last updated: 2026-06-10 (Instrument ESCALATE review complete — 2,530 on disk; reject coverage report committed)
 
 ---
 
@@ -15,6 +15,12 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### Instrument Helicopter ESCALATE manual review + reject coverage (2026-06-10)
+
+- **Review server** — `run_review_server.ps1 --input question-bank/qbank_instrument_helicopter.json` complete. **49** ESCALATE items → **1 APPROVED**, **48 REJECTED**. On-disk bank: **2,530** questions, **0** FLAG.
+- **`scripts/analyze_instrument_reject_coverage.py`** — read-only diagnostic; writes **`question-bank/instrument/instrument_reject_coverage_report.txt`**. **48** rejects (**37** unique ACS codes). Top concentration **IH.X.B.K3** (6 rejects, 2 remaining). **Coverage risk:** **0** ACS items with 0 remaining; **0** with only 1 remaining.
+- **`qbank_instrument_helicopter.json`** — reviewed on disk; **not yet committed** (post-review bank pending Ryan release).
 
 ### Instrument Helicopter FLAG pre-triage (2026-06-10)
 

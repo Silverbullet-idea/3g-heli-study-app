@@ -1,0 +1,62 @@
+=== INSTRUMENT REJECT COVERAGE REPORT ===
+Generated: 2026-06-10 13:12:25
+Reject source: question-bank\review_changes.log (IH REJECTED blocks), question-bank\verification_fails.log (IH RYAN_REJECT lines)
+Main bank: question-bank\qbank_instrument_helicopter.json (2530 questions on disk)
+Total rejected: 48
+Unique ACS codes rejected: 37
+
+TOP 20 ACS ITEMS BY REJECT COUNT:
+IH.X.B.K3 — 6 rejects — IH.X.B.K3 Required IPC Tasks: Area of Operation I – None; Area of Operation II – None; Area of Operation III – B; Are...
+IH.XII.A.K9 — 3 rejects — IH.XII.A.K9 Each ATD is issued an FAA letter of authorization (LOA) that is valid for 60 calendar months.
+IH.X.A.K3 — 2 rejects — IH.X.A.K3 In Area of Operation VII, Emergency Operations, Task B does not apply unless the applicant supplies a multi...
+IH.X.B.K4 — 2 rejects — IH.X.B.K4 In Area of Operation VII, Emergency Operations, Task B does not apply unless the applicant supplies a multi...
+IH.XII.B.K3 — 2 rejects — IH.XII.B.K3 Intervention by the evaluator to prevent the applicant from exceeding any helicopter operating limitation...
+IH.XII.D.K3 — 2 rejects — IH.XII.D.K3 The standard is to allow no more than a ¾ scale deflection of either the vertical or lateral deviation in...
+IH.III.B.S1 — 1 rejects — IH.III.B.S1 Use an entry procedure appropriate for a standard, nonstandard, published, or non-published holding pattern.
+IH.IV.B.S2 — 1 rejects — IH.IV.B.S2 Use single-pilot resource management (SRM) or crew resource management (CRM), as appropriate.
+IH.XI.A.K7 — 1 rejects — IH.XI.A.K7 CRM/SRM is the set of competencies that includes situational awareness, communication skills, teamwork, ta...
+IH.I.A.K1 — 1 rejects — IH.I.A.K1 Certification requirements, recency of experience, and recordkeeping.
+IH.I.A.R1 — 1 rejects — IH.I.A.R1 Proficiency versus currency.
+IH.I.C.K5 — 1 rejects — IH.I.C.K5 Procedures for activating and closing an IFR flight plan in controlled and uncontrolled airspace.
+IH.II.C.K2 — 1 rejects — IH.II.C.K2 IFR airworthiness, including helicopter inspection requirements and required equipment for IFR flight.
+IH.III.A.S6 — 1 rejects — IH.III.A.S6 Use single-pilot resource management (SRM) or crew resource management (CRM), as appropriate.
+IH.III.B.R1 — 1 rejects — IH.III.B.R1 Recalculating fuel reserves if assigned an unanticipated expect further clearance (EFC) time.
+IH.III.B.S6 — 1 rejects — IH.III.B.S6 Use proper wind correction procedures to maintain the desired pattern and to arrive over the fix as close...
+IH.IV.A.K3 — 1 rejects — IH.IV.A.K3 Normal and abnormal instrument indications and operations.
+IH.V.A.R2 — 1 rejects — IH.V.A.R2 Distractions, task prioritization, loss of situational awareness, or disorientation.
+IH.VII.B.K1 — 1 rejects — IH.VII.B.K1 Procedures and limitations associated with a precision approach, including determining required descent r...
+IH.VII.B.K3 — 1 rejects — IH.VII.B.K3 Ground-based and satellite-based navigation systems (orientation, course determination, equipment, tests ...
+
+REJECT DISTRIBUTION BY AREA:
+IH.X — 11 rejects
+IH.XII — 10 rejects
+IH.VII — 9 rejects
+IH.III — 4 rejects
+IH.VIII — 4 rejects
+IH.I — 3 rejects
+IH.XI — 3 rejects
+IH.IV — 2 rejects
+IH.II — 1 rejects
+IH.V — 1 rejects
+
+REJECT DISTRIBUTION BY ITEM TYPE:
+Knowledge (K) — 28 rejects
+Risk management (R) — 7 rejects
+Skills (S) — 13 rejects
+
+ITEMS WITH 3+ REJECTS (POTENTIAL COVERAGE GAPS):
+IH.X.B.K3 — 6 rejects — 2 remaining in bank
+IH.XII.A.K9 — 3 rejects — 5 remaining in bank
+
+=== COVERAGE RISK ===
+0 ACS items have 0 remaining questions after rejects
+0 ACS items have only 1 remaining question after rejects
+0 rejected ACS codes had only 1 question in bank before reject (single-question items)
+
+ACS items with 0 remaining (code | original count | rejects):
+  (none)
+
+ACS items with only 1 remaining (code | original count | rejects):
+  (none)
+
+=== END REPORT ===
