@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-10 — **Question bank pipeline COMPLETE** (4 of 5 ratings; ATP deferred). Phase 1 PDF renderer next.
+Last updated: 2026-06-10 — **Phase 1 PDF renderer COMPLETE** (7 aircraft Private study sheets). Question bank pipeline COMPLETE (4 of 5 ratings; ATP deferred).
 
 ---
 
@@ -10,7 +10,7 @@ Last updated: 2026-06-10 — **Question bank pipeline COMPLETE** (4 of 5 ratings
 
 Phase 1 — Printable / Digital Study Cards (PDF downloads)
 
-Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
+Active SKU: Private Pilot Study Sheets — **7 aircraft rendered** (r22, r44, r66, b505, b206, b407, sw269c1). Output: `output/study_sheets/{id}_private_study_sheet.pdf` via `render_study_sheets.py`.
 
 ---
 
@@ -28,16 +28,15 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 
 As of June 2026, the FAA has not published an Airman Certification Standards document for Helicopter ATP. The current standard remains **FAA-S-8081-20A** (Practical Test Standards), which does not use the K/R/S item structure required by the question bank generator. ATP generation is deferred until the FAA publishes a Helicopter ATP ACS. Monitor [faa.gov/training_testing/testing/acs](https://www.faa.gov/training_testing/testing/acs) for release. The PTS source document (FAA-S-8081-20A) is archived at: `uploads/Heli_-_ATP_-_FAA-2022-1463-0012_content.pdf`
 
-### Immediate next priority: Phase 1 PDF renderer
+### Phase 1 PDF renderer — COMPLETE (2026-06-10)
 
-**Target SKU:** Private Pilot Study Sheet — R22
+**Script:** `scripts/render_study_sheets.py` + `run_render_study_sheets.ps1`
 
-**Data ready:**
-- `extracted-data/aircraft/r22_limitations.json`
-- `extracted-data/aircraft/r22_emergency_procedures.json`
-- `extracted-data/aircraft/r22_systems.json`
+**Input:** `data/study_sheet_specs/{id}_private_study_sheet.json`
 
-**Design:** Blue `#4B5EBF`, Orange `#E8650A`, white background, helicopter watermark, logo top-center, monospace values, mnemonic aids
+**Output:** `output/study_sheets/{id}_private_study_sheet.pdf` (gitignored)
+
+**Rendered:** r22, r44, r66, b505, b206, b407, sw269c1 — **7 PDFs** (1–2 pages each). Assets: `assets/AILogoFinal.png`, `assets/HeliOnlyLarge.png`.
 
 **Price:** $9.97 per set
 
@@ -282,6 +281,8 @@ Output: `data/study_sheet_specs/{id}_private_study_sheet.json` (4 sections: limi
 | sw269c1 | sw269c1_private_study_sheet.json | 44 | ✅ |
 | sw269c | — | — | ❌ Blocked (no source JSON) |
 
+**PDF output (2026-06-10):** All 7 specs rendered via `render_study_sheets.py` → `output/study_sheets/`. Page counts: r22/r44/r66/b505/b407/sw269c1 = 1 page; b206 = 2 pages.
+
 No `confidence: low` strings in any of the nine files. **H125** extraction not started — confirm these outputs before expanding.
 
 ### PDF Library (local only — gitignored)
@@ -416,6 +417,8 @@ billing is replenished, re-run the same command to fill Area I, then run without
 | generate_question_bank.py | ACS + handbook JSON → oral exam question bank (Anthropic) |
 | generate_study_sheet_specs.py | Extracted aircraft POH JSON → checkride study sheet content specs (Anthropic, prompt caching) |
 | run_generate_study_sheet_specs.ps1 | Runs `generate_study_sheet_specs.py` for all aircraft (or `--aircraft` slug) |
+| render_study_sheets.py | Spec JSON → branded 8.5×11 PDF study sheets (ReportLab canvas; `--aircraft`, `--output-dir`) |
+| run_render_study_sheets.ps1 | Runs `render_study_sheets.py` for all aircraft (or `--aircraft` slug) |
 | patch_cfi_acs_item_codes.py | Prepends FI./HI. codes to CFI ACS JSON item lines (one-time post-extract fix) |
 | run_generate_private.ps1 | Runs `generate_question_bank.py --rating private` |
 | run_verify_private.ps1 | Runs `verify_question_bank.py --input question-bank/qbank_private_helicopter.json` |

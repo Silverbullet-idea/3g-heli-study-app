@@ -12,3 +12,5 @@ extracted-data/raw-text/*.txt
 
 question-bank/qbank_*.json
 question-bank/review_changes.log
+
+output/

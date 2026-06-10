@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 10, 2026 — Study sheet spec JSONs generated for 7 aircraft (Phase 1). Next: PDF renderer.
+June 10, 2026 — Phase 1 PDF renderer complete for 7 aircraft Private study sheets.
 
 ---
 
@@ -12,7 +12,7 @@ June 10, 2026 — Study sheet spec JSONs generated for 7 aircraft (Phase 1). Nex
 **Local `main` is in sync with `origin/main`**. Instrument bank manual-review commit pushed 2026-06-10.
 
 ### Current Sprint Goal
-Build Phase 1 PDF renderer — **Private Pilot Study Sheet — R22** (SKU 1 of 8).
+Phase 1 Private study sheets **shipped locally** — 7 PDFs in `output/study_sheets/`. Next: product listing on 3gheliprep.com ($9.97/set).
 
 ### Question Bank Pipeline
 **COMPLETE** — 4 of 5 ratings final (Private, Commercial, CFI, Instrument). **ATP deferred** (no FAA Helicopter ATP ACS). Phase 3 question banks ready for UI development when Phase 1 complete.
@@ -21,6 +21,7 @@ Build Phase 1 PDF renderer — **Private Pilot Study Sheet — R22** (SKU 1 of 8
 
 ### Completed (This Sprint)
 
+- **Phase 1 PDF renderer — COMPLETE** — `render_study_sheets.py` + `run_render_study_sheets.ps1` → `output/study_sheets/{id}_private_study_sheet.pdf` for **7** aircraft (1–2 pages each; b206 = 2 pages). ReportLab canvas layout with 3G branding (2026-06-10)
 - **Study sheet spec JSONs — Phase 1** — `generate_study_sheet_specs.py` → `data/study_sheet_specs/{id}_private_study_sheet.json` for **7** aircraft (r22, r44, r66, b505, b206, b407, sw269c1); sw269c skipped (no source JSON). Model: **claude-sonnet-4-20250514** (2026-06-10)
 - **Schweizer 269C-1 POH extraction** — `extract_poh_json.py --aircraft sw269c1` → `extracted-data/aircraft/sw269c1_{limitations,emergency_procedures,systems}.json` (pages 45–58 / 59–72 / 30–37; 7 verify flags in limitations). **sw269c blocked** — `schweizer_300_flight_manual.pdf` is byte-identical to 269C-1 manual; need distinct Model 269C / S300C POH (2026-06-10)
 - **Question bank pipeline — COMPLETE** — 4 of 5 ratings final; ATP deferred (no Helicopter ATP ACS). Phase 3 banks ready for UI when Phase 1 ships (2026-06-10)
@@ -70,7 +71,7 @@ _(none)_
 
 ### Up Next (Prioritized)
 
-1. **Build Phase 1 PDF renderer** — `render_study_sheet.py` consumes `data/study_sheet_specs/*.json` → Private R22 study sheet set ($9.97)
+1. **List Private study sheets on 3gheliprep.com** — $9.97/set; 7 aircraft PDFs ready in `output/study_sheets/`
 2. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
 3. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
 4. Monitor FAA ACS page for Helicopter ATP ACS release (ATP bank deferred)
@@ -80,7 +81,6 @@ _(none)_
 ### Open Decisions
 
 - **R44 Raven I vs Raven II — separate SKUs or combined?**
-- **PDF renderer approach** — ReportLab vs HTML-to-PDF (WeasyPrint)
 - **Additional topics beyond STUDY_SHEET_MASTER?**
 - **Mock Checkride session block pricing** — after beta token cost data
 
