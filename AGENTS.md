@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-09 (Instrument bank 2,584 questions generated and committed; CFI bank 9,396 on origin)
+Last updated: 2026-06-10 (Instrument bank verified — 2,334 PASS / 244 FLAG / 6 FAIL; 2,578 on disk)
 
 ---
 
@@ -16,11 +16,16 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 
 ## Completed This Session
 
+### Instrument Helicopter question bank verification (2026-06-10)
+
+- **`scripts/verify_question_bank.py --input question-bank/qbank_instrument_helicopter.json`** — Full run completed (~38 min, 259 batches). **2,584** processed → **2,334 PASS** (90.3%), **244 FLAG** (9.4%), **6 FAIL removed** (0.2%). On-disk bank: **2,578** questions. Model: **claude-haiku-4-5-20251001**; system-prompt caching configured (`cache_control: ephemeral`). FLAG rate below 15% — **`diagnose_flags.py` not required**. Next: triage → review server on FLAGs.
+- **`qbank_instrument_helicopter.json`** — verification metadata written in place; committed and pushed.
+
 ### Instrument Helicopter question bank generation (2026-06-09)
 
 - **`scripts/patch_instrument_acs_item_codes.py`** — Prepended **IH.** codes to all **323** Instrument ACS item lines (ACS JSON had description-only lines, no codes).
 - **`scripts/generate_question_bank.py --rating instrument`** — Full run completed (~6.1 h). **12** areas, **27** tasks, **323** ACS API calls, **2,584** questions → `question-bank/qbank_instrument_helicopter.json`. **0** ACS items with 0 questions; **0** API/validation errors. Prompt caching active (`cache_read_input_tokens` on batch 2+). Model: **claude-sonnet-4-6**.
-- **`qbank_instrument_helicopter.json`** — committed with `git add -f` (gitignored pattern). Verification **not** run this session.
+- **`qbank_instrument_helicopter.json`** — committed with `git add -f` (gitignored pattern). Verified 2026-06-10 (see above).
 - Legacy pre-patch bank moved to `question-bank/qbank_instrument_helicopter_20260422_legacy.json` (gitignored).
 
 ### HI.XVIII.I.K2 regeneration — zero-coverage gap filled (2026-06-09)
