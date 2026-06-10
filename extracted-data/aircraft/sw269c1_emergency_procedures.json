@@ -1,0 +1,271 @@
+{
+  "aircraft": "Schweizer 269C-1 (S300CB/CBi)",
+  "poh_source": "emergency_procedures",
+  "source_file": "Schweizer-300-POH-Flight-Manual-269C-1-300CB-300CBi.pdf",
+  "extracted_date": "2026-06-10",
+  "extraction_script_version": "1.0.0",
+  "procedures": [
+    {
+      "id": "engine_failure_above_450_feet",
+      "title": "ENGINE FAILURE - ALTITUDE ABOVE 450 FEET",
+      "conditions": "Engine failure at altitude above 450 feet",
+      "steps": [
+        "Lower collective pitch.",
+        "Enter normal autorotation.",
+        "Establish a steady glide of 52kt (60 mph) IAS approximately.",
+        "At an altitude of approximately 50 feet, initiate a flare.",
+        "At approximately 10 feet, coordinate collective pitch with forward movement of cyclic stick to level aircraft and cushion landing. Make ground contact with aircraft level.",
+        "Avoid rapid lowering of collective pitch or the use of aft cyclic stick during initial ground contact or during ground slide.",
+        "In the event of engine failure at night, do not turn on landing light above 1,000 feet above terrain in order to preserve battery power."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_failure_above_7_below_450_feet",
+      "title": "ENGINE FAILURE - ALTITUDE ABOVE 7 FEET AND BELOW 450 FEET",
+      "conditions": "Conduct takeoff operations in accordance with the restrictions shown on Height Velocity Diagram (Figure 5-2). Engine failure during takeoff at altitude above 7 feet and below 450 feet.",
+      "steps": [
+        "Lower the collective pitch (altitude permitting), in order to maintain rotor speed.",
+        "The amount and duration of collective reduction depends upon the height above the ground at which the engine failure occurs.",
+        "As the ground is approached, use aft cyclic and collective as needed to decrease forward and vertical velocity.",
+        "Establish a level attitude prior to ground contact.",
+        "Apply collective pitch as necessary in order to cushion landing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_failure_below_7_feet",
+      "title": "ENGINE FAILURE - ALTITUDE BELOW 7 FEET",
+      "conditions": "A power failure is indicated by a sudden yawing of the ship to the left.",
+      "steps": [
+        "Do not reduce collective pitch.",
+        "Apply right pedal to prevent excessive yawing and right stick to minimize drift.",
+        "Apply collective pitch as necessary in order to cushion landing."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "ditching_power_off",
+      "title": "DITCHING - POWER OFF",
+      "conditions": "Follow the procedures defined in paragraphs 3-1 through 3-3 for autorotation approach and landing. Upon contact with water, proceed as follows:",
+      "steps": [
+        "Lower collective pitch and apply sideward cyclic stick after contact is made with water.",
+        "Release seat belt and shoulder harness.",
+        "Open both doors and exit helicopter."
+      ],
+      "warnings": [
+        "CLEAR HELICOPTER IMMEDIATELY TO PREVENT INJURY."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "ditching_power_on",
+      "title": "DITCHING - POWER ON",
+      "conditions": "",
+      "steps": [
+        "Descend to hovering altitude over water.",
+        "Unlatch doors.",
+        "Passenger exit aircraft.",
+        "Fly a safe distance away.",
+        "Turn battery and alternator switches OFF.",
+        "Close twistgrip to idle position.",
+        "Allow aircraft to settle in a level attitude, apply full collective.",
+        "When aircraft begins to roll, reduce collective to full down.",
+        "Release seat belt and shoulder harness.",
+        "When rotor blades have stopped turning, clear aircraft as quickly as possible."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "transmission_warning_caution_indicators",
+      "title": "TRANSMISSION WARNING/CAUTION INDICATORS",
+      "conditions": "",
+      "steps": [
+        "Main Rotor Transmission - Transmission Oil Temperature and Pressure: A red warning light (M/R XMSN TEMP/PRESS) on the instrument panel comes on when transmission oil pressure drops below 2-1/2 psi or temperature exceeds 235°F.",
+        "Land as soon as possible if light comes on in flight.",
+        "Optional Chip Detector Caution Indicator (If Installed): An amber caution light (M/R XMSN CHIPS) on the instrument panel comes on to indicate possible deterioration of components within the main rotor transmission.",
+        "Land as soon as possible if light comes on in flight.",
+        "Tail Rotor Transmission - Chip Detector Caution Indicator: An amber caution light (T/R XMSN CHIPS) on the instrument panel comes on to indicate possible deterioration of components within the tail rotor transmission.",
+        "Land as soon as possible if light comes on in flight."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "fuel_low_caution_indicator",
+      "title": "FUEL LOW, CAUTION INDICATOR",
+      "conditions": "",
+      "steps": [
+        "An amber fuel low caution light (FUEL LOW) on the instrument panel comes on in flight when approximately one gallon of usable fuel remains in the tank.",
+        "If fuel low caution light comes on during flight, land immediately."
+      ],
+      "warnings": [
+        "Do not use fuel low caution light as a working indication of fuel quantity (flight time remaining)."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "clutch_warning_light",
+      "title": "CLUTCH WARNING LIGHT",
+      "conditions": "",
+      "steps": [
+        "A red clutch warning light (RELEASE) is illuminated whenever the clutch is not fully engaged.",
+        "Be prepared to enter autorotation.",
+        "Land as soon as possible if clutch warning light comes on in flight."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "tail_rotor_failure",
+      "title": "TAIL ROTOR FAILURE",
+      "conditions": "Different types of failure may require slightly different techniques for optimum success in recovery.",
+      "steps": [
+        "General Corrective Action - Complete loss of tail rotor thrust: Failure is normally indicated by an uncontrollable (by pedal) yawing to the right.",
+        "In Forward Flight - Reduce power by lowering collective.",
+        "In Forward Flight - Adjust airspeed to 50 to 60 knots.",
+        "In Forward Flight - Use left lateral cyclic in combination with collective pitch to limit left sideslip to a reasonable angle.",
+        "In Forward Flight - If conditions permit, place the twistgrip in the IDLE position once a landing area is selected, and perform a normal autorotation. Plan to touch down with little or no forward speed.",
+        "While at a hover: Place the twistgrip in the IDLE position and perform a hovering autorotation.",
+        "Tail Rotor Control Failure - Fixed Pitch Setting: Adjust power to maintain 50 to 60 knots airspeed.",
+        "Tail Rotor Control Failure - Fixed Pitch Setting: Perform a shallow approach and running landing to a suitable area, touching down into wind at a speed between effective translational lift and 30 knots. Directional control may be accomplished by small adjustments in throttle and/or collective control."
+      ],
+      "warnings": [
+        "WHEN HOVERING AT ALTITUDES WITHIN OR ABOVE THE CROSS-HATCHED AREAS DEPICTED ON THE HEIGHT VELOCITY DIAGRAM (FIG. 5-2), IT IS NECESSARY TO REDUCE ALTITUDE TO 7 FEET OR LESS PRIOR TO PLACING THE TWISTGRIP IN THE GROUND IDLE POSITION AND PERFORMING A HOVERING AUTOROTATION."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_idle_at_altitude",
+      "title": "ENGINE IDLE AT ALTITUDE",
+      "conditions": "Engine idle speeds at high density altitudes may be less than those set at sea level conditions.",
+      "steps": [
+        "Do not rapidly reduce throttle to idle stop in flight."
+      ],
+      "warnings": [
+        "TO MINIMIZE POSSIBILITY OF ENGINE STOPPAGE, RAPID THROTTLE REDUCTIONS TO FULL IDLE DURING FLIGHT SHALL NOT BE CONDUCTED AT ANY ALTITUDE."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "air_restart",
+      "title": "AIR RESTART",
+      "conditions": "",
+      "steps": [
+        "Establish 52 kt (60 mph) autorotation.",
+        "Pick out landing spot. If less than 2000 feet above terrain, proceed with autorotation landing.",
+        "If altitude permits (Helicopters with carbureted engine - HO-360-C1A): Mixture - FULL RICH",
+        "If altitude permits (Helicopters with carbureted engine - HO-360-C1A): Throttle - CRACK APPROXIMATELY 1/2 AN INCH",
+        "If altitude permits (Helicopters with carbureted engine - HO-360-C1A): Starter - ENGAGE",
+        "If altitude permits (Helicopters with fuel injected engine - HIO-360-G1A): Mixture - IDLE CUT OFF",
+        "If altitude permits (Helicopters with fuel injected engine - HIO-360-G1A): Throttle - CRACK APPROXIMATELY 1/2 AN INCH",
+        "If altitude permits (Helicopters with fuel injected engine - HIO-360-G1A): Starter - ENGAGE",
+        "If altitude permits (Helicopters with fuel injected engine - HIO-360-G1A): Mixture push to FULL RICH when engine fires."
+      ],
+      "warnings": [
+        "If fuel pump was on at time of engine stoppage, a flooded condition may have resulted necessitating additional use of the starter."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fuselage_electrical_fire_on_ground",
+      "title": "ENGINE/FUSELAGE/ELECTRICAL FIRE ON THE GROUND",
+      "conditions": "",
+      "steps": [
+        "Mixture - IDLE CUTOFF (Pull)",
+        "Fuel valve - CLOSE (Pull)",
+        "Battery - OFF",
+        "Alternator - OFF",
+        "Exit aircraft with fire extinguisher",
+        "Extinguish fire"
+      ],
+      "warnings": [
+        "REMAIN CLEAR OF ROTOR BLADES DURING AND AFTER EVACUATION."
+      ],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fuselage_fire_inflight_power_on",
+      "title": "ENGINE/FUSELAGE FIRE, OR FIRE OF UNDETERMINED ORIGIN, IN FLIGHT - LOW/CRUISE ALTITUDE (Power-On Landing)",
+      "conditions": "If a fire is observed during flight, prevailing conditions such as day/night, altitude, and available landing areas must be considered in order to determine whether to execute a power-on or power-off landing.",
+      "steps": [
+        "Maintain airspeed and rotor RPM; be prepared to perform a full autorotation at any point in the approach.",
+        "Immediately perform power-on landing to suitable area.",
+        "If time permits: Battery - OFF",
+        "If time permits: Alternator - OFF",
+        "If time permits: Cabin Heater - OFF",
+        "Upon landing: Throttle - CLOSE",
+        "Upon landing: Mixture - IDLE CUTOFF (Pull)",
+        "Upon landing: Fuel valve - CLOSE (Pull)",
+        "Upon landing: Exit aircraft with fire extinguisher",
+        "Upon landing: Extinguish fire"
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "engine_fuselage_fire_inflight_power_off",
+      "title": "ENGINE/FUSELAGE FIRE, OR FIRE OF UNDETERMINED ORIGIN, IN FLIGHT - LOW/CRUISE ALTITUDE (Power-Off Landing)",
+      "conditions": "If a fire is observed during flight, prevailing conditions such as day/night, altitude, and available landing areas must be considered in order to determine whether to execute a power-on or power-off landing.",
+      "steps": [
+        "Immediately enter autorotation.",
+        "If time permits: Mixture - IDLE CUTOFF (Pull)",
+        "If time permits: Fuel valve - CLOSE (Pull)",
+        "If time permits: Battery - OFF",
+        "If time permits: Alternator - OFF",
+        "If time permits: Cabin Heater - OFF",
+        "Upon landing: Exit aircraft with fire extinguisher.",
+        "Upon landing: Extinguish fire."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "electrical_fire_inflight",
+      "title": "ELECTRICAL FIRE - IN FLIGHT",
+      "conditions": "",
+      "steps": [
+        "Battery - OFF",
+        "Alternator - OFF",
+        "Immediately perform power-on landing to suitable area.",
+        "Upon landing: Throttle - CLOSE",
+        "Upon landing: Mixture - IDLE CUTOFF (Pull)",
+        "Upon landing: Fuel valve - CLOSE (Pull)",
+        "Upon landing: Exit aircraft with fire extinguisher.",
+        "Upon landing: Extinguish fire."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "smoke_and_fume_elimination_inflight",
+      "title": "SMOKE AND FUME ELIMINATION - IN FLIGHT",
+      "conditions": "Smoke and/or toxic fumes entering the cockpit can be exhausted as follows:",
+      "steps": [
+        "Open vents.",
+        "Adjust cabin heat and defog handle, as required.",
+        "Land as soon as possible."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    },
+    {
+      "id": "throttle_failure_inflight",
+      "title": "THROTTLE FAILURE - IN FLIGHT",
+      "conditions": "If the throttle becomes inoperative in flight",
+      "steps": [
+        "Continue to a landing area that will permit a shallow approach and running landing.",
+        "As descent is begun, make collective pitch adjustments smoothly and minimize the amount of movement to aid in maintaining RPM within limits.",
+        "If descent cannot be made without an excessively high RPM, fly to a suitable area and accomplish an autorotational landing. In this situation, the mixture control must be moved to the lean position before the collective pitch is lowered to enter autorotation.",
+        "If the throttle fails at a hover, lower the collective (disregarding engine RPM) and land.",
+        "After the helicopter is on the ground, move the mixture control to the lean position."
+      ],
+      "warnings": [],
+      "confidence": "extracted"
+    }
+  ]
+}

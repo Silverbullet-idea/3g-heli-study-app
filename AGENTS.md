@@ -206,7 +206,7 @@ Added:
 ### Data Extraction Pipeline
 
 - scripts/extract_text.py — pdfplumber raw text extraction; optional `--output` (repo-relative path); default `extracted-data/raw-text/<pdf_stem>.txt`
-- scripts/extract_poh_json.py — Anthropic API structured JSON extraction; use `--pdf` **or** `--input` (pre-extracted UTF-8 text), plus `--output` and `--aircraft` for non-R22/R44 targets (prompt replaces “Robinson R22/R44” with the given label)
+- scripts/extract_poh_json.py — Anthropic API structured JSON extraction; use `--pdf` **or** `--input` (pre-extracted UTF-8 text), plus `--output` and `--aircraft` for non-R22/R44 targets (prompt replaces “Robinson R22/R44” with the given label). **`AIRCRAFT_CONFIG` batch keys** (`sw269c1`, `sw269c`): `--aircraft sw269c1` runs limitations + emergency + systems from configured PDF page ranges with Schweizer spaced-word text cleanup.
 - scripts/run_r22_full_extract.ps1 — runs all three R22 sections
 - scripts/run_faa_r44_extract.ps1 — FAA handbooks + ACS + R44 (batch runner; in repo)
 - scripts/run_expanded_library.ps1 — engine manuals, PHAK, AIM, ACs
@@ -261,6 +261,10 @@ Sources: R66 section PDFs (`r66_poh_section2_limitations.pdf`, `r66_poh_section3
 | aircraft/b407_limitations.json | — | — | 9 | 8 | 1× inferred |
 | aircraft/b407_emergency_procedures.json | 27 | — | — | 0 | Full FM single-pass |
 | aircraft/b407_systems.json | — | 22 | — | 0 | — |
+| aircraft/sw269c1_limitations.json | — | — | 9 | 7 | Schweizer 269C-1/S300CB/CBi; pages 45–58 |
+| aircraft/sw269c1_emergency_procedures.json | 17 | — | — | 0 | Pages 59–72 |
+| aircraft/sw269c1_systems.json | — | 11 | — | 0 | Section I design description, pages 30–37 |
+| aircraft/sw269c_limitations.json | — | — | — | — | ❌ **Blocked** — `schweizer_300_flight_manual.pdf` is byte-identical to 269C-1 POH; need distinct Model 269C / S300C manual (HIO-360-D1A, 190 HP) |
 
 No `confidence: low` strings in any of the nine files. **H125** extraction not started — confirm these outputs before expanding.
 
@@ -293,6 +297,12 @@ AgustaWestland:
 MD Helicopters:
 
 - raw-pdfs/md_helicopters/ — MD500D (1 file)
+
+Schweizer:
+
+- raw-pdfs/schweizer/
+  - Schweizer-300-POH-Flight-Manual-269C-1-300CB-300CBi.pdf — Model 269C-1 / S300CB/CBi (166 pages; extracted 2026-06-10)
+  - schweizer_300_flight_manual.pdf — **duplicate of 269C-1 file** (SHA256 match); not a distinct 269C/S300C manual
 
 Engines:
 

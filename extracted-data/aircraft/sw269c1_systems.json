@@ -1,0 +1,691 @@
+{
+  "aircraft": "Schweizer 269C-1 (S300CB/CBi)",
+  "poh_source": "systems",
+  "source_file": "Schweizer-300-POH-Flight-Manual-269C-1-300CB-300CBi.pdf",
+  "extracted_date": "2026-06-10",
+  "extraction_script_version": "1.0.0",
+  "systems": {
+    "general_description": {
+      "title": "GENERAL DESCRIPTION",
+      "description": "The 269C-1 is a lightweight, piston-powered helicopter derived from the Model 269C, designed for economical, reliable, and safe operation with lower life cycle costs, high payload-to-empty-weight ratio, improved crashworthiness, and multi-purpose capability.",
+      "key_points": [
+        "Derivative of Model 269C configured for lower life cycle costs",
+        "FAA Type Certificate Number 4H12",
+        "Commercial designation: S-300CB (S/N 0001-0138), S-300CBi (S/N 0139 & Subs)",
+        "Flight plan designator: H269",
+        "Normal operations limited to visual flight conditions day or night",
+        "Certified in normal helicopter category per FAA regulations"
+      ],
+      "components": [],
+      "specifications": [
+        {
+          "item": "FAA Type Certificate",
+          "value": null,
+          "unit": "",
+          "notes": "4H12"
+        },
+        {
+          "item": "FAA Model Designation",
+          "value": null,
+          "unit": "",
+          "notes": "Model 269C-1"
+        },
+        {
+          "item": "Commercial Designation (S/N 0001-0138)",
+          "value": null,
+          "unit": "",
+          "notes": "SCHWEIZER S-300CB"
+        },
+        {
+          "item": "Commercial Designation (S/N 0139 & Subs)",
+          "value": null,
+          "unit": "",
+          "notes": "SCHWEIZER S-300CBi"
+        },
+        {
+          "item": "Flight Plan Designator",
+          "value": null,
+          "unit": "",
+          "notes": "H269"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "airframe_and_structure": {
+      "title": "DESIGN AND CONSTRUCTION DESCRIPTION",
+      "description": "The fuselage uses a central tubular steel open frame as the primary load-carrying structure. A monocoque aluminum tailboom extends rearward from the center frame. The cabin is formed by the canopy, two doors, floor section, and seat structure, enclosing the pilot and passenger area.",
+      "key_points": [
+        "Central tubular steel open frame forms the load-carrying structure",
+        "Pilot's position is on the RIGHT side of the cabin",
+        "Instrument panel located forward of seats at helicopter centerline",
+        "Canopy and door transparent areas are cast acrylic material",
+        "Airfoil above canopy modifies airflow around the cabin",
+        "Glove box stowage compartment can accommodate up to 20 lbs additional baggage",
+        "28-volt accessory power plug below left side of instrument panel on later S/N aircraft",
+        "Tailboom is monocoque aluminum structure housing tail rotor drive shaft and control rod",
+        "Lower forward fairing streamlines below cabin and supports engine air induction system"
+      ],
+      "components": [
+        "Central tubular steel open frame",
+        "Aluminum floor beams, channels, and panels",
+        "Seat structure (riveted aluminum beams, frames, bulkheads)",
+        "Two cabin doors",
+        "Canopy (cast acrylic)",
+        "Instrument panel",
+        "Airfoil (above canopy windshield)",
+        "Lower forward fairing",
+        "Monocoque aluminum tailboom",
+        "Horizontal stabilizer",
+        "Vertical stabilizer",
+        "28-volt accessory power plug"
+      ],
+      "specifications": [
+        {
+          "item": "Glove box max baggage",
+          "value": 20,
+          "unit": "lbs",
+          "notes": "Instrument console stowage compartment"
+        },
+        {
+          "item": "Accessory power plug voltage",
+          "value": 28,
+          "unit": "volts",
+          "notes": "Below left side of instrument panel on later S/N aircraft"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "landing_gear": {
+      "title": "DESIGN AND CONSTRUCTION DESCRIPTION",
+      "description": "Fixed skid-type nonretractable landing gear with fore and aft crossbeams attached to the underside of the center frame. Oleo-type shock-absorbing dampers are incorporated. Skid tubes at lower strut ends provide attachment points for ground handling wheels.",
+      "key_points": [
+        "Skid type, nonretractable",
+        "Fore and aft crossbeams attach to underside of center frame",
+        "Oleo-type shock-absorbing dampers",
+        "Right and left stabilizer assemblies connect outboard ends of crossbeams",
+        "Stabilizer assemblies provide stepping areas for cabin entry and servicing",
+        "Skid tubes have attachment points for ground handling wheels"
+      ],
+      "components": [
+        "Fore and aft crossbeams",
+        "Struts",
+        "Oleo-type shock-absorbing dampers",
+        "Right and left stabilizer assemblies",
+        "Skid tubes",
+        "Contoured fittings"
+      ],
+      "specifications": [
+        {
+          "item": "Skid gear tread (compressed)",
+          "value": 6.54,
+          "unit": "ft",
+          "notes": "1.993 m"
+        },
+        {
+          "item": "Tail rotor ground clearance (tip)",
+          "value": 2.63,
+          "unit": "ft",
+          "notes": "0.802 m"
+        },
+        {
+          "item": "Main rotor clearance ground to tip (static)",
+          "value": 7,
+          "unit": "ft",
+          "notes": "2.13 m, rotor static"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "main_rotor_system": {
+      "title": "DESIGN AND CONSTRUCTION DESCRIPTION",
+      "description": "Three-bladed, fully articulated single main rotor system with flapping hinges and lead-lag hinged blade attachment. The main rotor drive shaft transmits power from the main transmission to the hub. A thrust bearing positions the shaft within the nonrotating mast.",
+      "key_points": [
+        "Three blades, fully articulated with flapping and lead-lag hinges",
+        "NACA 0015 airfoil",
+        "Blade twist of -8°39'",
+        "RPM limits: power on 442-471 rpm, power off 390-504 rpm",
+        "Main rotor mast secured to upper structural member of rear cabin bulkhead and rigidly attached to center frame by three structural members",
+        "Thrust bearing positions drive shaft within mast"
+      ],
+      "components": [
+        "Three main rotor blades",
+        "Flapping hinges",
+        "Lead-lag hinges",
+        "Main rotor hub",
+        "Main rotor drive shaft",
+        "Nonrotating main rotor mast",
+        "Thrust bearing"
+      ],
+      "specifications": [
+        {
+          "item": "Number of blades",
+          "value": 3,
+          "unit": "",
+          "notes": ""
+        },
+        {
+          "item": "Diameter",
+          "value": 26.83,
+          "unit": "ft",
+          "notes": "8.178 m"
+        },
+        {
+          "item": "Blade chord (constant)",
+          "value": 6.75,
+          "unit": "in",
+          "notes": "171.5 mm"
+        },
+        {
+          "item": "Airfoil",
+          "value": null,
+          "unit": "",
+          "notes": "NACA 0015"
+        },
+        {
+          "item": "Blade twist",
+          "value": -8.65,
+          "unit": "degrees",
+          "notes": "-8°39'"
+        },
+        {
+          "item": "RPM limit power on (min)",
+          "value": 442,
+          "unit": "rpm",
+          "notes": ""
+        },
+        {
+          "item": "RPM limit power on (max)",
+          "value": 471,
+          "unit": "rpm",
+          "notes": ""
+        },
+        {
+          "item": "RPM limit power off (min)",
+          "value": 390,
+          "unit": "rpm",
+          "notes": ""
+        },
+        {
+          "item": "RPM limit power off (max)",
+          "value": 504,
+          "unit": "rpm",
+          "notes": ""
+        },
+        {
+          "item": "Blade area",
+          "value": 22.64,
+          "unit": "ft²",
+          "notes": "2.103 m²"
+        },
+        {
+          "item": "Geometric disc area",
+          "value": 565.49,
+          "unit": "ft²",
+          "notes": "52.534 m²"
+        },
+        {
+          "item": "Geometric solidity ratio",
+          "value": 0.04,
+          "unit": "",
+          "notes": ""
+        },
+        {
+          "item": "Collective pitch full down (3/4 radius)",
+          "value": null,
+          "unit": "degrees",
+          "notes": "2.5° ± 1.5°"
+        },
+        {
+          "item": "Collective pitch travel",
+          "value": null,
+          "unit": "degrees",
+          "notes": "12° ± 1°"
+        },
+        {
+          "item": "Longitudinal cyclic pitch full forward",
+          "value": null,
+          "unit": "degrees",
+          "notes": "8.5° to 9.5°"
+        },
+        {
+          "item": "Longitudinal cyclic pitch full aft",
+          "value": null,
+          "unit": "degrees",
+          "notes": "6.5° to 7.5°"
+        },
+        {
+          "item": "Lateral cyclic pitch full left",
+          "value": null,
+          "unit": "degrees",
+          "notes": "6.5° to 7.5°"
+        },
+        {
+          "item": "Lateral cyclic pitch full right",
+          "value": null,
+          "unit": "degrees",
+          "notes": "4.5° to 6.5°"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "tail_rotor_system": {
+      "title": "DESIGN AND CONSTRUCTION DESCRIPTION",
+      "description": "Two-bladed antitorque tail rotor with variable-pitch blades interconnected by a high-strength tension-torsion strap assembly. Mounted on the output shaft of the tail rotor transmission at the aft end of the tailboom.",
+      "key_points": [
+        "Two variable-pitch blades interconnected by tension-torsion strap assembly",
+        "NACA 0014 modified airfoil",
+        "Blade twist of -8°00'",
+        "RPM limits power on: 2901-3094 rpm",
+        "Provides torque reaction and directional control"
+      ],
+      "components": [
+        "Two variable-pitch tail rotor blades",
+        "High-strength tension-torsion strap assembly",
+        "Tail rotor transmission (gearbox)",
+        "Tail rotor drive shaft (one-piece, no intermediate couplings or bearings)",
+        "Drive shaft damper (near center of tailboom)"
+      ],
+      "specifications": [
+        {
+          "item": "Number of blades",
+          "value": 2,
+          "unit": "",
+          "notes": ""
+        },
+        {
+          "item": "Diameter",
+          "value": 4.25,
+          "unit": "ft",
+          "notes": "1.295 m"
+        },
+        {
+          "item": "Blade chord (constant)",
+          "value": 4.81,
+          "unit": "in",
+          "notes": "122.2 mm"
+        },
+        {
+          "item": "Airfoil",
+          "value": null,
+          "unit": "",
+          "notes": "NACA 0014, modified"
+        },
+        {
+          "item": "Blade twist",
+          "value": -8,
+          "unit": "degrees",
+          "notes": "-8°00'"
+        },
+        {
+          "item": "RPM limit power on (min)",
+          "value": 2901,
+          "unit": "rpm",
+          "notes": ""
+        },
+        {
+          "item": "RPM limit power on (max)",
+          "value": 3094,
+          "unit": "rpm",
+          "notes": ""
+        },
+        {
+          "item": "Blade area",
+          "value": 1.69,
+          "unit": "ft²",
+          "notes": "0.157 m²"
+        },
+        {
+          "item": "Geometric disc area",
+          "value": 14.19,
+          "unit": "ft²",
+          "notes": "1.318 m²"
+        },
+        {
+          "item": "Geometric effective solidity ratio",
+          "value": 0.116,
+          "unit": "",
+          "notes": ""
+        },
+        {
+          "item": "Collective pitch full left pedal (thrust right) at 3/4 radius",
+          "value": null,
+          "unit": "degrees",
+          "notes": "+25° to +27°"
+        },
+        {
+          "item": "Collective pitch full right pedal (thrust left) at 3/4 radius",
+          "value": null,
+          "unit": "degrees",
+          "notes": "-11° to -13°"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "transmission_and_drive_system": {
+      "title": "DESIGN AND CONSTRUCTION DESCRIPTION",
+      "description": "Engine power is transmitted via a belt drive transmission assembly using a matched set of V-belts between lower and upper pulleys. A pilot-controlled idler pulley acts as a clutch. The upper pulley incorporates an overrunning clutch for autorotation. The main transmission mounts on the lower end of the nonrotating mast and has a self-contained lubrication system cooled by airflow.",
+      "key_points": [
+        "Belt drive assembly uses matched set of V-belts between lower (engine crankshaft) and upper (main transmission input) pulleys",
+        "Idler pulley controlled by pilot acts as engage/disengage clutch",
+        "Overrunning clutch in upper pulley permits autorotation without driving belts or engine",
+        "One-piece tail rotor drive shaft with no intermediate couplings or bearings",
+        "Drive shaft damper suppresses excessive oscillation during acceleration/deceleration",
+        "Main transmission has self-contained lubrication system, cooled by airflow",
+        "Tail rotor transmission has self-contained lubricant supply"
+      ],
+      "components": [
+        "Belt drive transmission assembly",
+        "Lower pulley (engine crankshaft driven)",
+        "Upper pulley (main transmission input)",
+        "Matched set of V-belts",
+        "Idler pulley (pilot-controlled clutch)",
+        "Overrunning clutch (upper pulley)",
+        "Main transmission",
+        "Main rotor drive shaft",
+        "Tail rotor drive shaft (one-piece)",
+        "Drive shaft damper",
+        "Tail rotor transmission (gearbox)"
+      ],
+      "specifications": [],
+      "confidence": "extracted"
+    },
+    "powerplant": {
+      "title": "DESIGN AND CONSTRUCTION DESCRIPTION",
+      "description": "Textron Lycoming four-cylinder, horizontally opposed, air-cooled engine. S/N 0001-0138 use the HO-360-C1A (carbureted with primer system); S/N 0139 & Subs use the HIO-360-G1A (fuel injected). Both rated at 180 hp at 2700 rpm for takeoff and maximum continuous operation at sea level standard conditions. Engine mounted horizontally on shock mounts within the center frame section.",
+      "key_points": [
+        "HO-360-C1A (carbureted) for S/N 0001-0138; HIO-360-G1A (fuel injected) for S/N 0139 & Subs",
+        "180 hp at 2700 rpm for both takeoff AND maximum continuous (same rating)",
+        "Four-cylinder, horizontally opposed, air-cooled",
+        "Mounted horizontally on shock mounts within center frame",
+        "Carbureted version includes primer system"
+      ],
+      "components": [
+        "Textron Lycoming HO-360-C1A (carbureted, S/N 0001-0138)",
+        "Textron Lycoming HIO-360-G1A (fuel injected, S/N 0139 & Subs)",
+        "Primer system (carbureted version)",
+        "Shock mounts"
+      ],
+      "specifications": [
+        {
+          "item": "Engine type (carbureted)",
+          "value": null,
+          "unit": "",
+          "notes": "Lycoming HO-360-C1A, 4-cylinder, horizontally opposed, air-cooled"
+        },
+        {
+          "item": "Engine type (fuel injected)",
+          "value": null,
+          "unit": "",
+          "notes": "Lycoming HIO-360-G1A, 4-cylinder, horizontally opposed, air-cooled"
+        },
+        {
+          "item": "Horsepower",
+          "value": 180,
+          "unit": "hp",
+          "notes": "At 2700 rpm, both takeoff and max continuous, sea level standard"
+        },
+        {
+          "item": "RPM (rated)",
+          "value": 2700,
+          "unit": "rpm",
+          "notes": ""
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "fuel_system": {
+      "title": "DESIGN AND CONSTRUCTION DESCRIPTION",
+      "description": "Main fuel tank located externally on the left-hand side of the cabin bulkhead. An optional auxiliary tank may be attached externally on the right-hand side of the cabin bulkhead. Tank capacities vary by serial number.",
+      "key_points": [
+        "Main tank on left-hand side of cabin bulkhead (external)",
+        "Optional auxiliary tank on right-hand side of cabin bulkhead (external)",
+        "Main tank capacity: 35.2 US gal (S/N dependent) or 33.0 US gal",
+        "Auxiliary tank capacity: 30.0 US gal or 33.0 US gal (S/N dependent)"
+      ],
+      "components": [
+        "Main fuel tank (left external)",
+        "Auxiliary fuel tank (right external, optional)"
+      ],
+      "specifications": [
+        {
+          "item": "Main tank capacity (variant 1)",
+          "value": 35.2,
+          "unit": "US gallons",
+          "notes": "133 liters, S/N dependent"
+        },
+        {
+          "item": "Main tank capacity (variant 2)",
+          "value": 33.0,
+          "unit": "US gallons",
+          "notes": "125 liters, S/N dependent"
+        },
+        {
+          "item": "Auxiliary tank capacity (variant 1)",
+          "value": 30.0,
+          "unit": "US gallons",
+          "notes": "113 liters, S/N dependent"
+        },
+        {
+          "item": "Auxiliary tank capacity (variant 2)",
+          "value": 33.0,
+          "unit": "US gallons",
+          "notes": "125 liters, S/N dependent"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "flight_controls": {
+      "title": "DESIGN AND CONSTRUCTION DESCRIPTION",
+      "description": "Mechanically linked solid-type cyclic and collective control systems using tubular push-pull rods. Tail rotor control uses cables and pulleys in one link of an otherwise solid tubular push-pull rod system. Collective and cyclic controls are provided for the pilot on the right side; pedals are adjustable.",
+      "key_points": [
+        "Cyclic and collective systems are mechanically linked solid type using tubular push-pull rods",
+        "Tail rotor system uses cables and pulleys in one link, otherwise solid push-pull rods",
+        "Pilot position on RIGHT side with cyclic stick and pedals forward, collective to left",
+        "Pedals are adjustable",
+        "Throttle is twist grip type with 130° of travel"
+      ],
+      "components": [
+        "Cyclic control stick",
+        "Collective pitch control stick",
+        "Tail rotor directional control pedals (adjustable)",
+        "Tubular push-pull rods",
+        "Cables and pulleys (tail rotor control link)",
+        "Twist grip throttle"
+      ],
+      "specifications": [
+        {
+          "item": "Collective stick travel (full down to full up)",
+          "value": 10,
+          "unit": "in",
+          "notes": "254 mm"
+        },
+        {
+          "item": "Throttle twist grip travel (full closed to full open)",
+          "value": 130,
+          "unit": "degrees",
+          "notes": ""
+        },
+        {
+          "item": "Cyclic stick travel (full forward to full aft)",
+          "value": 15,
+          "unit": "in",
+          "notes": "381 mm"
+        },
+        {
+          "item": "Cyclic stick travel (full left to full right)",
+          "value": 16,
+          "unit": "in",
+          "notes": "406 mm"
+        },
+        {
+          "item": "Directional control pedal travel (full forward to full aft)",
+          "value": 8,
+          "unit": "in",
+          "notes": "203 mm"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "stabilizers": {
+      "title": "GENERAL DIMENSIONAL DATA",
+      "description": "Fixed horizontal and vertical stabilizers at the aft end of the tailboom. The horizontal stabilizer uses NACA 0015 modified airfoil with 35° dihedral and 9.8° incidence. The vertical stabilizer uses a symmetrical airfoil.",
+      "key_points": [
+        "Horizontal stabilizer: NACA 0015 modified, 35° dihedral, 9.8° incidence",
+        "Vertical stabilizer: symmetrical airfoil, 1.00 in thick fin, triangular planform (tip chord 0.0)",
+        "Both stabilizers supported at aft end of tailboom"
+      ],
+      "components": [
+        "Horizontal stabilizer",
+        "Vertical stabilizer"
+      ],
+      "specifications": [
+        {
+          "item": "Horizontal stabilizer area (to tailboom)",
+          "value": 2.65,
+          "unit": "ft²",
+          "notes": "0.246 m²"
+        },
+        {
+          "item": "Horizontal stabilizer span to tailboom CL",
+          "value": 2.5,
+          "unit": "ft",
+          "notes": "0.762 m"
+        },
+        {
+          "item": "Horizontal stabilizer chord (constant)",
+          "value": 12.7,
+          "unit": "in",
+          "notes": "322 mm"
+        },
+        {
+          "item": "Horizontal stabilizer airfoil",
+          "value": null,
+          "unit": "",
+          "notes": "NACA 0015, modified"
+        },
+        {
+          "item": "Horizontal stabilizer dihedral",
+          "value": 35,
+          "unit": "degrees",
+          "notes": ""
+        },
+        {
+          "item": "Horizontal stabilizer incidence",
+          "value": 9.8,
+          "unit": "degrees",
+          "notes": ""
+        },
+        {
+          "item": "Vertical stabilizer area (to tailboom)",
+          "value": 1.0,
+          "unit": "ft²",
+          "notes": "0.093 m²"
+        },
+        {
+          "item": "Vertical stabilizer span (to tailboom)",
+          "value": 1.25,
+          "unit": "ft",
+          "notes": "0.381 m"
+        },
+        {
+          "item": "Vertical stabilizer root chord",
+          "value": 23.6,
+          "unit": "in",
+          "notes": "60.0 mm"
+        },
+        {
+          "item": "Vertical stabilizer tip chord",
+          "value": 0.0,
+          "unit": "in",
+          "notes": "0.0 mm"
+        },
+        {
+          "item": "Vertical stabilizer airfoil",
+          "value": null,
+          "unit": "",
+          "notes": "Symmetrical, fin 1.00 in thick"
+        }
+      ],
+      "confidence": "extracted"
+    },
+    "general_dimensional_data": {
+      "title": "GENERAL DIMENSIONAL DATA",
+      "description": "Overall helicopter dimensions covering length, width, height, and rotor clearances for the 269C-1.",
+      "key_points": [
+        "Maximum length with rotors turning: 30.83 ft",
+        "Maximum height to top of rotor hub (gear compressed): 8.72 ft",
+        "Distance between main and tail rotor centerlines: 15.29 ft"
+      ],
+      "components": [],
+      "specifications": [
+        {
+          "item": "Maximum length, rotors turning",
+          "value": 30.83,
+          "unit": "ft",
+          "notes": "9.397 m"
+        },
+        {
+          "item": "Maximum length, main rotor blades at rest on trailing",
+          "value": 24,
+          "unit": "ft",
+          "notes": "7.315 m"
+        },
+        {
+          "item": "Length without rotors (skids to tail skid)",
+          "value": 22.19,
+          "unit": "ft",
+          "notes": "6.763 m"
+        },
+        {
+          "item": "Width, main rotor blades turning",
+          "value": 26.83,
+          "unit": "ft",
+          "notes": "8.178 m"
+        },
+        {
+          "item": "Cabin width",
+          "value": 4.25,
+          "unit": "ft",
+          "notes": "1.295 m"
+        },
+        {
+          "item": "Skid gear tread (compressed)",
+          "value": 6.54,
+          "unit": "ft",
+          "notes": "1.993 m"
+        },
+        {
+          "item": "Width, main rotor blades at rest (one trailing)",
+          "value": 12.6,
+          "unit": "ft",
+          "notes": "4.15 m"
+        },
+        {
+          "item": "Height to top of rotor hub (gear compressed)",
+          "value": 8.72,
+          "unit": "ft",
+          "notes": "2.658 m"
+        },
+        {
+          "item": "Main rotor clearance ground to tip (static)",
+          "value": 7,
+          "unit": "ft",
+          "notes": "2.13 m"
+        },
+        {
+          "item": "Tail rotor clearance ground to tip",
+          "value": 2.63,
+          "unit": "ft",
+          "notes": "0.802 m"
+        },
+        {
+          "item": "Distance between main and tail rotor (CL to CL)",
+          "value": 15.29,
+          "unit": "ft",
+          "notes": "4.660 m"
+        }
+      ],
+      "confidence": "extracted"
+    }
+  }
+}

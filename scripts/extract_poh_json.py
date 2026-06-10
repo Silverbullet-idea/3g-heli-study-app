@@ -364,6 +364,45 @@ ACS_FILE: dict[str, str] = {
     "atp": "raw-pdfs/faa/FAA-S-ACS-ATP_Helicopter_ACS.pdf",
 }
 
+# Batch extraction: --aircraft <key> runs all POH sections without --section/--pdf.
+AIRCRAFT_CONFIG: dict[str, dict[str, Any]] = {
+    "sw269c1": {
+        "label": "Schweizer 269C-1 (S300CB/CBi)",
+        "pdf": "raw-pdfs/schweizer/Schweizer-300-POH-Flight-Manual-269C-1-300CB-300CBi.pdf",
+        "text_cleanup": True,
+        "sections": {
+            "limitations": {"section": "limitations", "pages": (45, 58)},
+            "emergency_procedures": {"section": "emergency_procedures", "pages": (59, 72)},
+            "systems": {"section": "systems", "pages": (30, 37)},
+        },
+    },
+    "sw269c": {
+        "label": "Schweizer 269C (S300C)",
+        "pdf": "raw-pdfs/schweizer/schweizer_300_flight_manual.pdf",
+        "text_cleanup": True,
+        "blocked_reason": (
+            "PDF is byte-identical to the 269C-1 manual (SHA256 match); "
+            "need a distinct Model 269C / S300C POH with Lycoming HIO-360-D1A (190 HP)."
+        ),
+        "sections": {
+            "limitations": {"section": "limitations", "pages": (45, 58)},
+            "emergency_procedures": {"section": "emergency_procedures", "pages": (59, 72)},
+            "systems": {"section": "systems", "pages": (30, 37)},
+        },
+    },
+}
+
+_SPACED_WORD_RE = re.compile(r"\b(\w) (\w) (\w+)\b")
+
+
+def collapse_spaced_word_artifacts(text: str) -> str:
+    """Join pdfplumber spaced-letter artifacts (e.g. 'hel i cop ter' -> 'helicopter')."""
+    prev = None
+    while prev != text:
+        prev = text
+        text = _SPACED_WORD_RE.sub(r"\1\2 \3", text)
+    return text
+
 
 def strip_markdown_json_fences(text: str) -> str:
     t = text.strip()
@@ -529,84 +568,49 @@ def count_verify_values(obj: Any) -> int:
     return n
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Extract POH PDF to structured JSON via Anthropic.")
-    src = parser.add_mutually_exclusive_group(required=True)
-    src.add_argument(
-        "--pdf",
-        help="Path to PDF relative to repository root",
-    )
-    src.add_argument(
-        "--input",
-        help="Pre-extracted UTF-8 text file (repo-relative), e.g. extracted-data/raw-text/r66_section2.txt",
-    )
-    parser.add_argument(
-        "--output",
-        default=None,
-        help="Output JSON path relative to repo root (required with --input for non-R22/R44 naming)",
-    )
-    parser.add_argument(
-        "--aircraft",
-        default=None,
-        help="Aircraft label for metadata and prompts (e.g. 'Robinson R66', 'Bell 206B3'). Defaults from section when omitted.",
-    )
-    parser.add_argument(
-        "--section",
-        required=True,
-        choices=[
-            "limitations",
-            "emergency_procedures",
-            "systems",
-            "r44_limitations",
-            "r44_emergency_procedures",
-            "r44_systems",
-            "faa_handbook",
-            "faa_acs",
-        ],
-        help="POH section to extract",
-    )
-    args = parser.parse_args()
-    section = args.section
+def load_page_rows_from_pdf(
+    pdf_path: Path,
+    *,
+    page_range: tuple[int, int] | None = None,
+    text_cleanup: bool = False,
+) -> tuple[list[tuple[int, str]], int]:
+    page_rows: list[tuple[int, str]] = []
+    with pdfplumber.open(pdf_path) as pdf:
+        total_pages = len(pdf.pages)
+        if page_range:
+            start, end = page_range
+            indices = range(start, min(end, total_pages) + 1)
+        else:
+            indices = range(1, total_pages + 1)
+        for i in indices:
+            txt = pdf.pages[i - 1].extract_text() or ""
+            if text_cleanup:
+                txt = collapse_spaced_word_artifacts(txt)
+            page_rows.append((i, txt))
+    return page_rows, total_pages
 
-    if args.input and not args.output:
-        print("Error: --output is required when using --input.", file=sys.stderr)
-        raise SystemExit(1)
 
-    api_key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
-    if not api_key:
-        print("Error: ANTHROPIC_API_KEY is missing or empty. Set it in .env or the environment.", file=sys.stderr)
-        raise SystemExit(1)
-
-    source_name: str
-    if args.input:
-        text_path = (REPO_ROOT / args.input).resolve()
-        if not text_path.is_file():
-            print(f"Error: text file not found: {text_path}", file=sys.stderr)
-            raise SystemExit(1)
-        raw_file = text_path.read_text(encoding="utf-8", errors="replace")
-        page_rows = parse_extracted_text_pages(raw_file)
-        num_pages = len(page_rows)
-        source_name = text_path.name
-    else:
-        pdf_path = (REPO_ROOT / args.pdf).resolve()
-        if not pdf_path.is_file():
-            print(f"Error: PDF not found: {pdf_path}", file=sys.stderr)
-            raise SystemExit(1)
-        source_name = pdf_path.name
-        page_rows = []
-        with pdfplumber.open(pdf_path) as pdf:
-            num_pages = len(pdf.pages)
-            for i, page in enumerate(pdf.pages, start=1):
-                page_rows.append((i, page.extract_text() or ""))
-
+def run_extraction(
+    *,
+    section: str,
+    page_rows: list[tuple[int, str]],
+    num_pages: int,
+    source_name: str,
+    aircraft_label: str | None,
+    output: str | None,
+    aircraft_key: str | None = None,
+) -> Path:
     cfg = SECTION_CONFIG[section]
     system_prompt = cfg["system_prompt"]
-    aircraft_label = args.aircraft
     if aircraft_label:
         system_prompt = system_prompt.replace("Robinson R22", aircraft_label)
         system_prompt = system_prompt.replace("Robinson R44", aircraft_label)
 
     raw_full = pages_to_raw_text(page_rows)
+    api_key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
+    if not api_key:
+        print("Error: ANTHROPIC_API_KEY is missing or empty. Set it in .env or the environment.", file=sys.stderr)
+        raise SystemExit(1)
     client = anthropic.Anthropic(api_key=api_key)
 
     if section in ("faa_handbook", "faa_acs"):
@@ -673,8 +677,6 @@ def main() -> None:
                 raise SystemExit(1) from e
     else:
         max_out = max_tokens_for_poh_section(section, len(raw_full))
-        # SDK requires streaming when a request may exceed the non-streaming timeout
-        # (large max_tokens on long PDF text — e.g. R44 emergency/systems).
         response_text = call_anthropic_faa_stream(
             client,
             model_id=MODEL_ID,
@@ -690,8 +692,8 @@ def main() -> None:
             raise SystemExit(1) from e
 
     metadata: dict[str, Any] = {}
-    if args.aircraft:
-        metadata["aircraft"] = args.aircraft
+    if aircraft_label:
+        metadata["aircraft"] = aircraft_label
     elif section in ("limitations", "emergency_procedures", "systems"):
         metadata["aircraft"] = "R22"
     elif section in ("r44_limitations", "r44_emergency_procedures", "r44_systems"):
@@ -705,9 +707,12 @@ def main() -> None:
     metadata["extraction_script_version"] = EXTRACTION_SCRIPT_VERSION
     merged: dict[str, Any] = {**metadata, **parsed}
 
-    if args.output:
-        out_path = (REPO_ROOT / args.output).resolve()
-        out_path.parent.mkdir(parents=True, exist_ok=True)
+    if output:
+        out_path = (REPO_ROOT / output).resolve()
+    elif aircraft_key:
+        out_dir = REPO_ROOT / "extracted-data" / "aircraft"
+        section_short = section.replace("r44_", "")
+        out_path = out_dir / f"{aircraft_key}_{section_short}.json"
     elif section in ("limitations", "emergency_procedures", "systems"):
         out_dir = REPO_ROOT / "extracted-data" / "aircraft"
         out_filename = f"r22_{section}.json"
@@ -719,15 +724,13 @@ def main() -> None:
         out_path = out_dir / out_filename
     elif section in ("faa_handbook", "faa_acs"):
         out_dir = REPO_ROOT / "extracted-data" / "faa"
-        pdf_stem = Path(args.pdf).stem if args.pdf else Path(source_name).stem
-        out_filename = f"{pdf_stem}.json"
+        out_filename = f"{Path(source_name).stem}.json"
         out_path = out_dir / out_filename
     else:
         print("Error: could not determine output path.", file=sys.stderr)
         raise SystemExit(1)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
-
     out_path.write_text(
         json.dumps(merged, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
@@ -735,9 +738,149 @@ def main() -> None:
     )
 
     verify_count = count_verify_values(merged)
-    print(f"Pages processed: {num_pages}")
+    print(f"Pages processed: {len(page_rows)} (source PDF {num_pages} pages)")
     print(f"Output: {out_path}")
     print(f"Verify flags: {verify_count}")
+    return out_path
+
+
+def run_aircraft_batch(aircraft_key: str) -> None:
+    ac_cfg = AIRCRAFT_CONFIG[aircraft_key]
+    if ac_cfg.get("blocked_reason"):
+        print(f"Error: {aircraft_key} extraction blocked — {ac_cfg['blocked_reason']}", file=sys.stderr)
+        raise SystemExit(1)
+
+    pdf_path = (REPO_ROOT / ac_cfg["pdf"]).resolve()
+    if not pdf_path.is_file():
+        print(f"Error: PDF not found: {pdf_path}", file=sys.stderr)
+        raise SystemExit(1)
+
+    text_cleanup = bool(ac_cfg.get("text_cleanup"))
+    label = ac_cfg["label"]
+    print(f"=== {label} ({aircraft_key}) ===", file=sys.stderr)
+
+    for section_key, sec_cfg in ac_cfg["sections"].items():
+        print(f"--- {section_key} ---", file=sys.stderr)
+        page_rows, num_pages = load_page_rows_from_pdf(
+            pdf_path,
+            page_range=tuple(sec_cfg["pages"]),
+            text_cleanup=text_cleanup,
+        )
+        run_extraction(
+            section=sec_cfg["section"],
+            page_rows=page_rows,
+            num_pages=num_pages,
+            source_name=pdf_path.name,
+            aircraft_label=label,
+            output=f"extracted-data/aircraft/{aircraft_key}_{section_key}.json",
+            aircraft_key=aircraft_key,
+        )
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Extract POH PDF to structured JSON via Anthropic.")
+    src = parser.add_mutually_exclusive_group(required=False)
+    src.add_argument(
+        "--pdf",
+        help="Path to PDF relative to repository root",
+    )
+    src.add_argument(
+        "--input",
+        help="Pre-extracted UTF-8 text file (repo-relative), e.g. extracted-data/raw-text/r66_section2.txt",
+    )
+    parser.add_argument(
+        "--output",
+        default=None,
+        help="Output JSON path relative to repo root (required with --input for non-R22/R44 naming)",
+    )
+    parser.add_argument(
+        "--aircraft",
+        default=None,
+        help=(
+            "Aircraft label for metadata and prompts, or AIRCRAFT_CONFIG key "
+            "(e.g. sw269c1) to run all POH sections from configured PDF page ranges."
+        ),
+    )
+    parser.add_argument(
+        "--section",
+        default=None,
+        choices=[
+            "limitations",
+            "emergency_procedures",
+            "systems",
+            "r44_limitations",
+            "r44_emergency_procedures",
+            "r44_systems",
+            "faa_handbook",
+            "faa_acs",
+        ],
+        help="POH section to extract",
+    )
+    args = parser.parse_args()
+
+    if args.aircraft in AIRCRAFT_CONFIG and not args.section and not args.input:
+        run_aircraft_batch(args.aircraft)
+        return
+
+    if not args.section:
+        print("Error: --section is required unless --aircraft is a configured batch key.", file=sys.stderr)
+        raise SystemExit(1)
+    if not args.pdf and not args.input:
+        print("Error: --pdf or --input is required.", file=sys.stderr)
+        raise SystemExit(1)
+
+    section = args.section
+
+    if args.input and not args.output:
+        print("Error: --output is required when using --input.", file=sys.stderr)
+        raise SystemExit(1)
+
+    source_name: str
+    text_cleanup = False
+    if args.input:
+        text_path = (REPO_ROOT / args.input).resolve()
+        if not text_path.is_file():
+            print(f"Error: text file not found: {text_path}", file=sys.stderr)
+            raise SystemExit(1)
+        raw_file = text_path.read_text(encoding="utf-8", errors="replace")
+        page_rows = parse_extracted_text_pages(raw_file)
+        if args.aircraft in AIRCRAFT_CONFIG and AIRCRAFT_CONFIG[args.aircraft].get("text_cleanup"):
+            page_rows = [(p, collapse_spaced_word_artifacts(t)) for p, t in page_rows]
+        num_pages = len(page_rows)
+        source_name = text_path.name
+    else:
+        pdf_path = (REPO_ROOT / args.pdf).resolve()
+        if not pdf_path.is_file():
+            print(f"Error: PDF not found: {pdf_path}", file=sys.stderr)
+            raise SystemExit(1)
+        source_name = pdf_path.name
+        page_range = None
+        if args.aircraft in AIRCRAFT_CONFIG:
+            sec_map = AIRCRAFT_CONFIG[args.aircraft]["sections"]
+            for sec_cfg in sec_map.values():
+                if sec_cfg["section"] == section:
+                    page_range = tuple(sec_cfg["pages"])
+                    break
+            text_cleanup = bool(AIRCRAFT_CONFIG[args.aircraft].get("text_cleanup"))
+        page_rows, num_pages = load_page_rows_from_pdf(
+            pdf_path,
+            page_range=page_range,
+            text_cleanup=text_cleanup,
+        )
+
+    aircraft_label = args.aircraft
+    if args.aircraft in AIRCRAFT_CONFIG:
+        aircraft_label = AIRCRAFT_CONFIG[args.aircraft]["label"]
+
+    run_extraction(
+        section=section,
+        page_rows=page_rows,
+        num_pages=num_pages,
+        source_name=source_name,
+        aircraft_label=aircraft_label,
+        output=args.output,
+        aircraft_key=args.aircraft if args.aircraft in AIRCRAFT_CONFIG else None,
+    )
 
 
 if __name__ == "__main__":

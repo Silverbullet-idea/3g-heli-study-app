@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 10, 2026 — Question bank pipeline **COMPLETE** (4 of 5 ratings; ATP deferred). Next: Phase 1 PDF renderer.
+June 10, 2026 — Schweizer 269C-1 POH extracted to JSON; sw269c blocked (duplicate PDF). Next: Phase 1 PDF renderer.
 
 ---
 
@@ -21,6 +21,7 @@ Build Phase 1 PDF renderer — **Private Pilot Study Sheet — R22** (SKU 1 of 8
 
 ### Completed (This Sprint)
 
+- **Schweizer 269C-1 POH extraction** — `extract_poh_json.py --aircraft sw269c1` → `extracted-data/aircraft/sw269c1_{limitations,emergency_procedures,systems}.json` (pages 45–58 / 59–72 / 30–37; 7 verify flags in limitations). **sw269c blocked** — `schweizer_300_flight_manual.pdf` is byte-identical to 269C-1 manual; need distinct Model 269C / S300C POH (2026-06-10)
 - **Question bank pipeline — COMPLETE** — 4 of 5 ratings final; ATP deferred (no Helicopter ATP ACS). Phase 3 banks ready for UI when Phase 1 ships (2026-06-10)
 - **Instrument Helicopter question bank — COMPLETE** — generate → verify → triage → manual review → reject coverage → commit (2026-06-09–10). Final bank **2,530** questions, **0** FLAG; committed and pushed. **`analyze_instrument_reject_coverage.py`** → **`question-bank/instrument/instrument_reject_coverage_report.txt`**
 - **Instrument Helicopter FLAG pre-triage** — `triage_flag_questions.py --input qbank_instrument_helicopter.json` complete (~17 min). **244** FLAGs → **9 APPROVE**, **186 EDIT**, **49 ESCALATE**; **79.9%** automated resolution. **49** FLAG remaining. Next: review server (2026-06-10)

@@ -1,0 +1,333 @@
+{
+  "aircraft": "Schweizer 269C-1 (S300CB/CBi)",
+  "poh_source": "limitations",
+  "source_file": "Schweizer-300-POH-Flight-Manual-269C-1-300CB-300CBi.pdf",
+  "extracted_date": "2026-06-10",
+  "extraction_script_version": "1.0.0",
+  "airspeed_limits": {
+    "vne_powered_to_3000ft": {
+      "value": 94,
+      "unit": "KIAS",
+      "notes": "At sea level, never exceed speed (VNE) of 94 kt (108 mph) IAS, doors on. Reduce above sea level per Figure 2-1.",
+      "confidence": "extracted"
+    },
+    "vne_above_3000ft": {
+      "value": null,
+      "unit": "KIAS",
+      "notes": "VNE decreases with altitude per Figure 2-1 chart. E.g. at 10,000 ft DA and 0°F OAT: 83 KIAS; at 12,000 ft and 0°F OAT: 63 KIAS. No single discrete value stated for 'above 3000 ft'.",
+      "confidence": "inferred"
+    },
+    "airspeed_indicator_green_arc_min": {
+      "value": null,
+      "unit": "KIAS",
+      "notes": "No green arc minimum for airspeed indicator stated in the text provided.",
+      "confidence": "verify"
+    },
+    "airspeed_indicator_red_line": {
+      "value": 94,
+      "unit": "KIAS",
+      "notes": "Red line (VNE) on airspeed indicator: 94 KTS (108 MPH). Doors off VNE is 90 KTS IAS.",
+      "confidence": "extracted"
+    }
+  },
+  "rotor_speed_limits": {
+    "power_on_max": {
+      "value": null,
+      "unit": "%",
+      "rpm": 504,
+      "notes": "Green arc rotor 390 to 504 RPM; upper red line rotor 504 RPM. Power-on specific upper limit not separately called out from power-off upper limit in text; 504 RPM is the upper red line.",
+      "confidence": "extracted"
+    },
+    "power_on_min": {
+      "value": null,
+      "unit": "%",
+      "rpm": 390,
+      "notes": "Lower red line rotor 390 RPM. Power-on specific minimum not separately called out from power-off minimum in text.",
+      "confidence": "extracted"
+    },
+    "power_on_min_o320_variant": {
+      "value": null,
+      "unit": "%",
+      "rpm": null,
+      "notes": "No O-320 variant referenced in this section; engines listed are Lycoming HO-360-C1A and HIO-360-G1A.",
+      "confidence": "verify"
+    },
+    "power_off_max": {
+      "value": null,
+      "unit": "%",
+      "rpm": 504,
+      "notes": "Maximum rotor speed limitation is 504 RPM (with power OFF), per Section 2-6.",
+      "confidence": "extracted"
+    },
+    "power_off_min": {
+      "value": null,
+      "unit": "%",
+      "rpm": 390,
+      "notes": "Minimum rotor speed limitation is 390 RPM (with power OFF), per Section 2-6.",
+      "confidence": "extracted"
+    }
+  },
+  "weight_limits": {
+    "max_gross_standard_hp": {
+      "value": 1750,
+      "unit": "lbs",
+      "kg": null,
+      "notes": "Maximum Gross Weight 1750 pounds per Section 2-7. Single weight limit stated; no variant by HP.",
+      "confidence": "extracted"
+    },
+    "max_gross_alpha_beta_beta_ii": {
+      "value": null,
+      "unit": "lbs",
+      "kg": null,
+      "notes": "No alpha/beta/beta II variant weight limit referenced in this section.",
+      "confidence": "verify"
+    },
+    "min_gross": {
+      "value": null,
+      "unit": "lbs",
+      "kg": null,
+      "notes": "No minimum gross weight stated in this section.",
+      "confidence": "verify"
+    },
+    "max_per_seat_including_baggage": {
+      "value": 600,
+      "unit": "lbs",
+      "kg": null,
+      "notes": "Placard states '600 POUNDS MAXIMUM GROSS IN CABIN'. Interpreted as maximum cabin load; no per-seat breakdown provided.",
+      "confidence": "inferred"
+    },
+    "max_per_baggage_compartment": {
+      "value": 20,
+      "unit": "lbs",
+      "kg": null,
+      "notes": "Placard on instrument console glove box: '20 LBS MAX GROSS WEIGHT IN GLOVE BOX'.",
+      "confidence": "extracted"
+    },
+    "min_solo_pilot_weight": {
+      "value": null,
+      "unit": "lbs",
+      "notes": "No minimum solo pilot weight stated in this section.",
+      "confidence": "verify"
+    }
+  },
+  "altitude_limits": {
+    "max_operating_density_altitude": {
+      "value": 10000,
+      "unit": "ft DA",
+      "notes": "Takeoff/Landing limited to 8,000 ft density altitude; Enroute limited to 10,000 ft density altitude.",
+      "confidence": "extracted"
+    }
+  },
+  "engine": {
+    "approved_models": [
+      "Lycoming HO-360-C1A",
+      "Lycoming HIO-360-G1A"
+    ],
+    "speed_max_continuous": {
+      "value": null,
+      "unit": "%",
+      "rpm": 2700,
+      "notes": "Maximum continuous power is 180 HP at 2700 RPM. Upper red line engine 2700 RPM.",
+      "confidence": "extracted"
+    },
+    "speed_max_transient": {
+      "value": null,
+      "unit": "%",
+      "rpm": null,
+      "notes": "No momentary overspeed allowed; reference Lycoming Service Bulletin No. 369J.",
+      "confidence": "extracted"
+    },
+    "cht_max": {
+      "value": 500,
+      "unit": "°F",
+      "celsius": null,
+      "notes": "Red line CHT 500°F. Yellow arc 450°F to 500°F. Green arc 230°F to 450°F.",
+      "confidence": "extracted"
+    },
+    "oil_temp_max": {
+      "value": 245,
+      "unit": "°F",
+      "celsius": null,
+      "notes": "Red line oil temperature 245°F. Green arc 100°F to 245°F.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_min_idle": {
+      "value": null,
+      "unit": "PSI",
+      "notes": "No separate idle oil pressure minimum stated; instrument lower red line is 55 PSIG.",
+      "confidence": "verify"
+    },
+    "oil_pressure_min_flight": {
+      "value": 55,
+      "unit": "PSI",
+      "notes": "Lower red line oil pressure 55 PSIG. Green arc 55 to 95 PSIG.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_max_flight": {
+      "value": 95,
+      "unit": "PSI",
+      "notes": "Green arc upper limit 95 PSIG; upper red line is 115 PSIG.",
+      "confidence": "extracted"
+    },
+    "oil_pressure_max_start_warmup": {
+      "value": 115,
+      "unit": "PSI",
+      "notes": "Upper red line oil pressure 115 PSIG.",
+      "confidence": "extracted"
+    },
+    "oil_quantity_min_takeoff": {
+      "value": null,
+      "unit": "qt",
+      "liters": null,
+      "notes": "No minimum oil quantity for takeoff stated in this section.",
+      "confidence": "verify"
+    },
+    "carb_air_temp_caution_range_min": {
+      "value": -15,
+      "unit": "°C",
+      "notes": "Carb temp yellow arc (caution) -15°C to +5°C for helicopters with carbureted engine (HO-360-C1A).",
+      "confidence": "extracted"
+    },
+    "carb_air_temp_caution_range_max": {
+      "value": 5,
+      "unit": "°C",
+      "notes": "Carb temp yellow arc (caution) -15°C to +5°C for helicopters with carbureted engine (HO-360-C1A).",
+      "confidence": "extracted"
+    }
+  },
+  "fuel": {
+    "approved_grades": [
+      "100/130",
+      "100LL"
+    ],
+    "capacity_bladder_tanks": {
+      "main_total": {
+        "value": 35.2,
+        "unit": "gal US",
+        "liters": null
+      },
+      "main_usable": {
+        "value": 35.0,
+        "unit": "gal US",
+        "liters": null
+      },
+      "aux_total": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "aux_usable": {
+        "value": null,
+        "unit": "gal US",
+        "liters": null
+      },
+      "combined_total": {
+        "value": 65.2,
+        "unit": "gal US",
+        "liters": null
+      },
+      "combined_usable": {
+        "value": 63.0,
+        "unit": "gal US",
+        "liters": null
+      },
+      "confidence": "extracted"
+    }
+  },
+  "required_equipment_for_dispatch": [
+    "Landing lights (required for night operation)",
+    "Navigation lights (required for night operation)",
+    "Instrument lights (required for night operation)",
+    "Anticollision lights (required for night operation)"
+  ],
+  "flight_restrictions": [
+    {
+      "item": "IFR flight",
+      "status": "PROHIBITED",
+      "notes": "Flight operation under Instrument Flight Rules (IFR) is prohibited.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Night flight - VFR only",
+      "status": "REQUIRED",
+      "notes": "Flight operation at night is limited to VFR conditions.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Night flight equipment",
+      "status": "REQUIRED",
+      "notes": "Night operation permitted only when landing, navigation, instrument, and anticollision lights are operable.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Solo flight seat",
+      "status": "REQUIRED",
+      "notes": "Solo flights are permitted from the right seat only.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Maximum operating altitude - Takeoff/Landing",
+      "status": "REQUIRED",
+      "notes": "Takeoff/Landing limited to 8,000 ft density altitude.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Maximum operating altitude - Enroute",
+      "status": "REQUIRED",
+      "notes": "Enroute limited to 10,000 ft density altitude.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Doors off VNE",
+      "status": "REQUIRED",
+      "notes": "Maximum VNE with doors off is 90 kt (104 mph) IAS.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Doors off - unoccupied seat",
+      "status": "REQUIRED",
+      "notes": "If passenger/co-pilot seat is not occupied, fasten seat belts and seat cushions (secure or remove).",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Heater use during hover and ground operations",
+      "status": "PROHIBITED",
+      "notes": "Avoid use of heater (269A4451-101/-103, Muff-type using engine cooling air source) during hover and ground operations.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Engine overspeed - no momentary overspeed",
+      "status": "PROHIBITED",
+      "notes": "No momentary overspeed is allowed; reference Lycoming Service Bulletin No. 369J.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Engine idle speed with rotor disengaged",
+      "status": "REQUIRED",
+      "notes": "With rotor disengaged, avoid engine idle speed in excess of 1600 RPM.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "No storage between seats",
+      "status": "PROHIBITED",
+      "notes": "Placard: NO STORAGE BETWEEN SEAT.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "No smoking",
+      "status": "PROHIBITED",
+      "notes": "Placard: NO SMOKING.",
+      "confidence": "extracted"
+    },
+    {
+      "item": "Drive shaft inspection if RPM exceeds 2000 with rotor disengaged",
+      "status": "REQUIRED",
+      "notes": "If engine RPM exceeds 2000 RPM with rotor disengaged, inspection of drive shaft in accordance with HMI Appendix B is required before any future operation.",
+      "confidence": "extracted"
+    }
+  ],
+  "faa_ad_95_26_04": {
+    "note": "FAA AD 95-26-04 is not referenced or discussed in the pages provided. No limitations attributable to this AD were found in this section.",
+    "limitations": []
+  }
+}
