@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-10 (Instrument bank verified — 2,334 PASS / 244 FLAG / 6 FAIL; 2,578 on disk)
+Last updated: 2026-06-10 (Instrument FLAG triage — 9 APPROVE / 186 EDIT / 49 ESCALATE; 79.9% auto-resolved)
 
 ---
 
@@ -15,6 +15,11 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 ---
 
 ## Completed This Session
+
+### Instrument Helicopter FLAG pre-triage (2026-06-10)
+
+- **`scripts/triage_flag_questions.py --input question-bank/qbank_instrument_helicopter.json`** — Complete (~17 min, 82 batches). **244** FLAGs processed → **9 APPROVE**, **186 EDIT**, **49 ESCALATE**. Automated resolution rate: **79.9%** ((9 + 186) / 244). On-disk bank: **2,578** questions, **49** FLAG remaining (all ESCALATE). Model: **claude-haiku-4-5-20251001**; system-prompt caching configured (`cache_control: ephemeral`). Next: review server for **49** ESCALATE items.
+- **`qbank_instrument_helicopter.json`** — triage metadata written in place; committed and pushed.
 
 ### Instrument Helicopter question bank verification (2026-06-10)
 

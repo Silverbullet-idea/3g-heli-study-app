@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 10, 2026 — Instrument bank verified (2,334 PASS / 244 FLAG / 6 FAIL; 2,578 on disk)
+June 10, 2026 — Instrument FLAG triage complete (9 APPROVE / 186 EDIT / 49 ESCALATE; 79.9% auto-resolved)
 
 ---
 
@@ -12,12 +12,13 @@ June 10, 2026 — Instrument bank verified (2,334 PASS / 244 FLAG / 6 FAIL; 2,57
 **Local `main` is in sync with `origin/main`** (pushed 2026-06-09). Recent commits on origin: CFI FLAG pre-triage docs (`71aba98`), reject coverage report (`df5a283`), HI.XVIII.I.K2 regen + bank (`124a221`).
 
 ### Current Sprint Goal
-Triage Instrument FLAGs + verify ATP bank; render and ship first **Private R22** PDF study sheet set (Phase 1 SKU 1).
+Manual review of **49** Instrument ESCALATE items + verify ATP bank; render and ship first **Private R22** PDF study sheet set (Phase 1 SKU 1).
 
 ---
 
 ### Completed (This Sprint)
 
+- **Instrument Helicopter FLAG pre-triage** — `triage_flag_questions.py --input qbank_instrument_helicopter.json` complete (~17 min). **244** FLAGs → **9 APPROVE**, **186 EDIT**, **49 ESCALATE**; **79.9%** automated resolution. **49** FLAG remaining. Next: review server (2026-06-10)
 - **Instrument Helicopter question bank verification** — `verify_question_bank.py --input qbank_instrument_helicopter.json` complete (~38 min). **2,584** processed → **2,334 PASS** (90.3%), **244 FLAG** (9.4%), **6 FAIL removed** (0.2%); **2,578** on disk. Next: triage → review server (2026-06-10)
 - **Instrument Helicopter question bank generation** — `patch_instrument_acs_item_codes.py` + `generate_question_bank.py --rating instrument` complete (~6.1 h). **323** ACS API calls → **`qbank_instrument_helicopter.json`** with **2,584** questions; **0** items with 0 questions; **0** errors. Committed (2026-06-09)
 - **HI.XVIII.I.K2 regeneration** — `regenerate_cfi_acs_item.py` → **8** new questions merged; **HI.XVIII.I.K2** coverage restored (**8** in bank). Bank **9,396** questions, **0** FLAG (2026-06-09)
@@ -49,7 +50,7 @@ Triage Instrument FLAGs + verify ATP bank; render and ship first **Private R22**
 | Private | 6,526 | 0 |
 | Commercial | 7,016 | 0 |
 | CFI | 9,396 | 0 |
-| Instrument | 2,578 | 244 |
+| Instrument | 2,578 | 49 |
 | ATP | 2,072 | (not verified) |
 
 ---
