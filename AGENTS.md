@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-10 (Instrument ESCALATE review complete — 2,530 on disk; reject coverage report committed)
+Last updated: 2026-06-10 — **Instrument Helicopter bank COMPLETE** (2,530 questions, 0 FLAG, committed and pushed)
 
 ---
 
@@ -16,11 +16,20 @@ Active SKU: Private Pilot Study Sheet — R22 (SKU 1 of 8)
 
 ## Completed This Session
 
-### Instrument Helicopter ESCALATE manual review + reject coverage (2026-06-10)
+### Instrument Helicopter question bank — COMPLETE (2026-06-10)
 
-- **Review server** — `run_review_server.ps1 --input question-bank/qbank_instrument_helicopter.json` complete. **49** ESCALATE items → **1 APPROVED**, **48 REJECTED**. On-disk bank: **2,530** questions, **0** FLAG.
-- **`scripts/analyze_instrument_reject_coverage.py`** — read-only diagnostic; writes **`question-bank/instrument/instrument_reject_coverage_report.txt`**. **48** rejects (**37** unique ACS codes). Top concentration **IH.X.B.K3** (6 rejects, 2 remaining). **Coverage risk:** **0** ACS items with 0 remaining; **0** with only 1 remaining.
-- **`qbank_instrument_helicopter.json`** — reviewed on disk; **not yet committed** (post-review bank pending Ryan release).
+Full pipeline closed: generate → verify → triage → manual review → reject coverage → commit.
+
+| Stage | Result |
+|-------|--------|
+| Generation | **2,584** questions (323 ACS items × 8) |
+| Verification | **2,334 PASS** / **244 FLAG** / **6 FAIL** → **2,578** on disk |
+| Triage | **9 APPROVE** / **186 EDIT** / **49 ESCALATE** (79.9% auto-resolved) |
+| Manual review | **1 APPROVED** / **48 REJECTED** |
+| **Final bank** | **2,530** questions — **2,529 PASS** + **1 REVIEWED_PASS**, **0** FLAG |
+
+- **`qbank_instrument_helicopter.json`** — committed and pushed (`git add -f`).
+- **`scripts/analyze_instrument_reject_coverage.py`** → **`question-bank/instrument/instrument_reject_coverage_report.txt`** — **48** rejects, **0** zero-coverage gaps.
 
 ### Instrument Helicopter FLAG pre-triage (2026-06-10)
 

@@ -4,21 +4,21 @@
 ---
 
 ### Last Updated
-June 10, 2026 — Instrument ESCALATE review complete (1 APPROVE / 48 REJECT); reject coverage report committed
+June 10, 2026 — **Instrument Helicopter bank COMPLETE** (2,530 questions, 0 FLAG, pushed to origin)
 
 ---
 
 ### Git / Remote
-**Local `main` is in sync with `origin/main`** (pushed 2026-06-09). Recent commits on origin: CFI FLAG pre-triage docs (`71aba98`), reject coverage report (`df5a283`), HI.XVIII.I.K2 regen + bank (`124a221`).
+**Local `main` is in sync with `origin/main`**. Instrument bank manual-review commit pushed 2026-06-10.
 
 ### Current Sprint Goal
-Commit reviewed Instrument bank + verify ATP bank; render and ship first **Private R22** PDF study sheet set (Phase 1 SKU 1).
+Verify ATP bank; render and ship first **Private R22** PDF study sheet set (Phase 1 SKU 1).
 
 ---
 
 ### Completed (This Sprint)
 
-- **Instrument Helicopter ESCALATE manual review** — review server complete (2026-06-10). **49** ESCALATE → **1 APPROVED**, **48 REJECTED**; bank **2,530** questions, **0** FLAG. **`analyze_instrument_reject_coverage.py`** → **`question-bank/instrument/instrument_reject_coverage_report.txt`** (37 unique ACS codes rejected; 0 zero-coverage gaps)
+- **Instrument Helicopter question bank — COMPLETE** — generate → verify → triage → manual review → reject coverage → commit (2026-06-09–10). Final bank **2,530** questions, **0** FLAG; committed and pushed. **`analyze_instrument_reject_coverage.py`** → **`question-bank/instrument/instrument_reject_coverage_report.txt`**
 - **Instrument Helicopter FLAG pre-triage** — `triage_flag_questions.py --input qbank_instrument_helicopter.json` complete (~17 min). **244** FLAGs → **9 APPROVE**, **186 EDIT**, **49 ESCALATE**; **79.9%** automated resolution. **49** FLAG remaining. Next: review server (2026-06-10)
 - **Instrument Helicopter question bank verification** — `verify_question_bank.py --input qbank_instrument_helicopter.json` complete (~38 min). **2,584** processed → **2,334 PASS** (90.3%), **244 FLAG** (9.4%), **6 FAIL removed** (0.2%); **2,578** on disk. Next: triage → review server (2026-06-10)
 - **Instrument Helicopter question bank generation** — `patch_instrument_acs_item_codes.py` + `generate_question_bank.py --rating instrument` complete (~6.1 h). **323** ACS API calls → **`qbank_instrument_helicopter.json`** with **2,584** questions; **0** items with 0 questions; **0** errors. Committed (2026-06-09)

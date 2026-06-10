@@ -3,8 +3,8 @@
   "acs_reference": "FAA-S-ACS-14",
   "generated_date": "2026-06-09",
   "generation_model": "claude-sonnet-4-6",
-  "total_questions": 2578,
-  "ryan_verified_count": 0,
+  "total_questions": 2530,
+  "ryan_verified_count": 1,
   "areas_of_operation": [
     {
       "id": "I",
@@ -138,36 +138,6 @@
                 "confidence": 0.97,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.I.A.K1.006",
-              "acs_code": "IH.I.A.K1",
-              "category": "knowledge",
-              "difficulty": "intermediate",
-              "question": "You accomplished all required instrument experience tasks last month using a full-motion helicopter flight simulator. Can those simulator hours count toward your helicopter IFR currency, and are there any limitations?",
-              "answer": "Yes, instrument experience accomplished in an approved helicopter flight simulator (FFS), flight training device (FTD), or aviation training device (ATD) can count toward IFR currency, provided the device is representative of the helicopter category and is approved for instrument currency tasks. However, if an ATD (as opposed to a full FFS or FTD) is used, there are specific limitations: no more than 3 of the 6 required approaches may be logged in certain ATDs, and the tasks must replicate the specific category and class. The pilot must ensure the device used is FAA-approved for the purpose and that the ATD authorization matches the currency requirements. Full FFS Level B or higher for helicopters has no such approach count restrictions.",
-              "regulatory_ref": "14 CFR 61.57(c)(2), 14 CFR 61.57(f)",
-              "tags": [
-                "flight simulator",
-                "FTD",
-                "ATD",
-                "instrument currency",
-                "helicopter"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer discusses ATD limitations on approaches (no more than 3 of 6) but the reference to 14 CFR 61.57(f) and the specific ATD restrictions need verification. The regulatory framework for ATD vs FTD vs FFS distinctions for instrument currency is complex and varies by device approval. The statement about 'full FFS Level B or higher has no such approach count restrictions' requires clarification regarding current device categorizations and approvals."
-                ],
-                "suggested_correction": "Recommend human review to verify current ATD/FTD approval specifications for helicopter instrument currency. The answer should specify that device approval by the FAA determines what tasks are permitted and reference the specific device authorization letter or TSO. Clarify whether restrictions apply to specific ATD categories or are device-specific.",
-                "triage": "ESCALATE",
-                "triage_note": "The answer claims ATDs have a '3 of 6 approaches' limitation for instrument currency, but this is not clearly stated in 14 CFR 61.57(c)(2) or (f); device-specific approvals and TSO authorizations vary, and the regulatory citation does not clearly support the specific numerical restriction claimed."
               }
             },
             {
@@ -661,36 +631,6 @@
                 "confidence": 0.98,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.I.A.R1.003",
-              "acs_code": "IH.I.A.R1",
-              "category": "risk_management",
-              "difficulty": "basic",
-              "question": "According to the FAA Helicopter Flying Handbook, at what point in a pilot's experience in a specific aircraft type do accident rates decrease significantly?",
-              "answer": "The FAA Helicopter Flying Handbook notes that accidents decrease significantly after 100 hours of experience in a specific aircraft type. This supports the concept that total flight time is less predictive of safety than time in the specific aircraft being flown — a pilot can be legally current yet still be in a higher-risk period if they have fewer than 100 hours in type.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 13",
-              "tags": [
-                "proficiency",
-                "hours in type",
-                "accident correlation",
-                "risk management"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The claim that the FAA Helicopter Flying Handbook specifies '100 hours of experience in a specific aircraft type' as the point where accident rates decrease significantly cannot be independently verified against current editions (FAA-H-8083-21B). While the concept that hours-in-type is a significant safety factor is well-established FAA guidance, the specific '100 hour' threshold cited here requires verification against the actual handbook text.",
-                  "The reference cited (FAA-H-8083-21B Chapter 13) is correct for the general source, but the specific numerical claim should be validated against the current handbook edition to ensure accuracy."
-                ],
-                "suggested_correction": "Verify the exact threshold cited in the current FAA Helicopter Flying Handbook (FAA-H-8083-21B). While FAA guidance consistently emphasizes that hours-in-type is a critical safety metric, the specific numerical threshold should be confirmed. If the handbook does not cite '100 hours' as the specific turning point, substitute the correct figure or general principle from the current edition.",
-                "triage": "ESCALATE",
-                "triage_note": "The specific '100 hours in type' threshold cannot be independently verified against current FAA-H-8083-21B without access to the exact handbook text; while hours-in-type as a safety factor is well-established FAA guidance, the numerical claim requires validation against the current edition to avoid propagating potentially incorrect data."
               }
             },
             {
@@ -4834,40 +4774,6 @@
                 "confidence": 0.93,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.I.C.K5.008",
-              "acs_code": "IH.I.C.K5",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "A helicopter pilot departs from an uncontrolled helipad IFR, receives a clearance void time, and departs on time — but then has a radio failure before contacting departure control. The flight plan was never formally 'opened' by ATC. What should the pilot do, and how does 14 CFR 91.185 factor into this situation?",
-              "answer": "Under 14 CFR 91.185, if a radio failure occurs in IMC, the pilot must continue the flight according to the filed route and proceed to the destination, fly the last assigned altitude or MEA (whichever is higher), and execute the approach at the ETA or ETE shown on the flight plan. In this scenario, even though the flight plan was not formally acknowledged as 'opened' due to the radio failure, ATC will assume the aircraft departed within the void time window (since no 'not airborne' call was received) and will protect airspace accordingly. The pilot should squawk 7600 (lost communications) to alert ATC via transponder. Upon landing at the destination, the pilot should close the IFR flight plan immediately — either through FSS or by notifying ATC at the destination if it's a towered field — and document the radio failure. The pilot should also file a report with ATC as required under AIM 6-4-1. From an ADM perspective, the Helicopter Flying Handbook emphasizes that accumulating problems (radio failure + IFR + no formal activation confirmation) represent a compounding error chain that demands conservative, deliberate action.",
-              "follow_up": "Under 14 CFR 91.185, if ATC last assigned you 4,000 feet but the MEA on your current route segment is 5,500 feet and the filed altitude was 6,000 feet — which altitude do you fly and why?",
-              "follow_up_answer": "You fly 6,000 feet — the filed altitude. Under 14 CFR 91.185(c)(2)(i), in IMC with a radio failure, you fly the highest of: the last assigned altitude, the MEA, or the altitude ATC has told you to expect. In this case, 6,000 feet (filed) is higher than the MEA of 5,500 feet and higher than the last assigned altitude of 4,000 feet. The filed altitude represents your filed cruising altitude and provides maximum obstacle clearance and navigation signal coverage. Flying only 4,000 feet (last assigned) when the MEA is 5,500 feet would place you below guaranteed obstacle clearance, which is the primary safety concern the rule is designed to prevent.",
-              "regulatory_ref": "14 CFR 91.185; 14 CFR 91.185(c)(2)(i); AIM 6-4-1; FAA-H-8083-21B Chapter 13",
-              "tags": [
-                "radio failure",
-                "lost communications",
-                "14 CFR 91.185",
-                "clearance void time",
-                "IFR flight plan activation",
-                "squawk 7600",
-                "MEA"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer states the flight plan 'was never formally opened by ATC' but then assumes ATC will protect airspace and assume departure within void time. This is internally contradictory — if the flight plan was never opened/activated, ATC would not be aware of it and would not protect airspace or assume departure.",
-                  "The scenario description is ambiguous: did the pilot receive a clearance void time (implying activation) or did the flight plan never get activated? These are mutually exclusive conditions. Clearance void time implies activation.",
-                  "14 CFR 91.185(c)(2)(i) reference appears correct but the application to an unactivated flight plan creates regulatory confusion that needs clarification."
-                ],
-                "suggested_correction": "Clarify the scenario: either (1) the pilot received clearance void time, departed on time, then had radio failure — in which case the flight plan WAS activated and 91.185 applies straightforwardly, OR (2) the flight plan was filed but never activated due to radio failure at departure — in which case the pilot is not on an active IFR clearance and 91.185 does not apply. The answer should address this distinction explicitly. If the flight plan was truly never opened, the aircraft is technically a VFR aircraft without IFR protection, which is the critical regulatory point.",
-                "triage": "ESCALATE",
-                "triage_note": "The scenario contains an internal contradiction: 'received a clearance void time' (implying the flight plan was activated) but 'the flight plan was never formally opened by ATC' (implying no activation); these are mutually exclusive, and the regulatory application of 14 CFR 91.185 depends critically on which condition is true—the verifier's suggested correction flags this ambiguity correctly."
               }
             },
             {
@@ -11469,37 +11375,6 @@
               }
             },
             {
-              "id": "IH.II.C.K2.003",
-              "acs_code": "IH.II.C.K2",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "What does the acronym commonly used to remember required IFR equipment cover, and name at least six items required by 14 CFR 91.205(d) for IFR flight?",
-              "answer": "A common acronym is GRABCARD: Generator or alternator, Radios (communication and navigation equipment), Altimeter (sensitive, adjustable), Ball (slip/skid indicator), Clock (with hours, minutes, and seconds), Attitude indicator, Rate-of-turn indicator (or helicopter equivalent), Directional gyro (heading indicator). Required items under 14 CFR 91.205(d) include: (1) instruments required for VFR flight (91.205(b)), (2) two-way radio communications system, (3) navigation equipment appropriate for the route, (4) sensitive altimeter adjustable for barometric pressure, (5) a clock displaying hours, minutes, and seconds with a sweep-second pointer or digital presentation, (6) attitude indicator, (7) heading indicator, (8) slip/skid indicator, (9) radios meeting 91.205(d) requirements, and (10) DME or RNAV system at or above FL240 if VOR is used.",
-              "regulatory_ref": "14 CFR 91.205(d)",
-              "tags": [
-                "IFR equipment",
-                "GRABCARD",
-                "required instruments",
-                "airworthiness"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The acronym GRABCARD is commonly taught for fixed-wing aircraft, not specifically validated in FAA helicopter-specific publications",
-                  "The answer conflates VFR requirements with IFR expansion items — 14 CFR 91.205(d) requires items IN ADDITION TO 91.205(b), but the answer structure is somewhat ambiguous",
-                  "The mention of 'DME or RNAV at or above FL240' is correct but comes from 91.205(d)(2) and relates to navigation equipment for the route — could be clearer that this is conditional on VOR being the primary means"
-                ],
-                "suggested_correction": "The answer is fundamentally correct but could be clarified. The specific items required under 91.205(d) are: (1) instruments required for VFR per 91.205(b), (2) approved TAWS or equivalent (for rotorcraft below 2,700 lbs), (3) two-way radio communications system, (4) navigation equipment appropriate for the IFR route and ATC clearance, (5) sensitive altimeter adjustable for barometric pressure, (6) clock with hours, minutes, and seconds, (7) attitude indicator, (8) heading indicator (gyroscopic or magnetic compass), (9) slip/skid indicator, (10) rate-of-turn indicator. GRABCARD is a helpful mnemonic but its helicopter applicability is not formally documented in FAA handbooks.",
-                "triage": "ESCALATE",
-                "triage_note": "GRABCARD is a fixed-wing mnemonic with unclear helicopter applicability per FAA sources; the answer also conflates VFR baseline items with IFR-specific additions in a way that may confuse the logical hierarchy of 91.205(b) vs. (d), and does not clearly address TAWS/terrain awareness requirements for rotorcraft under 91.205(d)."
-              }
-            },
-            {
               "id": "IH.II.C.K2.004",
               "acs_code": "IH.II.C.K2",
               "category": "knowledge",
@@ -12502,12 +12377,12 @@
                 "IFR procedures",
                 "clearance elements"
               ],
-              "ryan_verified": false,
-              "ryan_notes": "",
+              "ryan_verified": true,
+              "ryan_notes": "approved",
               "follow_up": "",
               "follow_up_answer": "",
               "verification": {
-                "status": "FLAG",
+                "status": "REVIEWED_PASS",
                 "confidence": 0.55,
                 "issues": [
                   "The 'CRAFT' mnemonic and the five elements listed do not align with FAA standard IFR clearance elements as documented in AIM 5-2-1. The standard clearance typically includes: (1) Clearance limit, (2) Route, (3) Altitude, (4) Holding instructions (if needed), and (5) Any special instructions. The answer lists 'Frequency (departure)' and 'Transponder code' which are typically provided separately, not as part of the five standard clearance elements. AIM 5-2-1 does not reference 'CRAFT' as the official memory aid."
@@ -15127,36 +15002,6 @@
               }
             },
             {
-              "id": "IH.III.A.S6.006",
-              "acs_code": "IH.III.A.S6",
-              "category": "skills",
-              "difficulty": "intermediate",
-              "question": "The Helicopter Flying Handbook states that accidents correlate more strongly with hours in a specific aircraft model than with total flight hours. How does this principle influence your SRM strategy when flying an unfamiliar IFR-equipped helicopter on a clearance compliance task?",
-              "answer": "Because accident rates decrease significantly after 100 hours in type, a pilot new to a specific helicopter model must recognize increased vulnerability and compensate with enhanced SRM. Practically, this means allowing extra time to locate switches and displays before initiating IFR flight, briefing automation modes thoroughly during preflight, and being honest with yourself about the risk level. During clearance compliance, the pilot should use checklists or flow patterns to avoid misconfigurations, avoid the temptation to rush through complex clearance entries in the FMS, and consider requesting simpler or more direct clearances from ATC when workload becomes saturated. Applying the 'avoid the word probably' principle — if you are not certain about an automation mode or fix entry, verify before executing.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 13",
-              "tags": [
-                "SRM",
-                "hours in type",
-                "unfamiliar aircraft",
-                "IFR",
-                "automation management"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The claim that 'accidents correlate more strongly with hours in a specific aircraft model than with total flight hours' is stated as if it is a direct quote from the Helicopter Flying Handbook, but the regulatory reference provided (FAA-H-8083-21B Chapter 13) does not specifically contain this assertion. The answer references a 100-hour threshold and accident rate reduction, but this specific statistic is not clearly cited in standard FAA helicopter publications for this correlation."
-                ],
-                "suggested_correction": "Verify the exact source and wording of the correlation claim in FAA-H-8083-21B or FAA-H-8083-3 (Helicopter Flying Handbook). The principle that experience in type is important is valid and taught in SRM contexts, but the specific statistical claim should be verified or reframed as 'research indicates' rather than presented as a direct handbook statement.",
-                "triage": "ESCALATE",
-                "triage_note": "The claim that accidents correlate more strongly with hours in type than total hours, and the specific 100-hour threshold, are presented as direct Helicopter Flying Handbook statements but cannot be verified in the cited reference; the principle is sound but the source attribution must be confirmed before shipping."
-              }
-            },
-            {
               "id": "IH.III.A.S6.007",
               "acs_code": "IH.III.A.S6",
               "category": "skills",
@@ -15654,35 +15499,6 @@
                 "confidence": 0.95,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.III.B.R1.002",
-              "acs_code": "IH.III.B.R1",
-              "category": "risk_management",
-              "difficulty": "basic",
-              "question": "Under 14 CFR 91.167, what are the IFR fuel reserve requirements for a helicopter operating in IMC conditions?",
-              "answer": "Under 14 CFR 91.167, a helicopter must carry enough fuel to fly to the first airport of intended landing, fly from that airport to the alternate airport if one is required, and then fly for an additional 30 minutes at normal cruise speed. This differs from fixed-wing IFR requirements. When holding is assigned, the pilot must verify that consuming fuel in the hold still leaves enough to meet these minimums at the destination and alternate.",
-              "regulatory_ref": "14 CFR 91.167",
-              "tags": [
-                "fuel reserves",
-                "IFR",
-                "helicopter",
-                "91.167"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "Answer states 30-minute reserve for helicopter IFR, but 14 CFR 91.167(b) actually requires ability to fly to the first airport, then to the alternate, then for 30 minutes at normal cruise speed. However, for rotorcraft (as opposed to airplanes), 14 CFR 91.167(d) contains specific rotorcraft provisions that may differ. The answer conflates general principle with specific regulatory language. Human review needed to confirm exact helicopter reserve requirement under 91.167(d)."
-                ],
-                "suggested_correction": "Verify the exact fuel reserve requirement for rotorcraft under 14 CFR 91.167(d) to ensure the 30-minute reserve statement is accurate for helicopters specifically, as the regulation has distinct sections for airplanes and rotorcraft.",
-                "triage": "ESCALATE",
-                "triage_note": "14 CFR 91.167(d) contains specific rotorcraft provisions that may differ from the general 30-minute reserve rule; the answer conflates the general principle with helicopter-specific regulatory language, and human expert verification of the exact rotorcraft fuel reserve requirement is needed before shipping."
               }
             },
             {
@@ -16601,38 +16417,6 @@
                 "confidence": 0.91,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.III.B.S1.006",
-              "acs_code": "IH.III.B.S1",
-              "category": "skills",
-              "difficulty": "intermediate",
-              "question": "You are flying a helicopter at 110 knots and arrive at a holding fix from a heading of 215°. The published hold is on the 160 radial (inbound course 340°), right turns. Describe how you determine which entry sector your arrival heading falls in and which entry you will fly.",
-              "answer": "The inbound course is 340°. To determine entry sectors for a right-hand pattern: the direct entry sector spans from roughly 160° clockwise to 200° relative to the inbound (i.e., headings from 340° rotating right through 160° to 200°); teardrop sector from approximately 200° to 250°; parallel sector from approximately 250° to 340° (the inbound side). My arrival heading of 215° — measured relative to the inbound of 340° — falls in the teardrop sector (between 200° and 250° offset from the inbound). I will use a teardrop entry: cross the fix, turn right to a heading approximately 30° to the right of the outbound (170° + 30° = approximately 010° outbound heading — wait, outbound is 160°, so 30° offset non-holding side for right turns means turn right to approximately 190°). Actually, for right-hand turns, teardrop offset is to the left of the outbound (non-holding side): outbound is 160°, offset 30° left = 130°. Fly 130° outbound for 1 minute, then turn right to intercept the inbound 340° course back to the fix.",
-              "regulatory_ref": "AIM 5-3-7; FAA-H-8083-15B Chapter 10",
-              "tags": [
-                "holding",
-                "entry sectors",
-                "teardrop",
-                "IFR",
-                "helicopter"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "Answer contains significant confusion and self-correction in the teardrop entry calculation. The reasoning is convoluted and the final answer (130° outbound) is presented without clear derivation. While the answer may ultimately be correct, the work shown is unclear and would not instill confidence in a student.",
-                  "The explanation of how entry sectors are defined and measured is imprecise. The answer conflates absolute headings with sector definitions relative to the inbound course, making it difficult to follow the logic.",
-                  "A clearer pedagogical approach would separate: (1) identifying the inbound course (340°), (2) identifying outbound course (160°), (3) applying the 70/110 rule to find which sector the 215° arrival heading falls into, and (4) then prescribing the specific outbound heading for teardrop entry without internal recalculation."
-                ],
-                "suggested_correction": "Revised answer: The inbound course is 340°. Using the 70/110 rule for right-hand turns: Direct entry sector spans 160° to 250° (roughly 90° centered on the inbound); Teardrop sector spans 250° to 340°; Parallel sector spans 340° to 160°. Arrival heading of 215° falls in the direct entry sector (between 160° and 250°), so a direct entry should be used — not teardrop. [If the question intended a different arrival heading in the teardrop sector, e.g., 280°, then:] For teardrop entry with right turns and outbound heading 160°: turn right to a heading 30° on the non-holding side (left) of outbound: 160° − 30° = 130°. Fly 130° outbound for 1 minute, then turn right to 340° inbound to the fix.",
-                "triage": "ESCALATE",
-                "triage_note": "The answer itself contains internal confusion and self-correction (conflating absolute headings with relative sectors, then arriving at an outbound heading via unclear logic); moreover, the verifier suggests the arrival heading of 215° actually falls in the direct entry sector, not teardrop, which contradicts the answer's conclusion—this requires clarification of the correct entry type for the stated scenario."
               }
             },
             {
@@ -17723,39 +17507,6 @@
                 "confidence": 0.95,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.III.B.S6.008",
-              "acs_code": "IH.III.B.S6",
-              "category": "skills",
-              "difficulty": "advanced",
-              "question": "ATC clears you to hold and specifies an EFC time that requires you to cross the fix at an odd time — say, 3 minutes and 40 seconds from now, not a clean circuit boundary. How do you plan your first outbound leg to hit that exact fix crossing time, and what do you do if your helicopter's groundspeed in the hold is significantly different from the published holding airspeed?",
-              "answer": "To hit a specific EFC time that doesn't align with a full circuit, you must plan the first outbound leg length to absorb the extra time. Start by estimating your inbound leg time (one minute standard, adjusted for wind), your turn times (approximately 1 minute each at standard rate), and back-calculate how long your outbound leg must be. For a 3:40 fix crossing: subtract one inbound minute and two turn minutes (2 min), leaving 1:40 for the outbound leg. Start your outbound timing at the abeam point and turn inbound after 1:40. Regarding groundspeed differences — helicopters often hold at much lower airspeeds than fixed-wing aircraft, which makes wind a more dominant factor. If your groundspeed inbound is significantly lower than normal due to a strong headwind, your inbound track time will be longer even with correct outbound timing. Compensate by shortening the outbound leg further. Always re-evaluate after the first circuit and fine-tune. If GPS or an FMS is available, use groundspeed readout to calculate leg times directly rather than relying on standard estimates.",
-              "follow_up": "What is the maximum holding airspeed for a helicopter operating IFR at 8,000 ft MSL, and is there a published exception that would allow you to exceed it?",
-              "follow_up_answer": "Per the AIM, the maximum holding airspeed for all aircraft up to 14,000 ft MSL is 200 KIAS. For helicopters specifically, the AIM allows a maximum holding airspeed of 170 KTAS unless a higher speed is specifically authorized by ATC or published on the procedure. If ATC requires or the pilot requests a higher speed due to aircraft performance or traffic, ATC may issue an amended clearance. In practice, most helicopter IFR operations hold well below these limits due to typical cruise speeds, but the pilot must be aware of the published maximums to remain within the protected airspace.",
-              "regulatory_ref": "AIM 5-3-8(g); FAA-H-8083-15B Chapter 10",
-              "tags": [
-                "holding",
-                "timing",
-                "EFC",
-                "groundspeed",
-                "airspeed limits",
-                "helicopter IFR"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The follow-up answer contains a regulatory inaccuracy regarding helicopter holding airspeed limits. It states 'the AIM allows a maximum holding airspeed of 170 KTAS unless a higher speed is specifically authorized by ATC or published on the procedure,' but this contradicts the primary AIM 5-3-8 guidance.",
-                  "AIM 5-3-8(g) specifies: for helicopters, the maximum holding airspeed is the lesser of (1) maximum speed in rough air (Vra) or (2) 90 KIAS, OR if unable, the PIC may request higher speeds from ATC. The statement about 170 KTAS is not supported by current AIM.",
-                  "The main answer regarding EFC timing calculation and groundspeed compensation is sound, but the follow-up answer needs correction for accuracy."
-                ],
-                "suggested_correction": "The maximum holding airspeed for helicopters in IMC is the lesser of Vra (rough air speed) or 90 KIAS per AIM 5-3-8(g). Higher speeds require specific ATC authorization and must be requested by the pilot. The reference to 170 KTAS should be removed or clarified that it does not apply to helicopter operations.",
-                "triage": "ESCALATE",
-                "triage_note": "The main answer regarding EFC timing calculation is sound, but the follow-up answer contains a critical regulatory inaccuracy: it states maximum helicopter holding airspeed is 170 KTAS, which contradicts AIM 5-3-8(g) specifying the lesser of Vra or 90 KIAS; this requires correction before the question can be approved."
               }
             },
             {
@@ -18980,39 +18731,6 @@
                 "confidence": 0.94,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.IV.A.K3.007",
-              "acs_code": "IH.IV.A.K3",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "You are flying a helicopter in IMC and suddenly notice your airspeed indicator reads zero while all other instruments appear normal. Walk me through how you would identify this as a pitot tube blockage versus a static port blockage, and how would each failure affect your remaining instruments?",
-              "answer": "A pitot tube blockage (with the drain hole open) will cause the ASI to drop to zero immediately because ram air pressure is lost while static pressure equalizes on both sides of the diaphragm — the ASI reads zero regardless of actual airspeed. The altimeter and VSI are unaffected because they rely solely on static pressure. If the pitot tube is blocked AND the drain hole is also blocked, the ASI will freeze at the airspeed it read when the blockage occurred and may actually increase like an altimeter as you climb (trapped ram air appears to increase as ambient static pressure drops). A static port blockage is more insidious: it affects the altimeter (freezes at the altitude of blockage), the VSI (reads zero — no change in static pressure detected), and the ASI (reads higher than actual in a climb, lower than actual in a descent because static reference is frozen). In a helicopter, a static port blockage is particularly dangerous because you lose three instruments simultaneously while the ASI gives you a falsely optimistic reading in a climb. The alternate static source, if equipped, should be selected immediately.",
-              "follow_up": "If your helicopter is not equipped with an alternate static source and your static port becomes completely blocked in IMC, what is one emergency option described in FAA guidance to restore approximate static pressure to your instruments?",
-              "follow_up_answer": "FAA guidance for fixed-wing aircraft describes breaking the glass on the VSI as a last resort to expose the static system to cockpit pressure — however, cockpit pressure is slightly lower than ambient due to venturi effect, so the altimeter will read slightly higher than actual. Helicopter applicability depends on the specific aircraft design and whether the instruments share a common static line. Pilots should consult their specific RFM/POH for guidance. The primary action is always to check the alternate static source first; breaking an instrument is a true emergency measure only. This illustrates why pre-flight verification of the pitot-static system and alternate static source is critical before IFR flight.",
-              "regulatory_ref": "FAA-H-8083-15B, Chapter 7; 14 CFR 91.205(d); FAA-H-8083-21B, Chapter 8",
-              "tags": [
-                "pitot-static system",
-                "instrument failure",
-                "ASI",
-                "altimeter",
-                "VSI",
-                "static port blockage",
-                "partial panel"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The follow-up answer references breaking the VSI glass as an emergency procedure for static port blockage. While FAA-H-8083-15B (fixed-wing) mentions this as a last resort, applicability to helicopter systems is unclear and potentially problematic. The answer appropriately caveats this and directs pilots to their POH, but the discussion of cockpit pressure effects and alternate static source should be emphasized more strongly in the primary answer.",
-                  "The explanation of pitot blockage behavior is correct but could be clearer about whether the drain hole is typically vented to the cockpit and how specific helicopter designs vary."
-                ],
-                "suggested_correction": "Strengthen the primary answer to emphasize that alternate static source (if equipped) is the primary emergency action before any glass-breaking procedure. Add: 'Modern helicopters vary in static system design — always consult your helicopter's POH for specific emergency procedures. In most cases, if an alternate static source is available, it should be the first action taken; emergency procedures like breaking instrument glass are rarely needed and may introduce additional hazards.'",
-                "triage": "ESCALATE",
-                "triage_note": "The follow-up answer discusses breaking VSI glass as an emergency procedure for static port blockage; while FAA-H-8083-15B mentions this for fixed-wing aircraft, helicopter-specific applicability, cockpit pressure effects, and modern instrument design variations are unclear and safety-critical, requiring verification against current helicopter POHs and guidance."
               }
             },
             {
@@ -23212,36 +22930,6 @@
               }
             },
             {
-              "id": "IH.IV.B.S2.006",
-              "acs_code": "IH.IV.B.S2",
-              "category": "skills",
-              "difficulty": "intermediate",
-              "question": "The FAA's Trescott Tip states that if a course of action will only 'probably' work, choose one known to work. How do you apply this SRM principle when you are in an unusual attitude in IMC and considering whether to attempt a visual recovery versus maintaining full instrument reference?",
-              "answer": "In IMC, attempting a visual recovery — looking outside for a horizon that either doesn't exist or may be misleading (false horizon, terrain, lights) — is an action that will only 'probably' work. Maintaining full instrument reference during an unusual attitude recovery is the action known to work. Applying the Trescott Tip, you commit to instruments: trust the attitude indicator, cross-check altimeter and ASI, execute the standard recovery sequence. Looking outside in IMC introduces spatial disorientation risk and graveyard spiral risk. Unless you have a confirmed visual break from clouds with clear horizon and sufficient altitude, the instrument recovery is the known-to-work option. This is also consistent with partial-panel guidance: use small precise inputs and avoid abrupt corrections driven by physical sensation.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 13; FAA-H-8083-15B Chapters 7 and 8",
-              "tags": [
-                "Trescott Tip",
-                "SRM",
-                "IMC",
-                "unusual attitude",
-                "spatial disorientation"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "The 'Trescott Tip' is referenced but this is a colloquial or internal name for a principle that is not formally identified in FAA-H-8083-21B with that specific attribution or title. The principle itself — choosing known-to-work solutions over probable ones — is consistent with FAA guidance on decision-making and risk management, but the specific terminology 'Trescott Tip' is not standard FAA vocabulary and may not be recognized in the formal handbooks. Low confidence in whether this term appears in approved FAA training materials."
-                ],
-                "suggested_correction": "The principle being described — choosing actions with known effectiveness over those that 'probably' work — is sound SRM practice consistent with FAA-H-8083-21B guidance on risk management and the DECIDE model. However, the specific reference to 'Trescott Tip' should be verified against current FAA handbooks. The answer is substantively correct regarding the application to unusual attitude recovery, but the terminology requires validation.",
-                "triage": "ESCALATE",
-                "triage_note": "The substantive advice on instrument recovery is correct and well-reasoned, but 'Trescott Tip' is not a standard FAA term found in FAA-H-8083-21B, FAA-H-8083-15B, or other approved references. The verifier correctly flags this as non-standard terminology that requires validation before shipping to ensure students are not tested on colloquial or unofficial names."
-              }
-            },
-            {
               "id": "IH.IV.B.S2.007",
               "acs_code": "IH.IV.B.S2",
               "category": "skills",
@@ -24060,38 +23748,6 @@
                 "confidence": 0.93,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.V.A.R2.006",
-              "acs_code": "IH.V.A.R2",
-              "category": "risk_management",
-              "difficulty": "intermediate",
-              "question": "A helicopter pilot with 1,200 total hours but only 40 hours in the current instrument-equipped turbine helicopter is flying a GPS RNAV approach in IMC. Why does the FAA's accident data suggest this pilot may actually face a higher risk of disorientation than a pilot with only 400 total hours but 200 hours in type?",
-              "answer": "FAA accident data and the Helicopter Flying Handbook note that accident rates correlate more strongly with hours in the specific aircraft type than with total hours. A pilot with 40 hours in type may be over-confident based on their total experience, yet unfamiliar with the specific avionics layout, automation behavior, or aircraft response characteristics of this particular helicopter. This can lead to slower instrument scan, unexpected automation modes causing confusion (e.g., GPS sequencing to a missed approach without recognition), and a false sense of security. The 400-hour pilot with 200 hours in type has developed type-specific scan habits and automation familiarity, making them less likely to experience task-induced disorientation during the approach.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 13 (hours in type, accident correlation); FAA-H-8083-15B Chapter 9",
-              "tags": [
-                "hours in type",
-                "situational awareness",
-                "RNAV",
-                "GPS",
-                "disorientation",
-                "automation"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The claim about FAA accident data correlation between hours in type vs. total hours is conceptually sound and supported by accident investigation patterns, but the specific assertion that a 400-hour pilot with 200 hours in type faces lower disorientation risk than a 1,200-hour pilot with 40 hours in type requires more cautious framing. While the principle is correct, the comparative risk statement is strong and would benefit from explicit reference to specific accident database studies.",
-                  "Helicopter Flying Handbook Chapter 13 discusses hours in type as a risk factor, but the exact statistical comparison presented here is an inference rather than a direct handbook citation."
-                ],
-                "suggested_correction": "Strengthen the answer by citing: 'NTSB and FAA accident data indicate that pilots with insufficient hours in type are disproportionately represented in loss-of-control accidents, even when total hours are high. The 1,200-hour pilot with only 40 hours in this turbine helicopter may experience higher cognitive workload due to type-specific avionics unfamiliarity, leading to slower scan rates and delayed recognition of automation mode changes — factors that increase disorientation risk compared to a pilot with extensive type-specific experience.' Add explicit reference to accident database or specific study if available.",
-                "triage": "ESCALATE",
-                "triage_note": "While the principle that hours-in-type is a stronger accident predictor than total hours is well-established in aviation safety literature, the specific comparative claim that a 400-hour pilot with 200 hours in type faces lower disorientation risk than a 1,200-hour pilot with 40 hours in type is presented as fact without citation to a specific accident study or FAA database analysis that directly supports this exact comparison; the assertion requires verification against NTSB accident data."
               }
             },
             {
@@ -35306,38 +34962,6 @@
               }
             },
             {
-              "id": "IH.VII.B.K1.007",
-              "acs_code": "IH.VII.B.K1",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "A pilot flies an ILS approach to DA and acquires the approach lights only — no runway environment is visible. They continue descending below DA because they can see the approach lights. At what point, if any, may they continue descending below 100 feet above TDZE, and what is the regulatory basis?",
-              "answer": "Under 14 CFR 91.175(c)(3), a pilot may descend below DA using approach lights as the sole visual reference, but only to 100 feet above the touchdown zone elevation (TDZE). To descend below 100 feet above TDZE, the pilot must have at least one of the following runway environment references in sight: the runway threshold, threshold markings, threshold lights, runway end identifier lights (REIL), visual approach slope indicator (VASI/PAPI), touchdown zone or markings, touchdown zone lights, runway or runway markings, or runway lights. If at 100 feet above TDZE only approach lights remain visible with no red terminating bars or red side row bars visible, descent may continue to 100 feet AGL but not lower. This rule applies equally to helicopter pilots and is a common source of confusion on checkrides.",
-              "follow_up": "What is the significance of seeing the red terminating bars or red side row bars on the approach lighting system in this scenario?",
-              "follow_up_answer": "Under 14 CFR 91.175(c)(3)(i), if the pilot can see the red terminating bars or red side row bars of the approach lighting system, those are considered part of the approach light system and the pilot may still only descend to 100 feet above TDZE — they do not grant authority to go lower on lights alone. However, the red bars provide spatial orientation cues that help the pilot determine if the runway threshold is close enough to transition to a landing. If neither the red bars nor any runway environment reference is visible below 100 feet AGL, a missed approach is mandatory.",
-              "regulatory_ref": "14 CFR 91.175(c)(3)",
-              "tags": [
-                "approach lights",
-                "100 foot rule",
-                "TDZE",
-                "visual references",
-                "DA",
-                "precision approach"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer conflates approach light system colors with descent authority in a potentially confusing way. The regulation 14 CFR 91.175(c)(3) does permit descent to 100 feet AGL on approach lights alone, but the statement about 'red terminating bars or red side row bars' in the follow-up answer is unclear and may misrepresent how those visual cues function. The red bars are part of the approach lighting system but do not independently authorize descent below 100 feet AGL without OTHER runway environment references per 91.175(c)(3)(ii).",
-                  "The follow-up answer's phrasing 'the red bars provide spatial orientation cues...to determine if the runway threshold is close' is imprecise and could mislead students about what actually permits descent below 100 feet AGL — which is one of the specific runway environment references listed in 91.175(c)(3)(ii), not merely the presence of red bars."
-                ],
-                "suggested_correction": "Clarify that red terminating bars and red side row bars are part of the approach lighting system but are NOT themselves runway environment references. To descend below 100 feet AGL, the pilot must see one of the specific references in 14 CFR 91.175(c)(3)(ii): runway threshold, threshold markings, threshold lights, REIL, VASI, touchdown zone, TZ lights, runway, runway markings, or runway lights. The approach lights (including colored bars) alone do not authorize descent below 100 feet AGL.",
-                "triage": "ESCALATE",
-                "triage_note": "The main answer and follow-up contain contradictory and imprecise statements about red terminating/side row bars; they are part of the ALS but are not runway environment references per 91.175(c)(3)(ii), yet the answer suggests they have independent descent authority, which is incorrect and unsafe."
-              }
-            },
-            {
               "id": "IH.VII.B.K1.008",
               "acs_code": "IH.VII.B.K1",
               "category": "knowledge",
@@ -35749,40 +35373,6 @@
                 "confidence": 0.95,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.VII.B.K3.008",
-              "acs_code": "IH.VII.B.K3",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "A helicopter pilot is planning to fly an ILS approach at night into a remote hospital helipad. The ILS LOC and GS appear functional on a check, but the pilot notices the VOR collocated at the outer marker site has a flagged NOTAM about potential harmonic interference on localizer frequencies. How should the pilot assess localizer signal integrity, and what specific VOR/LOC interaction could cause false course guidance?",
-              "answer": "The pilot must treat this NOTAM seriously. ILS localizer signals operate in the 108–111.95 MHz frequency range, and VOR stations operate in the 108–117.95 MHz range — the lower end of both bands overlap. A VOR transmitter experiencing harmonic distortion can generate spurious signals that interfere with localizer receivers tuned to an adjacent or harmonically related frequency. This can produce false CDI deflections, erratic flag behavior, or a false course indication that mimics a valid signal. To assess integrity, the pilot should: (1) verify the localizer identifier is being received correctly (Morse code ID), since a false signal may not carry the correct identifier or may produce a continuous tone; (2) cross-check lateral position using GPS, if available, against the ILS centerline; (3) check whether the CDI behavior is consistent with expected aircraft position during approach; (4) brief the approach assuming the ILS may be unreliable and identify an alternate approach or diversion airport. At a hospital helipad, there may be no alternate instrument approach, making this risk management decision critical. The pilot should notify ATC of the NOTAM concern and request a PIREPs from preceding traffic if any.",
-              "follow_up": "If you are flying the ILS and the localizer CDI suddenly reverses — showing a fly-left deflection when you are clearly left of centerline — what is your immediate action and what is the most likely cause?",
-              "follow_up_answer": "Immediate action is to execute the published missed approach. A reversed CDI is a classic sign of a false localizer course or a back-course signal, and continuing the approach with reversed guidance is dangerous and could result in CFIT. The most likely cause in this scenario is localizer backcourse signal capture — the aircraft may have intercepted the back lobe of the localizer, which transmits a mirror-image signal behind the antenna array. On a standard ILS, the back course produces reversed CDI deflections unless a back course approach is published and the HSI/CDI is set up to compensate. Other causes include receiver malfunction or signal interference as discussed. The pilot should report the anomaly to ATC and file an ASRS report. This type of event should also be flagged to the facility for a signal integrity check.",
-              "regulatory_ref": "FAA-H-8083-15B Chapter 9; AIM 1-1-9; FAA Order 8200.1 (Flight Inspection)",
-              "tags": [
-                "ILS",
-                "localizer",
-                "VOR interference",
-                "false course",
-                "signal integrity",
-                "back course",
-                "CDI reversal",
-                "helicopter IFR"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer conflates VOR/LOC interference but does not clearly distinguish that VOR and ILS localizer operate in different frequency bands. VOR operates 108–117.95 MHz; ILS LOC operates 108–111.95 MHz. The overlap is only 108–111.95 MHz. While harmonic distortion is possible, the answer's mechanism needs clarification: a VOR transmitter harmonic (not fundamental) would cause interference, which is a rarer scenario. The explanation could be more precise about which harmonics and at what power levels this becomes problematic.",
-                  "The answer correctly advises checking the localizer identifier and cross-checking with GPS, but does not explicitly reference AC 90-50D (WAAS/GPS) or AC 90-100A (U.S. Terminal and En Route Area Navigation) for the specifics of GPS-aided approach integrity assessment."
-                ],
-                "suggested_correction": "Clarify that direct VOR/LOC interference at 108–111.95 MHz occurs primarily when both operate at the same facility and a VOR fundamental (not just harmonics) is at risk of causing issues. A more accurate statement: 'Harmonic distortion from a VOR transmitter can generate spurious signals on ILS frequencies if the VOR is experiencing transmitter malfunction or improper tuning, but this is less common than receiver noise or multipath issues.' The NOTAM concern is valid and advice to cross-check with GPS is sound, but reference should be more specific to AC 90-100A or FAA Order 6050.32E for localizer signal integrity criteria.",
-                "triage": "ESCALATE",
-                "triage_note": "The answer conflates VOR and ILS localizer interference but does not clearly establish the mechanism; VOR fundamentals operate 108–117.95 MHz and ILS LOC 108–111.95 MHz (overlap only 108–111.95), so direct harmonic interference from a VOR is technically possible but rare and the answer oversimplifies the physics. The follow-up's 'back lobe' explanation is correct but requires clarification that back-course signals are only authorized on published back-course approaches, not standard ILS."
               }
             },
             {
@@ -36615,39 +36205,6 @@
                 "confidence": 0.92,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.VII.B.R3.008",
-              "acs_code": "IH.VII.B.R3",
-              "category": "risk_management",
-              "difficulty": "advanced",
-              "question": "During a briefing for a coupled ILS approach into a mountainous airport, you realize that although the FMS will fly the localizer correctly, the vertical navigation computed by the FMS diverges slightly from the published glideslope angle beginning at the FAF because the FMS is using a baro-VNAV computed path rather than the ILS glideslope signal. What is the specific risk here, and how must the pilot manage the autoflight system to mitigate it?",
-              "answer": "The specific risk is mode confusion — the pilot may believe the autopilot is tracking the ILS glideslope (a precision approach with protected obstacle clearance) when it is actually flying a baro-VNAV computed path, which has different and generally less precise obstacle clearance guarantees. Baro-VNAV is affected by non-standard temperature (particularly significant in mountainous/cold weather environments) and does not provide the same integrity as an ILS glideslope signal. In mountainous terrain, even small deviations below the published glidepath can result in CFIT. To mitigate: (1) Before the FAF, verify exactly which mode the autoflight system is using — confirm the autopilot is capturing and tracking the ILS glideslope signal, not a computed VNAV path, by checking the mode annunciator. (2) Cross-check the raw ILS glideslope needle against the FMS vertical path throughout the approach. (3) If the FMS VNAV and ILS glideslope diverge, the ILS raw data is authoritative for a precision approach — the pilot should fly the ILS glideslope signal. (4) If the aircraft is only capable of flying baro-VNAV on this procedure, the approach should be treated as a non-precision approach and flown to LNAV/VNAV minimums, not ILS DA, with appropriate obstacle clearance expectations. Mode awareness is a critical component of autoflight system management.",
-              "follow_up": "In cold temperature conditions, how does temperature affect a baro-VNAV computed glidepath, and what correction is available to the pilot?",
-              "follow_up_answer": "In cold temperatures, the air is denser and the altimeter — which is calibrated to the standard atmosphere — will read higher than the actual altitude. This means the aircraft is actually lower than the altimeter indicates. A baro-VNAV computed path uses baro-altimeter data to compute the vertical path, so in cold weather the aircraft will be physically lower than the computed path suggests — the actual glidepath will be shallower and lower than intended, increasing terrain clearance risk. The FAA provides cold temperature altitude correction tables in the AIM (Chapter 7) and on some approach plates. Pilots can apply a cold temperature correction to add altitude to their minimums and step-down fixes. Some approach plates have a note indicating cold temperature restrictions or corrections. At locations where cold temperature corrections are published, the pilot must apply the correction unless the aircraft has a certified cold temperature compensation system.",
-              "regulatory_ref": "FAA-H-8083-15B Chapter 9 (RNAV, GPS, WAAS, baro-VNAV); FAA-H-8083-15B Chapter 5 (autopilots, FMS); AIM Chapter 7 (cold temperature corrections); 14 CFR 91.175",
-              "tags": [
-                "mode confusion",
-                "baro-VNAV",
-                "ILS glideslope",
-                "CFIT",
-                "cold temperature",
-                "autoflight",
-                "mountains"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer conflates baro-VNAV with FMS vertical guidance in a way that may not be universally applicable. Many modern glass cockpit helicopters (e.g., Garmin G1000 NXi, etc.) with approved approaches will track the ILS glideslope directly via the autopilot, not via a baro-VNAV computed path. The scenario assumes the FMS is computing a baro-VNAV path instead of using the ILS signal, which is unusual if the aircraft has an approved ILS coupler.",
-                  "The follow-up answer regarding cold temperature effects on baro-VNAV is accurate, but the original scenario may oversimplify how modern autopilots manage mode selection on precision approaches."
-                ],
-                "suggested_correction": "Clarify the scenario: In most modern IFR-certified helicopters equipped with an approved FMS and autopilot, if an ILS is armed and available, the autopilot will capture and track the ILS glideslope signal directly, not a baro-VNAV computed path. If the FMS is showing a computed vertical path that differs from the ILS glideslope, this would typically indicate either: (1) a mode selection error by the pilot (VNAV selected instead of ILS mode), (2) a system malfunction, or (3) the aircraft is on a non-precision approach procedure where baro-VNAV is the primary means of vertical guidance. The answer's risk identification and mitigation are correct, but the scenario should specify whether this is an operational limitation of the specific aircraft or a result of pilot error in mode selection.",
-                "triage": "ESCALATE",
-                "triage_note": "The scenario assumes the FMS will fly a baro-VNAV computed path instead of the ILS glideslope signal on a coupled ILS approach, but in most modern IFR-certified helicopters with approved autopilots, the system captures the ILS signal directly when available. The scenario requires clarification of whether this represents a real operational limitation or is a teaching construct, and the answer conflates mode confusion with baro-VNAV limitations without distinguishing between normal ILS operation and actual failure modes."
               }
             },
             {
@@ -38232,37 +37789,6 @@
                 "confidence": 0.95,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.VII.B.S4.004",
-              "acs_code": "IH.VII.B.S4",
-              "category": "skills",
-              "difficulty": "intermediate",
-              "question": "You are on final on an ILS approach in a helicopter at 800 feet AGL when ATC instructs you to side-step to a parallel taxiway for landing due to a disabled aircraft on the runway. How do you handle this clearance, and what are the key considerations specific to a helicopter performing this maneuver under IFR?",
-              "answer": "You should acknowledge and read back the instruction immediately. For a helicopter, a side-step to a parallel surface is more operationally feasible than for a fixed-wing aircraft, but under IFR you must ensure you maintain positive visual reference to the new landing surface before maneuvering laterally. You should not abandon the ILS guidance until you have visual contact sufficient to safely transition to the side-step surface. Key considerations include: confirming the taxiway is clear and usable, ensuring obstacle clearance during the lateral transition, and verifying the maneuver is within your helicopter's performance capability. If unable, you must advise ATC and execute the missed approach.",
-              "regulatory_ref": "14 CFR 91.123; 14 CFR 91.175; AIM 5-4-20",
-              "tags": [
-                "side-step",
-                "ATC clearance",
-                "IFR helicopter",
-                "precision approach",
-                "visual reference"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer states pilot must maintain 'positive visual reference' before maneuvering laterally, but per 14 CFR 91.175(c), the required visual reference is specific to the aircraft type and the landing environment. For a helicopter side-step under IFR, the requirement is visibility of the landing surface and obstacle environment sufficient to safely complete the approach and landing.",
-                  "The answer is somewhat vague about whether this is a standard ILS side-step (which requires specific charting and phraseology) versus a discretionary pilot request. The regulatory distinction matters for compliance."
-                ],
-                "suggested_correction": "Clarify that an ILS side-step must be published on the approach chart and the pilot must have sufficient visual reference to the new landing surface to safely transition. The specific visual reference requirement depends on the approach type and visibility minimums published for that side-step. If no published side-step exists and ATC requests a lateral deviation after FAF, the pilot must declare they are unable or request the missed approach.",
-                "triage": "ESCALATE",
-                "triage_note": "The distinction between a published ILS side-step (charted procedure with specific minimums) and an ad hoc lateral deviation after FAF is not clearly addressed; the regulatory implications differ significantly and require clarification to avoid pilot misunderstanding."
               }
             },
             {
@@ -42397,38 +41923,6 @@
               }
             },
             {
-              "id": "IH.VII.C.R5.007",
-              "acs_code": "IH.VII.C.R5",
-              "category": "risk_management",
-              "difficulty": "advanced",
-              "question": "A helicopter pilot flying a coupled GPS approach to a remote off-airport site executes a missed approach. The autopilot transitions correctly and begins tracking the missed approach course, but the FMS database contains an older 28-day cycle and the holding fix coordinates differ slightly from the current chart. What is the risk management framework for evaluating and acting on this situation, and at what point should a pilot distrust the automation entirely?",
-              "answer": "The risk is subtle but significant: if the FMS waypoint coordinates are outdated, the autopilot will track toward the wrong point — potentially into terrain or obstruction-laden airspace. The risk management framework requires: (1) Currency verification — confirm the navigation database is current before flight; databases update every 28 days and an expired database should not be used for IFR navigation without specific authorization or cross-checking. (2) Cross-check — compare the FMS-depicted route against the published chart in real time; if the lateral track deviates from the published missed approach course, distrust the FMS and revert to raw data or manual navigation. (3) Distrust threshold — any time the automation behavior is inconsistent with the published procedure, the pilot should immediately revert to manual flight and raw navigation sources. Per FAA guidance, automation reduces workload only when functioning correctly and within known parameters; when in doubt, fly the aircraft manually and navigate by raw data.",
-              "follow_up": "What is the regulatory requirement for navigation database currency when flying GPS approaches, and is there any provision that allows flight with an expired database?",
-              "follow_up_answer": "Per 14 CFR 91.103 and FAA AC 90-100A, pilots are required to use current navigation databases for RNAV/GPS operations. An expired database may not be used for IFR GPS approaches unless: (1) the pilot verifies that the procedure and waypoints have not changed by cross-checking against current charts and NOTAMs, and (2) the operator has an approved program for using expired databases — typically only under Part 135 or 121 operator specifications. For Part 91 helicopter IFR operations, the safest and most defensible practice is to fly only with a current database; using an expired database and relying on visual cross-check is a risk mitigation strategy, not a regulatory exception.",
-              "regulatory_ref": "14 CFR 91.103; FAA AC 90-100A; FAA-H-8083-15B Chapter 9 (GPS/FMS database); 14 CFR 91.411 (instrument currency, by analogy)",
-              "tags": [
-                "navigation database currency",
-                "FMS",
-                "automation distrust",
-                "GPS approach",
-                "database expiration",
-                "risk management"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "Reference to 14 CFR 91.411 by analogy is weak for navigation database currency; 91.411 governs altitude reporting system tests, not database currency. AC 90-100A is the authoritative source but a direct regulatory citation would be stronger.",
-                  "The follow-up answer conflates Part 91 and Part 135 operators in a way that may confuse students. Part 91 operators do not have 'operator specifications' for expired database use — this authority is limited to Part 135/121. The statement is technically correct but could be clearer."
-                ],
-                "suggested_correction": "Primary regulatory citation should be 14 CFR 91.103 (preflight requirements) and AIM 1-1-19 (GPS operations) rather than 91.411. Clarify in follow-up that Part 91 operators cannot use expired databases for IFR GPS approaches; expired database operations are only authorized for Part 135/121 operators under their approved procedures.",
-                "triage": "ESCALATE",
-                "triage_note": "The reference to 14 CFR 91.411 is incorrect (that regulation governs altitude reporting system tests, not database currency); the follow-up answer conflates Part 91 and Part 135 authority in ways that may mislead students about expired database legality; needs authoritative clarification of database currency requirements and exceptions for different operators."
-              }
-            },
-            {
               "id": "IH.VII.C.R5.008",
               "acs_code": "IH.VII.C.R5",
               "category": "risk_management",
@@ -43895,38 +43389,6 @@
               }
             },
             {
-              "id": "IH.VII.C.S7.007",
-              "acs_code": "IH.VII.C.S7",
-              "category": "skills",
-              "difficulty": "advanced",
-              "question": "During a missed approach in IMC, your GPS navigating the MFD loses WAAS signal integrity and the unit annunciates 'LNAV only' mid-procedure. How does this affect your MFD situational awareness tool, and what is your course of action?",
-              "answer": "Loss of WAAS integrity means the GPS has downgraded from LPV or LNAV/VNAV to LNAV capability. The MFD moving map display may still show position accurately using non-WAAS GPS, but the precision of that position data and any associated obstacle/terrain alerts may be degraded. Immediately cross-check position using any available conventional nav aids (VOR, DME) to verify the GPS-derived position shown on the MFD is consistent. Continue the missed approach using the MFD as a cross-check only rather than a primary navigation reference. Notify ATC of the degraded navigation capability. The missed approach routing displayed on the MFD is still useful for general positional awareness but should not be solely relied upon for precise course tracking.",
-              "follow_up": "If the GPS fails entirely and the MFD moving map goes blank mid-missed approach, what is your immediate priority and how do you complete the missed approach?",
-              "follow_up_answer": "Immediate priority is to maintain aircraft control by transitioning fully to primary flight instruments — attitude indicator, altimeter, VSI, airspeed, and any remaining nav instruments such as VOR/CDI or NDB/ADF. Declare the situation to ATC, requesting radar identification and vectors if needed. Complete the missed approach using the published procedure with conventional navigation aids. The loss of the MFD moving map is a loss of one situational awareness layer, not a flight control or navigation system failure by itself, so controlled flight is maintained. This reinforces the principle that the MFD is a supplemental tool and primary instrument proficiency must always be maintained.",
-              "regulatory_ref": "FAA-H-8083-15B Chapter 9 (GPS/WAAS); ACS IH.VII.C.S7; 14 CFR 91.187 (malfunction reports IFR)",
-              "tags": [
-                "GPS degradation",
-                "WAAS",
-                "MFD failure",
-                "missed approach",
-                "contingency",
-                "IFR"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "Answer states 'LNAV only' means downgrade from LPV or LNAV/VNAV, which is correct, but the follow-up answer lacks specificity regarding actual missed approach procedure requirements. The statement about 'loss of one situational awareness layer' is correct but somewhat understates the operational significance when GPS is the primary nav source.",
-                  "Minor issue: The answer could be more explicit about whether continuing the approach with degraded GPS is even permitted under 14 CFR 91.175 depending on the approach type and whether the published minimums require WAAS. If approach requires WAAS or LPV and WAAS is lost, the approach may not be legal to continue."
-                ],
-                "suggested_correction": "Clarify that WAAS loss mid-procedure depends on the approach type published. If flying LPV minimums and WAAS is lost, you must immediately notify ATC of inability to continue as published. Only LNAV approaches can be safely continued with non-WAAS GPS. For any approach, if GPS is primary nav and it degrades, cross-check with conventional navaids immediately and request vectors if unable to verify position.",
-                "triage": "ESCALATE",
-                "triage_note": "The answer does not clearly address whether continuing a missed approach with degraded GPS is legal under 14 CFR 91.175 if the approach was published with LPV/WAAS minimums; this is a critical safety and regulatory distinction that requires clarification."
-              }
-            },
-            {
               "id": "IH.VII.C.S7.008",
               "acs_code": "IH.VII.C.S7",
               "category": "skills",
@@ -44762,39 +44224,6 @@
                 "confidence": 0.96,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.VII.D.K2.007",
-              "acs_code": "IH.VII.D.K2",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "A helicopter pilot breaks out of the clouds during a non-precision approach and identifies what appears to be an ODALS (Omnidirectional Approach Lighting System). The MDA was 500 feet AGL. The pilot is at MDA and sees only the ODALS flashing lights. Is the pilot legally authorized to descend below MDA under 91.175, and why does the type of lighting system matter in this determination?",
-              "answer": "Under 14 CFR 91.175(c)(1), a pilot may descend below MDA only if the flight visibility is at or above the prescribed visibility for the approach AND at least one element of the runway environment listed in 91.175(c)(3) is clearly visible. The ODALS is an omnidirectional flashing system typically installed without the sequenced flashers or the runway-alignment component of a true ALS. The FAA considers ODALS as an approach lighting system for the purposes of 91.175, so seeing the ODALS does allow the pilot to continue below MDA — but only to 100 feet above the TDZE, not all the way to landing, unless additional runway environment elements come into view. The pilot must also confirm that flight visibility meets the charted minimum. The type of lighting system matters because only systems that qualify as 'approach lighting systems' under 91.175(c)(3) authorize that intermediate descent to 100 feet above TDZE; other lights (e.g., ramp lights or taxiway lights mistaken for approach lights) do not authorize any descent below MDA.",
-              "follow_up": "If the pilot descends below 100 feet above TDZE with only the ODALS visible and no other runway environment elements in sight, what FAR has been violated, and what is the practical risk specific to a helicopter in that situation?",
-              "follow_up_answer": "The pilot would be in violation of 14 CFR 91.175(c)(1), which explicitly restricts descent below 100 feet above TDZE unless additional runway environment elements beyond the ALS alone are visible. From a helicopter-specific standpoint, the practical risk is severe: transitioning to a landing from below 100 feet AGL without confirmed runway alignment or surface visibility means the pilot may be committed to a landing on unknown terrain, short of the runway, or misaligned — all of which are especially hazardous in a helicopter because the inability to execute a full-power go-around from very low altitude with low rotor inertia can result in vortex ring state entry, dynamic rollover on uneven terrain, or loss of tail rotor effectiveness near obstacles.",
-              "regulatory_ref": "14 CFR 91.175(c)(1) and (c)(3); AIM 2-1-1",
-              "tags": [
-                "91.175",
-                "ODALS",
-                "MDA",
-                "non-precision approach",
-                "runway environment",
-                "helicopter risk"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The statement 'The FAA considers ODALS as an approach lighting system for the purposes of 91.175' is not clearly substantiated in current FAA guidance. ODALS is an omnidirectional approach lighting system, but its exact treatment under 91.175(c)(3) as a qualifying 'approach lighting system' element is ambiguous in the provided regulatory reference.",
-                  "The answer assumes ODALS alone authorizes descent to 100 feet above TDZE, but 91.175(c)(3) lists specific runway environment elements. The status of ODALS as qualifying under 'approach lighting system' in 91.175(c)(3) needs clarification from current FAA guidance to confirm authorization.",
-                  "The follow-up answer regarding vortex ring state, dynamic rollover, and tail rotor effectiveness risks is operationally sound but conflates different helicopter-specific hazards (VRS is not directly caused by low altitude commitment alone; the other hazards are more precise). Answer is directionally correct but overstates the mechanism."
-                ],
-                "suggested_correction": "ODALS (Omnidirectional Approach Lighting System) is an approach lighting system, and under 14 CFR 91.175(c)(1) and (c)(3), an approach lighting system is a qualifying runway environment element that permits descent below MDA to 100 feet above TDZE (assuming visibility minimums are met). However, ODALS alone does not authorize descent to landing; additional runway environment elements must be in sight to descend below 100 feet above TDZE. The pilot must also confirm flight visibility meets the charted minimum. A helicopter descending below 100 feet AGL without confirmed runway alignment or landing surface visibility risks commitment to landing on unsuitable terrain, creating inability to execute recovery maneuvers due to low rotor inertia and insufficient altitude for full-power climb-out.",
-                "triage": "ESCALATE",
-                "triage_note": "The treatment of ODALS as a qualifying 'approach lighting system' element under 14 CFR 91.175(c)(3) is not clearly substantiated in current FAA guidance; ambiguity exists regarding whether ODALS alone authorizes descent to 100 feet above TDZE."
               }
             },
             {
@@ -45648,38 +45077,6 @@
                 "confidence": 0.94,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.VII.D.R3.008",
-              "acs_code": "IH.VII.D.R3",
-              "category": "risk_management",
-              "difficulty": "advanced",
-              "question": "Research shows that accidents in specific helicopter models decrease significantly after 100 hours in type. How does this fact directly apply to the risk of transitioning from instruments to visual references on an approach, and what should a pilot with low hours in type do to mitigate this risk?",
-              "answer": "The FAA Helicopter Flying Handbook notes that accident rates correlate more closely with hours in a specific aircraft type than with total flight hours, and that accidents decrease significantly after 100 hours in type. For the instrument-to-visual transition, a pilot with low hours in type faces compounded risk: they may not yet have internalized the aircraft's sight picture at approach minimums, the power-to-hover relationship near the surface, or the specific sight lines and control feel needed to transition smoothly from a head-down instrument scan to a landing flare or hover. This unfamiliarity increases workload at the most critical phase of flight — the last few hundred feet — exactly when workload should be decreasing. Mitigation strategies include: (1) completing additional simulator or dual instruction specifically practicing the transition phase in that aircraft type; (2) initially flying approaches to higher minimums to allow more time for the visual transition before committing to landing; (3) briefing the approach thoroughly, including the expected visual picture at minimums for that specific aircraft from the left or right seat; (4) using crew resource management if flying with another qualified pilot; and (5) setting personal minimums above published minimums until hours in type and proficiency justify flying to legal minimums.",
-              "follow_up": "You are an FAA examiner. The applicant flying a helicopter type checkride has 2,000 total hours but only 15 hours in this specific turbine helicopter. They successfully flew the approach to minimums on the check. Is there anything about this experience profile that you would address beyond the checkride tasks themselves?",
-              "follow_up_answer": "Yes. While the applicant may have demonstrated satisfactory performance to ACS standards during the checkride, 15 hours in type falls well below the threshold where accident data shows meaningful risk reduction. As an examiner, I would address this during the oral portion or debrief by discussing the statistical significance of hours in type versus total hours, the importance of self-imposed personal minimums during the initial period in a new type, and the role of Single-Pilot Resource Management in recognizing when one's own experience level should be a limiting factor. I would also emphasize that passing a checkride does not mean the pilot is ready to operate at published minimums in IMC with only 15 hours in that aircraft — this is a judgment and risk management discussion, not a legal one. I might suggest the pilot establish a personal minimum of, for example, 500-foot ceilings and 1-mile visibility until accumulating at least 50–100 hours in type, and that they seek additional instrument currency in that specific aircraft before flying near legal minimums.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 13; FAA-H-8083-15B Chapter 1",
-              "tags": [
-                "hours in type",
-                "personal minimums",
-                "risk management",
-                "ADM",
-                "SRM",
-                "instrument proficiency"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The claim that 'accident rates decrease significantly after 100 hours in type' is presented as established FAA research/fact, but this specific statistical threshold and its attribution to FAA sources is not directly verifiable in the core FAA handbooks cited. While the general principle that hours in type correlates with safety is sound and referenced in FAA-H-8083-21B, the specific '100-hour threshold' and 'significant decrease' statement needs verification against accident databases or official FAA risk analysis documents.",
-                  "The answer is otherwise excellent for risk management pedagogy and is consistent with FAA philosophy regarding personal minimums and type-specific proficiency, but the follow-up examiner response conflates regulatory authority with examiner guidance — an examiner cannot legally impose personal minimums beyond what the regulations allow, though they can strongly recommend them."
-                ],
-                "suggested_correction": "Consider rephrasing to: 'Research and accident data indicate that helicopter accident rates correlate strongly with hours in a specific aircraft type, with meaningful risk reduction typically occurring in the first 50–100 hours as pilots gain familiarity with that model.' Additionally, in the follow-up response, clarify that while an examiner may discuss personal minimums during a debrief for educational purposes, they cannot legally restrict the applicant's future operations — that remains the pilot's risk management decision.",
-                "triage": "ESCALATE",
-                "triage_note": "The specific claim that accident rates decrease 'significantly after 100 hours in type' is presented as established FAA fact but cannot be directly verified in cited handbooks; while hours-in-type correlation is sound FAA philosophy, the precise 100-hour threshold requires citation to accident data or official FAA risk analysis documents rather than flying handbooks."
               }
             },
             {
@@ -46694,37 +46091,6 @@
                 "confidence": 0.93,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.VII.D.S4.007",
-              "acs_code": "IH.VII.D.S4",
-              "category": "skills",
-              "difficulty": "advanced",
-              "question": "During the landing maneuver following a coupled ILS approach, the autopilot disconnects unexpectedly at 150 feet AGL just as you are decelerating over the threshold. The helicopter has a low-inertia rotor system. Describe exactly how you maintain positive control in the first three seconds after the disconnect, and what makes low-inertia rotor systems uniquely hazardous at this moment.",
-              "answer": "Immediately upon autopilot disconnect, the pilot must take over all three axes simultaneously — the hands go directly to the controls with positive, purposeful inputs rather than abrupt or reactive ones. In the first three seconds: (1) Cyclic — establish the correct deceleration attitude and stop any drift or bank that may have developed; (2) Collective — confirm power setting is appropriate for the approach profile and arrest any developing sink rate; (3) Pedals — trim out any yaw. Low-inertia rotor systems are uniquely hazardous because rotor RPM decays much faster than high-inertia systems when collective is mismanaged or a power interruption occurs. The Helicopter Flying Handbook states that low-inertia rotors decay rapidly at autorotation entry. Even without engine failure, aggressive collective inputs combined with a momentary distraction during the disconnect can cause transient RPM excursions that compromise lift authority at the exact moment it is most needed — low altitude, decelerating, close to the ground. The pilot must keep rotor RPM in the normal operating range at all times, which requires smooth collective management from the instant of disconnect.",
-              "follow_up": "If the rotor RPM begins to decay below normal operating range during that transition, and you are at 100 feet AGL in forward flight — what are your immediate corrective actions and why is recovery more difficult at low airspeed than at cruise?",
-              "follow_up_answer": "Immediately lower collective to reduce blade pitch angle and allow the rotor system to accelerate back into the normal RPM range — this is the same initial action as autorotation entry. The Helicopter Flying Handbook states to immediately lower collective upon engine failure to reduce lift/drag and allow upward airflow to maintain rotor RPM. At low airspeed, recovery is more difficult because there is less translational lift and reduced inflow through the rotor disk, so the rotor has less aerodynamic energy available to recover RPM compared to cruise. At cruise airspeed, aft cyclic can increase airflow up through the disk to contribute to RPM recovery. At low airspeed near the ground, altitude margin is critically limited and the collective reduction trades the altitude buffer for rotor RPM recovery — making the situation extremely demanding and potentially unrecoverable if the RPM loss is severe enough. This is why the FAA handbook states rotor stalls are not recoverable and early recognition is imperative.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 11; FAA-H-8083-21B Chapter 9",
-              "tags": [
-                "autopilot disconnect",
-                "low-inertia rotor",
-                "rotor RPM",
-                "positive control",
-                "transition to landing",
-                "emergency"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The primary answer discusses low-inertia rotor decay and is generally sound, but the follow-up answer contains a potentially problematic statement: 'Immediately lower collective to reduce blade pitch angle and allow the rotor system to accelerate back into the normal RPM range — this is the same initial action as autorotation entry.' This conflates two different scenarios. In an autorotation after engine failure, collective is lowered to minimize drag and allow translational lift/inflow to support RPM. However, in a coupled ILS disconnect scenario at 150 feet in powered flight, the engine is still running. If RPM decays during powered flight, the initial corrective action should be to reduce pitch (lower collective) only if power/torque margins allow, but the context suggests this is a transient RPM loss during a deceleration maneuver, not an engine failure. The follow-up answer risks conflating engine-out procedures with in-flight RPM management."
-                ],
-                "suggested_correction": "Clarify: In powered flight with RPM decay, the corrective action is to reduce collective to decrease blade pitch and allow rotor acceleration via engine-driven input, OR reduce power demands on the engine (reduce maneuvering). This is different from autorotation entry, which occurs after engine failure. In the coupled approach scenario, the pilot should reduce collective modestly to shed load on the rotor and allow RPM recovery while ensuring the engine remains capable of supporting the required power. Only if RPM continues to decay uncontrollably should the pilot consider autorotation entry.",
-                "triage": "ESCALATE",
-                "triage_note": "The follow-up answer conflates powered-flight RPM recovery with autorotation entry procedures; lowering collective in powered flight with an operating engine differs fundamentally from autorotation collective management, and the answer risks instructing unsafe technique by not clearly distinguishing the two scenarios."
               }
             },
             {
@@ -48350,38 +47716,6 @@
                 "confidence": 0.95,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.VIII.A.S4.005",
-              "acs_code": "IH.VIII.A.S4",
-              "category": "skills",
-              "difficulty": "intermediate",
-              "question": "You lose communications at cruise altitude en route. Your filed ETA to the destination is 1500Z, but your actual groundspeed has been much slower than planned due to headwinds, and you now calculate your true ETA as 1520Z. Which time do you use to begin your approach, and why?",
-              "answer": "You should use 1520Z — your recalculated ETA based on actual conditions. 14 CFR 91.185(c)(3) says to use the ETA from your 'filed or amended' flight plan, and this includes updates to your mental flight plan based on actual conditions. If you have an amended ETA that reflects the true situation, using a known-inaccurate filed ETA could result in arriving before ATC expects you and conflicting with other traffic. The purpose of the rule is to ensure ATC can predict when you will arrive; using your best current estimate of actual arrival time aligns with that intent and supports safety.",
-              "regulatory_ref": "14 CFR 91.185(c)(3)(i); FAA-H-8083-15B Chapter 1",
-              "tags": [
-                "ETA",
-                "amended flight plan",
-                "lost communications",
-                "approach timing",
-                "groundspeed"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.9,
-                "issues": [
-                  "The answer conflates 'filed or amended' flight plan with recalculated mental estimates. 14 CFR 91.185(c)(3)(i) requires using the ETA from the 'filed or amended' flight plan — a formal amendment filed with ATC, not an informal recalculation. The question and answer do not clearly distinguish between an officially amended flight plan (which would require ATC action, but comms are lost) and a pilot's personal recalculation (which is NOT the same as an amended plan per the regulation).",
-                  "In a NORDO situation where the original ETA was 1500Z and actual is 1520Z, 14 CFR 91.185(c)(3)(i) says to use the ETA from your filed plan or, if amended before the loss of comms, the amended plan. If no amendment was filed before comms were lost, the filed ETA (1500Z) should be used, not the recalculated 1520Z. The answer incorrectly suggests that mental recalculation of ETA satisfies the 'amended plan' requirement.",
-                  "The regulatory citation to '91.185(c)(3)(i)' is accurate in location, but the answer's interpretation that 'updates to your mental flight plan' count as an amended ETA is not supported by the regulation."
-                ],
-                "suggested_correction": "The correct answer should clarify: you use the ETA from your filed flight plan UNLESS you formally amended it with ATC before the loss of communications occurred. A recalculated ETA based on updated groundspeed is prudent for personal planning but does not override the filed or officially amended ETA for the purposes of 14 CFR 91.185(c)(3)(i). If no amendment was filed before comms failed, use 1500Z (the filed ETA), not 1520Z.",
-                "triage": "ESCALATE",
-                "triage_note": "The answer incorrectly interprets 14 CFR 91.185(c)(3)(i) by conflating an informal recalculation of ETA with a formally amended flight plan filed before loss of comms; the regulation requires use of the filed ETA or an officially amended ETA, not a mental recalculation made after comms are lost."
               }
             },
             {
@@ -52557,38 +51891,6 @@
               }
             },
             {
-              "id": "IH.VIII.B.S12.002",
-              "acs_code": "IH.VIII.B.S12",
-              "category": "skills",
-              "difficulty": "basic",
-              "question": "Name the five key components of Single-Pilot Resource Management as described in the FAA Helicopter Flying Handbook.",
-              "answer": "The five key components of SRM as described in the FAA-H-8083-21B are: (1) Risk Management — identifying and mitigating hazards; (2) Situational Awareness — knowing where you are and what is happening around you at all times; (3) Aeronautical Decision-Making (ADM) — using a systematic approach to evaluate options and choose the best course of action; (4) Controlled Flight Into Terrain (CFIT) Awareness — actively monitoring terrain proximity, especially during IMC; and (5) Automation Management — effectively using available automated systems without over-relying on them or losing manual proficiency. Workload management is also a closely integrated element.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 13",
-              "tags": [
-                "SRM",
-                "risk management",
-                "situational awareness",
-                "ADM",
-                "CFIT",
-                "automation"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The five components listed are accurate but the phrasing 'five key components' may not precisely match FAA-H-8083-21B Chapter 13. FAA sources typically organize SRM around broader pillars (risk management, situational awareness, decision-making, workload management, and sometimes CFIT or automation awareness), but the exact enumeration of 'five' components is not a standard FAA taxonomy.",
-                  "Workload management is mentioned as an 'integrated element' but could be argued as a sixth component depending on source interpretation."
-                ],
-                "suggested_correction": "Recommend verifying the exact five-component framework cited in FAA-H-8083-21B Chapter 13. If the handbook does not use this exact enumeration, reframe the answer to state: 'SRM encompasses key areas such as risk management, situational awareness, aeronautical decision-making, workload management, and CFIT awareness,' rather than claiming a fixed set of five components.",
-                "triage": "ESCALATE",
-                "triage_note": "The claim of exactly 'five key components' is not verified against FAA-H-8083-21B Chapter 13; SRM frameworks in FAA sources vary in organization (some cite risk management, situational awareness, decision-making, workload management as core pillars), and the precise enumeration of five discrete components needs authoritative confirmation."
-              }
-            },
-            {
               "id": "IH.VIII.B.S12.003",
               "acs_code": "IH.VIII.B.S12",
               "category": "skills",
@@ -53541,38 +52843,6 @@
               }
             },
             {
-              "id": "IH.VIII.C.R2.008",
-              "acs_code": "IH.VIII.C.R2",
-              "category": "risk_management",
-              "difficulty": "advanced",
-              "question": "Research shows that helicopter accidents decrease significantly after a pilot accumulates 100 hours in a specific aircraft model. How does this fact apply to the risk of maintaining helicopter control after primary instrument failure, and what does it tell you about the kind of training needed to mitigate that risk?",
-              "answer": "The 100-hour-in-type threshold reflects that aircraft-specific proficiency — knowing the power settings, control sensitivity, trim characteristics, and normal instrument indications for that exact helicopter — is a critical safety factor beyond total flight hours. When primary instruments fail, a pilot with high in-type experience can maintain control partly from muscle memory and known power/attitude relationships (e.g., 'at this collective setting and attitude, this helicopter holds 90 knots and 500 fpm descent'). A pilot with low in-type hours lacks that baseline and is more susceptible to over-controlling, spatial disorientation, and fixation. The implication for training is that partial-panel practice must be conducted specifically in the aircraft type being flown IFR, not just in a generic helicopter or simulator, and that recurrent instrument proficiency training in-type is essential — not just an initial rating check.",
-              "follow_up": "If you are an instrument-rated helicopter pilot with 800 total hours but only 15 hours in a newly acquired turbine helicopter, how should this in-type hour data change how you plan your first solo IFR flight in that aircraft?",
-              "follow_up_answer": "15 in-type hours places the pilot well below the statistically safer 100-hour threshold. For the first solo IFR flight, the pilot should: (1) fly with a qualified instructor or safety pilot for additional in-type IFR exposure until reaching higher in-type proficiency; (2) restrict initial solo IFR operations to favorable weather with significant buffers above minimums; (3) avoid routes over mountainous terrain or other high-consequence environments; (4) pre-brief specific partial-panel power settings and attitudes for that aircraft type before the flight; (5) consider a simulator session in that specific aircraft type if available to practice instrument failures without airborne risk. The FAA's SRM framework emphasizes recognizing personal minimums as a risk management tool — and low in-type hours should be reflected in self-imposed personal minimums.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 13 (SRM, ADM, in-type hours); FAA-H-8083-15B Chapter 8",
-              "tags": [
-                "in-type experience",
-                "proficiency",
-                "risk management",
-                "partial panel",
-                "personal minimums",
-                "SRM"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The claim that 'helicopter accidents decrease significantly after 100 hours in a specific aircraft model' is presented as established fact but lacks specific FAA regulatory citation or reference to accident data. While the premise is reasonable from a proficiency standpoint, the '100-hour threshold' is not an official FAA standard or regulatory requirement and should be characterized as empirical/research-based rather than regulatory doctrine.",
-                  "The follow-up answer about restricting first solo IFR operations is reasonable risk management but goes beyond what the primary answer supports. The answer should clarify that the 100-hour observation is correlational, not causal."
-                ],
-                "suggested_correction": "Revise to: 'Research and accident data suggest that helicopter accident rates improve significantly as pilots accumulate approximately 100 hours of experience in a specific aircraft model. This reflects aircraft-specific proficiency — knowing the power settings, control sensitivity, trim characteristics, and normal instrument indications for that exact helicopter. When primary instruments fail, a pilot with high in-type experience can maintain control partly from muscle memory and known power/attitude relationships. The implication for training is that partial-panel practice should be conducted specifically in the aircraft type being flown IFR, and recurrent instrument proficiency training in-type is essential. While 100 hours is not an official FAA regulatory threshold, it represents a useful benchmark for personal risk management and training planning.' Reference: FAA-H-8083-21B (SRM/ADM principles); accident trend data from NTSB/FAA analysis.",
-                "triage": "ESCALATE",
-                "triage_note": "The claim that 'helicopter accidents decrease significantly after 100 hours in a specific aircraft model' is presented as established fact but lacks direct FAA regulatory citation or specific accident data reference; while low-hours-in-type risk is real and supported in ACS/handbooks, the specific '100-hour threshold' statistic requires verification against primary FAA sources before shipping as stated."
-              }
-            },
-            {
               "id": "IH.VIII.C.R3.001",
               "acs_code": "IH.VIII.C.R3",
               "category": "risk_management",
@@ -54374,39 +53644,6 @@
                 "confidence": 0.92,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.VIII.C.S3.008",
-              "acs_code": "IH.VIII.C.S3",
-              "category": "skills",
-              "difficulty": "advanced",
-              "question": "The FAA states that accident rates correlate more strongly with hours in a specific aircraft type than with total flight hours, and decrease significantly after 100 hours in type. How does this statistic directly apply to your SRM decisions when a primary instrument fails in a type you have 40 hours in?",
-              "answer": "This statistic means that a pilot with 40 hours in type is statistically in the highest-risk window for that aircraft — they have enough familiarity to feel comfortable but not enough type-specific experience to have encountered and processed unusual failures in that specific aircraft's cockpit layout, system architecture, and handling characteristics. In SRM terms, this should directly inform your risk assessment: you should be more conservative, not less, because your instrument scan pattern, backup instrument locations, and failure checklists may not yet be reflexive. A pilot with 40 hours in type should weight their decision toward the most conservative option available — executing a missed approach, declaring an emergency, or requesting vectors to VMC — rather than attempting to demonstrate proficiency by completing the approach partial panel. The FAA uses this data point specifically to encourage realistic self-assessment as part of ADM, recognizing that perceived proficiency often exceeds actual proficiency during the low-hours-in-type phase.",
-              "follow_up": "If this is a checkride and I'm the examiner — how do you demonstrate during this practical test that your SRM decisions are sound, rather than just reciting the theory?",
-              "follow_up_answer": "Sound SRM on a practical test is demonstrated behaviorally, not verbally. Specifically: (1) I verbalize my decision-making process out loud as it happens — narrating my risk assessment, workload prioritization, and option selection, so the examiner can see the thinking, not just the outcome. (2) I make conservative decisions promptly rather than waiting to see if the situation resolves itself — hesitation is itself a poor SRM behavior. (3) I communicate with ATC (or the simulated ATC role) in a timely and accurate way, demonstrating that I am using external resources. (4) I avoid anchoring on completing the task — if continuing an approach with simulated failed instruments presents unacceptable risk, I say so and demonstrate the missed approach or diversion. Examiners are specifically looking for whether the applicant recognizes SRM as an active, continuous process rather than a concept to discuss after landing.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 13; ACS IH.VIII.C.S3",
-              "tags": [
-                "SRM",
-                "hours in type",
-                "risk management",
-                "ADM",
-                "checkride",
-                "self-assessment"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The claim that 'accident rates correlate more strongly with hours in a specific aircraft type than with total flight hours' and 'decrease significantly after 100 hours in type' is not directly cited from FAA-H-8083-21B Chapter 13",
-                  "While low-hours-in-type is a recognized risk factor in FAA literature, the specific statistical claim (100-hour threshold) requires verification against primary FAA sources",
-                  "The answer conflates general risk management principles with a specific statistical assertion that may not be explicitly stated in the cited reference"
-                ],
-                "suggested_correction": "Soften the statistical claim unless it can be directly cited from FAA-H-8083-21B or the ACS. The core principle is sound: pilots early in type-rating experience should be more conservative in their risk assessment. Recommend revising to: 'Research indicates that pilots early in a type's training have higher accident rates because they lack type-specific proficiency despite general flying experience. After accumulating experience in type, accident rates decrease. At 40 hours in type, you are in a critical learning phase where overconfidence can exceed actual proficiency—SRM requires conservative decision-making during this window.'",
-                "triage": "ESCALATE",
-                "triage_note": "The answer asserts that 'the FAA states that accident rates correlate more strongly with hours in a specific aircraft type than with total flight hours, and decrease significantly after 100 hours in type,' but this specific statistical claim is not directly cited from FAA-H-8083-21B or the ACS; the underlying principle (low-hours-in-type is high-risk) is sound, but the precise quantitative assertion requires verification before use on a high-stakes exam."
               }
             }
           ]
@@ -55467,68 +54704,6 @@
               }
             },
             {
-              "id": "IH.X.A.K3.001",
-              "acs_code": "IH.X.A.K3",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "When adding a helicopter rating to an existing instrument rating, which area of operation contains the task that is only required if you bring a multiengine helicopter to the checkride?",
-              "answer": "Area of Operation VII, Emergency Operations. Specifically, Task B within that area does not apply unless the applicant supplies a multiengine helicopter for the practical test.",
-              "regulatory_ref": "Instrument Helicopter ACS, Appendix 1, IH.X.A.K3",
-              "tags": [
-                "checkride requirements",
-                "multiengine helicopter",
-                "emergency operations",
-                "ACS applicability"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "Question references 'Appendix 1, IH.X.A.K3' but the ACS code IH.X.A.K3 does not appear to match the structure of the Instrument Helicopter ACS. The reference appears to be non-standard or potentially outdated.",
-                  "The answer identifies Area of Operation VII, Task B as applicable only to multiengine helicopters, but the specific regulatory language and ACS applicability structure for add-on ratings should be verified against current FAA Instrument Helicopter ACS documentation.",
-                  "Limited ability to verify the exact ACS table structure without access to the current published Instrument Helicopter ACS appendix."
-                ],
-                "suggested_correction": "Verify the exact ACS code structure and appendix reference against the current FAA Instrument Helicopter ACS publication. Confirm that Area of Operation VII, Task B is indeed the correct task designation for multiengine-only evaluation and that this applies to the add-on rating scenario.",
-                "triage": "ESCALATE",
-                "triage_note": "The ACS code structure (IH.X.A.K3) does not align with standard Instrument Helicopter ACS formatting; the regulatory reference to 'Appendix 1' lacks precision; and the specific applicability of Area of Operation VII Task B to multiengine-only add-on ratings cannot be verified without current published ACS documentation."
-              }
-            },
-            {
-              "id": "IH.X.A.K3.002",
-              "acs_code": "IH.X.A.K3",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "Who bears the responsibility for determining whether Emergency Operations Task B in Area of Operation VII will be tested during an instrument helicopter rating addition checkride?",
-              "answer": "The applicant bears that responsibility by their choice of aircraft. If the applicant supplies a multiengine helicopter for the practical test, Task B applies and will be evaluated. If the applicant supplies a single-engine helicopter, Task B is not applicable and will not be tested.",
-              "regulatory_ref": "Instrument Helicopter ACS, Appendix 1, IH.X.A.K3",
-              "tags": [
-                "applicant responsibilities",
-                "checkride aircraft",
-                "multiengine helicopter",
-                "ACS applicability"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "Same regulatory reference concern as IH.X.A.K3.001 — the appendix citation structure is not standard and should be verified.",
-                  "The answer is logically sound (applicant chooses aircraft, which determines applicability), but the underlying ACS reference must be confirmed.",
-                  "The practical application of the rule appears correct but confidence in the specific regulatory citation is low."
-                ],
-                "suggested_correction": "Cross-reference against current FAA Instrument Helicopter ACS to confirm the exact applicability structure for multiengine helicopter tasks during add-on rating practical tests. Verify that the responsibility assignment (applicant's choice of aircraft determines testing) is correctly stated in current guidance.",
-                "triage": "ESCALATE",
-                "triage_note": "The regulatory reference to 'Instrument Helicopter ACS, Appendix 1, IH.X.A.K3' uses non-standard citation format that cannot be verified against current FAA documentation; the substantive answer (applicant choice of aircraft determines Task B applicability) is logically sound but depends entirely on confirming this specific appendix structure exists and is current."
-              }
-            },
-            {
               "id": "IH.X.A.K3.003",
               "acs_code": "IH.X.A.K3",
               "category": "knowledge",
@@ -56100,163 +55275,6 @@
               }
             },
             {
-              "id": "IH.X.B.K3.001",
-              "acs_code": "IH.X.B.K3",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "When a helicopter pilot undergoes an Instrument Proficiency Check, which Area of Operation in the Instrument ACS requires ALL tasks to be completed?",
-              "answer": "Areas of Operation VI and VIII both require all tasks to be completed during an IPC. Area of Operation VI covers instrument approaches, and Area of VIII covers emergency operations — no tasks within those areas may be skipped during the IPC.",
-              "regulatory_ref": "14 CFR 61.57(d); FAA-S-ACS-18 Instrument Rating ACS, IH.X.B.K3",
-              "tags": [
-                "IPC",
-                "required tasks",
-                "ACS",
-                "instrument proficiency"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "The answer claims Areas VI and VIII both require ALL tasks during an IPC, but specific ACS task requirements vary by area and this is stated with absolute certainty without citing exact task structure from FAA-S-ACS-18.",
-                  "The regulatory reference cites 'FAA-S-ACS-18 Instrument Rating ACS' but FAA-S-ACS-9 is the current Helicopter Instrument Rating ACS document. FAA-S-ACS-18 does not appear to be a current ACS publication.",
-                  "Without access to verify the exact task breakdown in the current Helicopter Instrument ACS, the claim that ALL tasks in Areas VI and VIII are mandatory cannot be confirmed as accurate."
-                ],
-                "suggested_correction": "Verify against the current FAA-S-ACS-9 (Helicopter Instrument Rating ACS) the exact tasks required in Areas VI and VIII. If Areas VI and VIII do mandate all tasks, update the regulatory reference to FAA-S-ACS-9 instead of the non-standard FAA-S-ACS-18 citation.",
-                "triage": "ESCALATE",
-                "triage_note": "The regulatory reference cites 'FAA-S-ACS-18 Instrument Rating ACS' which is not a current or standard FAA publication (should be FAA-S-ACS-9 for helicopter); the claim that ALL tasks in Areas VI and VIII are mandatory for IPC cannot be verified without access to current ACS task structure."
-              }
-            },
-            {
-              "id": "IH.X.B.K3.002",
-              "acs_code": "IH.X.B.K3",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "Which Areas of Operation require NO tasks to be completed during a helicopter Instrument Proficiency Check?",
-              "answer": "Areas of Operation I and II require no tasks during an IPC. This means the examiner or authorized instructor conducting the IPC is not required to evaluate any tasks from those two areas.",
-              "regulatory_ref": "14 CFR 61.57(d); FAA-S-ACS-18 Instrument Rating ACS, IH.X.B.K3",
-              "tags": [
-                "IPC",
-                "required tasks",
-                "ACS",
-                "instrument proficiency"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer claims Areas I and II require NO tasks during an IPC with certainty, but the regulatory reference cites non-standard 'FAA-S-ACS-18' instead of FAA-S-ACS-9.",
-                  "The statement is too absolute without confirming the current Helicopter Instrument ACS structure. IPC requirements have been clarified in recent ACS editions, and the blanket statement that no tasks from Areas I and II are required should be verified against FAA-S-ACS-9.",
-                  "Question IH.X.B.K3.007 later suggests that Areas I and II may still be discretionarily evaluated even if not required, which is consistent, but the absolute 'no tasks' framing here lacks nuance."
-                ],
-                "suggested_correction": "Confirm the exact requirement language in FAA-S-ACS-9 for Areas I and II in the Helicopter Instrument IPC. Update the regulatory reference from 'FAA-S-ACS-18' to 'FAA-S-ACS-9'. Consider adding that while not required, these areas may be evaluated at the instructor's discretion if relevant to safety.",
-                "triage": "ESCALATE",
-                "triage_note": "The question claims Areas I and II require NO tasks during an IPC, but this requires verification against the current FAA-S-ACS-9 (Helicopter Instrument Rating ACS); the reference to 'FAA-S-ACS-18' is non-standard and the absolute phrasing lacks regulatory precision."
-              }
-            },
-            {
-              "id": "IH.X.B.K3.003",
-              "acs_code": "IH.X.B.K3",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "For a helicopter IPC, Area of Operation VII requires specific tasks — which ones are they?",
-              "answer": "For Area of Operation VII, only Tasks B and C are required during an IPC. Not all tasks in Area of Operation VII must be demonstrated — only those two designated tasks.",
-              "regulatory_ref": "14 CFR 61.57(d); FAA-S-ACS-18 Instrument Rating ACS, IH.X.B.K3",
-              "tags": [
-                "IPC",
-                "required tasks",
-                "Area VII",
-                "instrument proficiency"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "The answer specifies that only Tasks B and C are required in Area VII without displaying the actual ACS task listing, making verification impossible.",
-                  "Regulatory reference again cites non-standard 'FAA-S-ACS-18' instead of FAA-S-ACS-9.",
-                  "This is presented as absolute fact for a basic-level question, but the specificity (Tasks B and C only) should be verified against the current Helicopter Instrument ACS before being taught to students."
-                ],
-                "suggested_correction": "Verify the exact tasks required in Area VII of FAA-S-ACS-9 (Helicopter Instrument Rating ACS). Correct the regulatory reference to FAA-S-ACS-9 instead of FAA-S-ACS-18. Provide the full task titles to ensure accuracy.",
-                "triage": "ESCALATE",
-                "triage_note": "The answer specifies that only Tasks B and C are required in Area VII without citing the actual ACS task listing; this critical procedural detail cannot be verified and the reference to non-standard 'FAA-S-ACS-18' compounds the uncertainty."
-              }
-            },
-            {
-              "id": "IH.X.B.K3.004",
-              "acs_code": "IH.X.B.K3",
-              "category": "knowledge",
-              "difficulty": "intermediate",
-              "question": "You are an authorized instructor conducting an IPC for a helicopter pilot. The pilot asks if you can skip Area of Operation VI — instrument approaches — because she just flew three approaches last week under actual IMC. How do you respond, and why?",
-              "answer": "You must decline to skip Area of Operation VI. The IPC task requirements under IH.X.B.K3 specify that ALL tasks in Area of Operation VI must be completed during the IPC. Recent actual IMC experience does not substitute for the IPC evaluation requirement. The IPC is a structured assessment with specific required tasks, not simply a currency flight. If she has recent instrument experience, it may reduce her preparation time, but it does not waive any required IPC tasks.",
-              "regulatory_ref": "14 CFR 61.57(d); FAA-S-ACS-18 Instrument Rating ACS, IH.X.B.K3",
-              "tags": [
-                "IPC",
-                "instrument approaches",
-                "Area VI",
-                "currency",
-                "instructor responsibility"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer correctly states that Area VI tasks cannot be skipped, but it relies on the premise from IH.X.B.K3.001 that 'ALL tasks in Area VI must be completed,' which itself is flagged for verification.",
-                  "Regulatory reference uses non-standard 'FAA-S-ACS-18' instead of FAA-S-ACS-9.",
-                  "The logic is sound (recent experience does not substitute for IPC evaluation), but the underlying assumption about Area VI requirements needs verification."
-                ],
-                "suggested_correction": "Verify the Area VI task requirements in FAA-S-ACS-9 before confirming this answer. Update reference to FAA-S-ACS-9.",
-                "triage": "ESCALATE",
-                "triage_note": "While the logic that recent IMC experience does not waive IPC requirements is sound, the answer relies on unverified premises about Area VI task requirements from IH.X.B.K3.001, and uses non-standard regulatory reference 'FAA-S-ACS-18' instead of FAA-S-ACS-9."
-              }
-            },
-            {
-              "id": "IH.X.B.K3.005",
-              "acs_code": "IH.X.B.K3",
-              "category": "knowledge",
-              "difficulty": "intermediate",
-              "question": "A helicopter pilot completed an IPC but the authorized instructor only evaluated Task A in Area of Operation V. Was the IPC valid, and what does IH.X.B.K3 require for Area V?",
-              "answer": "Area of Operation V requires only Task A during an IPC, so evaluating Task A satisfies the requirement for that area. The IPC is valid with respect to Area V. The instructor must also confirm that all other required areas and tasks — particularly all of Areas VI and VIII, Task B of Area III, Task B of Area IV, and Tasks B and C of Area VII — were completed to make the overall IPC valid.",
-              "regulatory_ref": "14 CFR 61.57(d); FAA-S-ACS-18 Instrument Rating ACS, IH.X.B.K3",
-              "tags": [
-                "IPC",
-                "Area V",
-                "Task A",
-                "validity",
-                "instrument proficiency"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer assumes Area V requires only Task A based on IH.X.B.K3.003 pattern, but this requires verification against FAA-S-ACS-9.",
-                  "Regulatory reference again cites non-standard 'FAA-S-ACS-18' instead of FAA-S-ACS-9.",
-                  "The answer lists required areas as 'particularly all of Areas VI and VIII, Task B of Area III, Task B of Area IV, and Tasks B and C of Area VII' — this is very specific and should be cross-checked against current ACS before being taught."
-                ],
-                "suggested_correction": "Verify the complete task requirements for all Areas (III, IV, V, VI, VII, VIII) in FAA-S-ACS-9. Ensure the task list provided is accurate and current. Update regulatory reference to FAA-S-ACS-9.",
-                "triage": "ESCALATE",
-                "triage_note": "The question and answer assume specific task requirements for Area V and other areas based on IH.X.B.K3, but cite non-standard regulatory reference (FAA-S-ACS-18 instead of FAA-S-ACS-9), and the detailed task list for all Areas (III, IV, V, VI, VII, VIII) cannot be verified without access to current FAA-S-ACS-9 helicopter IPC standards."
-              }
-            },
-            {
               "id": "IH.X.B.K3.006",
               "acs_code": "IH.X.B.K3",
               "category": "knowledge",
@@ -56307,41 +55325,6 @@
                 "confidence": 0.9,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.X.B.K3.008",
-              "acs_code": "IH.X.B.K3",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "A helicopter pilot completed an IPC where the instructor evaluated Task B in Area III and Task B in Area IV, but only one instrument approach in Area VI, arguing that one approach satisfies 'all tasks' since that was the only approach flown that day due to weather. Is this IPC valid under IH.X.B.K3?",
-              "answer": "This is likely not a valid IPC. 'All tasks' in Area of Operation VI means all of the tasks listed within that area of the ACS must be demonstrated — not just the number of approaches the weather permitted that day. If Area VI contains multiple tasks (such as precision approaches, non-precision approaches, circling, missed approach, etc.) and only one was evaluated, the IPC does not meet the standard regardless of weather conditions. The instructor should have either postponed, used a flight simulator/ATD for the remaining approaches, or documented why the IPC could not be completed, rather than signing it off as complete.",
-              "follow_up": "Can a flight simulator or Aviation Training Device be used to complete the required IPC tasks that could not be accomplished due to weather, and if so, what regulatory limitation applies to the device?",
-              "follow_up_answer": "Yes, 14 CFR 61.57(d) permits the use of an FAA-approved flight simulator or flight training device to complete IPC tasks, provided the device is representative of the helicopter category. The device must be approved for the specific maneuvers being evaluated, and the instructor must be authorized to conduct the IPC in that device. An ATD or FTD cannot be substituted for actual or simulated instrument flight in ways the device is not approved to replicate, and the overall IPC must still meet all required task standards.",
-              "regulatory_ref": "14 CFR 61.57(d); 14 CFR 61.4; FAA-S-ACS-18 Instrument Rating ACS, IH.X.B.K3",
-              "tags": [
-                "IPC",
-                "Area VI",
-                "all tasks",
-                "flight simulator",
-                "ATD",
-                "validity",
-                "instrument approaches"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer assumes Area VI contains multiple distinct tasks (precision approaches, non-precision approaches, circling, missed approach, etc.), but the actual ACS task structure is not provided for verification.",
-                  "The logic is sound — 'all tasks' should mean all required tasks — but without confirming the actual task breakdown in FAA-S-ACS-9, the specific examples cited cannot be verified.",
-                  "Reference to FAA-S-ACS-18 is non-standard; should cite FAA-S-ACS-9.",
-                  "The follow-up answer appropriately cites 14 CFR 61.57(d) and 14 CFR 61.4 and is sound in its reasoning about ATD approval, but assumes the underlying Area VI task structure is correctly described in the main answer."
-                ],
-                "suggested_correction": "Verify the exact task structure of Area VI in FAA-S-ACS-9 to confirm whether multiple distinct approach types are indeed separate required tasks. Update regulatory reference to FAA-S-ACS-9. Ensure examples of 'precision approaches, non-precision approaches, circling, missed approach' reflect actual ACS task titles.",
-                "triage": "ESCALATE",
-                "triage_note": "The answer correctly applies the logic that 'all tasks' means all required tasks, but assumes Area VI contains multiple distinct approach-type tasks (precision, non-precision, circling, missed approach) as separate required items; the actual task structure in FAA-S-ACS-9 must be verified, and the regulatory reference should be updated from the non-standard FAA-S-ACS-18 to FAA-S-ACS-9."
               }
             },
             {
@@ -56492,71 +55475,6 @@
                 "confidence": 0.9,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.X.B.K4.007",
-              "acs_code": "IH.X.B.K4",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "A pilot arrives for an IPC in a twin-engine helicopter but the second engine has a known inoperative component that has been deferred under the MEL, rendering it effectively a single-engine operation for the flight. As the examiner, how do you handle Task B of Emergency Operations, and what is your authority in making that determination?",
-              "answer": "This is a nuanced situation. The ACS language says Task B applies when the applicant 'supplies a multiengine helicopter' — it refers to the aircraft type, not necessarily its momentary configuration. However, as the examiner, you have the authority and responsibility under 14 CFR 61.47 to discontinue a practical test if safety is at risk, and you must not conduct maneuvers that cannot be safely performed given actual aircraft conditions. If the MEL deferral means a second-engine failure cannot be safely demonstrated or simulated, you may determine that Task B cannot be safely accomplished and document accordingly. The IPC can be completed for the applicable tasks, and the examiner should note on the IACRA record what was and was not tested and why. An unsatisfactory grade should not be issued solely because an MEL condition prevented a task — the examiner should use professional judgment and FAA guidance on test discontinuance.",
-              "follow_up": "If you complete the IPC without Task B due to the MEL condition, is the pilot's instrument currency legally valid, and can they legally fly the multiengine helicopter IFR after the IPC?",
-              "follow_up_answer": "The IPC itself is legally valid for restoring instrument currency under 14 CFR 61.57(d) — currency is tied to the completion of the IPC, not to the completion of every possible task. However, the pilot's ability to fly that specific multiengine helicopter IFR depends on whether they are otherwise current and qualified in type. The IPC restores instrument recency, but the employer, insurer, or operator may have additional requirements for demonstrating multiengine emergency proficiency before returning to line operations. The examiner should be transparent in documenting what was covered so there is no ambiguity.",
-              "regulatory_ref": "IPC ACS IH.X.B.K4; 14 CFR 61.47; 14 CFR 61.57(d); FAA Instrument Rating ACS Appendix 1",
-              "tags": [
-                "IPC",
-                "MEL",
-                "examiner authority",
-                "multiengine",
-                "test discontinuance",
-                "instrument currency"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "The answer correctly cites 14 CFR 61.47 regarding examiner authority to discontinue a test for safety, but the guidance on completing an IPC without all applicable tasks when a MEL condition exists is advanced and should be confirmed against current FAA policy memoranda or guidance on test discontinuance procedures.",
-                  "The follow-up answer is reasonable but makes an assumption that currency is restored despite Task B not being completed. While legally defensible under 14 CFR 61.57(d), this should be cross-checked against FAA guidance on partial IPC completion and whether special notations are required in IACRA."
-                ],
-                "suggested_correction": "Recommend verification with FAA Flight Standards District Office (FSDO) guidance or current policy memos on IPC discontinuance when MEL conditions prevent task completion. Clarify whether an additional notation in IACRA is required when Task B is not completed due to aircraft condition.",
-                "triage": "ESCALATE",
-                "triage_note": "The answer addresses examiner authority under 14 CFR 61.47 and partial IPC completion due to safety/MEL constraints, but this advanced scenario requires confirmation against current FAA policy memoranda on test discontinuance procedures and clarification of whether special IACRA notation is required when Task B is omitted—domain-specific FAA guidance is needed before shipping this item to students."
-              }
-            },
-            {
-              "id": "IH.X.B.K4.008",
-              "acs_code": "IH.X.B.K4",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "A flight school wants to use a flight simulator (FSTD) qualified for both single and multiengine helicopter training to conduct IPCs. A pilot brings no aircraft but requests the IPC be conducted entirely in the simulator. The sim is certified for a twin-engine helicopter type. Does Task B of Emergency Operations apply, and what standard governs?",
-              "answer": "Yes, Task B would apply in this scenario. When an FSTD qualified for a multiengine helicopter type is used for an IPC, the 'aircraft supplied' is effectively the simulated multiengine helicopter. The ACS provision at IH.X.B.K4 is triggered by the platform being a multiengine helicopter — whether actual or simulated — because the purpose is to assess whether the pilot can handle multiengine-specific emergencies in the environment where they will fly. The governing standards are the IPC ACS (IH.X.B.K4), 14 CFR 61.57(d) for instrument currency via simulator, and the FSTD's qualification level under 14 CFR Part 60, which determines what tasks may legally be credited. The examiner must verify the simulator's qualification level supports the specific tasks being evaluated.",
-              "follow_up": "What is the minimum FSTD qualification level required to conduct an IPC that grants instrument currency, and where is that found?",
-              "follow_up_answer": "Under 14 CFR 61.57(d), instrument currency may be accomplished in an approved aircraft, full flight simulator (FFS), flight training device (FTD), or aviation training device (ATD). However, the specific tasks creditable and the required qualification level depend on the device's FAA approval letter and the associated training specifications. For a helicopter IPC, a Full Flight Simulator (Level B or higher) or a Flight Training Device (FTD Level 5 or higher) that is approved for the helicopter category is generally required to credit all IPC tasks. The FAA's Part 60 qualification standards and the device's Master Qualification Test Guide (MQTG) govern exactly what is authorized. The examiner must confirm the device's approval covers the maneuvers being tested.",
-              "regulatory_ref": "IPC ACS IH.X.B.K4; 14 CFR 61.57(d); 14 CFR Part 60; FAA Instrument Rating ACS Appendix 1",
-              "tags": [
-                "IPC",
-                "FSTD",
-                "simulator",
-                "multiengine",
-                "instrument currency",
-                "Part 60"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer correctly applies the logic that a multiengine simulator would trigger Task B applicability, but the follow-up answer's statement about 'FTD Level 5 or higher' being 'generally required' is imprecise.",
-                  "14 CFR Part 60 and device qualification levels are correctly referenced, but the specific statement about FTD Level 5 should be verified. According to FAA guidance, FTD levels vary and the authorized tasks depend on the individual device's Letter of Authorization and Master Qualification Test Guide (MQTG), not simply a blanket level requirement.",
-                  "The assertion that an AATD cannot conduct an IPC conflicts with the next question set (IH.X.B.K5) which discusses AATD use in IPCs. This suggests potential misalignment in the question bank."
-                ],
-                "suggested_correction": "Clarify that the specific FSTD qualification level and authorized tasks are determined by that device's individual FAA approval and MQTG, not by a standardized level threshold. Verify consistency with IH.X.B.K5 questions regarding AATD use in IPCs.",
-                "triage": "ESCALATE",
-                "triage_note": "The core logic (multiengine simulator triggers Task B applicability) is sound, but the follow-up answer's claim that 'FTD Level 5 or higher is generally required' for helicopter IPCs contradicts 14 CFR 61.57(d) which authorizes 'approved' FTDs/AATDs without prescribing a specific level; device-specific MQTG and LOA govern creditable tasks, not a blanket level threshold. Additionally, verifier notes an internal conflict with IH.X.B.K5 on AATD use in IPCs that requires clarification."
               }
             },
             {
@@ -57557,38 +56475,6 @@
               }
             },
             {
-              "id": "IH.X.B.S1.007",
-              "acs_code": "IH.X.B.S1",
-              "category": "skills",
-              "difficulty": "advanced",
-              "question": "A helicopter pilot completes all IPC required tasks to ACS standards individually, but throughout the flight they consistently state 'we'll probably be fine' when faced with minor deviations or decision points — defaulting to optimism rather than structured analysis. Does this affect the IPC outcome, and how would you address it with this pilot?",
-              "answer": "Yes, this absolutely affects the IPC outcome. The FAA's Helicopter Flying Handbook explicitly warns against use of the word 'probably' in aeronautical decision-making — if an action will only 'probably' work, a pilot should choose a course of action known to work. This pattern reflects poor ADM habits embedded within otherwise technically adequate task performance. ADM and risk management are evaluated throughout the IPC, not as isolated tasks. A pilot who meets mechanical tolerances but demonstrates consistently flawed decision-making logic is not fully meeting the spirit of the IPC required tasks standard, which expects safe, sound pilot-in-command behavior. I would document this tendency, discuss it thoroughly during the debrief, and — depending on severity — may require a counseling note or recommend targeted ADM training.",
-              "follow_up": "If you do sign off this pilot's IPC based on technical task completion, and they subsequently have an incident linked to poor ADM, what is your potential exposure as the evaluator, and what documentation protects you?",
-              "follow_up_answer": "As a CFII or evaluator who completed the IPC, my endorsement certifies the pilot demonstrated proficiency across all required tasks including ADM-related judgment. If I knowingly signed off a pilot with documented poor ADM and it contributed to an incident, I could face FAA certificate action for an inaccurate or careless endorsement under 14 CFR 61.195 and potentially 91.13. Protection comes from thorough documentation in the pilot's logbook and my own records: noting specific behaviors observed, any discussion conducted, and whether I recommended further training. If ADM deficiencies were significant enough to note, the correct action is to not complete the IPC until corrected — not to sign it off and hope for the best.",
-              "regulatory_ref": "14 CFR 61.57(d); 14 CFR 61.195; FAA-H-8083-21B Chapter 13 (ADM/SRM); Instrument Rating ACS",
-              "tags": [
-                "ADM",
-                "IPC sign-off",
-                "examiner liability",
-                "decision-making",
-                "Trescott Tip",
-                "endorsement"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer references 'FAA's Helicopter Flying Handbook explicitly warns against use of the word \"probably\"' — while the concept is correct (ADM emphasizes eliminating optimistic bias), this specific phrasing and attribution should be verified against current FAA-H-8083-21B. The substance is correct but the precise quote/reference is uncertain.",
-                  "The follow-up discussion on examiner liability is substantively sound but ventures into legal interpretation that, while reasonable, may not have explicit FAA regulatory citation. The core point (14 CFR 61.195 applies to inaccurate endorsements) is solid."
-                ],
-                "suggested_correction": "Verify the exact language in FAA-H-8083-21B regarding 'probably' and optimism bias. The answer is directionally correct: ADM training universally teaches elimination of optimistic thinking, but confirm the handbook uses this specific cautionary language about the word 'probably' before presenting as a direct quote.",
-                "triage": "ESCALATE",
-                "triage_note": "The answer attributes a specific cautionary phrase about the word 'probably' to FAA-H-8083-21B, but this exact phrasing and attribution requires verification against the current handbook; the substantive ADM point is sound but the precise quote/reference is uncertain and should not be presented as a direct handbook statement without confirmation."
-              }
-            },
-            {
               "id": "IH.X.B.S1.008",
               "acs_code": "IH.X.B.S1",
               "category": "skills",
@@ -58017,40 +56903,6 @@
                 "confidence": 0.94,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.XI.A.K2.008",
-              "acs_code": "IH.XI.A.K2",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "How does the simulation policy under ACS IH.XI.A.K2 reflect the broader ADM principle of avoiding the word 'probably' in safety-critical decisions, and how would you apply that thinking if conditions are borderline for a full autorotation to touchdown?",
-              "answer": "The simulation policy directly embodies the ADM principle that 'probably safe' is not an acceptable standard when a known-safe alternative exists. If an evaluator determines that completing a full autorotation to touchdown in the current conditions — such as degraded surface conditions, wind shear, low light, or confined area — will 'probably' be fine, that is insufficient justification to accept the risk when simulation achieves the same evaluative goal without it. The Trescott Tip from the FAA Helicopter Flying Handbook states that if something will only 'probably' work, choose an option known to work instead. Applied to borderline conditions for a full autorotation, the correct ADM call is to recommend simulation rather than accept the uncertainty — this demonstrates mature, conservative judgment that is itself evaluated positively on a checkride.",
-              "follow_up": "If an applicant proactively suggests to the evaluator that they should simulate a maneuver rather than perform it — before the evaluator raises it — does that show good ADM or could it be interpreted as avoiding the test requirement?",
-              "follow_up_answer": "If the applicant's reasoning is sound, objective, and based on identifiable hazards — current conditions, aircraft limitations, or environmental factors — proactively recommending simulation demonstrates excellent ADM and SRM. The evaluator would be expected to assess whether the applicant's concern is valid and safety-driven or whether it reflects avoidance of a difficult maneuver. The key is that the applicant must be able to articulate specific, factual reasons for the recommendation (e.g., 'The landing zone surface is uneven and I cannot confirm suitability for full touchdown autorotation'). Vague reluctance without supporting reasoning would raise a red flag, while clear hazard identification would reflect strong risk management skills.",
-              "regulatory_ref": "ACS IH.XI.A.K2; FAA-H-8083-21B Chapter 13 (Trescott Tip, error chain, ADM)",
-              "tags": [
-                "ADM",
-                "simulation policy",
-                "Trescott Tip",
-                "autorotation",
-                "risk management",
-                "SRM",
-                "checkride judgment"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.9,
-                "issues": [
-                  "Reference to 'Trescott Tip' cannot be verified in FAA-H-8083-21B. This appears to be a colloquial or non-standard reference that may not exist in actual FAA publications.",
-                  "The specific phrasing about 'the word probably' as an ADM principle is not a standard FAA ADM framework concept. While conservative decision-making is emphasized, this particular framing is unconventional.",
-                  "The follow-up answer about proactively suggesting simulation is reasonable but the primary answer's attribution to a 'Trescott Tip' is problematic."
-                ],
-                "suggested_correction": "Remove reference to 'Trescott Tip' or verify its actual source. Rephrase to reference the established ADM framework of risk assessment and the principle of choosing known-safe alternatives over uncertain ones, which is documented in FAA-H-8083-21B Chapter 13. The core concept (preferring safe alternatives) is sound; the attribution is questionable.",
-                "triage": "ESCALATE",
-                "triage_note": "The reference to 'Trescott Tip' cannot be verified in FAA-H-8083-21B or standard FAA publications, and the framing of 'avoiding the word probably' as a named ADM principle is non-standard; the core ADM concept is sound but the attribution is unreliable."
               }
             },
             {
@@ -58926,40 +57778,6 @@
               }
             },
             {
-              "id": "IH.XI.A.K7.002",
-              "acs_code": "IH.XI.A.K7",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "Name the five core competency areas that make up CRM and SRM according to the FAA.",
-              "answer": "The five core competency areas of CRM/SRM are: (1) Situational awareness — knowing where you are, what the aircraft is doing, and what the environment requires; (2) Communication skills — clearly exchanging information with ATC, passengers, and crew; (3) Teamwork — coordinating with all parties involved in the flight, even as a single pilot interacting with dispatch, maintenance, or ATC; (4) Task allocation — prioritizing and distributing workload appropriately, including using automation; and (5) Decision-making — selecting the best course of action using systematic evaluation within the framework of standard operating procedures (SOPs).",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 13; ACS IH.XI.A.K7",
-              "tags": [
-                "SRM",
-                "CRM",
-                "situational awareness",
-                "decision-making",
-                "task allocation",
-                "communication",
-                "teamwork"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "The answer lists five competency areas but the framing and structure do not precisely align with FAA-H-8083-21B Chapter 13 or the standard CRM/SRM taxonomy as typically presented in FAA training materials.",
-                  "The standard CRM model often identifies: (1) Aeronautical Decision-Making (ADM), (2) Risk Management, (3) Situational Awareness, (4) Communication, and (5) Workload Management. The answer's grouping under 'Teamwork' and 'Task allocation' is less formally aligned with the official five core competencies referenced in ACS.",
-                  "The ACS reference IH.XI.A.K7 is cited but the specific five-element breakdown does not appear to be a direct quote or precise alignment with how the ACS defines the competencies."
-                ],
-                "suggested_correction": "Verify against FAA-H-8083-21B Chapter 13 and the specific ACS IH.XI.A.K7 language to ensure the five competencies match the official standard. A safer answer would be: 'The FAA identifies key CRM/SRM competencies as including: Aeronautical Decision-Making, Risk Management, Situational Awareness, Communication, and Workload Management (or equivalent). These are supported by Standard Operating Procedures and continuous self-evaluation.' Alternatively, request the examiner to confirm the exact five-element taxonomy from the source document before finalizing this answer.",
-                "triage": "ESCALATE",
-                "triage_note": "The specific five-element taxonomy presented does not precisely align with standard FAA CRM/SRM competency frameworks in FAA-H-8083-21B or the ACS standard; verification against the exact source document is required before approval."
-              }
-            },
-            {
               "id": "IH.XI.A.K7.003",
               "acs_code": "IH.XI.A.K7",
               "category": "knowledge",
@@ -59176,37 +57994,6 @@
                 "confidence": 0.96,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.XI.A.K8.003",
-              "acs_code": "IH.XI.A.K8",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "SRM is described as integrating several key components. List the five components of SRM as defined in the FAA Helicopter Flying Handbook.",
-              "answer": "The five components of SRM as described in the FAA Helicopter Flying Handbook (FAA-H-8083-21B, Chapter 13) are: (1) Risk Management, (2) Situational Awareness (SA), (3) Controlled Flight Into Terrain (CFIT) awareness, (4) Workload Management, and (5) Automation Management.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 13",
-              "tags": [
-                "SRM",
-                "risk management",
-                "situational awareness",
-                "CFIT",
-                "workload management",
-                "automation management"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The five components listed (Risk Management, Situational Awareness, CFIT awareness, Workload Management, Automation Management) appear to conflate or reorganize SRM framework components in a way that may not precisely match FAA-H-8083-21B Chapter 13. CFIT awareness is typically presented as an outcome or aspect of situational awareness rather than a separate co-equal component. Standard SRM frameworks typically organize around: Risk Management, Situational Awareness, Workload Management, Automation Management, and Communication/Decision-Making. Recommend verification against the exact text of FAA-H-8083-21B Chapter 13."
-                ],
-                "suggested_correction": "Verify the exact five components as presented in FAA-H-8083-21B Chapter 13. If CFIT awareness is listed as a discrete fifth component, this is correct; if not, the answer may need to be reorganized to reflect the actual framework (which may list Communication/ADM/Decision-Making instead).",
-                "triage": "ESCALATE",
-                "triage_note": "The five SRM components listed (Risk Management, Situational Awareness, CFIT awareness, Workload Management, Automation Management) do not align with standard FAA frameworks; CFIT awareness is typically a subcomponent of SA, not a co-equal pillar, and the actual fifth component may be Communication/Decision-Making per FAA-H-8083-21B Chapter 13, which requires direct verification."
               }
             },
             {
@@ -63341,66 +62128,6 @@
               }
             },
             {
-              "id": "IH.XII.A.K9.001",
-              "acs_code": "IH.XII.A.K9",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "What document does the FAA issue to authorize an Aviation Training Device (ATD) for use, and how long is it valid?",
-              "answer": "The FAA issues a Letter of Authorization (LOA) for each ATD. The LOA is valid for 60 calendar months (5 years) from the date of issuance.",
-              "regulatory_ref": "14 CFR Part 61; FAA ATD LOA policy",
-              "tags": [
-                "ATD",
-                "LOA",
-                "authorization",
-                "currency"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "The answer states LOA is valid for 60 calendar months, but this needs verification against current FAA ATD authorization standards. The regulatory reference cites 'FAA ATD LOA policy' which is not a codified regulation.",
-                  "14 CFR Part 61 does not explicitly codify ATD LOA validity periods; this appears to be based on FAA guidance documents rather than explicit regulatory text."
-                ],
-                "suggested_correction": "Verify the 60-month validity period against current FAA Order 8900.2 or other authoritative ATD guidance. Consider citing specific FAA guidance documents rather than general regulatory sections.",
-                "triage": "ESCALATE",
-                "triage_note": "The 60-month validity period for ATD LOAs is not codified in 14 CFR and requires verification against current FAA Order 8900.2 or binding guidance; the regulatory reference is too vague to support the specific claim."
-              }
-            },
-            {
-              "id": "IH.XII.A.K9.002",
-              "acs_code": "IH.XII.A.K9",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "What is the difference between an ATD Letter of Authorization and a flight simulator or FTD qualification document?",
-              "answer": "ATDs receive a Letter of Authorization (LOA) issued by the FAA, which is valid for 60 calendar months. Full Flight Simulators (FFS) and Flight Training Devices (FTD) receive a qualification certificate rather than an LOA, and they are evaluated and qualified under a different regulatory framework (14 CFR Part 60). The LOA is specific to ATDs and confirms the device meets the standards for its intended training use.",
-              "regulatory_ref": "14 CFR Part 60; 14 CFR Part 61; FAA ATD LOA policy",
-              "tags": [
-                "ATD",
-                "LOA",
-                "FFS",
-                "FTD",
-                "qualification"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "The answer correctly distinguishes ATD LOAs from FFS/FTD qualifications, but the reference to '14 CFR Part 60' for FFS/FTD evaluation is accurate. However, the claim about a 60-month validity for ATD LOAs should be verified against current FAA policy documents."
-                ],
-                "suggested_correction": "The core distinction is correct, but strengthen the answer by citing specific FAA guidance documents (such as FAA Order 8900.2 Chapter 6) rather than just regulatory part numbers.",
-                "triage": "ESCALATE",
-                "triage_note": "The core distinction between ATD LOAs and FFS/FTD qualifications is sound, but the 60-month validity period claim depends on unverified FAA policy; this should not be stated as fact without authoritative documentation."
-              }
-            },
-            {
               "id": "IH.XII.A.K9.003",
               "acs_code": "IH.XII.A.K9",
               "category": "knowledge",
@@ -63535,37 +62262,6 @@
                 "confidence": 0.95,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.XII.A.K9.008",
-              "acs_code": "IH.XII.A.K9",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "How does the 60-calendar-month LOA validity period for an ATD compare to the recency requirements for the pilot using that ATD, and why does understanding both timelines matter operationally?",
-              "answer": "These are two separate and independent timelines that must both be current for a training session to be regulatory compliant. The ATD's LOA is valid for 60 calendar months from the date the FAA issued it — this governs whether the device itself is legally authorized. The pilot's instrument currency under 14 CFR §61.57(c) requires, within the preceding 6 calendar months, completion of six instrument approaches, holding procedures, and intercepting/tracking courses in an aircraft, FFS, FTD, or ATD. Additionally, a flight review under §61.56 is required every 24 calendar months. Operationally, a pilot must ensure: (1) the ATD has a current LOA (up to 60 months), AND (2) their own personal currency or training milestones are within the applicable shorter timeframes. A current LOA does not make a pilot current — it only means the tool being used is authorized. Confusing the device's authorization window with personal currency windows is a common conceptual error that an examiner will probe.",
-              "follow_up": "If a pilot uses an ATD with a valid LOA to complete instrument approaches for currency, but the ATD is not representative of any helicopter — say it simulates a fixed-wing aircraft — can that time count toward helicopter instrument currency?",
-              "follow_up_answer": "Under 14 CFR §61.57(c)(3), instrument experience in an ATD can be credited toward instrument currency regardless of aircraft category, as long as the ATD has a current LOA. However, to act as PIC under IFR in a helicopter, the pilot should ensure the training received was meaningful and transferable. The FAA's intent is that currency reflect actual proficiency. From a strict regulatory reading, the category/class of the ATD simulation is not explicitly required to match the aircraft to be flown for §61.57 currency purposes, but a DPE or FSDO may scrutinize whether the experience was practically valid. For instrument rating training (not just currency), the regulations and ACS do specify task requirements that must be completed in an appropriate context.",
-              "regulatory_ref": "14 CFR §61.57(c); 14 CFR §61.56; 14 CFR §61.1; FAA ATD LOA policy",
-              "tags": [
-                "ATD",
-                "LOA",
-                "instrument currency",
-                "61.57",
-                "helicopter IFR",
-                "currency vs authorization"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "Follow-up answer states 'aircraft category' is not explicitly required to match ATD simulation for §61.57 currency purposes, but this needs clarification. While 14 CFR §61.57(c)(3) does allow ATD experience to count toward currency, the practical guidance and ACS intent suggest training should be meaningfully transferable. The answer's hedging ('strict regulatory reading') is appropriate but could confuse a student about best practices vs. minimum compliance."
-                ],
-                "suggested_correction": "Strengthen the follow-up answer to clarify that while §61.57(c)(3) technically allows any LOA'd ATD to count toward instrument currency, the FAA's policy and the ACS expect the training to be representative and meaningful. For helicopter pilots, using fixed-wing ATD for currency is technically compliant but operationally questionable and may be scrutinized by examiners or FSO personnel.",
-                "triage": "ESCALATE",
-                "triage_note": "The main answer is sound and well-reasoned, but the follow-up answer's claim that §61.57(c)(3) allows any LOA'd ATD to count toward helicopter instrument currency regardless of whether it simulates a helicopter requires clarification; this creates potential ambiguity about regulatory minimum vs. best practice that could be misapplied by students, and the suggestion that examiners 'may scrutinize' is hedging language that masks an underlying regulatory or policy uncertainty that should be definitively resolved."
               }
             },
             {
@@ -64297,38 +62993,6 @@
               }
             },
             {
-              "id": "IH.XII.A.S1.005",
-              "acs_code": "IH.XII.A.S1",
-              "category": "skills",
-              "difficulty": "intermediate",
-              "question": "You are planning an IFR flight using GPS as the primary navigation source. During preflight you notice the GPS database expired 5 days ago. Can you legally use this system for IFR en route navigation? What about for an instrument approach?",
-              "answer": "For IFR en route navigation, the GPS may be used with an expired database provided the pilot verifies the waypoints, airways, and procedures to be used have not changed since the last database update — this is an FAA-accepted practice. However, for flying a GPS instrument approach procedure, the database must be current; an expired database is not authorized for approach operations. The pilot must either update the database or use an alternate navigation source for the approach. This distinction is critical and reflects FAA guidance in Advisory Circular 90-100A and the AIM.",
-              "regulatory_ref": "AIM 1-1-17; AC 90-100A; FAA-H-8083-15B Chapter 9",
-              "tags": [
-                "GPS",
-                "database currency",
-                "IFR navigation",
-                "instrument approach",
-                "RNAV"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.9,
-                "issues": [
-                  "The answer claims GPS may be used en route with an expired database if the pilot 'verifies' waypoints and procedures have not changed. This is overstated. AC 90-100A requires a current database for IFR operations; verification of unchanged data does not authorize use of an expired database.",
-                  "The distinction between en route (allowed with verification) and approach (not allowed) is not clearly supported in FAA guidance. Both require current databases per AC 90-100A and the IFR-certified GPS equipment standards.",
-                  "The answer does not reference 14 CFR 91.205, which governs required equipment, or 91.176, which governs RNAV operations."
-                ],
-                "suggested_correction": "For IFR GPS navigation (both en route and approach), the database must be current. An expired database is not authorized for IFR operations, period. The pilot cannot legally use an expired database by 'verifying' unchanged data. If the database is expired, alternate navigation sources (VOR, NDB) must be used for IFR en route, and approach procedures requiring current data (RNAV, GPS approaches) cannot be flown. Reference AC 90-100A and 14 CFR 91.205(c).",
-                "triage": "ESCALATE",
-                "triage_note": "The answer's core claim that GPS en route can be used with an expired database if the pilot 'verifies' unchanged data directly contradicts AC 90-100A and industry standard practice; this is a safety-critical regulatory distinction that requires authoritative clarification before approval."
-              }
-            },
-            {
               "id": "IH.XII.A.S1.006",
               "acs_code": "IH.XII.A.S1",
               "category": "skills",
@@ -64649,36 +63313,6 @@
               }
             },
             {
-              "id": "IH.XII.B.K2.002",
-              "acs_code": "IH.XII.B.K2",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "What is the difference between how blade stall progresses in vortex ring state versus retreating blade stall, and why is this distinction important to cover in an unusual attitude recovery briefing?",
-              "answer": "In vortex ring state, blade stall begins near the hub and progresses outward toward the blade tips. In retreating blade stall, stall begins at the retreating blade tip and progresses inward. Both conditions can occur or be aggravated during unusual attitudes, particularly when the pilot makes abrupt control inputs to recover. Understanding the distinction helps the pilot recognize early warning signs and avoid over-controlling the rotor system during recovery.",
-              "regulatory_ref": "FAA-H-8083-21B Chapter 11 (Glossary and Emergencies)",
-              "tags": [
-                "vortex ring state",
-                "retreating blade stall",
-                "rotor hazards",
-                "unusual attitude",
-                "instrument flight"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.9,
-                "issues": [
-                  "The answer conflates two distinct phenomena. Vortex ring state stall progression and retreating blade stall progression are not directly comparable in the way presented. Vortex ring state involves descent-induced stall across the rotor disk; retreating blade stall is asymmetric stall at high forward speed. The claim that VRS stall 'begins near the hub and progresses outward' lacks clear documentation in FAA-H-8083-21B. The distinction as presented may oversimplify these complex aerodynamic conditions."
-                ],
-                "suggested_correction": "Recommend revision: 'Vortex ring state occurs during steep descent with low forward speed, affecting the rotor disk in descent-induced flow conditions. Retreating blade stall occurs at high forward airspeed when the retreating blade reaches its critical angle of attack. Both can develop during unusual attitudes, but the conditions that trigger them and their warning signs differ. Understanding these distinctions helps the pilot avoid control inputs that aggravate either condition—particularly avoiding steep descents and abrupt aft cyclic that could trigger either stall type.'",
-                "triage": "ESCALATE",
-                "triage_note": "The answer's characterization of blade stall progression in vortex ring state ('begins near the hub and progresses outward') lacks clear FAA-H-8083-21B documentation and may oversimplify the aerodynamic distinction; the comparative framing as presented is questionable."
-              }
-            },
-            {
               "id": "IH.XII.B.K2.003",
               "acs_code": "IH.XII.B.K2",
               "category": "knowledge",
@@ -64894,35 +63528,6 @@
               }
             },
             {
-              "id": "IH.XII.B.K3.003",
-              "acs_code": "IH.XII.B.K3",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "In the context of unusual attitude recovery under the instrument rating ACS, what does the word 'disqualifying' specifically mean when applied to evaluator intervention?",
-              "answer": "Disqualifying means the applicant has not met the standard for that task, and it cannot be passed during that checkride administration. It does not automatically fail the entire checkride if other tasks remain, but the task itself is marked unsatisfactory and must be retested. The applicant receives a Notice of Disapproval for the areas not completed satisfactorily.",
-              "regulatory_ref": "FAA-S-ACS-14 Instrument Rating ACS, IH.XII.B.K3; 14 CFR 61.43",
-              "tags": [
-                "disqualifying",
-                "task unsatisfactory",
-                "checkride outcome",
-                "ACS standards"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer states that a disqualifying task result 'does not automatically fail the entire checkride if other tasks remain' and that the applicant 'receives a Notice of Disapproval for the areas not completed satisfactorily.' However, the regulatory citation (14 CFR 61.43) and FAA-S-ACS-14 should be verified for exact language regarding whether a single unsatisfactory task automatically results in checkride failure or allows continuation. Under current ACS standards, a single 'unsatisfactory' task result typically requires discontinuance and retest, but the characterization of 'disqualifying' versus checkride outcome nuance needs verification against the actual ACS document."
-                ],
-                "suggested_correction": "Clarify: Under FAA-S-ACS-14, an unsatisfactory task performance (marked as 'does not meet standards') in any critical task area results in the practical test being discontinued. The applicant receives a Notice of Disapproval (Form 8710-1) for that area and must retake the entire practical test or at minimum the discontinued portions, depending on FSDO policy and the specific ACS. The term 'disqualifying' is colloquial; the formal ACS term is 'unsatisfactory' or 'does not meet standards.' Verify exact language in FAA-S-ACS-14 Instrument Rating ACS.",
-                "triage": "ESCALATE",
-                "triage_note": "The answer's assertion that a disqualifying task 'does not automatically fail the entire checkride if other tasks remain' conflicts with standard ACS discontinuance language; the actual regulatory outcome (whether the test must terminate or may continue) requires verification against FAA-S-ACS-14 and 14 CFR 61.43(f) to clarify the checkride flow after a single unsatisfactory task."
-              }
-            },
-            {
               "id": "IH.XII.B.K3.004",
               "acs_code": "IH.XII.B.K3",
               "category": "knowledge",
@@ -65023,36 +63628,6 @@
                 "confidence": 0.93,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.XII.B.K3.008",
-              "acs_code": "IH.XII.B.K3",
-              "category": "knowledge",
-              "difficulty": "advanced",
-              "question": "During an unusual attitude recovery task, the applicant correctly identifies the attitude and begins proper recovery, but a pre-existing mechanical issue — not caused by the applicant — causes a sudden yaw that threatens rotor mast contact. The evaluator intervenes on the pedals. Is the task disqualifying, and how should the evaluator document this?",
-              "answer": "This is a genuine gray area that requires careful examiner judgment and documentation. The ACS language states intervention 'to prevent the applicant from exceeding any helicopter operating limitation or from entering an unsafe flight condition' is disqualifying — it does not distinguish between applicant-caused and equipment-caused unsafe conditions. Strictly read, the intervention still disqualifies the task because the standard is outcome-based, not fault-based. However, the evaluator has a responsibility to document the mechanical anomaly accurately in the airman's records and on any disapproval notice. If the unsafe condition was wholly caused by a pre-existing mechanical defect and not by applicant error, the evaluator should note this clearly and may consult with the FSDO regarding the appropriate disposition. In most cases, the practical test would be terminated due to unairworthy equipment, and the applicant would not be penalized for the specific task — this falls under the 'discontinuance' provisions rather than a failed task.",
-              "follow_up": "What regulation governs discontinuing a practical test due to equipment malfunction, and does the applicant lose credit for all previously passed tasks?",
-              "follow_up_answer": "Under 14 CFR 61.43(f), if a practical test is discontinued due to circumstances beyond the applicant's control — including aircraft equipment malfunction — the applicant retains credit for all tasks already satisfactorily completed, provided the evaluator and applicant agree on the discontinuance. The applicant receives a Letter of Discontinuance, and when the test is resumed with the same or a different evaluator, only the incomplete tasks must be repeated. The key distinction is that discontinuance due to unairworthy equipment differs from task failure due to applicant performance; the former preserves completed task credit, the latter does not.",
-              "regulatory_ref": "FAA-S-ACS-14 Instrument Rating ACS, IH.XII.B.K3; 14 CFR 61.43(f); FAA Order 8900.2",
-              "tags": [
-                "mechanical failure",
-                "test discontinuance",
-                "evaluator documentation",
-                "14 CFR 61.43",
-                "task disqualification edge case"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.55,
-                "issues": [
-                  "The answer correctly identifies this as a 'gray area' requiring examiner judgment, which is appropriate. However, the claim that 'the standard is outcome-based, not fault-based' may need refinement. The ACS standard explicitly keys on whether the evaluator must intervene 'to prevent the applicant from exceeding' — language that has some applicant-causation implication. The guidance on consulting the FSDO is reasonable but the assertion that 'in most cases' the test would be terminated due to unairworthiness is not strongly supported in the provided regulations. The follow-up answer regarding 14 CFR 61.43(f) and discontinuance credit is accurate, but the primary answer would benefit from being more cautious about the outcome."
-                ],
-                "suggested_correction": "Revise to: 'This situation requires the evaluator to document the mechanical anomaly in detail and make a real-time judgment about cause. If the equipment failure created the unsafe condition and the applicant's recovery inputs were appropriate, the evaluator should consider discontinuing the practical test under 14 CFR 61.43(f) due to unairworthy equipment, which preserves credit for previously satisfactory tasks. However, if the applicant's inputs contributed to or failed to mitigate the unsafe condition, the task may still be marked unsatisfactory. Consult the FSDO for final disposition if there is ambiguity about causation. Do not assume discontinuance; this depends on the facts and the evaluator's assessment of pilot performance.'",
-                "triage": "ESCALATE",
-                "triage_note": "This complex edge case involving pre-existing mechanical failure versus applicant performance during an unsafe condition recovery requires expert FSDO or FAA legal guidance; the answer correctly identifies it as a 'gray area' but lacks definitive regulatory language to resolve whether outcome-based intervention standards apply regardless of causation, and whether discontinuance due to unairworthiness is the typical resolution."
               }
             },
             {
@@ -66113,68 +64688,6 @@
                 "confidence": 0.94,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.XII.D.K3.001",
-              "acs_code": "IH.XII.D.K3",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "During an IFR instrument approach, what is the maximum allowable deviation of the lateral course deviation indicator (CDI) on the final approach segment?",
-              "answer": "The standard allows no more than ¾ scale deflection of the lateral deviation indicator during the final approach. This applies whether flying a localizer, ILS, or GPS approach — the CDI needle must remain within ¾ of full-scale deflection from center at all times on final.",
-              "regulatory_ref": "FAA Instrument Flying Handbook FAA-H-8083-15B; ACS IH.XII.D.K3",
-              "tags": [
-                "instrument approach",
-                "CDI",
-                "deviation limits",
-                "final approach",
-                "IFR standards"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The ¾ scale deflection standard cited is not clearly defined in current FAA guidance as a universal standard for all approach types. The Instrument Flying Handbook FAA-H-8083-15B does not explicitly state a ¾ scale maximum deviation standard as an absolute requirement. This may conflate guidance from older standards or be an oversimplification. More specific regulatory reference needed.",
-                  "The answer lacks nuance regarding when this standard applies (e.g., precision vs. non-precision approaches) and which guidance documents actually mandate this specific requirement."
-                ],
-                "suggested_correction": "Clarify the source of the ¾ scale deflection standard. Current IFR approach standards emphasize maintaining the published course/glideslope within the confines of the CDI needle deflection capability, but the specific ¾ scale figure should be verified against the most current FAA-H-8083-15B or ACS guidance. The standard may vary by approach type and should reference the specific ACS standard IH.XII.D.K3.",
-                "triage": "ESCALATE",
-                "triage_note": "The ¾ scale deflection standard for CDI on final approach is stated as absolute regulatory fact, but this specific quantitative threshold does not appear as a clear universal mandate in current FAA-H-8083-15B or published ACS standards and may conflate older guidance with current requirements."
-              }
-            },
-            {
-              "id": "IH.XII.D.K3.002",
-              "acs_code": "IH.XII.D.K3",
-              "category": "knowledge",
-              "difficulty": "basic",
-              "question": "On a precision approach such as an ILS, there are two deviation indicators — the localizer and the glideslope. Does the ¾ scale deflection standard apply to both, one, or neither of these?",
-              "answer": "The ¾ scale deflection standard applies to BOTH the vertical (glideslope) and lateral (localizer) deviation indicators during the final approach segment. Neither indicator may exceed ¾ scale deflection at any point on final approach.",
-              "regulatory_ref": "FAA Instrument Flying Handbook FAA-H-8083-15B; ACS IH.XII.D.K3",
-              "tags": [
-                "ILS",
-                "glideslope",
-                "localizer",
-                "deviation limits",
-                "precision approach"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "follow_up": "",
-              "follow_up_answer": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "Same issue as IH.XII.D.K3.001: the ¾ scale deflection standard is stated as a universal requirement for both vertical and lateral deviation indicators, but this specific quantitative standard is not clearly established in current FAA handbooks.",
-                  "While maintaining precision on both localizer and glideslope is certainly required on ILS approaches, the specific ¾ scale deflection threshold needs verification against current authoritative FAA sources."
-                ],
-                "suggested_correction": "Verify the ¾ scale deflection standard against FAA-H-8083-15B Chapter on Precision Approaches and the current ACS IH.XII.D.K3 standard. The answer should clarify that pilots must maintain both localizer and glideslope within prescribed limits, but the specific numerical threshold (¾ scale) should be confirmed as the current standard. If this is from an older or superseded guidance, update the regulatory reference.",
-                "triage": "ESCALATE",
-                "triage_note": "Like K3.001, the ¾ scale deflection standard applied to both localizer and glideslope is presented as regulatory requirement without clear current FAA source documentation; verification against current FAA-H-8083-15B and ACS standards is necessary before shipping this item."
               }
             },
             {
@@ -68485,39 +66998,6 @@
                 "confidence": 0.92,
                 "issues": [],
                 "suggested_correction": ""
-              }
-            },
-            {
-              "id": "IH.XII.D.S1.008",
-              "acs_code": "IH.XII.D.S1",
-              "category": "skills",
-              "difficulty": "advanced",
-              "question": "You are evaluating a helicopter instrument applicant who consistently flies technically precise non-precision approaches but always hesitates for 2–3 seconds at the MAP before initiating the missed approach when called. The approaches are otherwise within ACS tolerances. Do you pass or fail this applicant, and why?",
-              "answer": "This is a judgment call requiring careful evaluation. A 2–3 second hesitation at the MAP in a helicopter can be safety-critical — it represents continued flight below or at MDA without a clear decision, which in actual IMC at low altitude could result in controlled flight into terrain or obstacles. If the hesitation results in the aircraft descending below MDA or past the MAP without a positive missed approach initiation, it would constitute a unsatisfactory performance item. However, if the aircraft remains at or above MDA and within published obstruction clearance throughout the hesitation, the evaluator must determine whether this reflects a systemic decision-making deficiency versus a one-time occurrence. Per the ACS, the applicant must demonstrate 'positive, timely' action — consistent hesitation suggests a habit pattern that does not meet the 'positive' standard, and the evaluator would be justified in a disapproval based on risk management and ADM deficiency, even with technically accurate instrument flying.",
-              "follow_up": "If you disapprove this applicant solely based on the hesitation pattern, what documentation and debrief obligations do you have as an examiner?",
-              "follow_up_answer": "As the examiner, you must complete a Notice of Disapproval (FAA Form 8060-5) specifying the task(s) failed — in this case IH.XII.D and potentially related ADM/risk management tasks. The debrief must clearly articulate the specific deficiency observed (consistent delayed initiation of missed approach) and reference the ACS standard not met. You must advise the applicant that on re-test, only the failed task areas need to be re-evaluated within 60 days per 14 CFR 61.43. You should also document your reasoning clearly, as an examiner decision that disapproves an otherwise technically accurate performance will be scrutinized — your notes should reflect the safety basis for the determination, citing the helicopter-specific risk of delay at low altitude and the ACS 'positive' action requirement.",
-              "regulatory_ref": "FAA Instrument Rating ACS Task IH.XII.D.S1; 14 CFR 61.43; FAA Order 8900.2; FAA-H-8083-21B Chapter 13",
-              "tags": [
-                "examiner judgment",
-                "disapproval",
-                "missed approach timing",
-                "ADM",
-                "ACS standards",
-                "Form 8060-5",
-                "helicopter IFR"
-              ],
-              "ryan_verified": false,
-              "ryan_notes": "",
-              "verification": {
-                "status": "FLAG",
-                "confidence": 0.75,
-                "issues": [
-                  "The answer presents a reasonable examiner judgment scenario but treats the 2-3 second hesitation as a disapproval rationale without clearly establishing whether the hesitation represents actual descent below MDA or failure of published limits. The answer acknowledges this ambiguity but may overstate the evaluator's authority to disapprove based on 'habit pattern' alone without explicit ACS standard citation for timing of missed approach initiation. The ACS task IH.XII.D requires 'positive, timely' action but does not specify a numeric tolerance for delay at the MAP. This creates potential for examiner inconsistency.",
-                  "The follow-up answer regarding Form 8060-5 documentation is sound, but the primary answer's disapproval recommendation should be more carefully qualified or should cite specific guidance on evaluator discretion thresholds for 'promptness' deficiencies in missed approach execution."
-                ],
-                "suggested_correction": "Clarify that a 2-3 second hesitation at the MAP constitutes unsatisfactory performance only if: (1) it results in descent below MDA or flight path deviation beyond ACS tolerances, OR (2) it demonstrates a pattern that, in the examiner's judgment, reflects inadequate risk management or decision-making skills per the ADM criteria. If the aircraft remains within published limits throughout, the examiner should document the observation but may not have a clear basis for disapproval unless the ACS specifically defines a timing standard for missed approach initiation. Consider adding reference to FAA guidance on evaluator discretion boundaries (e.g., FAA Order 8900.2 or applicable ACS interpretation guidance).",
-                "triage": "ESCALATE",
-                "triage_note": "The answer appropriately identifies examiner judgment as required but the decision rationale relies on interpreting 'positive, timely' action without citing specific ACS guidance on timing tolerances for missed approach initiation, which could lead to inconsistent examiner application; clarification of the approval/disapproval boundary is needed."
               }
             },
             {
