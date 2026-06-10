@@ -1,0 +1,194 @@
+{
+  "aircraft_id": "r66",
+  "aircraft_name": "Robinson R66",
+  "rating": "private",
+  "generated_date": "2026-04-14",
+  "sections": [
+    {
+      "section_id": "limitations",
+      "section_title": "Limitations & V-Speeds",
+      "items": [
+        {
+          "label": "Vne (to 3000 ft)",
+          "value": "130 KIAS",
+          "note": "At 2200 lb or above"
+        },
+        {
+          "label": "Vne (below 2200 lb)",
+          "value": "140 KIAS",
+          "note": "Add 10 KIAS"
+        },
+        {
+          "label": "Max Gross Weight",
+          "value": "2700 lbs"
+        },
+        {
+          "label": "Min Gross Weight",
+          "value": "1400 lbs"
+        },
+        {
+          "label": "Max Per Seat",
+          "value": "300 lbs"
+        },
+        {
+          "label": "Max Baggage",
+          "value": "300 lbs"
+        },
+        {
+          "label": "Max Operating DA",
+          "value": "14,000 ft DA"
+        },
+        {
+          "label": "Max Operating Altitude",
+          "value": "9000 ft AGL"
+        },
+        {
+          "label": "Max Airspeed (>83% torque)",
+          "value": "65 KIAS"
+        },
+        {
+          "label": "Max Airspeed (doors off)",
+          "value": "100 KIAS"
+        },
+        {
+          "label": "Fuel Capacity (usable)",
+          "value": "73.6 gal US"
+        },
+        {
+          "label": "Min Oil for Takeoff",
+          "value": "4 qt"
+        }
+      ]
+    },
+    {
+      "section_id": "instrument_markings",
+      "section_title": "Instrument Markings",
+      "items": [
+        {
+          "label": "Airspeed Green Arc",
+          "value": "0-110 KIAS"
+        },
+        {
+          "label": "Airspeed Red Line",
+          "value": "140 KIAS"
+        },
+        {
+          "label": "Power On RPM Range",
+          "value": "99-101%"
+        },
+        {
+          "label": "Power Off RPM Range",
+          "value": "88-106%"
+        },
+        {
+          "label": "Engine RPM Max Continuous",
+          "value": "101% (6076 RPM)"
+        },
+        {
+          "label": "Engine RPM Max Transient",
+          "value": "106% (6377 RPM)"
+        },
+        {
+          "label": "MGT Max Continuous",
+          "value": "706°C"
+        },
+        {
+          "label": "Oil Pressure Min (flight)",
+          "value": "115 PSI"
+        },
+        {
+          "label": "Oil Pressure Max",
+          "value": "130 PSI"
+        },
+        {
+          "label": "Oil Temperature Max",
+          "value": "225°F"
+        }
+      ]
+    },
+    {
+      "section_id": "emergency_procedures",
+      "section_title": "Emergency Procedures (Condensed)",
+      "items": [
+        {
+          "label": "Power Failure",
+          "value": "1. Lower collective immediately 2. Establish 70 KIAS 3. Keep RPM 95-106% 4. Flare at 40 ft AGL 5. Level at 8 ft, cushion landing"
+        },
+        {
+          "label": "Tail Rotor Failure (forward)",
+          "value": "1. Close throttle, enter autorotation 2. Maintain 70+ KIAS 3. Select landing site"
+        },
+        {
+          "label": "Tail Rotor Failure (hover)",
+          "value": "1. Close throttle immediately 2. Allow to settle 3. Cushion with collective"
+        },
+        {
+          "label": "Engine Fire (flight)",
+          "value": "1. Enter autorotation 2. Cabin heat OFF 3. Land immediately 4. Fuel cutoff OFF, fuel valve OFF"
+        },
+        {
+          "label": "Engine Fire (ground)",
+          "value": "1. Fuel cutoff OFF 2. Push start button 3. Fuel valve OFF 4. Battery OFF when MGT <150°C"
+        },
+        {
+          "label": "Electrical Fire",
+          "value": "1. Battery and generator OFF 2. Open vents 3. Land immediately 4. Fuel cutoff and valve OFF"
+        },
+        {
+          "label": "Hydraulic Failure",
+          "value": "1. Verify HYD switch ON 2. If not restored, HYD switch OFF 3. Adjust for comfortable control 4. Land ASAP"
+        },
+        {
+          "label": "Low RPM Horn",
+          "value": "1. Lower collective 2. Verify throttle full open 3. Apply aft cyclic (forward flight)"
+        }
+      ]
+    },
+    {
+      "section_id": "systems",
+      "section_title": "Key Systems Values",
+      "items": [
+        {
+          "label": "Engine Mount Angle",
+          "value": "37° nose-up"
+        },
+        {
+          "label": "Hydraulic Pressure",
+          "value": "450-500 PSI"
+        },
+        {
+          "label": "Generator Switchover",
+          "value": "58% N1"
+        },
+        {
+          "label": "System Voltage",
+          "value": "28 VDC"
+        },
+        {
+          "label": "Normal Bus Voltage",
+          "value": "27.3-28.7 V"
+        },
+        {
+          "label": "Low RPM Warning",
+          "value": "95% RPM"
+        },
+        {
+          "label": "High RPM Warning",
+          "value": "105% RPM"
+        },
+        {
+          "label": "LOW FUEL Warning",
+          "value": "~5 gallons"
+        },
+        {
+          "label": "Rotor Brake Wait Time",
+          "value": "1 minute after shutdown"
+        },
+        {
+          "label": "Wear Shoe Replacement",
+          "value": "<0.05 inches thick"
+        }
+      ]
+    }
+  ]
+}

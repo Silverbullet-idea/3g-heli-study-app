@@ -1,0 +1,212 @@
+{
+  "aircraft_id": "r22",
+  "aircraft_name": "Robinson R22 Beta II",
+  "rating": "private",
+  "generated_date": "2026-04-11",
+  "sections": [
+    {
+      "section_id": "limitations",
+      "section_title": "Limitations & V-Speeds",
+      "items": [
+        {
+          "label": "VNE (to 3000 ft DA)",
+          "value": "102 KIAS"
+        },
+        {
+          "label": "VNE (above 3000 ft DA)",
+          "value": "See POH placards"
+        },
+        {
+          "label": "Green arc airspeed",
+          "value": "50-102 KIAS"
+        },
+        {
+          "label": "Max gross weight (Beta II)",
+          "value": "1370 lbs"
+        },
+        {
+          "label": "Min gross weight",
+          "value": "920 lbs"
+        },
+        {
+          "label": "Max per seat (incl baggage)",
+          "value": "240 lbs"
+        },
+        {
+          "label": "Max baggage compartment",
+          "value": "50 lbs"
+        },
+        {
+          "label": "Min solo pilot weight",
+          "value": "130 lbs"
+        },
+        {
+          "label": "Max density altitude",
+          "value": "14000 ft DA"
+        },
+        {
+          "label": "Power-on RPM range",
+          "value": "101-104%"
+        },
+        {
+          "label": "Power-off RPM range",
+          "value": "90-110%"
+        },
+        {
+          "label": "Max engine speed continuous",
+          "value": "2652 RPM (104%)"
+        },
+        {
+          "label": "Max CHT",
+          "value": "500°F"
+        },
+        {
+          "label": "Max oil temp",
+          "value": "245°F"
+        },
+        {
+          "label": "Oil pressure (flight)",
+          "value": "55-95 PSI"
+        },
+        {
+          "label": "Min oil quantity takeoff",
+          "value": "4 qt"
+        },
+        {
+          "label": "Fuel capacity usable",
+          "value": "26.3 gal US"
+        },
+        {
+          "label": "Carb air temp caution",
+          "value": "-15°C to +5°C"
+        }
+      ]
+    },
+    {
+      "section_id": "instrument_markings",
+      "section_title": "Instrument Markings",
+      "items": [
+        {
+          "label": "Airspeed green arc",
+          "value": "50-102 KIAS"
+        },
+        {
+          "label": "Airspeed red line",
+          "value": "102 KIAS"
+        },
+        {
+          "label": "Rotor RPM green (power on)",
+          "value": "101-104%"
+        },
+        {
+          "label": "Rotor RPM green (power off)",
+          "value": "90-110%"
+        },
+        {
+          "label": "Oil pressure green",
+          "value": "55-95 PSI"
+        },
+        {
+          "label": "CHT red line",
+          "value": "500°F"
+        },
+        {
+          "label": "Oil temp red line",
+          "value": "245°F"
+        },
+        {
+          "label": "Carb air temp yellow",
+          "value": "-15°C to +5°C"
+        }
+      ]
+    },
+    {
+      "section_id": "emergency_procedures",
+      "section_title": "Emergency Procedures (Condensed)",
+      "items": [
+        {
+          "label": "Power failure >500 ft AGL",
+          "value": "1. Lower collective (maintain RPM) 2. Glide 65 KIAS 3. Keep RPM 97-110% 4. Land into wind 5. Flare at 40 ft 6. Level at 8 ft, raise collective"
+        },
+        {
+          "label": "Power failure 8-500 ft AGL",
+          "value": "1. Lower collective (maintain RPM) 2. Keep RPM 97-110% 3. Maintain airspeed until flare 4. Flare, level at 8 ft, raise collective"
+        },
+        {
+          "label": "Power failure <8 ft AGL",
+          "value": "1. Right pedal (prevent yaw) 2. Allow aircraft to settle 3. Raise collective before touchdown"
+        },
+        {
+          "label": "Air restart procedure",
+          "value": "1. Mixture full rich 2. Primer locked 3. Throttle closed, crack open 4. Actuate starter"
+        },
+        {
+          "label": "Tail rotor failure (forward)",
+          "value": "1. Enter autorotation immediately 2. Maintain 70+ KIAS 3. Roll throttle off, autorotate"
+        },
+        {
+          "label": "Tail rotor failure (hover)",
+          "value": "1. Roll throttle off immediately 2. Allow aircraft to settle 3. Raise collective before touchdown"
+        },
+        {
+          "label": "Engine fire in flight",
+          "value": "1. Enter autorotation 2. Cabin heat OFF 3. Land normally if running 4. Mixture/fuel OFF 5. Battery OFF"
+        },
+        {
+          "label": "Low G recovery",
+          "value": "1. Gradually apply aft cyclic 2. Restore positive G forces 3. Do not use lateral cyclic until positive G established"
+        }
+      ]
+    },
+    {
+      "section_id": "systems",
+      "section_title": "Key Systems Values",
+      "items": [
+        {
+          "label": "Required equipment",
+          "value": "Alternator, RPM governor, Low RPM warning, OAT gauge"
+        },
+        {
+          "label": "Minimum crew",
+          "value": "One pilot in right seat"
+        },
+        {
+          "label": "Solo flight",
+          "value": "Right seat only"
+        },
+        {
+          "label": "Low RPM warning",
+          "value": "97% rotor RPM"
+        },
+        {
+          "label": "High RPM warning",
+          "value": "110% rotor RPM"
+        },
+        {
+          "label": "Governor active above",
+          "value": "80% engine RPM"
+        },
+        {
+          "label": "Rotor brake wait time",
+          "value": "30 seconds after mixture off"
+        },
+        {
+          "label": "Primer strokes (cold start)",
+          "value": "2-3 strokes"
+        },
+        {
+          "label": "Max weight per accessory bar",
+          "value": "10 lbs"
+        },
+        {
+          "label": "Clutch engagement time",
+          "value": "Blades turn within 5 seconds"
+        },
+        {
+          "label": "Door vent settings",
+          "value": "Wide open hover, 1 inch cruise"
+        }
+      ]
+    }
+  ]
+}

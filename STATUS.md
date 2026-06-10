@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 10, 2026 — Schweizer 269C-1 POH extracted to JSON; sw269c blocked (duplicate PDF). Next: Phase 1 PDF renderer.
+June 10, 2026 — Study sheet spec JSONs generated for 7 aircraft (Phase 1). Next: PDF renderer.
 
 ---
 
@@ -21,6 +21,7 @@ Build Phase 1 PDF renderer — **Private Pilot Study Sheet — R22** (SKU 1 of 8
 
 ### Completed (This Sprint)
 
+- **Study sheet spec JSONs — Phase 1** — `generate_study_sheet_specs.py` → `data/study_sheet_specs/{id}_private_study_sheet.json` for **7** aircraft (r22, r44, r66, b505, b206, b407, sw269c1); sw269c skipped (no source JSON). Model: **claude-sonnet-4-20250514** (2026-06-10)
 - **Schweizer 269C-1 POH extraction** — `extract_poh_json.py --aircraft sw269c1` → `extracted-data/aircraft/sw269c1_{limitations,emergency_procedures,systems}.json` (pages 45–58 / 59–72 / 30–37; 7 verify flags in limitations). **sw269c blocked** — `schweizer_300_flight_manual.pdf` is byte-identical to 269C-1 manual; need distinct Model 269C / S300C POH (2026-06-10)
 - **Question bank pipeline — COMPLETE** — 4 of 5 ratings final; ATP deferred (no Helicopter ATP ACS). Phase 3 banks ready for UI when Phase 1 ships (2026-06-10)
 - **Instrument Helicopter question bank — COMPLETE** — generate → verify → triage → manual review → reject coverage → commit (2026-06-09–10). Final bank **2,530** questions, **0** FLAG; committed and pushed. **`analyze_instrument_reject_coverage.py`** → **`question-bank/instrument/instrument_reject_coverage_report.txt`**
@@ -69,7 +70,7 @@ _(none)_
 
 ### Up Next (Prioritized)
 
-1. **Build Phase 1 PDF renderer** — `render_study_sheet.py` → Private R22 study sheet set ($9.97)
+1. **Build Phase 1 PDF renderer** — `render_study_sheet.py` consumes `data/study_sheet_specs/*.json` → Private R22 study sheet set ($9.97)
 2. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
 3. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
 4. Monitor FAA ACS page for Helicopter ATP ACS release (ATP bank deferred)

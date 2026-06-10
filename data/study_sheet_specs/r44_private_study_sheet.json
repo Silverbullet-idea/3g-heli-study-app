@@ -1,0 +1,165 @@
+{
+  "aircraft_id": "r44",
+  "aircraft_name": "Robinson R44 Raven II",
+  "rating": "private",
+  "generated_date": "2026-04-22",
+  "sections": [
+    {
+      "section_id": "limitations",
+      "section_title": "Limitations & V-Speeds",
+      "items": [
+        {
+          "label": "Vne (powered)",
+          "value": "130 KIAS",
+          "note": "At 2200 lb TOGW and below"
+        },
+        {
+          "label": "Vne (autorotation)",
+          "value": "100 KIAS"
+        },
+        {
+          "label": "Max Gross Weight",
+          "value": "2400 lbs"
+        },
+        {
+          "label": "Min Gross Weight",
+          "value": "1550 lbs"
+        },
+        {
+          "label": "Max per seat",
+          "value": "300 lbs"
+        },
+        {
+          "label": "Max baggage",
+          "value": "50 lbs"
+        },
+        {
+          "label": "Max density altitude",
+          "value": "14,000 ft DA"
+        },
+        {
+          "label": "Max altitude AGL",
+          "value": "9,000 ft AGL"
+        },
+        {
+          "label": "Fuel capacity (usable)",
+          "value": "46.5 gal US"
+        }
+      ]
+    },
+    {
+      "section_id": "instrument_markings",
+      "section_title": "Instrument Markings",
+      "items": [
+        {
+          "label": "Power on rotor RPM",
+          "value": "101-102%"
+        },
+        {
+          "label": "Power off rotor RPM",
+          "value": "90-108%"
+        },
+        {
+          "label": "Engine max continuous",
+          "value": "102%"
+        },
+        {
+          "label": "Engine max transient",
+          "value": "105%"
+        },
+        {
+          "label": "CHT max",
+          "value": "500°F"
+        },
+        {
+          "label": "Oil temp max",
+          "value": "245°F"
+        },
+        {
+          "label": "Oil pressure min (flight)",
+          "value": "55 PSI"
+        },
+        {
+          "label": "Oil pressure max (flight)",
+          "value": "95 PSI"
+        },
+        {
+          "label": "Oil quantity min takeoff",
+          "value": "7 qt"
+        }
+      ]
+    },
+    {
+      "section_id": "emergency_procedures",
+      "section_title": "Emergency Procedures (Condensed)",
+      "items": [
+        {
+          "label": "Power failure above 500' AGL",
+          "value": "1. Lower collective immediately 2. Glide at 70 KIAS 3. Keep RPM 97-108% 4. Flare at 40' AGL 5. Level at 8' AGL and cushion landing"
+        },
+        {
+          "label": "Power failure below 8' AGL",
+          "value": "1. Right pedal as required 2. Allow aircraft to settle 3. Raise collective just before touchdown"
+        },
+        {
+          "label": "Tail rotor failure (forward)",
+          "value": "1. Enter autorotation immediately 2. Maintain 70+ KIAS 3. Roll throttle off 4. Autorotation landing"
+        },
+        {
+          "label": "Tail rotor failure (hover)",
+          "value": "1. Roll throttle off immediately 2. Allow aircraft to settle 3. Cushion landing with collective"
+        },
+        {
+          "label": "Engine fire in flight",
+          "value": "1. Enter autorotation 2. Cabin heat OFF 3. Land and fuel mixture/valve OFF 4. Battery OFF 5. Exit helicopter"
+        },
+        {
+          "label": "Hydraulic failure",
+          "value": "1. Verify HYD switch ON 2. If not restored, HYD switch OFF 3. Land as soon as practical"
+        },
+        {
+          "label": "Governor failure",
+          "value": "1. Grip throttle firmly 2. Switch governor OFF 3. Complete flight with manual throttle"
+        }
+      ]
+    },
+    {
+      "section_id": "systems",
+      "section_title": "Key Systems Values",
+      "items": [
+        {
+          "label": "Low RPM horn activation",
+          "value": "97% RPM"
+        },
+        {
+          "label": "Governor activation threshold",
+          "value": "80% engine RPM"
+        },
+        {
+          "label": "Hydraulic operating pressure",
+          "value": "450-500 PSI"
+        },
+        {
+          "label": "Electrical system (later)",
+          "value": "28-volt DC"
+        },
+        {
+          "label": "Electrical system (earlier)",
+          "value": "14-volt DC"
+        },
+        {
+          "label": "Rotor brake wait time",
+          "value": "30 seconds after engine stop"
+        },
+        {
+          "label": "Crosstube replacement height",
+          "value": "30 inches tail skid"
+        },
+        {
+          "label": "Skid shoe min thickness",
+          "value": "0.05 inches"
+        }
+      ]
+    }
+  ]
+}

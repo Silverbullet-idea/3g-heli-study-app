@@ -1,0 +1,192 @@
+{
+  "aircraft_id": "b505",
+  "aircraft_name": "Bell 505 Jet Ranger X",
+  "rating": "private",
+  "generated_date": "2024-12-19",
+  "sections": [
+    {
+      "section_id": "limitations",
+      "section_title": "Limitations & V-Speeds",
+      "items": [
+        {
+          "label": "VNE Basic",
+          "value": "135 KIAS"
+        },
+        {
+          "label": "VNE Takeoff Power Range",
+          "value": "80 KIAS"
+        },
+        {
+          "label": "VNE Steady State Autorotation",
+          "value": "100 KIAS"
+        },
+        {
+          "label": "Max Sideward/Rearward/Hover",
+          "value": "25 knots"
+        },
+        {
+          "label": "Max Gross Weight",
+          "value": "3680 lbs"
+        },
+        {
+          "label": "Min Gross Weight",
+          "value": "2234 lbs"
+        },
+        {
+          "label": "Max Operating Altitude",
+          "value": "20,000 ft"
+        },
+        {
+          "label": "Max OAT Sea Level",
+          "value": "50°C"
+        },
+        {
+          "label": "Min OAT All Altitudes",
+          "value": "-32°C"
+        },
+        {
+          "label": "Fuel Capacity",
+          "value": "84.85 US gal"
+        },
+        {
+          "label": "Battery Min Voltage for Start",
+          "value": "25.7 V"
+        }
+      ]
+    },
+    {
+      "section_id": "instrument_markings",
+      "section_title": "Instrument Markings",
+      "items": [
+        {
+          "label": "NG Continuous Max",
+          "value": "99.8%"
+        },
+        {
+          "label": "NG Takeoff 5 Min Max",
+          "value": "101.2%"
+        },
+        {
+          "label": "NG Transient 20 Sec Max",
+          "value": "103.6%"
+        },
+        {
+          "label": "NP Continuous Range",
+          "value": "94-105%"
+        },
+        {
+          "label": "NP Min Transient 20 Sec",
+          "value": "92%"
+        },
+        {
+          "label": "NP Max Transient 20 Sec",
+          "value": "112%"
+        },
+        {
+          "label": "NR Continuous Max Power On",
+          "value": "104%"
+        },
+        {
+          "label": "NR Power Off Range",
+          "value": "90-111%"
+        },
+        {
+          "label": "MGT Continuous Max",
+          "value": "817°C"
+        },
+        {
+          "label": "MGT Takeoff 5 Min Max",
+          "value": "853°C"
+        },
+        {
+          "label": "MGT Starting Max",
+          "value": "800°C"
+        },
+        {
+          "label": "Torque Max Transient 5 Sec",
+          "value": "105%"
+        }
+      ]
+    },
+    {
+      "section_id": "emergency_procedures",
+      "section_title": "Emergency Procedures (Condensed)",
+      "items": [
+        {
+          "label": "Engine Failure In Flight",
+          "value": "1. Maintain control, lower collective 2. Collective - adjust for 90-111% NR 3. Cyclic - 60 KIAS recommended 4. Flare and cushion landing"
+        },
+        {
+          "label": "Engine Failure Hovering",
+          "value": "1. Maintain control 2. Collective - control NR/descent 3. Any forward speed helps 4. Cushion landing"
+        },
+        {
+          "label": "Driveshaft Failure",
+          "value": "1. Establish autorotation immediately 2. Collective - maintain 90-111% NR 3. 50 KIAS min descent, 70 KIAS max glide 4. Complete autorotative landing"
+        },
+        {
+          "label": "Engine Fire In Flight",
+          "value": "1. Confirm fire 2. Enter autorotation 3. ENGINE - OFF 4. Emergency fuel shutoff if needed"
+        },
+        {
+          "label": "Complete Loss Tail Rotor Thrust",
+          "value": "1. If can't maintain level flight - autorotation, min 40 KIAS 2. THROTTLE - IDLE 3. Maintain forward speed on landing"
+        },
+        {
+          "label": "Hydraulic Loss of Pressure",
+          "value": "1. Adjust to 50-80 KIAS 2. HYD SYS - OFF 3. 100 KIAS for extended flight 4. Run-on landing ~15 knots"
+        },
+        {
+          "label": "Generator Failure",
+          "value": "1. GEN - OFF then ON 2. If no restore, GEN - OFF 3. Battery ~33 min basic systems 4. Land as soon as practical"
+        }
+      ]
+    },
+    {
+      "section_id": "systems",
+      "section_title": "Key Systems Values",
+      "items": [
+        {
+          "label": "Engine Type",
+          "value": "Turbomeca Arrius 2R"
+        },
+        {
+          "label": "Control System",
+          "value": "FADEC via ECU"
+        },
+        {
+          "label": "Electrical System",
+          "value": "28 VDC"
+        },
+        {
+          "label": "Generator Max Continuous",
+          "value": "165 amps"
+        },
+        {
+          "label": "Generator Voltage Range",
+          "value": "22-32 VDC"
+        },
+        {
+          "label": "Hydraulic Fluid",
+          "value": "MIL-PRF-87257"
+        },
+        {
+          "label": "Transmission Oil Pressure",
+          "value": "40-70 PSI continuous"
+        },
+        {
+          "label": "Transmission Oil Temp Max",
+          "value": "110°C"
+        },
+        {
+          "label": "Seating Configuration",
+          "value": "5-place"
+        },
+        {
+          "label": "Operation Type",
+          "value": "Day/Night VFR non-icing"
+        }
+      ]
+    }
+  ]
+}

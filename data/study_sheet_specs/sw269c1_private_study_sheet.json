@@ -1,0 +1,210 @@
+{
+  "aircraft_id": "sw269c1",
+  "aircraft_name": "Schweizer 269C-1 (S300CB/CBi)",
+  "rating": "private",
+  "generated_date": "2024-12-19",
+  "sections": [
+    {
+      "section_id": "limitations",
+      "section_title": "Limitations & V-Speeds",
+      "items": [
+        {
+          "label": "VNE (sea level)",
+          "value": "94 KIAS",
+          "note": "doors on"
+        },
+        {
+          "label": "VNE (doors off)",
+          "value": "90 KIAS"
+        },
+        {
+          "label": "VNE altitude variation",
+          "value": "See POH Figure 2-1"
+        },
+        {
+          "label": "Max Gross Weight",
+          "value": "1750 lbs"
+        },
+        {
+          "label": "Max cabin load",
+          "value": "600 lbs"
+        },
+        {
+          "label": "Max glove box",
+          "value": "20 lbs"
+        },
+        {
+          "label": "Max density altitude takeoff/landing",
+          "value": "8000 ft DA"
+        },
+        {
+          "label": "Max density altitude enroute",
+          "value": "10000 ft DA"
+        },
+        {
+          "label": "Autorotation glide speed",
+          "value": "52 KIAS"
+        }
+      ]
+    },
+    {
+      "section_id": "instrument_markings",
+      "section_title": "Instrument Markings",
+      "items": [
+        {
+          "label": "Rotor green arc",
+          "value": "390-504 RPM"
+        },
+        {
+          "label": "Rotor lower red line",
+          "value": "390 RPM"
+        },
+        {
+          "label": "Rotor upper red line",
+          "value": "504 RPM"
+        },
+        {
+          "label": "Engine max continuous",
+          "value": "2700 RPM"
+        },
+        {
+          "label": "Engine upper red line",
+          "value": "2700 RPM"
+        },
+        {
+          "label": "CHT green arc",
+          "value": "230-450°F"
+        },
+        {
+          "label": "CHT yellow arc",
+          "value": "450-500°F"
+        },
+        {
+          "label": "CHT red line",
+          "value": "500°F"
+        },
+        {
+          "label": "Oil temp green arc",
+          "value": "100-245°F"
+        },
+        {
+          "label": "Oil temp red line",
+          "value": "245°F"
+        },
+        {
+          "label": "Oil pressure green arc",
+          "value": "55-95 PSI"
+        },
+        {
+          "label": "Oil pressure lower red",
+          "value": "55 PSI"
+        },
+        {
+          "label": "Oil pressure upper red",
+          "value": "115 PSI"
+        },
+        {
+          "label": "Carb temp yellow arc",
+          "value": "-15 to +5°C",
+          "note": "HO-360-C1A only"
+        }
+      ]
+    },
+    {
+      "section_id": "emergency_procedures",
+      "section_title": "Emergency Procedures (Condensed)",
+      "items": [
+        {
+          "label": "Engine failure above 450 ft",
+          "value": "1. Lower collective 2. Enter autorotation 3. 52 kt glide 4. Flare at 50 ft 5. Collective/cyclic at 10 ft 6. Level attitude ground contact"
+        },
+        {
+          "label": "Engine failure 7-450 ft",
+          "value": "1. Lower collective (altitude permitting) 2. Maintain rotor RPM 3. Aft cyclic/collective as ground approached 4. Level attitude 5. Collective to cushion"
+        },
+        {
+          "label": "Engine failure below 7 ft",
+          "value": "1. Do NOT reduce collective 2. Right pedal prevent yaw 3. Right cyclic minimize drift 4. Collective cushion landing"
+        },
+        {
+          "label": "Tail rotor failure forward flight",
+          "value": "1. Reduce power/collective 2. 50-60 kt airspeed 3. Left lateral cyclic limit sideslip 4. Idle throttle/autorotation 5. Minimal forward speed touchdown"
+        },
+        {
+          "label": "Tail rotor failure hover",
+          "value": "1. Idle throttle immediately 2. Hovering autorotation"
+        },
+        {
+          "label": "Engine fire on ground",
+          "value": "1. Mixture idle cutoff 2. Fuel valve close 3. Battery OFF 4. Alternator OFF 5. Exit with extinguisher"
+        },
+        {
+          "label": "Engine fire in flight",
+          "value": "1. Immediate power-on landing 2. Battery/Alternator OFF if time 3. Upon landing: throttle close, mixture cutoff, fuel close 4. Exit/extinguish"
+        },
+        {
+          "label": "Air restart",
+          "value": "1. 52 kt autorotation 2. If >2000 ft: crack throttle 1/2 inch 3. Engage starter 4. Mixture full rich when fires"
+        }
+      ]
+    },
+    {
+      "section_id": "systems",
+      "section_title": "Key Systems Values",
+      "items": [
+        {
+          "label": "Engine type (carb)",
+          "value": "Lycoming HO-360-C1A"
+        },
+        {
+          "label": "Engine type (fuel inj)",
+          "value": "Lycoming HIO-360-G1A"
+        },
+        {
+          "label": "Engine power",
+          "value": "180 HP @ 2700 RPM"
+        },
+        {
+          "label": "Main rotor diameter",
+          "value": "26.83 ft"
+        },
+        {
+          "label": "Main rotor blades",
+          "value": "3 blades"
+        },
+        {
+          "label": "Tail rotor diameter",
+          "value": "4.25 ft"
+        },
+        {
+          "label": "Tail rotor blades",
+          "value": "2 blades"
+        },
+        {
+          "label": "Fuel capacity main",
+          "value": "35.2 gal (35.0 usable)"
+        },
+        {
+          "label": "Fuel capacity aux",
+          "value": "30.0 gal"
+        },
+        {
+          "label": "Fuel grades",
+          "value": "100/130, 100LL"
+        },
+        {
+          "label": "Transmission oil temp warning",
+          "value": "235°F"
+        },
+        {
+          "label": "Transmission oil pressure warning",
+          "value": "2.5 PSI"
+        },
+        {
+          "label": "Pilot seat position",
+          "value": "Right side only"
+        }
+      ]
+    }
+  ]
+}

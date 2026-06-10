@@ -1,0 +1,240 @@
+{
+  "aircraft_id": "b206",
+  "aircraft_name": "Bell 206B3 JetRanger",
+  "rating": "private",
+  "generated_date": "2026-04-14",
+  "sections": [
+    {
+      "section_id": "limitations",
+      "section_title": "Limitations & V-Speeds",
+      "items": [
+        {
+          "label": "Vne (≤3000 lbs)",
+          "value": "130 KIAS",
+          "note": "SL to 3000' DA; decrease 3.5 KIAS/1000'"
+        },
+        {
+          "label": "Vne (>3000 lbs)",
+          "value": "122 KIAS",
+          "note": "SL to 3000' DA; decrease 7.0 KIAS/1000'"
+        },
+        {
+          "label": "Vne (85-100% torque)",
+          "value": "80 KIAS"
+        },
+        {
+          "label": "Vne (aft door off)",
+          "value": "87 KIAS"
+        },
+        {
+          "label": "Vne (forward door off)",
+          "value": "69 KIAS"
+        },
+        {
+          "label": "Max autorotation speed",
+          "value": "100 KIAS"
+        },
+        {
+          "label": "Min descent autorotation",
+          "value": "52 KIAS"
+        },
+        {
+          "label": "Max glide distance",
+          "value": "69 KIAS"
+        },
+        {
+          "label": "Max gross weight",
+          "value": "3200 lbs"
+        },
+        {
+          "label": "Max external cargo",
+          "value": "3350 lbs"
+        },
+        {
+          "label": "Max baggage",
+          "value": "250 lbs"
+        },
+        {
+          "label": "Min pilot weight",
+          "value": "170 lbs"
+        },
+        {
+          "label": "Max density altitude",
+          "value": "13,500 ft DA",
+          "note": ">3000 lbs"
+        },
+        {
+          "label": "Max pressure altitude",
+          "value": "20,000 ft PA",
+          "note": "≤3000 lbs"
+        }
+      ]
+    },
+    {
+      "section_id": "instrument_markings",
+      "section_title": "Instrument Markings",
+      "items": [
+        {
+          "label": "NR min (power on)",
+          "value": "97%"
+        },
+        {
+          "label": "NR max (power on)",
+          "value": "100%"
+        },
+        {
+          "label": "NR min (power off)",
+          "value": "90%"
+        },
+        {
+          "label": "NR max (power off)",
+          "value": "107%"
+        },
+        {
+          "label": "TOT max continuous",
+          "value": "738°C"
+        },
+        {
+          "label": "TOT takeoff limit",
+          "value": "610°C",
+          "note": "5 min"
+        },
+        {
+          "label": "N1 maximum",
+          "value": "105%"
+        },
+        {
+          "label": "N2 maximum",
+          "value": "100%"
+        },
+        {
+          "label": "Oil pressure min (idle)",
+          "value": "50 PSI"
+        },
+        {
+          "label": "Oil pressure min (flight)",
+          "value": "115 PSI"
+        },
+        {
+          "label": "Oil pressure max",
+          "value": "130 PSI"
+        },
+        {
+          "label": "Oil temperature max",
+          "value": "107°C"
+        },
+        {
+          "label": "Loadmeter maximum",
+          "value": "70%"
+        }
+      ]
+    },
+    {
+      "section_id": "emergency_procedures",
+      "section_title": "Emergency Procedures (Condensed)",
+      "items": [
+        {
+          "label": "Engine Fire (Start/Shutdown)",
+          "value": "1. Starter - Continue motoring 2. Throttle - Full closed 3. FUEL VALVE - OFF 4. IGN ENG CB - Out 5. Complete shutdown"
+        },
+        {
+          "label": "Engine Fire (Flight)",
+          "value": "1. Throttle - Close 2. Enter autorotation 3. FUEL VALVE - OFF 4. BAT - OFF 5. Autorotative landing"
+        },
+        {
+          "label": "Engine Failure",
+          "value": "1. Collective - Adjust for 90-107% NR 2. Airspeed - 52-69 KIAS 3. Flare at low altitude 4. Cushion with collective 5. Level touchdown before 70% NR"
+        },
+        {
+          "label": "Driveshaft Failure",
+          "value": "1. Collective - Maintain 90-107% NR 2. Throttle - Open 3. Autorotative airspeed 52-69 KIAS 4. Complete autorotative landing"
+        },
+        {
+          "label": "Tail Rotor Loss",
+          "value": "1. Throttle - Flight idle, enter autorotation 2. Minimum 50 KIAS 3. Reduce to 61-69 KIAS 4. Touchdown with throttle closed"
+        },
+        {
+          "label": "Hydraulic Failure",
+          "value": "1. Airspeed - 61-69 KIAS 2. HYD BOOST CB - Cycle 3. CONTROL BOOST - Cycle 4. Run-on landing 10-15 knots"
+        },
+        {
+          "label": "Generator Failure",
+          "value": "1. GEN - RESET then ON 2. If fails: GEN - OFF 3. Electrical equipment - OFF 4. Required only - ON 5. Land ASAP"
+        },
+        {
+          "label": "ENG OUT Light",
+          "value": "1. Reduce pitch - Autorotate 2. If altitude permits - Investigate"
+        }
+      ]
+    },
+    {
+      "section_id": "systems",
+      "section_title": "Key Systems Values",
+      "items": [
+        {
+          "label": "Takeoff torque limit",
+          "value": "100%",
+          "note": "5 min"
+        },
+        {
+          "label": "Max continuous torque",
+          "value": "65%"
+        },
+        {
+          "label": "Transient torque limit",
+          "value": "110%",
+          "note": "5 sec max"
+        },
+        {
+          "label": "Fuel pressure min",
+          "value": "4.0 PSI"
+        },
+        {
+          "label": "Fuel pressure max",
+          "value": "30.0 PSI"
+        },
+        {
+          "label": "Trans oil pressure min",
+          "value": "30 PSI"
+        },
+        {
+          "label": "Trans oil pressure max",
+          "value": "70 PSI"
+        },
+        {
+          "label": "Trans oil temp max",
+          "value": "110°C"
+        },
+        {
+          "label": "CG forward limit",
+          "value": "106.0 inches"
+        },
+        {
+          "label": "CG aft limit",
+          "value": "114.2 inches"
+        },
+        {
+          "label": "CG aft limit (door off)",
+          "value": "110.0 inches"
+        },
+        {
+          "label": "Engine anti-ice temp limit",
+          "value": "4.4°C",
+          "note": "ON below, OFF above"
+        },
+        {
+          "label": "Max air start altitude",
+          "value": "12,000 ft"
+        },
+        {
+          "label": "BATTERY HOT warning",
+          "value": "140°F"
+        },
+        {
+          "label": "BATTERY TEMP caution",
+          "value": "130°F"
+        }
+      ]
+    }
+  ]
+}

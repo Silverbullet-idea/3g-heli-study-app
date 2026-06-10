@@ -1,0 +1,240 @@
+{
+  "aircraft_id": "b407",
+  "aircraft_name": "Bell 407",
+  "rating": "private",
+  "generated_date": "2026-04-14",
+  "sections": [
+    {
+      "section_id": "limitations",
+      "section_title": "Limitations & V-Speeds",
+      "items": [
+        {
+          "label": "VNE (SL to 3000 ft HD)",
+          "value": "140 KIAS"
+        },
+        {
+          "label": "VNE (takeoff power/doors off)",
+          "value": "100 KIAS"
+        },
+        {
+          "label": "VNE (autorotation)",
+          "value": "100 KIAS"
+        },
+        {
+          "label": "Max sideward/rearward",
+          "value": "35 KTAS"
+        },
+        {
+          "label": "Best rate of climb",
+          "value": "60 KIAS"
+        },
+        {
+          "label": "Min rate of descent (auto)",
+          "value": "55 KIAS"
+        },
+        {
+          "label": "Max glide distance (auto)",
+          "value": "80 KIAS"
+        },
+        {
+          "label": "NR power on",
+          "value": "99-100%"
+        },
+        {
+          "label": "NR power off",
+          "value": "85-107%"
+        },
+        {
+          "label": "Max gross weight",
+          "value": "5000 lbs"
+        },
+        {
+          "label": "Min gross weight",
+          "value": "2650 lbs"
+        },
+        {
+          "label": "Max operating altitude",
+          "value": "20000 ft HD"
+        },
+        {
+          "label": "Max rate of climb",
+          "value": "2000 ft/min"
+        },
+        {
+          "label": "Fuel capacity (basic)",
+          "value": "127 gal"
+        },
+        {
+          "label": "Baggage compartment",
+          "value": "250 lbs max"
+        },
+        {
+          "label": "Min pilot weight (FS 65)",
+          "value": "170 lbs"
+        }
+      ]
+    },
+    {
+      "section_id": "instrument_markings",
+      "section_title": "Instrument Markings",
+      "items": [
+        {
+          "label": "NG continuous",
+          "value": "63-105%"
+        },
+        {
+          "label": "NG max transient (10 sec)",
+          "value": "105.1-106%"
+        },
+        {
+          "label": "NP continuous",
+          "value": "99-100%"
+        },
+        {
+          "label": "NP max transient (15 sec)",
+          "value": "102.1-107%"
+        },
+        {
+          "label": "Torque continuous",
+          "value": "0-93.5%"
+        },
+        {
+          "label": "Torque takeoff (5 min)",
+          "value": "93.5-100%"
+        },
+        {
+          "label": "Torque max transient (5 sec)",
+          "value": "105%"
+        },
+        {
+          "label": "MGT continuous",
+          "value": "100-727°C"
+        },
+        {
+          "label": "MGT takeoff (5 min)",
+          "value": "727-779°C"
+        },
+        {
+          "label": "Engine oil pressure min",
+          "value": "50 PSI (idle)"
+        },
+        {
+          "label": "Engine oil pressure min",
+          "value": "115 PSI (flight)"
+        },
+        {
+          "label": "Engine oil pressure max",
+          "value": "130 PSI"
+        },
+        {
+          "label": "Engine oil temp max",
+          "value": "107°C"
+        },
+        {
+          "label": "Transmission oil pressure",
+          "value": "40-70 PSI"
+        },
+        {
+          "label": "Transmission oil temp max",
+          "value": "110°C"
+        }
+      ]
+    },
+    {
+      "section_id": "emergency_procedures",
+      "section_title": "Emergency Procedures (Condensed)",
+      "items": [
+        {
+          "label": "Engine Failure (Hovering)",
+          "value": "1. Maintain heading/attitude 2. Collective adjust for NR/descent 3. Land 4. Shut down"
+        },
+        {
+          "label": "Engine Failure (Flight)",
+          "value": "1. Maintain heading/attitude 2. Collective for 85-107% NR 3. Cyclic for desired airspeed 4. Attempt restart if altitude permits 5. FUEL VALVE OFF 6. Autorotative landing"
+        },
+        {
+          "label": "Engine Hot Start",
+          "value": "1. Throttle CLOSED 2. FUEL VALVE OFF 3. STARTER continue until MGT stabilizes 4. Shut down"
+        },
+        {
+          "label": "FADEC Failure",
+          "value": "1. Throttle match to NG 2. NR/NP maintain 95-100% 3. FADEC MODE press once 4. Land ASAP"
+        },
+        {
+          "label": "Complete TR Thrust Loss",
+          "value": "Hover: Close throttle, autorotative landing | Flight: Throttle idle, autorotate min 55 KIAS"
+        },
+        {
+          "label": "Hydraulic Failure",
+          "value": "1. Airspeed 70-100 KIAS 2. HYD SYSTEM CB out/in 3. HYD SYS OFF if no restore 4. Land ASAP"
+        },
+        {
+          "label": "Generator Failure",
+          "value": "1. Check CB in 2. GEN RESET then ON 3. If no restore GEN OFF, land ASAP"
+        },
+        {
+          "label": "Engine Fire (Flight)",
+          "value": "1. Autorotation 2. Throttle CLOSED 3. FUEL VALVE OFF 4. Land 5. BATT OFF"
+        }
+      ]
+    },
+    {
+      "section_id": "systems",
+      "section_title": "Key Systems Values",
+      "items": [
+        {
+          "label": "Engine model",
+          "value": "Rolls-Royce 250-C47B"
+        },
+        {
+          "label": "FADEC software required",
+          "value": "Version 5.202"
+        },
+        {
+          "label": "Idle NG",
+          "value": "63 ±1%"
+        },
+        {
+          "label": "NP overspeed trip",
+          "value": "118.5%"
+        },
+        {
+          "label": "System voltage",
+          "value": "28.5 ±0.5 VDC"
+        },
+        {
+          "label": "Generator max continuous",
+          "value": "180 amps (<10K ft)"
+        },
+        {
+          "label": "Battery backup duration",
+          "value": "21 min (basic + VHF)"
+        },
+        {
+          "label": "Fuel transfer stops at",
+          "value": "340 lbs total"
+        },
+        {
+          "label": "FUEL LOW warning",
+          "value": "100 ±10 lbs"
+        },
+        {
+          "label": "Pedal stop engages",
+          "value": "Above 55 ±5 KIAS"
+        },
+        {
+          "label": "Rotor brake limit",
+          "value": "40% NR or below"
+        },
+        {
+          "label": "ENG ANTI ICE required",
+          "value": "Below 5°C in moisture"
+        },
+        {
+          "label": "Max slope landing",
+          "value": "10° side, 10° nose up"
+        }
+      ]
+    }
+  ]
+}

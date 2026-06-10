@@ -266,6 +266,22 @@ Sources: R66 section PDFs (`r66_poh_section2_limitations.pdf`, `r66_poh_section3
 | aircraft/sw269c1_systems.json | — | 11 | — | 0 | Section I design description, pages 30–37 |
 | aircraft/sw269c_limitations.json | — | — | — | — | ❌ **Blocked** — `schweizer_300_flight_manual.pdf` is byte-identical to 269C-1 POH; need distinct Model 269C / S300C manual (HIO-360-D1A, 190 HP) |
 
+### Study sheet specs — Phase 1 (2026-06-10)
+
+Source: `extracted-data/aircraft/{id}_{limitations,emergency_procedures,systems}.json` via `generate_study_sheet_specs.py`.
+Output: `data/study_sheet_specs/{id}_private_study_sheet.json` (4 sections: limitations, instrument_markings, emergency_procedures, systems).
+
+| Aircraft | Spec file | Items | Status |
+|----------|-----------|-------|--------|
+| r22 | r22_private_study_sheet.json | 45 | ✅ |
+| r44 | r44_private_study_sheet.json | 33 | ✅ |
+| r66 | r66_private_study_sheet.json | 40 | ✅ |
+| b505 | b505_private_study_sheet.json | 40 | ✅ |
+| b206 | b206_private_study_sheet.json | 50 | ✅ |
+| b407 | b407_private_study_sheet.json | 52 | ✅ |
+| sw269c1 | sw269c1_private_study_sheet.json | 44 | ✅ |
+| sw269c | — | — | ❌ Blocked (no source JSON) |
+
 No `confidence: low` strings in any of the nine files. **H125** extraction not started — confirm these outputs before expanding.
 
 ### PDF Library (local only — gitignored)
@@ -398,6 +414,8 @@ billing is replenished, re-run the same command to fill Area I, then run without
 | extract_text.py | PDF → raw text |
 | extract_poh_json.py | raw text → structured JSON via API |
 | generate_question_bank.py | ACS + handbook JSON → oral exam question bank (Anthropic) |
+| generate_study_sheet_specs.py | Extracted aircraft POH JSON → checkride study sheet content specs (Anthropic, prompt caching) |
+| run_generate_study_sheet_specs.ps1 | Runs `generate_study_sheet_specs.py` for all aircraft (or `--aircraft` slug) |
 | patch_cfi_acs_item_codes.py | Prepends FI./HI. codes to CFI ACS JSON item lines (one-time post-extract fix) |
 | run_generate_private.ps1 | Runs `generate_question_bank.py --rating private` |
 | run_verify_private.ps1 | Runs `verify_question_bank.py --input question-bank/qbank_private_helicopter.json` |
