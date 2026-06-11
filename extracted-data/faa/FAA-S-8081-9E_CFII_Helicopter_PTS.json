@@ -1,0 +1,801 @@
+{
+  "aircraft": null,
+  "poh_source": "faa_acs",
+  "source_file": "FAA-S-8081-9E - cfi_instrument_pts_9.pdf",
+  "extracted_date": "2026-06-10",
+  "extraction_script_version": "1.0.0",
+  "certificate_level": "Flight Instructor Instrument - Airplane Rating and Helicopter Rating",
+  "areas_of_operation": [
+    {
+      "id": "fundamentals_of_instructing",
+      "title": "FUNDAMENTALS OF INSTRUCTING",
+      "tasks": [
+        {
+          "id": "learning_process",
+          "title": "LEARNING PROCESS",
+          "knowledge": [
+            "Learning theories.",
+            "Characteristics of learning.",
+            "Principles of learning.",
+            "Levels of learning.",
+            "Learning physical skills.",
+            "Memory.",
+            "Transfer of learning."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "human_behavior_and_effective_communication",
+          "title": "HUMAN BEHAVIOR AND EFFECTIVE COMMUNICATION",
+          "knowledge": [
+            "Human behavior — control of human behavior.",
+            "Human behavior — human needs.",
+            "Human behavior — defense mechanisms.",
+            "Human behavior — the flight instructor as a practical psychologist.",
+            "Effective communication — basic elements of communication.",
+            "Effective communication — barriers of effective communication.",
+            "Effective communication — developing communication skills."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "teaching_process",
+          "title": "TEACHING PROCESS",
+          "knowledge": [
+            "Preparation of a lesson for a ground or flight instructional period.",
+            "Presentation methods.",
+            "Application, by the student, of the material or procedure that was presented.",
+            "Review and evaluation of student performance.",
+            "Problem-based learning."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "teaching_methods",
+          "title": "TEACHING METHODS",
+          "knowledge": [
+            "Material organization.",
+            "The lecture method.",
+            "The cooperative or group learning method.",
+            "The guided discussion method.",
+            "The demonstration-performance method.",
+            "Computer-based training method.",
+            "Scenario-based training method."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "critique_and_evaluation",
+          "title": "CRITIQUE AND EVALUATION",
+          "knowledge": [
+            "Critique — purpose and characteristics of an effective critique.",
+            "Critique — methods and ground rules for a critique.",
+            "Evaluation — characteristics of effective oral questions and what types to avoid.",
+            "Evaluation — responses to student questions.",
+            "Evaluation — characteristics and development of effective written test.",
+            "Evaluation — characteristics and uses of performance tests, specifically, the FAA PTS.",
+            "Evaluation — collaborative assessment (or LCG)."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "flight_instructor_characteristics_and_responsibilities",
+          "title": "FLIGHT INSTRUCTOR CHARACTERISTICS AND RESPONSIBILITIES",
+          "knowledge": [
+            "Aviation instructor responsibilities in providing adequate instruction.",
+            "Aviation instructor responsibilities in establishing standards of performance.",
+            "Aviation instructor responsibilities in emphasizing the positive.",
+            "Flight instructor responsibilities in providing student pilot evaluation and supervision.",
+            "Flight instructor responsibilities in preparing practical test recommendations and endorsements.",
+            "Flight instructor responsibilities in determining requirements for conducting additional training and endorsement requirements.",
+            "Professionalism as an instructor by explaining important personal characteristics.",
+            "Professionalism as an instructor by describing methods to minimize student frustration."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "planning_instructional_activity",
+          "title": "PLANNING INSTRUCTIONAL ACTIVITY",
+          "knowledge": [
+            "Developing objectives and standards for a course of training.",
+            "Theory of building blocks of learning.",
+            "Requirements for developing a training syllabus.",
+            "Purpose and characteristics of a lesson plan.",
+            "How a scenario-based lesson is developed."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        }
+      ]
+    },
+    {
+      "id": "technical_subject_areas",
+      "title": "TECHNICAL SUBJECT AREAS",
+      "tasks": [
+        {
+          "id": "aircraft_flight_instruments_and_navigation_equipment",
+          "title": "AIRCRAFT FLIGHT INSTRUMENTS AND NAVIGATION EQUIPMENT",
+          "knowledge": [
+            "Flight instrument systems and their operating characteristics — pitot-static system.",
+            "Flight instrument systems and their operating characteristics — attitude indicator.",
+            "Flight instrument systems and their operating characteristics — heading indicator/horizontal situation indicator/radio magnetic indicator.",
+            "Flight instrument systems and their operating characteristics — magnetic compass.",
+            "Flight instrument systems and their operating characteristics — turn-and-slip indicator/turn coordinator.",
+            "Flight instrument systems and their operating characteristics — electrical system.",
+            "Flight instrument systems and their operating characteristics — vacuum system.",
+            "Flight instrument systems and their operating characteristics — electronic engine instrument display.",
+            "Flight instrument systems and their operating characteristics — primary flight display, if installed.",
+            "Navigation equipment and their operating characteristics — VHF omnirange (VOR).",
+            "Navigation equipment and their operating characteristics — DME.",
+            "Navigation equipment and their operating characteristics — ILS.",
+            "Navigation equipment and their operating characteristics — marker beacon receiver/indicators.",
+            "Navigation equipment and their operating characteristics — ADF.",
+            "Navigation equipment and their operating characteristics — transponder/altitude encoding.",
+            "Navigation equipment and their operating characteristics — electronic flight instrument display.",
+            "Navigation equipment and their operating characteristics — GPS.",
+            "Navigation equipment and their operating characteristics — automatic pilot.",
+            "Navigation equipment and their operating characteristics — FMS.",
+            "Navigation equipment and their operating characteristics — multifunction display, if installed.",
+            "Anti-ice/deicing and weather detection equipment and their operating characteristics — airframe.",
+            "Anti-ice/deicing and weather detection equipment and their operating characteristics — propeller or rotor.",
+            "Anti-ice/deicing and weather detection equipment and their operating characteristics — air intake.",
+            "Anti-ice/deicing and weather detection equipment and their operating characteristics — fuel system.",
+            "Anti-ice/deicing and weather detection equipment and their operating characteristics — pitot-static system.",
+            "Anti-ice/deicing and weather detection equipment and their operating characteristics — radar/lightning detection system.",
+            "Anti-ice/deicing and weather detection equipment and their operating characteristics — other inflight weather systems."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "aeromedical_factors",
+          "title": "AEROMEDICAL FACTORS",
+          "knowledge": [
+            "Effects, corrective action, and safety considerations of hypoxia.",
+            "Effects, corrective action, and safety considerations of hyperventilation.",
+            "Effects, corrective action, and safety considerations of middle ear and sinus problems.",
+            "Effects, corrective action, and safety considerations of spatial disorientation.",
+            "Effects, corrective action, and safety considerations of motion sickness.",
+            "Effects, corrective action, and safety considerations of alcohol and drugs.",
+            "Effects, corrective action, and safety considerations of carbon monoxide poisoning.",
+            "Effects, corrective action, and safety considerations of evolved gases from scuba diving.",
+            "Effects, corrective action, and safety considerations of stress and fatigue."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "regulations_and_publications_related_to_ifr_operations",
+          "title": "REGULATIONS AND PUBLICATIONS RELATED TO IFR OPERATIONS",
+          "knowledge": [
+            "14 CFR parts 61, 71, 91, 95, and 97.",
+            "FAA-H-8083-15, Instrument Flying Handbook.",
+            "Aeronautical Information Manual.",
+            "Practical Test Standards.",
+            "Chart Supplement.",
+            "Standard Instrument Departures/Terminal Arrivals.",
+            "En Route Charts.",
+            "Standard Instrument Approach Procedure Charts."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "logbook_entries_related_to_instrument_instruction",
+          "title": "LOGBOOK ENTRIES RELATED TO INSTRUMENT INSTRUCTION",
+          "knowledge": [
+            "Logbook entries or training records for instrument flight/instrument flight instruction or ground instruction given.",
+            "Preparation of a recommendation for an instrument rating practical test, including appropriate logbook entry.",
+            "Required endorsement of a pilot logbook for satisfactory completion of an instrument proficiency check.",
+            "Required flight instructor records."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        }
+      ]
+    },
+    {
+      "id": "preflight_preparation",
+      "title": "PREFLIGHT PREPARATION",
+      "tasks": [
+        {
+          "id": "weather_information",
+          "title": "WEATHER INFORMATION",
+          "knowledge": [
+            "Sources of weather — AWOS, ASOS, and ATIS reports.",
+            "Sources of weather — sources of weather data (e.g., National Weather Service, Flight Service) for flight planning purposes.",
+            "Weather reports and charts — METAR, TAF, and Graphical Forecasts for Aviation (GFA).",
+            "Weather reports and charts — inflight weather advisories.",
+            "Weather reports and charts — surface analysis, weather depiction, and radar summary charts.",
+            "Weather reports and charts — significant weather prognostic charts.",
+            "Weather reports and charts — winds and temperatures aloft charts.",
+            "Weather reports and charts — PIREPs.",
+            "Weather reports and charts — freezing level charts.",
+            "Weather reports and charts — severe weather outlook charts.",
+            "Weather reports and charts — SIGMETs and AIRMETs."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "cross_country_flight_planning",
+          "title": "CROSS-COUNTRY FLIGHT PLANNING",
+          "knowledge": [
+            "Regulatory requirements for instrument flight within various types of airspace.",
+            "Computation of estimated time en route and total fuel requirement for an IFR cross-country flight.",
+            "Selection and correct interpretation of the current and applicable en route charts, RNAV, DPs, STARs, and standard IAP.",
+            "Procurement and interpretation of the applicable NOTAM information.",
+            "Completes and files an IFR flight plan that accurately reflects the conditions of the proposed flight. (Does not have to be filed with ATC.)",
+            "Demonstrates adequate knowledge of GPS and RAIM capability, when aircraft is so equipped.",
+            "Demonstrates the ability to recognize wing contamination due to airframe icing.",
+            "Demonstrates adequate knowledge of the adverse effects of airframe icing during landing phases of flight and corrective actions: pretakeoff, takeoff, and cruise.",
+            "Demonstrates familiarity with any icing procedures and/or information published by the manufacturer that is specific to the aircraft used on the practical test."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "instrument_flight_deck_check",
+          "title": "INSTRUMENT FLIGHT DECK CHECK",
+          "knowledge": [
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — communications equipment.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — navigation equipment.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — magnetic compass.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — heading indicator/horizontal situation indicator/remote magnetic indicator.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — attitude indicator.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — altimeter.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — turn-and-slip indicator/turn coordinator.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — vertical-speed indicator.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — airspeed indicator.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — outside air temperature.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — clock.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — pitot heat.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — electronic flight instrument display.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — traffic awareness/warning/avoidance system.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — terrain awareness/warning/alert system.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — FMS.",
+            "Reasons for the instrument flight deck check and detection of defects that could affect safe instrument flight — automatic pilot."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        }
+      ]
+    },
+    {
+      "id": "preflight_lesson_on_a_maneuver_to_be_performed_in_flight",
+      "title": "PREFLIGHT LESSON ON A MANEUVER TO BE PERFORMED IN FLIGHT",
+      "tasks": [
+        {
+          "id": "maneuver_lesson",
+          "title": "MANEUVER LESSON",
+          "knowledge": [
+            "Using a lesson plan that includes all essential items to make an effective and organized presentation.",
+            "Stating the objective.",
+            "Giving an accurate, comprehensive oral description of the maneuver, including the elements and associated common errors.",
+            "Using instructional aids, as appropriate.",
+            "Describing the recognition, analysis, and correction of common errors."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        }
+      ]
+    },
+    {
+      "id": "air_traffic_control_clearances_and_procedures",
+      "title": "AIR TRAFFIC CONTROL CLEARANCES AND PROCEDURES",
+      "tasks": [
+        {
+          "id": "air_traffic_control_clearances",
+          "title": "AIR TRAFFIC CONTROL CLEARANCES",
+          "knowledge": [
+            "Pilot and controller responsibilities to include tower, en route control, and clearance void times.",
+            "Correct and timely copying of an ATC clearance.",
+            "Ability to comply with the clearance.",
+            "Correct and timely read-back of an ATC clearance, using standard phraseology.",
+            "Correct interpretation of an ATC clearance and, when necessary, request for clarification, verification, or change.",
+            "Setting of communication and navigation frequencies in compliance with an ATC clearance."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "compliance_with_departure_en_route_and_arrival_procedures_and_clearances",
+          "title": "COMPLIANCE WITH DEPARTURE, EN ROUTE, AND ARRIVAL PROCEDURES AND CLEARANCES",
+          "knowledge": [
+            "Selection and use of current and appropriate navigation publications.",
+            "Pilot and controller responsibilities with regard to DPs, En Route Low and High Altitude Charts, and STARs.",
+            "Selection and use of appropriate communications frequencies.",
+            "Selection and identification of the navigation aids.",
+            "Accomplishment of the appropriate checklist items.",
+            "Pilot's responsibility for compliance with vectors and also altitude, airspeed, climb, descent, and airspace restrictions.",
+            "Pilot's responsibility for the interception of courses, radials, and bearings appropriate to the procedure, route, or clearance.",
+            "Procedures to be used in the event of two-way communications failure.",
+            "The uses of the multifunction display and other graphical navigational displays, if installed, to monitor position track, wind drift, and other parameters to maintain situational awareness and desired flightpath."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        }
+      ]
+    },
+    {
+      "id": "flight_by_reference_to_instruments",
+      "title": "FLIGHT BY REFERENCE TO INSTRUMENTS",
+      "tasks": [
+        {
+          "id": "straight_and_level_flight",
+          "title": "STRAIGHT-AND-LEVEL FLIGHT",
+          "knowledge": [
+            "The relationship of pitch, bank, and power in straight-and-level flight.",
+            "Procedure using full panel and partial panel.",
+            "Coordination of controls and trim.",
+            "Common errors — slow or improper cross-check during straight-and-level flight.",
+            "Common errors — improper power control.",
+            "Common errors — failure to make smooth, precise corrections, as required.",
+            "Common errors — uncoordinated use of controls.",
+            "Common errors — improper trim control."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains straight-and-level flight from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to straight-and-level flight."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "turns",
+          "title": "TURNS",
+          "knowledge": [
+            "The relationship of true airspeed and angle of bank to a standard rate turn.",
+            "Technique and procedure using full panel and partial panel for entry and recovery of a constant rate turn, including the performance of a half-standard rate turn.",
+            "Coordination of controls and trim.",
+            "Common errors — improper cross-check procedures.",
+            "Common errors — improper bank control during roll-in and roll-out.",
+            "Common errors — failure to make smooth, precise corrections, as required.",
+            "Common errors — uncoordinated use of controls.",
+            "Common errors — improper trim technique."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains turns from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to turns."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "change_of_airspeed_in_straight_and_level_and_turning_flight",
+          "title": "CHANGE OF AIRSPEED IN STRAIGHT-AND-LEVEL AND TURNING FLIGHT",
+          "knowledge": [
+            "Procedure using full panel and partial panel for maintaining altitude and changing airspeed in straight-and-level and turning flight.",
+            "Coordination of controls and trim technique.",
+            "Common errors — slow or improper cross-check during straight-and-level flight and turns.",
+            "Common errors — improper power control.",
+            "Common errors — failure to make smooth, precise corrections, as required.",
+            "Common errors — uncoordinated use of controls.",
+            "Common errors — improper trim technique."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains changes of airspeed in straight-and-level and turning flight from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to changes of airspeed in straight-and-level and turning flight."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "constant_airspeed_climbs_and_descents",
+          "title": "CONSTANT AIRSPEED CLIMBS AND DESCENTS",
+          "knowledge": [
+            "Procedure using full panel and partial panel for an entry into a straight climb or climbing turn, from either cruising or climbing airspeed.",
+            "A stabilized straight climb or climbing turn.",
+            "A level-off from a straight climb or climbing turn, at either cruising or climbing airspeed.",
+            "Procedure using full panel and partial panel for an entry into a straight descent or descending turn from either cruising or descending airspeed.",
+            "A stabilized straight descent or descending turn.",
+            "A level-off from a straight descent or descending turn, at either cruising or descending airspeed.",
+            "Common errors — failure to use a proper power setting and pitch attitude.",
+            "Common errors — improper correction of vertical rate, airspeed, heading, or rate-of-turn errors.",
+            "Common errors — uncoordinated use of controls.",
+            "Common errors — improper trim control."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains a constant airspeed climb and a constant airspeed descent from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to constant airspeed climbs and descents."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "constant_rate_climbs_and_descents",
+          "title": "CONSTANT RATE CLIMBS AND DESCENTS",
+          "knowledge": [
+            "Procedure using full panel and partial panel for an entry into a constant rate climb or descent.",
+            "A stabilized constant rate straight climb or climbing turn, using the vertical speed indicator.",
+            "A level-off from a constant rate straight climb or climbing turn.",
+            "An entry into a constant rate straight descent or descending turn.",
+            "A stabilized constant rate straight descent or descending turn using the vertical speed indicator.",
+            "Level-off from a constant rate straight descent or descending turn.",
+            "Common errors — failure to use a proper power setting and pitch attitude.",
+            "Common errors — improper correction of vertical rate, airspeed, heading, or rate-of-turn errors.",
+            "Common errors — uncoordinated use of controls.",
+            "Common errors — improper trim control."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains a constant rate climb and a constant rate descent from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to constant rate climbs and descents."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "timed_turns_to_magnetic_compass_headings",
+          "title": "TIMED TURNS TO MAGNETIC COMPASS HEADINGS",
+          "knowledge": [
+            "Operating characteristics and errors of the magnetic compass.",
+            "Calibration of the miniature aircraft of the turn coordinator, both right and left, using full panel and the clock.",
+            "Procedures using full panel and partial panel performing compass turns to a specified heading.",
+            "Common errors — incorrect calibration procedures.",
+            "Common errors — improper timing.",
+            "Common errors — uncoordinated use of controls.",
+            "Common errors — improper trim control."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains timed turns to magnetic compass headings from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to timed turns to magnetic compass headings."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "steep_turns",
+          "title": "STEEP TURNS",
+          "knowledge": [
+            "Procedure using full panel and partial panel for entry and recovery of a steep turn.",
+            "The need for a proper instrument cross-check.",
+            "Roll-in/roll-out procedure.",
+            "Coordination of control and trim.",
+            "Common errors — failure to recognize and make proper corrections for pitch, bank, or power errors.",
+            "Common errors — failure to compensate for precession of the horizon bar of the attitude indicator.",
+            "Common errors — uncoordinated use of controls.",
+            "Common errors — improper trim technique."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains steep turns from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to steep turns."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "recovery_from_unusual_flight_attitudes",
+          "title": "RECOVERY FROM UNUSUAL FLIGHT ATTITUDES",
+          "knowledge": [
+            "Conditions or situations which contribute to the development of unusual flight attitudes.",
+            "Procedure using full panel and partial panel for recovery from nose-high and nose-low unusual flight attitudes.",
+            "Common errors — incorrect interpretation of the flight instruments.",
+            "Common errors — inappropriate application of controls."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains recovery from unusual flight attitudes, solely by reference to instruments, from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to recovery from unusual flight attitudes."
+          ],
+          "confidence": "extracted"
+        }
+      ]
+    },
+    {
+      "id": "navigation_aids",
+      "title": "NAVIGATION AIDS",
+      "tasks": [
+        {
+          "id": "intercepting_tracking_navigational_systems_dme_arcs",
+          "title": "INTERCEPTING AND TRACKING NAVIGATIONAL SYSTEMS AND DME ARCS",
+          "knowledge": [
+            "Tuning and identification of a navigational facility.",
+            "Setting of a selected course on the navigation selector or the correct identification of a selected bearing on the RMI.",
+            "Method for determining aircraft position relative to a facility.",
+            "Procedure for intercepting and maintaining a selected course.",
+            "Procedure for intercepting and maintaining a DME arc.",
+            "Procedure for intercepting a course or localizer from a DME arc.",
+            "Recognition of navigation facility or waypoint passage.",
+            "Recognition of navigation receiver or facility failure.",
+            "Common errors: incorrect tuning and identification procedures.",
+            "Common errors: failure to properly set the navigation selector on the course to be intercepted.",
+            "Common errors: failure to use proper procedures for course or DME arc interception and tracking.",
+            "Common errors: improper procedures for intercepting a course or localizer from a DME arc.",
+            "Uses of the MFD and other graphical navigational displays, if installed, to monitor position in relation to the desired flightpath during holding."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains intercepting and tracking navigational systems and DME arcs from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to intercepting and tracking navigational systems and DME arcs."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "holding_procedures",
+          "title": "HOLDING PROCEDURES",
+          "knowledge": [
+            "Setting of aircraft navigation equipment.",
+            "Requirement for establishing the appropriate holding airspeed for the aircraft and altitude.",
+            "Recognition of arrival at the holding fix and the prompt initiation of entry into the holding pattern.",
+            "Timing procedure.",
+            "Correction for wind drift.",
+            "Use of DME in a holding pattern.",
+            "Compliance with ATC reporting requirements.",
+            "Common errors: incorrect setting of aircraft navigation equipment.",
+            "Common errors: inappropriate altitude, airspeed, and bank control.",
+            "Common errors: improper timing.",
+            "Common errors: improper wind drift correction.",
+            "Common errors: failure to recognize holding fix passage.",
+            "Common errors: failure to comply with ATC instructions.",
+            "Use of the MFD and other graphical navigational displays, if installed, to monitor position in relation to the desired flightpath during holding."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains holding procedures from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to holding procedures."
+          ],
+          "confidence": "extracted"
+        }
+      ]
+    },
+    {
+      "id": "instrument_approach_procedures",
+      "title": "INSTRUMENT APPROACH PROCEDURES",
+      "tasks": [
+        {
+          "id": "nonprecision_instrument_approach",
+          "title": "NONPRECISION INSTRUMENT APPROACH (NPA)",
+          "knowledge": [
+            "Selection of the appropriate instrument approach procedure chart.",
+            "Pertinent information on the selected instrument approach chart.",
+            "Radio communications with ATC and compliance with ATC clearances, instructions, and procedures.",
+            "Appropriate aircraft configuration, airspeed, and checklist items.",
+            "Selection, tuning, identification, and determination of operational status of ground and aircraft navigation equipment.",
+            "Adjustments applied to the published MDA and visibility criteria for the aircraft approach category.",
+            "Maintenance of altitude, airspeed, and track, where applicable.",
+            "Establishment and maintenance of an appropriate rate of descent during the final approach segment.",
+            "Factors that should be considered in determining whether: the approach should be continued straight-in to a landing; a circling approach to a landing should be made; or a missed approach should be performed.",
+            "Common errors: failure to have essential knowledge of the information on the instrument approach chart.",
+            "Common errors: incorrect communications procedures or noncompliance with ATC clearances or instructions.",
+            "Common errors: failure to accomplish checklist items.",
+            "Common errors: faulty basic instrument flying technique.",
+            "Common errors: inappropriate descent below the MDA.",
+            "Uses of the MFD and other graphical navigational displays, if installed, to monitor position, track, wind drift, and other parameters to maintain desired flightpath."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains a nonprecision instrument approach from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to a nonprecision instrument approach."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "precision_instrument_approach",
+          "title": "PRECISION INSTRUMENT APPROACH (PA)",
+          "knowledge": [
+            "Selection of the appropriate instrument approach chart.",
+            "Pertinent information on the selected instrument approach chart.",
+            "Selection, tuning, identification, and determination of operational status of ground and aircraft navigation equipment.",
+            "Radio communications with ATC and compliance with ATC clearances, instructions, and procedures.",
+            "Appropriate aircraft configuration, airspeed, and checklist items.",
+            "Adjustments applied to the published DH/DA and visibility criteria for the aircraft approach category.",
+            "Maintenance of altitude, airspeed, and track, where applicable.",
+            "Establishment and maintenance of an appropriate rate of descent during the final approach segment.",
+            "Factors that should be considered in determining whether: the approach should be continued straight-in to a landing; a circling approach to a landing should be made; or a missed approach should be performed.",
+            "Common errors: failure to have essential knowledge of the information on the instrument approach procedure chart.",
+            "Common errors: incorrect communications procedures or noncompliance with ATC clearances.",
+            "Common errors: failure to accomplish checklist items.",
+            "Common errors: faulty basic instrument flying technique.",
+            "Common errors: inappropriate application of DH/DA.",
+            "Uses of the MFD and other parameters to maintain desired flightpath."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains a precision instrument approach from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to a precision instrument approach."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "missed_approach",
+          "title": "MISSED APPROACH",
+          "knowledge": [
+            "Pertinent information on the selected instrument approach chart.",
+            "Conditions requiring a missed approach.",
+            "Initiation of the missed approach, including the prompt application of power, establishment of a climb attitude, and reduction of drag.",
+            "Required report to ATC.",
+            "Compliance with the published or alternate missed approach procedure.",
+            "Notification of ATC if the aircraft is unable to comply with a clearance, instruction, restriction, or climb gradient.",
+            "Performance of recommended checklist items appropriate to the go-around procedure.",
+            "Importance of positive aircraft control.",
+            "Common errors: failure to have essential knowledge of the information on the instrument approach chart.",
+            "Common errors: failure to recognize conditions requiring a missed approach.",
+            "Common errors: failure to promptly initiate a missed approach.",
+            "Common errors: failure to make the required report to ATC.",
+            "Common errors: failure to comply with the missed approach procedure.",
+            "Common errors: faulty basic instrument flying technique.",
+            "Common errors: descent below the MDA prior to initiating a missed approach.",
+            "Uses of the MFD and other graphical navigational displays, if installed, to monitor position and track to help navigate the missed approach."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains a missed approach from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to a missed approach."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "circling_approach",
+          "title": "CIRCLING APPROACH (AIRPLANE)",
+          "knowledge": [
+            "Selection of the appropriate circling approach maneuver considering the maneuvering capabilities of the aircraft.",
+            "Circling approach minimums on the selected instrument approach chart.",
+            "Compliance with advisories, clearance instructions, and/or restrictions.",
+            "Importance of flying a circling approach pattern that does not exceed the published visibility criteria.",
+            "Maintenance of an altitude no lower than the circling MDA until in a position from which a descent to a normal landing can be made.",
+            "Common errors: failure to have essential knowledge of the circling approach information on the instrument approach chart.",
+            "Common errors: failure to adhere to the published MDA and visibility criteria during the circling approach maneuver.",
+            "Common errors: inappropriate pilot technique during transition from the circling maneuver to the landing approach."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains a circling approach from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to a circling approach."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "landing_from_straight_in_approach",
+          "title": "LANDING FROM A STRAIGHT-IN APPROACH",
+          "knowledge": [
+            "Effect of specific environmental, operational, and meteorological factors.",
+            "Transition to, and maintenance of, a visual flight condition.",
+            "Adherence to ATC advisories, such as NOTAMs, wind shear, wake turbulence, runway surface, and braking conditions.",
+            "Completion of appropriate checklist items.",
+            "Maintenance of positive aircraft control.",
+            "Common errors: inappropriate division of attention during the transition from instrument to visual flight conditions.",
+            "Common errors: failure to complete required checklist items.",
+            "Common errors: failure to properly plan and perform the turn to final approach.",
+            "Common errors: improper technique for wind shear, wake turbulence, and crosswind.",
+            "Common errors: failure to maintain positive aircraft control throughout the complete landing maneuver."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains a landing from a straight-in approach from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to landing from a straight-in approach."
+          ],
+          "confidence": "extracted"
+        }
+      ]
+    },
+    {
+      "id": "emergency_operations",
+      "title": "EMERGENCY OPERATIONS",
+      "tasks": [
+        {
+          "id": "loss_of_communications",
+          "title": "LOSS OF COMMUNICATIONS",
+          "knowledge": [
+            "Recognition of loss of communications.",
+            "When to continue with flight plan as filed or when to deviate.",
+            "How to determine the time to begin an approach at destination."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        },
+        {
+          "id": "approach_with_loss_of_primary_flight_instrument_indicators",
+          "title": "APPROACH WITH LOSS OF PRIMARY FLIGHT INSTRUMENT INDICATORS",
+          "knowledge": [
+            "Recognition of inaccurate or inoperative primary instrument indicators and advising ATC and the evaluator.",
+            "Notification of ATC or evaluator anytime that the aircraft is unable to comply with an ATC clearance or whether able to continue the flight.",
+            "Importance of utilizing navigation equipment in an emergency situation and demonstrating a nonprecision approach without the use of primary flight instruments.",
+            "Common errors: recognition of failed system components that relate to primary flight instrument indication(s).",
+            "Common errors: failure to notify ATC of situation.",
+            "Common errors: failure to transition to emergency mode/standby instrumentation."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains loss of primary flight instrument indicators by conducting a non-precision approach without the use of these indicators.",
+            "Analyzes and corrects common errors related to loss of primary flight instrument indicators."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "engine_failure_during_straight_and_level_flight_and_turns_multiengine",
+          "title": "ENGINE FAILURE DURING STRAIGHT-AND-LEVEL FLIGHT AND TURNS (MULTIENGINE)",
+          "knowledge": [
+            "Appropriate methods to be used for identifying and verifying the inoperative engine.",
+            "Technique for maintaining positive aircraft control by reference to instruments.",
+            "Importance of accurately assessing the aircraft's performance capability with regard to action that maintains altitude or minimum sink rate considering existing conditions.",
+            "Common errors: failure to recognize an inoperative engine.",
+            "Common errors: hazards of improperly identifying and verifying the inoperative engine.",
+            "Common errors: failure to properly adjust engine controls and reduce drag.",
+            "Common errors: failure to establish and maintain the best engine inoperative airspeed.",
+            "Common errors: failure to follow the prescribed checklist.",
+            "Common errors: failure to establish and maintain the recommended flight attitude for best performance.",
+            "Common errors: failure to maintain positive aircraft control while maneuvering.",
+            "Common errors: hazards of exceeding the aircraft's operating limitations.",
+            "Common errors: faulty basic instrument flying technique."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains straight-and-level flight and turns after engine failure, solely by reference to instruments, from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to straight-and-level flight and turns after engine failure, solely by reference to instruments."
+          ],
+          "confidence": "extracted"
+        },
+        {
+          "id": "instrument_approach_one_engine_inoperative_multiengine",
+          "title": "INSTRUMENT APPROACH—ONE ENGINE INOPERATIVE (MULTIENGINE)",
+          "knowledge": [
+            "Maintenance of altitude, airspeed and track appropriate to the phase of flight or approach segment.",
+            "Procedure if unable to comply with an ATC clearance or instruction.",
+            "Application of necessary adjustments to the published MDA and visibility criteria for the aircraft approach category.",
+            "Establishment and maintenance of an appropriate rate of descent during the final approach segment.",
+            "Factors that should be considered in determining whether: the approach should be continued straight-in to a landing; or a circling approach to a landing should be performed.",
+            "Common errors: failure to have essential knowledge of the information that appears on the selected instrument approach chart.",
+            "Common errors: failure to use proper communications procedures.",
+            "Common errors: noncompliance with ATC clearances.",
+            "Common errors: incorrect use of navigation equipment.",
+            "Common errors: failure to identify and verify the inoperative engine and to follow the emergency checklist.",
+            "Common errors: inappropriate procedure in the adjustment of engine controls and the reduction of drag.",
+            "Common errors: inappropriate procedure in the establishment and maintenance of the best engine inoperative airspeed.",
+            "Common errors: failure to establish and maintain the proper flight attitude for best performance.",
+            "Common errors: failure to maintain positive aircraft control.",
+            "Common errors: faulty basic instrument flying technique.",
+            "Common errors: inappropriate descent below the MDA or DH.",
+            "Common errors: faulty technique during roundout and touchdown."
+          ],
+          "risk_management": [],
+          "skills": [
+            "Demonstrates and simultaneously explains an instrument approach with one engine inoperative from an instructional standpoint.",
+            "Analyzes and corrects simulated common errors related to an instrument approach with one engine inoperative."
+          ],
+          "confidence": "extracted"
+        }
+      ]
+    },
+    {
+      "id": "postflight_procedures",
+      "title": "POSTFLIGHT PROCEDURES",
+      "tasks": [
+        {
+          "id": "checking_instruments_and_equipment",
+          "title": "CHECKING INSTRUMENTS AND EQUIPMENT",
+          "knowledge": [
+            "Importance of noting instruments and navigation equipment for improper operation.",
+            "Reasons for making a written record of improper operation or failure and/or calibration of instruments prior to next IFR flight."
+          ],
+          "risk_management": [],
+          "skills": [],
+          "confidence": "extracted"
+        }
+      ]
+    }
+  ]
+}
