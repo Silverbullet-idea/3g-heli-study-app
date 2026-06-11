@@ -10,7 +10,7 @@ Last updated: 2026-06-10 — **Phase 1 PDF renderer COMPLETE** (7 aircraft Priva
 
 Phase 1 — Printable / Digital Study Cards (PDF downloads)
 
-Active SKU: Private Pilot Study Sheets — **7 aircraft rendered** (r22, r44, r66, b505, b206, b407, sw269c1). Output: `output/study_sheets/{id}_private_study_sheet.pdf` via `render_study_sheets.py`.
+Active SKU: Private Pilot Study Sheets — **7 aircraft rendered** (r22, r44, r66, b505, b206, b407, sw269c1). Output: `output/study_sheets/{id}_study_sheet.pdf` via `render_study_sheets.py` (v2).
 
 ---
 
@@ -28,15 +28,17 @@ Active SKU: Private Pilot Study Sheets — **7 aircraft rendered** (r22, r44, r6
 
 As of June 2026, the FAA has not published an Airman Certification Standards document for Helicopter ATP. The current standard remains **FAA-S-8081-20A** (Practical Test Standards), which does not use the K/R/S item structure required by the question bank generator. ATP generation is deferred until the FAA publishes a Helicopter ATP ACS. Monitor [faa.gov/training_testing/testing/acs](https://www.faa.gov/training_testing/testing/acs) for release. The PTS source document (FAA-S-8081-20A) is archived at: `uploads/Heli_-_ATP_-_FAA-2022-1463-0012_content.pdf`
 
-### Phase 1 PDF renderer — COMPLETE (2026-06-10)
+### Phase 1 PDF renderer — v2 REDESIGNED (2026-06-10)
 
 **Script:** `scripts/render_study_sheets.py` + `run_render_study_sheets.ps1`
 
-**Input:** `data/study_sheet_specs/{id}_private_study_sheet.json`
+**Input:** `data/study_sheet_specs/{id}_private_study_sheet.json` (or `{id}_study_sheet.json`)
 
-**Output:** `output/study_sheets/{id}_private_study_sheet.pdf` (gitignored)
+**Output:** `output/study_sheets/{id}_study_sheet.pdf` (gitignored) — renamed from `_private_study_sheet.pdf` (rating-agnostic)
 
-**Rendered:** r22, r44, r66, b505, b206, b407, sw269c1 — **7 PDFs** (1–2 pages each). Assets: `assets/AILogoFinal.png`, `assets/HeliOnlyLarge.png`.
+**Layout:** Data-dense v2 — Quick Reference band, orange accent section headers, numbered emergency steps, AIRCRAFT DATA section, auto-fill padding, 7% watermark. No rating badge.
+
+**Rendered:** r22, r44, r66, b505, b206, b407, sw269c1 — **7 PDFs** (1–2 pages each). Assets: `assets/HeliOnlyLarge.png`, `assets/logo_horizontal.png` or `assets/AILogoFinal.png`.
 
 **Price:** $9.97 per set
 
