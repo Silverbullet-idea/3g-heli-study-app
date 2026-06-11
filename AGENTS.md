@@ -46,6 +46,12 @@ As of June 2026, the FAA has not published an Airman Certification Standards doc
 
 ## Completed This Session
 
+### CFII Helicopter PTS extraction (2026-06-10)
+
+- **`scripts/extract_poh_json.py`** — `--pdf raw-pdfs/faa/FAA-S-8081-9E - cfi_instrument_pts_9.pdf` `--section faa_acs` → **`extracted-data/faa/FAA-S-8081-9E_CFII_Helicopter_PTS.json`**
+- **10** areas of operation, **37** tasks, **0** `confidence: verify` flags. Source: 50-page PTS (3 API chunks).
+- Structure matches ACS JSON (`areas_of_operation` → `tasks` → `knowledge` / `risk_management` / `skills`). PTS uses plain-text task elements (no IH./FI. item codes). Next: lesson plan generator.
+
 ### Question bank pipeline closed (2026-06-10)
 
 - **4 of 5 ratings final** — Private **6,526**, Commercial **7,016**, CFI **9,396**, Instrument **2,530** (all **0** FLAG).
@@ -242,8 +248,9 @@ Present locally under `extracted-data/faa/` and `extracted-data/aircraft/`:
 | faa/FAA-S-ACS-14_Instrument_Helicopter_ACS.json | 12 areas, 323 ACS items (IH. codes patched 2026-06-09) | 0 |
 | faa/FAA-S-ACS-ATP_Helicopter_ACS.json | 11 areas | 0 |
 | faa/FAA-S-ACS-29_CFI_Helicopter_ACS.json | 18 areas | 1 |
+| faa/FAA-S-8081-9E_CFII_Helicopter_PTS.json | 10 areas, 37 tasks | 0 |
 
-(`r44_systems.json` completed 2026-04-22; CFI ACS extracted 2026-06-05 — 6 PDF chunks, 85 pages, 87 tasks, 1,197 ACS items.)
+(`r44_systems.json` completed 2026-04-22; CFI ACS extracted 2026-06-05 — 6 PDF chunks, 85 pages, 87 tasks, 1,197 ACS items. CFII PTS extracted 2026-06-10 — 3 PDF chunks, 50 pages, 37 tasks.)
 
 ### Extracted JSON — R66, Bell 206B3, Bell 407 (2026-04-14, committed)
 
@@ -339,6 +346,7 @@ FAA:
   - FAA-H-8083-16B Instrument Procedures Handbook (downloaded)
   - FAA_AIM_2024.pdf (downloaded)
   - ACS: Private, Commercial, CFI, Instrument Helicopter (existing)
+  - **CFII Helicopter PTS** — `FAA-S-8081-9E - cfi_instrument_pts_9.pdf` in `raw-pdfs/faa/`
   - **ATP Helicopter ACS** — `FAA-S-ACS-ATP_Helicopter_ACS.pdf` in `raw-pdfs/faa/`
     (local, pre-release copy from Ryan's archive; not in public FAA set yet)
 - raw-pdfs/faa/advisory-circulars/
