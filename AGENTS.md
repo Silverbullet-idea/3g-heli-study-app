@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-17 — **`run_render_study_sheets.ps1` wrapper created**; 7 PDFs regenerated. Logo canonical paths still placeholders — renderer falls back via rglob. Prior 2026-06-10 — Phase 1 PDF renderer COMPLETE (7 aircraft Private study sheets). Question bank pipeline COMPLETE (4 of 5 ratings; ATP deferred).
+Last updated: 2026-06-17 — **Study sheet PDF expansion complete** (`6184838`) — 18 general knowledge-domain sheets appended per aircraft; 7 PDFs at 27–28 pages (~287 KB). Prior — **`run_render_study_sheets.ps1` wrapper created**; 7 PDFs regenerated.
 
 ---
 
@@ -10,7 +10,7 @@ Last updated: 2026-06-17 — **`run_render_study_sheets.ps1` wrapper created**; 
 
 Phase 1 — Printable / Digital Study Cards (PDF downloads)
 
-Active SKU: Private Pilot Study Sheets — **7 aircraft rendered** (r22, r44, r66, b505, b206, b407, sw269c1). Output: `output/study_sheets/{id}_study_sheet.pdf` via `render_study_sheets.py` (v2).
+Active SKU: Private Pilot Study Sheets — **7 aircraft rendered** (r22, r44, r66, b505, b206, b407, sw269c1). Output: `output/study_sheets/{id}_study_sheet.pdf` via `render_study_sheets.py` (v2 + 18 general sheets). **27–28 pages per PDF** (2026-06-17).
 
 ---
 
