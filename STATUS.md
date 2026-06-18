@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 17, 2026 — Study sheet PDF expansion complete: 18 general knowledge-domain sheets appended per aircraft (`6184838`); 7 PDFs regenerated at 27–28 pages (~287 KB each).
+June 17, 2026 — CC360 listing copy ready for all 7 SKUs (`docs/cc360_study_sheet_listings.md`); Ryan to spot-check R22 PDF and publish in CC360.
 
 ---
 
@@ -12,7 +12,7 @@ June 17, 2026 — Study sheet PDF expansion complete: 18 general knowledge-domai
 **Local `main` is in sync with `origin/main`**. Study sheet expansion commit `6184838` pushed 2026-06-17.
 
 ### Current Sprint Goal
-Phase 1 Private study sheets **expanded locally** — 7 combined PDFs in `output/study_sheets/` (`{id}_study_sheet.pdf`, 27–28 pages each). Next: list sets in CC360 at $9.97/set.
+Phase 1 Private study sheets **expanded locally** — 7 combined PDFs in `output/study_sheets/` (`{id}_study_sheet.pdf`, 27–28 pages each). CC360 copy ready in `docs/cc360_study_sheet_listings.md` — Ryan to publish.
 
 ### Question Bank Pipeline
 **COMPLETE** — 4 of 5 ratings final (Private, Commercial, CFI, Instrument). **ATP deferred** (no FAA Helicopter ATP ACS). Phase 3 question banks ready for UI development when Phase 1 complete.
@@ -21,6 +21,7 @@ Phase 1 Private study sheets **expanded locally** — 7 combined PDFs in `output
 
 ### Completed (This Sprint)
 
+- **CC360 listing copy — ✅ ready** — `docs/cc360_study_sheet_listings.md`: 7 SKUs at $9.97, short + full descriptions, PDF upload mapping, pre-publish checklist (2026-06-17)
 - **Study sheet PDF expansion — ✅ complete** — `render_study_sheets.py` appends 18 general knowledge-domain sheets (FAA handbook JSON + hardcoded FAR 61/91 & NTSB 830) after aircraft-specific sections; commit `6184838` (2026-06-17)
 - **`run_render_study_sheets.ps1`** — ✅ created at repo root; `-Aircraft` param; lists PDF sizes on success. Regenerated all 7 PDFs (2026-06-17)
 - **Logo asset audit** — `logo_horizontal.png` / `AILogoFinal.png` are 244-byte placeholders; renderer uses `AI-Logo---Final.png` via rglob fallback (no crash). Ryan must place real logo in `logo_horizontal.png` before final sale (2026-06-17)
@@ -86,10 +87,12 @@ _(none)_
 
 ### Up Next (Prioritized)
 
-1. **List study sheet sets in CC360** — 7 SKUs at $9.97 each; combined PDFs ready in `output/study_sheets/` (27–28 pages each)
-2. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
-3. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
-4. Monitor FAA ACS page for Helicopter ATP ACS release (ATP bank deferred)
+1. **Ryan:** Visual spot-check `r22_study_sheet.pdf` locally before listing
+2. **Ryan:** Build 7 product listings in CC360 using `docs/cc360_study_sheet_listings.md`
+3. **Ryan:** Upload PDFs from `output\study_sheets\` to each product
+4. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
+5. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
+6. Monitor FAA ACS page for Helicopter ATP ACS release (ATP bank deferred)
 
 ---
 
