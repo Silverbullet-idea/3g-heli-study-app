@@ -926,13 +926,105 @@ def _terms_to_items(terms: list[dict[str, str]], max_items: int = 50) -> list[di
     return items
 
 
+_LABEL_CACHE: dict[str, str] = {}
+
+
+def _parse_label_array(raw: str) -> list[str]:
+    """Extract a JSON string array from model output (tolerates fences or trailing text)."""
+    text = raw.strip()
+    if text.startswith("```"):
+        text = re.sub(r"^```(?:json)?\s*", "", text)
+        text = re.sub(r"\s*```$", "", text).strip()
+    start = text.find("[")
+    if start < 0:
+        raise ValueError("no JSON array in response")
+    labels, _end = json.JSONDecoder().raw_decode(text, start)
+    if not isinstance(labels, list):
+        raise ValueError("response is not a JSON array")
+    return [str(label) for label in labels]
+
+
+def _extract_topic_labels(points: list[str]) -> list[str]:
+    """Use Claude to extract 2-4 word topic labels for a list of key point sentences.
+
+    Returns a list of labels in the same order as input. Falls back to truncated text on error.
+    """
+    import os
+
+    import anthropic
+
+    if not points:
+        return []
+
+    cache_hits: list[tuple[int, str]] = []
+    uncached_points: list[str] = []
+    uncached_indices: list[int] = []
+    for i, p in enumerate(points):
+        if p in _LABEL_CACHE:
+            cache_hits.append((i, _LABEL_CACHE[p]))
+        else:
+            uncached_points.append(p)
+            uncached_indices.append(i)
+
+    if not uncached_points:
+        result = [""] * len(points)
+        for i, label in cache_hits:
+            result[i] = label
+        return result
+
+    numbered = "\n".join(f"{i + 1}. {p}" for i, p in enumerate(uncached_points))
+    prompt = (
+        "For each numbered aviation key point below, provide a 2–4 word topic label "
+        "that captures the core concept. Return ONLY a JSON array of strings in the same order, "
+        "no other text, no markdown fences.\n\n"
+        f"{numbered}"
+    )
+
+    def _fallback_labels(pts: list[str]) -> list[str]:
+        return [p[:40].rstrip() + "…" if len(p) > 40 else p for p in pts]
+
+    new_labels = _fallback_labels(uncached_points)
+    try:
+        from dotenv import load_dotenv
+
+        load_dotenv(REPO_ROOT / ".env", override=True)
+        if not (os.environ.get("ANTHROPIC_API_KEY") or "").strip():
+            load_dotenv(REPO_ROOT.parent / ".env", override=True)
+        api_key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
+        if not api_key:
+            raise ValueError("ANTHROPIC_API_KEY is not set")
+
+        client = anthropic.Anthropic(api_key=api_key)
+        response = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=512,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        raw = response.content[0].text.strip()
+        labels = _parse_label_array(raw)
+        if isinstance(labels, list) and len(labels) == len(uncached_points):
+            new_labels = [str(label)[:50] for label in labels]
+            for p, label in zip(uncached_points, new_labels):
+                _LABEL_CACHE[p] = label
+    except Exception as e:
+        print(f"  Warning: topic label extraction failed — {e}")
+
+    result = [""] * len(points)
+    for i, label in cache_hits:
+        result[i] = label
+    for idx, label in zip(uncached_indices, new_labels):
+        result[idx] = label
+    return result
+
+
 def _points_to_items(points: list[str], max_items: int = 30) -> list[dict[str, Any]]:
+    if not points:
+        return []
+    capped = points[:max_items]
+    labels = _extract_topic_labels(capped)
     items: list[dict[str, Any]] = []
-    for i, p in enumerate(points[:max_items]):
-        label = p.split("—")[0].split(":")[0].strip()
-        if len(label) > 45:
-            label = f"Key Point {i + 1}"
-        items.append({"label": label, "value": p})
+    for label, point in zip(labels, capped):
+        items.append({"label": label, "value": point})
     return items
 
 
