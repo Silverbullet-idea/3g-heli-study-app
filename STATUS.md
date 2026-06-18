@@ -4,15 +4,15 @@
 ---
 
 ### Last Updated
-June 17, 2026 — CC360 listing copy ready for all 7 SKUs (`docs/cc360_study_sheet_listings.md`); Ryan to spot-check R22 PDF and publish in CC360.
+June 17, 2026 — General knowledge sheet layout redesigned (`dff3923`); 7 PDFs regenerated at 18–19 pages (~270 KB each). Ryan to spot-check R22 PDF and publish in CC360.
 
 ---
 
 ### Git / Remote
-**Local `main` is in sync with `origin/main`**. Study sheet expansion commit `6184838` pushed 2026-06-17.
+**Local `main` is in sync with `origin/main`**. General layout redesign commit `dff3923` pushed 2026-06-17.
 
 ### Current Sprint Goal
-Phase 1 Private study sheets **expanded locally** — 7 combined PDFs in `output/study_sheets/` (`{id}_study_sheet.pdf`, 27–28 pages each). CC360 copy ready in `docs/cc360_study_sheet_listings.md` — Ryan to publish.
+Phase 1 Private study sheets **redesigned locally** — 7 combined PDFs in `output/study_sheets/` (`{id}_study_sheet.pdf`, **18–19 pages** each). CC360 copy ready in `docs/cc360_study_sheet_listings.md` — Ryan to publish.
 
 ### Question Bank Pipeline
 **COMPLETE** — 4 of 5 ratings final (Private, Commercial, CFI, Instrument). **ATP deferred** (no FAA Helicopter ATP ACS). Phase 3 question banks ready for UI development when Phase 1 complete.
@@ -21,21 +21,22 @@ Phase 1 Private study sheets **expanded locally** — 7 combined PDFs in `output
 
 ### Completed (This Sprint)
 
+- **General knowledge sheet layout redesign — ✅ complete** — `render_study_sheets.py`: tighter row spacing (8pt lines), 28/68 column split, vertical divider, `#EEF0F8` alternating rows, `GENERAL_HEADER_H=13`, `items_placed` guard fixes blank page 2, section `max_items` trimmed; commit `dff3923` (2026-06-17)
 - **CC360 listing copy — ✅ ready** — `docs/cc360_study_sheet_listings.md`: 7 SKUs at $9.97, short + full descriptions, PDF upload mapping, pre-publish checklist (2026-06-17)
 - **Study sheet PDF expansion — ✅ complete** — `render_study_sheets.py` appends 18 general knowledge-domain sheets (FAA handbook JSON + hardcoded FAR 61/91 & NTSB 830) after aircraft-specific sections; commit `6184838` (2026-06-17)
 - **`run_render_study_sheets.ps1`** — ✅ created at repo root; `-Aircraft` param; lists PDF sizes on success. Regenerated all 7 PDFs (2026-06-17)
 - **Logo asset audit** — `logo_horizontal.png` / `AILogoFinal.png` are 244-byte placeholders; renderer uses `AI-Logo---Final.png` via rglob fallback (no crash). Ryan must place real logo in `logo_horizontal.png` before final sale (2026-06-17)
-- **Phase 1 PDF output (regenerated 2026-06-17 — expanded):**
+- **Phase 1 PDF output (regenerated 2026-06-17 — general layout redesign):**
 
 | PDF | Pages | Size KB |
 |-----|-------|---------|
-| b206_study_sheet.pdf | 28 | 288.6 |
-| b407_study_sheet.pdf | 28 | 288.3 |
-| b505_study_sheet.pdf | 27 | 286.7 |
-| r22_study_sheet.pdf | 27 | 287.6 |
-| r44_study_sheet.pdf | 27 | 286.4 |
-| r66_study_sheet.pdf | 27 | 287.0 |
-| sw269c1_study_sheet.pdf | 28 | 288.7 |
+| b206_study_sheet.pdf | 19 | 271.7 |
+| b407_study_sheet.pdf | 19 | 271.6 |
+| b505_study_sheet.pdf | 18 | 269.8 |
+| r22_study_sheet.pdf | 18 | 270.7 |
+| r44_study_sheet.pdf | 18 | 269.5 |
+| r66_study_sheet.pdf | 18 | 270.2 |
+| sw269c1_study_sheet.pdf | 19 | 271.7 |
 
 - **Phase 1 PDF renderer — v2 REDESIGNED** — `render_study_sheets.py` + `run_render_study_sheets.ps1` → `output/study_sheets/{id}_study_sheet.pdf` for **7** aircraft. Quick Reference band, orange accent headers, numbered emergency steps, AIRCRAFT DATA section, auto-fill padding (2026-06-10)
 - **Study sheet spec JSONs — Phase 1** — `generate_study_sheet_specs.py` → `data/study_sheet_specs/{id}_private_study_sheet.json` for **7** aircraft (r22, r44, r66, b505, b206, b407, sw269c1); sw269c skipped (no source JSON). Model: **claude-sonnet-4-20250514** (2026-06-10)
