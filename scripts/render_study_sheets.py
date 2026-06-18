@@ -64,6 +64,7 @@ LOGO_MAX_H = 36
 QR_BAND_H = 22
 QR_BAND_RADIUS = 2
 SECTION_HEADER_H = 16
+GENERAL_HEADER_H = 13
 ACCENT_BAR_W = 3
 
 COL_A_SECTIONS = ("limitations", "instrument_markings")
@@ -557,15 +558,16 @@ def draw_section_header(
     width: float,
     y_top: float,
     title: str,
+    header_h: float = SECTION_HEADER_H,
 ) -> None:
-    y_bottom = y_top - SECTION_HEADER_H
+    y_bottom = y_top - header_h
     c.setFillColor(ORANGE)
-    c.rect(x, y_bottom, ACCENT_BAR_W, SECTION_HEADER_H, stroke=0, fill=1)
+    c.rect(x, y_bottom, ACCENT_BAR_W, header_h, stroke=0, fill=1)
 
     c.setFillColor(BLUE)
     c.setFont("Helvetica-Bold", 8)
     text = title.upper()
-    text_y = y_bottom + (SECTION_HEADER_H - 8) / 2
+    text_y = y_bottom + (header_h - 8) / 2
     c.drawString(x + ACCENT_BAR_W + 5, text_y, text)
 
     rule_y = y_bottom - 0.5
@@ -1077,7 +1079,7 @@ def build_general_sections(faa_data_dir: Path) -> list[dict[str, Any]]:
                         "antitorque", "tail rotor", "notar", "fenestron", "bearing", "mast",
                     ),
                     include_summary=True,
-                    max_items=40,
+                    max_items=28,
                 ),
                 _topic_items(
                     ht.get("introduction_to_helicopter"),
@@ -1094,7 +1096,7 @@ def build_general_sections(faa_data_dir: Path) -> list[dict[str, Any]]:
             "section_id": "instruments_avionics",
             "section_title": "Instruments & Avionics",
             "items": _merge_items(
-                _topic_items(it.get("flight_instruments"), include_all_terms=True, max_items=25),
+                _topic_items(it.get("flight_instruments"), include_all_terms=True, max_items=20),
                 _topic_items(it.get("gyroscopic_instruments"), include_all_terms=True, max_items=15),
                 _topic_items(it.get("magnetic_compass"), include_all_terms=True, max_items=12),
                 _topic_items(it.get("airspeed_indicator"), include_all_terms=True, max_items=10),
@@ -1121,7 +1123,7 @@ def build_general_sections(faa_data_dir: Path) -> list[dict[str, Any]]:
                     "resultant", "induced flow", "downwash", "pitch", "feather", "coning",
                 ),
                 include_summary=True,
-                max_items=35,
+                max_items=22,
             ),
         }
     )
@@ -1138,7 +1140,7 @@ def build_general_sections(faa_data_dir: Path) -> list[dict[str, Any]]:
                         "profile drag", "induced drag", "parasite",
                     ),
                     include_summary=False,
-                    max_items=25,
+                    max_items=18,
                 ),
                 _points_to_items(
                     _filter_points(
@@ -1163,7 +1165,7 @@ def build_general_sections(faa_data_dir: Path) -> list[dict[str, Any]]:
                         "coriolis", "precession", "pendular", "flapping", "vortex",
                     ),
                     include_summary=False,
-                    max_items=30,
+                    max_items=20,
                 ),
                 _topic_items(
                     ht.get("helicopter_flight_controls"),
@@ -1186,7 +1188,7 @@ def build_general_sections(faa_data_dir: Path) -> list[dict[str, Any]]:
                     "low-g", "ground resonance", "overpitch", "vrs", "settling",
                 ),
                 include_summary=True,
-                max_items=35,
+                max_items=22,
             ),
         }
     )
@@ -1204,7 +1206,7 @@ def build_general_sections(faa_data_dir: Path) -> list[dict[str, Any]]:
                     hazards,
                     term_keywords=("autorotation", "freewheel", "power recovery", "touchdown", "overpitch"),
                     include_summary=False,
-                    max_items=25,
+                    max_items=15,
                 ),
                 _topic_items(
                     ht.get("basic_flight_maneuvers"),
@@ -1250,6 +1252,7 @@ def build_general_sections(faa_data_dir: Path) -> list[dict[str, Any]]:
                 _topic_items(wt.get("helicopter_weight_balance"), include_all_terms=True, max_items=15),
                 _topic_items(wt.get("key_formulas_summary"), include_all_terms=True, max_items=10),
                 _topic_items(ht.get("weight_and_balance"), include_all_terms=True, max_items=10),
+                max_items=25,
             ),
         }
     )
@@ -1262,6 +1265,7 @@ def build_general_sections(faa_data_dir: Path) -> list[dict[str, Any]]:
                 _topic_items(it.get("navigation_systems"), include_all_terms=True, max_items=25),
                 _topic_items(it.get("magnetic_compass"), include_all_terms=True, max_items=10),
                 _acs_knowledge_items(flight_plan_task, max_items=8),
+                max_items=22,
             ),
         }
     )
@@ -1349,7 +1353,7 @@ def build_general_sections(faa_data_dir: Path) -> list[dict[str, Any]]:
                 ht.get("aeronautical_decision_making"),
                 term_keywords=("pave", "3p", "5p", "decide", "ooda", "crm", "srm", "hazardous", "attitude", "complacency", "automation", "risk", "situational"),
                 include_summary=True,
-                max_items=40,
+                max_items=22,
             ),
         }
     )
@@ -1396,22 +1400,22 @@ def _wrap_text_lines(c: canvas.Canvas, text: str, font_name: str, font_size: flo
 
 def _general_row_height(c: canvas.Canvas, item: dict[str, Any], col_width: float, spacing: Spacing) -> float:
     pad = 8
-    label_col_w = col_width * 0.32 - pad
-    value_col_w = col_width * 0.64
+    label_col_w = col_width * 0.28 - pad
+    value_col_w = col_width * 0.68
     label = str(item.get("label", ""))
     value = str(item.get("value", ""))
     note = item.get("note")
     label_lines = _wrap_text_lines(c, label, "Helvetica-Bold", 7.5, label_col_w)
     value_lines = _wrap_text_lines(c, value, "Helvetica", 7.5, value_col_w)
     line_count = max(len(label_lines), len(value_lines), 1)
-    h = 6 + line_count * 9
+    h = 4 + line_count * 8
     if note:
         h += 10
     return max(spacing.row_height, h)
 
 
 def _general_section_height(c: canvas.Canvas, section: dict[str, Any], col_width: float, spacing: Spacing) -> float:
-    h = SECTION_HEADER_H + 0.5 + spacing.post_header_gap
+    h = GENERAL_HEADER_H + 0.5 + spacing.post_header_gap
     for item in section.get("items") or []:
         h += _general_row_height(c, item, col_width, spacing)
     return h
@@ -1427,19 +1431,21 @@ def layout_general_pages(
     pages: list[PageLayout] = [PageLayout()]
     page_idx = 0
     y = sections_start_y
+    items_placed = 0
 
     def new_page() -> None:
-        nonlocal page_idx, y
+        nonlocal page_idx, y, items_placed
         page_idx += 1
         pages.append(PageLayout())
         y = sections_start_y
+        items_placed = 0
 
     for sec_idx, section in enumerate(sections):
         if sec_idx > 0:
-            y -= spacing.section_gap + 2
+            y -= spacing.section_gap
 
         block_h = _general_section_height(c, section, col_w, spacing)
-        if y - block_h < CONTENT_BOTTOM_Y:
+        if items_placed > 0 and y - block_h < CONTENT_BOTTOM_Y:
             new_page()
 
         title = section.get("section_title", "")
@@ -1447,19 +1453,22 @@ def layout_general_pages(
         pages[page_idx].col_a.append(
             PlacedItem(kind="section_header", y_top=y, section_id=sid, section_title=title)
         )
-        y -= SECTION_HEADER_H + 0.5 + spacing.post_header_gap
+        items_placed += 1
+        y -= GENERAL_HEADER_H + 0.5 + spacing.post_header_gap
 
         for row_idx, item in enumerate(section.get("items") or []):
             rh = _general_row_height(c, item, col_w, spacing)
-            if y - rh < CONTENT_BOTTOM_Y:
+            if items_placed > 0 and y - rh < CONTENT_BOTTOM_Y:
                 new_page()
                 pages[page_idx].col_a.append(
                     PlacedItem(kind="section_header", y_top=y, section_id=sid, section_title=title)
                 )
-                y -= SECTION_HEADER_H + 0.5 + spacing.post_header_gap
+                items_placed += 1
+                y -= GENERAL_HEADER_H + 0.5 + spacing.post_header_gap
             pages[page_idx].col_a.append(
                 PlacedItem(kind="general_row", y_top=y, section_id=sid, item=item, row_index=row_idx)
             )
+            items_placed += 1
             y -= rh
 
     for pg in pages:
@@ -1478,9 +1487,9 @@ def draw_general_row(
     spacing: Spacing,
 ) -> None:
     pad = 8
-    label_col_w = width * 0.32 - pad
-    value_col_w = width * 0.64
-    value_x = x + width * 0.34
+    label_col_w = width * 0.28 - pad
+    value_col_w = width * 0.68
+    value_x = x + width * 0.30
     label = str(item.get("label", ""))
     value = str(item.get("value", ""))
     note = item.get("note")
@@ -1488,21 +1497,27 @@ def draw_general_row(
     label_lines = _wrap_text_lines(c, label, "Helvetica-Bold", 7.5, label_col_w)
     value_lines = _wrap_text_lines(c, value, "Helvetica", 7.5, value_col_w)
     line_count = max(len(label_lines), len(value_lines), 1)
-    rh = max(spacing.row_height, 6 + line_count * 9 + (10 if note else 0))
+    rh = max(spacing.row_height, 4 + line_count * 8 + (10 if note else 0))
     y_bottom = y_top - rh
 
-    bg = GRAY_LIGHT if row_index % 2 == 0 else WHITE
+    bg = HexColor("#EEF0F8") if row_index % 2 == 0 else WHITE
     c.setFillColor(bg)
     c.rect(x, y_bottom, width, rh, stroke=0, fill=1)
 
-    text_y = y_top - 8
-    c.setFillColor(BLACK)
+    divider_x = x + width * 0.30
+    c.setStrokeColor(HexColor("#D8DCE8"))
+    c.setLineWidth(0.4)
+    c.line(divider_x, y_bottom + 1, divider_x, y_top - 1)
+
+    text_y = y_top - 6
+    c.setFillColor(HexColor("#111827"))
     for i, line in enumerate(label_lines):
         c.setFont("Helvetica-Bold", 7.5)
-        c.drawString(x + pad, text_y - i * 9, line)
+        c.drawString(x + pad, text_y - i * 8, line)
+    c.setFillColor(BLACK)
     for i, line in enumerate(value_lines):
         c.setFont("Helvetica", 7.5)
-        c.drawString(value_x, text_y - i * 9, line)
+        c.drawString(value_x, text_y - i * 8, line)
 
     if note:
         c.setFillColor(GRAY_NOTE)
@@ -1569,7 +1584,10 @@ def render_general_page_content(
 ) -> None:
     for item in page.col_a:
         if item.kind == "section_header":
-            draw_section_header(c, MARGIN_LEFT, CONTENT_WIDTH, item.y_top, item.section_title)
+            draw_section_header(
+                c, MARGIN_LEFT, CONTENT_WIDTH, item.y_top, item.section_title,
+                header_h=GENERAL_HEADER_H,
+            )
         elif item.kind == "general_row" and item.item:
             draw_general_row(c, MARGIN_LEFT, CONTENT_WIDTH, item.y_top, item.item, item.row_index, spacing)
 
@@ -1594,10 +1612,10 @@ def render_general_sheets(
 ) -> tuple[list[PageLayout], Spacing]:
     """Layout general knowledge sections; caller renders pages after aircraft pages."""
     general_spacing = Spacing(
-        section_gap=6.0,
-        row_height=12.0,
-        row_height_note=18.0,
-        post_header_gap=2.0,
+        section_gap=4.0,
+        row_height=10.0,
+        row_height_note=15.0,
+        post_header_gap=1.5,
         emergency_step_h=spacing.emergency_step_h,
         emergency_proc_h=spacing.emergency_proc_h,
     )
