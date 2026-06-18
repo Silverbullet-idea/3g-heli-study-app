@@ -4,7 +4,7 @@
 ---
 
 ### Last Updated
-June 10, 2026 — Phase 1 PDF renderer v2 redesigned (dense layout, Quick Reference band, `_study_sheet.pdf` output).
+June 17, 2026 — `run_render_study_sheets.ps1` wrapper created; 7 PDFs regenerated; logo placeholder gap documented.
 
 ---
 
@@ -12,7 +12,7 @@ June 10, 2026 — Phase 1 PDF renderer v2 redesigned (dense layout, Quick Refere
 **Local `main` is in sync with `origin/main`**. Instrument bank manual-review commit pushed 2026-06-10.
 
 ### Current Sprint Goal
-Phase 1 Private study sheets **shipped locally** — 7 PDFs in `output/study_sheets/` (`{id}_study_sheet.pdf`). Next: product listing on 3gheliprep.com ($9.97/set).
+Phase 1 Private study sheets **shipped locally** — 7 PDFs in `output/study_sheets/` (`{id}_study_sheet.pdf`). Next: list sets in CC360 at $9.97/set.
 
 ### Question Bank Pipeline
 **COMPLETE** — 4 of 5 ratings final (Private, Commercial, CFI, Instrument). **ATP deferred** (no FAA Helicopter ATP ACS). Phase 3 question banks ready for UI development when Phase 1 complete.
@@ -20,6 +20,20 @@ Phase 1 Private study sheets **shipped locally** — 7 PDFs in `output/study_she
 ---
 
 ### Completed (This Sprint)
+
+- **`run_render_study_sheets.ps1`** — ✅ created at repo root; `-Aircraft` param; lists PDF sizes on success. Regenerated all 7 PDFs (2026-06-17)
+- **Logo asset audit** — `logo_horizontal.png` / `AILogoFinal.png` are 244-byte placeholders; renderer uses `AI-Logo---Final.png` via rglob fallback (no crash). Ryan must place real logo in `logo_horizontal.png` before final sale (2026-06-17)
+- **Phase 1 PDF output (regenerated 2026-06-17):**
+
+| PDF | Size KB |
+|-----|---------|
+| b206_study_sheet.pdf | 204.2 |
+| b407_study_sheet.pdf | 204.1 |
+| b505_study_sheet.pdf | 202.1 |
+| r22_study_sheet.pdf | 203.0 |
+| r44_study_sheet.pdf | 201.8 |
+| r66_study_sheet.pdf | 202.7 |
+| sw269c1_study_sheet.pdf | 203.8 |
 
 - **Phase 1 PDF renderer — v2 REDESIGNED** — `render_study_sheets.py` + `run_render_study_sheets.ps1` → `output/study_sheets/{id}_study_sheet.pdf` for **7** aircraft (1–2 pages; b206/b407/sw269c1 = 2 pages). Quick Reference band, orange accent headers, numbered emergency steps, AIRCRAFT DATA section, auto-fill padding (2026-06-10)
 - **Study sheet spec JSONs — Phase 1** — `generate_study_sheet_specs.py` → `data/study_sheet_specs/{id}_private_study_sheet.json` for **7** aircraft (r22, r44, r66, b505, b206, b407, sw269c1); sw269c skipped (no source JSON). Model: **claude-sonnet-4-20250514** (2026-06-10)
@@ -71,7 +85,7 @@ _(none)_
 
 ### Up Next (Prioritized)
 
-1. **List Private study sheets on 3gheliprep.com** — $9.97/set; 7 aircraft PDFs ready in `output/study_sheets/`
+1. **List Private study sheet sets in CC360** — $9.97/set; 7 aircraft PDFs ready in `output/study_sheets/`
 2. Resolve Lycoming O-360 / O-540 / IO-540 manual URLs
 3. Resolve `rgl.faa.gov` DNS issue — AC 61-67D and AC 91-13D blocked
 4. Monitor FAA ACS page for Helicopter ATP ACS release (ATP bank deferred)

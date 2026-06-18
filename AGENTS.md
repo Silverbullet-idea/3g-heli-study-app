@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-10 — **Phase 1 PDF renderer COMPLETE** (7 aircraft Private study sheets). Question bank pipeline COMPLETE (4 of 5 ratings; ATP deferred).
+Last updated: 2026-06-17 — **`run_render_study_sheets.ps1` wrapper created**; 7 PDFs regenerated. Logo canonical paths still placeholders — renderer falls back via rglob. Prior 2026-06-10 — Phase 1 PDF renderer COMPLETE (7 aircraft Private study sheets). Question bank pipeline COMPLETE (4 of 5 ratings; ATP deferred).
 
 ---
 
@@ -38,7 +38,11 @@ As of June 2026, the FAA has not published an Airman Certification Standards doc
 
 **Layout:** Data-dense v2 — Quick Reference band, orange accent section headers, numbered emergency steps, AIRCRAFT DATA section, auto-fill padding, 7% watermark. No rating badge.
 
-**Rendered:** r22, r44, r66, b505, b206, b407, sw269c1 — **7 PDFs** (1–2 pages each). Assets: `assets/HeliOnlyLarge.png`, `assets/logo_horizontal.png` or `assets/AILogoFinal.png`.
+**Rendered:** r22, r44, r66, b505, b206, b407, sw269c1 — **7 PDFs** (1–2 pages each). Assets: `assets/HeliOnlyLarge.png` (watermark), header logo via `resolve_assets()`.
+
+**Logo asset status (known gap):** `assets/logo_horizontal.png` and `assets/AILogoFinal.png` are **244-byte placeholders**. `resolve_assets()` in `render_study_sheets.py` skips files ≤ 1 KB, then rglob-searches alternate names (`AI-Logo---Final.png`, `Logo-and-Text-ONLY.png`, `3G_Heli_Prep_Logo-A3.png`, etc.). Current render uses **`assets/AI-Logo---Final.png`** (32 KB) — no crash, no HeliOnlyLarge header fallback needed. **Before final product sale:** Ryan must manually place the real horizontal logo into `assets/logo_horizontal.png` (or `assets/AILogoFinal.png`) so the canonical path is used.
+
+**Wrapper:** `run_render_study_sheets.ps1` — `.\run_render_study_sheets.ps1` (all) or `-Aircraft r22` (single). Uses `.venv\Scripts\python.exe`.
 
 **Price:** $9.97 per set
 
@@ -47,6 +51,12 @@ As of June 2026, the FAA has not published an Airman Certification Standards doc
 ---
 
 ## Completed This Session
+
+### Logo asset audit + render wrapper (2026-06-17)
+
+- **`run_render_study_sheets.ps1`** — created at repo root; `-Aircraft` param for single-aircraft render; lists output PDFs with sizes on success.
+- **Logo audit** — `logo_horizontal.png` / `AILogoFinal.png` are placeholders; renderer resolves `AI-Logo---Final.png` via rglob (no code change). Documented known gap for Ryan to place final logo before sale.
+- **PDFs regenerated** — 7 files in `output/study_sheets/` (~202–204 KB each); exit code 0; no logo warnings.
 
 ### CFII Helicopter PTS extraction (2026-06-10)
 
