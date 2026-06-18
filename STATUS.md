@@ -4,12 +4,12 @@
 ---
 
 ### Last Updated
-June 17, 2026 — General knowledge sheet layout redesigned (`dff3923`); 7 PDFs regenerated at 18–19 pages (~270 KB each). Ryan to spot-check R22 PDF and publish in CC360.
+June 17, 2026 — Key point topic labels via Haiku batch extraction (`render_study_sheets.py`); 7 PDFs regenerated with descriptive labels (no "Key Point N"). Ryan to spot-check R22 PDF and publish in CC360.
 
 ---
 
 ### Git / Remote
-**Local `main` is in sync with `origin/main`**. General layout redesign commit `dff3923` pushed 2026-06-17.
+**Local `main` is in sync with `origin/main`**. Key point topic labels commit `812351e` pushed 2026-06-17.
 
 ### Current Sprint Goal
 Phase 1 Private study sheets **redesigned locally** — 7 combined PDFs in `output/study_sheets/` (`{id}_study_sheet.pdf`, **18–19 pages** each). CC360 copy ready in `docs/cc360_study_sheet_listings.md` — Ryan to publish.
@@ -21,6 +21,7 @@ Phase 1 Private study sheets **redesigned locally** — 7 combined PDFs in `outp
 
 ### Completed (This Sprint)
 
+- **Key point topic labels — ✅ complete** — `render_study_sheets.py`: `_extract_topic_labels()` batches Haiku calls per section, `_LABEL_CACHE` dedupes across 7 aircraft; replaces "Key Point N" with 2–4 word labels (2026-06-17)
 - **General knowledge sheet layout redesign — ✅ complete** — `render_study_sheets.py`: tighter row spacing (8pt lines), 28/68 column split, vertical divider, `#EEF0F8` alternating rows, `GENERAL_HEADER_H=13`, `items_placed` guard fixes blank page 2, section `max_items` trimmed; commit `dff3923` (2026-06-17)
 - **CC360 listing copy — ✅ ready** — `docs/cc360_study_sheet_listings.md`: 7 SKUs at $9.97, short + full descriptions, PDF upload mapping, pre-publish checklist (2026-06-17)
 - **Study sheet PDF expansion — ✅ complete** — `render_study_sheets.py` appends 18 general knowledge-domain sheets (FAA handbook JSON + hardcoded FAR 61/91 & NTSB 830) after aircraft-specific sections; commit `6184838` (2026-06-17)

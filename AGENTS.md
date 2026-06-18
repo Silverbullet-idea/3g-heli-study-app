@@ -2,7 +2,7 @@
 
 ## Project: 3G Heli Study App
 
-Last updated: 2026-06-17 — **General knowledge sheet layout redesigned** (`dff3923`) — tighter spacing, column divider, blank page 2 fix; 7 PDFs at **18–19 pages** (~270 KB). Prior — **Study sheet PDF expansion complete** (`6184838`) — 18 general sheets appended; 27–28 pages (~287 KB).
+Last updated: 2026-06-17 — **Key point topic labels via Haiku** — `_points_to_items()` batch-extracts 2–4 word labels (cached across aircraft); no more "Key Point N" rows. Prior — **General knowledge sheet layout redesigned** (`dff3923`) — 18–19 pages (~270 KB).
 
 ---
 
